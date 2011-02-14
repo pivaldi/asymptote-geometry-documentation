@@ -1,0 +1,10 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(18£§color£constant`cm`,0);
+£§color£type`point` £§color£variable-name`B`=(1.75,3), £§color£variable-name`C`=(-1,2), £§color£variable-name`D`=(-1.5,-0.5), £§color£variable-name`F`=(1.5,-1);
+
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 360; i += 21) {
+  £§color£type`point` £§color£variable-name`A`=£§color£function-name`shift`(D)*£§color£function-name`dir`(i);
+  £§color£function-name`dot`(A,£§color£constant`red`);
+  £§color£type`conic` £§color£variable-name`co`=£§color£function-name`conic`(A,B,C,D,F);
+  £§color£function-name`draw`(co, co.£§color£constant`e` < 1 ? £§color£constant`black` : 0.8*£§color£constant`blue`);
+}

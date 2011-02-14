@@ -1,0 +1,12 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6£§color£constant`cm`);
+£§color£type`abscissa` £§color£variable-name`x`=£§color£function-name`angabscissa`(30);
+
+£§color£type`ellipse` £§color£variable-name`el`=£§color£function-name`ellipse`(£§color£function-name`origin`(),2,1,45);
+£§color£function-name`draw`(el,£§color£function-name`linewidth`(£§color£constant`bp`));
+
+£§color£type`point` £§color£constant`M`=£§color£function-name`point`(el,x);
+£§color£function-name`draw`(£§color£constant`M`--el.F1--el.F2);
+£§color£function-name`dot`(£§color£string`"$F_1$"`, el.F1, £§color£constant`SE`); £§color£function-name`dot`(£§color£string`"$F_2$"`, el.F2, £§color£constant`NW`);
+£§color£function-name`markangle`((£§color£type`string`)x.x, el.F2, el.F1, £§color£constant`M`);
+£§color£function-name`draw`(£§color£function-name`tangent`(el,x), £§color£function-name`linewidth`(£§color£constant`bp`));

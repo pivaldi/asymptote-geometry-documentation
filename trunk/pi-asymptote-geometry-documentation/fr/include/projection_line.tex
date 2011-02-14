@@ -1,0 +1,23 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(7.5£§color£constant`cm`,0); £§color£constant`dotfactor`*=1.5;
+£§color£constant`currentcoordsys`=£§color£function-name`rotate`(20)*£§color£constant`defaultcoordsys`;
+£§color£function-name`show`(£§color£constant`currentcoordsys`, xpen=£§color£constant`invisible`, ypen=£§color£constant`red`);
+
+£§color£type`point` £§color£variable-name`A`=(-1,-3), £§color£variable-name`B`=(5,2);
+£§color£type`line` £§color£variable-name`l1`=£§color£function-name`line`(A,B); £§color£function-name`draw`(l1, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£function-name`dot`(£§color£string`"$A$"`, A, £§color£constant`SE`); £§color£function-name`dot`(£§color£string`"$B$"`, B, £§color£constant`NW`);
+£§color£type`point` £§color£constant`M`=(3,-3); £§color£function-name`dot`(£§color£string`"$M$"`, £§color£constant`M`);
+
+£§color£type`point` £§color£variable-name`P`=£§color£function-name`projection`(l1)*£§color£constant`M`;
+£§color£function-name`dot`(£§color£string`"$P$"`, P, 2£§color£constant`W`); £§color£function-name`draw`(£§color£constant`M`--P);
+£§color£function-name`markrightangle`(l1.A, P, £§color£constant`M`);
+
+£§color£type`point` £§color£variable-name`Q`=£§color£function-name`vprojection`(l1)*£§color£constant`M`;
+£§color£function-name`dot`(£§color£string`"$Q$"`, Q, 2£§color£constant`W`); £§color£function-name`draw`(£§color£constant`M`--Q);
+
+£§color£type`point` £§color£variable-name`R`=£§color£function-name`hprojection`(l1)*£§color£constant`M`;
+£§color£function-name`dot`(£§color£string`"$R$"`, R, 2£§color£constant`W`); £§color£function-name`draw`(£§color£constant`M`--R);
+
+£§color£type`point` £§color£constant`S`=£§color£function-name`projection`(l1,£§color£function-name`line`((0,0),(0,1)))*£§color£constant`M`;
+£§color£function-name`dot`(£§color£string`"$S$"`, £§color£constant`S`, 2£§color£constant`W`); £§color£function-name`draw`(£§color£constant`M`--£§color£constant`S`, £§color£constant`red`);
+£§color£function-name`draw`(£§color£function-name`box`((-1,-4),(5,5)), £§color£constant`invisible`);

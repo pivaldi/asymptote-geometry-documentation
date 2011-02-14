@@ -1,0 +1,13 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="type">coordsys</span> <span class="variable-name">R</span>=<span class="function-name">cartesiansystem</span>(O=(1,2), i=(1,0.5), j=(-1,1));
+<span class="function-name">show</span>(R);
+
+<span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">i</span>=0; i &lt; 360; i += 10) {
+  <span class="type">pen</span> <span class="constant">p</span>=(i/360)*<span class="constant">red</span>;
+  <span class="function-name">dot</span>(<span class="function-name">point</span>(R, R.<span class="function-name">polar</span>(1,<span class="function-name">radians</span>(i))), <span class="constant">p</span>);
+}
+
+<span class="type">point</span> <span class="variable-name">A</span>=<span class="function-name">point</span>(R, R.<span class="function-name">polar</span>(1,<span class="function-name">radians</span>(40)));
+<span class="function-name">draw</span>((<span class="type">string</span>)<span class="function-name">abs</span>(A), R.O--A);
+

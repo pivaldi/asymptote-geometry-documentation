@@ -1,0 +1,9 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="type">coordsys</span> <span class="variable-name">R</span>=<span class="function-name">cartesiansystem</span>((2,1), i=(1,1), j=(-1,1));
+
+<span class="function-name">show</span>(<span class="string">"$O'$"</span>,<span class="string">"$\vec{u}$"</span>, <span class="string">"$\vec{v}$"</span>, R, xpen=<span class="constant">invisible</span>);
+<span class="function-name">show</span>(<span class="string">"$O''$"</span>,<span class="string">"$\vec{u'}$"</span>, <span class="string">"$\vec{v'}$"</span>,
+     <span class="function-name">rotate</span>(90)*R, xpen=<span class="constant">invisible</span>);
+<span class="function-name">show</span>(<span class="constant">defaultcoordsys</span>);
+

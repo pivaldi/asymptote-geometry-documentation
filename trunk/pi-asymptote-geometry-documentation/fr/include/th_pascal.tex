@@ -1,0 +1,23 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6.5£§color£constant`cm`,0);
+£§color£function-name`draw`(£§color£constant`unitcircle`, £§color£constant`grey`);
+£§color£type`point`[] P;
+£§color£type`real`[] a=£§color£builtin`new` £§color£type`real`[]{0, 20, 60, 90, 240, 280};
+£§color£type`real` £§color£variable-name`cor`=24.0036303043338;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 6; ++i) {
+  P.push((£§color£function-name`Cos`(a[i]-cor),£§color£function-name`Sin`(a[i]-cor)));
+}
+£§color£type`pen`[] £§color£constant`p`=£§color£builtin`new` £§color£type`pen`[] {0.8*£§color£constant`blue`, 0.8*£§color£constant`yellow`, 0.8*£§color£constant`green`};
+£§color£type`line`[] l;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 6; ++i) {
+  l.push(£§color£function-name`line`(P[i],P[(i+1)%6]));
+  £§color£function-name`draw`(l[i], £§color£constant`p`[i%3]);
+  £§color£function-name`draw`(P[i]--P[(i+1)%6], £§color£function-name`linewidth`(£§color£constant`bp`));
+}
+£§color£type`point`[] inter;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 3; ++i) {
+  inter.push(£§color£function-name`intersectionpoint`(l[i],l[(i+3)%6]));
+  £§color£function-name`dot`(inter[i], 1.5*£§color£function-name`dotsize`()+0.8*£§color£constant`red`);
+}
+£§color£function-name`draw`(£§color£function-name`line`(inter[0],inter[1]), £§color£constant`bp`+0.8*£§color£constant`red`);
+£§color£function-name`draw`(£§color£function-name`box`((-1,-2.722), (2.229,2.905)), £§color£constant`invisible`);

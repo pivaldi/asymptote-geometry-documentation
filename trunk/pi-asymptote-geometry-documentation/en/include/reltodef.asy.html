@@ -1,0 +1,12 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="type">coordsys</span> <span class="variable-name">R</span>=<span class="function-name">cartesiansystem</span>((2,1), i=(1,1), j=(-1,1));
+<span class="type">coordsys</span> <span class="variable-name">Rp</span>=<span class="function-name">cartesiansystem</span>((-2,-1), i=(-1,1),
+                            j=(-1,-1));
+<span class="type">pair</span> <span class="constant">M</span>=R*(1,1);
+<span class="function-name">dot</span>(<span class="string">"$M$"</span>, <span class="constant">M</span>);
+<span class="type">pair</span> <span class="variable-name">P</span>=Rp*(<span class="constant">M</span>/R);
+<span class="function-name">dot</span>(<span class="string">"$P$"</span>, P);
+<span class="function-name">show</span>(R, xpen=<span class="constant">invisible</span>);
+<span class="function-name">show</span>(<span class="string">"$O'$"</span>, <span class="string">"$\vec{u}$"</span>, <span class="string">"$\vec{v}$"</span>, Rp, xpen=<span class="constant">invisible</span>);
+

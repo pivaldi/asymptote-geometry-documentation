@@ -1,0 +1,32 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(12<span class="constant">cm</span>,0); <span class="function-name">draw</span>(<span class="function-name">Ox</span>()^^<span class="function-name">Oy</span>()); <span class="type">real</span> <span class="variable-name">a</span>=3, <span class="variable-name">b</span>=2;
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>(<span class="constant">origin</span>,a), <span class="variable-name">Cp</span>=<span class="function-name">circle</span>(<span class="constant">origin</span>,b);
+<span class="function-name">draw</span>(C, 0.8*<span class="constant">blue</span>); <span class="function-name">draw</span>(Cp, 0.8*<span class="constant">green</span>);
+
+<span class="type">transform</span> <span class="variable-name">T</span>=<span class="function-name">scale</span>(b/a,<span class="function-name">Ox</span>(),<span class="function-name">Oy</span>()), <span class="variable-name">Tp</span>=<span class="function-name">scale</span>(a/b,<span class="function-name">Oy</span>(),<span class="function-name">Ox</span>());
+<span class="type">ellipse</span> <span class="constant">e</span>=T*C; <span class="function-name">draw</span>(<span class="constant">e</span>, <span class="constant">bp</span>+0.8*<span class="constant">red</span>);
+
+<span class="type">point</span> <span class="variable-name">H</span>=(a/2,0), <span class="variable-name">Hp</span>=(0,-<span class="function-name">b</span>/2); <span class="function-name">dot</span>(<span class="string">"$H$"</span>, H, <span class="constant">S</span>); <span class="function-name">dot</span>(<span class="string">"$H'$"</span>, Hp);
+<span class="type">line</span> <span class="variable-name">L</span>=<span class="function-name">line</span>(H,<span class="builtin">false</span>,H+<span class="constant">N</span>), <span class="variable-name">Lp</span>=<span class="function-name">line</span>(Hp,<span class="builtin">false</span>,Hp+<span class="constant">W</span>);
+<span class="type">point</span> <span class="constant">M</span>=<span class="function-name">intersectionpoints</span>(L,C)[0], <span class="variable-name">NN</span>=<span class="function-name">intersectionpoints</span>(Lp,Cp)[0];
+<span class="type">point</span> <span class="variable-name">Mp</span>=T*<span class="constant">M</span>, <span class="variable-name">NNp</span>=Tp*NN; L=<span class="function-name">segment</span>(H,<span class="constant">M</span>); Lp=<span class="function-name">segment</span>(Hp,NNp);
+<span class="function-name">dot</span>(<span class="string">"$M$"</span>, <span class="constant">M</span>, <span class="constant">NE</span>); <span class="function-name">dot</span>(<span class="string">"$M'$"</span>, Mp, <span class="constant">NE</span>); <span class="function-name">dot</span>(<span class="string">"$N$"</span>, NN, <span class="constant">SW</span>); <span class="function-name">dot</span>(<span class="string">"$N'$"</span>, NNp, <span class="constant">NE</span>);
+<span class="function-name">draw</span>(L, <span class="constant">dashed</span>); <span class="function-name">draw</span>(Lp, <span class="constant">dashed</span>);
+
+<span class="type">segment</span> <span class="variable-name">SS</span>=<span class="function-name">segment</span>(<span class="constant">origin</span>,<span class="constant">M</span>), <span class="variable-name">SSp</span>=<span class="function-name">segment</span>(<span class="constant">origin</span>,NN);
+<span class="function-name">draw</span>(SS, 0.8*<span class="constant">blue</span>); <span class="function-name">draw</span>(SSp, 0.8*<span class="constant">green</span>);
+
+<span class="type">line</span> <span class="variable-name">tgM</span>=<span class="function-name">tangents</span>(C, <span class="constant">M</span>)[0]; <span class="type">point</span> <span class="variable-name">P</span>=<span class="function-name">intersectionpoint</span>(tgM,<span class="function-name">Ox</span>());
+<span class="function-name">draw</span>(tgM, 0.8*<span class="constant">blue</span>); <span class="function-name">dot</span>(<span class="string">"$P$"</span>, P, <span class="function-name">dir</span>(60));
+
+<span class="type">line</span> <span class="variable-name">tgN</span>=<span class="function-name">tangents</span>(Cp, NN)[0]; <span class="type">point</span> <span class="variable-name">Pp</span>=<span class="function-name">intersectionpoint</span>(tgN,<span class="function-name">Oy</span>());
+<span class="function-name">draw</span>(tgN, 0.8*<span class="constant">green</span>); <span class="function-name">dot</span>(<span class="string">"$P'$"</span>, Pp, <span class="function-name">dir</span>(30));
+
+<span class="function-name">perpendicularmark</span>(tgM,SS, 0.8*<span class="constant">blue</span>); <span class="function-name">perpendicularmark</span>(tgN,SSp, quarter=2, 0.8*<span class="constant">green</span>);
+
+<span class="type">line</span> <span class="variable-name">tgMp</span>=<span class="function-name">line</span>(P, Mp), <span class="variable-name">tgNp</span>=<span class="function-name">line</span>(Pp, NNp);
+<span class="function-name">draw</span>(tgMp, 0.8*<span class="constant">red</span>); <span class="function-name">draw</span>(tgNp, 0.8*<span class="constant">red</span>);
+
+<span class="function-name">draw</span>(Mp+2tgMp.u--Mp-2tgMp.u, <span class="constant">bp</span>+0.8*<span class="constant">red</span>, <span class="function-name">Arrows</span>(3<span class="constant">mm</span>));
+<span class="function-name">draw</span>(NNp+2tgNp.u--NNp-2tgNp.u, <span class="constant">bp</span>+0.8*<span class="constant">red</span>, <span class="function-name">Arrows</span>(3<span class="constant">mm</span>));
+<span class="function-name">addMargins</span>(5<span class="constant">mm</span>,5<span class="constant">mm</span>);
+

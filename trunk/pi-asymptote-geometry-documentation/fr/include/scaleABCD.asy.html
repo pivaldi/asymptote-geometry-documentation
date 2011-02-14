@@ -1,0 +1,22 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(6<span class="constant">cm</span>,0);
+<span class="type">pen</span> <span class="variable-name">bpp</span>=<span class="function-name">linewidth</span>(<span class="constant">bp</span>); <span class="type">real</span> <span class="variable-name">k</span>=<span class="function-name">sqrt</span>(2);
+<span class="type">point</span> <span class="variable-name">A</span>=(0,0), <span class="variable-name">B</span>=(2,0), <span class="variable-name">C</span>=(3.5,1);
+<span class="type">point</span> <span class="variable-name">D</span>=(4,2), <span class="constant">M</span>=(6,3);
+<span class="type">path</span> <span class="variable-name">cle</span>=<span class="function-name">shift</span>(1,2)*<span class="constant">unitcircle</span>;
+<span class="function-name">draw</span>(cle, bpp);
+<span class="function-name">draw</span>(<span class="function-name">line</span>(A,B));
+<span class="function-name">draw</span>(<span class="function-name">line</span>(C,D), <span class="constant">grey</span>);
+
+<span class="type">transform</span> <span class="variable-name">dilate</span>=<span class="function-name">scale</span>(k,A,B,C,D);
+<span class="function-name">draw</span>(dilate*cle, bpp+<span class="constant">red</span>);
+<span class="type">point</span> <span class="variable-name">Mp</span>=dilate*<span class="constant">M</span>;
+
+<span class="type">point</span> <span class="variable-name">P</span>=<span class="function-name">intersectionpoint</span>(<span class="function-name">line</span>(A,B), <span class="function-name">line</span>(<span class="constant">M</span>,Mp));
+<span class="function-name">draw</span>(<span class="function-name">line</span>(P,<span class="constant">M</span>), <span class="constant">grey</span>);
+<span class="function-name">dot</span>(<span class="string">"A"</span>, A, <span class="constant">S</span>); <span class="function-name">dot</span>(<span class="string">"B"</span>, B, <span class="constant">S</span>); <span class="function-name">dot</span>(<span class="string">"C"</span>, C);
+<span class="function-name">dot</span>(<span class="string">"D"</span>, D); <span class="function-name">dot</span>(<span class="string">"M"</span>, <span class="constant">M</span>, <span class="constant">W</span>); <span class="function-name">dot</span>(<span class="string">"P"</span>, P, <span class="constant">NW</span>);
+<span class="function-name">dot</span>(<span class="string">"M'"</span>, Mp, <span class="constant">W</span>, <span class="constant">red</span>);
+<span class="function-name">distance</span>(<span class="string">"$k\times PM$"</span>, P, Mp, 6<span class="constant">mm</span>, <span class="constant">grey</span>,
+         joinpen=<span class="constant">grey</span>+<span class="constant">dashed</span>);
+

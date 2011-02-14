@@ -1,0 +1,27 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(18<span class="constant">cm</span>,0); <span class="type">int</span> <span class="variable-name">shx</span>=18;
+<span class="type">circle</span> <span class="variable-name">C1</span>=<span class="function-name">circle</span>((0,0),2), <span class="variable-name">C2</span>=<span class="function-name">circle</span>((5,5), 3), <span class="variable-name">C3</span>=<span class="function-name">circle</span>((6,-2),1);
+<span class="type">picture</span> <span class="variable-name">disc</span>;
+<span class="function-name">fill</span>(disc,(<span class="type">path</span>)C1); <span class="function-name">fill</span>(disc,(<span class="type">path</span>)C2); <span class="function-name">fill</span>(disc,(<span class="type">path</span>)C3);
+<span class="type">transform</span> <span class="variable-name">tv</span>=<span class="function-name">shift</span>(<span class="constant">S</span>), <span class="variable-name">th</span>=<span class="function-name">shift</span>(<span class="constant">E</span>);
+<span class="type">int</span> <span class="variable-name">k</span>=0, <span class="variable-name">l</span>=0;
+<span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">i</span>=0; i &lt; 2 ; ++i)
+  <span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">j</span>=0; j &lt; 2; ++j) {
+    <span class="type">picture</span>[]  tpic; tpic[0]=<span class="builtin">new</span> <span class="type">picture</span>; tpic[1]=<span class="builtin">new</span> <span class="type">picture</span>;
+    <span class="function-name">add</span>(tpic[0], disc); <span class="function-name">add</span>(tpic[1], disc);
+    <span class="type">inversion</span> <span class="constant">S</span>1=<span class="function-name">inversion</span>(C2,C3, <span class="function-name">sgnd</span>(i-1)), <span class="constant">S</span>2=<span class="function-name">inversion</span>(C1,C3, <span class="function-name">sgnd</span>(j-1));
+    <span class="type">line</span> <span class="variable-name">cl</span>=<span class="function-name">line</span>(<span class="constant">S</span>1.C,<span class="constant">S</span>2.C);
+    <span class="type">point</span> <span class="constant">M</span>=<span class="function-name">relpoint</span>(C3,0.125), <span class="constant">M</span>2=<span class="constant">S</span>2*<span class="constant">M</span>, <span class="constant">M</span>1=<span class="constant">S</span>1*<span class="constant">M</span>;
+    <span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>(<span class="constant">M</span>,<span class="constant">M</span>2,<span class="constant">M</span>1);
+    <span class="type">line</span> <span class="variable-name">L</span>=<span class="function-name">radicalline</span>(C,C3);
+    <span class="type">point</span> <span class="variable-name">H</span>=<span class="function-name">intersectionpoint</span>(L,cl);
+    <span class="type">circle</span> <span class="variable-name">Cp</span>=<span class="function-name">circle</span>(H,C3.C);
+    <span class="type">point</span>[] T=<span class="function-name">intersectionpoints</span>(Cp,C3);
+    <span class="type">point</span>[][] Tp= <span class="builtin">new</span> <span class="type">point</span>[][] {{<span class="constant">S</span>2*T[0], <span class="constant">S</span>1*T[0]},{<span class="constant">S</span>2*T[1], <span class="constant">S</span>1*T[1]}};
+    <span class="function-name">draw</span>(tpic[0], <span class="function-name">circle</span>(T[0],<span class="type">Tp</span>[0][0],<span class="type">Tp</span>[0][1]), <span class="constant">bp</span>+0.8*<span class="constant">red</span>);
+    <span class="function-name">draw</span>(tpic[1], <span class="function-name">circle</span>(T[1],<span class="type">Tp</span>[1][0],<span class="type">Tp</span>[1][1]), <span class="constant">bp</span>+0.8*<span class="constant">red</span>);
+    <span class="function-name">add</span>(tv^(shx*(i+1))*th^(shx*(l))*tpic[0]);
+    l=(l+2)%4; ++k;
+    <span class="function-name">add</span>(tv^(shx*(i+1))*th^(shx*(l+1))*tpic[1]);
+  }
+

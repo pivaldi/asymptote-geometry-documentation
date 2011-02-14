@@ -1,0 +1,9 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="constant">currentcoordsys</span>=<span class="function-name">cartesiansystem</span>((0,0),i=(1,1),j=(-1,1));
+<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>, xpen=<span class="constant">invisible</span>);
+
+<span class="type">vector</span> <span class="variable-name">u</span>=(0.5,1), <span class="variable-name">v</span>=<span class="function-name">rotate</span>(-135)*u/2;
+<span class="function-name">show</span>(<span class="string">"$\vec{u}$"</span>, u); <span class="function-name">show</span>(<span class="string">"$\vec{v}$"</span>, v);
+<span class="function-name">show</span>(<span class="function-name">Label</span>(<span class="string">"$\vec{u}+\vec{v}$"</span>,<span class="constant">EndPoint</span>), u+v);
+

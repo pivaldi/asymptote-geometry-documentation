@@ -1,0 +1,19 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(7.5<span class="constant">cm</span>,0);
+<span class="type">pen</span> <span class="variable-name">bpp</span>=<span class="function-name">linewidth</span>(<span class="constant">bp</span>); <span class="type">real</span> <span class="variable-name">k</span>=<span class="function-name">sqrt</span>(2);
+
+<span class="type">point</span> <span class="variable-name">A</span>=(0,0); <span class="function-name">dot</span>(<span class="string">"A"</span>, A, <span class="constant">SW</span>);
+<span class="type">point</span> <span class="variable-name">B</span>=(1,2); <span class="function-name">dot</span>(<span class="string">"B"</span>, B, <span class="constant">N</span>);
+<span class="type">point</span> <span class="constant">M</span>=(-1,1);
+<span class="function-name">dot</span>(<span class="string">"M"</span>, <span class="constant">M</span>, -<span class="function-name">dir</span>(<span class="constant">M</span>--A,<span class="constant">M</span>--B));
+
+<span class="type">point</span> <span class="variable-name">Ap</span>=<span class="function-name">scale</span>(k, <span class="constant">M</span>)*A;
+<span class="function-name">dot</span>(<span class="string">"A'"</span>, Ap, <span class="constant">SW</span>, <span class="constant">red</span>);
+<span class="type">point</span> <span class="variable-name">Bp</span>=<span class="function-name">scale</span>(k, <span class="constant">M</span>)*B;
+<span class="function-name">dot</span>(<span class="string">"B'"</span>, Bp, <span class="constant">N</span>, <span class="constant">red</span>);
+
+<span class="function-name">draw</span>(<span class="constant">M</span>--Ap, <span class="constant">grey</span>); <span class="function-name">draw</span>(<span class="constant">M</span>--Bp, <span class="constant">grey</span>);
+<span class="function-name">draw</span>(A--B, bpp);
+<span class="function-name">draw</span>(<span class="function-name">rotate</span>(<span class="function-name">unit</span>(Bp-Ap))*<span class="string">"$k\times AB$"</span>,
+     Ap--Bp, bpp+<span class="constant">red</span>);
+

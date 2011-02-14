@@ -1,0 +1,17 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(6<span class="constant">cm</span>,0);
+<span class="constant">currentcoordsys</span>=<span class="function-name">cartesiansystem</span>((0,0), i=(1,0.5),
+                                j=(-0.5,.75));
+<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>, xpen=<span class="constant">invisible</span>);
+
+<span class="type">point</span> <span class="variable-name">A</span>=(2.5,2); <span class="function-name">dot</span>(<span class="string">"$A$"</span>, A, <span class="constant">S</span>, <span class="constant">red</span>);
+<span class="type">real</span> <span class="variable-name">R</span>=2;
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>(A,R);
+<span class="function-name">draw</span>(C, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+
+<span class="function-name">dot</span>(<span class="string">"relpoint(C, 0)"</span>, <span class="function-name">relpoint</span>(C,0), 2<span class="constant">W</span>);
+<span class="function-name">dot</span>(<span class="string">"relpoint(C, 0.25)"</span>, <span class="function-name">relpoint</span>(C,0.25), 2<span class="constant">SE</span>);
+<span class="function-name">dot</span>(<span class="string">"relpoint(C, 0.5)"</span>, <span class="function-name">relpoint</span>(C,0.5), 2<span class="constant">E</span>);
+<span class="function-name">dot</span>(<span class="string">"relpoint(C, -0.25)"</span>, <span class="function-name">relpoint</span>(C, -0.25), 2<span class="constant">NW</span>);
+<span class="function-name">dot</span>(<span class="string">"relpoint(C, 1.125)"</span>, <span class="function-name">relpoint</span>(C, 1.125), 2<span class="constant">N</span>);
+

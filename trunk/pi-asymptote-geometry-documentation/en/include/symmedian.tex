@@ -1,0 +1,14 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`,0);
+£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangle`((-1,0), (2,0), (0,2)); £§color£function-name`drawline`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£function-name`label`(t,alignFactor=2, alignAngle=90);
+£§color£type`triangle` £§color£variable-name`st`=£§color£function-name`symmedial`(t); £§color£function-name`draw`(st, £§color£constant`bp`+0.8£§color£constant`green`);
+£§color£function-name`label`(£§color£string`"$A'$"`, £§color£string`"$B'$"`, £§color£string`"$C'$"`, st, alignAngle=45, 0.8£§color£constant`green`);
+£§color£type`line` £§color£variable-name`mA`=£§color£function-name`median`(t.VA); £§color£function-name`draw`(mA, £§color£constant`blue`); £§color£function-name`dot`(£§color£string`"$M_A$"`,£§color£function-name`midpoint`(t.BC), 1.5£§color£constant`E`, £§color£constant`blue`);
+£§color£function-name`draw`(£§color£function-name`segment`(t.BC), £§color£constant`bp`+£§color£constant`blue`, £§color£function-name`StickIntervalMarker`(2,2,£§color£constant`blue`));
+£§color£type`line` £§color£variable-name`bA`=£§color£function-name`bisector`(t.VA); £§color£function-name`draw`(bA, £§color£constant`grey`); £§color£function-name`dot`(£§color£string`"$B_A$"`, £§color£function-name`bisectorpoint`(t.BC));
+£§color£type`line` £§color£variable-name`sA`=£§color£function-name`symmedian`(t.VA); £§color£function-name`draw`(sA, 0.8*£§color£constant`green`);
+£§color£function-name`draw`(£§color£function-name`symmedian`(t.VB), 0.8*£§color£constant`green`); £§color£function-name`draw`(£§color£function-name`symmedian`(t.VC), 0.8*£§color£constant`green`);
+£§color£type`point` £§color£variable-name`sP`=£§color£function-name`symmedian`(t); £§color£function-name`dot`(£§color£string`"$K$"`, sP, 2*£§color£function-name`dir`(125));
+£§color£function-name`markangle`(sA, t.AC, radius=2£§color£constant`cm`, £§color£function-name`StickIntervalMarker`(1,1));
+£§color£function-name`markangle`(t.AB, mA, radius=2£§color£constant`cm`, £§color£function-name`StickIntervalMarker`(1,1));
+£§color£function-name`markangle`(mA, sA, radius=10£§color£constant`cm`, £§color£function-name`StickIntervalMarker`(2,2));

@@ -1,0 +1,10 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`,0);
+£§color£constant`currentcoordsys`=£§color£function-name`rotate`(20)*£§color£constant`defaultcoordsys`;
+£§color£type`point` £§color£variable-name`C`=(1,1); £§color£function-name`dot`(C);
+£§color£type`ellipse` £§color£variable-name`el`=£§color£function-name`ellipse`(C,2,1); £§color£function-name`draw`(el, £§color£constant`grey`);
+£§color£type`arc` £§color£variable-name`AE`=£§color£function-name`arc`(el, 45, 180, fromCenter); £§color£function-name`draw`(AE, £§color£function-name`linewidth`(£§color£constant`bp`), £§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£function-name`draw`(£§color£function-name`scale`(0.5,C)*AE, £§color£constant`bp`+0.8£§color£constant`red`, £§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£function-name`draw`(£§color£function-name`scale`(-0.5,C)*AE, £§color£constant`bp`+0.8£§color£constant`blue`,£§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£function-name`draw`(£§color£function-name`scale`(1.1,C)*AE, £§color£constant`bp`+0.8*£§color£constant`yellow`, £§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£type`transform` £§color£variable-name`t`=£§color£function-name`scale`(-0.5,£§color£function-name`line`(el.F1,el.F2), £§color£function-name`line`(£§color£constant`S`,£§color£constant`N`));
+£§color£function-name`draw`(t*AE, £§color£constant`bp`+0.8(£§color£constant`red`+£§color£constant`blue`), £§color£function-name`Arrow`(3£§color£constant`mm`));

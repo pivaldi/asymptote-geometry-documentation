@@ -1,0 +1,21 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(0,10<span class="constant">cm</span>);
+<span class="type">pen</span> <span class="variable-name">bl</span>=0.8<span class="constant">blue</span>, <span class="variable-name">re</span>=0.8*<span class="constant">red</span>;
+<span class="function-name">draw</span>(<span class="function-name">box</span>((-2.25,-1.5),(-0.75,1)), <span class="constant">invisible</span>);
+<span class="type">hyperbola</span> <span class="variable-name">h</span>=<span class="function-name">hyperbola</span>(<span class="constant">origin</span>,1.2,1);
+<span class="function-name">draw</span>((<span class="type">path</span>)h, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="function-name">draw</span>(<span class="string">"directrix"</span>, h.D1); <span class="function-name">dot</span>(<span class="string">"$F_1$"</span>, h.F1, <span class="constant">NW</span>);
+
+<span class="type">line</span> <span class="constant">axis</span>=<span class="function-name">line</span>(h.F1,h.F2); <span class="function-name">draw</span>(<span class="constant">axis</span>);
+<span class="type">point</span> <span class="constant">M</span>=<span class="function-name">point</span>(h,<span class="function-name">angabscissa</span>(70)); <span class="function-name">dot</span>(<span class="constant">M</span>, bl);
+<span class="type">line</span> <span class="variable-name">tgt</span>=<span class="function-name">tangent</span>(h,<span class="function-name">angabscissa</span>(70)); <span class="function-name">draw</span>(tgt, <span class="constant">bp</span>+bl);
+<span class="type">point</span> <span class="variable-name">P</span>=<span class="function-name">intersectionpoint</span>(tgt,h.D1); <span class="function-name">dot</span>(P, bl);
+<span class="function-name">draw</span>(P--h.F1--<span class="constant">M</span>, <span class="constant">grey</span>); <span class="function-name">markrightangle</span>(P,h.F1,<span class="constant">M</span>, <span class="constant">grey</span>);
+
+<span class="type">line</span> <span class="variable-name">lr</span>=<span class="function-name">perpendicular</span>(h.F1, <span class="constant">axis</span>); <span class="function-name">draw</span>(lr);
+<span class="type">point</span>[] plr=<span class="function-name">intersectionpoints</span>(h,lr);
+<span class="function-name">dot</span>(plr, re);
+<span class="function-name">distance</span>(<span class="function-name">Label</span>(<span class="string">"latus rectum"</span>,<span class="function-name">Fill</span>(<span class="constant">white</span>)),
+         plr[0], plr[1], -2<span class="constant">cm</span>, <span class="constant">grey</span>, <span class="constant">dotted</span>);
+<span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">i</span>=0; i &lt; 2; ++i) {
+  <span class="function-name">draw</span>(<span class="function-name">tangents</span>(h,plr[i])[0], <span class="constant">bp</span>+re); }
+

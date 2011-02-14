@@ -1,0 +1,8 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(4£§color£constant`cm`,0);
+£§color£type`coordsys` £§color£variable-name`R`=£§color£function-name`cartesiansystem`((2,1), i=(1,1), j=(-1,1));
+
+£§color£function-name`show`(£§color£string`"$O'$"`,£§color£string`"$\vec{u}$"`, £§color£string`"$\vec{v}$"`, R, xpen=£§color£constant`invisible`);
+£§color£function-name`show`(£§color£string`"$O''$"`,£§color£string`"$\vec{u'}$"`, £§color£string`"$\vec{v'}$"`,
+     £§color£function-name`rotate`(90)*R, xpen=£§color£constant`invisible`);
+£§color£function-name`show`(£§color£constant`defaultcoordsys`);

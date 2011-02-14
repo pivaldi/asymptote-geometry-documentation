@@ -1,0 +1,9 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(4£§color£constant`cm`,0);
+£§color£constant`currentcoordsys`=£§color£function-name`cartesiansystem`((1.25,0.75), i=(1,1), j=(-1,1));
+£§color£type`coordsys` £§color£variable-name`Rp`=£§color£constant`currentcoordsys`; £§color£type`coordsys` £§color£variable-name`R`=£§color£constant`defaultcoordsys`;
+£§color£function-name`show`(R);
+£§color£function-name`show`(£§color£string`"$O'$"`,£§color£string`"$\vec{u}$"`,£§color£string`"$\vec{v}$"`, Rp, xpen=£§color£constant`invisible`);
+£§color£type`point` £§color£variable-name`P`=(0.75,0.5); £§color£function-name`dot`(£§color£string`"$P$"`,P); £§color£type`vector` £§color£variable-name`w`=P;
+£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`);
+£§color£function-name`draw`(£§color£string`"$\vec{w}$"`, £§color£function-name`origin`()--£§color£function-name`origin`()+£§color£function-name`w`, £§color£constant`W`, bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£function-name`draw`(£§color£string`"$\vec{w}$"`, £§color£constant`origin`--£§color£function-name`locate`(w), £§color£constant`E`, bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));

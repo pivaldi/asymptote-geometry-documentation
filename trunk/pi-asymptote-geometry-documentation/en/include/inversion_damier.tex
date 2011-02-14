@@ -1,0 +1,14 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(10£§color£constant`cm`,0);
+£§color£type`int` £§color£variable-name`n`=12; £§color£type`segment`[] £§color£constant`S`;
+£§color£type`inversion` £§color£variable-name`inv`=£§color£function-name`inversion`(1,(n/2+0.45,n/2+0.45));
+£§color£type`transform` £§color£variable-name`tv`=£§color£function-name`shift`(0,1), £§color£variable-name`th`=£§color£function-name`shift`(1,0);
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < n; ++i)
+  £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=0; j < n; ++j) {
+    £§color£builtin`for` (£§color£type`int` £§color£variable-name`l`=0; l < 4 ; ++l)
+      £§color£constant`S`[l]=£§color£function-name`segment`(£§color£function-name`point`(tv^i*th^j*£§color£constant`unitsquare`,l), £§color£function-name`point`(tv^i*th^j*£§color£constant`unitsquare`,(l+1)%4));
+    £§color£type`path` £§color£variable-name`g`;
+    £§color£builtin`for` (£§color£type`int` £§color£variable-name`l`=0; l < 4; ++l) g=g--(£§color£type`path`)(inv*£§color£constant`S`[l]);
+    g=g--£§color£builtin`cycle`;
+    £§color£keyword`if`((i+j)%2 == 0)  £§color£function-name`draw`(g); £§color£builtin`else` £§color£function-name`fill`(g);
+  }

@@ -1,0 +1,1 @@
+    circle incircle(triangle t)

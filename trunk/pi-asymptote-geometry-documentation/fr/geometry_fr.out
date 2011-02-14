@@ -1,0 +1,80 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [2][-]{subsection.1.1}{Liste des types d'objets}{section.1}
+\BOOKMARK [2][-]{subsection.1.2}{Fonctionnement interne}{section.1}
+\BOOKMARK [2][-]{subsection.1.3}{Index et exemples externes \340 ce document}{section.1}
+\BOOKMARK [2][-]{subsection.1.4}{Conversion automatique des types \(\253casting\273\)}{section.1}
+\BOOKMARK [1][-]{section.2}{Syst\350mes de coordonn\351es}{}
+\BOOKMARK [2][-]{subsection.2.1}{Le type coordsys}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{D\351finir un syst\350me de coordonn\351es}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Changer un objet pair de rep\350re}{section.2}
+\BOOKMARK [2][-]{subsection.2.4}{Autres routines}{section.2}
+\BOOKMARK [1][-]{section.3}{Points et vecteurs}{}
+\BOOKMARK [2][-]{subsection.3.1}{Les points}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Principes de base}{subsection.3.1}
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Autres routines}{subsection.3.1}
+\BOOKMARK [2][-]{subsection.3.2}{Les vecteurs}{section.3}
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Principes de base}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.2}{\253Casting\273 vector/point}{subsection.3.2}
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Autres routines}{subsection.3.2}
+\BOOKMARK [1][-]{section.4}{Points massiques}{}
+\BOOKMARK [2][-]{subsection.4.1}{Principes de base}{section.4}
+\BOOKMARK [2][-]{subsection.4.2}{Autres routines}{section.4}
+\BOOKMARK [1][-]{section.5}{Transformations affines \(partie 1\)}{}
+\BOOKMARK [2][-]{subsection.5.1}{Transformations ind\351pendantes du rep\350re courant}{section.5}
+\BOOKMARK [2][-]{subsection.5.2}{Transformations d\351pendantes du rep\350re courant}{section.5}
+\BOOKMARK [1][-]{section.6}{Droites, demi-droites et segments}{}
+\BOOKMARK [2][-]{subsection.6.1}{Le type line}{section.6}
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Droites d\351finies par deux points, routines de base}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Droites d\351finies par \351quations}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Droites et parall\351lisme}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Droites et angles}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.5}{Droites et op\351rateurs}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.6}{Autres routines}{subsection.6.1}
+\BOOKMARK [3][-]{subsubsection.6.1.7}{Droites et marqueurs}{subsection.6.1}
+\BOOKMARK [2][-]{subsection.6.2}{Le type segment}{section.6}
+\BOOKMARK [1][-]{section.7}{Transformations affines \(partie 2\)}{}
+\BOOKMARK [1][-]{section.8}{Coniques}{}
+\BOOKMARK [2][-]{subsection.8.1}{Le type \253conic\273}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.1.1}{Description}{subsection.8.1}
+\BOOKMARK [3][-]{subsubsection.8.1.2}{Routines de base}{subsection.8.1}
+\BOOKMARK [3][-]{subsubsection.8.1.3}{Op\351rateurs}{subsection.8.1}
+\BOOKMARK [3][-]{subsubsection.8.1.4}{\311quations de coniques}{subsection.8.1}
+\BOOKMARK [3][-]{subsubsection.8.1.5}{Coniques et casting}{subsection.8.1}
+\BOOKMARK [2][-]{subsection.8.2}{Cercles}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.2.1}{Routines de bases}{subsection.8.2}
+\BOOKMARK [3][-]{subsubsection.8.2.2}{Du type \253circle\273 au type \253path\273}{subsection.8.2}
+\BOOKMARK [3][-]{subsubsection.8.2.3}{Les op\351rateurs}{subsection.8.2}
+\BOOKMARK [3][-]{subsubsection.8.2.4}{Autres routines}{subsection.8.2}
+\BOOKMARK [2][-]{subsection.8.3}{Ellipses}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.3.1}{Routines de bases}{subsection.8.3}
+\BOOKMARK [3][-]{subsubsection.8.3.2}{Du type \253ellipse\273 au type \253path\273}{subsection.8.3}
+\BOOKMARK [3][-]{subsubsection.8.3.3}{Autres routines}{subsection.8.3}
+\BOOKMARK [2][-]{subsection.8.4}{Paraboles}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.4.1}{Routines de bases}{subsection.8.4}
+\BOOKMARK [3][-]{subsubsection.8.4.2}{Du type \253parabola\273 au type \253path\273}{subsection.8.4}
+\BOOKMARK [3][-]{subsubsection.8.4.3}{Autres routines}{subsection.8.4}
+\BOOKMARK [2][-]{subsection.8.5}{Hyperboles}{section.8}
+\BOOKMARK [3][-]{subsubsection.8.5.1}{Routines de bases}{subsection.8.5}
+\BOOKMARK [3][-]{subsubsection.8.5.2}{Du type \253hyperbola\273 au type \253path\273}{subsection.8.5}
+\BOOKMARK [3][-]{subsubsection.8.5.3}{Autres routines}{subsection.8.5}
+\BOOKMARK [1][-]{section.9}{Arcs}{}
+\BOOKMARK [2][-]{subsection.9.1}{Du type \253arc\273 au type \253path\273}{section.9}
+\BOOKMARK [2][-]{subsection.9.2}{Les op\351rateurs}{section.9}
+\BOOKMARK [2][-]{subsection.9.3}{Autres routines}{section.9}
+\BOOKMARK [1][-]{section.10}{Abscisses}{}
+\BOOKMARK [2][-]{subsection.10.1}{D\351finir une abscisse}{section.10}
+\BOOKMARK [2][-]{subsection.10.2}{R\351cup\351rer une abscisse d'un point}{section.10}
+\BOOKMARK [2][-]{subsection.10.3}{Op\351rateurs}{section.10}
+\BOOKMARK [1][-]{section.11}{Triangles}{}
+\BOOKMARK [2][-]{subsection.11.1}{La structure}{section.11}
+\BOOKMARK [2][-]{subsection.11.2}{D\351finir et tracer un triangle}{section.11}
+\BOOKMARK [2][-]{subsection.11.3}{Sommets de triangles}{section.11}
+\BOOKMARK [2][-]{subsection.11.4}{C\364t\351s de triangles}{section.11}
+\BOOKMARK [2][-]{subsection.11.5}{Op\351rateurs}{section.11}
+\BOOKMARK [2][-]{subsection.11.6}{Autres routines}{section.11}
+\BOOKMARK [2][-]{subsection.11.7}{Coordonn\351es trilin\351aires}{section.11}
+\BOOKMARK [1][-]{section.12}{Inversions}{}
+\BOOKMARK [2][-]{subsection.12.1}{D\351finir une inversion}{section.12}
+\BOOKMARK [2][-]{subsection.12.2}{Appliquer une inversion}{section.12}
+\BOOKMARK [2][-]{subsection.12.3}{Exemples}{section.12}
+\BOOKMARK [1][-]{section.13}{Index}{}

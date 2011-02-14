@@ -1,0 +1,9 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="constant">ellipsenodesnumberfactor</span>=100;
+<span class="type">point</span> <span class="variable-name">A</span>=(1,1); <span class="function-name">dot</span>(<span class="string">"$A$"</span>,A,<span class="constant">S</span>,<span class="constant">red</span>);
+<span class="type">ellipse</span> <span class="variable-name">EL</span>=<span class="function-name">ellipse</span>(A,2,1);
+<span class="function-name">dot</span>((<span class="type">path</span>)<span class="function-name">arc</span>(EL, 210, 45, fromCenter));
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>(A,2);
+<span class="function-name">dot</span>((<span class="type">path</span>)<span class="function-name">arc</span>(C, 210, 45));
+

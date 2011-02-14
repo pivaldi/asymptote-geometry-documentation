@@ -1,0 +1,1 @@
+    point bisectorpoint(side side)

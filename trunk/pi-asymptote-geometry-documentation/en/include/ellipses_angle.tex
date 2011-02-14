@@ -1,0 +1,14 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(8£§color£constant`cm`);
+
+£§color£constant`currentcoordsys`=£§color£function-name`rotate`(20)*£§color£constant`defaultcoordsys`;
+£§color£function-name`show`(£§color£constant`currentcoordsys`);
+
+£§color£type`ellipse` £§color£constant`e`0=£§color£function-name`ellipse`((0,0), 3, 1);
+£§color£function-name`draw`(£§color£constant`e`0, £§color£function-name`linewidth`(£§color£constant`bp`), Arrow);
+
+£§color£type`ellipse` £§color£constant`e`1=£§color£function-name`ellipse`((0,0), 3, 1, 45);
+£§color£function-name`draw`(£§color£constant`e`1, £§color£constant`bp`+0.8*£§color£constant`red`, Arrow);
+
+£§color£type`ellipse` £§color£constant`e`2=£§color£function-name`ellipse`((0,0), 1, 3, 45);
+£§color£function-name`draw`(£§color£constant`e`2, £§color£constant`bp`+0.8*£§color£constant`blue`, Arrow);

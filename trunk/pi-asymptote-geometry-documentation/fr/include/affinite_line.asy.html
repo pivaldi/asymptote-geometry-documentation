@@ -1,0 +1,15 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(6.5<span class="constant">cm</span>,0);
+<span class="type">pen</span> <span class="variable-name">bpp</span>=<span class="function-name">linewidth</span>(<span class="constant">bp</span>);
+<span class="type">line</span> <span class="variable-name">AB</span>=<span class="function-name">line</span>(<span class="constant">origin</span>, <span class="constant">E</span>), <span class="variable-name">CD</span>=<span class="function-name">line</span>(2*<span class="constant">NE</span>+<span class="constant">N</span>, 2*<span class="constant">NE</span>+<span class="constant">SE</span>);
+<span class="function-name">draw</span>(AB, bpp); <span class="function-name">draw</span>(CD, bpp);
+
+<span class="type">transform</span> <span class="variable-name">dilatation</span>=<span class="function-name">scale</span>(1.5,AB,CD);
+
+<span class="type">path</span> <span class="variable-name">cle</span>=<span class="function-name">shift</span>(<span class="constant">NE</span>)*<span class="constant">unitcircle</span>;
+<span class="function-name">draw</span>(cle,bpp);
+
+<span class="function-name">draw</span>(dilatation*cle, 0.8*<span class="constant">red</span>+bpp);
+<span class="function-name">draw</span>(<span class="function-name">inverse</span>(dilatation)*cle, 0.8*<span class="constant">blue</span>+bpp);
+<span class="function-name">draw</span>(<span class="function-name">box</span>((-0.5,-0.5), (2.75,3)), <span class="constant">invisible</span>);
+

@@ -1,0 +1,11 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(4£§color£constant`cm`,0);
+£§color£type`coordsys` £§color£variable-name`R`=£§color£function-name`cartesiansystem`((2,1), i=(1,1), j=(-1,1));
+£§color£type`coordsys` £§color£variable-name`Rp`=£§color£function-name`cartesiansystem`((-2,-1), i=(-1,1),
+                            j=(-1,-1));
+£§color£type`pair` £§color£constant`M`=R*(1,1);
+£§color£function-name`dot`(£§color£string`"$M$"`, £§color£constant`M`);
+£§color£type`pair` £§color£variable-name`P`=Rp*(£§color£constant`M`/R);
+£§color£function-name`dot`(£§color£string`"$P$"`, P);
+£§color£function-name`show`(R, xpen=£§color£constant`invisible`);
+£§color£function-name`show`(£§color£string`"$O'$"`, £§color£string`"$\vec{u}$"`, £§color£string`"$\vec{v}$"`, Rp, xpen=£§color£constant`invisible`);

@@ -1,0 +1,16 @@
+£§color£function-name`size`(8£§color£constant`cm`);
+£§color£builtin`import` geometry;
+
+£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangleabc`(3,4,6);
+£§color£function-name`drawline`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£type`line` £§color£variable-name`hc`=£§color£function-name`altitude`(t.AB), £§color£variable-name`hb`=£§color£function-name`altitude`(t.AC);
+£§color£type`line` £§color£variable-name`ha`=£§color£function-name`altitude`(t.BC); £§color£function-name`draw`(hc^^hb^^ha);
+£§color£function-name`dot`(£§color£string`"H"`, £§color£function-name`orthocentercenter`(t));
+
+£§color£function-name`perpendicularmark`(t.AB,hc,quarter=-1);
+£§color£function-name`perpendicularmark`(t.AC,hb,quarter=-1);
+£§color£function-name`perpendicularmark`(t.BC,ha);
+
+£§color£type`triangle` £§color£variable-name`ort`=£§color£function-name`orthic`(t);
+£§color£function-name`draw`(ort,£§color£constant`bp`+0.8*£§color£constant`green`); £§color£function-name`dot`(ort, 0.8*£§color£constant`red`);
+£§color£function-name`addMargins`(1£§color£constant`cm`,1£§color£constant`cm`);

@@ -1,0 +1,26 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(10<span class="constant">cm</span>,0);
+<span class="type">triangle</span> <span class="variable-name">t</span>=<span class="function-name">triangleabc</span>(5,6,7);
+<span class="function-name">label</span>(t); <span class="function-name">draw</span>(t, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="type">point</span> <span class="variable-name">P</span>=0.5*t.B+0.3*t.C;
+<span class="function-name">dot</span>(<span class="string">"$P$"</span>, P, 2*<span class="function-name">dir</span>(60));
+
+<span class="type">triangle</span> <span class="variable-name">Pt</span>=<span class="function-name">pedal</span>(t,P);
+<span class="constant">currentpen</span>=0.8*<span class="constant">blue</span>; <span class="function-name">draw</span>(Pt);
+<span class="type">segment</span> <span class="variable-name">psA</span>=<span class="function-name">segment</span>(P,Pt.A);
+<span class="type">segment</span> <span class="variable-name">psB</span>=<span class="function-name">segment</span>(P,Pt.B);
+<span class="type">segment</span> <span class="variable-name">psC</span>=<span class="function-name">segment</span>(P,Pt.C);
+<span class="function-name">draw</span>(psA); <span class="function-name">draw</span>(psB); <span class="function-name">draw</span>(psC);
+<span class="function-name">perpendicularmark</span>(t.BC,psA);
+<span class="function-name">perpendicularmark</span>(t.CA,psB);
+<span class="function-name">perpendicularmark</span>(t.AB,psC);
+
+<span class="type">triangle</span> <span class="variable-name">APt</span>=<span class="function-name">antipedal</span>(t, P);
+<span class="constant">currentpen</span>=0.8*<span class="constant">red</span>; <span class="function-name">draw</span>(APt);
+<span class="type">segment</span> <span class="variable-name">apsA</span>=<span class="function-name">segment</span>(P,t.A);
+<span class="type">segment</span> <span class="variable-name">apsB</span>=<span class="function-name">segment</span>(P,t.B);
+<span class="type">segment</span> <span class="variable-name">apsC</span>=<span class="function-name">segment</span>(P,t.C);
+<span class="function-name">draw</span>(apsA); <span class="function-name">draw</span>(apsB); <span class="function-name">draw</span>(apsC);
+<span class="function-name">perpendicularmark</span>(APt.BC,apsA);
+<span class="function-name">perpendicularmark</span>(APt.CA,apsB);
+<span class="function-name">perpendicularmark</span>(APt.AB,apsC);
+

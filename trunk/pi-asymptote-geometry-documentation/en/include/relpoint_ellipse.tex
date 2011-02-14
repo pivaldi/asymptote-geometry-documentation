@@ -1,0 +1,12 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6£§color£constant`cm`,0);
+£§color£function-name`show`(£§color£constant`currentcoordsys`, xpen=£§color£constant`invisible`);
+£§color£type`point` £§color£variable-name`A`=(2.5,2); £§color£function-name`dot`(£§color£string`"$A$"`, A, £§color£constant`S`, £§color£constant`red`);
+£§color£type`ellipse` £§color£variable-name`el`=£§color£function-name`ellipse`(A,2,1,45);
+£§color£function-name`draw`(el, £§color£function-name`linewidth`(£§color£constant`bp`));
+
+£§color£function-name`dot`(£§color£string`"relpoint(el, 0)"`, £§color£function-name`relpoint`(el,0), 2£§color£constant`S`);
+£§color£function-name`dot`(£§color£string`"relpoint(el, 0.25)"`, £§color£function-name`relpoint`(el,0.25), 2£§color£constant`S`);
+£§color£function-name`dot`(£§color£string`"relpoint(el, 0.5)"`, £§color£function-name`relpoint`(el,0.5), 2£§color£constant`S`+£§color£constant`E`);
+£§color£function-name`dot`(£§color£string`"relpoint(el, -0.25)"`, £§color£function-name`relpoint`(el, -0.25), 2£§color£constant`SW`);
+£§color£function-name`dot`(£§color£string`"relpoint(el, 1.125)"`, £§color£function-name`relpoint`(el, 1.125), 2£§color£constant`W`);

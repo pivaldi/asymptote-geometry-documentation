@@ -1,0 +1,19 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(8<span class="constant">cm</span>,0);
+<span class="type">triangle</span> <span class="variable-name">t</span>=<span class="function-name">triangleabc</span>(5,6,7);
+<span class="function-name">label</span>(t, alignFactor=4);
+<span class="function-name">drawline</span>(t, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>(t); <span class="function-name">draw</span>(C, <span class="constant">bp</span>+<span class="constant">dashed</span>);
+<span class="type">pen</span>[] <span class="constant">p</span>=<span class="builtin">new</span> <span class="type">pen</span>[] {0.8*<span class="constant">red</span>,0.8*<span class="constant">blue</span>,
+                   0.8*<span class="constant">green</span>, 0.8*<span class="constant">yellow</span>};
+<span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">i</span>=0; i &lt; 4; ++i) {
+  <span class="type">real</span> <span class="variable-name">x</span>=35+i*90; <span class="type">point</span> <span class="variable-name">P</span>=<span class="function-name">angpoint</span>(C,x);
+  <span class="function-name">dot</span>(<span class="string">"$P_"</span>+(<span class="type">string</span>)i+<span class="string">"$"</span>,P,<span class="function-name">dir</span>(x),<span class="constant">p</span>[i]);
+  <span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">j</span>=0; j &lt; 3; ++j) {
+    <span class="type">segment</span> <span class="variable-name">Sg</span>=<span class="function-name">segment</span>(<span class="function-name">pedal</span>(t.<span class="function-name">side</span>(j),P));
+    <span class="function-name">draw</span>(Sg,<span class="constant">p</span>[i]);
+    <span class="function-name">markrightangle</span>(P,Sg.B,t.vertex(j),<span class="constant">p</span>[i]);
+  }
+  <span class="function-name">drawline</span>(<span class="function-name">pedal</span>(t,P), <span class="constant">bp</span>+<span class="constant">p</span>[i]);
+}
+<span class="function-name">addMargins</span>(1<span class="constant">cm</span>,1<span class="constant">cm</span>);
+

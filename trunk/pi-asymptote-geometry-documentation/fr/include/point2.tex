@@ -1,0 +1,10 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6£§color£constant`cm`,0);
+£§color£constant`currentcoordsys`=£§color£function-name`cartesiansystem`((3,0), i=(1,1), j=(-1,1));
+£§color£function-name`show`(£§color£string`"$O_1$"`, £§color£string`"$\vec{u_1}$"`, £§color£string`"$\vec{v_1}$"`, £§color£constant`currentcoordsys`, xpen=£§color£constant`invisible`);
+£§color£type`point` £§color£variable-name`A`=(1,1);
+£§color£function-name`dot`(£§color£string`"$A$"`, A);
+£§color£type`coordsys` £§color£variable-name`Rp`=£§color£function-name`rotate`(90)*£§color£constant`currentcoordsys`;
+£§color£function-name`show`(£§color£string`"$O_2$"`, £§color£string`"$\vec{u_2}$"`, £§color£string`"$\vec{v_2}$"`, Rp, xpen=£§color£constant`invisible`);
+£§color£type`point` £§color£variable-name`B`=£§color£function-name`point`(Rp, (1,1));
+£§color£function-name`dot`(£§color£string`"$B$"`, B);

@@ -1,0 +1,17 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`,0);
+£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangleabc`(5,6,7); £§color£function-name`label`(t); £§color£function-name`draw`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£type`point` £§color£variable-name`P`=0.6*t.B+0.25*t.C; £§color£function-name`dot`(£§color£string`"$P$"`, P, £§color£function-name`dir`(60), 0.8*£§color£constant`red`);
+£§color£function-name`draw`(£§color£function-name`segment`(£§color£function-name`isotomic`(t.VA,P))^^£§color£function-name`segment`(£§color£function-name`isotomic`(t.VB,P))^^£§color£function-name`segment`(£§color£function-name`isotomic`(t.VC,P)),
+     0.8*£§color£constant`blue`);
+£§color£function-name`draw`(£§color£function-name`segment`(£§color£function-name`cevian`(t.VA,P))^^£§color£function-name`segment`(£§color£function-name`cevian`(t.VB,P))^^£§color£function-name`segment`(£§color£function-name`cevian`(t.VC,P)),
+     0.8*£§color£constant`red`);
+£§color£type`triangle` £§color£variable-name`t1`=£§color£function-name`cevian`(t,P); £§color£function-name`label`(£§color£string`"$P_1$"`, £§color£string`"$P_2$"`, £§color£string`"$P_3$"`, t1); £§color£function-name`draw`(t1, £§color£constant`bp`+0.8*£§color£constant`red`);
+£§color£type`triangle` £§color£variable-name`t2`=£§color£function-name`isotomic`(t,P); £§color£function-name`label`(£§color£string`"$Q_1$"`, £§color£string`"$Q_2$"`, £§color£string`"$Q_3$"`, t2); £§color£function-name`draw`(t2, £§color£constant`bp`+0.8*£§color£constant`blue`);
+£§color£function-name`dot`(£§color£string`"$Q$"`, £§color£function-name`isotomicconjugate`(t,P), £§color£function-name`dir`(100), 0.8*£§color£constant`blue`);
+
+£§color£type`point` £§color£variable-name`Ma`=£§color£function-name`midpoint`(t.BC), £§color£variable-name`Mb`=£§color£function-name`midpoint`(t.AC), £§color£variable-name`Mc`=£§color£function-name`midpoint`(t.BA);
+£§color£function-name`dot`(£§color£string`"$M_1$"`,Ma,-£§color£function-name`dir`(t.VA)); £§color£function-name`dot`(£§color£string`"$M_2$"`,Mb,-£§color£function-name`dir`(t.VB)); £§color£function-name`dot`(£§color£string`"$M_3$"`,Mc,-£§color£function-name`dir`(t.VC));
+£§color£function-name`draw`(t.A--Ma^^t.B--Mb^^t.C--Mc, £§color£constant`grey`); £§color£function-name`dot`(£§color£string`"$G$"`, £§color£function-name`centroid`(t), 2*£§color£function-name`dir`(-65), £§color£constant`grey`);
+£§color£function-name`draw`(t1.A--t2.A, 0.8*£§color£constant`green`, £§color£function-name`StickIntervalMarker`(2,1,0.8*£§color£constant`green`));
+£§color£function-name`draw`(t1.B--t2.B, 0.8*£§color£constant`green`, £§color£function-name`StickIntervalMarker`(2,2,0.8*£§color£constant`green`));
+£§color£function-name`draw`(t1.C--t2.C, 0.8*£§color£constant`green`, £§color£function-name`StickIntervalMarker`(2,3,0.8*£§color£constant`green`));

@@ -1,0 +1,12 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6£§color£constant`cm`,0);
+£§color£constant`currentcoordsys`=£§color£function-name`cartesiansystem`((1,1), i=(1,1),
+                                j=(-0.5,.75));
+£§color£function-name`show`(£§color£string`"$O'$"`,£§color£string`"$\vec{u}$"`, £§color£string`"$\vec{v}$"`, £§color£constant`currentcoordsys`,
+     ipen=£§color£constant`blue`, xpen=£§color£constant`invisible`);
+£§color£function-name`show`(£§color£constant`defaultcoordsys`);
+£§color£type`real` £§color£variable-name`R`=2;
+£§color£type`circle` £§color£variable-name`C`=£§color£function-name`circle`((0,0), R);
+£§color£function-name`draw`(C, £§color£constant`bp`+0.8*£§color£constant`blue`);
+£§color£type`circle` £§color£variable-name`Cp`=£§color£function-name`circle`(£§color£function-name`point`(£§color£constant`defaultcoordsys`,(0,0)), R);
+£§color£function-name`draw`(Cp, £§color£constant`bp`+0.8*£§color£constant`red`);

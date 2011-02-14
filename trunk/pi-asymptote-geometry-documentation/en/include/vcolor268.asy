@@ -1,0 +1,1 @@
+    point symmedian(side side)

@@ -1,0 +1,14 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(8<span class="constant">cm</span>,0);
+
+<span class="type">point</span> <span class="variable-name">A</span>=(1,1); <span class="function-name">dot</span>(<span class="string">"$A$"</span>,A,<span class="constant">S</span>,<span class="constant">red</span>);
+<span class="type">arc</span> <span class="variable-name">C</span>=<span class="function-name">arc</span>(<span class="function-name">circle</span>(A,2), 45, 210);
+<span class="function-name">draw</span>(C,<span class="function-name">linewidth</span>(3<span class="constant">mm</span>));
+<span class="function-name">markarc</span>(<span class="function-name">format</span>(<span class="string">"%0g"</span>,<span class="function-name">degrees</span>(C)), C, Arrow);
+
+<span class="function-name">draw</span>(0.5*C,1.5<span class="constant">mm</span>+<span class="constant">yellow</span>);
+
+<span class="type">arc</span> <span class="variable-name">Cp</span>=C/3;
+<span class="function-name">draw</span>(Cp, 0.75<span class="constant">mm</span>+<span class="constant">blue</span>);
+<span class="function-name">markarc</span>(<span class="function-name">format</span>(<span class="string">"%0g"</span>,<span class="function-name">degrees</span>(Cp)),
+        radius=25<span class="constant">mm</span>, Cp, <span class="constant">blue</span>, Arrow);
+

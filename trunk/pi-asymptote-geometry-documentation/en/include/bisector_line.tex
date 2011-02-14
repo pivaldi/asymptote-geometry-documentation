@@ -1,0 +1,20 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(5£§color£constant`cm`,0);
+£§color£type`point` £§color£variable-name`A`=(0,0), £§color£variable-name`B`=(2*£§color£function-name`Cos`(40),2*£§color£function-name`Sin`(40)); £§color£type`line` £§color£variable-name`l1`=£§color£function-name`line`(A,B);
+£§color£function-name`draw`(l1, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£type`line` £§color£variable-name`l2`=£§color£function-name`rotate`(100,A)*l1;
+£§color£function-name`draw`(l2, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£type`line` £§color£variable-name`bis`=£§color£function-name`bisector`(l1,l2); £§color£function-name`draw`(bis, £§color£constant`bp`+£§color£constant`blue`);
+£§color£type`line` £§color£variable-name`Bis`=£§color£function-name`bisector`(l1,l2,£§color£builtin`false`); £§color£function-name`draw`(Bis, £§color£constant`bp`+0.8*£§color£constant`red`);
+£§color£constant`markangleradiusfactor` *= 4;
+£§color£type`marker` £§color£variable-name`mark2`=£§color£function-name`StickIntervalMarker`(2, 1, £§color£constant`red`, £§color£builtin`true`);
+£§color£function-name`markangle`(2, l1, l2, £§color£constant`red`, mark2);
+£§color£function-name`markangle`(2, £§color£function-name`reverse`(l2), £§color£function-name`reverse`(l1), radius=-£§color£function-name`markangleradius`(),
+          £§color£constant`red`, mark2);
+£§color£constant`markangleradiusfactor` *= 3/2;
+£§color£type`marker` £§color£variable-name`mark1`=£§color£function-name`StickIntervalMarker`(2, 2, £§color£constant`blue`, £§color£builtin`true`);
+£§color£function-name`markangle`(2, l1, £§color£function-name`reverse`(l2), radius=-£§color£function-name`markangleradius`(),
+          £§color£constant`blue`, mark1);
+£§color£function-name`markangle`(2, £§color£function-name`reverse`(l1), l2, radius=-£§color£function-name`markangleradius`(),
+          £§color£constant`blue`, mark1);
+£§color£function-name`draw`(£§color£function-name`box`((-1,-1),(1,1)), £§color£constant`invisible`);

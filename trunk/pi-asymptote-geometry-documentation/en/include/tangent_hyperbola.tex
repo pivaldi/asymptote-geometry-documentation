@@ -1,0 +1,20 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(0,10£§color£constant`cm`);
+£§color£type`pen` £§color£variable-name`bl`=0.8£§color£constant`blue`, £§color£variable-name`re`=0.8*£§color£constant`red`;
+£§color£function-name`draw`(£§color£function-name`box`((-2.25,-1.5),(-0.75,1)), £§color£constant`invisible`);
+£§color£type`hyperbola` £§color£variable-name`h`=£§color£function-name`hyperbola`(£§color£constant`origin`,1.2,1);
+£§color£function-name`draw`((£§color£type`path`)h, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£function-name`draw`(£§color£string`"directrix"`, h.D1); £§color£function-name`dot`(£§color£string`"$F_1$"`, h.F1, £§color£constant`NW`);
+
+£§color£type`line` £§color£constant`axis`=£§color£function-name`line`(h.F1,h.F2); £§color£function-name`draw`(£§color£constant`axis`);
+£§color£type`point` £§color£constant`M`=£§color£function-name`point`(h,£§color£function-name`angabscissa`(70)); £§color£function-name`dot`(£§color£constant`M`, bl);
+£§color£type`line` £§color£variable-name`tgt`=£§color£function-name`tangent`(h,£§color£function-name`angabscissa`(70)); £§color£function-name`draw`(tgt, £§color£constant`bp`+bl);
+£§color£type`point` £§color£variable-name`P`=£§color£function-name`intersectionpoint`(tgt,h.D1); £§color£function-name`dot`(P, bl);
+£§color£function-name`draw`(P--h.F1--£§color£constant`M`, £§color£constant`grey`); £§color£function-name`markrightangle`(P,h.F1,£§color£constant`M`, £§color£constant`grey`);
+
+£§color£type`line` £§color£variable-name`lr`=£§color£function-name`perpendicular`(h.F1, £§color£constant`axis`); £§color£function-name`draw`(lr);
+£§color£type`point`[] plr=£§color£function-name`intersectionpoints`(h,lr);
+£§color£function-name`dot`(plr, re);
+£§color£function-name`distance`(£§color£function-name`Label`(£§color£string`"latus rectum"`,£§color£function-name`Fill`(£§color£constant`white`)),
+         plr[0], plr[1], -2£§color£constant`cm`, £§color£constant`grey`, £§color£constant`dotted`);
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 2; ++i) {
+  £§color£function-name`draw`(£§color£function-name`tangents`(h,plr[i])[0], £§color£constant`bp`+re); }

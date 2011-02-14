@@ -1,0 +1,1 @@
+    triangle orthic(triangle t)

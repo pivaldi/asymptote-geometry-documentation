@@ -1,0 +1,15 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(8<span class="constant">cm</span>);
+
+<span class="constant">currentcoordsys</span>=<span class="function-name">rotate</span>(20)*<span class="constant">defaultcoordsys</span>;
+<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>);
+
+<span class="type">ellipse</span> <span class="constant">e</span>0=<span class="function-name">ellipse</span>((0,0), 3, 1);
+<span class="function-name">draw</span>(<span class="constant">e</span>0, <span class="function-name">linewidth</span>(<span class="constant">bp</span>), Arrow);
+
+<span class="type">ellipse</span> <span class="constant">e</span>1=<span class="function-name">ellipse</span>((0,0), 3, 1, 45);
+<span class="function-name">draw</span>(<span class="constant">e</span>1, <span class="constant">bp</span>+0.8*<span class="constant">red</span>, Arrow);
+
+<span class="type">ellipse</span> <span class="constant">e</span>2=<span class="function-name">ellipse</span>((0,0), 1, 3, 45);
+<span class="function-name">draw</span>(<span class="constant">e</span>2, <span class="constant">bp</span>+0.8*<span class="constant">blue</span>, Arrow);
+

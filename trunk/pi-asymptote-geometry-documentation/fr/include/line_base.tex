@@ -1,0 +1,15 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6£§color£constant`cm`,0);
+£§color£constant`linemargin`=2£§color£constant`mm`;
+£§color£type`point` £§color£variable-name`A`=(0,0), £§color£variable-name`B`=(2, 0), £§color£variable-name`C`=(3,1), £§color£variable-name`D`=(1,1);
+£§color£function-name`dot`(£§color£string`"A"`, A, £§color£constant`NW`); £§color£function-name`dot`(£§color£string`"B"`, B, £§color£constant`SE`); £§color£function-name`dot`(£§color£string`"C"`, C);
+£§color£function-name`dot`(£§color£string`"D"`, D, £§color£constant`W`);
+
+£§color£type`line` £§color£variable-name`AB`=£§color£function-name`line`(A, B);
+£§color£type`line` £§color£variable-name`CB`=£§color£function-name`line`(C, £§color£builtin`false`, B);
+£§color£type`line` £§color£variable-name`CD`=£§color£function-name`line`(C, £§color£builtin`false`, D, £§color£builtin`false`);
+£§color£type`line` £§color£variable-name`AD`=£§color£function-name`line`(A, £§color£builtin`false`, D);
+
+£§color£function-name`draw`(£§color£string`"(AB)"`, AB); £§color£function-name`draw`(£§color£string`"[CB)"`, CB);
+£§color£function-name`draw`(£§color£function-name`Label`(£§color£string`"[CD]"`,£§color£function-name`Relative`(0.5),£§color£constant`align`=£§color£constant`N`), CD);
+£§color£function-name`draw`(£§color£string`"[AD)"`, AD); £§color£function-name`draw`(£§color£function-name`box`((-1,-2),(4,3)));

@@ -1,0 +1,11 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="type">coordsys</span> <span class="variable-name">R</span>=<span class="function-name">cartesiansystem</span>((2,1), i=(1,1), j=(-0.75,1));
+<span class="function-name">show</span>(<span class="string">"$O_1$"</span>, <span class="string">"$\vec{u}$"</span>, <span class="string">"$\vec{v}$"</span>, R, xpen=<span class="constant">invisible</span>);
+<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>, xpen=<span class="constant">invisible</span>);
+
+<span class="type">point</span> <span class="variable-name">A</span>=<span class="function-name">point</span>(R, (1,1)); <span class="function-name">dot</span>(<span class="string">"A"</span>, A); <span class="type">point</span> <span class="variable-name">B</span>=<span class="function-name">point</span>(R, (2,2));
+<span class="function-name">dot</span>(<span class="string">"B"</span>, B); <span class="type">point</span> <span class="constant">M</span>=<span class="function-name">unit</span>(B-A); <span class="function-name">dot</span>(<span class="string">"M"</span>, <span class="constant">M</span>);
+<span class="function-name">dot</span>(<span class="string">"unit(B-A)"</span>, <span class="function-name">unit</span>(B-A), <span class="constant">N</span>);
+<span class="function-name">dot</span>(<span class="string">"A+unit(B-A)"</span>, A+<span class="function-name">unit</span>(B-A), <span class="constant">W</span>);
+

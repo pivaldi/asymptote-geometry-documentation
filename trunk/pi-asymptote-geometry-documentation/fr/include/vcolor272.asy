@@ -1,0 +1,1 @@
+    line symmedian(vertex V)

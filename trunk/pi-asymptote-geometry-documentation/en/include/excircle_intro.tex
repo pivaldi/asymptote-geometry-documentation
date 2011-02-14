@@ -1,0 +1,13 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6£§color£constant`cm`,0);
+
+£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangle`((-1,0), (2,0), (0,2));
+
+£§color£function-name`drawline`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£function-name`label`(t,alignFactor=4);
+
+£§color£function-name`clipdraw`(£§color£function-name`excircle`(t.AB), £§color£constant`bp`+0.8£§color£constant`green`);
+£§color£function-name`clipdraw`(£§color£function-name`excircle`(t.BC), £§color£constant`bp`+0.8£§color£constant`green`);
+£§color£function-name`clipdraw`(£§color£function-name`excircle`(t.AC), £§color£constant`bp`+0.8£§color£constant`green`);
+
+£§color£function-name`draw`(£§color£function-name`box`((-2.5,-3), (3.5,3.5)), £§color£constant`invisible`);

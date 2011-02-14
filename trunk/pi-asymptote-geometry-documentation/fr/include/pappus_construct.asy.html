@@ -1,0 +1,21 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(7<span class="constant">cm</span>,0);
+
+<span class="type">inversion</span> <span class="variable-name">inv</span>=<span class="function-name">inversion</span>(10,(-4,0));
+<span class="type">line</span> <span class="variable-name">l1</span>=<span class="function-name">line</span>((-1,0),(-1,1)), <span class="variable-name">l2</span>=<span class="function-name">line</span>((1,0),(1,1));
+<span class="function-name">draw</span>(l1, <span class="constant">bp</span>+0.8*<span class="constant">blue</span>); <span class="function-name">draw</span>(l2, <span class="constant">bp</span>+0.8*<span class="constant">green</span>);
+<span class="function-name">clipdraw</span>(inv*l1,<span class="constant">bp</span>+0.8*<span class="constant">blue</span>);
+<span class="function-name">clipdraw</span>(inv*l2,<span class="constant">bp</span>+0.8*<span class="constant">green</span>);
+
+<span class="type">int</span> <span class="variable-name">n</span>=10;
+<span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">i</span>=0; i &lt;= n; ++i) {
+  <span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>((0,2*i),1);
+  <span class="type">circle</span> <span class="variable-name">Cp</span>=inv*C;
+  <span class="function-name">draw</span>(Cp,<span class="constant">bp</span>+(1-<span class="function-name">abs</span>(i/4))*<span class="constant">red</span>);
+  <span class="keyword">if</span>(<span class="function-name">abs</span>(i) &lt; 4){
+    <span class="function-name">draw</span>(C,<span class="constant">bp</span>+(1-<span class="function-name">abs</span>(i/4))*<span class="constant">red</span>);
+    <span class="function-name">draw</span>((1,2*i)--inv*(1,2*i),0.8*<span class="constant">green</span>);
+    <span class="function-name">draw</span>((-1,2*i)--inv*(-1,2*i),0.8*<span class="constant">blue</span>);
+  }
+}
+<span class="function-name">addMargins</span>(1<span class="constant">mm</span>,1<span class="constant">mm</span>);
+

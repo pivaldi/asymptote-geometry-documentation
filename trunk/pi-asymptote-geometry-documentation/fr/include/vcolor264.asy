@@ -1,0 +1,1 @@
+    point gergonne(triangle t)

@@ -1,0 +1,1 @@
+    point foot(vertex V)

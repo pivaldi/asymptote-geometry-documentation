@@ -1,0 +1,423 @@
+\indexentry{coordsys|hyperpage}{3}
+\indexentry{point|hyperpage}{3}
+\indexentry{vector|hyperpage}{3}
+\indexentry{mass|hyperpage}{3}
+\indexentry{line|hyperpage}{4}
+\indexentry{segment|hyperpage}{4}
+\indexentry{conic|hyperpage}{4}
+\indexentry{arc|hyperpage}{4}
+\indexentry{abscissa|hyperpage}{4}
+\indexentry{triangle|hyperpage}{4}
+\indexentry{side|hyperpage}{4}
+\indexentry{vertex |hyperpage}{4}
+\indexentry{trilinear|hyperpage}{4}
+\indexentry{Coordinate system|textbf}{5}
+\indexentry{coordsys|textbf}{5}
+\indexentry{coordsys!defaultcoordsys|hyperpage}{5}
+\indexentry{coordsys!cartesiansystem|hyperpage}{5}
+\indexentry{coordsys!currentcoordsys|hyperpage}{5}
+\indexentry{coordsys!*|hyperpage}{6}
+\indexentry{coordsys!*|hyperpage}{6}
+\indexentry{coordsys!*|hyperpage}{6}
+\indexentry{coordsys!*|hyperpage}{6}
+\indexentry{point|textbf}{6}
+\indexentry{point!casting|hyperpage}{6}
+\indexentry{currentcoordsys|hyperpage}{7}
+\indexentry{point(coordsys,pair,real)|hyperpage}{7}
+\indexentry{locate|hyperpage}{7}
+\indexentry{point!changecoordsys|hyperpage}{8}
+\indexentry{point!+|hyperpage}{8}
+\indexentry{point!-|hyperpage}{8}
+\indexentry{point!*|hyperpage}{8}
+\indexentry{point!/|hyperpage}{8}
+\indexentry{coordsys!polar|hyperpage}{8}
+\indexentry{polar|see{coordsys polar}}{8}
+\indexentry{origin(coordsys)|hyperpage}{8}
+\indexentry{origin|hyperpage}{8}
+\indexentry{point(coordsys,explicit point,real)|hyperpage}{9}
+\indexentry{coordinates(point)|hyperpage}{9}
+\indexentry{samecoordsys(bool...point[])|hyperpage}{9}
+\indexentry{standardizecoordsys(coordsys,bool...M)|hyperpage}{9}
+\indexentry{locate(point)|hyperpage}{9}
+\indexentry{*(transform,explicit point)|hyperpage}{9}
+\indexentry{*(explicit point,explicit pair)|hyperpage}{9}
+\indexentry{==(explicit point,explicit point)|hyperpage}{9}
+\indexentry{!=(explicit point,explicit point)|hyperpage}{9}
+\indexentry{abs(coordsys,pair)|hyperpage}{9}
+\indexentry{abs(explicit point)|hyperpage}{9}
+\indexentry{length(explicit point)|hyperpage}{9}
+\indexentry{conj(explicit point)|hyperpage}{9}
+\indexentry{degrees(explicit point,coordsys,bool)|hyperpage}{9}
+\indexentry{angle(explicit point,coordsys,bool)|hyperpage}{10}
+\indexentry{finite(explicit point)|hyperpage}{10}
+\indexentry{dot(point,point)|hyperpage}{10}
+\indexentry{real dot(point,explicit pair)|hyperpage}{10}
+\indexentry{vector|textbf}{10}
+\indexentry{locate(vector)|hyperpage}{10}
+\indexentry{point(explicit vector)|hyperpage}{11}
+\indexentry{vector vector(point)|hyperpage}{12}
+\indexentry{unit(point)|hyperpage}{12}
+\indexentry{unit(vector)|hyperpage}{12}
+\indexentry{collinear(vector,vector)|hyperpage}{13}
+\indexentry{mass|textbf}{13}
+\indexentry{mass|hyperpage}{13}
+\indexentry{mass mass(explicit point)|hyperpage}{13}
+\indexentry{point point(explicit mass)|hyperpage}{13}
+\indexentry{mass(coordsys,explicit pair,real)|hyperpage}{13}
+\indexentry{mass(point,real)|hyperpage}{13}
+\indexentry{point(explicit mass)|textbf}{13}
+\indexentry{mass(explicit point)|textbf}{13}
+\indexentry{masscenter(...mass[])|hyperpage}{13}
+\indexentry{defaultmassformat|hyperpage}{14}
+\indexentry{massformat(string,string,mass)|hyperpage}{14}
+\indexentry{void label(picture,Label,mass,align,string,pen,filltype)|hyperpage}{14}
+\indexentry{void label(picture,Label,mass,align,string,pen,filltype)|hyperpage}{14}
+\indexentry{transformation|textbf}{16}
+\indexentry{scale(real,point)|hyperpage}{17}
+\indexentry{projection(point,point)|hyperpage}{17}
+\indexentry{projection(point,point,point,point,bool)|hyperpage}{18}
+\indexentry{scale(real,point,point,point,point,bool)|hyperpage}{18}
+\indexentry{xscale(real,point)|hyperpage}{19}
+\indexentry{xscale(real,point)|hyperpage}{19}
+\indexentry{yscale(real,point)|hyperpage}{20}
+\indexentry{yscale(real,point)|hyperpage}{20}
+\indexentry{scaleO(real)|hyperpage}{21}
+\indexentry{xscaleO(real)|hyperpage}{21}
+\indexentry{yscaleO(real)|hyperpage}{21}
+\indexentry{rotateO(real)|hyperpage}{21}
+\indexentry{line|textbf}{22}
+\indexentry{line(point,bool,point,bool)|hyperpage}{22}
+\indexentry{Ox()|hyperpage}{22}
+\indexentry{Oy()|hyperpage}{22}
+\indexentry{Ox|hyperpage}{22}
+\indexentry{Oy|hyperpage}{22}
+\indexentry{draw(picture,Label,line,bool,bool,align,pen,arrowbar,Label,marker)|hyperpage}{22}
+\indexentry{show(picture,line,pen)|hyperpage}{22}
+\indexentry{intersectionpoint(line,line)|hyperpage}{22}
+\indexentry{intersectionpoints(line l, path g)|hyperpage}{23}
+\indexentry{line(coordsys,real,real,real)|hyperpage}{23}
+\indexentry{line(coordsys,real,real)|hyperpage}{23}
+\indexentry{parallel(point,line)|hyperpage}{23}
+\indexentry{parallel(point,explicit vector)|hyperpage}{23}
+\indexentry{parallel(point,explicit pair)|hyperpage}{23}
+\indexentry{parallel(line,line,bool)|hyperpage}{23}
+\indexentry{line(real,point)|hyperpage}{24}
+\indexentry{line(point,real)|hyperpage}{24}
+\indexentry{bisector(line,line,real,bool)|hyperpage}{24}
+\indexentry{sector(int,int,line,line,real,bool)|hyperpage}{25}
+\indexentry{perpendicular(point,line)|hyperpage}{26}
+\indexentry{line perpendicular(point,explicit vector)|hyperpage}{26}
+\indexentry{perpendicular(point,explicit pair)|hyperpage}{26}
+\indexentry{angle(line,coordsys)|hyperpage}{27}
+\indexentry{degrees(line,coordsys)|hyperpage}{27}
+\indexentry{sharpangle(line,line)|hyperpage}{27}
+\indexentry{sharpdegrees(line,line)|hyperpage}{27}
+\indexentry{angle(line,line)|hyperpage}{27}
+\indexentry{degrees(line,line)|hyperpage}{27}
+\indexentry{*(transform,line)|hyperpage}{27}
+\indexentry{/(line,real)|hyperpage}{27}
+\indexentry{*(real,line)|hyperpage}{27}
+\indexentry{*(point,line)|hyperpage}{27}
+\indexentry{+(line,vector)|hyperpage}{27}
+\indexentry{-(line,vector)|hyperpage}{27}
+\indexentry{^^(line,line)|hyperpage}{28}
+\indexentry{==(line,line)|hyperpage}{28}
+\indexentry{!=(line,line)|hyperpage}{28}
+\indexentry{@(point,line)|hyperpage}{28}
+\indexentry{draw(picture,Label[],line[],align,pen[],arrowbar,Label,marker)|hyperpage}{28}
+\indexentry{draw(picture,Label[],line[],align,pen,arrowbar,Label,marker)|hyperpage}{28}
+\indexentry{distance(point,line)|hyperpage}{28}
+\indexentry{distance(line,point)|hyperpage}{28}
+\indexentry{sameside(point,point,line)|hyperpage}{28}
+\indexentry{sameside(point,line,line)|hyperpage}{28}
+\indexentry{coordsys(line)|hyperpage}{28}
+\indexentry{changecoordsys(coordsys,line)|hyperpage}{28}
+\indexentry{reverse(line)|hyperpage}{28}
+\indexentry{extend(line l)|hyperpage}{28}
+\indexentry{complementary(explicit line)|hyperpage}{28}
+\indexentry{concurrent(...line[])|hyperpage}{29}
+\indexentry{perpendicular(line,line)|hyperpage}{29}
+\indexentry{point(line l,real)|hyperpage}{29}
+\indexentry{relpoint(line,real)|hyperpage}{29}
+\indexentry{curpoint(line,real)|hyperpage}{29}
+\indexentry{markangle(picture,Label,int,real,real,line,line,arrowbar,pen,margin,marker)|hyperpage}{29}
+\indexentry{perpendicularmark(picture,line,line,real,pen,int,margin,filltype)|hyperpage}{30}
+\indexentry{segment(point,point)|hyperpage}{31}
+\indexentry{midpoint(segment)|hyperpage}{31}
+\indexentry{bisector(segment)|hyperpage}{31}
+\indexentry{complementary(explicit segment)|hyperpage}{31}
+\indexentry{transformation|textbf}{31}
+\indexentry{reflect(line)|hyperpage}{31}
+\indexentry{reflect(line,line,bool)|hyperpage}{31}
+\indexentry{scale(real,line,line,bool)|hyperpage}{31}
+\indexentry{projection(line)|hyperpage}{32}
+\indexentry{projection(line)|hyperpage}{32}
+\indexentry{vprojection(line,bool)|hyperpage}{32}
+\indexentry{hprojection(line,bool)|hyperpage}{32}
+\indexentry{conique|mainidx}{33}
+\indexentry{conic conic(point,l,real)|hyperpage}{33}
+\indexentry{conic(point,point,point,point,point)|hyperpage}{34}
+\indexentry{changecoordsys(coordsys,conic)|hyperpage}{34}
+\indexentry{coordsys(conic)|hyperpage}{35}
+\indexentry{canonicalcartesiansystem(explicit conic)|hyperpage}{35}
+\indexentry{canonicalcartesiansystem(parabola)|hyperpage}{35}
+\indexentry{canonicalcartesiansystem(ellipse)|hyperpage}{35}
+\indexentry{canonicalcartesiansystem(hyperbola)|hyperpage}{35}
+\indexentry{conicnodesnumber(conic,real,real)|hyperpage}{35}
+\indexentry{intersectionpoints(conic,conic)|hyperpage}{35}
+\indexentry{intersectionpoints(line,conic)|hyperpage}{35}
+\indexentry{intersectionpoints(conic,line)|hyperpage}{35}
+\indexentry{intersectionpoints(conic,triangle,bool)|hyperpage}{36}
+\indexentry{intersectionpoints(triangle,conic,bool)|hyperpage}{36}
+\indexentry{@(point,conic)|hyperpage}{36}
+\indexentry{*(transform,conic)|hyperpage}{36}
+\indexentry{+(conic,explicit point)|hyperpage}{36}
+\indexentry{-(conic,explicit point)|hyperpage}{36}
+\indexentry{+(conic,explicit pair)|hyperpage}{36}
+\indexentry{-(conic,explicit pair)|hyperpage}{36}
+\indexentry{+(conic,explicit vector)|hyperpage}{36}
+\indexentry{-(conic,explicit vector)|hyperpage}{36}
+\indexentry{\'equation!conique|mainidx}{36}
+\indexentry{bqe(coordsys,real,real,real,real,real,real)|hyperpage}{36}
+\indexentry{changecoordsys(coordsys,bqe)|hyperpage}{36}
+\indexentry{bqe(point,point,point,point,point)|hyperpage}{37}
+\indexentry{conictype(bqe)|hyperpage}{37}
+\indexentry{equation(explicit conic)|hyperpage}{37}
+\indexentry{equation(ellispe)|hyperpage}{37}
+\indexentry{equation(parabola)|hyperpage}{37}
+\indexentry{hyperbola|hyperpage}{37}
+\indexentry{canonical(bqe)|hyperpage}{37}
+\indexentry{conic(bqe)|hyperpage}{37}
+\indexentry{casting!conique|mainidx}{37}
+\indexentry{cercle|mainidx}{38}
+\indexentry{ellipse|mainidx}{38}
+\indexentry{circle(explicit point,real)|hyperpage}{38}
+\indexentry{circle(pair,real)|hyperpage}{38}
+\indexentry{circle(point A, point B)|hyperpage}{38}
+\indexentry{circle(point A, point B)|hyperpage}{38}
+\indexentry{circumcircle(point,point,point)|hyperpage}{38}
+\indexentry{incircle(point,point,point)|hyperpage}{38}
+\indexentry{excircle(point,point,point)|hyperpage}{38}
+\indexentry{clipdraw(picture,Label,path,align,pen,arrowbar,arrowbar,real,real,Label,marker)|hyperpage}{38}
+\indexentry{circlenodesnumber(real)|hyperpage}{39}
+\indexentry{circlenodesnumberfactor|hyperpage}{39}
+\indexentry{*(real,explicit circle)|hyperpage}{40}
+\indexentry{/(explicit circle,real)|hyperpage}{40}
+\indexentry{\circonflexe(point M, explicit circle c)|hyperpage}{40}
+\indexentry{@(point,explicit circle)|hyperpage}{40}
+\indexentry{circle to ellipse|hyperpage}{40}
+\indexentry{radicalcenter(circle,circle)|hyperpage}{40}
+\indexentry{radicalcenter(circle,circle,circle)|hyperpage}{40}
+\indexentry{radicalline(circle,circle)|hyperpage}{40}
+\indexentry{tangents(circle c, point M)|hyperpage}{40}
+\indexentry{tangent(circle,abscissa)|hyperpage}{40}
+\indexentry{point(explicit circle,real)|hyperpage}{41}
+\indexentry{relpoint(explicit circle,real)|hyperpage}{41}
+\indexentry{angpoint(explicit circle,real)|hyperpage}{41}
+\indexentry{curpoint(explicit circle,real)|hyperpage}{41}
+\indexentry{inversion|hyperpage}{42}
+\indexentry{ellipse|mainidx}{46}
+\indexentry{ellipse|mainidx}{46}
+\indexentry{ellipse(point,point,real)|hyperpage}{47}
+\indexentry{ellipse(point,point,point)|hyperpage}{47}
+\indexentry{ellipse(point,real,real,real)|hyperpage}{47}
+\indexentry{ellipsenodesnumber(real,real)|hyperpage}{47}
+\indexentry{ellipsenodesnumberfactor|hyperpage}{47}
+\indexentry{focusToCenter(ellipse,real)|hyperpage}{48}
+\indexentry{centerToFocus(ellipse,real)|hyperpage}{48}
+\indexentry{arclength(ellipse,real,real,bool,polarconicroutine)|hyperpage}{48}
+\indexentry{polarconicroutine|hyperpage}{48}
+\indexentry{arcfromfocus|hyperpage}{48}
+\indexentry{arcfromcenter|hyperpage}{48}
+\indexentry{tangents(ellipse,point)|hyperpage}{48}
+\indexentry{tangent(ellipse,abscissa)|hyperpage}{48}
+\indexentry{point(explicit ellipse,real)|hyperpage}{49}
+\indexentry{relpoint(explicit ellipse,real)|hyperpage}{49}
+\indexentry{angpoint(explicit ellipse,real)|hyperpage}{50}
+\indexentry{curpoint(explicit ellipse,real)|hyperpage}{50}
+\indexentry{parabole|mainidx}{51}
+\indexentry{parabola(point,line)|hyperpage}{51}
+\indexentry{parabola(point,point)|hyperpage}{51}
+\indexentry{parabola(point,real,real)|hyperpage}{51}
+\indexentry{parabola(point,point,point,line)|hyperpage}{51}
+\indexentry{parabolanodesnumber(parabola,real,real)|hyperpage}{52}
+\indexentry{parabolanodesnumberfactor|hyperpage}{52}
+\indexentry{bangles(picture,parabola)|hyperpage}{52}
+\indexentry{tangents(parabola,point)|hyperpage}{53}
+\indexentry{tangent(parabola,abscissa)|hyperpage}{53}
+\indexentry{point(explicit parabola,real)|hyperpage}{53}
+\indexentry{relpoint(explicit parabola,real)|hyperpage}{53}
+\indexentry{angpoint(explicit parabola,real)|hyperpage}{53}
+\indexentry{curpoint(explicit parabola,real)|hyperpage}{53}
+\indexentry{arcfromfocus(conic,real,real,int,bool)|hyperpage}{53}
+\indexentry{conique|mainidx}{54}
+\indexentry{hyperbola(point,point,real,bool)|hyperpage}{54}
+\indexentry{byfoci|hyperpage}{54}
+\indexentry{byvertices|hyperpage}{54}
+\indexentry{hyperbola(point,real,real,real)|hyperpage}{55}
+\indexentry{conj(hyperbola)|hyperpage}{55}
+\indexentry{hyperbolanodesnumber(hyperbola,real,real)|hyperpage}{56}
+\indexentry{hyperbolanodesnumberfactor|hyperpage}{56}
+\indexentry{bangles(picture,hyperbola)|hyperpage}{56}
+\indexentry{tangents(hyperbola,point)|hyperpage}{56}
+\indexentry{tangent(hyperbola,abscissa)|hyperpage}{57}
+\indexentry{point(explicit hyperbola,real)|hyperpage}{57}
+\indexentry{relpoint(explicit hyperbola,real)|hyperpage}{57}
+\indexentry{angpoint(explicit hyperbola,real,polarconicroutine)|hyperpage}{57}
+\indexentry{arcfromfocus(conic,real,real,int,bool)|hyperpage}{57}
+\indexentry{arcfromcenter(hyperbola,real,real,int,bool)|hyperpage}{58}
+\indexentry{arc|mainidx}{59}
+\indexentry{arc(ellipse,real,real,polarconicroutine,bool)|hyperpage}{59}
+\indexentry{polarconicroutine(conic)|hyperpage}{59}
+\indexentry{addpenarc|hyperpage}{59}
+\indexentry{markarc|hyperpage}{59}
+\indexentry{arcnodesnumber(explicit arc)|hyperpage}{61}
+\indexentry{ellispenodesnumberfactor|hyperpage}{61}
+\indexentry{*(transform,explicit arc)|hyperpage}{61}
+\indexentry{*(real,explicit arc)|hyperpage}{62}
+\indexentry{/(explicit arc,real)|hyperpage}{62}
+\indexentry{+(explicit arc,point)|hyperpage}{64}
+\indexentry{-(explicit arc,point)|hyperpage}{64}
+\indexentry{+(explicit arc,vector)|hyperpage}{64}
+\indexentry{-(explicit arc,vector)|hyperpage}{64}
+\indexentry{operator @(point,arc)|hyperpage}{64}
+\indexentry{*(inversion,segment)|hyperpage}{64}
+\indexentry{complementary(arc)|hyperpage}{64}
+\indexentry{reverse(arc)|hyperpage}{64}
+\indexentry{degrees(arc)|hyperpage}{64}
+\indexentry{angle(arc)|hyperpage}{64}
+\indexentry{arclength(arc a)|hyperpage}{64}
+\indexentry{arclength(arc a)|hyperpage}{65}
+\indexentry{intersectionpoints(arc,arc)|hyperpage}{65}
+\indexentry{intersectionpoints(conic,arc)|hyperpage}{65}
+\indexentry{intersectionpoints(arc,conic)|hyperpage}{65}
+\indexentry{intersectionpoints(line,arc)|hyperpage}{65}
+\indexentry{arcsubtended(point,point,real)|hyperpage}{65}
+\indexentry{arcsubtendedcenter(point,point,real)|hyperpage}{65}
+\indexentry{arccircle(point,point,real,bool)|hyperpage}{66}
+\indexentry{arccircle(point,point,point)|hyperpage}{66}
+\indexentry{arc(ellipse,point,point,bool)|hyperpage}{66}
+\indexentry{arc(ellipse,abscissa,abscissa,bool)|hyperpage}{67}
+\indexentry{arc(explicit arc,point,point)|hyperpage}{67}
+\indexentry{arc(arc,abscissa,abscissa)|hyperpage}{67}
+\indexentry{inverse(real,point,segment)|hyperpage}{68}
+\indexentry{tangent(explicit arc,point)|hyperpage}{68}
+\indexentry{tangent(explicit arc,abscissa)|hyperpage}{68}
+\indexentry{abscisse|mainidx}{68}
+\indexentry{relativesystem|hyperpage}{68}
+\indexentry{curvilinearsystem|hyperpage}{68}
+\indexentry{angularsystem|hyperpage}{68}
+\indexentry{nodesystem|hyperpage}{68}
+\indexentry{relabscissa(real)|hyperpage}{68}
+\indexentry{curabscissa(real)|hyperpage}{69}
+\indexentry{angabscissa(real,polarconicroutine)|hyperpage}{69}
+\indexentry{nodabscissa(real)|hyperpage}{69}
+\indexentry{relabscissa(line,point)|hyperpage}{69}
+\indexentry{relabscissa(ellipse,point)|hyperpage}{69}
+\indexentry{relabscissa(arc,point)|hyperpage}{69}
+\indexentry{curabscissa(line,point)|hyperpage}{69}
+\indexentry{curabscissa(ellipse,point)|hyperpage}{69}
+\indexentry{curabscissa(parabola,point)|hyperpage}{69}
+\indexentry{angabscissa(circle,point)|hyperpage}{70}
+\indexentry{angabscissa(ellipse,point,polarconicroutine)|hyperpage}{70}
+\indexentry{angabscissa(hyperbola,point,polarconicroutine)|hyperpage}{70}
+\indexentry{angabscissa(parabola,point)|hyperpage}{70}
+\indexentry{nodabscissa(line,point)|hyperpage}{70}
+\indexentry{nodabscissa(ellipse,point)|hyperpage}{70}
+\indexentry{nodabscissa(parabola,point)|hyperpage}{70}
+\indexentry{+(real x, explicit abscissa a)|hyperpage}{70}
+\indexentry{+(explicit abscissa,real)|hyperpage}{70}
+\indexentry{-(real,explicit abscissa)|hyperpage}{70}
+\indexentry{-(explicit abscissa,real)|hyperpage}{70}
+\indexentry{operator -(explicit abscissa a)|hyperpage}{70}
+\indexentry{operator *(real x, explicit abscissa a)|hyperpage}{70}
+\indexentry{operator *(explicit abscissa a, real x)|hyperpage}{70}
+\indexentry{/(real x, explicit abscissa a)|hyperpage}{70}
+\indexentry{/(explicit abscissa a, real x)|hyperpage}{70}
+\indexentry{triangle|mainidx}{70}
+\indexentry{label(picture,Label,Label,Label,triangle,real,real,pen,filltype)|hyperpage}{71}
+\indexentry{show(picture,Label,Label,Label,Label,Label,Label,triangle,pen,filltype)|hyperpage}{71}
+\indexentry{drawline(picture,triangle,pen)|hyperpage}{71}
+\indexentry{drawline(picture,triangle,pen)|hyperpage}{71}
+\indexentry{triangle(point,point,point)|hyperpage}{71}
+\indexentry{triangleabc(real,real,real,real,point)|hyperpage}{72}
+\indexentry{triangleAbc(real,real,real,real,point)|hyperpage}{72}
+\indexentry{triangle(line,line,line)|hyperpage}{72}
+\indexentry{vertex!triangle|mainidx}{72}
+\indexentry{bisector(vertex,real)|hyperpage}{72}
+\indexentry{cast(vertex V)|hyperpage}{72}
+\indexentry{point(explicit vertex V)|hyperpage}{73}
+\indexentry{dir(vertex)|hyperpage}{73}
+\indexentry{side!triangle|mainidx}{73}
+\indexentry{excircle(side)|hyperpage}{73}
+\indexentry{cast(side side)|hyperpage}{73}
+\indexentry{line(explicit side side)|hyperpage}{73}
+\indexentry{segment(explicit side side)|hyperpage}{73}
+\indexentry{opposite(vertex)|hyperpage}{73}
+\indexentry{opposite(side)|hyperpage}{73}
+\indexentry{*(transform,triangle)|hyperpage}{73}
+\indexentry{orthocentercenter(triangle)|hyperpage}{74}
+\indexentry{foot(vertex)|hyperpage}{74}
+\indexentry{foot(side)|hyperpage}{74}
+\indexentry{altitude(vertex)|hyperpage}{74}
+\indexentry{altitude(side)|hyperpage}{74}
+\indexentry{orthic(triangle)|hyperpage}{74}
+\indexentry{midpoint(side)|hyperpage}{74}
+\indexentry{centroid(triangle)|hyperpage}{74}
+\indexentry{median(vertex)|hyperpage}{74}
+\indexentry{median(side)|hyperpage}{74}
+\indexentry{medial(triangle)|hyperpage}{74}
+\indexentry{anticomplementary(triangle)|hyperpage}{75}
+\indexentry{bisector(vertex,real)|hyperpage}{75}
+\indexentry{bisectorpoint(side side)|hyperpage}{75}
+\indexentry{bisector(side side)|hyperpage}{75}
+\indexentry{circumcenter(triangle)|hyperpage}{75}
+\indexentry{circle(triangle)|hyperpage}{75}
+\indexentry{circumcircle(triangle)|hyperpage}{75}
+\indexentry{tangential(triangle)|hyperpage}{75}
+\indexentry{incenter(triangle)|hyperpage}{76}
+\indexentry{inradius(triangle)|hyperpage}{76}
+\indexentry{incircle(triangle)|hyperpage}{76}
+\indexentry{intouch(triangle)|hyperpage}{76}
+\indexentry{intouch(side)|hyperpage}{76}
+\indexentry{gergonne(triangle t)|hyperpage}{76}
+\indexentry{excenter(side)|hyperpage}{76}
+\indexentry{exradius(side)|hyperpage}{76}
+\indexentry{excircle(side)|hyperpage}{76}
+\indexentry{extouch(triangle)|hyperpage}{76}
+\indexentry{extouch(side)|hyperpage}{76}
+\indexentry{symmedian(triangle)|hyperpage}{77}
+\indexentry{symmedian(side side)|hyperpage}{77}
+\indexentry{symmedian(vertex V)|hyperpage}{77}
+\indexentry{cevian(side,point)|hyperpage}{78}
+\indexentry{cevian(triangle,point)|hyperpage}{78}
+\indexentry{cevian(vertex,point)|hyperpage}{78}
+\indexentry{isotomic(vertex,point)|hyperpage}{78}
+\indexentry{isotomicconjugate(triangle,point)|hyperpage}{78}
+\indexentry{isotomic(side,point)|hyperpage}{78}
+\indexentry{isotomic(triangle,point)|hyperpage}{79}
+\indexentry{isogonalconjugate(triangle,point)|hyperpage}{79}
+\indexentry{isogonal(side,point)|hyperpage}{79}
+\indexentry{isogonal(triangle,point)|hyperpage}{79}
+\indexentry{pedal(triangle,point)|hyperpage}{80}
+\indexentry{pedal(side side, point M)|hyperpage}{80}
+\indexentry{antipedal(triangle,point)|hyperpage}{81}
+\indexentry{trilinear!coordinates|mainidx}{81}
+\indexentry{trilinear toordinates!triangle|mainidx}{81}
+\indexentry{trilinear(triangle,real,real,real)|hyperpage}{82}
+\indexentry{trilinear(triangle,point)|hyperpage}{82}
+\indexentry{trilinear(triangle,centerfunction,real,real,real)|hyperpage}{82}
+\indexentry{inversion|mainidx}{82}
+\indexentry{inversion(real,point)|hyperpage}{82}
+\indexentry{inversion(point,real)|hyperpage}{82}
+\indexentry{inversion(circle,circle,real)|hyperpage}{82}
+\indexentry{inversion(circle,circle,circle)|hyperpage}{82}
+\indexentry{cast(inversion)|hyperpage}{82}
+\indexentry{circle(inversion)|hyperpage}{82}
+\indexentry{cast(circle)|hyperpage}{82}
+\indexentry{inversion(circle)|hyperpage}{82}
+\indexentry{*(inversion,point)|hyperpage}{83}
+\indexentry{*(inversion,line)|hyperpage}{83}
+\indexentry{*(inversion,circle)|hyperpage}{83}
+\indexentry{*(inversion,segment)|hyperpage}{83}
+\indexentry{*(inversion,triangle)|hyperpage}{83}

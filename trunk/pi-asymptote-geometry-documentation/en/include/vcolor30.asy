@@ -1,0 +1,1 @@
+    point(explicit mass m)

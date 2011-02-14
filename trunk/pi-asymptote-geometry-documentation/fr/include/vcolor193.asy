@@ -1,0 +1,1 @@
+    real arclength(arc a)

@@ -1,0 +1,8 @@
+£§color£function-name`size`(7£§color£constant`cm`); £§color£builtin`import` geometry;
+£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangleabc`(4,5,6);
+£§color£function-name`drawline`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£type`line` £§color£variable-name`ba`=£§color£function-name`bisector`(t.VA), £§color£variable-name`bb`=£§color£function-name`bisector`(t.VB);
+£§color£type`line` £§color£variable-name`bc`=£§color£function-name`bisector`(t.VC); £§color£function-name`draw`(ba^^bb^^bc);
+£§color£function-name`markangle`(t.AB, t.AC, £§color£function-name`StickIntervalMarker`(2,1));
+£§color£function-name`markangle`(t.BC, t.BA, £§color£function-name`StickIntervalMarker`(2,2));
+£§color£function-name`markangle`(t.CA, t.CB, £§color£function-name`StickIntervalMarker`(2,3));

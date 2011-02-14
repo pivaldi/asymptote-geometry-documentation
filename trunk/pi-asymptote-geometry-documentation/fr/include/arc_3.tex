@@ -1,0 +1,16 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(8£§color£constant`cm`,0);
+£§color£type`real` £§color£variable-name`a`=2, £§color£variable-name`b`=1;
+£§color£type`point` £§color£variable-name`A`=(1,1); £§color£function-name`dot`(£§color£string`"$A$"`,A,£§color£constant`S`,£§color£constant`red`);
+£§color£type`ellipse` £§color£variable-name`EL`=£§color£function-name`ellipse`(A,a,b);
+£§color£type`arc` £§color£variable-name`AE`=£§color£function-name`arc`(EL, 210, 45, fromCenter);
+£§color£function-name`draw`(AE, £§color£function-name`linewidth`(£§color£constant`bp`), £§color£function-name`Arrow`(3£§color£constant`mm`), BeginBar);
+£§color£type`arc` £§color£variable-name`AEp`=£§color£function-name`arc`(EL, 210, 45, fromCenter, £§color£constant`CW`);
+£§color£function-name`draw`(AEp, £§color£constant`bp`+0.8*£§color£constant`red`, £§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£type`circle` £§color£variable-name`C`=£§color£function-name`circle`(A,a); £§color£type`arc` £§color£variable-name`AC`=£§color£function-name`arc`(C, 210, 45);
+£§color£function-name`draw`(AC, £§color£function-name`linewidth`(£§color£constant`bp`), £§color£function-name`Arrow`(3£§color£constant`mm`), BeginBar);
+£§color£type`arc` £§color£variable-name`ACp`=£§color£function-name`arc`(C, 210, 45, £§color£constant`CW`);
+£§color£function-name`draw`(ACp, £§color£constant`bp`+0.8*£§color£constant`red`, £§color£function-name`Arrow`(3£§color£constant`mm`));
+£§color£function-name`markarc`(£§color£function-name`format`(£§color£string`"$%0g^\circ$"`,£§color£function-name`degrees`(AC)),
+        AC, radius=1.5£§color£constant`cm`, Arrow);
+£§color£function-name`markarc`(£§color£function-name`format`(£§color£string`"$%0g^\circ$"`,£§color£function-name`degrees`(ACp)),
+        ACp, markpen=0.8*£§color£constant`red`, Arrow);

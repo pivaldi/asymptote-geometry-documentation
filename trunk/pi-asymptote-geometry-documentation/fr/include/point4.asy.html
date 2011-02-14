@@ -1,0 +1,11 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(4<span class="constant">cm</span>,0);
+<span class="type">coordsys</span> <span class="variable-name">R</span>=<span class="function-name">cartesiansystem</span>((2,3), i=(1,0), j=(0.5,1));
+<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>);
+<span class="function-name">show</span>(<span class="function-name">Label</span>(<span class="string">"$O_1$"</span>,<span class="constant">blue</span>), <span class="function-name">Label</span>(<span class="string">"$\vec{u}$"</span>,<span class="constant">blue</span>),
+     <span class="function-name">Label</span>(<span class="string">"$\vec{v}$"</span>,<span class="constant">blue</span>), R, xpen=<span class="constant">invisible</span>, ipen=<span class="constant">blue</span>);
+<span class="type">pair</span> <span class="variable-name">A</span>=(3,1);
+<span class="function-name">dot</span>(<span class="string">""</span>, A, <span class="constant">red</span>);
+<span class="type">point</span> <span class="variable-name">B</span>=<span class="function-name">point</span>(R, A/R);
+<span class="function-name">dot</span>(<span class="string">""</span>, B, <span class="constant">W</span>, <span class="constant">blue</span>);
+

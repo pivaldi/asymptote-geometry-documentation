@@ -1,0 +1,19 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(9<span class="constant">cm</span>);
+<span class="constant">green</span>=0.8<span class="constant">green</span>; <span class="constant">blue</span>=0.8<span class="constant">blue</span>; <span class="constant">red</span>=0.8<span class="constant">red</span>;
+<span class="type">pen</span> <span class="variable-name">bpp</span>=<span class="function-name">linewidth</span>(<span class="constant">bp</span>);
+<span class="type">point</span> <span class="variable-name">A</span>=(-1,0), <span class="variable-name">B</span>=(2,0), <span class="variable-name">C</span>=(0,2);
+<span class="function-name">draw</span>(<span class="function-name">line</span>(A,B),bpp); <span class="function-name">draw</span>(<span class="function-name">line</span>(A,C),bpp);
+<span class="function-name">draw</span>(<span class="function-name">line</span>(B,C),bpp);
+<span class="type">circle</span> <span class="variable-name">cc</span>=<span class="function-name">circle</span>(A,B,C);
+<span class="function-name">draw</span>(cc, <span class="constant">bp</span>+<span class="constant">blue</span>); <span class="function-name">dot</span>(cc.C, <span class="constant">blue</span>);
+<span class="type">circle</span> <span class="variable-name">ic</span>=<span class="function-name">incircle</span>(A,B,C);
+<span class="function-name">draw</span>(ic, <span class="constant">bp</span>+<span class="constant">red</span>); <span class="function-name">dot</span>(ic.C, <span class="constant">red</span>);
+<span class="type">circle</span> <span class="variable-name">ec</span>=<span class="function-name">excircle</span>(A,B,C);
+<span class="function-name">clipdraw</span>(ec, <span class="constant">bp</span>+<span class="constant">green</span>); <span class="function-name">dot</span>(ec.C, <span class="constant">green</span>);
+ec=<span class="function-name">excircle</span>(A,C,B);
+<span class="function-name">clipdraw</span>(ec, <span class="constant">bp</span>+<span class="constant">green</span>); <span class="function-name">dot</span>(ec.C, <span class="constant">green</span>);
+ec=<span class="function-name">excircle</span>(C,B,A);
+<span class="function-name">clipdraw</span>(ec, <span class="constant">bp</span>+<span class="constant">green</span>); <span class="function-name">dot</span>(ec.C, <span class="constant">green</span>);
+<span class="function-name">dot</span>(<span class="string">"G"</span>, <span class="function-name">centroid</span>(A,B,C), <span class="constant">NE</span>);
+

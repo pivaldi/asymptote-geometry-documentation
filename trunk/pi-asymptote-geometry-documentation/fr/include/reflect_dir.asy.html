@@ -1,0 +1,11 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(5<span class="constant">cm</span>,0);
+<span class="type">line</span> <span class="variable-name">AB</span>=<span class="function-name">line</span>(<span class="constant">origin</span>, <span class="constant">NE</span>), <span class="variable-name">CD</span>=<span class="function-name">line</span>(2*<span class="constant">NE</span>+<span class="constant">N</span>, 2*<span class="constant">NE</span>+<span class="constant">SE</span>);
+<span class="function-name">draw</span>(AB, <span class="function-name">linewidth</span>(<span class="constant">bp</span>)); <span class="function-name">draw</span>(CD, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="type">transform</span> <span class="variable-name">reflect</span>=<span class="function-name">reflect</span>(AB,CD);
+
+<span class="type">point</span> <span class="constant">M</span>=1.75*<span class="constant">NE</span>+0.5<span class="constant">N</span>, <span class="variable-name">Mp</span>=reflect*<span class="constant">M</span>;
+<span class="function-name">dot</span>(<span class="string">"M"</span>,<span class="constant">M</span>, <span class="function-name">unit</span>(<span class="constant">M</span>-Mp)); <span class="function-name">dot</span>(<span class="string">"M'"</span>, Mp, <span class="function-name">unit</span>(Mp-<span class="constant">M</span>), <span class="constant">red</span>);
+<span class="function-name">draw</span>(<span class="function-name">segment</span>(<span class="constant">M</span>,Mp), <span class="constant">grey</span>, <span class="function-name">StickIntervalMarker</span>(2,2,<span class="constant">grey</span>));
+<span class="function-name">draw</span>(<span class="function-name">box</span>((1,1), (2.2,2.2)), <span class="constant">invisible</span>);
+

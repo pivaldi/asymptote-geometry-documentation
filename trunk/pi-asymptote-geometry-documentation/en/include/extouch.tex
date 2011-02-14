@@ -1,0 +1,13 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(6£§color£constant`cm`,0);
+
+£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangle`((-1,0), (2,0), (0,2));
+£§color£function-name`drawline`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£function-name`label`(t,alignFactor=4);
+
+£§color£type`circle` £§color£variable-name`c1`=£§color£function-name`excircle`(t.AB), £§color£variable-name`c2`=£§color£function-name`excircle`(t.BC);
+£§color£type`circle` £§color£variable-name`c3`=£§color£function-name`excircle`(t.AC);
+£§color£function-name`clipdraw`(c1, £§color£constant`bp`+0.8£§color£constant`green`);
+£§color£function-name`clipdraw`(c2, £§color£constant`bp`+0.8£§color£constant`green`);
+£§color£function-name`clipdraw`(c3, £§color£constant`bp`+0.8£§color£constant`green`);
+£§color£function-name`dot`(c1.C^^c2.C^^c3.C, £§color£constant`green`);
+£§color£function-name`draw`(£§color£function-name`extouch`(t), £§color£constant`bp`+0.8£§color£constant`green`, £§color£constant`dot`);

@@ -1,0 +1,14 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(7£§color£constant`cm`,0);
+£§color£type`point` £§color£variable-name`A`=(-1,0), £§color£variable-name`B`=(1,0);
+£§color£function-name`dot`(£§color£string`"$A$"`, A, £§color£constant`S`); £§color£function-name`dot`(£§color£string`"$B$"`, B, £§color£constant`S`);
+£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`);
+
+£§color£type`arc` £§color£variable-name`Ac`=£§color£function-name`arcsubtended`(A,B,30); £§color£function-name`draw`(Ac, bpp);
+£§color£function-name`dot`(£§color£string`"$O$"`, Ac.el.C);
+£§color£function-name`markarc`(£§color£string`"$\alpha$"`, Ac, n=2, radius=1£§color£constant`cm`,
+        sectorpen=bpp, markpen=£§color£constant`currentpen`);
+
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 3; ++i) {
+  £§color£type`point` £§color£constant`M`=£§color£function-name`relpoint`(Ac, 0.25+0.25*i);
+  £§color£function-name`draw`(£§color£constant`M`--A^^£§color£constant`M`--B, £§color£function-name`linewidth`(£§color£constant`bp`));
+  £§color£function-name`markangle`(£§color£string`"$\frac{\alpha}{2}$"`, A, £§color£constant`M`, B); }

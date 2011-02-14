@@ -1,0 +1,8 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(4£§color£constant`cm`,0);
+£§color£type`coordsys` £§color£variable-name`R`=£§color£function-name`cartesiansystem`((2,1), i=(1,1), j=(-0.75,1));
+£§color£function-name`show`(£§color£string`"$O_1$"`, £§color£string`"$\vec{u}$"`, £§color£string`"$\vec{v}$"`, R, xpen=£§color£constant`invisible`);
+£§color£function-name`show`(£§color£constant`currentcoordsys`);
+£§color£type`point` £§color£constant`M`=£§color£function-name`point`(R, (1,1)); £§color£function-name`dot`(£§color£string`"M"`, £§color£constant`M`, £§color£constant`N`);
+£§color£function-name`dot`(£§color£string`"vector(M)"`, £§color£function-name`vector`(£§color£constant`M`), £§color£constant`N`);
+£§color£function-name`show`(£§color£function-name`Label`(£§color£function-name`scale`(0.75)*£§color£string`"$\vec{O_1M}$"`, £§color£function-name`Relative`(0.75)),
+     £§color£constant`M`, £§color£function-name`linewidth`(£§color£constant`bp`), £§color£function-name`Arrow`(3£§color£constant`mm`));

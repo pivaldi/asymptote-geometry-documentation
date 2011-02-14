@@ -1,0 +1,1 @@
+    triangle intouch(triangle t)

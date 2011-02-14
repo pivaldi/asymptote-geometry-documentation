@@ -1,0 +1,1 @@
+    point orthocentercenter(triangle t)

@@ -1,0 +1,1 @@
+    point[] fermat(triangle t)

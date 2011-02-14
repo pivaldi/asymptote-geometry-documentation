@@ -1,0 +1,1 @@
+    abscissa nodabscissa(real x)

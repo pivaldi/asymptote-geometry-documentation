@@ -1,0 +1,11 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(4.5<span class="constant">cm</span>,0);
+<span class="constant">currentcoordsys</span>=<span class="function-name">cartesiansystem</span>((2,1), i=(1,0.5), j=(-1,1));
+<span class="function-name">show</span>(<span class="string">"$O_1$"</span>, <span class="string">"$\vec{u}$"</span>, <span class="string">"$\vec{v}$"</span>, <span class="constant">currentcoordsys</span>,
+     xpen=<span class="constant">invisible</span>); <span class="function-name">show</span>(<span class="constant">defaultcoordsys</span>, xpen=<span class="constant">invisible</span>);
+
+<span class="type">real</span> <span class="variable-name">k</span>=<span class="function-name">sqrt</span>(2); <span class="type">point</span> <span class="variable-name">P</span>=(1,1); <span class="function-name">dot</span>(<span class="string">"P"</span>, P);
+
+<span class="type">point</span> <span class="variable-name">P1</span>=<span class="function-name">scale</span>(k)*P, <span class="variable-name">P2</span>=<span class="function-name">scaleO</span>(k)*P; <span class="function-name">dot</span>(<span class="string">"scale(k)*P"</span>, P1, <span class="constant">N</span>);
+<span class="function-name">dot</span>(<span class="string">"scaleO(k)*P"</span>, P2, <span class="constant">W</span>); <span class="function-name">draw</span>((0,0)--<span class="function-name">locate</span>(P1));
+<span class="function-name">draw</span>(<span class="function-name">origin</span>()--P2);
+

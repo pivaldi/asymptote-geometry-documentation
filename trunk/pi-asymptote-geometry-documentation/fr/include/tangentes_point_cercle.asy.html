@@ -1,0 +1,15 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(7.5<span class="constant">cm</span>,0);
+
+<span class="type">point</span> <span class="variable-name">A</span>=(2.5,-1); <span class="function-name">dot</span>(<span class="string">"$A$"</span>, A, <span class="constant">SW</span>);
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>(A,1); <span class="function-name">draw</span>(C, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+
+<span class="type">path</span> <span class="variable-name">Cp</span>=<span class="function-name">shift</span>(A)*<span class="function-name">scale</span>(2)*<span class="constant">unitcircle</span>;
+<span class="function-name">draw</span>(Cp, <span class="constant">grey</span>);
+<span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">i</span>=0; i &lt; 360; i+=45) {
+  <span class="type">point</span> <span class="constant">M</span>=<span class="function-name">relpoint</span>(Cp, i/360);
+  <span class="function-name">dot</span>(<span class="function-name">format</span>(<span class="string">"$M_%f$"</span>, i/45), <span class="constant">M</span>, 2*<span class="function-name">unit</span>(<span class="constant">M</span>-A));
+  <span class="function-name">draw</span>(<span class="function-name">tangents</span>(C, <span class="constant">M</span>), 0.8*<span class="constant">red</span>);
+}
+<span class="function-name">addMargins</span>(10<span class="constant">mm</span>,10<span class="constant">mm</span>);
+

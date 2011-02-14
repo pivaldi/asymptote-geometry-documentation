@@ -1,0 +1,13 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(6<span class="constant">cm</span>,0);
+<span class="constant">currentcoordsys</span>=<span class="function-name">cartesiansystem</span>((1,1), i=(1,1),
+                                j=(-0.5,.75));
+<span class="function-name">show</span>(<span class="string">"$O'$"</span>,<span class="string">"$\vec{u}$"</span>, <span class="string">"$\vec{v}$"</span>, <span class="constant">currentcoordsys</span>,
+     ipen=<span class="constant">blue</span>, xpen=<span class="constant">invisible</span>);
+<span class="function-name">show</span>(<span class="constant">defaultcoordsys</span>);
+<span class="type">real</span> <span class="variable-name">R</span>=2;
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circle</span>((0,0), R);
+<span class="function-name">draw</span>(C, <span class="constant">bp</span>+0.8*<span class="constant">blue</span>);
+<span class="type">circle</span> <span class="variable-name">Cp</span>=<span class="function-name">circle</span>(<span class="function-name">point</span>(<span class="constant">defaultcoordsys</span>,(0,0)), R);
+<span class="function-name">draw</span>(Cp, <span class="constant">bp</span>+0.8*<span class="constant">red</span>);
+

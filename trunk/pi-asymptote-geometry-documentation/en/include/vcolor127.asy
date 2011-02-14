@@ -1,0 +1,1 @@
+    string conictype(bqe bqe)

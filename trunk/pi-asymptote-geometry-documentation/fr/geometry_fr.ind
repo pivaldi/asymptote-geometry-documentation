@@ -1,0 +1,483 @@
+\begin{theindex}
+
+  \item *(explicit point,explicit pair), \hyperpage{9}
+  \item *(inversion,circle), \hyperpage{82}
+  \item *(inversion,line), \hyperpage{82}
+  \item *(inversion,point), \hyperpage{82}
+  \item *(inversion,segment), \hyperpage{63}, \hyperpage{82}
+  \item *(inversion,triangle), \hyperpage{82}
+  \item *(point,line), \hyperpage{26}
+  \item *(real,explicit arc), \hyperpage{61}
+  \item *(real,explicit circle), \hyperpage{38}
+  \item *(real,line), \hyperpage{26}
+  \item *(transform,conic), \hyperpage{35}
+  \item *(transform,explicit arc), \hyperpage{60}
+  \item *(transform,explicit point), \hyperpage{9}
+  \item *(transform,line), \hyperpage{26}
+  \item *(transform,triangle), \hyperpage{72}
+  \item +(conic,explicit pair), \hyperpage{35}
+  \item +(conic,explicit point), \hyperpage{35}
+  \item +(conic,explicit vector), \hyperpage{35}
+  \item +(explicit abscissa,real), \hyperpage{69}
+  \item +(explicit arc,point), \hyperpage{63}
+  \item +(explicit arc,vector), \hyperpage{63}
+  \item +(line,vector), \hyperpage{26}
+  \item +(real x, explicit abscissa a), \hyperpage{69}
+  \item -(conic,explicit pair), \hyperpage{35}
+  \item -(conic,explicit point), \hyperpage{35}
+  \item -(conic,explicit vector), \hyperpage{35}
+  \item -(explicit abscissa,real), \hyperpage{69}
+  \item -(explicit arc,point), \hyperpage{63}
+  \item -(explicit arc,vector), \hyperpage{63}
+  \item -(line,vector), \hyperpage{26}
+  \item -(real,explicit abscissa), \hyperpage{69}
+  \item /(explicit abscissa a, real x), \hyperpage{69}
+  \item /(explicit arc,real), \hyperpage{61}
+  \item /(explicit circle,real), \hyperpage{38}
+  \item /(line,real), \hyperpage{26}
+  \item /(real x, explicit abscissa a), \hyperpage{69}
+  \item ==(explicit point,explicit point), \hyperpage{9}
+  \item ==(line,line), \hyperpage{27}
+  \item \'equation
+    \subitem conique, \mainidx{35}
+  \item \circonflexe(point M, explicit circle c), \hyperpage{38}
+  \item ^^(line,line), \hyperpage{26}
+
+  \indexspace
+
+  \item abs(coordsys,pair), \hyperpage{9}
+  \item abs(explicit point), \hyperpage{9}
+  \item abscissa, \hyperpage{4}
+  \item abscisse, \mainidx{67}
+  \item addpenarc, \hyperpage{58}
+  \item altitude(side), \hyperpage{73}
+  \item altitude(vertex), \hyperpage{73}
+  \item angabscissa(circle,point), \hyperpage{68}
+  \item angabscissa(ellipse,point,polarconicroutine), \hyperpage{68}
+  \item angabscissa(hyperbola,point,polarconicroutine), \hyperpage{68}
+  \item angabscissa(parabola,point), \hyperpage{69}
+  \item angabscissa(real,polarconicroutine), \hyperpage{68}
+  \item angle(arc), \hyperpage{63}
+  \item angle(explicit point,coordsys,bool), \hyperpage{9}
+  \item angle(line,coordsys), \hyperpage{26}
+  \item angle(line,line), \hyperpage{26}
+  \item angpoint(explicit circle,real), \hyperpage{40}
+  \item angpoint(explicit ellipse,real), \hyperpage{49}
+  \item angpoint(explicit hyperbola,real,polarconicroutine), 
+		\hyperpage{56}
+  \item angpoint(explicit parabola,real), \hyperpage{52}
+  \item angularsystem, \hyperpage{67}
+  \item anticomplementary(triangle), \hyperpage{74}
+  \item antipedal(triangle,point), \hyperpage{80}
+  \item arc, \hyperpage{4}, \mainidx{58}
+  \item arc(arc,abscissa,abscissa), \hyperpage{66}
+  \item arc(ellipse,abscissa,abscissa,bool), \hyperpage{66}
+  \item arc(ellipse,point,point,bool), \hyperpage{65}
+  \item arc(ellipse,real,real,polarconicroutine,bool), \hyperpage{58}
+  \item arc(explicit arc,point,point), \hyperpage{66}
+  \item arccircle(point,point,point), \hyperpage{65}
+  \item arccircle(point,point,real,bool), \hyperpage{64}
+  \item arcfromcenter, \hyperpage{47}
+  \item arcfromcenter(hyperbola,real,real,int,bool), \hyperpage{57}
+  \item arcfromfocus, \hyperpage{47}
+  \item arcfromfocus(conic,real,real,int,bool), \hyperpage{52}, 
+		\hyperpage{56}
+  \item arclength(arc a), \hyperpage{63}
+  \item arclength(ellipse,real,real,bool,polarconicroutine), 
+		\hyperpage{47}
+  \item arcnodesnumber(explicit arc), \hyperpage{60}
+  \item arcsubtended(point,point,real), \hyperpage{63}
+  \item arcsubtendedcenter(point,point,real), \hyperpage{63}
+
+  \indexspace
+
+  \item bangles(picture,hyperbola), \hyperpage{55}
+  \item bangles(picture,parabola), \hyperpage{51}
+  \item bisector(line,line,real,bool), \hyperpage{23}
+  \item bisector(segment), \hyperpage{30}
+  \item bisector(side side), \hyperpage{74}
+  \item bisector(vertex,real), \hyperpage{71}, \hyperpage{74}
+  \item bisectorpoint(side side), \hyperpage{74}
+  \item bqe(coordsys,real,real,real,real,real,real), \hyperpage{35}
+  \item bqe(point,point,point,point,point), \hyperpage{35}
+  \item byfoci, \hyperpage{53}
+  \item byvertices, \hyperpage{53}
+
+  \indexspace
+
+  \item c\^ot\'e
+    \subitem triangle, \mainidx{72}
+  \item canonical(bqe), \hyperpage{36}
+  \item canonicalcartesiansystem(ellipse), \hyperpage{33}
+  \item canonicalcartesiansystem(explicit conic), \hyperpage{33}
+  \item canonicalcartesiansystem(hyperbola), \hyperpage{33}
+  \item canonicalcartesiansystem(parabola), \hyperpage{33}
+  \item cast(circle), \hyperpage{81}
+  \item cast(inversion), \hyperpage{81}
+  \item cast(side side), \hyperpage{72}
+  \item cast(vertex V), \hyperpage{71}
+  \item casting
+    \subitem conique, \mainidx{36}
+  \item centerToFocus(ellipse,real), \hyperpage{47}
+  \item centroid(triangle), \hyperpage{73}
+  \item cercle, \mainidx{36}
+  \item cevian(side,point), \hyperpage{77}
+  \item cevian(triangle,point), \hyperpage{77}
+  \item cevian(vertex,point), \hyperpage{77}
+  \item changecoordsys(coordsys,bqe), \hyperpage{35}
+  \item changecoordsys(coordsys,conic), \hyperpage{33}
+  \item changecoordsys(coordsys,line), \hyperpage{27}
+  \item circle to ellipse, \hyperpage{38}
+  \item circle(explicit point,real), \hyperpage{36}
+  \item circle(inversion), \hyperpage{81}
+  \item circle(pair,real), \hyperpage{36}
+  \item circle(point A, point B), \hyperpage{37}
+  \item circle(triangle), \hyperpage{74}
+  \item circlenodesnumber(real), \hyperpage{38}
+  \item circlenodesnumberfactor, \hyperpage{38}
+  \item circumcenter(triangle), \hyperpage{74}
+  \item circumcircle(point,point,point), \hyperpage{37}
+  \item circumcircle(triangle), \hyperpage{74}
+  \item clipdraw(picture,Label,path,align,pen,arrowbar,arrowbar,real,real,Label,marker), 
+		\hyperpage{37}
+  \item collinear(vector,vector), \hyperpage{12}
+  \item complementary(arc), \hyperpage{63}
+  \item complementary(explicit line), \hyperpage{27}
+  \item complementary(explicit segment), \hyperpage{30}
+  \item concurrent(...line[]), \hyperpage{27}
+  \item conic, \hyperpage{4}
+  \item conic conic(point,l,real), \hyperpage{32}
+  \item conic(bqe), \hyperpage{36}
+  \item conic(point,point,point,point,point), \hyperpage{32}
+  \item conicnodesnumber(conic,real,real), \hyperpage{34}
+  \item conictype(bqe), \hyperpage{35}
+  \item conique, \mainidx{32}, \mainidx{53}
+  \item conj(explicit point), \hyperpage{9}
+  \item conj(hyperbola), \hyperpage{54}
+  \item coordinates(point), \hyperpage{8}
+  \item coordonn\'ees trilin\'eaires
+    \subitem triangle, \mainidx{80}
+  \item coordsys, \hyperpage{3}, \mainidx{5}
+    \subitem *, \hyperpage{6}
+    \subitem cartesiansystem, \hyperpage{5}
+    \subitem currentcoordsys, \hyperpage{5}
+    \subitem defaultcoordsys, \hyperpage{5}
+    \subitem polar, \hyperpage{8}
+  \item coordsys(conic), \hyperpage{33}
+  \item coordsys(line), \hyperpage{27}
+  \item curabscissa(ellipse,point), \hyperpage{68}
+  \item curabscissa(line,point), \hyperpage{68}
+  \item curabscissa(parabola,point), \hyperpage{68}
+  \item curabscissa(real), \hyperpage{67}
+  \item curpoint(explicit circle,real), \hyperpage{40}
+  \item curpoint(explicit ellipse,real), \hyperpage{49}
+  \item curpoint(explicit parabola,real), \hyperpage{52}
+  \item curpoint(line,real), \hyperpage{28}
+  \item currentcoordsys, \hyperpage{7}
+  \item curvilinearsystem, \hyperpage{67}
+
+  \indexspace
+
+  \item defaultmassformat, \hyperpage{13}
+  \item degrees(arc), \hyperpage{63}
+  \item degrees(explicit point,coordsys,bool), \hyperpage{9}
+  \item degrees(line,coordsys), \hyperpage{26}
+  \item degrees(line,line), \hyperpage{26}
+  \item dir(vertex), \hyperpage{72}
+  \item distance(line,point), \hyperpage{27}
+  \item distance(point,line), \hyperpage{27}
+  \item dot(point,point), \hyperpage{9}
+  \item draw(picture,Label,line,bool,bool,align,pen,arrowbar,Label,marker), 
+		\hyperpage{21}
+  \item draw(picture,Label[],line[],align,pen,arrowbar,Label,marker), 
+		\hyperpage{27}
+  \item draw(picture,Label[],line[],align,pen[],arrowbar,Label,marker), 
+		\hyperpage{27}
+  \item drawline(picture,triangle,pen), \hyperpage{70}
+  \item droite, \mainidx{21}
+
+  \indexspace
+
+  \item ellipse, \mainidx{36}, \mainidx{45}
+  \item ellipse(point,point,point), \hyperpage{46}
+  \item ellipse(point,point,real), \hyperpage{46}
+  \item ellipse(point,real,real,real), \hyperpage{46}
+  \item ellipsenodesnumber(real,real), \hyperpage{46}
+  \item ellipsenodesnumberfactor, \hyperpage{46}
+  \item ellispenodesnumberfactor, \hyperpage{60}
+  \item equation(ellispe), \hyperpage{35}
+  \item equation(explicit conic), \hyperpage{35}
+  \item equation(parabola), \hyperpage{35}
+  \item excenter(side), \hyperpage{75}
+  \item excircle(point,point,point), \hyperpage{37}
+  \item excircle(side), \hyperpage{72}, \hyperpage{75}
+  \item exradius(side), \hyperpage{75}
+  \item extend(line l), \hyperpage{27}
+  \item extouch(side), \hyperpage{75}
+  \item extouch(triangle), \hyperpage{75}
+
+  \indexspace
+
+  \item fermat(triangle), \hyperpage{79}
+  \item finite(explicit point), \hyperpage{9}
+  \item focusToCenter(ellipse,real), \hyperpage{47}
+  \item foot(side), \hyperpage{73}
+  \item foot(vertex), \hyperpage{73}
+
+  \indexspace
+
+  \item gergonne(triangle t), \hyperpage{75}
+
+  \indexspace
+
+  \item hprojection(line,bool), \hyperpage{31}
+  \item hyperbola, \hyperpage{35}
+  \item hyperbola(point,point,real,bool), \hyperpage{53}
+  \item hyperbola(point,real,real,real), \hyperpage{54}
+  \item hyperbolanodesnumber(hyperbola,real,real), \hyperpage{55}
+  \item hyperbolanodesnumberfactor, \hyperpage{55}
+
+  \indexspace
+
+  \item incenter(triangle), \hyperpage{75}
+  \item incircle(point,point,point), \hyperpage{37}
+  \item incircle(triangle), \hyperpage{75}
+  \item inradius(triangle), \hyperpage{75}
+  \item intersectionpoint(line,line), \hyperpage{21}
+  \item intersectionpoints(arc,arc), \hyperpage{63}
+  \item intersectionpoints(arc,conic), \hyperpage{63}
+  \item intersectionpoints(conic,arc), \hyperpage{63}
+  \item intersectionpoints(conic,conic), \hyperpage{34}
+  \item intersectionpoints(conic,line), \hyperpage{34}
+  \item intersectionpoints(conic,triangle,bool), \hyperpage{34}
+  \item intersectionpoints(line l, path g), \hyperpage{22}
+  \item intersectionpoints(line,arc), \hyperpage{63}
+  \item intersectionpoints(line,conic), \hyperpage{34}
+  \item intersectionpoints(triangle,conic,bool), \hyperpage{34}
+  \item intouch(side), \hyperpage{75}
+  \item intouch(triangle), \hyperpage{75}
+  \item inverse(real,point,segment), \hyperpage{67}
+  \item inversion, \hyperpage{41}
+  \item inversion(circle), \hyperpage{81}
+  \item inversion(circle,circle,circle), \hyperpage{81}
+  \item inversion(circle,circle,real), \hyperpage{81}
+  \item inversion(point,real), \hyperpage{81}
+  \item inversion(real,point), \hyperpage{81}
+  \item isogonal(side,point), \hyperpage{78}
+  \item isogonal(triangle,point), \hyperpage{78}
+  \item isogonalconjugate(triangle,point), \hyperpage{78}
+  \item isotomic(side,point), \hyperpage{77}
+  \item isotomic(triangle,point), \hyperpage{78}
+  \item isotomic(vertex,point), \hyperpage{77}
+  \item isotomicconjugate(triangle,point), \hyperpage{77}
+
+  \indexspace
+
+  \item label(picture,Label,Label,Label,triangle,real,real,pen,filltype), 
+		\hyperpage{70}
+  \item length(explicit point), \hyperpage{9}
+  \item line, \hyperpage{4}
+  \item line perpendicular(point,explicit vector), \hyperpage{25}
+  \item line(coordsys,real,real), \hyperpage{22}
+  \item line(coordsys,real,real,real), \hyperpage{22}
+  \item line(explicit side side), \hyperpage{72}
+  \item line(point,bool,point,bool), \hyperpage{21}
+  \item line(point,real), \hyperpage{23}
+  \item line(real,point), \hyperpage{23}
+  \item locate, \hyperpage{7}
+  \item locate(point), \hyperpage{9}
+  \item locate(vector), \hyperpage{10}
+
+  \indexspace
+
+  \item markangle(picture,Label,int,real,real,line,line,arrowbar,pen,margin,marker), 
+		\hyperpage{28}
+  \item markarc, \hyperpage{58}
+  \item mass, \hyperpage{3}, \mainidx{12}, \hyperpage{13}
+  \item mass mass(explicit point), \hyperpage{13}
+  \item mass(coordsys,explicit pair,real), \hyperpage{13}
+  \item mass(explicit point), \mainidx{13}
+  \item mass(point,real), \hyperpage{13}
+  \item masscenter(...mass[]), \hyperpage{13}
+  \item massformat(string,string,mass), \hyperpage{14}
+  \item medial(triangle), \hyperpage{73}
+  \item median(side), \hyperpage{73}
+  \item median(vertex), \hyperpage{73}
+  \item midpoint(segment), \hyperpage{30}
+  \item midpoint(side), \hyperpage{73}
+
+  \indexspace
+
+  \item nodabscissa(ellipse,point), \hyperpage{69}
+  \item nodabscissa(line,point), \hyperpage{69}
+  \item nodabscissa(parabola,point), \hyperpage{69}
+  \item nodabscissa(real), \hyperpage{68}
+  \item nodesystem, \hyperpage{67}
+
+  \indexspace
+
+  \item (point,arc), \hyperpage{63}
+  \item operator *(explicit abscissa a, real x), \hyperpage{69}
+  \item operator *(real x, explicit abscissa a), \hyperpage{69}
+  \item operator -(explicit abscissa a), \hyperpage{69}
+  \item opposite(side), \hyperpage{72}
+  \item opposite(vertex), \hyperpage{72}
+  \item origin, \hyperpage{8}
+  \item origin(coordsys), \hyperpage{8}
+  \item orthic(triangle), \hyperpage{73}
+  \item orthocentercenter(triangle), \hyperpage{73}
+  \item Ox, \hyperpage{21}
+  \item Ox(), \hyperpage{21}
+  \item Oy, \hyperpage{21}
+  \item Oy(), \hyperpage{21}
+
+  \indexspace
+
+  \item parabola(point,line), \hyperpage{50}
+  \item parabola(point,point), \hyperpage{50}
+  \item parabola(point,point,point,line), \hyperpage{50}
+  \item parabola(point,real,real), \hyperpage{50}
+  \item parabolanodesnumber(parabola,real,real), \hyperpage{51}
+  \item parabolanodesnumberfactor, \hyperpage{51}
+  \item parabole, \mainidx{50}
+  \item parallel(line,line,bool), \hyperpage{22}
+  \item parallel(point,explicit pair), \hyperpage{22}
+  \item parallel(point,explicit vector), \hyperpage{22}
+  \item parallel(point,line), \hyperpage{22}
+  \item pedal(side side, point M), \hyperpage{79}
+  \item pedal(triangle,point), \hyperpage{79}
+  \item perpendicular(line,line), \hyperpage{28}
+  \item perpendicular(point,explicit pair), \hyperpage{25}
+  \item perpendicular(point,line), \hyperpage{25}
+  \item perpendicularmark(picture,line,line,real,pen,int,margin,filltype), 
+		\hyperpage{29}
+  \item point, \hyperpage{3}, \mainidx{6}
+    \subitem *, \hyperpage{8}
+    \subitem +, \hyperpage{8}
+    \subitem -, \hyperpage{8}
+    \subitem /, \hyperpage{8}
+    \subitem casting, \hyperpage{6}
+    \subitem changecoordsys, \hyperpage{7}
+  \item point point(explicit mass), \hyperpage{13}
+  \item point(circle,point), \hyperpage{39}
+  \item point(circle,vector), \hyperpage{39}
+  \item point(coordsys,explicit point,real), \hyperpage{8}
+  \item point(coordsys,pair,real), \hyperpage{7}
+  \item point(explicit circle,real), \hyperpage{40}
+  \item point(explicit ellipse,real), \hyperpage{48}
+  \item point(explicit hyperbola,real), \hyperpage{56}
+  \item point(explicit mass), \mainidx{13}
+  \item point(explicit parabola,real), \hyperpage{52}
+  \item point(explicit vector), \hyperpage{11}
+  \item point(explicit vertex V), \hyperpage{71}
+  \item point(line l,real), \hyperpage{28}
+  \item polar, \see{coordsys polar}{8}
+  \item polarconicroutine, \hyperpage{47}
+  \item polarconicroutine(conic), \hyperpage{58}
+  \item projection(line), \hyperpage{31}
+  \item projection(point,point), \hyperpage{16}
+  \item projection(point,point,point,point,bool), \hyperpage{17}
+
+  \indexspace
+
+  \item radicalcenter(circle,circle), \hyperpage{39}
+  \item radicalcenter(circle,circle,circle), \hyperpage{39}
+  \item radicalline(circle,circle), \hyperpage{39}
+  \item real dot(point,explicit pair), \hyperpage{9}
+  \item reflect(line), \hyperpage{30}
+  \item reflect(line,line,bool), \hyperpage{30}
+  \item relabscissa(arc,point), \hyperpage{68}
+  \item relabscissa(ellipse,point), \hyperpage{68}
+  \item relabscissa(line,point), \hyperpage{68}
+  \item relabscissa(real), \hyperpage{67}
+  \item relativesystem, \hyperpage{67}
+  \item relpoint(explicit circle,real), \hyperpage{40}
+  \item relpoint(explicit ellipse,real), \hyperpage{48}
+  \item relpoint(explicit hyperbola,real), \hyperpage{56}
+  \item relpoint(explicit parabola,real), \hyperpage{52}
+  \item relpoint(line,real), \hyperpage{28}
+  \item reverse(arc), \hyperpage{63}
+  \item reverse(line), \hyperpage{27}
+  \item rotateO(real), \hyperpage{20}
+
+  \indexspace
+
+  \item samecoordsys(bool...point[]), \hyperpage{8}
+  \item sameside(point,line,line), \hyperpage{27}
+  \item sameside(point,point,line), \hyperpage{27}
+  \item scale(real,line,line,bool), \hyperpage{30}
+  \item scale(real,point), \hyperpage{16}
+  \item scale(real,point,point,point,point,bool), \hyperpage{17}
+  \item scaleO(real), \hyperpage{20}
+  \item sector(int,int,line,line,real,bool), \hyperpage{24}
+  \item segment, \hyperpage{4}
+  \item segment(explicit side side), \hyperpage{72}
+  \item segment(point,point), \hyperpage{30}
+  \item sharpangle(line,line), \hyperpage{26}
+  \item sharpdegrees(line,line), \hyperpage{26}
+  \item show(picture,Label,Label,Label,Label,Label,Label,triangle,pen,filltype), 
+		\hyperpage{70}
+  \item show(picture,line,pen), \hyperpage{21}
+  \item side, \hyperpage{4}
+  \item sommet
+    \subitem triangle, \mainidx{71}
+  \item standardizecoordsys(coordsys,bool...M), \hyperpage{9}
+  \item symmedian(side side), \hyperpage{76}
+  \item symmedian(triangle), \hyperpage{76}
+  \item symmedian(vertex V), \hyperpage{76}
+  \item Syst\`eme de coordonn\'ees, \mainidx{5}
+
+  \indexspace
+
+  \item tangent(circle,abscissa), \hyperpage{40}
+  \item tangent(circle,explicit vector), \hyperpage{39}
+  \item tangent(circle,point), \hyperpage{39}
+  \item tangent(ellipse,abscissa), \hyperpage{47}
+  \item tangent(explicit arc,abscissa), \hyperpage{67}
+  \item tangent(explicit arc,point), \hyperpage{67}
+  \item tangent(hyperbola,abscissa), \hyperpage{56}
+  \item tangent(parabola,abscissa), \hyperpage{52}
+  \item tangential(triangle), \hyperpage{74}
+  \item tangents(circle,point), \hyperpage{39}
+  \item tangents(ellipse,point), \hyperpage{47}
+  \item tangents(hyperbola,point), \hyperpage{55}
+  \item tangents(parabola,point), \hyperpage{52}
+  \item transformation, \mainidx{15}, \mainidx{30}
+  \item triangle, \hyperpage{4}, \mainidx{69}, \mainidx{81}
+  \item triangle(line,line,line), \hyperpage{71}
+  \item triangle(point,point,point), \hyperpage{70}
+  \item triangleAbc(real,real,real,real,point), \hyperpage{71}
+  \item triangleabc(real,real,real,real,point), \hyperpage{70}
+  \item trilin\'eaires
+    \subitem coordonn\'ees, \mainidx{80}
+  \item trilinear, \hyperpage{4}
+  \item trilinear(triangle,centerfunction,real,real,real), 
+		\hyperpage{81}
+  \item trilinear(triangle,point), \hyperpage{81}
+  \item trilinear(triangle,real,real,real), \hyperpage{81}
+
+  \indexspace
+
+  \item unit(point), \hyperpage{12}
+  \item unit(vector), \hyperpage{12}
+
+  \indexspace
+
+  \item vector, \hyperpage{3}, \mainidx{10}
+  \item vector vector(point), \hyperpage{12}
+  \item vertex , \hyperpage{4}
+  \item void label(picture,Label,mass,align,string,pen,filltype), 
+		\hyperpage{14}
+  \item vprojection(line,bool), \hyperpage{31}
+
+  \indexspace
+
+  \item xscale(real,point), \hyperpage{18}
+  \item xscaleO(real), \hyperpage{20}
+
+  \indexspace
+
+  \item yscale(real,point), \hyperpage{19}
+  \item yscaleO(real), \hyperpage{20}
+
+\end{theindex}

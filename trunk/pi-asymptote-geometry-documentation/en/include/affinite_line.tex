@@ -1,0 +1,14 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(6.5£§color£constant`cm`,0);
+£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`);
+£§color£type`line` £§color£variable-name`AB`=£§color£function-name`line`(£§color£constant`origin`, £§color£constant`E`), £§color£variable-name`CD`=£§color£function-name`line`(2*£§color£constant`NE`+£§color£constant`N`, 2*£§color£constant`NE`+£§color£constant`SE`);
+£§color£function-name`draw`(AB, bpp); £§color£function-name`draw`(CD, bpp);
+
+£§color£type`transform` £§color£variable-name`dilatation`=£§color£function-name`scale`(1.5,AB,CD);
+
+£§color£type`path` £§color£variable-name`cle`=£§color£function-name`shift`(£§color£constant`NE`)*£§color£constant`unitcircle`;
+£§color£function-name`draw`(cle,bpp);
+
+£§color£function-name`draw`(dilatation*cle, 0.8*£§color£constant`red`+bpp);
+£§color£function-name`draw`(£§color£function-name`inverse`(dilatation)*cle, 0.8*£§color£constant`blue`+bpp);
+£§color£function-name`draw`(£§color£function-name`box`((-0.5,-0.5), (2.75,3)), £§color£constant`invisible`);

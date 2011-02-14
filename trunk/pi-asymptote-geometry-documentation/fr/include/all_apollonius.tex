@@ -1,0 +1,26 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(18£§color£constant`cm`,0); £§color£type`int` £§color£variable-name`shx`=18;
+£§color£type`circle` £§color£variable-name`C1`=£§color£function-name`circle`((0,0),2), £§color£variable-name`C2`=£§color£function-name`circle`((5,5), 3), £§color£variable-name`C3`=£§color£function-name`circle`((6,-2),1);
+£§color£type`picture` £§color£variable-name`disc`;
+£§color£function-name`fill`(disc,(£§color£type`path`)C1); £§color£function-name`fill`(disc,(£§color£type`path`)C2); £§color£function-name`fill`(disc,(£§color£type`path`)C3);
+£§color£type`transform` £§color£variable-name`tv`=£§color£function-name`shift`(£§color£constant`S`), £§color£variable-name`th`=£§color£function-name`shift`(£§color£constant`E`);
+£§color£type`int` £§color£variable-name`k`=0, £§color£variable-name`l`=0;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 2 ; ++i)
+  £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=0; j < 2; ++j) {
+    £§color£type`picture`[]  tpic; tpic[0]=£§color£builtin`new` £§color£type`picture`; tpic[1]=£§color£builtin`new` £§color£type`picture`;
+    £§color£function-name`add`(tpic[0], disc); £§color£function-name`add`(tpic[1], disc);
+    £§color£type`inversion` £§color£constant`S`1=£§color£function-name`inversion`(C2,C3, £§color£function-name`sgnd`(i-1)), £§color£constant`S`2=£§color£function-name`inversion`(C1,C3, £§color£function-name`sgnd`(j-1));
+    £§color£type`line` £§color£variable-name`cl`=£§color£function-name`line`(£§color£constant`S`1.C,£§color£constant`S`2.C);
+    £§color£type`point` £§color£constant`M`=£§color£function-name`relpoint`(C3,0.125), £§color£constant`M`2=£§color£constant`S`2*£§color£constant`M`, £§color£constant`M`1=£§color£constant`S`1*£§color£constant`M`;
+    £§color£type`circle` £§color£variable-name`C`=£§color£function-name`circle`(£§color£constant`M`,£§color£constant`M`2,£§color£constant`M`1);
+    £§color£type`line` £§color£variable-name`L`=£§color£function-name`radicalline`(C,C3);
+    £§color£type`point` £§color£variable-name`H`=£§color£function-name`intersectionpoint`(L,cl);
+    £§color£type`circle` £§color£variable-name`Cp`=£§color£function-name`circle`(H,C3.C);
+    £§color£type`point`[] T=£§color£function-name`intersectionpoints`(Cp,C3);
+    £§color£type`point`[][] Tp= £§color£builtin`new` £§color£type`point`[][] {{£§color£constant`S`2*T[0], £§color£constant`S`1*T[0]},{£§color£constant`S`2*T[1], £§color£constant`S`1*T[1]}};
+    £§color£function-name`draw`(tpic[0], £§color£function-name`circle`(T[0],£§color£type`Tp`[0][0],£§color£type`Tp`[0][1]), £§color£constant`bp`+0.8*£§color£constant`red`);
+    £§color£function-name`draw`(tpic[1], £§color£function-name`circle`(T[1],£§color£type`Tp`[1][0],£§color£type`Tp`[1][1]), £§color£constant`bp`+0.8*£§color£constant`red`);
+    £§color£function-name`add`(tv^(shx*(i+1))*th^(shx*(l))*tpic[0]);
+    l=(l+2)%4; ++k;
+    £§color£function-name`add`(tv^(shx*(i+1))*th^(shx*(l+1))*tpic[1]);
+  }

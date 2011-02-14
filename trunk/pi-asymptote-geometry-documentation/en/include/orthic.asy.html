@@ -1,0 +1,17 @@
+<span class="function-name">size</span>(8<span class="constant">cm</span>);
+<span class="builtin">import</span> geometry;
+
+<span class="type">triangle</span> <span class="variable-name">t</span>=<span class="function-name">triangleabc</span>(3,4,6);
+<span class="function-name">drawline</span>(t, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="type">line</span> <span class="variable-name">hc</span>=<span class="function-name">altitude</span>(t.AB), <span class="variable-name">hb</span>=<span class="function-name">altitude</span>(t.AC);
+<span class="type">line</span> <span class="variable-name">ha</span>=<span class="function-name">altitude</span>(t.BC); <span class="function-name">draw</span>(hc^^hb^^ha);
+<span class="function-name">dot</span>(<span class="string">"H"</span>, <span class="function-name">orthocentercenter</span>(t));
+
+<span class="function-name">perpendicularmark</span>(t.AB,hc,quarter=-1);
+<span class="function-name">perpendicularmark</span>(t.AC,hb,quarter=-1);
+<span class="function-name">perpendicularmark</span>(t.BC,ha);
+
+<span class="type">triangle</span> <span class="variable-name">ort</span>=<span class="function-name">orthic</span>(t);
+<span class="function-name">draw</span>(ort,<span class="constant">bp</span>+0.8*<span class="constant">green</span>); <span class="function-name">dot</span>(ort, 0.8*<span class="constant">red</span>);
+<span class="function-name">addMargins</span>(1<span class="constant">cm</span>,1<span class="constant">cm</span>);
+

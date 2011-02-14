@@ -1,0 +1,9 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`,0);
+£§color£function-name`draw`(£§color£function-name`box`((-5,-3),(5,3)), £§color£constant`invisible`);
+£§color£type`hyperbola` £§color£variable-name`h`=£§color£function-name`hyperbola`(£§color£constant`origin`,1.5,1);
+£§color£function-name`draw`(h, £§color£function-name`linewidth`(£§color£constant`bp`));
+
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 360; i +=45 ) {
+  £§color£type`point` £§color£constant`M`=(1.5*£§color£function-name`Cos`(i), £§color£function-name`Sin`(i));
+  £§color£function-name`dot`(£§color£constant`M`); £§color£function-name`draw`(£§color£function-name`tangents`(h,£§color£constant`M`)); }
+£§color£function-name`draw`(£§color£function-name`ellipse`(£§color£constant`origin`,1.5,1), £§color£constant`grey`);

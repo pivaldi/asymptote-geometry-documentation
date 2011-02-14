@@ -1,0 +1,13 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(6<span class="constant">cm</span>,0);
+
+<span class="type">triangle</span> <span class="variable-name">t</span>=<span class="function-name">triangleabc</span>(4,5,6);
+<span class="type">circle</span> <span class="variable-name">C</span>=<span class="function-name">circumcircle</span>(t), <span class="variable-name">inC</span>=<span class="function-name">incircle</span>(t);
+
+<span class="function-name">draw</span>(inC, <span class="constant">bp</span>+0.8*<span class="constant">red</span>);
+<span class="function-name">draw</span>(C, <span class="constant">bp</span>+0.8*<span class="constant">blue</span>);
+<span class="function-name">draw</span>(t, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+
+<span class="function-name">draw</span>(inC*t, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="function-name">draw</span>(inC*C, <span class="constant">bp</span>+0.8*<span class="constant">blue</span>);
+

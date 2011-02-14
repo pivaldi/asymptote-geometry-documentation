@@ -1,0 +1,10 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`); £§color£type`conic` £§color£variable-name`co`[];
+co[0]=£§color£function-name`conic`((-4.58,1.25), £§color£function-name`line`((-5.45545,1.25), (-5.45545,2.12287)), 0.9165);
+£§color£function-name`draw`(co[0]);
+co[1]=£§color£function-name`conic`((0,-1),£§color£function-name`line`((0,-3.5),(-1,-3.5)),1); £§color£function-name`draw`(co[1]);
+co[2]=£§color£function-name`conic`((-1.2,0), £§color£function-name`line`((-5/6,0),(-5/6,-1)),1.2); £§color£function-name`draw`(co[2]);
+£§color£constant`dotfactor` *= 2;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 3; ++i)
+  £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=i+1; j < 3; ++j)
+    £§color£function-name`dot`(£§color£function-name`intersectionpoints`(co[i],co[j]), £§color£constant`red`);
+£§color£function-name`addMargins`(lmargin=10£§color£constant`mm`,bmargin=10£§color£constant`mm`);

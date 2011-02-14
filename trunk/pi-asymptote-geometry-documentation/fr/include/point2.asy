@@ -1,0 +1,10 @@
+  import geometry;
+  size(6cm,0);
+  currentcoordsys=cartesiansystem((3,0), i=(1,1), j=(-1,1));
+  show("$O_1$", "$\vec{u_1}$", "$\vec{v_1}$", currentcoordsys, xpen=invisible);
+  point A=(1,1);
+  dot("$A$", A);
+  coordsys Rp=rotate(90)*currentcoordsys;
+  show("$O_2$", "$\vec{u_2}$", "$\vec{v_2}$", Rp, xpen=invisible);
+  point B=point(Rp, (1,1));
+  dot("$B$", B);

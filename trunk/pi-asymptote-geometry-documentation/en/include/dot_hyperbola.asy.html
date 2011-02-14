@@ -1,0 +1,11 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(10<span class="constant">cm</span>,0);
+
+<span class="type">point</span> <span class="variable-name">P1</span>=(-3,0), <span class="variable-name">P2</span>=(3,0);
+<span class="function-name">draw</span>(<span class="function-name">box</span>((-8,-4),(8,4)), <span class="constant">invisible</span>);
+
+<span class="function-name">dot</span>((<span class="type">path</span>)<span class="function-name">hyperbola</span>(P1,P2,2.7));
+
+<span class="constant">hyperbolanodesnumberfactor</span>=30;
+<span class="function-name">dot</span>((<span class="type">path</span>)<span class="function-name">hyperbola</span>(P2,P1,2.7));
+

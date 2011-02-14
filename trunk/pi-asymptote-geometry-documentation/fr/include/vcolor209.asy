@@ -1,0 +1,1 @@
+    abscissa curabscissa(real x)

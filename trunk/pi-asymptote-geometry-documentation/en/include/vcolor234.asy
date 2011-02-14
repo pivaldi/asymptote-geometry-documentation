@@ -1,0 +1,1 @@
+    vector dir(vertex V)

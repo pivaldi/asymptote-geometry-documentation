@@ -1,0 +1,21 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(5<span class="constant">cm</span>,0);
+<span class="type">point</span> <span class="variable-name">A</span>=(0,0), <span class="variable-name">B</span>=(2*<span class="function-name">Cos</span>(40),2*<span class="function-name">Sin</span>(40)); <span class="type">line</span> <span class="variable-name">l1</span>=<span class="function-name">line</span>(A,B);
+<span class="function-name">draw</span>(l1, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="type">line</span> <span class="variable-name">l2</span>=<span class="function-name">rotate</span>(100,A)*l1;
+<span class="function-name">draw</span>(l2, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="type">line</span> <span class="variable-name">bis</span>=<span class="function-name">bisector</span>(l1,l2); <span class="function-name">draw</span>(bis, <span class="constant">bp</span>+<span class="constant">blue</span>);
+<span class="type">line</span> <span class="variable-name">Bis</span>=<span class="function-name">bisector</span>(l1,l2,<span class="builtin">false</span>); <span class="function-name">draw</span>(Bis, <span class="constant">bp</span>+0.8*<span class="constant">red</span>);
+<span class="constant">markangleradiusfactor</span> *= 4;
+<span class="type">marker</span> <span class="variable-name">mark2</span>=<span class="function-name">StickIntervalMarker</span>(2, 1, <span class="constant">red</span>, <span class="builtin">true</span>);
+<span class="function-name">markangle</span>(2, l1, l2, <span class="constant">red</span>, mark2);
+<span class="function-name">markangle</span>(2, <span class="function-name">reverse</span>(l2), <span class="function-name">reverse</span>(l1), radius=-<span class="function-name">markangleradius</span>(),
+          <span class="constant">red</span>, mark2);
+<span class="constant">markangleradiusfactor</span> *= 3/2;
+<span class="type">marker</span> <span class="variable-name">mark1</span>=<span class="function-name">StickIntervalMarker</span>(2, 2, <span class="constant">blue</span>, <span class="builtin">true</span>);
+<span class="function-name">markangle</span>(2, l1, <span class="function-name">reverse</span>(l2), radius=-<span class="function-name">markangleradius</span>(),
+          <span class="constant">blue</span>, mark1);
+<span class="function-name">markangle</span>(2, <span class="function-name">reverse</span>(l1), l2, radius=-<span class="function-name">markangleradius</span>(),
+          <span class="constant">blue</span>, mark1);
+<span class="function-name">draw</span>(<span class="function-name">box</span>((-1,-1),(1,1)), <span class="constant">invisible</span>);
+

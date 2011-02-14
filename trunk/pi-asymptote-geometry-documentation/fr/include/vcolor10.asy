@@ -1,0 +1,1 @@
+    pair locate(point P)

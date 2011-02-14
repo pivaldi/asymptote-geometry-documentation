@@ -1,0 +1,24 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(7.5<span class="constant">cm</span>,0); <span class="constant">dotfactor</span>*=1.5;
+<span class="constant">currentcoordsys</span>=<span class="function-name">rotate</span>(20)*<span class="constant">defaultcoordsys</span>;
+<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>, xpen=<span class="constant">invisible</span>, ypen=<span class="constant">red</span>);
+
+<span class="type">point</span> <span class="variable-name">A</span>=(-1,-3), <span class="variable-name">B</span>=(5,2);
+<span class="type">line</span> <span class="variable-name">l1</span>=<span class="function-name">line</span>(A,B); <span class="function-name">draw</span>(l1, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
+<span class="function-name">dot</span>(<span class="string">"$A$"</span>, A, <span class="constant">SE</span>); <span class="function-name">dot</span>(<span class="string">"$B$"</span>, B, <span class="constant">NW</span>);
+<span class="type">point</span> <span class="constant">M</span>=(3,-3); <span class="function-name">dot</span>(<span class="string">"$M$"</span>, <span class="constant">M</span>);
+
+<span class="type">point</span> <span class="variable-name">P</span>=<span class="function-name">projection</span>(l1)*<span class="constant">M</span>;
+<span class="function-name">dot</span>(<span class="string">"$P$"</span>, P, 2<span class="constant">W</span>); <span class="function-name">draw</span>(<span class="constant">M</span>--P);
+<span class="function-name">markrightangle</span>(l1.A, P, <span class="constant">M</span>);
+
+<span class="type">point</span> <span class="variable-name">Q</span>=<span class="function-name">vprojection</span>(l1)*<span class="constant">M</span>;
+<span class="function-name">dot</span>(<span class="string">"$Q$"</span>, Q, 2<span class="constant">W</span>); <span class="function-name">draw</span>(<span class="constant">M</span>--Q);
+
+<span class="type">point</span> <span class="variable-name">R</span>=<span class="function-name">hprojection</span>(l1)*<span class="constant">M</span>;
+<span class="function-name">dot</span>(<span class="string">"$R$"</span>, R, 2<span class="constant">W</span>); <span class="function-name">draw</span>(<span class="constant">M</span>--R);
+
+<span class="type">point</span> <span class="constant">S</span>=<span class="function-name">projection</span>(l1,<span class="function-name">line</span>((0,0),(0,1)))*<span class="constant">M</span>;
+<span class="function-name">dot</span>(<span class="string">"$S$"</span>, <span class="constant">S</span>, 2<span class="constant">W</span>); <span class="function-name">draw</span>(<span class="constant">M</span>--<span class="constant">S</span>, <span class="constant">red</span>);
+<span class="function-name">draw</span>(<span class="function-name">box</span>((-1,-4),(5,5)), <span class="constant">invisible</span>);
+

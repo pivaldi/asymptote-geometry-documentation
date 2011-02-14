@@ -1,0 +1,10 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(8£§color£constant`cm`);
+£§color£type`point` £§color£variable-name`A`=(-1,0), £§color£variable-name`B`=(1,1), £§color£variable-name`C`=(0,1), £§color£variable-name`D`=(1,-1);
+£§color£function-name`dot`(£§color£string`"$A$"`,A,£§color£constant`S`); £§color£function-name`dot`(£§color£string`"$B$"`,B,£§color£constant`S`); £§color£function-name`dot`(£§color£string`"$C$"`,C,£§color£constant`SW`); £§color£function-name`dot`(£§color£string`"$D$"`,D,£§color£constant`SW`);
+£§color£type`ellipse` £§color£variable-name`el`=£§color£function-name`ellipse`((0,0.5),2,1);
+£§color£type`line` £§color£variable-name`l1`=£§color£function-name`line`(A,B), £§color£variable-name`l2`=£§color£function-name`line`(C,D); £§color£function-name`draw`(l1); £§color£function-name`draw`(l2);
+£§color£type`point`[] J=£§color£function-name`intersectionpoints`(l1,el), K=£§color£function-name`intersectionpoints`(l2,el);
+£§color£function-name`draw`(£§color£function-name`arc`(el, J[0],K[0]), 1£§color£constant`mm`+0.8£§color£constant`yellow`); £§color£function-name`draw`(£§color£function-name`arc`(el, K[0],J[1]), 1£§color£constant`mm`+0.8£§color£constant`red`);
+£§color£function-name`draw`(£§color£function-name`arc`(el, J[1],K[1]), 1£§color£constant`mm`+0.8£§color£constant`blue`); £§color£function-name`draw`(£§color£function-name`arc`(el, K[1],J[0]), 1£§color£constant`mm`+0.8£§color£constant`green`);
+£§color£function-name`dot`(£§color£string`"$J_0$"`, J[0], 2£§color£constant`N`); £§color£function-name`dot`(£§color£string`"$J_1$"`, J[1], 2£§color£constant`S`);
+£§color£function-name`dot`(£§color£string`"$K_0$"`, K[0], 2£§color£constant`NE`) ; £§color£function-name`dot`(£§color£string`"$K_1$"`, K[1], 2dir(-35));

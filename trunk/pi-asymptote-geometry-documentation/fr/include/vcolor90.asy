@@ -1,0 +1,1 @@
+    bool concurrent(... line[] l)

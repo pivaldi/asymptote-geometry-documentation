@@ -1,0 +1,6 @@
+<span class="type">point</span> <span class="function-name">isotomicconjugate</span>(<span class="type">triangle</span> <span class="variable-name">t</span>, <span class="type">point</span> <span class="constant">M</span>)
+{
+  <span class="type">trilinear</span> <span class="variable-name">tr</span>=<span class="function-name">trilinear</span>(t,<span class="constant">M</span>);
+  <span class="builtin">return</span> <span class="function-name">point</span>(<span class="function-name">trilinear</span>(t,1/(t.a()^2*tr.a),1/(t.b()^2*tr.b),1/(t.c()^2*tr.c)));
+}
+

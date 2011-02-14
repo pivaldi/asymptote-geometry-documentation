@@ -1,0 +1,15 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(8£§color£constant`cm`);
+
+£§color£type`inversion` £§color£variable-name`inv`=£§color£function-name`inversion`(1,(-4.5,0));
+£§color£type`path` £§color£variable-name`g1`=inv*£§color£function-name`line`((-1,0),(-1,1)),
+£§color£variable-name`g2`=inv*£§color£function-name`line`((1,0),(1,1));
+£§color£function-name`fill`(g1,£§color£constant`lightgrey`); £§color£function-name`draw`(g1,£§color£function-name`linewidth`(£§color£constant`bp`));
+£§color£function-name`unfill`(g2); £§color£function-name`draw`(g2,£§color£function-name`linewidth`(£§color£constant`bp`));
+
+£§color£type`int` £§color£variable-name`n`=40;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=-n; i <= n; ++i) {
+  £§color£type`path` £§color£variable-name`g`=inv*£§color£function-name`circle`((0,2*i),1);
+  £§color£function-name`fill`(g,(1-£§color£function-name`abs`(i)/n)*£§color£constant`yellow`);
+  £§color£function-name`draw`(g,£§color£constant`bp`+£§color£constant`red`); £§color£function-name`draw`(g,£§color£constant`blue`);
+}
+£§color£function-name`shipout`(£§color£function-name`bbox`(5£§color£constant`mm`,£§color£function-name`Fill`(£§color£function-name`rgb`(0.95,0.95,0.8))));

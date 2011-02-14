@@ -1,0 +1,19 @@
+<span class="builtin">import</span> geometry; <span class="function-name">size</span>(7<span class="constant">cm</span>,0);
+<span class="type">point</span> <span class="variable-name">A</span>=(-1,0), <span class="variable-name">B</span>=(1,0);
+<span class="function-name">dot</span>(<span class="string">"$A$"</span>, A, 2<span class="constant">W</span>, <span class="constant">red</span>); <span class="function-name">dot</span>(<span class="string">"$B$"</span>, B, 2<span class="constant">E</span>, <span class="constant">red</span>);
+
+<span class="type">real</span>[] angles=<span class="builtin">new</span> <span class="type">real</span>[] {60, 110, -60, -110};
+<span class="type">pen</span>[] <span class="constant">p</span>=<span class="builtin">new</span> <span class="type">pen</span>[] {<span class="constant">red</span>, <span class="constant">blue</span>+<span class="constant">red</span>, <span class="constant">blue</span>, <span class="constant">cyan</span>};
+<span class="type">int</span> <span class="variable-name">i</span>=0;
+
+<span class="keyword">for</span>(<span class="type">real</span> a:angles) {
+  <span class="type">arc</span> <span class="variable-name">arcsubtended</span>=<span class="function-name">arcsubtended</span>(A,B,a);
+  <span class="function-name">draw</span>(arcsubtended, <span class="constant">bp</span>+0.8*<span class="constant">p</span>[i]);
+  <span class="builtin">for</span> (<span class="type">int</span> <span class="variable-name">j</span>=0; j &lt; 2; ++j) {
+    <span class="type">point</span> <span class="constant">M</span>=<span class="function-name">relpoint</span>(arcsubtended, 0.25+0.5*j);
+    <span class="function-name">draw</span>(A--<span class="constant">M</span>--B, 0.8*<span class="constant">p</span>[i]);
+    <span class="type">real</span> <span class="variable-name">gle</span>=<span class="function-name">degrees</span>(B-<span class="constant">M</span>)-<span class="function-name">degrees</span>(A-<span class="constant">M</span>);
+    <span class="function-name">markangle</span>(<span class="function-name">Label</span>(<span class="function-name">format</span>(<span class="string">"%0g"</span>,-<span class="function-name">gle</span>),<span class="constant">UnFill</span>),
+              B, <span class="constant">M</span>, A, radius=<span class="function-name">sgn</span>(-<span class="function-name">gle</span>)*30, Arrow, 0.8*<span class="constant">p</span>[i]); }
+  ++i; }
+

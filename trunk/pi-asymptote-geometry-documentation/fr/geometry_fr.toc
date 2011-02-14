@@ -1,0 +1,81 @@
+\select@language {french}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Liste des types d'objets}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Fonctionnement interne}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Index et exemples externes \`a ce document}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Conversion automatique des types (\FB@og {}casting\FB@fg {})}{5}{subsection.1.4}
+\contentsline {section}{\numberline {2}Syst\`emes de coordonn\'ees}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Le type coordsys}{5}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}D\'efinir un syst\`eme de coordonn\'ees}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Changer un objet pair de rep\`ere}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Autres routines}{6}{subsection.2.4}
+\contentsline {section}{\numberline {3}Points et vecteurs}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Les points}{6}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Principes de base}{6}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Autres routines}{8}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Les vecteurs}{10}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Principes de base}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}\FB@og {}Casting\FB@fg {} vector/point}{11}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Autres routines}{12}{subsubsection.3.2.3}
+\contentsline {section}{\numberline {4}Points massiques}{12}{section.4}
+\contentsline {subsection}{\numberline {4.1}Principes de base}{12}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Autres routines}{13}{subsection.4.2}
+\contentsline {section}{\numberline {5}Transformations affines (partie 1)}{15}{section.5}
+\contentsline {subsection}{\numberline {5.1}Transformations ind\'ependantes du rep\`ere courant}{16}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Transformations d\'ependantes du rep\`ere courant}{18}{subsection.5.2}
+\contentsline {section}{\numberline {6}Droites, demi-droites et segments}{21}{section.6}
+\contentsline {subsection}{\numberline {6.1}Le type \FB@og {}line\FB@fg {}}{21}{subsection.6.1}
+\contentsline {subsubsection}{\numberline {6.1.1}Droites d\'efinies par deux points, routines de base}{21}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Droites d\'efinies par \'equations}{22}{subsubsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.3}Droites et parall\'elisme}{22}{subsubsection.6.1.3}
+\contentsline {subsubsection}{\numberline {6.1.4}Droites et angles}{23}{subsubsection.6.1.4}
+\contentsline {subsubsection}{\numberline {6.1.5}Droites et op\'erateurs}{26}{subsubsection.6.1.5}
+\contentsline {subsubsection}{\numberline {6.1.6}Autres routines}{27}{subsubsection.6.1.6}
+\contentsline {subsubsection}{\numberline {6.1.7}Droites et marqueurs}{28}{subsubsection.6.1.7}
+\contentsline {subsection}{\numberline {6.2}Le type \FB@og {}segment\FB@fg {}}{29}{subsection.6.2}
+\contentsline {section}{\numberline {7}Transformations affines (partie 2)}{30}{section.7}
+\contentsline {section}{\numberline {8}Coniques}{32}{section.8}
+\contentsline {subsection}{\numberline {8.1}Le type \FB@og {}conic\FB@fg {}}{32}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Description}{32}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.2}Routines de base}{33}{subsubsection.8.1.2}
+\contentsline {subsubsection}{\numberline {8.1.3}Op\'erateurs}{34}{subsubsection.8.1.3}
+\contentsline {subsubsection}{\numberline {8.1.4}\'Equations de coniques}{35}{subsubsection.8.1.4}
+\contentsline {subsubsection}{\numberline {8.1.5}Coniques et \FB@og {}casting\FB@fg {}}{36}{subsubsection.8.1.5}
+\contentsline {subsection}{\numberline {8.2}Cercles}{36}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Routines de bases}{36}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}Du type \FB@og {}circle\FB@fg {} au type \FB@og {}path\FB@fg {}}{38}{subsubsection.8.2.2}
+\contentsline {subsubsection}{\numberline {8.2.3}Les op\'erateurs}{38}{subsubsection.8.2.3}
+\contentsline {subsubsection}{\numberline {8.2.4}Autres routines}{39}{subsubsection.8.2.4}
+\contentsline {subsection}{\numberline {8.3}Ellipses}{45}{subsection.8.3}
+\contentsline {subsubsection}{\numberline {8.3.1}Routines de bases}{45}{subsubsection.8.3.1}
+\contentsline {subsubsection}{\numberline {8.3.2}Du type \FB@og {}ellipse\FB@fg {} au type \FB@og {}path\FB@fg {}}{46}{subsubsection.8.3.2}
+\contentsline {subsubsection}{\numberline {8.3.3}Autres routines}{46}{subsubsection.8.3.3}
+\contentsline {subsection}{\numberline {8.4}Paraboles}{50}{subsection.8.4}
+\contentsline {subsubsection}{\numberline {8.4.1}Routines de bases}{50}{subsubsection.8.4.1}
+\contentsline {subsubsection}{\numberline {8.4.2}Du type \FB@og {}parabola\FB@fg {} au type \FB@og {}path\FB@fg {}}{51}{subsubsection.8.4.2}
+\contentsline {subsubsection}{\numberline {8.4.3}Autres routines}{52}{subsubsection.8.4.3}
+\contentsline {subsection}{\numberline {8.5}Hyperboles}{53}{subsection.8.5}
+\contentsline {subsubsection}{\numberline {8.5.1}Routines de bases}{53}{subsubsection.8.5.1}
+\contentsline {subsubsection}{\numberline {8.5.2}Du type \FB@og {}hyperbola\FB@fg {} au type \FB@og {}path\FB@fg {}}{54}{subsubsection.8.5.2}
+\contentsline {subsubsection}{\numberline {8.5.3}Autres routines}{55}{subsubsection.8.5.3}
+\contentsline {section}{\numberline {9}Arcs}{58}{section.9}
+\contentsline {subsection}{\numberline {9.1}Du type \FB@og {}arc\FB@fg {} au type \FB@og {}path\FB@fg {}}{60}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Les op\'erateurs}{60}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Autres routines}{63}{subsection.9.3}
+\contentsline {section}{\numberline {10}Abscisses}{67}{section.10}
+\contentsline {subsection}{\numberline {10.1}D\'efinir une abscisse}{67}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}R\'ecup\'erer une abscisse d'un point}{68}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Op\'erateurs}{69}{subsection.10.3}
+\contentsline {section}{\numberline {11}Triangles}{69}{section.11}
+\contentsline {subsection}{\numberline {11.1}La structure}{69}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.2}D\'efinir et tracer un triangle}{70}{subsection.11.2}
+\contentsline {subsection}{\numberline {11.3}Sommets de triangles}{71}{subsection.11.3}
+\contentsline {subsection}{\numberline {11.4}C\^ot\'es de triangles}{72}{subsection.11.4}
+\contentsline {subsection}{\numberline {11.5}Op\'erateurs}{72}{subsection.11.5}
+\contentsline {subsection}{\numberline {11.6}Autres routines}{73}{subsection.11.6}
+\contentsline {subsection}{\numberline {11.7}Coordonn\'ees trilin\'eaires}{80}{subsection.11.7}
+\contentsline {section}{\numberline {12}Inversions}{81}{section.12}
+\contentsline {subsection}{\numberline {12.1}D\'efinir une inversion}{81}{subsection.12.1}
+\contentsline {subsection}{\numberline {12.2}Appliquer une inversion}{82}{subsection.12.2}
+\contentsline {subsection}{\numberline {12.3}Exemples}{82}{subsection.12.3}
+\contentsline {section}{\numberline {13}Index}{86}{section.13}

@@ -1,0 +1,13 @@
+<span class="builtin">import</span> geometry;
+<span class="function-name">size</span>(6<span class="constant">cm</span>,0);
+<span class="type">point</span> <span class="variable-name">A</span>=<span class="constant">SW</span>, <span class="variable-name">B</span>=<span class="constant">NE</span>;
+<span class="function-name">label</span>(<span class="string">"$A$"</span>, A, <span class="constant">NW</span>); <span class="function-name">label</span>(<span class="string">"$B$"</span>, B, <span class="constant">SE</span>);
+
+<span class="type">line</span> <span class="variable-name">l</span>=<span class="function-name">line</span>(A,B);
+<span class="function-name">draw</span>(l, <span class="constant">bp</span>+<span class="constant">red</span>);
+
+<span class="type">segment</span> <span class="variable-name">s</span>=l;
+<span class="function-name">draw</span>(s, <span class="function-name">linewidth</span>(3<span class="constant">bp</span>));
+<span class="function-name">draw</span>(<span class="function-name">line</span>(<span class="function-name">rotate</span>(90,<span class="function-name">midpoint</span>(s))*s));
+<span class="function-name">draw</span>(<span class="function-name">box</span>(2*A,2*B), <span class="constant">invisible</span>);
+

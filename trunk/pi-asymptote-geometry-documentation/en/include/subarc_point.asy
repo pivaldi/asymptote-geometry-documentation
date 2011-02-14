@@ -1,0 +1,10 @@
+    import geometry; size(8cm);
+    point A=(-1,0), B=(1,1), C=(0,0), D=(1,-1);
+    dot("$A$",A,S); dot("$B$",B,S); dot("$D$",D,SW);
+    arc c=arc(ellipse(C,2,1,20), 0, 270); draw(complementary(c),dashed+grey);
+    line l1=line(A,B), l2=line(C,D);
+    point[] J=intersectionpoints(l1,c), K=intersectionpoints(l2,c);
+    draw(arc(c,J[0],K[0]), 2bp+0.8yellow); draw(arc(c,K[0],J[1]), 2bp+0.8red);
+    draw(arc(c,J[1],relpoint(c,1)), 2bp+0.8green); draw(arc(c,point(c,0),J[0]), 2bp+0.8blue);
+    dot("$J_0$",J[0],2N); dot("$J_1$",J[1],N+2W); dot("$K_0$",K[0],2N);
+    draw(c, bp+white); draw(l1^^l2);

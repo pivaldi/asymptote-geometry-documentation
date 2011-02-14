@@ -1,0 +1,13 @@
+£§color£builtin`import` geometry; £§color£function-name`size`(8£§color£constant`cm`,0);
+£§color£type`point` £§color£variable-name`P`=(0,-4.5); £§color£function-name`dot`(P); £§color£type`inversion` £§color£variable-name`inv`=£§color£function-name`inversion`(1,P);
+£§color£type`line` £§color£variable-name`l1`=£§color£function-name`line`((0,0),(1,0.35)), £§color£variable-name`l2`=£§color£function-name`line`((0,0),(-1,0.35));
+£§color£type`path` £§color£variable-name`g1`=inv*l1, £§color£variable-name`g2`=inv*l2;
+£§color£function-name`fill`(g1^^g2,£§color£constant`evenodd`+£§color£constant`lightgrey`); £§color£function-name`draw`(g1,£§color£function-name`linewidth`(£§color£constant`bp`)); £§color£function-name`draw`(g2,£§color£function-name`linewidth`(£§color£constant`bp`));
+
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`:£§color£builtin`new` £§color£type`int`[]{-1,1}) {
+  £§color£type`point` £§color£variable-name`P`=(i*0.1,0); £§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangle`(£§color£function-name`shift`(P)*£§color£constant`vline`,l1,l2); £§color£type`int` £§color£variable-name`n`=15;
+  £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=0; j <= n; ++j) {
+    £§color£type`circle` £§color£variable-name`C`=£§color£function-name`excircle`(t.AB);
+    t=£§color£function-name`triangle`(£§color£function-name`shift`(£§color£function-name`angpoint`(C,(i-1)*90))*£§color£constant`vline`,l1,l2);
+    £§color£type`circle` £§color£variable-name`Cp`=inv*C; £§color£type`path` £§color£variable-name`g`=Cp; £§color£function-name`fill`(g,0.95*£§color£constant`yellow`); £§color£function-name`draw`(g,£§color£constant`bp`+£§color£constant`red`); £§color£function-name`draw`(g,£§color£constant`blue`); }}
+£§color£function-name`shipout`(£§color£function-name`bbox`(5£§color£constant`mm`,£§color£function-name`Fill`(£§color£function-name`rgb`(0.95,0.95,0.8))));

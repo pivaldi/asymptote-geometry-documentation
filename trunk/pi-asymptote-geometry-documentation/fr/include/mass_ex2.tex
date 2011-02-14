@@ -1,0 +1,13 @@
+£§color£builtin`import` geometry;
+£§color£function-name`size`(5£§color£constant`cm`,0);
+£§color£type`int` £§color£variable-name`n`=50;
+£§color£type`mass`[] £§color£constant`M`;
+£§color£type`real` £§color£variable-name`m`, £§color£variable-name`step`=360/n;
+£§color£type`pair` £§color£variable-name`dir`;
+£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 2*n; ++i) {
+  dir=£§color£function-name`dir`(i*step);
+  m=i+1;
+  £§color£constant`M`.push(£§color£function-name`mass`(m*dir, m));
+  £§color£function-name`dot`(£§color£function-name`locate`(£§color£constant`M`[i]));
+}
+£§color£function-name`dot`(£§color£string`"G"`,£§color£function-name`masscenter`(... £§color£constant`M`), £§color£constant`red`);
