@@ -1,0 +1,13 @@
+*.aux
+*.idx
+*.ilg
+*.ind
+*.out
+*.log
+*.toc
+fr/include/*.pdf
+fr/include/*.html
+fr/include/tmp_.tex
+en/include/tmp_.tex
+en/include/*.pdf
+en/include/*.html

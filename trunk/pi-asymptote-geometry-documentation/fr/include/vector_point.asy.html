@@ -1,9 +1,0 @@
-<span class="builtin">import</span> geometry; <span class="function-name">size</span>(4<span class="constant">cm</span>,0); <span class="type">pen</span> <span class="variable-name">bpp</span>=<span class="function-name">linewidth</span>(<span class="constant">bp</span>);
-<span class="type">coordsys</span> <span class="variable-name">R</span>=<span class="function-name">cartesiansystem</span>((2,1), i=(1,1), j=(-0.75,1));
-<span class="function-name">show</span>(<span class="string">"$O_1$"</span>, <span class="string">"$\vec{u}$"</span>, <span class="string">"$\vec{v}$"</span>, R, xpen=<span class="constant">invisible</span>);
-<span class="function-name">show</span>(<span class="constant">currentcoordsys</span>); <span class="type">vector</span> <span class="variable-name">w</span>=<span class="function-name">vector</span>(R, (1,1));
-<span class="function-name">show</span>(<span class="string">"$\vec{w}$"</span>, w, bpp, <span class="function-name">Arrow</span>(3<span class="constant">mm</span>));
-<span class="function-name">show</span>(<span class="string">"$\vec{w}$"</span>, <span class="function-name">locate</span>(w), bpp, <span class="function-name">Arrow</span>(3<span class="constant">mm</span>));
-<span class="function-name">draw</span>((1,2)--<span class="function-name">locate</span>(w), <span class="constant">green</span>);
-<span class="function-name">draw</span>((1,2)--<span class="function-name">point</span>(w), <span class="constant">blue</span>);
-

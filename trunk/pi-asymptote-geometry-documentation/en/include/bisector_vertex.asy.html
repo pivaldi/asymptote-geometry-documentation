@@ -1,9 +1,0 @@
-<span class="function-name">size</span>(7<span class="constant">cm</span>); <span class="builtin">import</span> geometry;
-<span class="type">triangle</span> <span class="variable-name">t</span>=<span class="function-name">triangleabc</span>(4,5,6);
-<span class="function-name">drawline</span>(t, <span class="function-name">linewidth</span>(<span class="constant">bp</span>));
-<span class="type">line</span> <span class="variable-name">ba</span>=<span class="function-name">bisector</span>(t.VA), <span class="variable-name">bb</span>=<span class="function-name">bisector</span>(t.VB);
-<span class="type">line</span> <span class="variable-name">bc</span>=<span class="function-name">bisector</span>(t.VC); <span class="function-name">draw</span>(ba^^bb^^bc);
-<span class="function-name">markangle</span>(t.AB, t.AC, <span class="function-name">StickIntervalMarker</span>(2,1));
-<span class="function-name">markangle</span>(t.BC, t.BA, <span class="function-name">StickIntervalMarker</span>(2,2));
-<span class="function-name">markangle</span>(t.CA, t.CB, <span class="function-name">StickIntervalMarker</span>(2,3));
-
