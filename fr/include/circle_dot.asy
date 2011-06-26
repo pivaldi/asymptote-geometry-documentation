@@ -5,7 +5,7 @@
   show("$O'$","$\vec{u}$", "$\vec{v}$",
   currentcoordsys, ipen=blue, xpen=invisible);
   show(defaultcoordsys);
-  circle C=circle((0.5,-1), 3);
+  circle C=circle((point)(0.5,-1), 3);
   draw(C, 2bp+0.8*blue, Arrow(3mm));
   circle Cp=circle(point(defaultcoordsys,(1,1)), 4);
   draw(Cp, dotsize()+0.8*red, Arrow(3mm));

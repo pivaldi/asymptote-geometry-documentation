@@ -5,6 +5,7 @@
 *.out
 *.log
 *.toc
+*.eps
 fr/include/*.pdf
 fr/include/*.html
 fr/include/tmp_.tex

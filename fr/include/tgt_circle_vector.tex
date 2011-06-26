@@ -1,14 +1,14 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(5£§color£constant`cm`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(5£~color£constant`cm`);
 
-£§color£type`circle` £§color£variable-name`cle`=£§color£function-name`circle`((2,1),1.5);
-£§color£function-name`draw`(cle, £§color£function-name`linewidth`(£§color£constant`bp`));
-£§color£function-name`dot`(£§color£string`"$C$"`, cle.C);
+£~color£type`circle` £~color£variable-name`cle`=£~color£function-name`circle`((£~color£type`point`)(2,1),1.5);
+£~color£function-name`draw`(cle, £~color£function-name`linewidth`(£~color£constant`bp`));
+£~color£function-name`dot`(£~color£string`"$C$"`, cle.C);
 
-£§color£type`vector` £§color£variable-name`v`=(-1,-2);
-£§color£function-name`show`(£§color£string`"$\vec{v}$"`,v);
+£~color£type`vector` £~color£variable-name`v`=(-1,-2);
+£~color£function-name`show`(£~color£string`"$\vec{v}$"`,v);
 
-£§color£type`line` £§color£variable-name`tgt`=£§color£function-name`tangent`(cle,v);
-£§color£function-name`draw`(tgt, £§color£constant`bp`+0.8*£§color£constant`red`);
-£§color£function-name`draw`(£§color£string`"$\vec{v'}$"`,cle.C--(cle.C+tgt.v), Arrow);
-£§color£function-name`dot`(£§color£function-name`point`(cle,v));
+£~color£type`line` £~color£variable-name`tgt`=£~color£function-name`tangent`(cle,v);
+£~color£function-name`draw`(tgt, £~color£constant`bp`+0.8*£~color£constant`red`);
+£~color£function-name`draw`(£~color£string`"$\vec{v'}$"`,cle.C--(cle.C+tgt.v), Arrow);
+£~color£function-name`dot`(£~color£function-name`point`(cle,v));

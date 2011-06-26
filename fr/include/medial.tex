@@ -1,15 +1,15 @@
-£§color£function-name`size`(8£§color£constant`cm`);
-£§color£builtin`import` geometry;
+£~color£function-name`size`(8£~color£constant`cm`);
+£~color£builtin`import` geometry;
 
-£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangleabc`(6,5,4);
-£§color£function-name`drawline`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
-£§color£type`line` £§color£variable-name`ma`=£§color£function-name`median`(t.VA), £§color£variable-name`mb`=£§color£function-name`median`(t.VB);
-£§color£type`line` £§color£variable-name`mc`=£§color£function-name`median`(t.VC); £§color£function-name`draw`(ma^^mb^^mc);
+£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleabc`(6,5,4);
+£~color£function-name`drawline`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
+£~color£type`line` £~color£variable-name`ma`=£~color£function-name`median`(t.VA), £~color£variable-name`mb`=£~color£function-name`median`(t.VB);
+£~color£type`line` £~color£variable-name`mc`=£~color£function-name`median`(t.VC); £~color£function-name`draw`(ma^^mb^^mc);
 
-£§color£function-name`draw`(£§color£function-name`segment`(t.AB), £§color£function-name`StickIntervalMarker`(2,1));
-£§color£function-name`draw`(£§color£function-name`segment`(t.BC), £§color£function-name`StickIntervalMarker`(2,2));
-£§color£function-name`draw`(£§color£function-name`segment`(t.CA), £§color£function-name`StickIntervalMarker`(2,3));
+£~color£function-name`draw`(£~color£function-name`segment`(t.AB), £~color£function-name`StickIntervalMarker`(2,1));
+£~color£function-name`draw`(£~color£function-name`segment`(t.BC), £~color£function-name`StickIntervalMarker`(2,2));
+£~color£function-name`draw`(£~color£function-name`segment`(t.CA), £~color£function-name`StickIntervalMarker`(2,3));
 
-£§color£type`triangle` £§color£variable-name`med`=£§color£function-name`medial`(t);
-£§color£function-name`draw`(med,£§color£constant`bp`+0.8*£§color£constant`green`); £§color£function-name`dot`(med, 0.8*£§color£constant`red`);
-£§color£function-name`addMargins`(1£§color£constant`cm`,1£§color£constant`cm`);
+£~color£type`triangle` £~color£variable-name`med`=£~color£function-name`medial`(t);
+£~color£function-name`draw`(med,£~color£constant`bp`+0.8*£~color£constant`green`); £~color£function-name`dot`(med, 0.8*£~color£constant`red`);
+£~color£function-name`addMargins`(1£~color£constant`cm`,1£~color£constant`cm`);

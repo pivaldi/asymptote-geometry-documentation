@@ -10,4 +10,4 @@
       draw(arcfromcenter(H,-20,30), bp+red); dot("$F_1$", H.F1, N+NW);
       point P=angpoint(H,30,fromCenter); dot("$30$", P, NW);
       segment s=segment(C, P); draw(s);
-      markangle("$30^\circ$", Ox(Rp), s, radius=2cm, Arrow);
+markangle("$30^\circ$", Ox(Rp), (line)s, radius=2cm, Arrow);

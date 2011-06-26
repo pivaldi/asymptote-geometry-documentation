@@ -1,14 +1,14 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(6£§color£constant`cm`,0);
-£§color£type`real` £§color£variable-name`k`=£§color£function-name`sqrt`(2);
-£§color£type`point` £§color£variable-name`A`=(2,1);
-£§color£type`point` £§color£constant`M`=(-1,-1); £§color£function-name`dot`(£§color£string`"M"`, £§color£constant`M`, £§color£constant`W`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(6£~color£constant`cm`,0);
+£~color£type`real` £~color£variable-name`k`=£~color£function-name`sqrt`(2);
+£~color£type`point` £~color£variable-name`A`=(2,1);
+£~color£type`point` £~color£constant`M`=(-1,-1); £~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, £~color£constant`W`);
 
-£§color£type`point` £§color£variable-name`Ap`=£§color£function-name`yscale`(k, £§color£constant`M`)*A;
-£§color£function-name`dot`(£§color£string`"A'"`, Ap, £§color£constant`red`); £§color£function-name`dot`(£§color£string`"A"`, A, £§color£constant`I`*£§color£function-name`unit`(A-Ap));
-£§color£function-name`label`(£§color£string`"A'=yscale(k,M)*A"`, (0,1), £§color£constant`red`);
+£~color£type`point` £~color£variable-name`Ap`=£~color£function-name`yscale`(k, £~color£constant`M`)*A;
+£~color£function-name`dot`(£~color£string`"A'"`, Ap, £~color£constant`red`); £~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`I`*£~color£function-name`unit`(A-Ap));
+£~color£function-name`label`(£~color£string`"A'=yscale(k,M)*A"`, (0,1), £~color£constant`red`);
 
-£§color£type`point` £§color£variable-name`P`=£§color£function-name`intersectionpoint`(£§color£function-name`line`(A,Ap), £§color£function-name`line`(£§color£constant`M`,£§color£constant`M`+£§color£constant`E`));
-£§color£function-name`dot`(£§color£string`"P"`, P); £§color£function-name`draw`(£§color£constant`M`--P); £§color£function-name`draw`(P--Ap);
-£§color£function-name`perpendicularmark`(P, £§color£function-name`dir`(135));
-£§color£function-name`distance`(£§color£string`"$k\times PA$"`,P,Ap,-12£§color£constant`mm`,£§color£constant`grey`,£§color£constant`grey`+£§color£constant`dashed`);
+£~color£type`point` £~color£variable-name`P`=£~color£function-name`intersectionpoint`(£~color£function-name`line`(A,Ap), £~color£function-name`line`(£~color£constant`M`,£~color£constant`M`+£~color£constant`E`));
+£~color£function-name`dot`(£~color£string`"P"`, P); £~color£function-name`draw`(£~color£constant`M`--P); £~color£function-name`draw`(P--Ap);
+£~color£function-name`perpendicularmark`(P, £~color£function-name`dir`(135));
+£~color£function-name`distance`(£~color£string`"$k\times PA$"`,P,Ap,-12£~color£constant`mm`,£~color£constant`grey`,£~color£constant`grey`+£~color£constant`dashed`);

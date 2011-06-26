@@ -1,7 +1,7 @@
     import geometry; size(8cm);
     point A=(-1,0), B=(1,1), C=(0,1), D=(1,-1);
     dot("$A$",A,S); dot("$B$",B,S); dot("$C$",C,SW); dot("$D$",D,SW);
-    ellipse el=ellipse((0,0.5),2,1);
+    ellipse el=ellipse((point)(0,0.5),2,1);
     line l1=line(A,B), l2=line(C,D); draw(l1); draw(l2);
     point[] J=intersectionpoints(l1,el), K=intersectionpoints(l2,el);
     draw(arc(el, J[0],K[0]), 1mm+0.8yellow); draw(arc(el, K[0],J[1]), 1mm+0.8red);

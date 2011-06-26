@@ -6,7 +6,7 @@
     ipen=blue, xpen=invisible);
     show(defaultcoordsys);
     real R=2;
-    circle C=circle((0,0), R);
+    circle C=circle((point)(0,0), R);
     draw(C, bp+0.8*blue);
     circle Cp=circle(point(defaultcoordsys,(0,0)), R);
     draw(Cp, bp+0.8*red);

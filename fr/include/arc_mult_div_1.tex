@@ -1,13 +1,13 @@
-£§color£builtin`import` geometry; £§color£function-name`size`(8£§color£constant`cm`,0);
+£~color£builtin`import` geometry; £~color£function-name`size`(8£~color£constant`cm`,0);
 
-£§color£type`point` £§color£variable-name`A`=(1,1); £§color£function-name`dot`(£§color£string`"$A$"`,A,£§color£constant`S`,£§color£constant`red`);
-£§color£type`arc` £§color£variable-name`C`=£§color£function-name`arc`(£§color£function-name`circle`(A,2), 45, 210);
-£§color£function-name`draw`(C,£§color£function-name`linewidth`(3£§color£constant`mm`));
-£§color£function-name`markarc`(£§color£function-name`format`(£§color£string`"%0g"`,£§color£function-name`degrees`(C)), C, Arrow);
+£~color£type`point` £~color£variable-name`A`=(1,1); £~color£function-name`dot`(£~color£string`"$A$"`,A,£~color£constant`S`,£~color£constant`red`);
+£~color£type`arc` £~color£variable-name`C`=£~color£function-name`arc`(£~color£function-name`circle`(A,2), 45, 210);
+£~color£function-name`draw`(C,£~color£function-name`linewidth`(3£~color£constant`mm`));
+£~color£function-name`markarc`(£~color£function-name`format`(£~color£string`"%0g"`,£~color£function-name`degrees`(C)), C, Arrow);
 
-£§color£function-name`draw`(0.5*C,1.5£§color£constant`mm`+£§color£constant`yellow`);
+£~color£function-name`draw`(0.5*C,1.5£~color£constant`mm`+£~color£constant`yellow`);
 
-£§color£type`arc` £§color£variable-name`Cp`=C/3;
-£§color£function-name`draw`(Cp, 0.75£§color£constant`mm`+£§color£constant`blue`);
-£§color£function-name`markarc`(£§color£function-name`format`(£§color£string`"%0g"`,£§color£function-name`degrees`(Cp)),
-        radius=25£§color£constant`mm`, Cp, £§color£constant`blue`, Arrow);
+£~color£type`arc` £~color£variable-name`Cp`=C/3;
+£~color£function-name`draw`(Cp, 0.75£~color£constant`mm`+£~color£constant`blue`);
+£~color£function-name`markarc`(£~color£function-name`format`(£~color£string`"%0g"`,£~color£function-name`degrees`(Cp)),
+        radius=25£~color£constant`mm`, Cp, £~color£constant`blue`, Arrow);

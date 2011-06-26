@@ -1,7 +1,7 @@
   import geometry;
   size(4cm);
 
-  circle C=circle((0,0),1);
+  circle C=circle((point)(0,0),1);
   draw(C, linewidth(bp));
 
   point O=dir(45);

@@ -1,7 +1,7 @@
     import geometry;
     size(5cm);
 
-    circle cle=circle((2,1),1.5);
+    circle cle=circle((point)(2,1),1.5);
     draw(cle, linewidth(bp));
     dot("$C$", cle.C);
 

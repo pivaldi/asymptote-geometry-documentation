@@ -1,12 +1,12 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(6£§color£constant`cm`,0);
-£§color£type`point` £§color£variable-name`A`=£§color£constant`SW`, £§color£variable-name`B`=£§color£constant`NE`;
-£§color£function-name`label`(£§color£string`"$A$"`, A, £§color£constant`NW`); £§color£function-name`label`(£§color£string`"$B$"`, B, £§color£constant`SE`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(6£~color£constant`cm`,0);
+£~color£type`point` £~color£variable-name`A`=£~color£constant`SW`, £~color£variable-name`B`=£~color£constant`NE`;
+£~color£function-name`label`(£~color£string`"$A$"`, A, £~color£constant`NW`); £~color£function-name`label`(£~color£string`"$B$"`, B, £~color£constant`SE`);
 
-£§color£type`line` £§color£variable-name`l`=£§color£function-name`line`(A,B);
-£§color£function-name`draw`(l, £§color£constant`bp`+£§color£constant`red`);
+£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(A,B);
+£~color£function-name`draw`(l, £~color£constant`bp`+£~color£constant`red`);
 
-£§color£type`segment` £§color£variable-name`s`=l;
-£§color£function-name`draw`(s, £§color£function-name`linewidth`(3£§color£constant`bp`));
-£§color£function-name`draw`(£§color£function-name`line`(£§color£function-name`rotate`(90,£§color£function-name`midpoint`(s))*s));
-£§color£function-name`draw`(£§color£function-name`box`(2*A,2*B), £§color£constant`invisible`);
+£~color£type`segment` £~color£variable-name`s`=l;
+£~color£function-name`draw`(s, £~color£function-name`linewidth`(3£~color£constant`bp`));
+£~color£function-name`draw`(£~color£function-name`line`(£~color£function-name`rotate`(90,£~color£function-name`midpoint`(s))*s));
+£~color£function-name`draw`(£~color£function-name`box`(2*A,2*B), £~color£constant`invisible`);

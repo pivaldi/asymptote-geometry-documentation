@@ -1,22 +1,22 @@
-£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`,0);
-£§color£type`triangle` £§color£variable-name`t`=£§color£function-name`triangleabc`(5,6,7); £§color£function-name`label`(t); £§color£function-name`draw`(t, £§color£function-name`linewidth`(£§color£constant`bp`));
-£§color£type`point` £§color£variable-name`P`=0.6*t.B+0.25*t.C; £§color£function-name`dot`(£§color£string`"$P$"`, P, £§color£function-name`dir`(60), 0.8*£§color£constant`red`);
-£§color£type`triangle` £§color£variable-name`C1`=£§color£function-name`cevian`(t, P);
-£§color£function-name`label`(£§color£string`"$A'$"`,£§color£string`"$B'$"`,£§color£string`"$C'$"`, C1, 0.8*£§color£constant`red`); £§color£function-name`draw`(C1, £§color£constant`bp`+0.8*£§color£constant`red`, £§color£constant`dot`);
-£§color£function-name`draw`(t.A--C1.A, 0.8*£§color£constant`red`); £§color£function-name`draw`(t.B--C1.B, 0.8*£§color£constant`red`); £§color£function-name`draw`(t.C--C1.C, 0.8*£§color£constant`red`);
+£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
+£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleabc`(5,6,7); £~color£function-name`label`(t); £~color£function-name`draw`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
+£~color£type`point` £~color£variable-name`P`=0.6*t.B+0.25*t.C; £~color£function-name`dot`(£~color£string`"$P$"`, P, £~color£function-name`dir`(60), 0.8*£~color£constant`red`);
+£~color£type`triangle` £~color£variable-name`C1`=£~color£function-name`cevian`(t, P);
+£~color£function-name`label`(£~color£string`"$A'$"`,£~color£string`"$B'$"`,£~color£string`"$C'$"`, C1, 0.8*£~color£constant`red`); £~color£function-name`draw`(C1, £~color£constant`bp`+0.8*£~color£constant`red`, £~color£constant`dot`);
+£~color£function-name`draw`(t.A--C1.A, 0.8*£~color£constant`red`); £~color£function-name`draw`(t.B--C1.B, 0.8*£~color£constant`red`); £~color£function-name`draw`(t.C--C1.C, 0.8*£~color£constant`red`);
 
-£§color£type`point` £§color£variable-name`Ma`=£§color£function-name`midpoint`(t.BC), £§color£variable-name`Mb`=£§color£function-name`midpoint`(t.AC), £§color£variable-name`Mc`=£§color£function-name`midpoint`(t.BA);
-£§color£function-name`dot`(£§color£string`"$M_1$"`,Ma,-£§color£function-name`dir`(t.VA)); £§color£function-name`dot`(£§color£string`"$M_2$"`,Mb,-£§color£function-name`dir`(t.VB)); £§color£function-name`dot`(£§color£string`"$M_3$"`,Mc,-£§color£function-name`dir`(t.VC));
-£§color£function-name`draw`(t.A--Ma^^t.B--Mb^^t.C--Mc, £§color£constant`grey`); £§color£function-name`dot`(£§color£string`"$G$"`, £§color£function-name`centroid`(t), 2*£§color£function-name`dir`(-65), £§color£constant`grey`);
+£~color£type`point` £~color£variable-name`Ma`=£~color£function-name`midpoint`(t.BC), £~color£variable-name`Mb`=£~color£function-name`midpoint`(t.AC), £~color£variable-name`Mc`=£~color£function-name`midpoint`(t.BA);
+£~color£function-name`dot`(£~color£string`"$M_1$"`,Ma,-£~color£function-name`dir`(t.VA)); £~color£function-name`dot`(£~color£string`"$M_2$"`,Mb,-£~color£function-name`dir`(t.VB)); £~color£function-name`dot`(£~color£string`"$M_3$"`,Mc,-£~color£function-name`dir`(t.VC));
+£~color£function-name`draw`(t.A--Ma^^t.B--Mb^^t.C--Mc, £~color£constant`grey`); £~color£function-name`dot`(£~color£string`"$G$"`, £~color£function-name`centroid`(t), 2*£~color£function-name`dir`(-65), £~color£constant`grey`);
 
-£§color£type`point` £§color£variable-name`App`=£§color£function-name`rotate`(180,Ma)*C1.A, £§color£variable-name`Bpp`=£§color£function-name`rotate`(180,Mb)*C1.B, £§color£variable-name`Cpp`=£§color£function-name`rotate`(180,Mc)*C1.C;
-£§color£function-name`draw`(C1.A--App, 0.8*£§color£constant`green`, £§color£function-name`StickIntervalMarker`(2,1,0.8*£§color£constant`green`));
-£§color£function-name`draw`(C1.B--Bpp, 0.8*£§color£constant`green`, £§color£function-name`StickIntervalMarker`(2,2,0.8*£§color£constant`green`));
-£§color£function-name`draw`(C1.C--Cpp, 0.8*£§color£constant`green`, £§color£function-name`StickIntervalMarker`(2,3,0.8*£§color£constant`green`));
+£~color£type`point` £~color£variable-name`App`=£~color£function-name`rotate`(180,Ma)*C1.A, £~color£variable-name`Bpp`=£~color£function-name`rotate`(180,Mb)*C1.B, £~color£variable-name`Cpp`=£~color£function-name`rotate`(180,Mc)*C1.C;
+£~color£function-name`draw`(C1.A--App, 0.8*£~color£constant`green`, £~color£function-name`StickIntervalMarker`(2,1,0.8*£~color£constant`green`));
+£~color£function-name`draw`(C1.B--Bpp, 0.8*£~color£constant`green`, £~color£function-name`StickIntervalMarker`(2,2,0.8*£~color£constant`green`));
+£~color£function-name`draw`(C1.C--Cpp, 0.8*£~color£constant`green`, £~color£function-name`StickIntervalMarker`(2,3,0.8*£~color£constant`green`));
 
-£§color£type`triangle` £§color£variable-name`C2`=£§color£function-name`triangle`(App,Bpp,Cpp);
-£§color£function-name`label`(£§color£string`"$A''$"`,£§color£string`"$B''$"`,£§color£string`"$C''$"`, C2, 0.8*£§color£constant`blue`); £§color£function-name`draw`(C2, £§color£constant`bp`+0.8*£§color£constant`blue`, £§color£constant`dot`);
-£§color£type`segment` £§color£variable-name`sA`=£§color£function-name`segment`(t.A,C2.A), £§color£variable-name`sB`=£§color£function-name`segment`(t.B,C2.B);
-£§color£type`point` £§color£variable-name`PP`=£§color£function-name`intersectionpoint`(sA,sB);
-£§color£function-name`dot`(£§color£string`"$P'$"`, PP, £§color£function-name`dir`(100), 0.8*£§color£constant`blue`);
-£§color£function-name`draw`(sA, 0.8*£§color£constant`blue`); £§color£function-name`draw`(sB, 0.8*£§color£constant`blue`); £§color£function-name`draw`(£§color£function-name`segment`(t.C,C2.C), 0.8*£§color£constant`blue`);
+£~color£type`triangle` £~color£variable-name`C2`=£~color£function-name`triangle`(App,Bpp,Cpp);
+£~color£function-name`label`(£~color£string`"$A''$"`,£~color£string`"$B''$"`,£~color£string`"$C''$"`, C2, 0.8*£~color£constant`blue`); £~color£function-name`draw`(C2, £~color£constant`bp`+0.8*£~color£constant`blue`, £~color£constant`dot`);
+£~color£type`segment` £~color£variable-name`sA`=£~color£function-name`segment`(t.A,C2.A), £~color£variable-name`sB`=£~color£function-name`segment`(t.B,C2.B);
+£~color£type`point` £~color£variable-name`PP`=£~color£function-name`intersectionpoint`(sA,sB);
+£~color£function-name`dot`(£~color£string`"$P'$"`, PP, £~color£function-name`dir`(100), 0.8*£~color£constant`blue`);
+£~color£function-name`draw`(sA, 0.8*£~color£constant`blue`); £~color£function-name`draw`(sB, 0.8*£~color£constant`blue`); £~color£function-name`draw`(£~color£function-name`segment`(t.C,C2.C), 0.8*£~color£constant`blue`);

@@ -1,15 +1,15 @@
-£§color£builtin`import` geometry; £§color£function-name`size`(6£§color£constant`cm`,0);
-£§color£type`real` £§color£variable-name`a`=2, £§color£variable-name`b`=1.5;
-£§color£type`point` £§color£variable-name`A`=(1,1); £§color£function-name`dot`(£§color£string`"$A$"`, A, £§color£constant`red`);
-£§color£type`ellipse` £§color£variable-name`EL`=£§color£function-name`ellipse`(A,a,b,90); £§color£function-name`draw`(EL, £§color£constant`bp`+£§color£constant`grey`);
-£§color£function-name`dot`(£§color£string`"$F_1$"`, EL.F1, £§color£constant`S`); £§color£function-name`dot`(£§color£string`"$F_2$"`, EL.F2, £§color£constant`N`);
-£§color£function-name`draw`(EL.F1--EL.F2);
-£§color£type`arc` £§color£variable-name`AE`=£§color£function-name`arc`(EL, 45, 270);
-£§color£function-name`draw`(AE, £§color£function-name`linewidth`(£§color£constant`bp`), £§color£function-name`Arrow`(3£§color£constant`mm`), BeginBar);
-£§color£type`point` £§color£variable-name`Bp`=£§color£function-name`point`(AE, 0), £§color£variable-name`Ep`=£§color£function-name`relpoint`(AE,1);
-£§color£function-name`draw`(EL.F1--Bp); £§color£function-name`draw`(EL.F1--Ep);
-£§color£function-name`markangle`(£§color£function-name`format`(£§color£string`"$%0g^\circ$"`,AE.angle1),
-          EL.F2,EL.F1,Bp, radius=1.5£§color£constant`cm`, Arrow);
-£§color£function-name`markangle`(£§color£function-name`Label`(£§color£function-name`format`(£§color£string`"$%0g^\circ$"`,AE.angle2),
-                £§color£function-name`Relative`(0.35)),
-          EL.F2, EL.F1, Ep, radius=0.75£§color£constant`cm`, Arrow);
+£~color£builtin`import` geometry; £~color£function-name`size`(6£~color£constant`cm`,0);
+£~color£type`real` £~color£variable-name`a`=2, £~color£variable-name`b`=1.5;
+£~color£type`point` £~color£variable-name`A`=(1,1); £~color£function-name`dot`(£~color£string`"$A$"`, A, £~color£constant`red`);
+£~color£type`ellipse` £~color£variable-name`EL`=£~color£function-name`ellipse`(A,a,b,90); £~color£function-name`draw`(EL, £~color£constant`bp`+£~color£constant`grey`);
+£~color£function-name`dot`(£~color£string`"$F_1$"`, EL.F1, £~color£constant`S`); £~color£function-name`dot`(£~color£string`"$F_2$"`, EL.F2, £~color£constant`N`);
+£~color£function-name`draw`(EL.F1--EL.F2);
+£~color£type`arc` £~color£variable-name`AE`=£~color£function-name`arc`(EL, 45, 270);
+£~color£function-name`draw`(AE, £~color£function-name`linewidth`(£~color£constant`bp`), £~color£function-name`Arrow`(3£~color£constant`mm`), BeginBar);
+£~color£type`point` £~color£variable-name`Bp`=£~color£function-name`point`(AE, 0), £~color£variable-name`Ep`=£~color£function-name`relpoint`(AE,1);
+£~color£function-name`draw`(EL.F1--Bp); £~color£function-name`draw`(EL.F1--Ep);
+£~color£function-name`markangle`(£~color£function-name`format`(£~color£string`"$%0g^\circ$"`,AE.angle1),
+          EL.F2,EL.F1,Bp, radius=1.5£~color£constant`cm`, Arrow);
+£~color£function-name`markangle`(£~color£function-name`Label`(£~color£function-name`format`(£~color£string`"$%0g^\circ$"`,AE.angle2),
+                £~color£function-name`Relative`(0.35)),
+          EL.F2, EL.F1, Ep, radius=0.75£~color£constant`cm`, Arrow);

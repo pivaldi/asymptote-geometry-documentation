@@ -18,8 +18,6 @@
 # along with this program ; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 
-LC_CTYPE=fr_FR.latin-1
-
 ASYCMD="/usr/local/bin/asy"
 graph=true
 
@@ -46,7 +44,7 @@ ficpdf="${fic}.pdf"
 function texify()
 {
     cat "$fichtml" | awk -v FS="^Z" "/<pre>/,/<\/pre>/" |\
-sed -r 's/<\/*pre>//g' | sed '1,1d' > "${fic}_tmp" && mv "${fic}_tmp" "$fichtml"
+    LC_CTYPE='fr_FR.latin-1' sed -r 's/<\/*pre>//g' | LC_CTYPE='fr_FR.latin-1' sed '1,1d' > "${fic}_tmp" && mv "${fic}_tmp" "$fichtml"
     COMA='s!<span class="([a-z|-]*)">!£~color£\1\`!g'
     COMB='s!</span>!`!g'
     COMC='s!&lt;!<!g'
@@ -57,8 +55,8 @@ sed -r 's/<\/*pre>//g' | sed '1,1d' > "${fic}_tmp" && mv "${fic}_tmp" "$fichtml"
     COMH='s!&#224;!à!g'
     COMI='s!&amp;!\\&!g'
     cat "${fichtml}" | \
-        sed -r "$COMA;$COMB;$COMC;$COMD;$COME;$COMF;$COMG;$COMH;$COMI" | \
-        sed '$d'> "${fictex}"
+        LC_CTYPE='fr_FR.latin-1' sed -r "$COMA;$COMB;$COMC;$COMD;$COME;$COMF;$COMG;$COMH;$COMI" | \
+        LC_CTYPE='fr_FR.latin-1' sed '$d'> "${fictex}"
 }
 
 # if [ "$ficasy" -nt "$ficpdf" ]; then

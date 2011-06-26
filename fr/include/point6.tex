@@ -1,12 +1,12 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(4£§color£constant`cm`,0);
-£§color£type`coordsys` £§color£variable-name`R`=£§color£function-name`cartesiansystem`((1,2), i=(1,0.5), j=(-1,1));
-£§color£function-name`show`(R);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(4£~color£constant`cm`,0);
+£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((1,2), i=(1,0.5), j=(-1,1));
+£~color£function-name`show`(R);
 
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 360; i += 10) {
-  £§color£type`pen` £§color£constant`p`=(i/360)*£§color£constant`red`;
-  £§color£function-name`dot`(£§color£function-name`point`(R, R.£§color£function-name`polar`(1,£§color£function-name`radians`(i))), £§color£constant`p`);
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 360; i += 10) {
+  £~color£type`pen` £~color£constant`p`=(i/360)*£~color£constant`red`;
+  £~color£function-name`dot`(£~color£function-name`point`(R, R.£~color£function-name`polar`(1,£~color£function-name`radians`(i))), £~color£constant`p`);
 }
 
-£§color£type`point` £§color£variable-name`A`=£§color£function-name`point`(R, R.£§color£function-name`polar`(1,£§color£function-name`radians`(40)));
-£§color£function-name`draw`((£§color£type`string`)£§color£function-name`abs`(A), R.O--A);
+£~color£type`point` £~color£variable-name`A`=£~color£function-name`point`(R, R.£~color£function-name`polar`(1,£~color£function-name`radians`(40)));
+£~color£function-name`draw`((£~color£type`string`)£~color£function-name`abs`(A), R.O--A);

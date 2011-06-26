@@ -1,12 +1,12 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(5£§color£constant`cm`,0);
-£§color£type`point` £§color£variable-name`A`=£§color£constant`origin`, £§color£variable-name`B`=£§color£constant`NE`, £§color£constant`M`=2*B+£§color£constant`N`;
-£§color£function-name`dot`(£§color£string`"A"`, A, £§color£constant`I`*£§color£function-name`unit`(A-B)); £§color£function-name`dot`(£§color£string`"B"`, B, £§color£constant`I`*£§color£function-name`unit`(A-B));
+£~color£builtin`import` geometry;
+£~color£function-name`size`(5£~color£constant`cm`,0);
+£~color£type`point` £~color£variable-name`A`=£~color£constant`origin`, £~color£variable-name`B`=£~color£constant`NE`, £~color£constant`M`=2*B+£~color£constant`N`;
+£~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`I`*£~color£function-name`unit`(A-B)); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£constant`I`*£~color£function-name`unit`(A-B));
 
-£§color£type`line` £§color£variable-name`AB`=£§color£function-name`line`(A,B);
-£§color£function-name`draw`(AB, £§color£function-name`linewidth`(£§color£constant`bp`));
-£§color£type`transform` £§color£variable-name`reflect`=£§color£function-name`reflect`(AB);
+£~color£type`line` £~color£variable-name`AB`=£~color£function-name`line`(A,B);
+£~color£function-name`draw`(AB, £~color£function-name`linewidth`(£~color£constant`bp`));
+£~color£type`transform` £~color£variable-name`reflect`=£~color£function-name`reflect`(AB);
 
-£§color£type`point` £§color£variable-name`Mp`=reflect*£§color£constant`M`;
-£§color£function-name`dot`(£§color£string`"M"`,£§color£constant`M`, £§color£function-name`unit`(£§color£constant`M`-Mp)); £§color£function-name`dot`(£§color£string`"M'"`, Mp, £§color£function-name`unit`(Mp-£§color£constant`M`), £§color£constant`red`);
-£§color£function-name`draw`(£§color£function-name`segment`(£§color£constant`M`,Mp), £§color£constant`grey`, £§color£function-name`StickIntervalMarker`(2,2,£§color£constant`grey`));
+£~color£type`point` £~color£variable-name`Mp`=reflect*£~color£constant`M`;
+£~color£function-name`dot`(£~color£string`"M"`,£~color£constant`M`, £~color£function-name`unit`(£~color£constant`M`-Mp)); £~color£function-name`dot`(£~color£string`"M'"`, Mp, £~color£function-name`unit`(Mp-£~color£constant`M`), £~color£constant`red`);
+£~color£function-name`draw`(£~color£function-name`segment`(£~color£constant`M`,Mp), £~color£constant`grey`, £~color£function-name`StickIntervalMarker`(2,2,£~color£constant`grey`));

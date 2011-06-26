@@ -3,6 +3,6 @@
   drawline(t, linewidth(bp));
   line ba=bisector(t.VA), bb=bisector(t.VB);
   line bc=bisector(t.VC); draw(ba^^bb^^bc);
-  markangle(t.AB, t.AC, StickIntervalMarker(2,1));
-  markangle(t.BC, t.BA, StickIntervalMarker(2,2));
-  markangle(t.CA, t.CB, StickIntervalMarker(2,3));
+  markangle((line) t.AB, (line) t.AC, StickIntervalMarker(2,1));
+  markangle((line) t.BC, (line) t.BA, StickIntervalMarker(2,2));
+  markangle((line) t.CA, (line) t.CB, StickIntervalMarker(2,3));

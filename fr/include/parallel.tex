@@ -1,16 +1,16 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(5£§color£constant`cm`,0);
-£§color£type`coordsys` £§color£variable-name`R`=£§color£function-name`cartesiansystem`((1,-2), i=(1,1), j=(-1,1));
-£§color£function-name`show`(£§color£string`"$O$"`,£§color£string`"$\vec{u}$"`,£§color£string`"$\vec{v}$"`, R, ypen=£§color£constant`invisible`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(5£~color£constant`cm`,0);
+£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((1,-2), i=(1,1), j=(-1,1));
+£~color£function-name`show`(£~color£string`"$O$"`,£~color£string`"$\vec{u}$"`,£~color£string`"$\vec{v}$"`, R, ypen=£~color£constant`invisible`);
 
-£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`);
-£§color£type`point` £§color£variable-name`A`=(0,0), £§color£variable-name`B`=(2, 0.5), £§color£variable-name`C`=(3,2);
-£§color£type`vector` £§color£variable-name`w`=£§color£function-name`vector`(R, (1.5,2)); £§color£type`line` £§color£variable-name`AB`=£§color£function-name`line`(A,B);
+£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
+£~color£type`point` £~color£variable-name`A`=(0,0), £~color£variable-name`B`=(2, 0.5), £~color£variable-name`C`=(3,2);
+£~color£type`vector` £~color£variable-name`w`=£~color£function-name`vector`(R, (1.5,2)); £~color£type`line` £~color£variable-name`AB`=£~color£function-name`line`(A,B);
 
-£§color£function-name`dot`(£§color£string`"A"`, A, £§color£constant`NW`); £§color£function-name`dot`(£§color£string`"B"`, B, £§color£constant`NE`); £§color£function-name`dot`(£§color£string`"C"`, C, £§color£constant`N`);
-£§color£function-name`show`(£§color£string`"$\vec{w}$"`, w, bpp+0.8*£§color£constant`red`, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£function-name`draw`(AB, bpp+0.8*£§color£constant`blue`);
-£§color£function-name`draw`(£§color£function-name`parallel`(C, AB), bpp+0.8*£§color£constant`blue`);
-£§color£function-name`draw`(£§color£function-name`parallel`(B, w), bpp+0.8*£§color£constant`red`);
-£§color£function-name`draw`(£§color£function-name`parallel`(A, R.i), bpp);
-£§color£function-name`draw`(£§color£function-name`box`((-1,-3),(4,3)), £§color£constant`invisible`);
+£~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`NW`); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"C"`, C, £~color£constant`N`);
+£~color£function-name`show`(£~color£string`"$\vec{w}$"`, w, bpp+0.8*£~color£constant`red`, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£function-name`draw`(AB, bpp+0.8*£~color£constant`blue`);
+£~color£function-name`draw`(£~color£function-name`parallel`(C, AB), bpp+0.8*£~color£constant`blue`);
+£~color£function-name`draw`(£~color£function-name`parallel`(B, w), bpp+0.8*£~color£constant`red`);
+£~color£function-name`draw`(£~color£function-name`parallel`(A, R.i), bpp);
+£~color£function-name`draw`(£~color£function-name`box`((-1,-3),(4,3)), £~color£constant`invisible`);

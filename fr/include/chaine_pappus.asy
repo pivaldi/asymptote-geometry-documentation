@@ -8,7 +8,7 @@
 
   int n=40;
   for (int i=-n; i <= n; ++i) {
-    path g=inv*circle((0,2*i),1);
+    path g=inv*circle((point)(0,2*i),1);
     fill(g,(1-abs(i)/n)*yellow);
     draw(g,bp+red); draw(g,blue);
   }

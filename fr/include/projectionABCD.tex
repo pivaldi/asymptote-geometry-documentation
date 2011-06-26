@@ -1,15 +1,15 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(6£§color£constant`cm`);
-£§color£type`point` £§color£variable-name`A`=(2,2); £§color£type`point` £§color£variable-name`B`=(4,1); £§color£type`point` £§color£variable-name`C`=(3.75,3);
-£§color£type`point` £§color£variable-name`D`=(3.5,4); £§color£type`point` £§color£constant`M`=(2.5,3.5);
-£§color£type`path` £§color£variable-name`cle`=£§color£function-name`shift`(2.5,3)*£§color£function-name`scale`(0.25)*£§color£constant`unitcircle`;
-£§color£function-name`draw`(cle, £§color£function-name`linewidth`(£§color£constant`bp`)); £§color£function-name`draw`(£§color£function-name`line`(C,D), £§color£constant`grey`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(6£~color£constant`cm`);
+£~color£type`point` £~color£variable-name`A`=(2,2); £~color£type`point` £~color£variable-name`B`=(4,1); £~color£type`point` £~color£variable-name`C`=(3.75,3);
+£~color£type`point` £~color£variable-name`D`=(3.5,4); £~color£type`point` £~color£constant`M`=(2.5,3.5);
+£~color£type`path` £~color£variable-name`cle`=£~color£function-name`shift`(2.5,3)*£~color£function-name`scale`(0.25)*£~color£constant`unitcircle`;
+£~color£function-name`draw`(cle, £~color£function-name`linewidth`(£~color£constant`bp`)); £~color£function-name`draw`(£~color£function-name`line`(C,D), £~color£constant`grey`);
 
-£§color£type`transform` £§color£variable-name`proj`=£§color£function-name`projection`(A,B,C,D);
-£§color£type`point` £§color£variable-name`Mp`=proj*£§color£constant`M`;
+£~color£type`transform` £~color£variable-name`proj`=£~color£function-name`projection`(A,B,C,D);
+£~color£type`point` £~color£variable-name`Mp`=proj*£~color£constant`M`;
 
-£§color£function-name`draw`(proj*cle, 1£§color£constant`mm`+£§color£constant`red`);
-£§color£function-name`dot`(£§color£string`"A"`, A, £§color£function-name`unit`(A-B)); £§color£function-name`dot`(£§color£string`"B"`, B, £§color£function-name`unit`(B-A));
-£§color£function-name`dot`(£§color£string`"C"`, C); £§color£function-name`dot`(£§color£string`"D"`, D); £§color£function-name`dot`(£§color£string`"M"`, £§color£constant`M`, £§color£function-name`unit`(£§color£constant`M`-Mp));
-£§color£function-name`dot`(£§color£string`"M'"`, Mp, 2*£§color£function-name`unit`(Mp-£§color£constant`M`), £§color£constant`red`);
-£§color£function-name`draw`(£§color£constant`M`--Mp, £§color£constant`grey`); £§color£function-name`draw`(A--B);
+£~color£function-name`draw`(proj*cle, 1£~color£constant`mm`+£~color£constant`red`);
+£~color£function-name`dot`(£~color£string`"A"`, A, £~color£function-name`unit`(A-B)); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£function-name`unit`(B-A));
+£~color£function-name`dot`(£~color£string`"C"`, C); £~color£function-name`dot`(£~color£string`"D"`, D); £~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, £~color£function-name`unit`(£~color£constant`M`-Mp));
+£~color£function-name`dot`(£~color£string`"M'"`, Mp, 2*£~color£function-name`unit`(Mp-£~color£constant`M`), £~color£constant`red`);
+£~color£function-name`draw`(£~color£constant`M`--Mp, £~color£constant`grey`); £~color£function-name`draw`(A--B);

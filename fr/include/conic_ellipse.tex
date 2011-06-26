@@ -1,12 +1,12 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(10£§color£constant`cm`);
-£§color£type`point` £§color£variable-name`F`=(-1,0); £§color£type`line` £§color£variable-name`D`=£§color£function-name`line`(£§color£constant`N`,£§color£constant`S`);
-£§color£type`conic` £§color£variable-name`co`=£§color£function-name`conic`(F, D, 0.85); £§color£function-name`dot`(£§color£string`"$F$"`, F); £§color£function-name`draw`(co, £§color£function-name`linewidth`(£§color£constant`bp`));
+£~color£builtin`import` geometry;
+£~color£function-name`size`(10£~color£constant`cm`);
+£~color£type`point` £~color£variable-name`F`=(-1,0); £~color£type`line` £~color£variable-name`D`=£~color£function-name`line`(£~color£constant`N`,£~color£constant`S`);
+£~color£type`conic` £~color£variable-name`co`=£~color£function-name`conic`(F, D, 0.85); £~color£function-name`dot`(£~color£string`"$F$"`, F); £~color£function-name`draw`(co, £~color£function-name`linewidth`(£~color£constant`bp`));
 
-£§color£type`ellipse` £§color£variable-name`el`=co; £§color£function-name`dot`(£§color£string`"$C$"`, el.C, £§color£constant`S`);
-£§color£function-name`distance`(£§color£function-name`format`(£§color£string`"$2c=%f$"`, el.c),el.F1, el.F2, 3£§color£constant`cm`, joinpen=£§color£constant`dashed`);
-£§color£function-name`distance`(£§color£function-name`format`(£§color£string`"$2a=%f$"`, el.a), £§color£function-name`relpoint`(el,0), £§color£function-name`relpoint`(el,0.5), 3£§color£constant`cm`,
-         joinpen=£§color£constant`dashed`);
-£§color£function-name`distance`(£§color£function-name`format`(£§color£string`"$2b=%f$"`, el.b), £§color£function-name`relpoint`(el,0.25), £§color£function-name`relpoint`(el,0.75), 5.25£§color£constant`cm`,
-         joinpen=£§color£constant`dashed`);
-£§color£function-name`dot`(£§color£string`"$F'$"`, el.F2, £§color£constant`W`);
+£~color£type`ellipse` £~color£variable-name`el`=co; £~color£function-name`dot`(£~color£string`"$C$"`, el.C, £~color£constant`S`);
+£~color£function-name`distance`(£~color£function-name`format`(£~color£string`"$2c=%f$"`, el.c),el.F1, el.F2, 3£~color£constant`cm`, joinpen=£~color£constant`dashed`);
+£~color£function-name`distance`(£~color£function-name`format`(£~color£string`"$2a=%f$"`, el.a), £~color£function-name`relpoint`(el,0), £~color£function-name`relpoint`(el,0.5), 3£~color£constant`cm`,
+         joinpen=£~color£constant`dashed`);
+£~color£function-name`distance`(£~color£function-name`format`(£~color£string`"$2b=%f$"`, el.b), £~color£function-name`relpoint`(el,0.25), £~color£function-name`relpoint`(el,0.75), 5.25£~color£constant`cm`,
+         joinpen=£~color£constant`dashed`);
+£~color£function-name`dot`(£~color£string`"$F'$"`, el.F2, £~color£constant`W`);

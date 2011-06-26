@@ -1,14 +1,14 @@
-£§color£builtin`import` geometry; £§color£function-name`size`(10£§color£constant`cm`,0);
-£§color£type`point` £§color£variable-name`C`=(4,2); £§color£function-name`dot`(£§color£string`"$C$"`, C, £§color£constant`E`+£§color£constant`NE`, £§color£constant`red`);
-£§color£type`hyperbola` £§color£variable-name`H`=£§color£function-name`hyperbola`(C,1,1,-20); £§color£function-name`draw`(H, £§color£function-name`linewidth`(£§color£constant`bp`));
-£§color£type`coordsys` £§color£variable-name`R`=£§color£constant`currentcoordsys`; £§color£function-name`show`(R);
-£§color£type`coordsys` £§color£variable-name`Rp`=£§color£function-name`canonicalcartesiansystem`(H);
-£§color£function-name`show`(£§color£function-name`Label`(£§color£string`"$O'$"`,£§color£constant`align`=£§color£constant`SW`,£§color£constant`blue`), £§color£function-name`Label`(£§color£string`"$\vec{u}$"`,£§color£constant`blue`), £§color£function-name`Label`(£§color£string`"$\vec{v}$"`,£§color£constant`blue`),
-     Rp, ipen=£§color£constant`blue`);
-£§color£function-name`dot`(£§color£string`"$180$"`, £§color£function-name`angpoint`(H,180), £§color£constant`N`+2£§color£constant`E`);
-£§color£function-name`dot`(£§color£string`"$-80$"`, £§color£function-name`angpoint`(H,-80), £§color£constant`NE`);
-£§color£type`point` £§color£variable-name`P`=£§color£function-name`angpoint`(H,70); £§color£function-name`dot`(£§color£string`"$70$"`, P, £§color£constant`SE`);
-£§color£function-name`draw`(£§color£function-name`arcfromfocus`(H,70,-80), £§color£constant`bp`+£§color£constant`red`);
-£§color£type`segment` £§color£variable-name`s`=£§color£function-name`segment`(H.F1,P); £§color£function-name`draw`(s); £§color£type`line` £§color£variable-name`l`=£§color£function-name`line`(H.F1,H.F1-Rp.i);
-£§color£function-name`dot`(£§color£string`"$F_1$"`, H.F1, £§color£constant`N`+£§color£constant`NW`); £§color£function-name`markangle`(£§color£string`"$70^\circ$"`,l,s,Arrow);
-£§color£function-name`addMargins`(rmargin=3£§color£constant`cm`);
+£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
+£~color£type`point` £~color£variable-name`C`=(4,2); £~color£function-name`dot`(£~color£string`"$C$"`, C, £~color£constant`E`+£~color£constant`NE`, £~color£constant`red`);
+£~color£type`hyperbola` £~color£variable-name`H`=£~color£function-name`hyperbola`(C,1,1,-20); £~color£function-name`draw`(H, £~color£function-name`linewidth`(£~color£constant`bp`));
+£~color£type`coordsys` £~color£variable-name`R`=£~color£constant`currentcoordsys`; £~color£function-name`show`(R);
+£~color£type`coordsys` £~color£variable-name`Rp`=£~color£function-name`canonicalcartesiansystem`(H);
+£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$O'$"`,£~color£constant`align`=£~color£constant`SW`,£~color£constant`blue`), £~color£function-name`Label`(£~color£string`"$\vec{u}$"`,£~color£constant`blue`), £~color£function-name`Label`(£~color£string`"$\vec{v}$"`,£~color£constant`blue`),
+     Rp, ipen=£~color£constant`blue`);
+£~color£function-name`dot`(£~color£string`"$180$"`, £~color£function-name`angpoint`(H,180), £~color£constant`N`+2£~color£constant`E`);
+£~color£function-name`dot`(£~color£string`"$-80$"`, £~color£function-name`angpoint`(H,-80), £~color£constant`NE`);
+£~color£type`point` £~color£variable-name`P`=£~color£function-name`angpoint`(H,70); £~color£function-name`dot`(£~color£string`"$70$"`, P, £~color£constant`SE`);
+£~color£function-name`draw`(£~color£function-name`arcfromfocus`(H,70,-80), £~color£constant`bp`+£~color£constant`red`);
+£~color£type`segment` £~color£variable-name`s`=£~color£function-name`segment`(H.F1,P); £~color£function-name`draw`(s); £~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(H.F1,H.F1-Rp.i);
+£~color£function-name`dot`(£~color£string`"$F_1$"`, H.F1, £~color£constant`N`+£~color£constant`NW`); £~color£function-name`markangle`(£~color£string`"$70^\circ$"`,l,s,Arrow);
+£~color£function-name`addMargins`(rmargin=3£~color£constant`cm`);

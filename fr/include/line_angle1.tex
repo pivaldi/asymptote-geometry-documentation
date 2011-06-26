@@ -1,17 +1,17 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(5£§color£constant`cm`,0);
-£§color£type`coordsys` £§color£variable-name`R`=£§color£function-name`cartesiansystem`((1,-2), i=(1,0.5), j=(-1,1));
-£§color£function-name`show`(£§color£string`"$O_{1}$"`, £§color£string`"$\vec{u}$"`, £§color£function-name`Label`(£§color£string`"$\vec{v}$"`, £§color£constant`align`=£§color£constant`E`),
-     R, ipen=£§color£constant`blue`, ypen=£§color£constant`invisible`);
-£§color£function-name`show`(£§color£constant`defaultcoordsys`, ypen=£§color£constant`invisible`);
-£§color£type`point` £§color£variable-name`A`=£§color£function-name`point`(R,(1,1)); £§color£function-name`dot`(£§color£string`"A"`, A, £§color£constant`NW`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(5£~color£constant`cm`,0);
+£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((1,-2), i=(1,0.5), j=(-1,1));
+£~color£function-name`show`(£~color£string`"$O_{1}$"`, £~color£string`"$\vec{u}$"`, £~color£function-name`Label`(£~color£string`"$\vec{v}$"`, £~color£constant`align`=£~color£constant`E`),
+     R, ipen=£~color£constant`blue`, ypen=£~color£constant`invisible`);
+£~color£function-name`show`(£~color£constant`defaultcoordsys`, ypen=£~color£constant`invisible`);
+£~color£type`point` £~color£variable-name`A`=£~color£function-name`point`(R,(1,1)); £~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`NW`);
 
-£§color£type`line` £§color£variable-name`l`=£§color£function-name`line`(A, 30);
-£§color£function-name`draw`(l, £§color£constant`bp`+£§color£constant`blue`);
-£§color£function-name`markangle`(£§color£string`"$30^\circ$"`, £§color£function-name`Ox`(R), l, £§color£constant`grey`);
+£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(A, 30);
+£~color£function-name`draw`(l, £~color£constant`bp`+£~color£constant`blue`);
+£~color£function-name`markangle`(£~color£string`"$30^\circ$"`, £~color£function-name`Ox`(R), l, £~color£constant`grey`);
 
-A=£§color£function-name`changecoordsys`(£§color£constant`defaultcoordsys`, A);
-£§color£type`line` £§color£variable-name`ll`=£§color£function-name`line`(A, 40);
-£§color£function-name`draw`(ll, £§color£constant`bp`+£§color£constant`red`);
-£§color£function-name`markangle`(£§color£string`"$40^\circ$"`, £§color£constant`Ox`, ll, £§color£constant`grey`);
-£§color£function-name`draw`(£§color£function-name`box`((-0.6,-2.8), (2,-0.3)), £§color£constant`invisible`);
+A=£~color£function-name`changecoordsys`(£~color£constant`defaultcoordsys`, A);
+£~color£type`line` £~color£variable-name`ll`=£~color£function-name`line`(A, 40);
+£~color£function-name`draw`(ll, £~color£constant`bp`+£~color£constant`red`);
+£~color£function-name`markangle`(£~color£string`"$40^\circ$"`, £~color£constant`Ox`, ll, £~color£constant`grey`);
+£~color£function-name`draw`(£~color£function-name`box`((-0.6,-2.8), (2,-0.3)), £~color£constant`invisible`);

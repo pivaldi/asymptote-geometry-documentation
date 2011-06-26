@@ -1,6 +1,6 @@
     import geometry;
     size(9.5cm,0); usepackage("mathrsfs"); currentpen=fontsize(8); pen bpp=linewidth(bp);
-    circle C1=circle((0,0),2), C2=circle((5,5), 3), C3=circle((6,-2),1);
+    circle C1=circle((point)(0,0),2), C2=circle((point)(5,5), 3), C3=circle((point)(6,-2),1);
     draw(Label("$\mathscr{C}_1$",Relative(0.375)), C1, bp+0.8*red);
     draw("$\mathscr{C}_2$", C2, bp+0.8*red);
     dot(C1.C, 0.8*red); dot(C2.C, 0.8*red); dot(C3.C, 0.8*red);

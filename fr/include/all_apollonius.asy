@@ -1,6 +1,6 @@
     import geometry;
     size(18cm,0); int shx=18;
-    circle C1=circle((0,0),2), C2=circle((5,5), 3), C3=circle((6,-2),1);
+    circle C1=circle((point)(0,0),2), C2=circle((point)(5,5), 3), C3=circle((point)(6,-2),1);
     picture disc;
     fill(disc,(path)C1); fill(disc,(path)C2); fill(disc,(path)C3);
     transform tv=shift(S), th=shift(E);

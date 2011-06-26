@@ -1,13 +1,13 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(8£§color£constant`cm`,0);
-£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`);
-£§color£constant`currentcoordsys`=£§color£function-name`cartesiansystem`((0,0), i=(1,1), j=(-1,1));
-£§color£function-name`show`(£§color£constant`currentcoordsys`, xpen=£§color£constant`invisible`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(8£~color£constant`cm`,0);
+£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
+£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((0,0), i=(1,1), j=(-1,1));
+£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`);
 
-£§color£type`vector` £§color£variable-name`u`=(0.5,1), £§color£variable-name`v`=£§color£function-name`rotate`(-135)*u/2;
-£§color£function-name`show`(£§color£string`"$\vec{u}$"`, u, bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£function-name`show`(£§color£string`"$\vec{v}$"`, v, bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£type`point` £§color£variable-name`P`=(1,-1); £§color£function-name`dot`(£§color£string`"P"`, P, £§color£constant`SW`);
-£§color£function-name`draw`(£§color£function-name`Label`(£§color£string`"\vec{u}"`,£§color£constant`align`=£§color£constant`W`), P--(P+u), bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£function-name`draw`(£§color£string`"$\vec{v}$"`, P--(P+v), bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£function-name`draw`(£§color£string`"$\vec{u}+\vec{v}$"`, P--(P+(u+v)), bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
+£~color£type`vector` £~color£variable-name`u`=(0.5,1), £~color£variable-name`v`=£~color£function-name`rotate`(-135)*u/2;
+£~color£function-name`show`(£~color£string`"$\vec{u}$"`, u, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£function-name`show`(£~color£string`"$\vec{v}$"`, v, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£type`point` £~color£variable-name`P`=(1,-1); £~color£function-name`dot`(£~color£string`"P"`, P, £~color£constant`SW`);
+£~color£function-name`draw`(£~color£function-name`Label`(£~color£string`"\vec{u}"`,£~color£constant`align`=£~color£constant`W`), P--(P+u), bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£function-name`draw`(£~color£string`"$\vec{v}$"`, P--(P+v), bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£function-name`draw`(£~color£string`"$\vec{u}+\vec{v}$"`, P--(P+(u+v)), bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));

@@ -1,15 +1,15 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(5£§color£constant`cm`,0);
-£§color£type`transform` £§color£variable-name`t`=£§color£function-name`rotate`(135);
-£§color£type`line` £§color£variable-name`l1`=t*£§color£function-name`line`((0,0),£§color£constant`E`); £§color£type`line` £§color£variable-name`l2`=t*£§color£function-name`line`((0,0),£§color£constant`N`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(5£~color£constant`cm`,0);
+£~color£type`transform` £~color£variable-name`t`=£~color£function-name`rotate`(135);
+£~color£type`line` £~color£variable-name`l1`=t*£~color£function-name`line`((0,0),£~color£constant`E`); £~color£type`line` £~color£variable-name`l2`=t*£~color£function-name`line`((0,0),£~color£constant`N`);
 
-£§color£constant`perpfactor` *=5.5;
-£§color£function-name`perpendicularmark`(l1,l2, £§color£function-name`Fill`(0.8*£§color£constant`green`));
-£§color£function-name`perpendicularmark`(l1,l2, quarter=2, £§color£function-name`Fill`(0.8*£§color£constant`blue`));
-£§color£function-name`perpendicularmark`(l1,l2, quarter=3, £§color£function-name`Fill`(0.8*£§color£constant`red`));
-£§color£function-name`perpendicularmark`(l1,l2, quarter=4, £§color£function-name`Fill`(0.8*£§color£constant`yellow`));
+£~color£constant`perpfactor` *=5.5;
+£~color£function-name`perpendicularmark`(l1,l2, £~color£function-name`Fill`(0.8*£~color£constant`green`));
+£~color£function-name`perpendicularmark`(l1,l2, quarter=2, £~color£function-name`Fill`(0.8*£~color£constant`blue`));
+£~color£function-name`perpendicularmark`(l1,l2, quarter=3, £~color£function-name`Fill`(0.8*£~color£constant`red`));
+£~color£function-name`perpendicularmark`(l1,l2, quarter=4, £~color£function-name`Fill`(0.8*£~color£constant`yellow`));
 
-£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`); £§color£type`position` £§color£variable-name`pos`=£§color£function-name`Relative`(0.75);
-£§color£function-name`show`(£§color£function-name`Label`(£§color£string`"$u_1$"`,pos), l1.u, bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£function-name`show`(£§color£function-name`Label`(£§color£string`"$u_2$"`,pos,£§color£constant`align`=£§color£constant`SE`), l2.u, bpp, £§color£function-name`Arrow`(3£§color£constant`mm`));
-£§color£function-name`show`(£§color£string`""`, -£§color£function-name`l1`.u, £§color£constant`invisible`); £§color£function-name`show`(£§color£string`""`, -£§color£function-name`l2`.u, £§color£constant`invisible`);
+£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`); £~color£type`position` £~color£variable-name`pos`=£~color£function-name`Relative`(0.75);
+£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$u_1$"`,pos), l1.u, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$u_2$"`,pos,£~color£constant`align`=£~color£constant`SE`), l2.u, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+£~color£function-name`show`(£~color£string`""`, -£~color£function-name`l1`.u, £~color£constant`invisible`); £~color£function-name`show`(£~color£string`""`, -£~color£function-name`l2`.u, £~color£constant`invisible`);

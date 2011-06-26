@@ -1,14 +1,14 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(9£§color£constant`cm`,0);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(9£~color£constant`cm`,0);
 
-£§color£function-name`draw`(£§color£function-name`box`((-2,-3),(6,3)), £§color£constant`invisible`);
-£§color£type`point` £§color£constant`M`1=(0,0), £§color£constant`M`2=(4,-2), £§color£constant`M`3=(2,1);
-£§color£type`pen`[] £§color£constant`p`=£§color£builtin`new` £§color£type`pen`[] {£§color£constant`black`,£§color£constant`red`,£§color£constant`blue`,£§color£constant`green`};
-£§color£type`parabola` £§color£variable-name`P`;
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 4; ++i) {
-  P=£§color£function-name`parabola`(£§color£constant`M`1,£§color£constant`M`2,£§color£constant`M`3,£§color£function-name`rotate`(45*i)*£§color£function-name`Ox`());
-  £§color£function-name`draw`(P, £§color£constant`bp`+0.8*£§color£constant`p`[i]);
+£~color£function-name`draw`(£~color£function-name`box`((-2,-3),(6,3)), £~color£constant`invisible`);
+£~color£type`point` £~color£constant`M`1=(0,0), £~color£constant`M`2=(4,-2), £~color£constant`M`3=(2,1);
+£~color£type`pen`[] £~color£constant`p`=£~color£builtin`new` £~color£type`pen`[] {£~color£constant`black`,£~color£constant`red`,£~color£constant`blue`,£~color£constant`green`};
+£~color£type`parabola` £~color£variable-name`P`;
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 4; ++i) {
+  P=£~color£function-name`parabola`(£~color£constant`M`1,£~color£constant`M`2,£~color£constant`M`3,£~color£function-name`rotate`(45*i)*£~color£function-name`Ox`());
+  £~color£function-name`draw`(P, £~color£constant`bp`+0.8*£~color£constant`p`[i]);
 }
-£§color£function-name`dot`(£§color£function-name`scale`(0.75)*£§color£string`"$M_1$"`, £§color£constant`M`1, 2*£§color£function-name`dir`(175));
-£§color£function-name`dot`(£§color£function-name`scale`(0.75)*£§color£string`"$M_2$"`, £§color£constant`M`2, 2*£§color£function-name`dir`(25));
-£§color£function-name`dot`(£§color£function-name`scale`(0.75)*£§color£string`"$M_3$"`, £§color£constant`M`3, 2*£§color£function-name`dir`(80));
+£~color£function-name`dot`(£~color£function-name`scale`(0.75)*£~color£string`"$M_1$"`, £~color£constant`M`1, 2*£~color£function-name`dir`(175));
+£~color£function-name`dot`(£~color£function-name`scale`(0.75)*£~color£string`"$M_2$"`, £~color£constant`M`2, 2*£~color£function-name`dir`(25));
+£~color£function-name`dot`(£~color£function-name`scale`(0.75)*£~color£string`"$M_3$"`, £~color£constant`M`3, 2*£~color£function-name`dir`(80));

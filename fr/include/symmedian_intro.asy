@@ -1,4 +1,4 @@
-import geometry_dev; size(17cm);
+import geometry; size(17cm);
 triangle t=triangle((-2,0), (2,0), (-0.5,1));
 draw(t, linewidth(2*bp));
 circle ct=circle(t); clipdraw(ct, bp+grey);
@@ -31,8 +31,8 @@ draw(symmedian(t.VB), 0.8*green); draw(symmedian(t.VC), 0.8*green);
 
 point sP=symmedian(t); dot(sP);
 
-markangle(sA, t.AC, radius=3.5cm, grey, StickIntervalMarker(1,1,grey));
-markangle(t.AB, mA, radius=3.5cm, grey, StickIntervalMarker(1,1,grey));
+markangle(sA, (line) t.AC, radius=3.5cm, grey, StickIntervalMarker(1,1,grey));
+markangle((line) t.AB, mA, radius=3.5cm, grey, StickIntervalMarker(1,1,grey));
 markangle(sA, mA, dir(-10), radius=4cm, grey, StickIntervalMarker(2,2,grey));
 
 label("$A$",t.A,NW); label("$B$",t.B,NE); label("$C$",t.C,2*dir(115));

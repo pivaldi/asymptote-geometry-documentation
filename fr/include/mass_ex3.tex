@@ -1,36 +1,36 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(7£§color£constant`cm`,0);
-£§color£type`int`[][] parties(£§color£type`int` £§color£variable-name`n`) {
-  £§color£type`int`[][] oi;
+£~color£builtin`import` geometry;
+£~color£function-name`size`(7£~color£constant`cm`,0);
+£~color£type`int`[][] parties(£~color£type`int` £~color£variable-name`n`) {
+  £~color£type`int`[][] oi;
 
-  £§color£type`void` £§color£variable-name`loop`(£§color£type`int`[] arr, £§color£type`int` £§color£variable-name`i`) {
+  £~color£type`void` £~color£variable-name`loop`(£~color£type`int`[] arr, £~color£type`int` £~color£variable-name`i`) {
     oi.push(arr);
-    £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=i; j < arr.length; ++j) {
-      £§color£type`int`[] tt=£§color£function-name`copy`(arr);
+    £~color£builtin`for` (£~color£type`int` £~color£variable-name`j`=i; j < arr.length; ++j) {
+      £~color£type`int`[] tt=£~color£function-name`copy`(arr);
       tt[j]=1;
       loop(tt, j+1);}}
-  loop(£§color£function-name`sequence`(£§color£builtin`new` £§color£type`int`(£§color£type`int` £§color£variable-name`n`){£§color£builtin`return` 0;}, n), 0);
-  £§color£builtin`return` oi;}
+  loop(£~color£function-name`sequence`(£~color£builtin`new` £~color£type`int`(£~color£type`int` £~color£variable-name`n`){£~color£builtin`return` 0;}, n), 0);
+  £~color£builtin`return` oi;}
 
-£§color£type`int` £§color£variable-name`n`=6;
-£§color£type`real` £§color£variable-name`step`=360/n;
-£§color£type`point`[] £§color£constant`M`;
+£~color£type`int` £~color£variable-name`n`=6;
+£~color£type`real` £~color£variable-name`step`=360/n;
+£~color£type`point`[] £~color£constant`M`;
 
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < n; ++i) {
-  £§color£constant`M`[i]=£§color£function-name`point`(£§color£function-name`dir`(i*step), 1);
-  £§color£function-name`dot`(£§color£constant`M`[i],£§color£function-name`linewidth`(2£§color£constant`mm`));}
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < n; ++i) {
+  £~color£constant`M`[i]=£~color£function-name`point`(£~color£function-name`dir`(i*step), 1);
+  £~color£function-name`dot`(£~color£constant`M`[i],£~color£function-name`linewidth`(2£~color£constant`mm`));}
 
-£§color£type`int`[][] part=parties(n); £§color£type`int` £§color£variable-name`l`=part.length;
-£§color£type`point`[][] group=£§color£builtin`new` £§color£type`point`[l][];
+£~color£type`int`[][] part=parties(n); £~color£type`int` £~color£variable-name`l`=part.length;
+£~color£type`point`[][] group=£~color£builtin`new` £~color£type`point`[l][];
 
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < l; ++i)
-  £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=0; j < n; ++j)
-    £§color£keyword`if`(part[i][j] == 1) group[i].push(£§color£constant`M`[j]);
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < l; ++i)
+  £~color£builtin`for` (£~color£type`int` £~color£variable-name`j`=0; j < n; ++j)
+    £~color£keyword`if`(part[i][j] == 1) group[i].push(£~color£constant`M`[j]);
 
-£§color£type`point`[][] partbar=£§color£builtin`new` £§color£type`point`[l][2];
+£~color£type`point`[][] partbar=£~color£builtin`new` £~color£type`point`[l][2];
 
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < l; ++i) {
-  £§color£keyword`if`(group[i].length > 0) partbar[i][0]=£§color£function-name`masscenter`(...group[i]);
-  £§color£builtin`for` (£§color£type`int` £§color£variable-name`j`=0; j < group[i].length; ++j)
-    £§color£function-name`draw`(group[i][j]--partbar[i][0]);
-  £§color£keyword`if`(group[i].length > 0) £§color£function-name`dot`(partbar[i][0], 0.8*£§color£constant`red`);}
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < l; ++i) {
+  £~color£keyword`if`(group[i].length > 0) partbar[i][0]=£~color£function-name`masscenter`(...group[i]);
+  £~color£builtin`for` (£~color£type`int` £~color£variable-name`j`=0; j < group[i].length; ++j)
+    £~color£function-name`draw`(group[i][j]--partbar[i][0]);
+  £~color£keyword`if`(group[i].length > 0) £~color£function-name`dot`(partbar[i][0], 0.8*£~color£constant`red`);}

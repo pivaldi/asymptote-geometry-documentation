@@ -1,21 +1,21 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(6£§color£constant`cm`,0);
-£§color£type`pen` £§color£variable-name`bpp`=£§color£function-name`linewidth`(£§color£constant`bp`); £§color£type`real` £§color£variable-name`k`=£§color£function-name`sqrt`(2);
-£§color£type`point` £§color£variable-name`A`=(0,0), £§color£variable-name`B`=(2,0), £§color£variable-name`C`=(3.5,1);
-£§color£type`point` £§color£variable-name`D`=(4,2), £§color£constant`M`=(6,3);
-£§color£type`path` £§color£variable-name`cle`=£§color£function-name`shift`(1,2)*£§color£constant`unitcircle`;
-£§color£function-name`draw`(cle, bpp);
-£§color£function-name`draw`(£§color£function-name`line`(A,B));
-£§color£function-name`draw`(£§color£function-name`line`(C,D), £§color£constant`grey`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(6£~color£constant`cm`,0);
+£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`); £~color£type`real` £~color£variable-name`k`=£~color£function-name`sqrt`(2);
+£~color£type`point` £~color£variable-name`A`=(0,0), £~color£variable-name`B`=(2,0), £~color£variable-name`C`=(3.5,1);
+£~color£type`point` £~color£variable-name`D`=(4,2), £~color£constant`M`=(6,3);
+£~color£type`path` £~color£variable-name`cle`=£~color£function-name`shift`(1,2)*£~color£constant`unitcircle`;
+£~color£function-name`draw`(cle, bpp);
+£~color£function-name`draw`(£~color£function-name`line`(A,B));
+£~color£function-name`draw`(£~color£function-name`line`(C,D), £~color£constant`grey`);
 
-£§color£type`transform` £§color£variable-name`dilate`=£§color£function-name`scale`(k,A,B,C,D);
-£§color£function-name`draw`(dilate*cle, bpp+£§color£constant`red`);
-£§color£type`point` £§color£variable-name`Mp`=dilate*£§color£constant`M`;
+£~color£type`transform` £~color£variable-name`dilate`=£~color£function-name`scale`(k,A,B,C,D);
+£~color£function-name`draw`(dilate*cle, bpp+£~color£constant`red`);
+£~color£type`point` £~color£variable-name`Mp`=dilate*£~color£constant`M`;
 
-£§color£type`point` £§color£variable-name`P`=£§color£function-name`intersectionpoint`(£§color£function-name`line`(A,B), £§color£function-name`line`(£§color£constant`M`,Mp));
-£§color£function-name`draw`(£§color£function-name`line`(P,£§color£constant`M`), £§color£constant`grey`);
-£§color£function-name`dot`(£§color£string`"A"`, A, £§color£constant`S`); £§color£function-name`dot`(£§color£string`"B"`, B, £§color£constant`S`); £§color£function-name`dot`(£§color£string`"C"`, C);
-£§color£function-name`dot`(£§color£string`"D"`, D); £§color£function-name`dot`(£§color£string`"M"`, £§color£constant`M`, £§color£constant`W`); £§color£function-name`dot`(£§color£string`"P"`, P, £§color£constant`NW`);
-£§color£function-name`dot`(£§color£string`"M'"`, Mp, £§color£constant`W`, £§color£constant`red`);
-£§color£function-name`distance`(£§color£string`"$k\times PM$"`, P, Mp, 6£§color£constant`mm`, £§color£constant`grey`,
-         joinpen=£§color£constant`grey`+£§color£constant`dashed`);
+£~color£type`point` £~color£variable-name`P`=£~color£function-name`intersectionpoint`(£~color£function-name`line`(A,B), £~color£function-name`line`(£~color£constant`M`,Mp));
+£~color£function-name`draw`(£~color£function-name`line`(P,£~color£constant`M`), £~color£constant`grey`);
+£~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`S`); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£constant`S`); £~color£function-name`dot`(£~color£string`"C"`, C);
+£~color£function-name`dot`(£~color£string`"D"`, D); £~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, £~color£constant`W`); £~color£function-name`dot`(£~color£string`"P"`, P, £~color£constant`NW`);
+£~color£function-name`dot`(£~color£string`"M'"`, Mp, £~color£constant`W`, £~color£constant`red`);
+£~color£function-name`distance`(£~color£string`"$k\times PM$"`, P, Mp, 6£~color£constant`mm`, £~color£constant`grey`,
+         joinpen=£~color£constant`grey`+£~color£constant`dashed`);

@@ -1,14 +1,14 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(6£§color£constant`cm`,0);
-£§color£constant`currentcoordsys`=£§color£function-name`cartesiansystem`((2,1), i=(1,0.5), j=(-0.75,1));
-£§color£function-name`show`(£§color£constant`currentcoordsys`, ipen=£§color£constant`blue`, jpen=£§color£constant`red`, xpen=£§color£constant`invisible`);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(6£~color£constant`cm`,0);
+£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((2,1), i=(1,0.5), j=(-0.75,1));
+£~color£function-name`show`(£~color£constant`currentcoordsys`, ipen=£~color£constant`blue`, jpen=£~color£constant`red`, xpen=£~color£constant`invisible`);
 
-£§color£type`real` £§color£variable-name`k`=£§color£function-name`sqrt`(2);
-£§color£type`point` £§color£variable-name`A`=(2,1);
-£§color£type`point` £§color£constant`M`=(-2,-1); £§color£function-name`dot`(£§color£string`"M"`, £§color£constant`M`, £§color£constant`W`);
+£~color£type`real` £~color£variable-name`k`=£~color£function-name`sqrt`(2);
+£~color£type`point` £~color£variable-name`A`=(2,1);
+£~color£type`point` £~color£constant`M`=(-2,-1); £~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, £~color£constant`W`);
 
-£§color£type`point` £§color£variable-name`Ap`=£§color£function-name`yscale`(k, £§color£constant`M`)*A;
-£§color£function-name`dot`(£§color£string`"A'"`, Ap, -£§color£function-name`I`*£§color£function-name`unit`(A-Ap), £§color£constant`red`); £§color£function-name`dot`(£§color£string`"A"`, A, -£§color£function-name`I`*£§color£function-name`unit`(A-Ap));
-£§color£type`point` £§color£variable-name`P`=£§color£function-name`intersectionpoint`(£§color£function-name`line`(A,Ap), £§color£function-name`line`(£§color£constant`M`,£§color£constant`M`+£§color£constant`E`));
-£§color£function-name`dot`(£§color£string`"P"`, P, £§color£function-name`locate`(£§color£function-name`unit`(A-Ap))); £§color£function-name`draw`(£§color£constant`M`--P, £§color£constant`blue`); £§color£function-name`draw`(P--Ap, £§color£constant`red`);
-£§color£function-name`distance`(£§color£string`"$k\times PA$"`, P, Ap, 3£§color£constant`mm`, £§color£constant`grey`);
+£~color£type`point` £~color£variable-name`Ap`=£~color£function-name`yscale`(k, £~color£constant`M`)*A;
+£~color£function-name`dot`(£~color£string`"A'"`, Ap, -£~color£function-name`I`*£~color£function-name`unit`(A-Ap), £~color£constant`red`); £~color£function-name`dot`(£~color£string`"A"`, A, -£~color£function-name`I`*£~color£function-name`unit`(A-Ap));
+£~color£type`point` £~color£variable-name`P`=£~color£function-name`intersectionpoint`(£~color£function-name`line`(A,Ap), £~color£function-name`line`(£~color£constant`M`,£~color£constant`M`+£~color£constant`E`));
+£~color£function-name`dot`(£~color£string`"P"`, P, £~color£function-name`locate`(£~color£function-name`unit`(A-Ap))); £~color£function-name`draw`(£~color£constant`M`--P, £~color£constant`blue`); £~color£function-name`draw`(P--Ap, £~color£constant`red`);
+£~color£function-name`distance`(£~color£string`"$k\times PA$"`, P, Ap, 3£~color£constant`mm`, £~color£constant`grey`);

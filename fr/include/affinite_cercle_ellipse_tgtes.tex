@@ -1,31 +1,31 @@
-£§color£builtin`import` geometry; £§color£function-name`size`(12£§color£constant`cm`,0); £§color£function-name`draw`(£§color£function-name`Ox`()^^£§color£function-name`Oy`()); £§color£type`real` £§color£variable-name`a`=3, £§color£variable-name`b`=2;
-£§color£type`circle` £§color£variable-name`C`=£§color£function-name`circle`(£§color£constant`origin`,a), £§color£variable-name`Cp`=£§color£function-name`circle`(£§color£constant`origin`,b);
-£§color£function-name`draw`(C, 0.8*£§color£constant`blue`); £§color£function-name`draw`(Cp, 0.8*£§color£constant`green`);
+£~color£builtin`import` geometry; £~color£function-name`size`(12£~color£constant`cm`,0); £~color£function-name`draw`(£~color£function-name`Ox`()^^£~color£function-name`Oy`()); £~color£type`real` £~color£variable-name`a`=3, £~color£variable-name`b`=2;
+£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(£~color£constant`origin`,a), £~color£variable-name`Cp`=£~color£function-name`circle`(£~color£constant`origin`,b);
+£~color£function-name`draw`(C, 0.8*£~color£constant`blue`); £~color£function-name`draw`(Cp, 0.8*£~color£constant`green`);
 
-£§color£type`transform` £§color£variable-name`T`=£§color£function-name`scale`(b/a,£§color£function-name`Ox`(),£§color£function-name`Oy`()), £§color£variable-name`Tp`=£§color£function-name`scale`(a/b,£§color£function-name`Oy`(),£§color£function-name`Ox`());
-£§color£type`ellipse` £§color£constant`e`=T*C; £§color£function-name`draw`(£§color£constant`e`, £§color£constant`bp`+0.8*£§color£constant`red`);
+£~color£type`transform` £~color£variable-name`T`=£~color£function-name`scale`(b/a,£~color£function-name`Ox`(),£~color£function-name`Oy`()), £~color£variable-name`Tp`=£~color£function-name`scale`(a/b,£~color£function-name`Oy`(),£~color£function-name`Ox`());
+£~color£type`ellipse` £~color£variable-name`e`=T*C; £~color£function-name`draw`(e, £~color£constant`bp`+0.8*£~color£constant`red`);
 
-£§color£type`point` £§color£variable-name`H`=(a/2,0), £§color£variable-name`Hp`=(0,-£§color£function-name`b`/2); £§color£function-name`dot`(£§color£string`"$H$"`, H, £§color£constant`S`); £§color£function-name`dot`(£§color£string`"$H'$"`, Hp);
-£§color£type`line` £§color£variable-name`L`=£§color£function-name`line`(H,£§color£builtin`false`,H+£§color£constant`N`), £§color£variable-name`Lp`=£§color£function-name`line`(Hp,£§color£builtin`false`,Hp+£§color£constant`W`);
-£§color£type`point` £§color£constant`M`=£§color£function-name`intersectionpoints`(L,C)[0], £§color£variable-name`NN`=£§color£function-name`intersectionpoints`(Lp,Cp)[0];
-£§color£type`point` £§color£variable-name`Mp`=T*£§color£constant`M`, £§color£variable-name`NNp`=Tp*NN; L=£§color£function-name`segment`(H,£§color£constant`M`); Lp=£§color£function-name`segment`(Hp,NNp);
-£§color£function-name`dot`(£§color£string`"$M$"`, £§color£constant`M`, £§color£constant`NE`); £§color£function-name`dot`(£§color£string`"$M'$"`, Mp, £§color£constant`NE`); £§color£function-name`dot`(£§color£string`"$N$"`, NN, £§color£constant`SW`); £§color£function-name`dot`(£§color£string`"$N'$"`, NNp, £§color£constant`NE`);
-£§color£function-name`draw`(L, £§color£constant`dashed`); £§color£function-name`draw`(Lp, £§color£constant`dashed`);
+£~color£type`point` £~color£variable-name`H`=(a/2,0), £~color£variable-name`Hp`=(0,-£~color£function-name`b`/2); £~color£function-name`dot`(£~color£string`"$H$"`, H, £~color£constant`S`); £~color£function-name`dot`(£~color£string`"$H'$"`, Hp);
+£~color£type`line` £~color£variable-name`L`=£~color£function-name`line`(H,£~color£builtin`false`,H+£~color£constant`N`), £~color£variable-name`Lp`=£~color£function-name`line`(Hp,£~color£builtin`false`,Hp+£~color£constant`W`);
+£~color£type`point` £~color£constant`M`=£~color£function-name`intersectionpoints`(L,C)[0], £~color£variable-name`NN`=£~color£function-name`intersectionpoints`(Lp,Cp)[0];
+£~color£type`point` £~color£variable-name`Mp`=T*£~color£constant`M`, £~color£variable-name`NNp`=Tp*NN; L=£~color£function-name`segment`(H,£~color£constant`M`); Lp=£~color£function-name`segment`(Hp,NNp);
+£~color£function-name`dot`(£~color£string`"$M$"`, £~color£constant`M`, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$M'$"`, Mp, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$N$"`, NN, £~color£constant`SW`); £~color£function-name`dot`(£~color£string`"$N'$"`, NNp, £~color£constant`NE`);
+£~color£function-name`draw`(L, £~color£constant`dashed`); £~color£function-name`draw`(Lp, £~color£constant`dashed`);
 
-£§color£type`segment` £§color£variable-name`SS`=£§color£function-name`segment`(£§color£constant`origin`,£§color£constant`M`), £§color£variable-name`SSp`=£§color£function-name`segment`(£§color£constant`origin`,NN);
-£§color£function-name`draw`(SS, 0.8*£§color£constant`blue`); £§color£function-name`draw`(SSp, 0.8*£§color£constant`green`);
+£~color£type`segment` £~color£variable-name`SS`=£~color£function-name`segment`(£~color£constant`origin`,£~color£constant`M`), £~color£variable-name`SSp`=£~color£function-name`segment`(£~color£constant`origin`,NN);
+£~color£function-name`draw`(SS, 0.8*£~color£constant`blue`); £~color£function-name`draw`(SSp, 0.8*£~color£constant`green`);
 
-£§color£type`line` £§color£variable-name`tgM`=£§color£function-name`tangents`(C, £§color£constant`M`)[0]; £§color£type`point` £§color£variable-name`P`=£§color£function-name`intersectionpoint`(tgM,£§color£function-name`Ox`());
-£§color£function-name`draw`(tgM, 0.8*£§color£constant`blue`); £§color£function-name`dot`(£§color£string`"$P$"`, P, £§color£function-name`dir`(60));
+£~color£type`line` £~color£variable-name`tgM`=£~color£function-name`tangents`(C, £~color£constant`M`)[0]; £~color£type`point` £~color£variable-name`P`=£~color£function-name`intersectionpoint`(tgM,£~color£function-name`Ox`());
+£~color£function-name`draw`(tgM, 0.8*£~color£constant`blue`); £~color£function-name`dot`(£~color£string`"$P$"`, P, £~color£function-name`dir`(60));
 
-£§color£type`line` £§color£variable-name`tgN`=£§color£function-name`tangents`(Cp, NN)[0]; £§color£type`point` £§color£variable-name`Pp`=£§color£function-name`intersectionpoint`(tgN,£§color£function-name`Oy`());
-£§color£function-name`draw`(tgN, 0.8*£§color£constant`green`); £§color£function-name`dot`(£§color£string`"$P'$"`, Pp, £§color£function-name`dir`(30));
+£~color£type`line` £~color£variable-name`tgN`=£~color£function-name`tangents`(Cp, NN)[0]; £~color£type`point` £~color£variable-name`Pp`=£~color£function-name`intersectionpoint`(tgN,£~color£function-name`Oy`());
+£~color£function-name`draw`(tgN, 0.8*£~color£constant`green`); £~color£function-name`dot`(£~color£string`"$P'$"`, Pp, £~color£function-name`dir`(30));
 
-£§color£function-name`perpendicularmark`(tgM,SS, 0.8*£§color£constant`blue`); £§color£function-name`perpendicularmark`(tgN,SSp, quarter=2, 0.8*£§color£constant`green`);
+£~color£function-name`perpendicularmark`(tgM,SS, 0.8*£~color£constant`blue`); £~color£function-name`perpendicularmark`(tgN,SSp, quarter=2, 0.8*£~color£constant`green`);
 
-£§color£type`line` £§color£variable-name`tgMp`=£§color£function-name`line`(P, Mp), £§color£variable-name`tgNp`=£§color£function-name`line`(Pp, NNp);
-£§color£function-name`draw`(tgMp, 0.8*£§color£constant`red`); £§color£function-name`draw`(tgNp, 0.8*£§color£constant`red`);
+£~color£type`line` £~color£variable-name`tgMp`=£~color£function-name`line`(P, Mp), £~color£variable-name`tgNp`=£~color£function-name`line`(Pp, NNp);
+£~color£function-name`draw`(tgMp, 0.8*£~color£constant`red`); £~color£function-name`draw`(tgNp, 0.8*£~color£constant`red`);
 
-£§color£function-name`draw`(Mp+2tgMp.u--Mp-2tgMp.u, £§color£constant`bp`+0.8*£§color£constant`red`, £§color£function-name`Arrows`(3£§color£constant`mm`));
-£§color£function-name`draw`(NNp+2tgNp.u--NNp-2tgNp.u, £§color£constant`bp`+0.8*£§color£constant`red`, £§color£function-name`Arrows`(3£§color£constant`mm`));
-£§color£function-name`addMargins`(5£§color£constant`mm`,5£§color£constant`mm`);
+£~color£function-name`draw`(Mp+2tgMp.u--Mp-2tgMp.u, £~color£constant`bp`+0.8*£~color£constant`red`, £~color£function-name`Arrows`(3£~color£constant`mm`));
+£~color£function-name`draw`(NNp+2tgNp.u--NNp-2tgNp.u, £~color£constant`bp`+0.8*£~color£constant`red`, £~color£function-name`Arrows`(3£~color£constant`mm`));
+£~color£function-name`addMargins`(5£~color£constant`mm`,5£~color£constant`mm`);

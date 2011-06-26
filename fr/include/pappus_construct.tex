@@ -1,20 +1,18 @@
-£§color£builtin`import` geometry; £§color£function-name`size`(7£§color£constant`cm`,0);
-
-£§color£type`inversion` £§color£variable-name`inv`=£§color£function-name`inversion`(10,(-4,0));
-£§color£type`line` £§color£variable-name`l1`=£§color£function-name`line`((-1,0),(-1,1)), £§color£variable-name`l2`=£§color£function-name`line`((1,0),(1,1));
-£§color£function-name`draw`(l1, £§color£constant`bp`+0.8*£§color£constant`blue`); £§color£function-name`draw`(l2, £§color£constant`bp`+0.8*£§color£constant`green`);
-£§color£function-name`clipdraw`(inv*l1,£§color£constant`bp`+0.8*£§color£constant`blue`);
-£§color£function-name`clipdraw`(inv*l2,£§color£constant`bp`+0.8*£§color£constant`green`);
-
-£§color£type`int` £§color£variable-name`n`=10;
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i <= n; ++i) {
-  £§color£type`circle` £§color£variable-name`C`=£§color£function-name`circle`((0,2*i),1);
-  £§color£type`circle` £§color£variable-name`Cp`=inv*C;
-  £§color£function-name`draw`(Cp,£§color£constant`bp`+(1-£§color£function-name`abs`(i/4))*£§color£constant`red`);
-  £§color£keyword`if`(£§color£function-name`abs`(i) < 4){
-    £§color£function-name`draw`(C,£§color£constant`bp`+(1-£§color£function-name`abs`(i/4))*£§color£constant`red`);
-    £§color£function-name`draw`((1,2*i)--inv*(1,2*i),0.8*£§color£constant`green`);
-    £§color£function-name`draw`((-1,2*i)--inv*(-1,2*i),0.8*£§color£constant`blue`);
+£~color£builtin`import` geometry; £~color£function-name`size`(7£~color£constant`cm`,0);
+£~color£type`inversion` £~color£variable-name`inv`=£~color£function-name`inversion`(10,(-4,0));
+£~color£type`line` £~color£variable-name`l1`=£~color£function-name`line`((-1,0),(-1,1)), £~color£variable-name`l2`=£~color£function-name`line`((1,0),(1,1));
+£~color£function-name`draw`(l1, £~color£constant`bp`+0.8*£~color£constant`blue`); £~color£function-name`draw`(l2, £~color£constant`bp`+0.8*£~color£constant`green`);
+£~color£function-name`clipdraw`(inv*l1,£~color£constant`bp`+0.8*£~color£constant`blue`);
+£~color£function-name`clipdraw`(inv*l2,£~color£constant`bp`+0.8*£~color£constant`green`);
+£~color£type`int` £~color£variable-name`n`=10;
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i <= n; ++i) {
+  £~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`((£~color£type`point`)(0,2*i),1);
+  £~color£type`circle` £~color£variable-name`Cp`=inv*C;
+  £~color£function-name`draw`(Cp,£~color£constant`bp`+(1-£~color£function-name`abs`(i/4))*£~color£constant`red`);
+  £~color£keyword`if`(£~color£function-name`abs`(i) < 4){
+    £~color£function-name`draw`(C,£~color£constant`bp`+(1-£~color£function-name`abs`(i/4))*£~color£constant`red`);
+    £~color£function-name`draw`((1,2*i)--inv*(1,2*i),0.8*£~color£constant`green`);
+    £~color£function-name`draw`((-1,2*i)--inv*(-1,2*i),0.8*£~color£constant`blue`);
   }
 }
-£§color£function-name`addMargins`(1£§color£constant`mm`,1£§color£constant`mm`);
+£~color£function-name`addMargins`(1£~color£constant`mm`,1£~color£constant`mm`);

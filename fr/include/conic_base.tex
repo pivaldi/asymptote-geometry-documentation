@@ -1,11 +1,11 @@
-£§color£builtin`import` geometry;
-£§color£function-name`size`(8£§color£constant`cm`,0);
-£§color£type`point` £§color£variable-name`F`=(0,0); £§color£function-name`dot`(£§color£string`"F"`, F);
-£§color£type`line` £§color£variable-name`l`=£§color£function-name`line`((1,0),(1,1));
-£§color£function-name`draw`(l);
-£§color£type`pen`[] £§color£constant`p`=£§color£builtin`new` £§color£type`pen`[] {£§color£constant`black`,£§color£constant`red`,£§color£constant`blue`,£§color£constant`green`};
-£§color£builtin`for` (£§color£type`int` £§color£variable-name`i`=0; i < 4; ++i) {
-  £§color£type`conic` £§color£variable-name`co`=£§color£function-name`conic`(F,l,0.5*i);
-  £§color£function-name`draw`(co, £§color£constant`bp`+0.8*£§color£constant`p`[i]);
+£~color£builtin`import` geometry;
+£~color£function-name`size`(8£~color£constant`cm`,0);
+£~color£type`point` £~color£variable-name`F`=(0,0); £~color£function-name`dot`(£~color£string`"F"`, F);
+£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`((1,0),(1,1));
+£~color£function-name`draw`(l);
+£~color£type`pen`[] £~color£constant`p`=£~color£builtin`new` £~color£type`pen`[] {£~color£constant`black`,£~color£constant`red`,£~color£constant`blue`,£~color£constant`green`};
+£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 4; ++i) {
+  £~color£type`conic` £~color£variable-name`co`=£~color£function-name`conic`(F,l,0.5*i);
+  £~color£function-name`draw`(co, £~color£constant`bp`+0.8*£~color£constant`p`[i]);
 }
-£§color£function-name`draw`(£§color£function-name`box`((-1,-1.25), (3.5,1.25)), £§color£constant`invisible`);
+£~color£function-name`draw`(£~color£function-name`box`((-1,-1.25), (3.5,1.25)), £~color£constant`invisible`);

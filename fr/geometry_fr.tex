@@ -77,15 +77,15 @@ nohead,nomarginpar]{geometry}
 
 \newif\ifcompile
 \newif\ifVcompile
-% \Vcompiletrue
-% \compiletrue
+\Vcompiletrue
+\compiletrue
 \newcounter{example}
 \stepcounter{example}
 
 % *=======================================================*
 % *..........Définition de l'environnement vasy...........*
 % *=======================================================*
-\fvset{resetmargins=true,commandchars=§£`}
+\fvset{resetmargins=true,commandchars=~£`}
 \makeatletter
 
 \newsavebox{\image}
@@ -93,11 +93,11 @@ nohead,nomarginpar]{geometry}
 \def\FVB@vasy#1{\def\tmp{#1}\FVB@VerbatimOut{./include/#1.asy}}%
 \def\FVE@vasy{%
   \FVE@VerbatimOut%
-  \ifcompile\immediate\write18{asy-tex.sh \tmp}\fi%
+  \ifcompile\immediate\write18{LC_CTYPE=fr_FR.latin-1 asy-tex.sh \tmp}\fi%
   \noindent\begin{shaded}
     \noindent\begin{tabularx}{\textwidth}{|X}
       \hspace*{0mm}\hfill\fcolorbox{white}{white}{\includegraphics{./include/\tmp.pdf}}\hfill\hspace*{0mm}\\\hline
-      \vspace*{0mm}\BVerbatimInput[commandchars=§£`]{./include/\tmp.tex}
+      \vspace*{0mm}\BVerbatimInput[commandchars=~£`]{./include/\tmp.tex}
     \end{tabularx}
   \end{shaded}
   \compiletrue\stepcounter{example}%
@@ -113,7 +113,7 @@ nohead,nomarginpar]{geometry}
   \noindent\begin{shaded}
     \noindent\begin{tabular}{c|c}\fcolorbox{white}{white}{\parbox[c]{\wd\image}{\usebox{\image}}}&
       \begin{tabularx}{\textwidth}{X}
-        \vspace*{0mm}\BVerbatimInput[commandchars=§£`]{./include/\tmp.tex}\\
+        \vspace*{0mm}\BVerbatimInput[commandchars=~£`]{./include/\tmp.tex}\\
       \end{tabularx}
     \end{tabular}
   \end{shaded}\compiletrue\stepcounter{example}%
@@ -134,7 +134,7 @@ nohead,nomarginpar]{geometry}
 \def\FVE@Vcolor{%
   \FVE@VerbatimOut%
   \ifVcompile\immediate\write18{asy-tex.sh -nog vcolor\thetmpfile}\fi%
-    \colorbox{bg-color}{\BVerbatimInput[commandchars=§£`,baseline=t]{./include/vcolor\thetmpfile.tex}}%
+    \colorbox{bg-color}{\BVerbatimInput[commandchars=~£`,baseline=t]{./include/vcolor\thetmpfile.tex}}%
   \stepcounter{tmpfile}%
   \par%
 }
@@ -162,9 +162,9 @@ nohead,nomarginpar]{geometry}
   \color{red}\bf
 }{}
 
-%% 
+%%
 %% TOC configuration.
-%% 
+%%
 
 \setlength{\cftbeforesecskip}{0.1ex}
 \setlength{\cftbeforesubsecskip}{0.1ex}
@@ -172,9 +172,9 @@ nohead,nomarginpar]{geometry}
 \renewcommand{\cftsecpagefont}{\normalfont}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-%% 
+%%
 %% Configure titles.
-%% 
+%%
 
 \titleformat{name=\section}{\normalfont\rmfamily\Large\bfseries\color{brick}}{\thesection.}{1em}{}
 \titleformat{name=\section,numberless}{\normalfont\rmfamily\Large\bfseries\color{brick}}{}{0em}{}
@@ -286,7 +286,7 @@ Voici la liste exhaustive des types définis par \geo:
   fait possible par la suite de convertir une conique particulière
   en une conique quelconque comme le montre l'exemple suivant:
   \begin{aVerbatim}
-    ellipse un_cercle=circle((0,0), 3);
+    ellipse un_cercle=circle((point)(0,0), 3);
     ...
     conic une_conique=un_cercle;
     ...
@@ -315,12 +315,12 @@ représentation graphique qui n'est finalement qu'un \code{path} ou un
 Ainsi le code suivant, qui marque l'intersection de deux cercles
 tangents, se compile en cinq fois moins de temps que le code
 équivalant utilisant le type \code{path} à la place du type \code{circle}.
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{circle_loop}
   import geometry;
   size(3cm,0);
-  circle cle1=circle((0,0), 1);
-  circle cle2=circle((sqrt(2),sqrt(2)), 1);
+  circle cle1=circle((point)(0,0), 1);
+  circle cle2=circle((point)(sqrt(2),sqrt(2)), 1);
   draw(cle1); draw(cle2);
   dot(intersectionpoints(cle1, cle2));
 \end{bvasy}
@@ -365,7 +365,7 @@ Comme le montre l'exemple suivant:
 \item le repère courant est \code{currentcoordsys} dont la
   valeur par défaut est\linebreak\code{defaultcoordsys}.
 \end{itemize}
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{defaultcoord}
   import geometry;
   size(4cm,0);
@@ -378,7 +378,7 @@ Comme le montre l'exemple suivant:
 Pour définir un repère on peut utiliser la commande
 \code{cartesiansystem} ou appliquer une transformation à un repère existant
 comme illustré dans l'exemple suivant:
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{cartesiancoord}
   import geometry;
   size(4cm,0);
@@ -408,7 +408,7 @@ type \code{pair}, dans un repère sont en fait des opérateurs:
   repère \param{R} en coordonnées relatives au repère par
   défaut. Ainsi, dans l'exemple suivant, le point \param{M} a pour
   coordonnées $(0,5\,;\,0,5)$ dans \param{R} et $(2\,;\,2)$ dans \code{defaultcoordsys}:
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{deftorel}
     import geometry;
     size(4cm,0);
@@ -425,7 +425,7 @@ type \code{pair}, dans un repère sont en fait des opérateurs:
   repère par défaut en coordonnées relatives au repère \param{R}. Ainsi, dans l'exemple
   suivant, les points \param{M}  et \param{P} ont les mêmes coordonnées
   dans \param{R} et \param{Rp} respectivement:
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{reltodef}
     import geometry;
     size(4cm,0);
@@ -443,7 +443,7 @@ type \code{pair}, dans un repère sont en fait des opérateurs:
 \subsection{Autres routines}
 \begin{itemize}
 \item \index{coordsys!*}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     path operator *(coordsys R, path g)
   \end{Vcolor}
@@ -451,7 +451,7 @@ type \code{pair}, dans un repère sont en fait des opérateurs:
   renvoie la reconstruction du chemin \param{g} comme si chaque n\oe{}ud du
   chemin était donné dans le repère \param{R}.
 \item \index{coordsys!*}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     coordsys operator *(transform t, coordsys R)
   \end{Vcolor}
@@ -472,7 +472,7 @@ permet de repérer un point dans n'importe quel repère Cartésien (voir
 un \code{pair} si l'on utilise seulement le repère par
 défaut. Ainsi, dans l'exemple suivant, le \code{pair M} et le
 \code{point P} marquent le même point:
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{point1}
   import geometry;
   size(4cm,0);
@@ -485,7 +485,7 @@ courant influe sur le \og{}casting\fg{} \code{pair} vers \code{point}
 dans le cas du point \param{A} et comment définir un point dans un repère spécifique grâce à la
 routine \code{point point(coordsys R, pair m)}
 \index{point(coordsys,pair,real)} dans le cas du point \param{B}.
-% \compiletrue%
+\compiletrue%
 \begin{vasy}{point2}
   import geometry;
   size(6cm,0);
@@ -501,7 +501,7 @@ routine \code{point point(coordsys R, pair m)}
 L'utilisation de la routine \code{point locate(pair m);}\index{locate} permet aussi de
 convertir directement, sans nommer de point, un \code{pair} en
 \code{point}:
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{point3}
   import geometry;
   size(4cm,0);
@@ -514,7 +514,7 @@ convertir directement, sans nommer de point, un \code{pair} en
 L'exemple suivant montre comment convertir un type \code{pair} en type
 \code{point} de telle sorte qu'ils représentent le même point et ainsi
 obtenir ses coordonnées dans deux repères distincts.
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{point4}
   import geometry;
   size(4cm,0);
@@ -530,7 +530,7 @@ obtenir ses coordonnées dans deux repères distincts.
 La routine
 \index{point!changecoordsys}\code{changecoordsys}
 permet de changer facilement le repère d'un \code{point}:
-% \compiletrue%
+\compiletrue%
 \begin{vasy}{point5}
   import geometry;
   size(4cm,0);
@@ -557,7 +557,7 @@ conversion automatique par un avertissement.
 Pour repérer un point à l'aide de coordonnées polaires on peut
 utiliser la méthode\linebreak\code{pair polar(real r, real angle)} d'un
 objet de type \code{coordsys} comme le montre l'exemple suivant:
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{point6}
   import geometry;
   size(4cm,0);
@@ -788,7 +788,7 @@ routine \index{locate(vector)}\code{pair locate(vector v)}:
 Les routines décrites pour le type \code{point} sont aussi disponibles
 pour le type \code{vector}. Voici quelques exemple simples qui en
 illustrent le comportement:
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{somme_vector}
   import geometry;
   size(4cm,0);
@@ -801,7 +801,7 @@ illustrent le comportement:
   show("$\vec{v}$", v, bpp, Arrow(3mm));
   show(Label("\vec{u}+\vec{v}",EndPoint), u+v, bpp, Arrow(3mm));
 \end{bvasy}
-% \compiletrue%
+\compiletrue%
 \begin{vasy}{somme_vector2}
   import geometry;
   size(8cm,0);
@@ -832,7 +832,7 @@ cas le vecteur est converti en \code{pair} comme expliqué
 précédemment.\\
 Noter enfin qu'il est possible d'écrire \code{point M=w;} au lieu de
 \code{point M=point(w);}\index{point(explicit vector)}.
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{locate_vector2}
   import geometry; size(4cm,0);
   coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
@@ -844,7 +844,7 @@ Noter enfin qu'il est possible d'écrire \code{point M=w;} au lieu de
   dot("w", w, N); dot("point(w)", point(w), N);
 \end{bvasy}
 L'exemple suivant se passe donc de commentaires:
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{vector_point}
   import geometry; size(4cm,0); pen bpp=linewidth(bp);
   coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
@@ -857,7 +857,7 @@ L'exemple suivant se passe donc de commentaires:
 \end{bvasy}
 Le pendant de la routine \code{point point(explicit vector)} est
 \code{vector vector(point)}\index{vector vector(point)}
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{point_vector}
   import geometry; size(4cm,0);
   coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
@@ -874,7 +874,7 @@ Enfin une attention particulière doit être portée sur les routines
 un objet \code{vector}. Ainsi, dans l'exemple suivant le comportement de
 \code{point P=unit(B-A);} ne surprend pas alors que le comportement
 de \code{dot(unit(B-A))} peut laisser dubitatif...
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{unit_vector}
   import geometry;
   size(4cm,0);
@@ -891,7 +891,7 @@ de \code{dot(unit(B-A))} peut laisser dubitatif...
 \index{collinear(vector,vector)}Comme déjà dit, toutes les
 routines s'appliquant au type \code{point} s'appliquent aussi au type
 \code{vector}. Mentionnons de plus la routine suivante dont le nom parle de lui-même:
-% \compiletrue%
+\compiletrue%
 \begin{Vcolor}
   bool collinear(vector u, vector v)
 \end{Vcolor}
@@ -937,7 +937,7 @@ Les routines \code{mass mass(explicit point)}\index{mass mass(explicit point)} e
 permettent de basculer facilement entre les deux types \code{mass} et
 \code{point}; la division de la masse d'un objet de type \code{point}
 peut alors se traiter de façon assez élégante:
-% \compiletrue%
+\compiletrue%
 \begin{Vcolor}
   point P=point((1,1), 3);// Point de masse 3
 
@@ -958,32 +958,32 @@ mentionnées dans le paragraphe précédent. Voici la liste d'autres
 routines en rapport avec les points massiques:
 \begin{itemize}
 \item \index{mass(coordsys,explicit pair,real)}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     mass mass(coordsys R, explicit pair p, real m)
   \end{Vcolor}
   Renvoie un objet de type \code{mass} de poids \param{m} dont les coordonnées dans
   \param{R} sont \param{p}.
 \item \index{mass(point,real)}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     mass mass(point M, real m)
   \end{Vcolor}
   Convertit le point \param{M} en masse de poids \param{m}.
 \item \index{point(explicit mass)|mainidx}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point(explicit mass m)
   \end{Vcolor}
   Convertit une masse de type \code{mass} en point, de type \code{point}.
 \item \index{mass(explicit point)|mainidx}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     mass mass(explicit point P)
   \end{Vcolor}
   Convertit un point, de type \code{point}, en une masse de type \code{mass}.
 \item \index{masscenter(...mass[])}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     mass masscenter(... mass[] M)
   \end{Vcolor}
@@ -991,7 +991,7 @@ routines en rapport avec les points massiques:
   de \code{point[]} vers \code{mass[]}, cette routine fonctionne aussi
   avec comme paramètre un type \code{point[]}.
 \item \index{defaultmassformat}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     string defaultmassformat;
   \end{Vcolor}
@@ -1000,7 +1000,7 @@ routines en rapport avec les points massiques:
   \code{"\$$\backslash$left(\%L;\%.4g$\backslash$right)\$"} dans
   laquelle \%L sera remplacé par le label de la masse. Un exemple est
   sûrement plus parlant:
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{defaultmassformat}
     import geometry;
     size(4cm,0);
@@ -1011,14 +1011,14 @@ routines en rapport avec les points massiques:
   \end{bvasy}
   \vspace*{2mm}
 \item \index{massformat(string,string,mass)}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     string massformat(string format=defaultmassformat,
     string s, mass M)
   \end{Vcolor}
   Renvoie une chaîne formatée par la commande \code{format} avec comme
   paramètre \param{format}, dans laquelle \%L est remplacé par \param{s}, et le poids de \param{M}.
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     import geometry;
 
@@ -1032,7 +1032,7 @@ routines en rapport avec les points massiques:
   \end{Vcolor}
   \vspace*{2mm}
 \item \index{void label(picture,Label,mass,align,string,pen,filltype)}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void label(picture pic=currentpicture, Label L, mass M,
     align align=NoAlign, string format=defaultmassformat,
@@ -1040,7 +1040,7 @@ routines en rapport avec les points massiques:
   \end{Vcolor}
   Place en \param{M} le label renvoyé par \code{massformat(format,L,M)}.
 \item \index{void label(picture,Label,mass,align,string,pen,filltype)}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void dot(picture pic=currentpicture, Label L, mass M, align align=NoAlign,
     string format=defaultmassformat, pen p=currentpen)
@@ -1049,7 +1049,7 @@ routines en rapport avec les points massiques:
 \end{itemize}
 Pour terminer cette section voici trois exemples faisant intervenir
 quelques routines précédemment décrites.
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{mass_ex1}
   import geometry;
   size(4cm,0);
@@ -1061,7 +1061,7 @@ quelques routines précédemment décrites.
   draw(A--B--C--cycle, linewidth(bp));
   dot("G", masscenter(A,B,mass(C)), 2NE);
 \end{bvasy}
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{mass_ex2}
   import geometry;
   size(5cm,0);
@@ -1077,7 +1077,7 @@ quelques routines précédemment décrites.
   }
   dot("G",masscenter(... M), red);
 \end{bvasy}
-% \compiletrue%
+\compiletrue%
 L'exemple suivant montre comment l'on peut construire tous les barycentres partiels de \param{n} points,
 chaque barycentre étant relié aux points du système dont il est issu:
 \begin{vasy}{mass_ex3}
@@ -1437,7 +1437,7 @@ propriétés du type \code{line} est accessible
   variable réelle \code{linemargin} dont la valeur par défaut est 0;
   dans le cas où cette marge est négative, la taille de l'image sera
   modifiée.
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{line_base}
     import geometry;
     size(6cm,0);
@@ -1456,7 +1456,7 @@ propriétés du type \code{line} est accessible
     draw("[AD)", AD); draw(box((-1,-2),(4,3)));
   \end{bvasy}
 \item \index{show(picture,line,pen)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void show(picture pic=currentpicture, line l, pen p=red)
   \end{Vcolor}
@@ -1464,7 +1464,7 @@ propriétés du type \code{line} est accessible
   droite \param{l} ainsi que le vecteur directeur et le vecteur
   normal.
 \item \index{intersectionpoint(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point intersectionpoint(line l1, line l2)
   \end{Vcolor}
@@ -1507,7 +1507,7 @@ propriétés du type \code{line} est accessible
     draw(box((-1,-2.722), (2.229,2.905)), invisible);
   \end{bvasy}
 \item \index{intersectionpoints(line l, path g)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point[] intersectionpoints(line l, path g)
   \end{Vcolor}
@@ -1518,14 +1518,14 @@ propriétés du type \code{line} est accessible
 \subsubsection{Droites définies par équations}
 \begin{itemize}
 \item \index{line(coordsys,real,real,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line line(coordsys R=currentcoordsys, real a, real b, real c)
   \end{Vcolor}
   Renvoie la droite d'équation $\mparam{a}x+\mparam{b}y+\mparam{c}=0$
   dans le repère \param{R}.
 \item \index{line(coordsys,real,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line line(coordsys R=currentcoordsys, real slope, real origin)
   \end{Vcolor}
@@ -1535,33 +1535,33 @@ propriétés du type \code{line} est accessible
 \subsubsection{Droites et parallélisme}
 \begin{itemize}
 \item \index{parallel(point,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line parallel(point M, line l)
   \end{Vcolor}
   Renvoie la droite parallèle à \param{l} passant par \param{M}.
 \item \index{parallel(point,explicit vector)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line parallel(point M, explicit vector dir)
   \end{Vcolor}
   Renvoie la droite de vecteur directeur \param{dir} et passant par \param{M}.
 \item \index{parallel(point,explicit pair)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line parallel(point M, explicit pair dir)
   \end{Vcolor}
   Renvoie la droite de vecteur directeur \param{dir} donné dans le
   repère courant \code{currentcoordsys} et passant par \param{M}.
 \item \index{parallel(line,line,bool)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool parallel(line l1, line l2, bool strictly=false)
   \end{Vcolor}
   Renvoie \code{true} si \param{l1} et \param{l2} sont parallèles
   (strictement si \param{stricly} vaut \code{true}).
 \end{itemize}
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{parallel}
   import geometry;
   size(5cm,0);
@@ -1583,7 +1583,7 @@ propriétés du type \code{line} est accessible
 \subsubsection{Droites et angles}
 \begin{itemize}
 \item \index{line(real,point)}\index{line(point,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line line(real a, point A=point(currentcoordsys,(0,0)))
   \end{Vcolor}
@@ -1611,7 +1611,7 @@ propriétés du type \code{line} est accessible
     draw(box((-0.6,-2.8), (2,-0.3)), invisible);
   \end{bvasy}
 \item \index{bisector(line,line,real,bool)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line bisector(line l1, line l2, real angle=0, bool sharp=true)
   \end{Vcolor}
@@ -1647,7 +1647,7 @@ propriétés du type \code{line} est accessible
     draw(box((-1,-1),(1,1)), invisible);
   \end{bvasy}
 \item \index{sector(int,int,line,line,real,bool)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line sector(int n=2, int p=1, line l1, line l2, real angle=0, bool sharp=true)
   \end{Vcolor}
@@ -1660,7 +1660,7 @@ propriétés du type \code{line} est accessible
   Noter que la droite renvoyée hérite du repère dans lequel est
   défini \param{l1}. Ci-après, un exemple d'utilisation pour partager
   des angles en trois parties d'égales mesures.
-  % \compiletrue%
+  \compiletrue%
   \begin{vasy}{sector_line}
     import geometry;
     size(10cm,0);
@@ -1685,25 +1685,25 @@ propriétés du type \code{line} est accessible
     markangle(AB, AC, pb, StickIntervalMarker(3,3,pb,true));
   \end{vasy}
 \item \index{perpendicular(point,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line perpendicular(point M, line l)
   \end{Vcolor}
   Renvoie la droite perpendiculaire à \param{l} passant par \param{M}.
 \item \index{line perpendicular(point,explicit vector)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line perpendicular(point M, explicit vector normal)
   \end{Vcolor}
   Renvoie la droite passant par \param{M} et de vecteur normal \param{normal}.
 \item \index{perpendicular(point,explicit pair)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line perpendicular(point M, explicit pair normal)
   \end{Vcolor}
   Renvoie la droite passant par \param{M} et de vecteur
   normal \param{normal} donné dans le repère courant\linebreak\code{currentcoordsys}.
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{perpendicular}
     import geometry;
     size(5cm,0);
@@ -1723,42 +1723,42 @@ propriétés du type \code{line} est accessible
     draw(box((-1,-3),(4,3)), invisible);
   \end{bvasy}
 \item \index{angle(line,coordsys)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real angle(line l, coordsys R=coordsys(l))
   \end{Vcolor}
   Renvoie la mesure de l'angle, en radians dans $]-\pi\,;\,\pi]$, par rapport au
   repère \param{R} de la droite orientée que représente \param{l}.
 \item \index{degrees(line,coordsys)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real degrees(line l, coordsys R=coordsys(l))
   \end{Vcolor}
   Renvoie la mesure de l'angle, en degrés dans $[0\,;\,360[$, par rapport au
   repère \param{R} de la droite orientée que représente \param{l}.
 \item \index{sharpangle(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real sharpangle(line l1, line l2)
   \end{Vcolor}
   Renvoie la mesure de l'angle aigu orienté, en radians dans
   $]-\frac{\pi}{2}\,;\,\frac{\pi}{2}]$, formé par \param{l1} et \param{l2}.
 \item \index{sharpdegrees(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real sharpdegrees(line l1, line l2)
   \end{Vcolor}
   Renvoie la mesure de l'angle aigu orienté, en degrés dans
   $]-90\,;\,90]$, formé par \param{l1} et \param{l2}.
 \item \index{angle(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real angle(line l1, line l2)
   \end{Vcolor}
   Renvoie la mesure de l'angle orienté, en radians dans
   $]-\pi\,;\,\pi]$, formé par les droites orientées représentées par \param{l1} et \param{l2}.
 \item \index{degrees(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real degrees(line l1, line l2)
   \end{Vcolor}
@@ -1768,13 +1768,13 @@ propriétés du type \code{line} est accessible
 \subsubsection{Droites et opérateurs}
 \begin{itemize}
 \item \index{*(transform,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line operator *(transform t, line l)
   \end{Vcolor}
   Autorise le code \code{transform*line}.
 \item \index{/(line,real)}\index{*(real,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line operator /(line l, real x)
   \end{Vcolor}
@@ -1783,14 +1783,14 @@ propriétés du type \code{line} est accessible
   et \param{l.B/x}.\\
   \code{line operator *(real x, line l)} est aussi défini.
 \item \index{*(point,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line operator *(point M, line l)
   \end{Vcolor}
   Autorise le code \code{point*line}.\\
   Renvoie la \og{}droite\fg{} passant pas \code{unit(M)*l.A} et \code{unit(M)*l.B}.
 \item \index{+(line,vector)}\index{-(line,vector)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line operator +(line l, vector u)
   \end{Vcolor}
@@ -1799,28 +1799,28 @@ propriétés du type \code{line} est accessible
   vecteur \param{u}.\\
   \code{line operator -(line l, vector u)} est aussi défini.
 \item \index{^^(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line[] operator ^^(line l1, line l2)
   \end{Vcolor}
   Autorise le code \code{line\circonflexe\circonflexe{}line}.\\
   Renvoie le tableau \code{new line[] {l1,l2}}.
 \item \index{==(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool operator ==(line l1, line l2)
   \end{Vcolor}
   Autorise le test \code{line == line}.\\
   Renvoie \code{true} \ssi \param{l1} et \param{l2} représente la même droite.
 \item \index{!=(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool operator !=(line l1, line l2)
   \end{Vcolor}
   Autorise le test \code{line != line}.\\
   Renvoie \code{false} \ssi \param{l1} et \param{l2} représente la même droite.
 \item \index{@(point,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool operator @(point m, line l)
   \end{Vcolor}
@@ -1834,7 +1834,7 @@ pour récupérer l'\href{#section.abscissa}{abscisse} d'un point
 appartenant à un objet de type \code{line}.
 \begin{itemize}
 \item \index{draw(picture,Label[],line[],align,pen[],arrowbar,Label,marker)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void draw(picture pic=currentpicture,Label[] L=new Label[], line[] l,
     align align=NoAlign, pen[] p=new pen[],
@@ -1845,7 +1845,7 @@ appartenant à un objet de type \code{line}.
   le stylo correspondant \param{pen[] p}.\\
   Si \param{p} n'est pas spécifié le stylo courant est utilisé.
 \item \index{draw(picture,Label[],line[],align,pen,arrowbar,Label,marker)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void draw(picture pic=currentpicture,Label[] L=new Label[], line[] l,
     align align=NoAlign, pen p,
@@ -1855,21 +1855,21 @@ appartenant à un objet de type \code{line}.
   Dessine chacune des droites représentées par \param{line[] l} avec
   le même stylo \param{p}.\\
 \item \index{distance(point,line)}\index{distance(line,point)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real distance(point M, line l)
   \end{Vcolor}
   Renvoie la distance de \param{M} à \param{l}.\\
   \code{real distance(line l,point M)} est aussi défini.
 \item \index{sameside(point,point,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool sameside(point M, point P, line l)
   \end{Vcolor}
   Renvoie \code{true} \ssi \param{M} et \param{P} sont du même côté
   de \param{l}.
 \item \index{sameside(point,line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point[] sameside(point M, line l1, line l2)
   \end{Vcolor}
@@ -1877,69 +1877,69 @@ appartenant à un objet de type \code{line}.
   de \param{M} sur \param{l1} parallèlement à \param{l2} et le second est
   le projeté de \param{M} sur \param{l2} parallèlement à \param{l1}.
 \item \index{coordsys(line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     coordsys coordsys(line l)
   \end{Vcolor}
   Renvoie le repère dans lequel est défini \param{l}.
 \item \index{changecoordsys(coordsys,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line changecoordsys(coordsys R, line l)
   \end{Vcolor}
   Renvoie la \og{}droite\fg{} représentée par \param{l} relativement au
   repère \param{R}.
 \item \index{reverse(line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line reverse(line l)
   \end{Vcolor}
   Renvoie la droite représentée par \param{l} avec une orientation
   contraire à celle de \param{l}.
 \item \index{extend(line l)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line extend(line l)
   \end{Vcolor}
   Renvoie la droite portée par \param{l} qui, rappelons le, peut
   être une demi-droite ou un segment de droite.
 \item \index{complementary(explicit line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line complementary(explicit line l)
   \end{Vcolor}
   Renvoie la demi-droite complémentaire de \param{l}; cette routine ne
   fonctionne que si \param{l} représente effectivement une demi-droite.
 \item \index{concurrent(...line[])}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool concurrent(... line[] l)
   \end{Vcolor}
   Renvoie \code{true} \ssi les droites représentées par
   \code{line[] l} sont concourantes.
 \item \index{perpendicular(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool perpendicular(line l1, line l2)
   \end{Vcolor}
   Renvoie \code{true} \ssi les droites représentées par
   \param{l1} et \param{l2} sont perpendiculaires.
 \item \index{perpendicular(line,line)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool perpendicular(line l1, line l2)
   \end{Vcolor}
 \end{itemize}
 \begin{itemize}%% !!!!!! REMPLACER cet itemize par le précédent !!!!!!!!%%
 \item \index{point(line l,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point point(line l, real x)
   \end{Vcolor}
   Retourne le point entre \param{l.A} et \param{l.B} comme le
   ferait \code{point(l.A${-}{-}$l.B,x)}.
 \item \index{relpoint(line,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point relpoint(line l, real x)
   \end{Vcolor}
@@ -1960,7 +1960,7 @@ appartenant à un objet de type \code{line}.
     addMargins(bmargin=5mm);
   \end{bvasy}
 \item \index{curpoint(line,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point curpoint(line l, real x)
   \end{Vcolor}
@@ -1985,7 +1985,7 @@ appartenant à un objet de type \code{line}.
 \subsubsection{Droites et marqueurs}
 \begin{itemize}
 \item \index{markangle(picture,Label,int,real,real,line,line,arrowbar,pen,margin,marker)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void markangle(picture pic=currentpicture,
     Label L="", int n=1, real radius=0, real space=0,
@@ -1999,7 +1999,7 @@ appartenant à un objet de type \code{line}.
   dans le sens horaire sinon.\\
   Se reporter à \og{}\href{#bisectorline}{cette figure}\fg{} pour un exemple.
 \item \index{perpendicularmark(picture,line,line,real,pen,int,margin,filltype)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     void perpendicularmark(picture pic=currentpicture, line l1, line l2,
     real size=0, pen p=currentpen, int quarter=1,
@@ -2246,7 +2246,7 @@ utiliser directement les types dérivés \code{circle}, \code{ellipse},
 
 Attardons nous cependant un peu sur sa structure afin d'en définir
 précisément les composantes:
-% \compiletrue%
+\compiletrue%
 \begin{center}
   \begin{Vcolor}
     struct conic { real e, p, h; point F; line D; }
@@ -2263,13 +2263,13 @@ Les deux principales routines pour définir une conique quelconque sont:
 
 \begin{enumerate}
 \item \index{conic conic(point,l,real)}
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     conic conic(point F, line l, real e)
   \end{Vcolor}
   Retourne la conique de foyer \param{F} associé à la
   directrice \param{l} et d'excentricité \param{e}; en voici un exemple d'utilisation:
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{conic_base}
     import geometry;
     size(8cm,0);
@@ -2350,7 +2350,7 @@ d'un point sur un objet de type \code{conic}.
     size(4cm,0);
 
     show(defaultcoordsys);
-    ellipse el=ellipse((2,4),3,2,45);
+    ellipse el=ellipse((point)(2,4),3,2,45);
     dot("$F_1$", el.F1, dir(-45));
     dot("$F_2$", el.F2, dir(-45));
     draw(el, linewidth(bp), Arrow(3mm));
@@ -2575,23 +2575,27 @@ En dehors des routines concernant les objets de type \code{conic}, voici d'autre
 objet de type \code{circle}:
 \begin{itemize}
 \item \index{circle(explicit point,real)}\index{circle(pair,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     circle circle(explicit point C, real r)
   \end{Vcolor}
   Renvoie le cercle de centre \param{C} et de rayon \param{r}.\\
-  Noter que la routine \code{circle circle(pair C, real r)} est
-  redéfinie afin de renvoyer un objet de type \code{circle} dont le
-  centre \param{C} représente les coordonnées d'un point dans le
-  repère courant \code{currentcoordsys}.
+  Depuis la version 2{.}10 d'\asymptote la routine
+  \code{circle circle(pair C, real r)} n'est
+  plus redéfinie afin de renvoyer un objet de type \code{circle} comme
+  c'était le cas dans les versions précédentes; ceci oblige à
+  utiliser le \og{}casting\fg{} de \code{pair} à \code{point} dans le code
+  \code{circle cle = circle((point)(1,2), 2)} et permet ainsi d'obtenir le
+  cercle de centre \code((1,2)) dans le repère
+  courant \param{currentcoordsys} et rayon 2.
 
   L'exemple suivant illustre la différence entre le code
-  \code{circle((0,0),R);} qui définit le cercle bleu dans le repère courant et
+  \code{circle((point)(0,0),R);} qui définit le cercle bleu dans le repère courant et
   \code{circle(point(defaultcoordsys,(0,0)), R);} qui définit le cercle rouge dans
   le repère par défaut; évidemment si la
   variable \param{currentcoordsys} n'est pas modifiée les deux codes
   sont équivalents.
-  % \compiletrue%
+  \compiletrue%
   \begin{bvasy}{circlepointradius}
     import geometry;
     size(6cm,0);
@@ -2601,19 +2605,19 @@ objet de type \code{circle}:
     ipen=blue, xpen=invisible);
     show(defaultcoordsys);
     real R=2;
-    circle C=circle((0,0), R);
+    circle C=circle((point)(0,0), R);
     draw(C, bp+0.8*blue);
     circle Cp=circle(point(defaultcoordsys,(0,0)), R);
     draw(Cp, bp+0.8*red);
   \end{bvasy}
 \item \index{circle(point A, point B)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     circle circle(point A, point B)
   \end{Vcolor}
   Renvoie le cercle de diamètre \param{AB}.
 \item \index{circle(point A, point B)}\index{circumcircle(point,point,point)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     circle circle(point A, point B, point C)
   \end{Vcolor}
@@ -2621,13 +2625,13 @@ objet de type \code{circle}:
   distincts \param{A}, \param{B} et \param{C}.\\
   Un alias de cette routine est \code{circle circumcircle(point A, point B, point C)}.
 \item \index{incircle(point,point,point)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     circle incircle(point A, point B, point C)
   \end{Vcolor}
   Renvoie le cercle inscrit du triangle ABC.
 \item \index{excircle(point,point,point)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     circle excircle(point A, point B, point C)
   \end{Vcolor}
@@ -2637,7 +2641,7 @@ objet de type \code{circle}:
 Dans l'exemple suivant on remarquera l'utilisation de la routine
 \code{clipdraw} qui trace un chemin en se restreignant aux dimensions de l'image
 finale.
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{circles_point}
   import geometry;
   size(9cm);
@@ -2678,7 +2682,7 @@ s'effectue suivant les règles suivantes:
   qui dépend elle-même de la variable
   \index{circlenodesnumberfactor}\code{circlenodesnumberfactor}.
 \end{itemize}
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{circle_dot}
   import geometry;
   size(7cm,0);
@@ -2687,7 +2691,7 @@ s'effectue suivant les règles suivantes:
   show("$O'$","$\vec{u}$", "$\vec{v}$",
   currentcoordsys, ipen=blue, xpen=invisible);
   show(defaultcoordsys);
-  circle C=circle((0.5,-1), 3);
+  circle C=circle((point)(0.5,-1), 3);
   draw(C, 2bp+0.8*blue, Arrow(3mm));
   circle Cp=circle(point(defaultcoordsys,(1,1)), 4);
   draw(Cp, dotsize()+0.8*red, Arrow(3mm));
@@ -2698,7 +2702,7 @@ En dehors des opérateurs s'appliquant aux objets de type \code{conic},
 voici la liste d'autres opérateurs définis pour les objets de type \code{circle}.
 \begin{itemize}
 \item \index{*(real,explicit circle)}\index{/(explicit circle,real)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     circle operator *(real x, explicit circle c)
   \end{Vcolor}
@@ -2708,21 +2712,21 @@ voici la liste d'autres opérateurs définis pour les objets de type \code{circle}
   L'opérateur \code{circle operator /(explicit circle c, real x)} est
   aussi défini.
 \item \index{\circonflexe(point M, explicit circle c)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     real operator ^(point M, explicit circle c)
   \end{Vcolor}
   Autorise le code \code{point\circonflexe{}circle}.\\
   Renvoie la puissance de \param{M} par rapport à \param{c}.
 \item \index{@(point,explicit circle)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     bool operator @(point M, explicit circle c)
   \end{Vcolor}
   Autorise le code \code{point @ circle}.\\
   Renvoie \code{true} \ssi le point \param{M} appartient au cercle \param{c}.
 \item \index{circle to ellipse}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     ellipse operator cast(circle c)
   \end{Vcolor}
@@ -2744,7 +2748,7 @@ En dehors des routines s'appliquant aux objets de type \code{conic},
 voici la liste des routines spécifiques aux objets de type \code{circle}.
 \begin{itemize}
 \item \index{radicalcenter(circle,circle)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point radicalcenter(circle c1, circle c2)
   \end{Vcolor}
@@ -2752,21 +2756,21 @@ voici la liste des routines spécifiques aux objets de type \code{circle}.
   et \param{c2}.\\
   Le repère dans lequel est défini le point renvoyé est celui de \param{c1}.
 \item \index{radicalcenter(circle,circle,circle)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     point radicalcenter(circle c1, circle c2, circle c3)
   \end{Vcolor}
   Renvoie le centre radical des trois cercles \param{c1}, \param{c2}
   et \param{c3}.
 \item \index{radicalline(circle,circle)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line radicalline(circle c1, circle c2)
   \end{Vcolor}
   Renvoie l'axe radical des deux cercles \param{c1}
   et \param{c2}.
 \item \index{tangents(circle,point)}%
-  % \compiletrue%
+  \compiletrue%
   \begin{Vcolor}
     line[] tangents(circle c, point M)
   \end{Vcolor}
@@ -2810,7 +2814,7 @@ voici la liste des routines spécifiques aux objets de type \code{circle}.
     import geometry;
     size(5cm);
 
-    circle cle=circle((2,1),1.5);
+    circle cle=circle((point)(2,1),1.5);
     draw(cle, linewidth(bp));
     dot("$C$", cle.C);
 
@@ -2992,11 +2996,11 @@ Voici quelques exemples d'utilisations des routines précédemment décrites:
     $T''_{1}$ de $T_{1}$ par $S_{1}$ et $S_{2}$ respectivement est une
     autre solution.
   \end{itemize}
-  % \compiletrue%
+  \compiletrue%
   \begin{vasy}{apollonius}
     import geometry;
     size(9.5cm,0); usepackage("mathrsfs"); currentpen=fontsize(8); pen bpp=linewidth(bp);
-    circle C1=circle((0,0),2), C2=circle((5,5), 3), C3=circle((6,-2),1);
+    circle C1=circle((point)(0,0),2), C2=circle((point)(5,5), 3), C3=circle((point)(6,-2),1);
     draw(Label("$\mathscr{C}_1$",Relative(0.375)), C1, bp+0.8*red);
     draw("$\mathscr{C}_2$", C2, bp+0.8*red);
     dot(C1.C, 0.8*red); dot(C2.C, 0.8*red); dot(C3.C, 0.8*red);
@@ -3027,11 +3031,11 @@ Voici quelques exemples d'utilisations des routines précédemment décrites:
 \item En prenant les quatre combinaisons possibles pour les inversions
   $S_{1}$ et $S_{2}$, on obtient de même les huit cercles tangents à trois
   cercles donnés:
-  % \compiletrue%
+  \compiletrue%
   \begin{vasy}{all_apollonius}
     import geometry;
     size(18cm,0); int shx=18;
-    circle C1=circle((0,0),2), C2=circle((5,5), 3), C3=circle((6,-2),1);
+    circle C1=circle((point)(0,0),2), C2=circle((point)(5,5), 3), C3=circle((point)(6,-2),1);
     picture disc;
     fill(disc,(path)C1); fill(disc,(path)C2); fill(disc,(path)C3);
     transform tv=shift(S), th=shift(E);
@@ -3100,13 +3104,13 @@ Voici la liste des autres routines permettant de définir un objet de type
     currentcoordsys=rotate(20)*defaultcoordsys;
     show(currentcoordsys);
 
-    ellipse e0=ellipse((0,0), 3, 1);
+    ellipse e0=ellipse((point)(0,0), 3, 1);
     draw(e0, linewidth(bp), Arrow);
 
-    ellipse e1=ellipse((0,0), 3, 1, 45);
+    ellipse e1=ellipse((point)(0,0), 3, 1, 45);
     draw(e1, bp+0.8*red, Arrow);
 
-    ellipse e2=ellipse((0,0), 1, 3, 45);
+    ellipse e2=ellipse((point)(0,0), 1, 3, 45);
     draw(e2, bp+0.8*blue, Arrow);
   \end{bvasy}
 \end{itemize}
@@ -3128,7 +3132,7 @@ s'effectue suivant les règles suivantes:
   avec des angles donnés relativement au centre de l'ellipse et
   uniformément répartis dans l'intervalle $\left[0\,;\,360\right[$.
 \end{itemize}
-% \compiletrue%
+\compiletrue%
 \begin{bvasy}{ellipse_dot}
   import geometry;
   size(8cm,0);
@@ -3275,7 +3279,7 @@ voici la liste des routines spécifiques aux objets de type
     import geometry; size(10cm,0);
     currentcoordsys=cartesiansystem((0,0),i=(1,0.5),j=(-0.5,.75));
     show(currentcoordsys, xpen=invisible);
-    ellipse el=ellipse((4,2),3,2,20);
+    ellipse el=ellipse((point)(4,2),3,2,20);
     draw(el); dot("$C$",el.C,2W,red); dot("$F_1$",el.F1,S); dot("$F_2$",el.F2,S);
     point P=angpoint(el, 0);  dot("angpoint(el, 0)", P,E);   draw(el.F1--P);
     point M=angpoint(el, 90); dot("angpoint(el, 90)", M,NW); draw(el.F1--M);
@@ -3296,7 +3300,7 @@ voici la liste des routines spécifiques aux objets de type
   \begin{bvasy}{curpoint_ellipse}
     import geometry; size(7cm,0);
     show(currentcoordsys, xpen=invisible);
-    ellipse el=ellipse((2,2),2,1,25);
+    ellipse el=ellipse((point)(2,2),2,1,25);
     draw(el, linewidth(bp));
     real L=arclength(el);
     dot("0", curpoint(el,0), dir(25));
@@ -3803,7 +3807,7 @@ voici la liste des routines spécifiques aux objets de type
       draw(arcfromcenter(H,-20,30), bp+red); dot("$F_1$", H.F1, N+NW);
       point P=angpoint(H,30,fromCenter); dot("$30$", P, NW);
       segment s=segment(C, P); draw(s);
-      markangle("$30^\circ$", Ox(Rp), s, radius=2cm, Arrow);
+      markangle("$30^\circ$", Ox(Rp), (line) s, radius=2cm, Arrow);
     \end{vasy}
   \end{enumerate}
 \end{itemize}
@@ -4240,7 +4244,7 @@ s'ajoutent les routines pour localiser un point sur un objet de type
     import geometry; size(8cm);
     point A=(-1,0), B=(1,1), C=(0,1), D=(1,-1);
     dot("$A$",A,S); dot("$B$",B,S); dot("$C$",C,SW); dot("$D$",D,SW);
-    ellipse el=ellipse((0,0.5),2,1);
+    ellipse el=ellipse((point)(0,0.5),2,1);
     line l1=line(A,B), l2=line(C,D); draw(l1); draw(l2);
     point[] J=intersectionpoints(l1,el), K=intersectionpoints(l2,el);
     draw(arc(el, J[0],K[0]), 1mm+0.8yellow); draw(arc(el, K[0],J[1]), 1mm+0.8red);
@@ -4707,9 +4711,9 @@ bissectrice passant par \param{V}.
   drawline(t, linewidth(bp));
   line ba=bisector(t.VA), bb=bisector(t.VB);
   line bc=bisector(t.VC); draw(ba^^bb^^bc);
-  markangle(t.AB, t.AC, StickIntervalMarker(2,1));
-  markangle(t.BC, t.BA, StickIntervalMarker(2,2));
-  markangle(t.CA, t.CB, StickIntervalMarker(2,3));
+  markangle((line) t.AB, (line) t.AC, StickIntervalMarker(2,1));
+  markangle((line) t.BC, (line) t.BA, StickIntervalMarker(2,2));
+  markangle((line) t.CA, (line) t.CB, StickIntervalMarker(2,3));
 \end{bvasy}
 Voici quelques routines et opérateurs élémentaires relatifs aux
 objets de type \param{vertex}:
@@ -5482,7 +5486,7 @@ suivant.
   import geometry;
   size(4cm);
 
-  circle C=circle((0,0),1);
+  circle C=circle((point)(0,0),1);
   draw(C, linewidth(bp));
 
   point O=dir(45);
@@ -5520,16 +5524,14 @@ inscrit à un triangle, en tant qu'inversion:
 Ci-dessous la construction du collier de {\sc Pappus}.
 \begin{bvasy}{pappus_construct}
   import geometry; size(7cm,0);
-
   inversion inv=inversion(10,(-4,0));
   line l1=line((-1,0),(-1,1)), l2=line((1,0),(1,1));
   draw(l1, bp+0.8*blue); draw(l2, bp+0.8*green);
   clipdraw(inv*l1,bp+0.8*blue);
   clipdraw(inv*l2,bp+0.8*green);
-
   int n=10;
   for (int i=0; i <= n; ++i) {
-    circle C=circle((0,2*i),1);
+    circle C=circle((point)(0,2*i),1);
     circle Cp=inv*C;
     draw(Cp,bp+(1-abs(i/4))*red);
     if(abs(i) < 4){
@@ -5552,7 +5554,7 @@ On peut ainsi facilement en obtenir une belle représentation:
 
   int n=40;
   for (int i=-n; i <= n; ++i) {
-    path g=inv*circle((0,2*i),1);
+    path g=inv*circle((point)(0,2*i),1);
     fill(g,(1-abs(i)/n)*yellow);
     draw(g,bp+red); draw(g,blue);
   }
