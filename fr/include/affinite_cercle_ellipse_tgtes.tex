@@ -1,31 +1,33 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(12£~color£constant`cm`,0); £~color£function-name`draw`(£~color£function-name`Ox`()^^£~color£function-name`Oy`()); £~color£type`real` £~color£variable-name`a`=3, £~color£variable-name`b`=2;
-£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(£~color£constant`origin`,a), £~color£variable-name`Cp`=£~color£function-name`circle`(£~color£constant`origin`,b);
-£~color£function-name`draw`(C, 0.8*£~color£constant`blue`); £~color£function-name`draw`(Cp, 0.8*£~color£constant`green`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{12}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{Ox}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZca{}}\PY{o}{\PYZca{}}\PY{n+nf}{Oy}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{k+kt}{real} \PY{n}{a}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{b}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{;}
+    \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{n}{a}\PY{p}{)}\PY{p}{,} \PY{n}{Cp}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{n}{b}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Cp}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;}
 
-£~color£type`transform` £~color£variable-name`T`=£~color£function-name`scale`(b/a,£~color£function-name`Ox`(),£~color£function-name`Oy`()), £~color£variable-name`Tp`=£~color£function-name`scale`(a/b,£~color£function-name`Oy`(),£~color£function-name`Ox`());
-£~color£type`ellipse` £~color£variable-name`e`=T*C; £~color£function-name`draw`(e, £~color£constant`bp`+0.8*£~color£constant`red`);
+    \PY{k+kt}{transform} \PY{n}{T}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{n}{b}\PY{o}{/}\PY{n}{a}\PY{p}{,}\PY{n+nf}{Ox}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n+nf}{Oy}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{Tp}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{n}{a}\PY{o}{/}\PY{n}{b}\PY{p}{,}\PY{n+nf}{Oy}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n+nf}{Ox}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{e}\PY{o}{=}\PY{n}{T}\PY{o}{*}\PY{n}{C}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{e}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`H`=(a/2,0), £~color£variable-name`Hp`=(0,-£~color£function-name`b`/2); £~color£function-name`dot`(£~color£string`"$H$"`, H, £~color£constant`S`); £~color£function-name`dot`(£~color£string`"$H'$"`, Hp);
-£~color£type`line` £~color£variable-name`L`=£~color£function-name`line`(H,£~color£builtin`false`,H+£~color£constant`N`), £~color£variable-name`Lp`=£~color£function-name`line`(Hp,£~color£builtin`false`,Hp+£~color£constant`W`);
-£~color£type`point` £~color£constant`M`=£~color£function-name`intersectionpoints`(L,C)[0], £~color£variable-name`NN`=£~color£function-name`intersectionpoints`(Lp,Cp)[0];
-£~color£type`point` £~color£variable-name`Mp`=T*£~color£constant`M`, £~color£variable-name`NNp`=Tp*NN; L=£~color£function-name`segment`(H,£~color£constant`M`); Lp=£~color£function-name`segment`(Hp,NNp);
-£~color£function-name`dot`(£~color£string`"$M$"`, £~color£constant`M`, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$M'$"`, Mp, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$N$"`, NN, £~color£constant`SW`); £~color£function-name`dot`(£~color£string`"$N'$"`, NNp, £~color£constant`NE`);
-£~color£function-name`draw`(L, £~color£constant`dashed`); £~color£function-name`draw`(Lp, £~color£constant`dashed`);
+    \PY{k+kt}{point} \PY{n}{H}\PY{o}{=}\PY{p}{(}\PY{n}{a}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{Hp}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{o}{-}\PY{n}{b}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}H\PYZdl{}"}\PY{p}{,} \PY{n}{H}\PY{p}{,} \PY{n+nv}{S}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}H'\PYZdl{}"}\PY{p}{,} \PY{n}{Hp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{L}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{k}{false}\PY{p}{,}\PY{n}{H}\PY{o}{+}\PY{n+nv}{N}\PY{p}{)}\PY{p}{,} \PY{n}{Lp}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{Hp}\PY{p}{,}\PY{k}{false}\PY{p}{,}\PY{n}{Hp}\PY{o}{+}\PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{NN}\PY{o}{=}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{Lp}\PY{p}{,}\PY{n}{Cp}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Mp}\PY{o}{=}\PY{n}{T}\PY{o}{*}\PY{n}{M}\PY{p}{,} \PY{n}{NNp}\PY{o}{=}\PY{n}{Tp}\PY{o}{*}\PY{n}{NN}\PY{p}{;} \PY{n}{L}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{n}{M}\PY{p}{)}\PY{p}{;} \PY{n}{Lp}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{Hp}\PY{p}{,}\PY{n}{NNp}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}M\PYZdl{}"}\PY{p}{,} \PY{n}{M}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}M'\PYZdl{}"}\PY{p}{,} \PY{n}{Mp}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}N\PYZdl{}"}\PY{p}{,} \PY{n}{NN}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}N'\PYZdl{}"}\PY{p}{,} \PY{n}{NNp}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{L}\PY{p}{,} \PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Lp}\PY{p}{,} \PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;}
 
-£~color£type`segment` £~color£variable-name`SS`=£~color£function-name`segment`(£~color£constant`origin`,£~color£constant`M`), £~color£variable-name`SSp`=£~color£function-name`segment`(£~color£constant`origin`,NN);
-£~color£function-name`draw`(SS, 0.8*£~color£constant`blue`); £~color£function-name`draw`(SSp, 0.8*£~color£constant`green`);
+    \PY{k+kt}{segment} \PY{n}{SS}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{n}{M}\PY{p}{)}\PY{p}{,} \PY{n}{SSp}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{n}{NN}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{SS}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{SSp}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`tgM`=£~color£function-name`tangents`(C, £~color£constant`M`)[0]; £~color£type`point` £~color£variable-name`P`=£~color£function-name`intersectionpoint`(tgM,£~color£function-name`Ox`());
-£~color£function-name`draw`(tgM, 0.8*£~color£constant`blue`); £~color£function-name`dot`(£~color£string`"$P$"`, P, £~color£function-name`dir`(60));
+    \PY{k+kt}{line} \PY{n}{tgM}\PY{o}{=}\PY{n+nf}{tangents}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{;} \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{intersectionpoint}\PY{p}{(}\PY{n}{tgM}\PY{p}{,}\PY{n+nf}{Ox}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tgM}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZdl{}"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`tgN`=£~color£function-name`tangents`(Cp, NN)[0]; £~color£type`point` £~color£variable-name`Pp`=£~color£function-name`intersectionpoint`(tgN,£~color£function-name`Oy`());
-£~color£function-name`draw`(tgN, 0.8*£~color£constant`green`); £~color£function-name`dot`(£~color£string`"$P'$"`, Pp, £~color£function-name`dir`(30));
+    \PY{k+kt}{line} \PY{n}{tgN}\PY{o}{=}\PY{n+nf}{tangents}\PY{p}{(}\PY{n}{Cp}\PY{p}{,} \PY{n}{NN}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{;} \PY{k+kt}{point} \PY{n}{Pp}\PY{o}{=}\PY{n+nf}{intersectionpoint}\PY{p}{(}\PY{n}{tgN}\PY{p}{,}\PY{n+nf}{Oy}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tgN}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P'\PYZdl{}"}\PY{p}{,} \PY{n}{Pp}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`perpendicularmark`(tgM,SS, 0.8*£~color£constant`blue`); £~color£function-name`perpendicularmark`(tgN,SSp, quarter=2, 0.8*£~color£constant`green`);
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{tgM}\PY{p}{,}\PY{n}{SS}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;} \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{tgN}\PY{p}{,}\PY{n}{SSp}\PY{p}{,} \PY{n}{quarter}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`tgMp`=£~color£function-name`line`(P, Mp), £~color£variable-name`tgNp`=£~color£function-name`line`(Pp, NNp);
-£~color£function-name`draw`(tgMp, 0.8*£~color£constant`red`); £~color£function-name`draw`(tgNp, 0.8*£~color£constant`red`);
+    \PY{k+kt}{line} \PY{n}{tgMp}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{P}\PY{p}{,} \PY{n}{Mp}\PY{p}{)}\PY{p}{,} \PY{n}{tgNp}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{Pp}\PY{p}{,} \PY{n}{NNp}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tgMp}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tgNp}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(Mp+2tgMp.u--Mp-2tgMp.u, £~color£constant`bp`+0.8*£~color£constant`red`, £~color£function-name`Arrows`(3£~color£constant`mm`));
-£~color£function-name`draw`(NNp+2tgNp.u--NNp-2tgNp.u, £~color£constant`bp`+0.8*£~color£constant`red`, £~color£function-name`Arrows`(3£~color£constant`mm`));
-£~color£function-name`addMargins`(5£~color£constant`mm`,5£~color£constant`mm`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Mp}\PY{o}{+}\PY{l+m+mi}{2}\PY{n}{tgMp}\PY{p}{.}\PY{n}{u}\PY{o}{-}\PY{o}{-}\PY{n}{Mp}\PY{o}{-}\PY{l+m+mi}{2}\PY{n}{tgMp}\PY{p}{.}\PY{n}{u}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{,} \PY{n+nf}{Arrows}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{NNp}\PY{o}{+}\PY{l+m+mi}{2}\PY{n}{tgNp}\PY{p}{.}\PY{n}{u}\PY{o}{-}\PY{o}{-}\PY{n}{NNp}\PY{o}{-}\PY{l+m+mi}{2}\PY{n}{tgNp}\PY{p}{.}\PY{n}{u}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{,} \PY{n+nf}{Arrows}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{addMargins}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{mm}\PY{p}{,}\PY{l+m+mi}{5}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

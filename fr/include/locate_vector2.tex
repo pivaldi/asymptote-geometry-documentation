@@ -1,8 +1,10 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((2,1), i=(1,1), j=(-0.75,1));
-£~color£function-name`show`(£~color£string`"$O_1$"`, £~color£string`"$\vec{u}$"`, £~color£string`"$\vec{v}$"`, R, xpen=£~color£constant`invisible`);
-£~color£function-name`show`(£~color£constant`currentcoordsys`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{coordsys} \PY{n}{R}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.75}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n}{R}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{)}\PY{p}{;}
 
-£~color£type`vector` £~color£variable-name`w`=£~color£function-name`vector`(R, (1,1));
-£~color£function-name`show`(£~color£string`"$\vec{w}$"`, w, £~color£function-name`linewidth`(£~color£constant`bp`), £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`dot`(£~color£string`"w"`, w, £~color£constant`N`); £~color£function-name`dot`(£~color£string`"point(w)"`, £~color£function-name`point`(w), £~color£constant`N`);
+  \PY{k+kt}{vector} \PY{n}{w}\PY{o}{=}\PY{n+nf}{vector}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}w\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"w"}\PY{p}{,} \PY{n}{w}\PY{p}{,} \PY{n+nv}{N}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"point(w)"}\PY{p}{,} \PY{n+nf}{point}\PY{p}{(}\PY{n}{w}\PY{p}{)}\PY{p}{,} \PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,18 +1,25 @@
 ASYCMD=asy -f pdf
-EXEC=asy
+ALL=asy
 SRC= $(wildcard *.asy)
 OBJ= $(SRC:.asy=.pdf)
+TEX= $(SRC:.asy=.tex)
 
-all: $(EXEC)
-
-asy: $(OBJ)
-# expr match $@ 'vcolor[0-9]*.*' > /dev/null || $(ASYCMD) $<
+all: $(ALL)
+asy: $(TEX) $(OBJ)
 
 %.pdf: %.asy
-	expr match $< 'vcolor[0-9]*.*' > /dev/null || $(ASYCMD) $<
+	expr match $< 'vcolor[0-9]*.*' > /dev/null\
+	|| $(ASYCMD) $<\
+	&& touch $@
 
-# clean:
-# 	rm -f *.aux; rm -f *.dvi; rm -f *.toc; rm -f *.html;\
-# 	 rm -f *.log; rm -f .*.log; rm -f *.out; rm -f -R auto; rm -f tmp_.*
+%.tex: %.asy
+	pygmentize -f latex -o $@ $<
+	sed -i '1d;$d' $@
 
-# .PHONY : clean view
+clean:
+	@rm -f *.eps; rm -f *.log; rm -f *.dvi
+
+.PHONY : clean mrproper asy
+
+mrproper: clean
+	@rm -f *.pdf; rm -f *.tex

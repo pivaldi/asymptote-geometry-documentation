@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry;
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
 
-£~color£function-name`size`(5£~color£constant`cm`);
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
 
-£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`(i=(1,0.5),j=(-0.25,.75));
-£~color£function-name`show`(£~color£constant`currentcoordsys`);
+    \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,}\PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.25}\PY{p}{,}\PY{l+m+mf}{.75}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{)}\PY{p}{;}
 
-£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleAbc`(-60,2,3,angle=45,(1,1));
-£~color£function-name`show`(Lb=£~color£string`"2"`, Lc=£~color£string`"3"`,t);
-£~color£function-name`markangle`(£~color£string`"$60^\circ$"`,t.C,t.A,t.B, Arrow);
+    \PY{k+kt}{triangle} \PY{n}{t}\PY{o}{=}\PY{n+nf}{triangleAbc}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{60}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{n+nf}{angle}\PY{o}{=}\PY{l+m+mi}{45}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n}{Lb}\PY{o}{=}\PY{l+s}{"2"}\PY{p}{,} \PY{n}{Lc}\PY{o}{=}\PY{l+s}{"3"}\PY{p}{,}\PY{n}{t}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markangle}\PY{p}{(}\PY{l+s}{"\PYZdl{}60\PYZca{}\PYZbs{}circ\PYZdl{}"}\PY{p}{,}\PY{n}{t}\PY{p}{.}\PY{n}{C}\PY{p}{,}\PY{n}{t}\PY{p}{.}\PY{n}{A}\PY{p}{,}\PY{n}{t}\PY{p}{.}\PY{n}{B}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

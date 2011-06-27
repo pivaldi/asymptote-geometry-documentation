@@ -1,14 +1,16 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6£~color£constant`cm`,0);
-£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((2,1), i=(1,0.5), j=(-0.75,1));
-£~color£function-name`show`(£~color£constant`currentcoordsys`, ipen=£~color£constant`blue`, jpen=£~color£constant`red`, xpen=£~color£constant`invisible`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{6}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.75}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{ipen}\PY{o}{=}\PY{n+nv}{blue}\PY{p}{,} \PY{n}{jpen}\PY{o}{=}\PY{n+nv}{red}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
 
-£~color£type`real` £~color£variable-name`k`=£~color£function-name`sqrt`(2);
-£~color£type`point` £~color£variable-name`A`=(2,1);
-£~color£type`point` £~color£constant`M`=(-2,-1); £~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, £~color£constant`W`);
+    \PY{k+kt}{real} \PY{n}{k}\PY{o}{=}\PY{n+nf}{sqrt}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{2}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M"}\PY{p}{,} \PY{n}{M}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`Ap`=£~color£function-name`yscale`(k, £~color£constant`M`)*A;
-£~color£function-name`dot`(£~color£string`"A'"`, Ap, -£~color£function-name`I`*£~color£function-name`unit`(A-Ap), £~color£constant`red`); £~color£function-name`dot`(£~color£string`"A"`, A, -£~color£function-name`I`*£~color£function-name`unit`(A-Ap));
-£~color£type`point` £~color£variable-name`P`=£~color£function-name`intersectionpoint`(£~color£function-name`line`(A,Ap), £~color£function-name`line`(£~color£constant`M`,£~color£constant`M`+£~color£constant`E`));
-£~color£function-name`dot`(£~color£string`"P"`, P, £~color£function-name`locate`(£~color£function-name`unit`(A-Ap))); £~color£function-name`draw`(£~color£constant`M`--P, £~color£constant`blue`); £~color£function-name`draw`(P--Ap, £~color£constant`red`);
-£~color£function-name`distance`(£~color£string`"$k\times PA$"`, P, Ap, 3£~color£constant`mm`, £~color£constant`grey`);
+    \PY{k+kt}{point} \PY{n}{Ap}\PY{o}{=}\PY{n+nf}{yscale}\PY{p}{(}\PY{n}{k}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{o}{*}\PY{n}{A}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A'"}\PY{p}{,} \PY{n}{Ap}\PY{p}{,} \PY{o}{-}\PY{n+nv}{I}\PY{o}{*}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{n}{Ap}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{o}{-}\PY{n+nv}{I}\PY{o}{*}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{n}{Ap}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{intersectionpoint}\PY{p}{(}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{Ap}\PY{p}{)}\PY{p}{,} \PY{n+nf}{line}\PY{p}{(}\PY{n}{M}\PY{p}{,}\PY{n}{M}\PY{o}{+}\PY{n+nv}{E}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"P"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n+nf}{locate}\PY{p}{(}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{n}{Ap}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{P}\PY{p}{,} \PY{n+nv}{blue}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{P}\PY{o}{-}\PY{o}{-}\PY{n}{Ap}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{distance}\PY{p}{(}\PY{l+s}{"\PYZdl{}k\PYZbs{}times PA\PYZdl{}"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n}{Ap}\PY{p}{,} \PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

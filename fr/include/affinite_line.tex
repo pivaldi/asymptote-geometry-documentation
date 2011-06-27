@@ -1,14 +1,16 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6.5£~color£constant`cm`,0);
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£type`line` £~color£variable-name`AB`=£~color£function-name`line`(£~color£constant`origin`, £~color£constant`E`), £~color£variable-name`CD`=£~color£function-name`line`(2*£~color£constant`NE`+£~color£constant`N`, 2*£~color£constant`NE`+£~color£constant`SE`);
-£~color£function-name`draw`(AB, bpp); £~color£function-name`draw`(CD, bpp);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mf}{6.5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{AB}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,} \PY{n+nv}{E}\PY{p}{)}\PY{p}{,} \PY{n}{CD}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n+nv}{NE}\PY{o}{+}\PY{n+nv}{N}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n+nv}{NE}\PY{o}{+}\PY{n+nv}{SE}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{AB}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{CD}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;}
 
-£~color£type`transform` £~color£variable-name`dilatation`=£~color£function-name`scale`(1.5,AB,CD);
+    \PY{k+kt}{transform} \PY{n}{dilatation}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{,}\PY{n}{AB}\PY{p}{,}\PY{n}{CD}\PY{p}{)}\PY{p}{;}
 
-£~color£type`path` £~color£variable-name`cle`=£~color£function-name`shift`(£~color£constant`NE`)*£~color£constant`unitcircle`;
-£~color£function-name`draw`(cle,bpp);
+    \PY{k+kt}{path} \PY{n}{cle}\PY{o}{=}\PY{n+nf}{shift}\PY{p}{(}\PY{n+nv}{NE}\PY{p}{)}\PY{o}{*}\PY{n+nv}{unitcircle}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{cle}\PY{p}{,}\PY{n}{bpp}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(dilatation*cle, 0.8*£~color£constant`red`+bpp);
-£~color£function-name`draw`(£~color£function-name`inverse`(dilatation)*cle, 0.8*£~color£constant`blue`+bpp);
-£~color£function-name`draw`(£~color£function-name`box`((-0.5,-0.5), (2.75,3)), £~color£constant`invisible`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{dilatation}\PY{o}{*}\PY{n}{cle}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{o}{+}\PY{n}{bpp}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{inverse}\PY{p}{(}\PY{n}{dilatation}\PY{p}{)}\PY{o}{*}\PY{n}{cle}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{o}{+}\PY{n}{bpp}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{2.75}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

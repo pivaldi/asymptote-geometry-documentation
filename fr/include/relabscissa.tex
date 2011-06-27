@@ -1,7 +1,9 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(4.5£~color£constant`cm`);
-£~color£constant`currentcoordsys`=£~color£function-name`rotate`(45)*£~color£constant`defaultcoordsys`;
-£~color£function-name`show`(£~color£constant`currentcoordsys`);
-£~color£type`abscissa` £~color£variable-name`rel`=£~color£function-name`relabscissa`(0.5);
-£~color£type`ellipse` £~color£variable-name`el`=£~color£function-name`ellipse`(£~color£function-name`origin`(),2,1,-45); £~color£function-name`draw`(el,£~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`circle` £~color£variable-name`c`=£~color£function-name`circle`(£~color£function-name`origin`(),1);          £~color£function-name`draw`(c,£~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£function-name`dot`(£~color£function-name`point`(el,rel), £~color£constant`red`); £~color£function-name`dot`(£~color£function-name`point`(c,rel), £~color£constant`red`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mf}{4.5}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{rotate}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{o}{*}\PY{n+nv}{defaultcoordsys}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{abscissa} \PY{n}{rel}\PY{o}{=}\PY{n+nf}{relabscissa}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{circle} \PY{n}{c}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}          \PY{n+nf}{draw}\PY{p}{(}\PY{n}{c}\PY{p}{,}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{n+nf}{point}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{n}{rel}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{n+nf}{point}\PY{p}{(}\PY{n}{c}\PY{p}{,}\PY{n}{rel}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,13 +1,15 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(12£~color£constant`cm`);
-£~color£type`coordsys` £~color£variable-name`R`=£~color£constant`currentcoordsys`; £~color£function-name`show`(R);
-£~color£type`point` £~color£variable-name`C`=(3,1.25); £~color£function-name`dot`(£~color£string`"$C$"`, C, 2*£~color£function-name`dir`(120), £~color£constant`red`);
-£~color£type`hyperbola` £~color£variable-name`H`=£~color£function-name`hyperbola`(C, 2, 1.5, -10); £~color£function-name`draw`(H, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`coordsys` £~color£variable-name`Rp`=£~color£function-name`canonicalcartesiansystem`(H);
-£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$O'$"`, £~color£constant`align`=£~color£constant`SW`,£~color£constant`blue`), £~color£function-name`Label`(£~color£string`"$\vec{u}$"`,£~color£constant`blue`),
-     £~color£function-name`Label`(£~color£string`"$\vec{v}$"`,£~color£constant`blue`), Rp, ipen=£~color£constant`blue`);
-£~color£function-name`dot`(£~color£string`"$0$"`, £~color£function-name`angpoint`(H,0,fromCenter), 2*£~color£function-name`dir`(120));
-£~color£function-name`dot`(£~color£string`"$180$"`, £~color£function-name`angpoint`(H,180,fromCenter), 2*£~color£function-name`dir`(30));
-£~color£function-name`draw`(£~color£function-name`arcfromcenter`(H,-20,30), £~color£constant`bp`+£~color£constant`red`); £~color£function-name`dot`(£~color£string`"$F_1$"`, H.F1, £~color£constant`N`+£~color£constant`NW`);
-£~color£type`point` £~color£variable-name`P`=£~color£function-name`angpoint`(H,30,fromCenter); £~color£function-name`dot`(£~color£string`"$30$"`, P, £~color£constant`NW`);
-£~color£type`segment` £~color£variable-name`s`=£~color£function-name`segment`(C, P); £~color£function-name`draw`(s);
-£~color£function-name`markangle`(£~color£string`"$30^\circ$"`, £~color£function-name`Ox`(Rp), s, radius=2£~color£constant`cm`, Arrow);
+\begin{Verbatim}[commandchars=\\\{\}]
+      \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{12}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{coordsys} \PY{n}{R}\PY{o}{=}\PY{n+nv}{currentcoordsys}\PY{p}{;} \PY{n+nf}{show}\PY{p}{(}\PY{n}{R}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{point} \PY{n}{C}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mf}{1.25}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{n}{C}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{120}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{hyperbola} \PY{n}{H}\PY{o}{=}\PY{n+nf}{hyperbola}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{1.5}\PY{p}{,} \PY{o}{-}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{H}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{coordsys} \PY{n}{Rp}\PY{o}{=}\PY{n+nf}{canonicalcartesiansystem}\PY{p}{(}\PY{n}{H}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{show}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}O'\PYZdl{}"}\PY{p}{,} \PY{n+nf}{align}\PY{o}{=}\PY{n+nv}{SW}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,}
+      \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n}{Rp}\PY{p}{,} \PY{n}{ipen}\PY{o}{=}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}0\PYZdl{}"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{120}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}180\PYZdl{}"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{l+m+mi}{180}\PY{p}{,}\PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{arcfromcenter}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{H}\PY{p}{.}\PY{n}{F1}\PY{p}{,} \PY{n+nv}{N}\PY{o}{+}\PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{,}\PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}30\PYZdl{}"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{segment} \PY{n}{s}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{n}{P}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{markangle}\PY{p}{(}\PY{l+s}{"\PYZdl{}30\PYZca{}\PYZbs{}circ\PYZdl{}"}\PY{p}{,} \PY{n+nf}{Ox}\PY{p}{(}\PY{n}{Rp}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{s}\PY{p}{,} \PY{n+nf}{radius}\PY{o}{=}\PY{l+m+mi}{2}\PY{n+nv}{cm}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,13 +1,15 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6£~color£constant`cm`,0);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{6}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
 
-£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangle`((-1,0), (2,0), (0,2));
+  \PY{k+kt}{triangle} \PY{n}{t}\PY{o}{=}\PY{n+nf}{triangle}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`drawline`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£function-name`label`(t,alignFactor=4);
+  \PY{n+nf}{drawline}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{label}\PY{p}{(}\PY{n}{t}\PY{p}{,}\PY{n}{alignFactor}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`clipdraw`(£~color£function-name`excircle`(t.AB), £~color£constant`bp`+0.8£~color£constant`green`);
-£~color£function-name`clipdraw`(£~color£function-name`excircle`(t.BC), £~color£constant`bp`+0.8£~color£constant`green`);
-£~color£function-name`clipdraw`(£~color£function-name`excircle`(t.AC), £~color£constant`bp`+0.8£~color£constant`green`);
+  \PY{n+nf}{clipdraw}\PY{p}{(}\PY{n+nf}{excircle}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{clipdraw}\PY{p}{(}\PY{n+nf}{excircle}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{clipdraw}\PY{p}{(}\PY{n+nf}{excircle}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AC}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(£~color£function-name`box`((-2.5,-3), (3.5,3.5)), £~color£constant`invisible`);
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{2.5}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{3.5}\PY{p}{,}\PY{l+m+mf}{3.5}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,14 +1,16 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(5£~color£constant`cm`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
 
-£~color£type`circle` £~color£variable-name`cle`=£~color£function-name`circle`((£~color£type`point`)(2,1),1.5);
-£~color£function-name`draw`(cle, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£function-name`dot`(£~color£string`"$C$"`, cle.C);
+    \PY{k+kt}{circle} \PY{n}{cle}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{cle}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{n}{cle}\PY{p}{.}\PY{n}{C}\PY{p}{)}\PY{p}{;}
 
-£~color£type`vector` £~color£variable-name`v`=(-1,-2);
-£~color£function-name`show`(£~color£string`"$\vec{v}$"`,v);
+    \PY{k+kt}{vector} \PY{n}{v}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n}{v}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`tgt`=£~color£function-name`tangent`(cle,v);
-£~color£function-name`draw`(tgt, £~color£constant`bp`+0.8*£~color£constant`red`);
-£~color£function-name`draw`(£~color£string`"$\vec{v'}$"`,cle.C--(cle.C+tgt.v), Arrow);
-£~color£function-name`dot`(£~color£function-name`point`(cle,v));
+    \PY{k+kt}{line} \PY{n}{tgt}\PY{o}{=}\PY{n+nf}{tangent}\PY{p}{(}\PY{n}{cle}\PY{p}{,}\PY{n}{v}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tgt}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v'\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n}{cle}\PY{p}{.}\PY{n}{C}\PY{o}{-}\PY{o}{-}\PY{p}{(}\PY{n}{cle}\PY{p}{.}\PY{n}{C}\PY{o}{+}\PY{n}{tgt}\PY{p}{.}\PY{n}{v}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{n+nf}{point}\PY{p}{(}\PY{n}{cle}\PY{p}{,}\PY{n}{v}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

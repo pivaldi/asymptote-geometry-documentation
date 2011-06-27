@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((2,1), i=(1,1), j=(-0.75,1));
-£~color£function-name`show`(£~color£string`"$O_1$"`, £~color£string`"$\vec{u}$"`, £~color£string`"$\vec{v}$"`, R, xpen=£~color£constant`invisible`);
-£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{coordsys} \PY{n}{R}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.75}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n}{R}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`A`=£~color£function-name`point`(R, (1,1)); £~color£function-name`dot`(£~color£string`"A"`, A); £~color£type`point` £~color£variable-name`B`=£~color£function-name`point`(R, (2,2));
-£~color£function-name`dot`(£~color£string`"B"`, B); £~color£type`point` £~color£constant`M`=£~color£function-name`unit`(B-A); £~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`);
-£~color£function-name`dot`(£~color£string`"unit(B-A)"`, £~color£function-name`unit`(B-A), £~color£constant`N`);
-£~color£function-name`dot`(£~color£string`"A+unit(B-A)"`, A+£~color£function-name`unit`(B-A), £~color£constant`W`);
+  \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{n+nf}{point}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A"}\PY{p}{,} \PY{n}{A}\PY{p}{)}\PY{p}{;} \PY{k+kt}{point} \PY{n}{B}\PY{o}{=}\PY{n+nf}{point}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"B"}\PY{p}{,} \PY{n}{B}\PY{p}{)}\PY{p}{;} \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{n}{A}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M"}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"unit(B-A)"}\PY{p}{,} \PY{n+nf}{unit}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{n}{A}\PY{p}{)}\PY{p}{,} \PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A+unit(B-A)"}\PY{p}{,} \PY{n}{A}\PY{o}{+}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{n}{A}\PY{p}{)}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

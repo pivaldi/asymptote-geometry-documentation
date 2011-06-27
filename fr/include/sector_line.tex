@@ -1,21 +1,23 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£type`point` £~color£variable-name`A`=(0,0), £~color£variable-name`B`=(3,0), £~color£variable-name`C`=(0.795,1.5);
-£~color£function-name`dot`(A); £~color£function-name`dot`(B); £~color£function-name`dot`(C);
-£~color£type`pen` £~color£variable-name`pb`=0.8*£~color£constant`blue`, £~color£variable-name`pr`=0.8*£~color£constant`red`, £~color£variable-name`py`=0.8*£~color£constant`yellow`, £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£type`line` £~color£variable-name`AB`=£~color£function-name`line`(A,B), £~color£variable-name`AC`=£~color£function-name`line`(A,C), £~color£variable-name`BC`=£~color£function-name`line`(B,C);
-£~color£function-name`draw`(AB, bpp); £~color£function-name`draw`(AC, bpp); £~color£function-name`draw`(BC, bpp);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{C}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.795}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{n}{A}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{n}{B}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{pen} \PY{n}{pb}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{,} \PY{n}{pr}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{,} \PY{n}{py}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{yellow}\PY{p}{,} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{AB}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{)}\PY{p}{,} \PY{n}{AC}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{,} \PY{n}{BC}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{B}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{AB}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{AC}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{BC}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`bA1`=£~color£function-name`sector`(3,AB,AC), £~color£variable-name`bA2`=£~color£function-name`sector`(3,2,AB,AC);
-£~color£type`line` £~color£variable-name`bB1`=£~color£function-name`sector`(3,AB,BC), £~color£variable-name`bB2`=£~color£function-name`sector`(3,2,AB,BC);
-£~color£type`line` £~color£variable-name`bC1`=£~color£function-name`sector`(3,AC,BC), £~color£variable-name`bC2`=£~color£function-name`sector`(3,2,AC,BC);
-£~color£function-name`draw`(bA1, bpp+pb); £~color£function-name`draw`(bA2, bpp+pb);
-£~color£function-name`draw`(bB1, bpp+pr); £~color£function-name`draw`(bB2, bpp+pr);
-£~color£function-name`draw`(bC1, bpp+py); £~color£function-name`draw`(bC2, bpp+py);
+    \PY{k+kt}{line} \PY{n}{bA1}\PY{o}{=}\PY{n+nf}{sector}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{AB}\PY{p}{,}\PY{n}{AC}\PY{p}{)}\PY{p}{,} \PY{n}{bA2}\PY{o}{=}\PY{n+nf}{sector}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{AB}\PY{p}{,}\PY{n}{AC}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{bB1}\PY{o}{=}\PY{n+nf}{sector}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{AB}\PY{p}{,}\PY{n}{BC}\PY{p}{)}\PY{p}{,} \PY{n}{bB2}\PY{o}{=}\PY{n+nf}{sector}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{AB}\PY{p}{,}\PY{n}{BC}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{bC1}\PY{o}{=}\PY{n+nf}{sector}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{AC}\PY{p}{,}\PY{n}{BC}\PY{p}{)}\PY{p}{,} \PY{n}{bC2}\PY{o}{=}\PY{n+nf}{sector}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{AC}\PY{p}{,}\PY{n}{BC}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{bA1}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n}{pb}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{bA2}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n}{pb}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{bB1}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n}{pr}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{bB2}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n}{pr}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{bC1}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n}{py}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{bC2}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n}{py}\PY{p}{)}\PY{p}{;}
 
-£~color£constant`markangleradiusfactor` *= 8;
-£~color£function-name`markangle`(BC, £~color£function-name`reverse`(AB), pr, £~color£function-name`StickIntervalMarker`(3,1,pr,£~color£builtin`true`));
-£~color£constant`markangleradiusfactor` /= 3;
-£~color£function-name`markangle`(£~color£function-name`reverse`(AC), £~color£function-name`reverse`(BC), py, £~color£function-name`StickIntervalMarker`(3,2,py,£~color£builtin`true`));
-£~color£constant`markangleradiusfactor` *= 3/2;
-£~color£function-name`markangle`(AB, AC, pb, £~color£function-name`StickIntervalMarker`(3,3,pb,£~color£builtin`true`));
+    \PY{n+nv}{markangleradiusfactor} \PY{o}{*}\PY{o}{=} \PY{l+m+mi}{8}\PY{p}{;}
+    \PY{n+nf}{markangle}\PY{p}{(}\PY{n}{BC}\PY{p}{,} \PY{n+nf}{reverse}\PY{p}{(}\PY{n}{AB}\PY{p}{)}\PY{p}{,} \PY{n}{pr}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{pr}\PY{p}{,}\PY{k}{true}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{markangleradiusfactor} \PY{o}{/}\PY{o}{=} \PY{l+m+mi}{3}\PY{p}{;}
+    \PY{n+nf}{markangle}\PY{p}{(}\PY{n+nf}{reverse}\PY{p}{(}\PY{n}{AC}\PY{p}{)}\PY{p}{,} \PY{n+nf}{reverse}\PY{p}{(}\PY{n}{BC}\PY{p}{)}\PY{p}{,} \PY{n}{py}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{py}\PY{p}{,}\PY{k}{true}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{markangleradiusfactor} \PY{o}{*}\PY{o}{=} \PY{l+m+mi}{3}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{;}
+    \PY{n+nf}{markangle}\PY{p}{(}\PY{n}{AB}\PY{p}{,} \PY{n}{AC}\PY{p}{,} \PY{n}{pb}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{pb}\PY{p}{,}\PY{k}{true}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

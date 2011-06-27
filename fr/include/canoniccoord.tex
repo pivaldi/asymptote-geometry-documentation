@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`,0);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`show`(£~color£constant`defaultcoordsys`);
-£~color£type`ellipse` £~color£variable-name`el`=£~color£function-name`ellipse`((2,4),3,2,45);
-£~color£function-name`dot`(£~color£string`"$F_1$"`, el.F1, £~color£function-name`dir`(-45));
-£~color£function-name`dot`(£~color£string`"$F_2$"`, el.F2, £~color£function-name`dir`(-45));
-£~color£function-name`draw`(el, £~color£function-name`linewidth`(£~color£constant`bp`), £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`show`(£~color£string`"$C$"`, £~color£string`"$\vec{u}$"` ,£~color£string`"$\vec{v}$"`,
-     £~color£function-name`canonicalcartesiansystem`(el));
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{defaultcoordsys}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{F1}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}2\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{F2}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"} \PY{p}{,}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,}
+    \PY{n+nf}{canonicalcartesiansystem}\PY{p}{(}\PY{n}{el}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

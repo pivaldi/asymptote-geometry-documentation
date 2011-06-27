@@ -1,9 +1,10 @@
-£~color£builtin`import` geometry;
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
 
-£~color£function-name`write`(£~color£function-name`massformat`(s=£~color£string`"foo"`, £~color£function-name`mass`((0,0),1000)));
-£~color£comment-delimiter`// `£~color£comment`Renvoie $\left(foo;1000\right)$
-`
+    \PY{n+nf}{write}\PY{p}{(}\PY{n+nf}{massformat}\PY{p}{(}\PY{n}{s}\PY{o}{=}\PY{l+s}{"foo"}\PY{p}{,} \PY{n+nf}{mass}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1000}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{c}{// Renvoie \PYZdl{}\PYZbs{}left(foo;1000\PYZbs{}right)\PYZdl{}}
 
-£~color£function-name`write`(£~color£function-name`massformat`(£~color£string`"%L\_%e"`, £~color£string`"foo"`, £~color£function-name`mass`((0,0),1000)));
-£~color£comment-delimiter`// `£~color£comment`Renvoie foo\_1\!\times\!10^{3\phantom{+}}
-`
+
+    \PY{n+nf}{write}\PY{p}{(}\PY{n+nf}{massformat}\PY{p}{(}\PY{l+s}{"\PYZpc{}L\PYZbs{}\PYZus{}\PYZpc{}e"}\PY{p}{,} \PY{l+s}{"foo"}\PY{p}{,} \PY{n+nf}{mass}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1000}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{c}{// Renvoie foo\PYZbs{}\PYZus{}1\PYZbs{}!\PYZbs{}times\PYZbs{}!10\PYZca{}\PYZob{}3\PYZbs{}phantom\PYZob{}+\PYZcb{}\PYZcb{}}
+\end{Verbatim}

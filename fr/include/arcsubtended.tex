@@ -1,18 +1,20 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(7£~color£constant`cm`,0);
-£~color£type`point` £~color£variable-name`A`=(-1,0), £~color£variable-name`B`=(1,0);
-£~color£function-name`dot`(£~color£string`"$A$"`, A, 2£~color£constant`W`, £~color£constant`red`); £~color£function-name`dot`(£~color£string`"$B$"`, B, 2£~color£constant`E`, £~color£constant`red`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{7}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}B\PYZdl{}"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{E}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£type`real`[] angles=£~color£builtin`new` £~color£type`real`[] {60, 110, -60, -110};
-£~color£type`pen`[] £~color£constant`p`=£~color£builtin`new` £~color£type`pen`[] {£~color£constant`red`, £~color£constant`blue`+£~color£constant`red`, £~color£constant`blue`, £~color£constant`cyan`};
-£~color£type`int` £~color£variable-name`i`=0;
+    \PY{k+kt}{real}\PY{p}{[}\PY{p}{]} \PY{n}{angles}\PY{o}{=}\PY{k}{new} \PY{k+kt}{real}\PY{p}{[}\PY{p}{]} \PY{p}{\PYZob{}}\PY{l+m+mi}{60}\PY{p}{,} \PY{l+m+mi}{110}\PY{p}{,} \PY{o}{-}\PY{l+m+mi}{60}\PY{p}{,} \PY{o}{-}\PY{l+m+mi}{110}\PY{p}{\PYZcb{}}\PY{p}{;}
+    \PY{k+kt}{pen}\PY{p}{[}\PY{p}{]} \PY{n}{p}\PY{o}{=}\PY{k}{new} \PY{k+kt}{pen}\PY{p}{[}\PY{p}{]} \PY{p}{\PYZob{}}\PY{n+nv}{red}\PY{p}{,} \PY{n+nv}{blue}\PY{o}{+}\PY{n+nv}{red}\PY{p}{,} \PY{n+nv}{blue}\PY{p}{,} \PY{n+nv}{cyan}\PY{p}{\PYZcb{}}\PY{p}{;}
+    \PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}
 
-£~color£keyword`for`(£~color£type`real` a:angles) {
-  £~color£type`arc` £~color£variable-name`arcsubtended`=£~color£function-name`arcsubtended`(A,B,a);
-  £~color£function-name`draw`(arcsubtended, £~color£constant`bp`+0.8*£~color£constant`p`[i]);
-  £~color£builtin`for` (£~color£type`int` £~color£variable-name`j`=0; j < 2; ++j) {
-    £~color£type`point` £~color£constant`M`=£~color£function-name`relpoint`(arcsubtended, 0.25+0.5*j);
-    £~color£function-name`draw`(A--£~color£constant`M`--B, 0.8*£~color£constant`p`[i]);
-    £~color£type`real` £~color£variable-name`gle`=£~color£function-name`degrees`(B-£~color£constant`M`)-£~color£function-name`degrees`(A-£~color£constant`M`);
-    £~color£function-name`markangle`(£~color£function-name`Label`(£~color£function-name`format`(£~color£string`"%0g"`,-£~color£function-name`gle`),£~color£constant`UnFill`),
-              B, £~color£constant`M`, A, radius=£~color£function-name`sgn`(-£~color£function-name`gle`)*30, Arrow, 0.8*£~color£constant`p`[i]); }
-  ++i; }
+    \PY{k}{for}\PY{p}{(}\PY{k+kt}{real} \PY{n+nl}{a:}\PY{n}{angles}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{k+kt}{arc} \PY{n+nf}{arcsubtended}\PY{o}{=}\PY{n+nf}{arcsubtended}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{,}\PY{n}{a}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{arcsubtended}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n}{p}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+      \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{<} \PY{l+m+mi}{2}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{p}{)} \PY{p}{\PYZob{}}
+        \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{n+nf}{relpoint}\PY{p}{(}\PY{n+nf}{arcsubtended}\PY{p}{,} \PY{l+m+mf}{0.25}\PY{o}{+}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{j}\PY{p}{)}\PY{p}{;}
+        \PY{n+nf}{draw}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{o}{-}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{B}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n}{p}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+        \PY{k+kt}{real} \PY{n}{gle}\PY{o}{=}\PY{n+nf}{degrees}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{n}{M}\PY{p}{)}\PY{o}{-}\PY{n+nf}{degrees}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{n}{M}\PY{p}{)}\PY{p}{;}
+        \PY{n+nf}{markangle}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{n+nf}{format}\PY{p}{(}\PY{l+s}{"\PYZpc{}0g"}\PY{p}{,}\PY{o}{-}\PY{n}{gle}\PY{p}{)}\PY{p}{,}\PY{n+nf}{UnFill}\PY{p}{)}\PY{p}{,}
+        \PY{n}{B}\PY{p}{,} \PY{n}{M}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nf}{radius}\PY{o}{=}\PY{n+nf}{sgn}\PY{p}{(}\PY{o}{-}\PY{n}{gle}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{30}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n}{p}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} \PY{p}{\PYZcb{}}
+      \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{p}{;} \PY{p}{\PYZcb{}}
+\end{Verbatim}

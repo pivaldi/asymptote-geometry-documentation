@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£constant`currentcoordsys`=£~color£function-name`rotate`(20)*£~color£constant`defaultcoordsys`;
-£~color£type`point` £~color£variable-name`C`=(1,1); £~color£function-name`dot`(C);
-£~color£type`ellipse` £~color£variable-name`el`=£~color£function-name`ellipse`(C,2,1); £~color£function-name`draw`(el, £~color£constant`grey`);
-£~color£type`arc` £~color£variable-name`AE`=£~color£function-name`arc`(el, 45, 180, fromCenter); £~color£function-name`draw`(AE, £~color£function-name`linewidth`(£~color£constant`bp`), £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`draw`(£~color£function-name`scale`(0.5,C)*AE, £~color£constant`bp`+0.8£~color£constant`red`, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`draw`(£~color£function-name`scale`(-0.5,C)*AE, £~color£constant`bp`+0.8£~color£constant`blue`,£~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`draw`(£~color£function-name`scale`(1.1,C)*AE, £~color£constant`bp`+0.8*£~color£constant`yellow`, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£type`transform` £~color£variable-name`t`=£~color£function-name`scale`(-0.5,£~color£function-name`line`(el.F1,el.F2), £~color£function-name`line`(£~color£constant`S`,£~color£constant`N`));
-£~color£function-name`draw`(t*AE, £~color£constant`bp`+0.8(£~color£constant`red`+£~color£constant`blue`), £~color£function-name`Arrow`(3£~color£constant`mm`));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{rotate}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{)}\PY{o}{*}\PY{n+nv}{defaultcoordsys}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{C}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{arc} \PY{n}{AE}\PY{o}{=}\PY{n+nf}{arc}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{l+m+mi}{180}\PY{p}{,} \PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{AE}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{scale}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{o}{*}\PY{n}{AE}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{n+nv}{red}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{scale}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{o}{*}\PY{n}{AE}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{n+nv}{blue}\PY{p}{,}\PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{scale}\PY{p}{(}\PY{l+m+mf}{1.1}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{o}{*}\PY{n}{AE}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{yellow}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{transform} \PY{n}{t}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{n+nf}{line}\PY{p}{(}\PY{n}{el}\PY{p}{.}\PY{n}{F1}\PY{p}{,}\PY{n}{el}\PY{p}{.}\PY{n}{F2}\PY{p}{)}\PY{p}{,} \PY{n+nf}{line}\PY{p}{(}\PY{n+nv}{S}\PY{p}{,}\PY{n+nv}{N}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{t}\PY{o}{*}\PY{n}{AE}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{p}{(}\PY{n+nv}{red}\PY{o}{+}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

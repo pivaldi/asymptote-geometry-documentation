@@ -1,12 +1,14 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(8£~color£constant`cm`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{8}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`P1`=(-3,0), £~color£variable-name`P2`=(3,0);
-£~color£function-name`draw`(£~color£function-name`box`((-5,-5),(5,5)), £~color£constant`invisible`);
+    \PY{k+kt}{point} \PY{n}{P1}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{P2}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{5}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
 
-£~color£type`hyperbola` £~color£variable-name`H`=£~color£function-name`hyperbola`(P1,P2,2.2);
+    \PY{k+kt}{hyperbola} \PY{n}{H}\PY{o}{=}\PY{n+nf}{hyperbola}\PY{p}{(}\PY{n}{P1}\PY{p}{,}\PY{n}{P2}\PY{p}{,}\PY{l+m+mf}{2.2}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(H, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£function-name`draw`(H.A1^^H.A2, £~color£constant`grey`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{H}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{H}\PY{p}{.}\PY{n}{A1}\PY{o}{\PYZca{}}\PY{o}{\PYZca{}}\PY{n}{H}\PY{p}{.}\PY{n}{A2}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(£~color£function-name`conj`(H), £~color£constant`bp`+0.8*£~color£constant`red`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{conj}\PY{p}{(}\PY{n}{H}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

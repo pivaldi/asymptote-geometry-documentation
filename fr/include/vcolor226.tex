@@ -1,14 +1,16 @@
-£~color£builtin`struct` £~color£constant`triangle` {
-  £~color£builtin`restricted` £~color£type`point` A, B, C;
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{struct} \PY{n+nf}{triangle} \PY{p}{\PYZob{}}
+      \PY{k}{restricted} \PY{k+kt}{point} \PY{n}{A}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n}{C}\PY{p}{;}
 
-  £~color£builtin`struct` £~color£type`vertex` {
-    £~color£type`int` £~color£variable-name`n`;
-    £~color£type`triangle` £~color£variable-name`t`; }
+      \PY{k}{struct} \PY{k+kt}{vertex} \PY{p}{\PYZob{}}
+        \PY{k+kt}{int} \PY{n}{n}\PY{p}{;}
+        \PY{k+kt}{triangle} \PY{n}{t}\PY{p}{;} \PY{p}{\PYZcb{}}
 
-  £~color£builtin`restricted` £~color£type`vertex` VA, VB, VC;
+      \PY{k}{restricted} \PY{k+kt}{vertex} \PY{n}{VA}\PY{p}{,} \PY{n}{VB}\PY{p}{,} \PY{n}{VC}\PY{p}{;}
 
-  £~color£builtin`struct` £~color£type`side` {
-    £~color£type`int` £~color£variable-name`n`;
-    £~color£type`triangle` £~color£variable-name`t`; }
+      \PY{k}{struct} \PY{n+nf}{side} \PY{p}{\PYZob{}}
+        \PY{k+kt}{int} \PY{n}{n}\PY{p}{;}
+        \PY{k+kt}{triangle} \PY{n}{t}\PY{p}{;} \PY{p}{\PYZcb{}}
 
-  £~color£type`side` £~color£variable-name`AB`, £~color£variable-name`BC`, £~color£variable-name`CA`, £~color£variable-name`BA`, £~color£variable-name`AC`, £~color£variable-name`CB`; }
+      \PY{k+kt}{side} \PY{n}{AB}\PY{p}{,} \PY{n}{BC}\PY{p}{,} \PY{n}{CA}\PY{p}{,} \PY{n}{BA}\PY{p}{,} \PY{n}{AC}\PY{p}{,} \PY{n}{CB}\PY{p}{;} \PY{p}{\PYZcb{}}
+\end{Verbatim}

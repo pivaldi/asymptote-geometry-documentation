@@ -1,9 +1,11 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£function-name`draw`(£~color£function-name`box`((-5,-3),(5,3)), £~color£constant`invisible`);
-£~color£type`hyperbola` £~color£variable-name`h`=£~color£function-name`hyperbola`(£~color£constant`origin`,1.5,1);
-£~color£function-name`draw`(h, £~color£function-name`linewidth`(£~color£constant`bp`));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{5}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{hyperbola} \PY{n}{h}\PY{o}{=}\PY{n+nf}{hyperbola}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{h}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 360; i +=45 ) {
-  £~color£type`point` £~color£constant`M`=(1.5*£~color£function-name`Cos`(i), £~color£function-name`Sin`(i));
-  £~color£function-name`dot`(£~color£constant`M`); £~color£function-name`draw`(£~color£function-name`tangents`(h,£~color£constant`M`)); }
-£~color£function-name`draw`(£~color£function-name`ellipse`(£~color£constant`origin`,1.5,1), £~color£constant`grey`);
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{l+m+mi}{360}\PY{p}{;} \PY{n}{i} \PY{o}{+}\PY{o}{=}\PY{l+m+mi}{45} \PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.5}\PY{o}{*}\PY{n+nf}{Cos}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Sin}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{dot}\PY{p}{(}\PY{n}{M}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{tangents}\PY{p}{(}\PY{n}{h}\PY{p}{,}\PY{n}{M}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{p}{\PYZcb{}}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

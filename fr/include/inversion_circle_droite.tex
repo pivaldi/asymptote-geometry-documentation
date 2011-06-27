@@ -1,14 +1,16 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
 
-£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`((£~color£type`point`)(0,0),1);
-£~color£function-name`draw`(C, £~color£function-name`linewidth`(£~color£constant`bp`));
+  \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`O`=£~color£function-name`dir`(45);
-£~color£function-name`dot`(£~color£string`"$O$"`,O);
+  \PY{k+kt}{point} \PY{n}{O}\PY{o}{=}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZdl{}"}\PY{p}{,}\PY{n}{O}\PY{p}{)}\PY{p}{;}
 
-£~color£type`inversion` £~color£variable-name`inv`=£~color£function-name`inversion`(3,O);
-£~color£type`circle` £~color£variable-name`Cp`=inv*C;
-£~color£function-name`draw`(Cp);
+  \PY{k+kt}{inversion} \PY{n}{inv}\PY{o}{=}\PY{n+nf}{inversion}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{n}{O}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{circle} \PY{n}{Cp}\PY{o}{=}\PY{n}{inv}\PY{o}{*}\PY{n}{C}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Cp}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`dot`(£~color£function-name`intersectionpoints`(C,Cp), £~color£constant`red`);
+  \PY{n+nf}{dot}\PY{p}{(}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{n}{Cp}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

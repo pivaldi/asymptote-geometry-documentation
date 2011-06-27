@@ -1,6 +1,8 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6£~color£constant`cm`,0);
-£~color£type`ellipse` £~color£variable-name`EL`=£~color£function-name`ellipse`(£~color£constant`origin`,2,1);
-£~color£type`arc` £~color£variable-name`AE`=£~color£function-name`arc`(EL, 210, 45, fromCenter);
-£~color£function-name`draw`(AE, £~color£function-name`linewidth`(£~color£constant`bp`), £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`draw`(£~color£function-name`complementary`(AE), £~color£constant`bp`+0.8*£~color£constant`red`, £~color£function-name`Arrow`(3£~color£constant`mm`));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{6}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{EL}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{arc} \PY{n}{AE}\PY{o}{=}\PY{n+nf}{arc}\PY{p}{(}\PY{n}{EL}\PY{p}{,} \PY{l+m+mi}{210}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{AE}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{complementary}\PY{p}{(}\PY{n}{AE}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

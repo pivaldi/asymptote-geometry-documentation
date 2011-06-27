@@ -1,15 +1,17 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(5£~color£constant`cm`,0);
-£~color£type`transform` £~color£variable-name`t`=£~color£function-name`rotate`(135);
-£~color£type`line` £~color£variable-name`l1`=t*£~color£function-name`line`((0,0),£~color£constant`E`); £~color£type`line` £~color£variable-name`l2`=t*£~color£function-name`line`((0,0),£~color£constant`N`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{transform} \PY{n}{t}\PY{o}{=}\PY{n+nf}{rotate}\PY{p}{(}\PY{l+m+mi}{135}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{l1}\PY{o}{=}\PY{n}{t}\PY{o}{*}\PY{n+nf}{line}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{n+nv}{E}\PY{p}{)}\PY{p}{;} \PY{k+kt}{line} \PY{n}{l2}\PY{o}{=}\PY{n}{t}\PY{o}{*}\PY{n+nf}{line}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
 
-£~color£constant`perpfactor` *=5.5;
-£~color£function-name`perpendicularmark`(l1,l2, £~color£function-name`Fill`(0.8*£~color£constant`green`));
-£~color£function-name`perpendicularmark`(l1,l2, quarter=2, £~color£function-name`Fill`(0.8*£~color£constant`blue`));
-£~color£function-name`perpendicularmark`(l1,l2, quarter=3, £~color£function-name`Fill`(0.8*£~color£constant`red`));
-£~color£function-name`perpendicularmark`(l1,l2, quarter=4, £~color£function-name`Fill`(0.8*£~color£constant`yellow`));
+    \PY{n+nv}{perpfactor} \PY{o}{*}\PY{o}{=}\PY{l+m+mf}{5.5}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{l1}\PY{p}{,}\PY{n}{l2}\PY{p}{,} \PY{n+nf}{Fill}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{green}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{l1}\PY{p}{,}\PY{n}{l2}\PY{p}{,} \PY{n}{quarter}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{,} \PY{n+nf}{Fill}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{l1}\PY{p}{,}\PY{n}{l2}\PY{p}{,} \PY{n}{quarter}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n+nf}{Fill}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{l1}\PY{p}{,}\PY{n}{l2}\PY{p}{,} \PY{n}{quarter}\PY{o}{=}\PY{l+m+mi}{4}\PY{p}{,} \PY{n+nf}{Fill}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{yellow}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`); £~color£type`position` £~color£variable-name`pos`=£~color£function-name`Relative`(0.75);
-£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$u_1$"`,pos), l1.u, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$u_2$"`,pos,£~color£constant`align`=£~color£constant`SE`), l2.u, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`show`(£~color£string`""`, -£~color£function-name`l1`.u, £~color£constant`invisible`); £~color£function-name`show`(£~color£string`""`, -£~color£function-name`l2`.u, £~color£constant`invisible`);
+    \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;} \PY{k+kt}{position} \PY{n}{pos}\PY{o}{=}\PY{n+nf}{Relative}\PY{p}{(}\PY{l+m+mf}{0.75}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}u\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n}{pos}\PY{p}{)}\PY{p}{,} \PY{n}{l1}\PY{p}{.}\PY{n}{u}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}u\PYZus{}2\PYZdl{}"}\PY{p}{,}\PY{n}{pos}\PY{p}{,}\PY{n+nf}{align}\PY{o}{=}\PY{n+nv}{SE}\PY{p}{)}\PY{p}{,} \PY{n}{l2}\PY{p}{.}\PY{n}{u}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{""}\PY{p}{,} \PY{o}{-}\PY{n}{l1}\PY{p}{.}\PY{n}{u}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;} \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{""}\PY{p}{,} \PY{o}{-}\PY{n}{l2}\PY{p}{.}\PY{n}{u}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

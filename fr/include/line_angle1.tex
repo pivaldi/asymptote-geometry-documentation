@@ -1,17 +1,19 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(5£~color£constant`cm`,0);
-£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((1,-2), i=(1,0.5), j=(-1,1));
-£~color£function-name`show`(£~color£string`"$O_{1}$"`, £~color£string`"$\vec{u}$"`, £~color£function-name`Label`(£~color£string`"$\vec{v}$"`, £~color£constant`align`=£~color£constant`E`),
-     R, ipen=£~color£constant`blue`, ypen=£~color£constant`invisible`);
-£~color£function-name`show`(£~color£constant`defaultcoordsys`, ypen=£~color£constant`invisible`);
-£~color£type`point` £~color£variable-name`A`=£~color£function-name`point`(R,(1,1)); £~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`NW`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{coordsys} \PY{n}{R}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZus{}\PYZob{}1\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n+nf}{align}\PY{o}{=}\PY{n+nv}{E}\PY{p}{)}\PY{p}{,}
+    \PY{n}{R}\PY{p}{,} \PY{n}{ipen}\PY{o}{=}\PY{n+nv}{blue}\PY{p}{,} \PY{n}{ypen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{defaultcoordsys}\PY{p}{,} \PY{n}{ypen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{n+nf}{point}\PY{p}{(}\PY{n}{R}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(A, 30);
-£~color£function-name`draw`(l, £~color£constant`bp`+£~color£constant`blue`);
-£~color£function-name`markangle`(£~color£string`"$30^\circ$"`, £~color£function-name`Ox`(R), l, £~color£constant`grey`);
+    \PY{k+kt}{line} \PY{n}{l}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markangle}\PY{p}{(}\PY{l+s}{"\PYZdl{}30\PYZca{}\PYZbs{}circ\PYZdl{}"}\PY{p}{,} \PY{n+nf}{Ox}\PY{p}{(}\PY{n}{R}\PY{p}{)}\PY{p}{,} \PY{n}{l}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
 
-A=£~color£function-name`changecoordsys`(£~color£constant`defaultcoordsys`, A);
-£~color£type`line` £~color£variable-name`ll`=£~color£function-name`line`(A, 40);
-£~color£function-name`draw`(ll, £~color£constant`bp`+£~color£constant`red`);
-£~color£function-name`markangle`(£~color£string`"$40^\circ$"`, £~color£constant`Ox`, ll, £~color£constant`grey`);
-£~color£function-name`draw`(£~color£function-name`box`((-0.6,-2.8), (2,-0.3)), £~color£constant`invisible`);
+    \PY{n}{A}\PY{o}{=}\PY{n+nf}{changecoordsys}\PY{p}{(}\PY{n+nv}{defaultcoordsys}\PY{p}{,} \PY{n}{A}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{ll}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{ll}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markangle}\PY{p}{(}\PY{l+s}{"\PYZdl{}40\PYZca{}\PYZbs{}circ\PYZdl{}"}\PY{p}{,} \PY{n+nf}{Ox}\PY{p}{,} \PY{n}{ll}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.6}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{2.8}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{0.3}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

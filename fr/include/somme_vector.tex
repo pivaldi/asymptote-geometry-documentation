@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((0,0), i=(1,1), j=(-1,1));
-£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+  \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
 
-£~color£type`vector` £~color£variable-name`u`=(0.5,1), £~color£variable-name`v`=£~color£function-name`rotate`(-135)*u/2;
-£~color£function-name`show`(£~color£string`"$\vec{u}$"`, u, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`show`(£~color£string`"$\vec{v}$"`, v, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"\vec{u}+\vec{v}"`,£~color£constant`EndPoint`), u+v, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+  \PY{k+kt}{vector} \PY{n}{u}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{o}{=}\PY{n+nf}{rotate}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{135}\PY{p}{)}\PY{o}{*}\PY{n}{u}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n}{u}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n}{v}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZbs{}vec\PYZob{}u\PYZcb{}+\PYZbs{}vec\PYZob{}v\PYZcb{}"}\PY{p}{,}\PY{n+nv}{EndPoint}\PY{p}{)}\PY{p}{,} \PY{n}{u}\PY{o}{+}\PY{n}{v}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

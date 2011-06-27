@@ -1,12 +1,14 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6£~color£constant`cm`,0);
-£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`);
-£~color£type`point` £~color£variable-name`A`=(2.5,2); £~color£function-name`dot`(£~color£string`"$A$"`, A, £~color£constant`S`, £~color£constant`red`);
-£~color£type`ellipse` £~color£variable-name`el`=£~color£function-name`ellipse`(A,2,1,45);
-£~color£function-name`draw`(el, £~color£function-name`linewidth`(£~color£constant`bp`));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{6}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{2.5}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{S}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`dot`(£~color£string`"relpoint(el, 0)"`, £~color£function-name`relpoint`(el,0), 2£~color£constant`S`);
-£~color£function-name`dot`(£~color£string`"relpoint(el, 0.25)"`, £~color£function-name`relpoint`(el,0.25), 2£~color£constant`S`);
-£~color£function-name`dot`(£~color£string`"relpoint(el, 0.5)"`, £~color£function-name`relpoint`(el,0.5), 2£~color£constant`S`+£~color£constant`E`);
-£~color£function-name`dot`(£~color£string`"relpoint(el, -0.25)"`, £~color£function-name`relpoint`(el, -0.25), 2£~color£constant`SW`);
-£~color£function-name`dot`(£~color£string`"relpoint(el, 1.125)"`, £~color£function-name`relpoint`(el, 1.125), 2£~color£constant`W`);
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"relpoint(el, 0)"}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{S}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"relpoint(el, 0.25)"}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{S}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"relpoint(el, 0.5)"}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{S}\PY{o}{+}\PY{n+nv}{E}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"relpoint(el, -0.25)"}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{o}{-}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{SW}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"relpoint(el, 1.125)"}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{l+m+mf}{1.125}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

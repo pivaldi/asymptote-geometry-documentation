@@ -1,18 +1,20 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(7.5£~color£constant`cm`,0);
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`); £~color£type`real` £~color£variable-name`k`=£~color£function-name`sqrt`(2);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mf}{7.5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;} \PY{k+kt}{real} \PY{n}{k}\PY{o}{=}\PY{n+nf}{sqrt}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`A`=(0,0); £~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`SW`);
-£~color£type`point` £~color£variable-name`B`=(1,2); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£constant`N`);
-£~color£type`point` £~color£constant`M`=(-1,1);
-£~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, -£~color£function-name`dir`(£~color£constant`M`--A,£~color£constant`M`--B));
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"B"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M"}\PY{p}{,} \PY{n}{M}\PY{p}{,} \PY{o}{-}\PY{n+nf}{dir}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{A}\PY{p}{,}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{B}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`Ap`=£~color£function-name`scale`(k, £~color£constant`M`)*A;
-£~color£function-name`dot`(£~color£string`"A'"`, Ap, £~color£constant`SW`, £~color£constant`red`);
-£~color£type`point` £~color£variable-name`Bp`=£~color£function-name`scale`(k, £~color£constant`M`)*B;
-£~color£function-name`dot`(£~color£string`"B'"`, Bp, £~color£constant`N`, £~color£constant`red`);
+    \PY{k+kt}{point} \PY{n}{Ap}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{n}{k}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{o}{*}\PY{n}{A}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A'"}\PY{p}{,} \PY{n}{Ap}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Bp}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{n}{k}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{o}{*}\PY{n}{B}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"B'"}\PY{p}{,} \PY{n}{Bp}\PY{p}{,} \PY{n+nv}{N}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(£~color£constant`M`--Ap, £~color£constant`grey`); £~color£function-name`draw`(£~color£constant`M`--Bp, £~color£constant`grey`);
-£~color£function-name`draw`(A--B, bpp);
-£~color£function-name`draw`(£~color£function-name`rotate`(£~color£function-name`unit`(Bp-Ap))*£~color£string`"$k\times AB$"`,
-     Ap--Bp, bpp+£~color£constant`red`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{Ap}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{Bp}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{o}{-}\PY{n}{B}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{rotate}\PY{p}{(}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{Bp}\PY{o}{-}\PY{n}{Ap}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+s}{"\PYZdl{}k\PYZbs{}times AB\PYZdl{}"}\PY{p}{,}
+    \PY{n}{Ap}\PY{o}{-}\PY{o}{-}\PY{n}{Bp}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(18£~color£constant`cm`,0);
-£~color£type`point` £~color£variable-name`B`=(1.75,3), £~color£variable-name`C`=(-1,2), £~color£variable-name`D`=(-1.5,-0.5), £~color£variable-name`F`=(1.5,-1);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{18}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.75}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{n}{C}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n}{D}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{1.5}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{n}{F}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{1.5}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
 
-£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 360; i += 21) {
-  £~color£type`point` £~color£variable-name`A`=£~color£function-name`shift`(D)*£~color£function-name`dir`(i);
-  £~color£function-name`dot`(A,£~color£constant`red`);
-  £~color£type`conic` £~color£variable-name`co`=£~color£function-name`conic`(A,B,C,D,F);
-  £~color£function-name`draw`(co, co.e < 1 ? £~color£constant`black` : 0.8*£~color£constant`blue`);
-}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{l+m+mi}{360}\PY{p}{;} \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{21}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{n+nf}{shift}\PY{p}{(}\PY{n}{D}\PY{p}{)}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{dot}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{conic} \PY{n}{co}\PY{o}{=}\PY{n+nf}{conic}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{,}\PY{n}{C}\PY{p}{,}\PY{n}{D}\PY{p}{,}\PY{n}{F}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{draw}\PY{p}{(}\PY{n}{co}\PY{p}{,} \PY{n}{co}\PY{p}{.}\PY{n}{e} \PY{o}{<} \PY{l+m+mi}{1} \PY{o}{?} \PY{n+nv}{black} \PY{o}{:} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+\end{Verbatim}

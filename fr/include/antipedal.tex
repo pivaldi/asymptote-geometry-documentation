@@ -1,25 +1,27 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleabc`(5,6,7);
-£~color£function-name`label`(t); £~color£function-name`draw`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`point` £~color£variable-name`P`=0.5*t.B+0.3*t.C;
-£~color£function-name`dot`(£~color£string`"$P$"`, P, 2*£~color£function-name`dir`(60));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{triangle} \PY{n}{t}\PY{o}{=}\PY{n+nf}{triangleabc}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{label}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{t}\PY{p}{.}\PY{n}{B}\PY{o}{+}\PY{l+m+mf}{0.3}\PY{o}{*}\PY{n}{t}\PY{p}{.}\PY{n}{C}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZdl{}"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{60}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`triangle` £~color£variable-name`Pt`=£~color£function-name`pedal`(t,P);
-£~color£constant`currentpen`=0.8*£~color£constant`blue`; £~color£function-name`draw`(Pt);
-£~color£type`segment` £~color£variable-name`psA`=£~color£function-name`segment`(P,Pt.A);
-£~color£type`segment` £~color£variable-name`psB`=£~color£function-name`segment`(P,Pt.B);
-£~color£type`segment` £~color£variable-name`psC`=£~color£function-name`segment`(P,Pt.C);
-£~color£function-name`draw`(psA); £~color£function-name`draw`(psB); £~color£function-name`draw`(psC);
-£~color£function-name`perpendicularmark`(t.BC,psA);
-£~color£function-name`perpendicularmark`(t.CA,psB);
-£~color£function-name`perpendicularmark`(t.AB,psC);
+    \PY{k+kt}{triangle} \PY{n}{Pt}\PY{o}{=}\PY{n+nf}{pedal}\PY{p}{(}\PY{n}{t}\PY{p}{,}\PY{n}{P}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{currentpen}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Pt}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{segment} \PY{n}{psA}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{Pt}\PY{p}{.}\PY{n}{A}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{segment} \PY{n}{psB}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{Pt}\PY{p}{.}\PY{n}{B}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{segment} \PY{n}{psC}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{Pt}\PY{p}{.}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{psA}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{psB}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{psC}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{,}\PY{n}{psA}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{CA}\PY{p}{,}\PY{n}{psB}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{,}\PY{n}{psC}\PY{p}{)}\PY{p}{;}
 
-£~color£type`triangle` £~color£variable-name`APt`=£~color£function-name`antipedal`(t, P);
-£~color£constant`currentpen`=0.8*£~color£constant`red`; £~color£function-name`draw`(APt);
-£~color£type`segment` £~color£variable-name`apsA`=£~color£function-name`segment`(P,t.A);
-£~color£type`segment` £~color£variable-name`apsB`=£~color£function-name`segment`(P,t.B);
-£~color£type`segment` £~color£variable-name`apsC`=£~color£function-name`segment`(P,t.C);
-£~color£function-name`draw`(apsA); £~color£function-name`draw`(apsB); £~color£function-name`draw`(apsC);
-£~color£function-name`perpendicularmark`(APt.BC,apsA);
-£~color£function-name`perpendicularmark`(APt.CA,apsB);
-£~color£function-name`perpendicularmark`(APt.AB,apsC);
+    \PY{k+kt}{triangle} \PY{n}{APt}\PY{o}{=}\PY{n+nf}{antipedal}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n}{P}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{currentpen}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{APt}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{segment} \PY{n}{apsA}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{t}\PY{p}{.}\PY{n}{A}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{segment} \PY{n}{apsB}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{t}\PY{p}{.}\PY{n}{B}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{segment} \PY{n}{apsC}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{t}\PY{p}{.}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{apsA}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{apsB}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{apsC}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{APt}\PY{p}{.}\PY{n}{BC}\PY{p}{,}\PY{n}{apsA}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{APt}\PY{p}{.}\PY{n}{CA}\PY{p}{,}\PY{n}{apsB}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{APt}\PY{p}{.}\PY{n}{AB}\PY{p}{,}\PY{n}{apsC}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,12 +1,14 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(10£~color£constant`cm`);
-£~color£type`point` £~color£variable-name`F`=(-1,0); £~color£type`line` £~color£variable-name`D`=£~color£function-name`line`(£~color£constant`N`,£~color£constant`S`);
-£~color£type`conic` £~color£variable-name`co`=£~color£function-name`conic`(F, D, 0.85); £~color£function-name`dot`(£~color£string`"$F$"`, F); £~color£function-name`draw`(co, £~color£function-name`linewidth`(£~color£constant`bp`));
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{point} \PY{n}{F}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{k+kt}{line} \PY{n}{D}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n+nv}{N}\PY{p}{,}\PY{n+nv}{S}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{conic} \PY{n}{co}\PY{o}{=}\PY{n+nf}{conic}\PY{p}{(}\PY{n}{F}\PY{p}{,} \PY{n}{D}\PY{p}{,} \PY{l+m+mf}{0.85}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZdl{}"}\PY{p}{,} \PY{n}{F}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{co}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`ellipse` £~color£variable-name`el`=co; £~color£function-name`dot`(£~color£string`"$C$"`, el.C, £~color£constant`S`);
-£~color£function-name`distance`(£~color£function-name`format`(£~color£string`"$2c=%f$"`, el.c),el.F1, el.F2, 3£~color£constant`cm`, joinpen=£~color£constant`dashed`);
-£~color£function-name`distance`(£~color£function-name`format`(£~color£string`"$2a=%f$"`, el.a), £~color£function-name`relpoint`(el,0), £~color£function-name`relpoint`(el,0.5), 3£~color£constant`cm`,
-         joinpen=£~color£constant`dashed`);
-£~color£function-name`distance`(£~color£function-name`format`(£~color£string`"$2b=%f$"`, el.b), £~color£function-name`relpoint`(el,0.25), £~color£function-name`relpoint`(el,0.75), 5.25£~color£constant`cm`,
-         joinpen=£~color£constant`dashed`);
-£~color£function-name`dot`(£~color£string`"$F'$"`, el.F2, £~color£constant`W`);
+  \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n}{co}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n+nv}{S}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{distance}\PY{p}{(}\PY{n+nf}{format}\PY{p}{(}\PY{l+s}{"\PYZdl{}2c=\PYZpc{}f\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{c}\PY{p}{)}\PY{p}{,}\PY{n}{el}\PY{p}{.}\PY{n}{F1}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{F2}\PY{p}{,} \PY{l+m+mi}{3}\PY{n+nv}{cm}\PY{p}{,} \PY{n}{joinpen}\PY{o}{=}\PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{distance}\PY{p}{(}\PY{n+nf}{format}\PY{p}{(}\PY{l+s}{"\PYZdl{}2a=\PYZpc{}f\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{a}\PY{p}{)}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{3}\PY{n+nv}{cm}\PY{p}{,}
+  \PY{n}{joinpen}\PY{o}{=}\PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{distance}\PY{p}{(}\PY{n+nf}{format}\PY{p}{(}\PY{l+s}{"\PYZdl{}2b=\PYZpc{}f\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{b}\PY{p}{)}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{,} \PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mf}{0.75}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{5.25}\PY{n+nv}{cm}\PY{p}{,}
+  \PY{n}{joinpen}\PY{o}{=}\PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F'\PYZdl{}"}\PY{p}{,} \PY{n}{el}\PY{p}{.}\PY{n}{F2}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

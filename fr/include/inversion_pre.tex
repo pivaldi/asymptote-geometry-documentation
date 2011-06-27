@@ -1,12 +1,14 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6.5£~color£constant`cm`,0); £~color£constant`currentpen`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£type`point` £~color£variable-name`O`=£~color£constant`origin`, £~color£constant`M`=(2,1), £~color£variable-name`P`=(2,-1);
-£~color£function-name`dot`(£~color£string`"O"`, O, £~color£constant`W`);
-£~color£type`inversion` £~color£variable-name`t`=£~color£function-name`inversion`(2,O);
-£~color£type`point` £~color£variable-name`Mp`=t*£~color£constant`M`, £~color£variable-name`Pt`=t*P;
-£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(£~color£constant`M`,P,Mp); £~color£function-name`draw`(C);
-£~color£function-name`dot`(£~color£string`"M"`, £~color£constant`M`, £~color£constant`N`, £~color£constant`blue`); £~color£function-name`dot`(£~color£string`"P"`, P, £~color£constant`S`, £~color£constant`blue`);
-£~color£function-name`dot`(£~color£string`"M'"`, Mp, £~color£constant`red`); £~color£function-name`dot`(£~color£string`"P'"`, Pt, £~color£constant`red`);
-£~color£type`circle` £~color£variable-name`Ct`=£~color£function-name`circle`(t); £~color£function-name`clipdraw`(Ct, 0.8*£~color£constant`red`);
-£~color£type`point`[] T=£~color£function-name`intersectionpoints`(C,Ct);
-£~color£function-name`draw`(£~color£function-name`line`(O,£~color£builtin`false`,T[0])); £~color£function-name`draw`(£~color£function-name`line`(O,£~color£builtin`false`,T[1]));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mf}{6.5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{n+nv}{currentpen}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{O}\PY{o}{=}\PY{n+nf}{origin}\PY{p}{,} \PY{n}{M}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{P}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"O"}\PY{p}{,} \PY{n}{O}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{inversion} \PY{n}{t}\PY{o}{=}\PY{n+nf}{inversion}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{O}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Mp}\PY{o}{=}\PY{n}{t}\PY{o}{*}\PY{n}{M}\PY{p}{,} \PY{n}{Pt}\PY{o}{=}\PY{n}{t}\PY{o}{*}\PY{n}{P}\PY{p}{;}
+    \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{M}\PY{p}{,}\PY{n}{P}\PY{p}{,}\PY{n}{Mp}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M"}\PY{p}{,} \PY{n}{M}\PY{p}{,} \PY{n+nv}{N}\PY{p}{,} \PY{n+nv}{blue}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"P"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n+nv}{S}\PY{p}{,} \PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M'"}\PY{p}{,} \PY{n}{Mp}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"P'"}\PY{p}{,} \PY{n}{Pt}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{circle} \PY{n}{Ct}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{;} \PY{n+nf}{clipdraw}\PY{p}{(}\PY{n}{Ct}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{point}\PY{p}{[}\PY{p}{]} \PY{n}{T}\PY{o}{=}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{n}{Ct}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{line}\PY{p}{(}\PY{n}{O}\PY{p}{,}\PY{k}{false}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{line}\PY{p}{(}\PY{n}{O}\PY{p}{,}\PY{k}{false}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

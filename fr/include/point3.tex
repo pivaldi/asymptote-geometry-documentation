@@ -1,7 +1,9 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((3,0), (1,0), (1,1));
-£~color£function-name`show`(£~color£string`""`, £~color£constant`currentcoordsys`);
-£~color£type`point` £~color£variable-name`A`=(1,1);
-£~color£function-name`dot`(£~color£string`"$A$"`, A); £~color£function-name`draw`(£~color£function-name`locate`(0)--A);
-£~color£function-name`draw`(£~color£function-name`locate`((0,1))--A, £~color£constant`dashed`); £~color£function-name`draw`(£~color£function-name`locate`((1,0))--A, £~color£constant`dashed`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{""}\PY{p}{,} \PY{n+nv}{currentcoordsys}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,} \PY{n}{A}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{locate}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}\PY{o}{-}\PY{o}{-}\PY{n}{A}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{locate}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{-}\PY{o}{-}\PY{n}{A}\PY{p}{,} \PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{locate}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}\PY{o}{-}\PY{o}{-}\PY{n}{A}\PY{p}{,} \PY{n+nv}{dashed}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

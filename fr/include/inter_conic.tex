@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`); £~color£type`conic` £~color£variable-name`co`[];
-co[0]=£~color£function-name`conic`((-4.58,1.25), £~color£function-name`line`((-5.45545,1.25), (-5.45545,2.12287)), 0.9165);
-£~color£function-name`draw`(co[0]);
-co[1]=£~color£function-name`conic`((0,-1),£~color£function-name`line`((0,-3.5),(-1,-3.5)),1); £~color£function-name`draw`(co[1]);
-co[2]=£~color£function-name`conic`((-1.2,0), £~color£function-name`line`((-5/6,0),(-5/6,-1)),1.2); £~color£function-name`draw`(co[2]);
-£~color£constant`dotfactor` *= 2;
-£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 3; ++i)
-  £~color£builtin`for` (£~color£type`int` £~color£variable-name`j`=i+1; j < 3; ++j)
-    £~color£function-name`dot`(£~color£function-name`intersectionpoints`(co[i],co[j]), £~color£constant`red`);
-£~color£function-name`addMargins`(lmargin=10£~color£constant`mm`,bmargin=10£~color£constant`mm`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;} \PY{k+kt}{conic} \PY{n}{co}\PY{p}{[}\PY{p}{]}\PY{p}{;}
+    \PY{n}{co}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{=}\PY{n+nf}{conic}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{4.58}\PY{p}{,}\PY{l+m+mf}{1.25}\PY{p}{)}\PY{p}{,} \PY{n+nf}{line}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{5.45545}\PY{p}{,}\PY{l+m+mf}{1.25}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{o}{-}\PY{l+m+mf}{5.45545}\PY{p}{,}\PY{l+m+mf}{2.12287}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.9165}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{co}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n}{co}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{n+nf}{conic}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n+nf}{line}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{3.5}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{3.5}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{co}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n}{co}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{=}\PY{n+nf}{conic}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{1.2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n+nf}{line}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{5}\PY{o}{/}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{5}\PY{o}{/}\PY{l+m+mi}{6}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{l+m+mf}{1.2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{co}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{dotfactor} \PY{o}{*}\PY{o}{=} \PY{l+m+mi}{2}\PY{p}{;}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{l+m+mi}{3}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{p}{)}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{j} \PY{o}{<} \PY{l+m+mi}{3}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{p}{)}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{co}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{co}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{addMargins}\PY{p}{(}\PY{n}{lmargin}\PY{o}{=}\PY{l+m+mi}{10}\PY{n+nv}{mm}\PY{p}{,}\PY{n}{bmargin}\PY{o}{=}\PY{l+m+mi}{10}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

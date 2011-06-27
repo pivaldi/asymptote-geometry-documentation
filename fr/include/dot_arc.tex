@@ -1,8 +1,10 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£constant`ellipsenodesnumberfactor`=100;
-£~color£type`point` £~color£variable-name`A`=(1,1); £~color£function-name`dot`(£~color£string`"$A$"`,A,£~color£constant`S`,£~color£constant`red`);
-£~color£type`ellipse` £~color£variable-name`EL`=£~color£function-name`ellipse`(A,2,1);
-£~color£function-name`dot`((£~color£type`path`)£~color£function-name`arc`(EL, 210, 45, fromCenter));
-£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(A,2);
-£~color£function-name`dot`((£~color£type`path`)£~color£function-name`arc`(C, 210, 45));
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{n+nv}{ellipsenodesnumberfactor}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{;}
+  \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,}\PY{n}{A}\PY{p}{,}\PY{n+nv}{S}\PY{p}{,}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{ellipse} \PY{n}{EL}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{p}{(}\PY{n+nf}{path}\PY{p}{)}\PY{n+nf}{arc}\PY{p}{(}\PY{n}{EL}\PY{p}{,} \PY{l+m+mi}{210}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{p}{(}\PY{n+nf}{path}\PY{p}{)}\PY{n+nf}{arc}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{l+m+mi}{210}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

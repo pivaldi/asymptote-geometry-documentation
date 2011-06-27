@@ -1,13 +1,15 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(5£~color£constant`cm`,0);
-£~color£type`int` £~color£variable-name`n`=50;
-£~color£type`mass`[] £~color£constant`M`;
-£~color£type`real` £~color£variable-name`m`, £~color£variable-name`step`=360/n;
-£~color£type`pair` £~color£variable-name`dir`;
-£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 2*n; ++i) {
-  dir=£~color£function-name`dir`(i*step);
-  m=i+1;
-  £~color£constant`M`.push(£~color£function-name`mass`(m*dir, m));
-  £~color£function-name`dot`(£~color£function-name`locate`(£~color£constant`M`[i]));
-}
-£~color£function-name`dot`(£~color£string`"G"`,£~color£function-name`masscenter`(... £~color£constant`M`), £~color£constant`red`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{int} \PY{n}{n}\PY{o}{=}\PY{l+m+mi}{50}\PY{p}{;}
+  \PY{n+nf}{mass}\PY{p}{[}\PY{p}{]} \PY{n}{M}\PY{p}{;}
+  \PY{k+kt}{real} \PY{n}{m}\PY{p}{,} \PY{n+nf}{step}\PY{o}{=}\PY{l+m+mi}{360}\PY{o}{/}\PY{n}{n}\PY{p}{;}
+  \PY{k+kt}{pair} \PY{n+nf}{dir}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{n}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n+nf}{dir}\PY{o}{=}\PY{n+nf}{dir}\PY{p}{(}\PY{n}{i}\PY{o}{*}\PY{n+nf}{step}\PY{p}{)}\PY{p}{;}
+    \PY{n}{m}\PY{o}{=}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{;}
+    \PY{n}{M}\PY{p}{.}\PY{n}{push}\PY{p}{(}\PY{n+nf}{mass}\PY{p}{(}\PY{n}{m}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{,} \PY{n}{m}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{n+nf}{locate}\PY{p}{(}\PY{n}{M}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"G"}\PY{p}{,}\PY{n+nf}{masscenter}\PY{p}{(}\PY{p}{.}\PY{p}{.}\PY{p}{.} \PY{n}{M}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

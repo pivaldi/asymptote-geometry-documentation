@@ -1,24 +1,26 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleabc`(5,6,7); £~color£function-name`draw`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`point` £~color£variable-name`P`=0.5*t.B+0.3*(t.C-t.B); £~color£function-name`dot`(£~color£string`"$P$"`, P, £~color£constant`N`, 0.8*£~color£constant`red`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{triangle} \PY{n}{t}\PY{o}{=}\PY{n+nf}{triangleabc}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{t}\PY{p}{.}\PY{n}{B}\PY{o}{+}\PY{l+m+mf}{0.3}\PY{o}{*}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{C}\PY{o}{-}\PY{n}{t}\PY{p}{.}\PY{n}{B}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZdl{}"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n+nv}{N}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`Q`=£~color£function-name`isogonalconjugate`(t,P); £~color£function-name`dot`(£~color£string`"$Q$"`, Q, £~color£function-name`dir`(-30));
-£~color£type`point` £~color£variable-name`Q1`=£~color£function-name`projection`(t.AB)*Q; £~color£type`segment` £~color£variable-name`sq1`=£~color£function-name`segment`(Q,Q1);
-£~color£type`point` £~color£variable-name`Q2`=£~color£function-name`projection`(t.BC)*Q; £~color£type`segment` £~color£variable-name`sq2`=£~color£function-name`segment`(Q,Q2);
-£~color£type`point` £~color£variable-name`Q3`=£~color£function-name`projection`(t.AC)*Q; £~color£type`segment` £~color£variable-name`sq3`=£~color£function-name`segment`(Q,Q3);
-£~color£function-name`draw`(sq1); £~color£function-name`draw`(sq2); £~color£function-name`draw`(sq3);
-£~color£function-name`dot`(£~color£string`"$Q_1$"`, Q1, £~color£constant`SE`); £~color£function-name`dot`(£~color£string`"$Q_2$"`, Q2); £~color£function-name`dot`(£~color£string`"$Q_3$"`, Q3, £~color£constant`NW`);
+    \PY{k+kt}{point} \PY{n}{Q}\PY{o}{=}\PY{n+nf}{isogonalconjugate}\PY{p}{(}\PY{n}{t}\PY{p}{,}\PY{n}{P}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}Q\PYZdl{}"}\PY{p}{,} \PY{n}{Q}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Q1}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{)}\PY{o}{*}\PY{n}{Q}\PY{p}{;} \PY{k+kt}{segment} \PY{n}{sq1}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{Q}\PY{p}{,}\PY{n}{Q1}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Q2}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{)}\PY{o}{*}\PY{n}{Q}\PY{p}{;} \PY{k+kt}{segment} \PY{n}{sq2}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{Q}\PY{p}{,}\PY{n}{Q2}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Q3}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AC}\PY{p}{)}\PY{o}{*}\PY{n}{Q}\PY{p}{;} \PY{k+kt}{segment} \PY{n}{sq3}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{Q}\PY{p}{,}\PY{n}{Q3}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{sq1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{sq2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{sq3}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}Q\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{Q1}\PY{p}{,} \PY{n+nv}{SE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}Q\PYZus{}2\PYZdl{}"}\PY{p}{,} \PY{n}{Q2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}Q\PYZus{}3\PYZdl{}"}\PY{p}{,} \PY{n}{Q3}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`P1`=£~color£function-name`projection`(t.AB)*P; £~color£type`segment` £~color£constant`sp`1=£~color£function-name`segment`(P,P1);
-£~color£type`point` £~color£variable-name`P2`=£~color£function-name`projection`(t.BC)*P; £~color£type`segment` £~color£constant`sp`2=£~color£function-name`segment`(P,P2);
-£~color£type`point` £~color£variable-name`P3`=£~color£function-name`projection`(t.AC)*P; £~color£type`segment` £~color£constant`sp`3=£~color£function-name`segment`(P,P3);
-£~color£function-name`draw`(£~color£constant`sp`1, 0.8*£~color£constant`red`); £~color£function-name`draw`(£~color£constant`sp`2, 0.8*£~color£constant`red`); £~color£function-name`draw`(£~color£constant`sp`3, 0.8*£~color£constant`red`);
-£~color£function-name`dot`(£~color£string`"$P_1$"`,P1,£~color£constant`SW`,0.8*£~color£constant`red`); £~color£function-name`dot`(£~color£string`"$P_2$"`,P2,0.8*£~color£constant`red`); £~color£function-name`dot`(£~color£string`"$P_3$"`,P3,£~color£constant`NW`,0.8*£~color£constant`red`);
+    \PY{k+kt}{point} \PY{n}{P1}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{)}\PY{o}{*}\PY{n}{P}\PY{p}{;} \PY{k+kt}{segment} \PY{n}{sp1}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{P1}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P2}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{)}\PY{o}{*}\PY{n}{P}\PY{p}{;} \PY{k+kt}{segment} \PY{n}{sp2}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{P2}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P3}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AC}\PY{p}{)}\PY{o}{*}\PY{n}{P}\PY{p}{;} \PY{k+kt}{segment} \PY{n}{sp3}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{P}\PY{p}{,}\PY{n}{P3}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{sp1}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{sp2}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{sp3}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n}{P1}\PY{p}{,}\PY{n+nv}{SW}\PY{p}{,}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZus{}2\PYZdl{}"}\PY{p}{,}\PY{n}{P2}\PY{p}{,}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZus{}3\PYZdl{}"}\PY{p}{,}\PY{n}{P3}\PY{p}{,}\PY{n+nv}{NW}\PY{p}{,}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`perpendicularmark`(t.AB,sq1); £~color£function-name`perpendicularmark`(t.BC,sq2);
-£~color£function-name`perpendicularmark`(£~color£function-name`reverse`(t.AC),sq3); £~color£function-name`perpendicularmark`(t.AB,£~color£constant`sp`1, £~color£constant`red`);
-£~color£function-name`perpendicularmark`(t.BC,£~color£constant`sp`2, £~color£constant`red`); £~color£function-name`perpendicularmark`(£~color£function-name`reverse`(t.AC),£~color£constant`sp`3, £~color£constant`red`);
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{,}\PY{n}{sq1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{,}\PY{n}{sq2}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n+nf}{reverse}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AC}\PY{p}{)}\PY{p}{,}\PY{n}{sq3}\PY{p}{)}\PY{p}{;} \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{,}\PY{n}{sp1}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{,}\PY{n}{sp2}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{perpendicularmark}\PY{p}{(}\PY{n+nf}{reverse}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AC}\PY{p}{)}\PY{p}{,}\PY{n}{sp3}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(Q1,Q2,Q3); £~color£function-name`draw`(C, 0.8*£~color£constant`blue`);
-£~color£function-name`draw`(£~color£function-name`segment`(Q,P), 0.8*£~color£constant`blue`, £~color£function-name`StickIntervalMarker`(2,2, 0.8*£~color£constant`blue`));
-£~color£function-name`dot`(£~color£string`"$C$"`, C.C, £~color£constant`S`, 0.8*£~color£constant`blue`);
+    \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{Q1}\PY{p}{,}\PY{n}{Q2}\PY{p}{,}\PY{n}{Q3}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{Q}\PY{p}{,}\PY{n}{P}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{n}{C}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n+nv}{S}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,15 +1,17 @@
-£~color£function-name`size`(8£~color£constant`cm`);
-£~color£builtin`import` geometry;
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{8}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
 
-£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleabc`(6,5,4);
-£~color£function-name`drawline`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`line` £~color£variable-name`ma`=£~color£function-name`median`(t.VA), £~color£variable-name`mb`=£~color£function-name`median`(t.VB);
-£~color£type`line` £~color£variable-name`mc`=£~color£function-name`median`(t.VC); £~color£function-name`draw`(ma^^mb^^mc);
+    \PY{k+kt}{triangle} \PY{n}{t}\PY{o}{=}\PY{n+nf}{triangleabc}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{drawline}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{ma}\PY{o}{=}\PY{n+nf}{median}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{VA}\PY{p}{)}\PY{p}{,} \PY{n}{mb}\PY{o}{=}\PY{n+nf}{median}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{VB}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{mc}\PY{o}{=}\PY{n+nf}{median}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{VC}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{ma}\PY{o}{\PYZca{}}\PY{o}{\PYZca{}}\PY{n}{mb}\PY{o}{\PYZca{}}\PY{o}{\PYZca{}}\PY{n}{mc}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(£~color£function-name`segment`(t.AB), £~color£function-name`StickIntervalMarker`(2,1));
-£~color£function-name`draw`(£~color£function-name`segment`(t.BC), £~color£function-name`StickIntervalMarker`(2,2));
-£~color£function-name`draw`(£~color£function-name`segment`(t.CA), £~color£function-name`StickIntervalMarker`(2,3));
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{)}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{)}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{CA}\PY{p}{)}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`triangle` £~color£variable-name`med`=£~color£function-name`medial`(t);
-£~color£function-name`draw`(med,£~color£constant`bp`+0.8*£~color£constant`green`); £~color£function-name`dot`(med, 0.8*£~color£constant`red`);
-£~color£function-name`addMargins`(1£~color£constant`cm`,1£~color£constant`cm`);
+    \PY{k+kt}{triangle} \PY{n}{med}\PY{o}{=}\PY{n+nf}{medial}\PY{p}{(}\PY{n}{t}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{med}\PY{p}{,}\PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{green}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{n}{med}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{addMargins}\PY{p}{(}\PY{l+m+mi}{1}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{1}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,23 +1,25 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(7.5£~color£constant`cm`,0); £~color£constant`dotfactor`*=1.5;
-£~color£constant`currentcoordsys`=£~color£function-name`rotate`(20)*£~color£constant`defaultcoordsys`;
-£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`, ypen=£~color£constant`red`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mf}{7.5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{n+nv}{dotfactor}\PY{o}{*}\PY{o}{=}\PY{l+m+mf}{1.5}\PY{p}{;}
+    \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{rotate}\PY{p}{(}\PY{l+m+mi}{20}\PY{p}{)}\PY{o}{*}\PY{n+nv}{defaultcoordsys}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{,} \PY{n}{ypen}\PY{o}{=}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`A`=(-1,-3), £~color£variable-name`B`=(5,2);
-£~color£type`line` £~color£variable-name`l1`=£~color£function-name`line`(A,B); £~color£function-name`draw`(l1, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£function-name`dot`(£~color£string`"$A$"`, A, £~color£constant`SE`); £~color£function-name`dot`(£~color£string`"$B$"`, B, £~color£constant`NW`);
-£~color£type`point` £~color£constant`M`=(3,-3); £~color£function-name`dot`(£~color£string`"$M$"`, £~color£constant`M`);
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{l1}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{l1}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{SE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}B\PYZdl{}"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}M\PYZdl{}"}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`P`=£~color£function-name`projection`(l1)*£~color£constant`M`;
-£~color£function-name`dot`(£~color£string`"$P$"`, P, 2£~color£constant`W`); £~color£function-name`draw`(£~color£constant`M`--P);
-£~color£function-name`markrightangle`(l1.A, P, £~color£constant`M`);
+    \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{l1}\PY{p}{)}\PY{o}{*}\PY{n}{M}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZdl{}"}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{P}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markrightangle}\PY{p}{(}\PY{n}{l1}\PY{p}{.}\PY{n}{A}\PY{p}{,} \PY{n}{P}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`Q`=£~color£function-name`vprojection`(l1)*£~color£constant`M`;
-£~color£function-name`dot`(£~color£string`"$Q$"`, Q, 2£~color£constant`W`); £~color£function-name`draw`(£~color£constant`M`--Q);
+    \PY{k+kt}{point} \PY{n}{Q}\PY{o}{=}\PY{n+nf}{vprojection}\PY{p}{(}\PY{n}{l1}\PY{p}{)}\PY{o}{*}\PY{n}{M}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}Q\PYZdl{}"}\PY{p}{,} \PY{n}{Q}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{Q}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`R`=£~color£function-name`hprojection`(l1)*£~color£constant`M`;
-£~color£function-name`dot`(£~color£string`"$R$"`, R, 2£~color£constant`W`); £~color£function-name`draw`(£~color£constant`M`--R);
+    \PY{k+kt}{point} \PY{n}{R}\PY{o}{=}\PY{n+nf}{hprojection}\PY{p}{(}\PY{n}{l1}\PY{p}{)}\PY{o}{*}\PY{n}{M}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}R\PYZdl{}"}\PY{p}{,} \PY{n}{R}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n}{R}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£constant`S`=£~color£function-name`projection`(l1,£~color£function-name`line`((0,0),(0,1)))*£~color£constant`M`;
-£~color£function-name`dot`(£~color£string`"$S$"`, £~color£constant`S`, 2£~color£constant`W`); £~color£function-name`draw`(£~color£constant`M`--£~color£constant`S`, £~color£constant`red`);
-£~color£function-name`draw`(£~color£function-name`box`((-1,-4),(5,5)), £~color£constant`invisible`);
+    \PY{k+kt}{point} \PY{n+nv}{S}\PY{o}{=}\PY{n+nf}{projection}\PY{p}{(}\PY{n}{l1}\PY{p}{,}\PY{n+nf}{line}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{M}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}S\PYZdl{}"}\PY{p}{,} \PY{n+nv}{S}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n+nv}{S}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,25 +1,27 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(£~color£constant`origin`,(1,-0.25)); £~color£function-name`draw`(£~color£string`"$(d)$"`, l, bpp);
-£~color£type`point` £~color£variable-name`A`=(1,1.5), £~color£variable-name`B`=(0.75,2.5);
-£~color£type`line` £~color£variable-name`AB`=£~color£function-name`line`(A,B);
-£~color£type`point` £~color£variable-name`B1`=£~color£function-name`reflect`(l)*B, £~color£constant`I`=£~color£function-name`intersectionpoint`(l,AB), £~color£variable-name`B2`=£~color£function-name`rotate`(180,£~color£constant`I`)*B;
-£~color£function-name`dot`(£~color£string`"$I$"`, £~color£constant`I`, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$B_1$"`, B1, £~color£constant`SW`); £~color£function-name`dot`(£~color£string`"$B_2$"`, B2, £~color£constant`SE`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{l}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n+nf}{origin}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{o}{-}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{l+s}{"\PYZdl{}(d)\PYZdl{}"}\PY{p}{,} \PY{n}{l}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{)}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.75}\PY{p}{,}\PY{l+m+mf}{2.5}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{line} \PY{n}{AB}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{B1}\PY{o}{=}\PY{n+nf}{reflect}\PY{p}{(}\PY{n}{l}\PY{p}{)}\PY{o}{*}\PY{n}{B}\PY{p}{,} \PY{n+nv}{I}\PY{o}{=}\PY{n+nf}{intersectionpoint}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{AB}\PY{p}{)}\PY{p}{,} \PY{n}{B2}\PY{o}{=}\PY{n+nf}{rotate}\PY{p}{(}\PY{l+m+mi}{180}\PY{p}{,}\PY{n+nv}{I}\PY{p}{)}\PY{o}{*}\PY{n}{B}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}I\PYZdl{}"}\PY{p}{,} \PY{n+nv}{I}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}B\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{B1}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}B\PYZus{}2\PYZdl{}"}\PY{p}{,} \PY{n}{B2}\PY{p}{,} \PY{n+nv}{SE}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(B--B1, £~color£constant`grey`+£~color£constant`dashed`, £~color£function-name`StickIntervalMarker`(2,2,£~color£constant`grey`));
-£~color£function-name`markrightangle`(B,£~color£function-name`midpoint`(B--B1),£~color£constant`I`, £~color£constant`grey`);
-£~color£function-name`draw`(B--B2, £~color£constant`grey`+£~color£constant`dashed`, £~color£function-name`StickIntervalMarker`(2,1,£~color£constant`grey`));
-£~color£function-name`draw`(£~color£function-name`complementary`(£~color£function-name`segment`(B,B2)));
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{o}{-}\PY{n}{B1}\PY{p}{,} \PY{n+nv}{grey}\PY{o}{+}\PY{n+nv}{dashed}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n+nv}{grey}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markrightangle}\PY{p}{(}\PY{n}{B}\PY{p}{,}\PY{n+nf}{midpoint}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{o}{-}\PY{n}{B1}\PY{p}{)}\PY{p}{,}\PY{n+nv}{I}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{B}\PY{o}{-}\PY{o}{-}\PY{n}{B2}\PY{p}{,} \PY{n+nv}{grey}\PY{o}{+}\PY{n+nv}{dashed}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{n+nv}{grey}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{complementary}\PY{p}{(}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{B}\PY{p}{,}\PY{n}{B2}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(A,B1,B2); £~color£function-name`draw`(C, 0.8*£~color£constant`blue`);
-£~color£type`point`[] T=£~color£function-name`intersectionpoints`(l,C);
-£~color£function-name`dot`(£~color£string`"$T_0$"`,T[0], £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$T_1$"`,T[1], £~color£constant`N`+£~color£constant`NW`);
+    \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B1}\PY{p}{,}\PY{n}{B2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{C}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{point}\PY{p}{[}\PY{p}{]} \PY{n}{T}\PY{o}{=}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}T\PYZus{}0\PYZdl{}"}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}T\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n+nv}{N}\PY{o}{+}\PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
 
-£~color£type`circle` £~color£variable-name`C1`=£~color£function-name`circle`(A,B,T[0]), £~color£variable-name`C2`=£~color£function-name`circle`(A,B,T[1]);
-£~color£function-name`clipdraw`(C1, bpp+0.8*£~color£constant`red`); £~color£function-name`clipdraw`(C2, bpp+0.8*£~color£constant`red`);
-£~color£function-name`dot`(£~color£string`"$O_1$"`, C1.C, £~color£constant`W`); £~color£function-name`dot`(£~color£string`"$O_2$"`, C2.C, £~color£constant`SW`); £~color£function-name`dot`(£~color£string`"$A$"`, A, £~color£constant`NE`); £~color£function-name`dot`(£~color£string`"$B$"`, B, £~color£constant`NE`);
+    \PY{k+kt}{circle} \PY{n}{C1}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{C2}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{clipdraw}\PY{p}{(}\PY{n}{C1}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{clipdraw}\PY{p}{(}\PY{n}{C2}\PY{p}{,} \PY{n}{bpp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{C1}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZus{}2\PYZdl{}"}\PY{p}{,} \PY{n}{C2}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}B\PYZdl{}"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(A--T[0]--B1, £~color£constant`grey`); £~color£function-name`markangle`(A,T[0],B1, £~color£constant`grey`);
-£~color£function-name`draw`(A--T[1]--B1, £~color£constant`grey`); £~color£function-name`markangle`(B1,T[1],A, £~color£constant`grey`);
-£~color£function-name`draw`(B2--B1, £~color£constant`grey`); £~color£function-name`markangle`(A,B2,B1, £~color£constant`grey`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{o}{-}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{-}\PY{o}{-}\PY{n}{B1}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;} \PY{n+nf}{markangle}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{B1}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{o}{-}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{-}\PY{o}{-}\PY{n}{B1}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;} \PY{n+nf}{markangle}\PY{p}{(}\PY{n}{B1}\PY{p}{,}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{A}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{B2}\PY{o}{-}\PY{o}{-}\PY{n}{B1}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;} \PY{n+nf}{markangle}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B2}\PY{p}{,}\PY{n}{B1}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

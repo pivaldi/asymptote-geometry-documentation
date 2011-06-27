@@ -1,12 +1,14 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(6£~color£constant`cm`,0);
-£~color£type`point` £~color£variable-name`A`=£~color£constant`SW`, £~color£variable-name`B`=£~color£constant`NE`;
-£~color£function-name`label`(£~color£string`"$A$"`, A, £~color£constant`NW`); £~color£function-name`label`(£~color£string`"$B$"`, B, £~color£constant`SE`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{6}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{n+nv}{SW}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{n+nv}{NE}\PY{p}{;}
+  \PY{n+nf}{label}\PY{p}{(}\PY{l+s}{"\PYZdl{}A\PYZdl{}"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;} \PY{n+nf}{label}\PY{p}{(}\PY{l+s}{"\PYZdl{}B\PYZdl{}"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{SE}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(A,B);
-£~color£function-name`draw`(l, £~color£constant`bp`+£~color£constant`red`);
+  \PY{k+kt}{line} \PY{n}{l}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
 
-£~color£type`segment` £~color£variable-name`s`=l;
-£~color£function-name`draw`(s, £~color£function-name`linewidth`(3£~color£constant`bp`));
-£~color£function-name`draw`(£~color£function-name`line`(£~color£function-name`rotate`(90,£~color£function-name`midpoint`(s))*s));
-£~color£function-name`draw`(£~color£function-name`box`(2*A,2*B), £~color£constant`invisible`);
+  \PY{k+kt}{segment} \PY{n}{s}\PY{o}{=}\PY{n}{l}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{line}\PY{p}{(}\PY{n+nf}{rotate}\PY{p}{(}\PY{l+m+mi}{90}\PY{p}{,}\PY{n+nf}{midpoint}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{A}\PY{p}{,}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{B}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

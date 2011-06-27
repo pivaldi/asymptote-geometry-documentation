@@ -1,13 +1,15 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(6£~color£constant`cm`);
-£~color£type`pen` £~color£constant`Red`=0.8*£~color£constant`red`; £~color£type`point` £~color£variable-name`P1`=(-3,0), £~color£variable-name`P2`=(3,0);
-£~color£function-name`draw`(£~color£function-name`box`((-5,-5),(5,5)), £~color£constant`invisible`);
-£~color£type`hyperbola` £~color£variable-name`Hf`=£~color£function-name`hyperbola`(P1,P2,2);
-£~color£function-name`draw`(Hf, £~color£function-name`linewidth`(£~color£constant`bp`)); £~color£function-name`dot`(£~color£string`"$C$"`, Hf.C, £~color£constant`N`);
-£~color£function-name`dot`(£~color£string`"$F_1$"`, Hf.F1); £~color£function-name`dot`(£~color£string`"$F_2$"`, Hf.F2, £~color£constant`W`);
-£~color£function-name`dot`(£~color£string`"$V_1$"`, Hf.V1, £~color£constant`E`); £~color£function-name`dot`(£~color£string`"$V_2$"`, Hf.V2, £~color£constant`W`);
-£~color£function-name`distance`(£~color£string`"$a$"`, Hf.C, Hf.V1, 2£~color£constant`cm`, joinpen=£~color£constant`dotted`);
-£~color£function-name`distance`(£~color£string`"$c$"`, Hf.C, Hf.F1, -2£~color£constant`cm`, joinpen=£~color£constant`dotted`);
-£~color£type`hyperbola` £~color£variable-name`Hv`=£~color£function-name`hyperbola`(P1,P2,1.5,£~color£constant`byvertices`);
-£~color£function-name`draw`(Hv, £~color£constant`bp`+£~color£constant`Red`);
-£~color£function-name`dot`(£~color£string`"$V'_1$"`,Hv.V1, £~color£constant`W`, £~color£constant`Red`); £~color£function-name`dot`(£~color£string`"$V'_2$"`,Hv.V2, £~color£constant`Red`);
-£~color£function-name`dot`(£~color£string`"$F'_1$"`,Hv.F1, £~color£constant`W`, £~color£constant`Red`); £~color£function-name`dot`(£~color£string`"$F'_2$"`,Hv.F2, £~color£constant`Red`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{6}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{pen} \PY{n+nv}{Red}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{;} \PY{k+kt}{point} \PY{n}{P1}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{P2}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{box}\PY{p}{(}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{5}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{hyperbola} \PY{n}{Hf}\PY{o}{=}\PY{n+nf}{hyperbola}\PY{p}{(}\PY{n}{P1}\PY{p}{,}\PY{n}{P2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Hf}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{F1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}2\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{F2}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}V\PYZus{}1\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{V1}\PY{p}{,} \PY{n+nv}{E}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}V\PYZus{}2\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{V2}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{distance}\PY{p}{(}\PY{l+s}{"\PYZdl{}a\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{V1}\PY{p}{,} \PY{l+m+mi}{2}\PY{n+nv}{cm}\PY{p}{,} \PY{n}{joinpen}\PY{o}{=}\PY{n+nv}{dotted}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{distance}\PY{p}{(}\PY{l+s}{"\PYZdl{}c\PYZdl{}"}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{C}\PY{p}{,} \PY{n}{Hf}\PY{p}{.}\PY{n}{F1}\PY{p}{,} \PY{o}{-}\PY{l+m+mi}{2}\PY{n+nv}{cm}\PY{p}{,} \PY{n}{joinpen}\PY{o}{=}\PY{n+nv}{dotted}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{hyperbola} \PY{n}{Hv}\PY{o}{=}\PY{n+nf}{hyperbola}\PY{p}{(}\PY{n}{P1}\PY{p}{,}\PY{n}{P2}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{,}\PY{n+nv}{byvertices}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{Hv}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{n+nv}{Red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}V'\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n}{Hv}\PY{p}{.}\PY{n}{V1}\PY{p}{,} \PY{n+nv}{W}\PY{p}{,} \PY{n+nv}{Red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}V'\PYZus{}2\PYZdl{}"}\PY{p}{,}\PY{n}{Hv}\PY{p}{.}\PY{n}{V2}\PY{p}{,} \PY{n+nv}{Red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F'\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n}{Hv}\PY{p}{.}\PY{n}{F1}\PY{p}{,} \PY{n+nv}{W}\PY{p}{,} \PY{n+nv}{Red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F'\PYZus{}2\PYZdl{}"}\PY{p}{,}\PY{n}{Hv}\PY{p}{.}\PY{n}{F2}\PY{p}{,} \PY{n+nv}{Red}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

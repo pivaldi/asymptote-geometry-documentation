@@ -1,14 +1,16 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(10£~color£constant`cm`,0);
-£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((0,0),i=(1,0.5),j=(-0.5,.75));
-£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`);
-£~color£type`ellipse` £~color£variable-name`el`=£~color£function-name`ellipse`((4,2),3,2,20);
-£~color£function-name`draw`(el); £~color£function-name`dot`(£~color£string`"$C$"`,el.C,2£~color£constant`W`,£~color£constant`red`); £~color£function-name`dot`(£~color£string`"$F_1$"`,el.F1,£~color£constant`S`); £~color£function-name`dot`(£~color£string`"$F_2$"`,el.F2,£~color£constant`S`);
-£~color£type`point` £~color£variable-name`P`=£~color£function-name`angpoint`(el, 0);  £~color£function-name`dot`(£~color£string`"angpoint(el, 0)"`, P,£~color£constant`E`);   £~color£function-name`draw`(el.F1--P);
-£~color£type`point` £~color£constant`M`=£~color£function-name`angpoint`(el, 90); £~color£function-name`dot`(£~color£string`"angpoint(el, 90)"`, £~color£constant`M`,£~color£constant`NW`); £~color£function-name`draw`(el.F1--£~color£constant`M`);
-£~color£function-name`dot`(£~color£string`"angpoint(el, 180)"`, £~color£function-name`angpoint`(el,180), £~color£constant`W`);
-£~color£function-name`dot`(£~color£string`"angpoint(el, 270)"`, £~color£function-name`angpoint`(el,270), £~color£constant`SE`);
-£~color£function-name`dot`(£~color£string`"angpoint(el, 370)"`, £~color£function-name`angpoint`(el,370), £~color£constant`NE`);
-£~color£function-name`dot`(£~color£string`"angpoint(el, -45)"`, £~color£function-name`angpoint`(el,-45), £~color£constant`SE`);
-£~color£type`point` £~color£variable-name`P`=£~color£function-name`angpoint`(el, 90, fromCenter);  £~color£function-name`dot`(£~color£string`"angpoint(el,90,fromCenter)"`, P,£~color£constant`NW`);
-£~color£type`point` £~color£variable-name`Q`=£~color£function-name`angpoint`(el, -45, fromCenter); £~color£function-name`dot`(£~color£string`"angpoint(el,-45,fromCenter)"`, Q,£~color£constant`S`);
-£~color£function-name`draw`(el.C--P); £~color£function-name`draw`(el.C--Q);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{10}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,}\PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{l+m+mf}{.75}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,}\PY{n}{el}\PY{p}{.}\PY{n}{C}\PY{p}{,}\PY{l+m+mi}{2}\PY{n+nv}{W}\PY{p}{,}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n}{el}\PY{p}{.}\PY{n}{F1}\PY{p}{,}\PY{n+nv}{S}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZus{}2\PYZdl{}"}\PY{p}{,}\PY{n}{el}\PY{p}{.}\PY{n}{F2}\PY{p}{,}\PY{n+nv}{S}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el, 0)"}\PY{p}{,} \PY{n}{P}\PY{p}{,}\PY{n+nv}{E}\PY{p}{)}\PY{p}{;}   \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{.}\PY{n}{F1}\PY{o}{-}\PY{o}{-}\PY{n}{P}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{l+m+mi}{90}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el, 90)"}\PY{p}{,} \PY{n}{M}\PY{p}{,}\PY{n+nv}{NW}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{.}\PY{n}{F1}\PY{o}{-}\PY{o}{-}\PY{n}{M}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el, 180)"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{180}\PY{p}{)}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el, 270)"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{270}\PY{p}{)}\PY{p}{,} \PY{n+nv}{SE}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el, 370)"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{370}\PY{p}{)}\PY{p}{,} \PY{n+nv}{NE}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el, -45)"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{,} \PY{n+nv}{SE}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{l+m+mi}{90}\PY{p}{,} \PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{;}  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el,90,fromCenter)"}\PY{p}{,} \PY{n}{P}\PY{p}{,}\PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{Q}\PY{o}{=}\PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{o}{-}\PY{l+m+mi}{45}\PY{p}{,} \PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"angpoint(el,-45,fromCenter)"}\PY{p}{,} \PY{n}{Q}\PY{p}{,}\PY{n+nv}{S}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{.}\PY{n}{C}\PY{o}{-}\PY{o}{-}\PY{n}{P}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{.}\PY{n}{C}\PY{o}{-}\PY{o}{-}\PY{n}{Q}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

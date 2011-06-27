@@ -1,9 +1,11 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£constant`currentcoordsys`=£~color£function-name`cartesiansystem`((1.25,0.75), i=(1,1), j=(-1,1));
-£~color£type`coordsys` £~color£variable-name`Rp`=£~color£constant`currentcoordsys`; £~color£type`coordsys` £~color£variable-name`R`=£~color£constant`defaultcoordsys`;
-£~color£function-name`show`(R);
-£~color£function-name`show`(£~color£string`"$O'$"`,£~color£string`"$\vec{u}$"`,£~color£string`"$\vec{v}$"`, Rp, xpen=£~color£constant`invisible`);
-£~color£type`point` £~color£variable-name`P`=(0.75,0.5); £~color£function-name`dot`(£~color£string`"$P$"`,P); £~color£type`vector` £~color£variable-name`w`=P;
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£function-name`draw`(£~color£string`"$\vec{w}$"`, £~color£function-name`origin`()--£~color£function-name`origin`()+£~color£function-name`w`, £~color£constant`W`, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
-£~color£function-name`draw`(£~color£string`"$\vec{w}$"`, £~color£constant`origin`--£~color£function-name`locate`(w), £~color£constant`E`, bpp, £~color£function-name`Arrow`(3£~color£constant`mm`));
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{n+nv}{currentcoordsys}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mf}{1.25}\PY{p}{,}\PY{l+m+mf}{0.75}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{coordsys} \PY{n}{Rp}\PY{o}{=}\PY{n+nv}{currentcoordsys}\PY{p}{;} \PY{k+kt}{coordsys} \PY{n}{R}\PY{o}{=}\PY{n+nv}{defaultcoordsys}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n}{R}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{l+s}{"\PYZdl{}O'\PYZdl{}"}\PY{p}{,}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n}{Rp}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.75}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}P\PYZdl{}"}\PY{p}{,}\PY{n}{P}\PY{p}{)}\PY{p}{;} \PY{k+kt}{vector} \PY{n}{w}\PY{o}{=}\PY{n}{P}\PY{p}{;}
+  \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}w\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n+nf}{origin}\PY{p}{(}\PY{p}{)}\PY{o}{-}\PY{o}{-}\PY{n+nf}{origin}\PY{p}{(}\PY{p}{)}\PY{o}{+}\PY{n}{w}\PY{p}{,} \PY{n+nv}{W}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{draw}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}w\PYZcb{}\PYZdl{}"}\PY{p}{,} \PY{n+nf}{origin}\PY{o}{-}\PY{o}{-}\PY{n+nf}{locate}\PY{p}{(}\PY{n}{w}\PY{p}{)}\PY{p}{,} \PY{n+nv}{E}\PY{p}{,} \PY{n}{bpp}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

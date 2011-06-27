@@ -1,11 +1,13 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(7£~color£constant`cm`,0);
-£~color£function-name`show`(£~color£constant`currentcoordsys`, xpen=£~color£constant`invisible`);
-£~color£type`ellipse` £~color£variable-name`el`=£~color£function-name`ellipse`((2,2),2,1,25);
-£~color£function-name`draw`(el, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`real` £~color£variable-name`L`=£~color£function-name`arclength`(el);
-£~color£function-name`dot`(£~color£string`"0"`, £~color£function-name`curpoint`(el,0), £~color£function-name`dir`(25));
-£~color£function-name`dot`(£~color£string`"L/4"`, £~color£function-name`curpoint`(el,L/4), £~color£function-name`dir`(115));
-£~color£function-name`dot`(£~color£string`"3*L/4"`, £~color£function-name`curpoint`(el,3*L/4), -£~color£function-name`dir`(115));
-£~color£function-name`dot`(£~color£string`"-L/2"`, £~color£function-name`curpoint`(el, -£~color£function-name`L`/2), -£~color£function-name`dir`(25));
-£~color£function-name`dot`(£~color£string`"11*L/8"`, £~color£function-name`curpoint`(el, 11*L/8), £~color£function-name`dir`(145));
-£~color£function-name`label`(£~color£string`"L=arclength(el)"`,(2,0.25));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{7}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{ellipse} \PY{n}{el}\PY{o}{=}\PY{n+nf}{ellipse}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{25}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{real} \PY{n}{L}\PY{o}{=}\PY{n+nf}{arclength}\PY{p}{(}\PY{n}{el}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"0"}\PY{p}{,} \PY{n+nf}{curpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"L/4"}\PY{p}{,} \PY{n+nf}{curpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{n}{L}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{115}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"3*L/4"}\PY{p}{,} \PY{n+nf}{curpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{L}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{o}{-}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{115}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"-L/2"}\PY{p}{,} \PY{n+nf}{curpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{o}{-}\PY{n}{L}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{o}{-}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{25}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"11*L/8"}\PY{p}{,} \PY{n+nf}{curpoint}\PY{p}{(}\PY{n}{el}\PY{p}{,} \PY{l+m+mi}{11}\PY{o}{*}\PY{n}{L}\PY{o}{/}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{145}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{label}\PY{p}{(}\PY{l+s}{"L=arclength(el)"}\PY{p}{,}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mf}{0.25}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

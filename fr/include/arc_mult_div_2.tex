@@ -1,13 +1,15 @@
-£~color£builtin`import` geometry; £~color£function-name`size`(8£~color£constant`cm`,0);
-£~color£type`point` £~color£variable-name`C`=(1,1); £~color£function-name`dot`(£~color£string`"$C$"`, C, 2*£~color£function-name`dir`(80), £~color£constant`red`);
-£~color£type`arc` £~color£variable-name`a`=£~color£function-name`arc`(£~color£function-name`ellipse`(C,2,1,45),90,0,fromCenter);
-£~color£function-name`draw`(a, £~color£function-name`linewidth`(3£~color£constant`mm`));
-£~color£function-name`markarc`(£~color£function-name`format`(£~color£string`"%0g"`, £~color£function-name`degrees`(a)),
-        radius=-0.5*£~color£function-name`markangleradius`(), a);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;} \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{8}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{C}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}C\PYZdl{}"}\PY{p}{,} \PY{n}{C}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n+nf}{dir}\PY{p}{(}\PY{l+m+mi}{80}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{arc} \PY{n}{a}\PY{o}{=}\PY{n+nf}{arc}\PY{p}{(}\PY{n+nf}{ellipse}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n+nf}{fromCenter}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markarc}\PY{p}{(}\PY{n+nf}{format}\PY{p}{(}\PY{l+s}{"\PYZpc{}0g"}\PY{p}{,} \PY{n+nf}{degrees}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+    \PY{n+nf}{radius}\PY{o}{=}\PY{o}{-}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n+nf}{markangleradius}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{a}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`draw`(0.5*a, 1.5£~color£constant`mm`+£~color£constant`yellow`);
+    \PY{n+nf}{draw}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{o}{*}\PY{n}{a}\PY{p}{,} \PY{l+m+mf}{1.5}\PY{n+nv}{mm}\PY{o}{+}\PY{n+nv}{yellow}\PY{p}{)}\PY{p}{;}
 
-£~color£type`arc` £~color£variable-name`ap`=a/3;
-£~color£function-name`draw`(ap, 0.75£~color£constant`mm`+£~color£constant`blue`);
-£~color£function-name`markarc`(£~color£function-name`format`(£~color£string`"%0g"`, £~color£function-name`degrees`(ap)),
-        radius=1.5*£~color£function-name`markangleradius`(),ap,£~color£constant`blue`);
+    \PY{k+kt}{arc} \PY{n}{ap}\PY{o}{=}\PY{n}{a}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{ap}\PY{p}{,} \PY{l+m+mf}{0.75}\PY{n+nv}{mm}\PY{o}{+}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{markarc}\PY{p}{(}\PY{n+nf}{format}\PY{p}{(}\PY{l+s}{"\PYZpc{}0g"}\PY{p}{,} \PY{n+nf}{degrees}\PY{p}{(}\PY{n}{ap}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+    \PY{n+nf}{radius}\PY{o}{=}\PY{l+m+mf}{1.5}\PY{o}{*}\PY{n+nf}{markangleradius}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{n}{ap}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

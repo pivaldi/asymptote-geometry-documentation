@@ -1,13 +1,15 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(7.5£~color£constant`cm`,0);
-£~color£type`pen` £~color£variable-name`bpp`=£~color£function-name`linewidth`(£~color£constant`bp`);
-£~color£type`point` £~color£variable-name`A`=(0,0); £~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`SW`);
-£~color£type`point` £~color£variable-name`B`=(1,2); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£constant`NW`);
-£~color£type`point` £~color£variable-name`C`=(-1,1); £~color£function-name`dot`(£~color£string`"C"`, C,£~color£constant`N`);
-£~color£type`path` £~color£variable-name`g`=A--B--C--£~color£builtin`cycle`; £~color£function-name`draw`(g, bpp);
-£~color£type`point` £~color£constant`M`=(0,1);
-£~color£type`path` £~color£variable-name`gp`=£~color£function-name`scale`(2, £~color£constant`M`)*g; £~color£function-name`draw`(gp, bpp);
-£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 3; ++i) £~color£function-name`draw`(£~color£constant`M`--£~color£function-name`point`(gp,i));
-£~color£function-name`dot`(£~color£string`"A'"`, £~color£function-name`point`(gp,0), £~color£constant`SW`);
-£~color£function-name`dot`(£~color£string`"B'"`, £~color£function-name`point`(gp,1), £~color£constant`NW`);
-£~color£function-name`dot`(£~color£string`"C'"`, £~color£function-name`point`(gp,2), £~color£constant`N`);
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mf}{7.5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{pen} \PY{n}{bpp}\PY{o}{=}\PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{B}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"B"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{C}\PY{o}{=}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"C"}\PY{p}{,} \PY{n}{C}\PY{p}{,}\PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{path} \PY{n}{g}\PY{o}{=}\PY{n}{A}\PY{o}{-}\PY{o}{-}\PY{n}{B}\PY{o}{-}\PY{o}{-}\PY{n}{C}\PY{o}{-}\PY{o}{-}\PY{k}{cycle}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{g}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{path} \PY{n}{gp}\PY{o}{=}\PY{n+nf}{scale}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{M}\PY{p}{)}\PY{o}{*}\PY{n}{g}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{gp}\PY{p}{,} \PY{n}{bpp}\PY{p}{)}\PY{p}{;}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{l+m+mi}{3}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{p}{)} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{o}{-}\PY{n+nf}{point}\PY{p}{(}\PY{n}{gp}\PY{p}{,}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A'"}\PY{p}{,} \PY{n+nf}{point}\PY{p}{(}\PY{n}{gp}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n+nv}{SW}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"B'"}\PY{p}{,} \PY{n+nf}{point}\PY{p}{(}\PY{n}{gp}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n+nv}{NW}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"C'"}\PY{p}{,} \PY{n+nf}{point}\PY{p}{(}\PY{n}{gp}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n+nv}{N}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

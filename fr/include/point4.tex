@@ -1,10 +1,12 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(4£~color£constant`cm`,0);
-£~color£type`coordsys` £~color£variable-name`R`=£~color£function-name`cartesiansystem`((2,3), i=(1,0), j=(0.5,1));
-£~color£function-name`show`(£~color£constant`currentcoordsys`);
-£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$O_1$"`,£~color£constant`blue`), £~color£function-name`Label`(£~color£string`"$\vec{u}$"`,£~color£constant`blue`),
-     £~color£function-name`Label`(£~color£string`"$\vec{v}$"`,£~color£constant`blue`), R, xpen=£~color£constant`invisible`, ipen=£~color£constant`blue`);
-£~color£type`pair` £~color£variable-name`A`=(3,1);
-£~color£function-name`dot`(£~color£string`""`, A, £~color£constant`red`);
-£~color£type`point` £~color£variable-name`B`=£~color£function-name`point`(R, A/R);
-£~color£function-name`dot`(£~color£string`""`, B, £~color£constant`W`, £~color£constant`blue`);
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{4}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{coordsys} \PY{n}{R}\PY{o}{=}\PY{n+nf}{cartesiansystem}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{j}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.5}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{show}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}O\PYZus{}1\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,}
+  \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n}{R}\PY{p}{,} \PY{n}{xpen}\PY{o}{=}\PY{n+nf}{invisible}\PY{p}{,} \PY{n}{ipen}\PY{o}{=}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{pair} \PY{n}{A}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{""}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{point} \PY{n}{B}\PY{o}{=}\PY{n+nf}{point}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{n}{A}\PY{o}{/}\PY{n}{R}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{""}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{W}\PY{p}{,} \PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

@@ -1,8 +1,10 @@
-£~color£function-name`size`(7£~color£constant`cm`); £~color£builtin`import` geometry;
-£~color£type`triangle` £~color£variable-name`t`=£~color£function-name`triangleabc`(4,5,6);
-£~color£function-name`drawline`(t, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`line` £~color£variable-name`ba`=£~color£function-name`bisector`(t.VA), £~color£variable-name`bb`=£~color£function-name`bisector`(t.VB);
-£~color£type`line` £~color£variable-name`bc`=£~color£function-name`bisector`(t.VC); £~color£function-name`draw`(ba^^bb^^bc);
-£~color£function-name`markangle`(t.AB, t.AC, £~color£function-name`StickIntervalMarker`(2,1));
-£~color£function-name`markangle`(t.BC, t.BA, £~color£function-name`StickIntervalMarker`(2,2));
-£~color£function-name`markangle`(t.CA, t.CB, £~color£function-name`StickIntervalMarker`(2,3));
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{7}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;} \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+  \PY{k+kt}{triangle} \PY{n}{t}\PY{o}{=}\PY{n+nf}{triangleabc}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{drawline}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{line} \PY{n}{ba}\PY{o}{=}\PY{n+nf}{bisector}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{VA}\PY{p}{)}\PY{p}{,} \PY{n}{bb}\PY{o}{=}\PY{n+nf}{bisector}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{VB}\PY{p}{)}\PY{p}{;}
+  \PY{k+kt}{line} \PY{n}{bc}\PY{o}{=}\PY{n+nf}{bisector}\PY{p}{(}\PY{n}{t}\PY{p}{.}\PY{n}{VC}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{ba}\PY{o}{\PYZca{}}\PY{o}{\PYZca{}}\PY{n}{bb}\PY{o}{\PYZca{}}\PY{o}{\PYZca{}}\PY{n}{bc}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{markangle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{t}\PY{p}{.}\PY{n}{AB}\PY{p}{,} \PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{t}\PY{p}{.}\PY{n}{AC}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{markangle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{t}\PY{p}{.}\PY{n}{BC}\PY{p}{,} \PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{t}\PY{p}{.}\PY{n}{BA}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nf}{markangle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{t}\PY{p}{.}\PY{n}{CA}\PY{p}{,} \PY{p}{(}\PY{n+nf}{line}\PY{p}{)} \PY{n}{t}\PY{p}{.}\PY{n}{CB}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

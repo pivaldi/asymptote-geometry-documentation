@@ -1,12 +1,14 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(5£~color£constant`cm`,0);
-£~color£type`point` £~color£variable-name`A`=£~color£constant`origin`, £~color£variable-name`B`=£~color£constant`NE`, £~color£constant`M`=2*B+£~color£constant`N`;
-£~color£function-name`dot`(£~color£string`"A"`, A, £~color£constant`I`*£~color£function-name`unit`(A-B)); £~color£function-name`dot`(£~color£string`"B"`, B, £~color£constant`I`*£~color£function-name`unit`(A-B));
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{5}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{point} \PY{n}{A}\PY{o}{=}\PY{n+nf}{origin}\PY{p}{,} \PY{n}{B}\PY{o}{=}\PY{n+nv}{NE}\PY{p}{,} \PY{n}{M}\PY{o}{=}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{B}\PY{o}{+}\PY{n+nv}{N}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"A"}\PY{p}{,} \PY{n}{A}\PY{p}{,} \PY{n+nv}{I}\PY{o}{*}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{n}{B}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"B"}\PY{p}{,} \PY{n}{B}\PY{p}{,} \PY{n+nv}{I}\PY{o}{*}\PY{n+nf}{unit}\PY{p}{(}\PY{n}{A}\PY{o}{-}\PY{n}{B}\PY{p}{)}\PY{p}{)}\PY{p}{;}
 
-£~color£type`line` £~color£variable-name`AB`=£~color£function-name`line`(A,B);
-£~color£function-name`draw`(AB, £~color£function-name`linewidth`(£~color£constant`bp`));
-£~color£type`transform` £~color£variable-name`reflect`=£~color£function-name`reflect`(AB);
+    \PY{k+kt}{line} \PY{n}{AB}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n}{AB}\PY{p}{,} \PY{n+nf}{linewidth}\PY{p}{(}\PY{n+nv}{bp}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{transform} \PY{n+nf}{reflect}\PY{o}{=}\PY{n+nf}{reflect}\PY{p}{(}\PY{n}{AB}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`Mp`=reflect*£~color£constant`M`;
-£~color£function-name`dot`(£~color£string`"M"`,£~color£constant`M`, £~color£function-name`unit`(£~color£constant`M`-Mp)); £~color£function-name`dot`(£~color£string`"M'"`, Mp, £~color£function-name`unit`(Mp-£~color£constant`M`), £~color£constant`red`);
-£~color£function-name`draw`(£~color£function-name`segment`(£~color£constant`M`,Mp), £~color£constant`grey`, £~color£function-name`StickIntervalMarker`(2,2,£~color£constant`grey`));
+    \PY{k+kt}{point} \PY{n}{Mp}\PY{o}{=}\PY{n+nf}{reflect}\PY{o}{*}\PY{n}{M}\PY{p}{;}
+    \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M"}\PY{p}{,}\PY{n}{M}\PY{p}{,} \PY{n+nf}{unit}\PY{p}{(}\PY{n}{M}\PY{o}{-}\PY{n}{Mp}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"M'"}\PY{p}{,} \PY{n}{Mp}\PY{p}{,} \PY{n+nf}{unit}\PY{p}{(}\PY{n}{Mp}\PY{o}{-}\PY{n}{M}\PY{p}{)}\PY{p}{,} \PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+    \PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{M}\PY{p}{,}\PY{n}{Mp}\PY{p}{)}\PY{p}{,} \PY{n+nv}{grey}\PY{p}{,} \PY{n+nf}{StickIntervalMarker}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{n+nv}{grey}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

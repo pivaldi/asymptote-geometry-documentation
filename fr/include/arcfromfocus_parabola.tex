@@ -1,21 +1,23 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(8£~color£constant`cm`);
-£~color£function-name`show`(£~color£constant`currentcoordsys`);
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+\PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{8}\PY{n+nv}{cm}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{show}\PY{p}{(}\PY{n+nv}{currentcoordsys}\PY{p}{)}\PY{p}{;}
 
-£~color£type`point` £~color£variable-name`F`=(1,0.5); £~color£function-name`dot`(£~color£string`"$F$"`,F,£~color£constant`E`,£~color£constant`red`);
-£~color£type`parabola` £~color£constant`p`=£~color£function-name`parabola`(F,0.2,110); £~color£function-name`draw`(£~color£constant`p`);
+\PY{k+kt}{point} \PY{n}{F}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"\PYZdl{}F\PYZdl{}"}\PY{p}{,}\PY{n}{F}\PY{p}{,}\PY{n+nv}{E}\PY{p}{,}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+\PY{k+kt}{parabola} \PY{n}{p}\PY{o}{=}\PY{n+nf}{parabola}\PY{p}{(}\PY{n}{F}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{,}\PY{l+m+mi}{110}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{;}
 
-£~color£type`coordsys` £~color£variable-name`Rp`=£~color£function-name`canonicalcartesiansystem`(£~color£constant`p`);
-£~color£function-name`show`(£~color£function-name`Label`(£~color£string`"$O'$"`,£~color£constant`align`=£~color£constant`NW`+£~color£constant`W`,£~color£constant`blue`), £~color£function-name`Label`(£~color£string`"$\vec{u}$"`,£~color£constant`blue`),
-     £~color£function-name`Label`(£~color£string`"$\vec{v}$"`,£~color£constant`blue`), Rp, ipen=£~color£constant`blue`);
+\PY{k+kt}{coordsys} \PY{n}{Rp}\PY{o}{=}\PY{n+nf}{canonicalcartesiansystem}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{show}\PY{p}{(}\PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}O'\PYZdl{}"}\PY{p}{,}\PY{n+nf}{align}\PY{o}{=}\PY{n+nv}{NW}\PY{o}{+}\PY{n+nv}{W}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}u\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,}
+     \PY{n+nf}{Label}\PY{p}{(}\PY{l+s}{"\PYZdl{}\PYZbs{}vec\PYZob{}v\PYZcb{}\PYZdl{}"}\PY{p}{,}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{,} \PY{n}{Rp}\PY{p}{,} \PY{n}{ipen}\PY{o}{=}\PY{n+nv}{blue}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`dot`(£~color£string`"180"`, £~color£function-name`angpoint`(£~color£constant`p`,180), £~color£function-name`dir`(-30));
-£~color£type`point` £~color£variable-name`P`=£~color£function-name`angpoint`(£~color£constant`p`,55); £~color£function-name`dot`(£~color£string`"55"`,P,£~color£constant`NE`);
+\PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"180"}\PY{p}{,} \PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{l+m+mi}{180}\PY{p}{)}\PY{p}{,} \PY{n+nf}{dir}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\PY{k+kt}{point} \PY{n}{P}\PY{o}{=}\PY{n+nf}{angpoint}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{l+m+mi}{55}\PY{p}{)}\PY{p}{;} \PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"55"}\PY{p}{,}\PY{n}{P}\PY{p}{,}\PY{n+nv}{NE}\PY{p}{)}\PY{p}{;}
 
-£~color£type`segment` £~color£variable-name`s`=£~color£function-name`segment`(F,P); £~color£function-name`draw`(s);
-£~color£type`line` £~color£variable-name`l`=£~color£function-name`line`(F,F+Rp.i);
-£~color£function-name`markangle`(£~color£string`"$"`+(£~color£type`string`)£~color£function-name`degrees`(l,s)+£~color£string`"^\circ$"`,l,s,Arrow);
+\PY{k+kt}{segment} \PY{n}{s}\PY{o}{=}\PY{n+nf}{segment}\PY{p}{(}\PY{n}{F}\PY{p}{,}\PY{n}{P}\PY{p}{)}\PY{p}{;} \PY{n+nf}{draw}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{;}
+\PY{k+kt}{line} \PY{n}{l}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{F}\PY{p}{,}\PY{n}{F}\PY{o}{+}\PY{n}{Rp}\PY{p}{.}\PY{n}{i}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{markangle}\PY{p}{(}\PY{l+s}{"\PYZdl{}"}\PY{o}{+}\PY{p}{(}\PY{n+nf}{string}\PY{p}{)}\PY{n+nf}{degrees}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{n}{s}\PY{p}{)}\PY{o}{+}\PY{l+s}{"\PYZca{}\PYZbs{}circ\PYZdl{}"}\PY{p}{,}\PY{n}{l}\PY{p}{,}\PY{p}{(}\PY{n+nf}{line}\PY{p}{)}\PY{n}{s}\PY{p}{,}\PY{n+nf}{Arrow}\PY{p}{)}\PY{p}{;}
 
-£~color£function-name`dot`(£~color£string`"-55"`, £~color£function-name`point`(£~color£function-name`arcfromfocus`(£~color£constant`p`,-55,-55,1),0), £~color£constant`W`);
-£~color£function-name`dot`(£~color£string`"-90"`, £~color£function-name`point`(£~color£function-name`arcfromfocus`(£~color£constant`p`,-90,-90,1),0), £~color£constant`W`);
-£~color£function-name`draw`(£~color£function-name`arcfromfocus`(£~color£constant`p`,55,-90), £~color£constant`bp`+0.8*£~color£constant`red`, £~color£function-name`Arrow`(3£~color£constant`mm`));
+\PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"-55"}\PY{p}{,} \PY{n+nf}{point}\PY{p}{(}\PY{n+nf}{arcfromfocus}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{55}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{55}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{dot}\PY{p}{(}\PY{l+s}{"-90"}\PY{p}{,} \PY{n+nf}{point}\PY{p}{(}\PY{n+nf}{arcfromfocus}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{90}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n+nv}{W}\PY{p}{)}\PY{p}{;}
+\PY{n+nf}{draw}\PY{p}{(}\PY{n+nf}{arcfromfocus}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{l+m+mi}{55}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{90}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{,} \PY{n+nf}{Arrow}\PY{p}{(}\PY{l+m+mi}{3}\PY{n+nv}{mm}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}

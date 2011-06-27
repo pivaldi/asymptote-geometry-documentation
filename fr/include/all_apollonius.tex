@@ -1,26 +1,28 @@
-£~color£builtin`import` geometry;
-£~color£function-name`size`(18£~color£constant`cm`,0); £~color£type`int` £~color£variable-name`shx`=18;
-£~color£type`circle` £~color£variable-name`C1`=£~color£function-name`circle`((£~color£type`point`)(0,0),2), £~color£variable-name`C2`=£~color£function-name`circle`((£~color£type`point`)(5,5), 3), £~color£variable-name`C3`=£~color£function-name`circle`((£~color£type`point`)(6,-2),1);
-£~color£type`picture` £~color£variable-name`disc`;
-£~color£function-name`fill`(disc,(£~color£type`path`)C1); £~color£function-name`fill`(disc,(£~color£type`path`)C2); £~color£function-name`fill`(disc,(£~color£type`path`)C3);
-£~color£type`transform` £~color£variable-name`tv`=£~color£function-name`shift`(£~color£constant`S`), £~color£variable-name`th`=£~color£function-name`shift`(£~color£constant`E`);
-£~color£type`int` £~color£variable-name`k`=0, £~color£variable-name`l`=0;
-£~color£builtin`for` (£~color£type`int` £~color£variable-name`i`=0; i < 2 ; ++i)
-  £~color£builtin`for` (£~color£type`int` £~color£variable-name`j`=0; j < 2; ++j) {
-    £~color£type`picture`[]  tpic; tpic[0]=£~color£builtin`new` £~color£type`picture`; tpic[1]=£~color£builtin`new` £~color£type`picture`;
-    £~color£function-name`add`(tpic[0], disc); £~color£function-name`add`(tpic[1], disc);
-    £~color£type`inversion` £~color£constant`S`1=£~color£function-name`inversion`(C2,C3, £~color£function-name`sgnd`(i-1)), £~color£constant`S`2=£~color£function-name`inversion`(C1,C3, £~color£function-name`sgnd`(j-1));
-    £~color£type`line` £~color£variable-name`cl`=£~color£function-name`line`(£~color£constant`S`1.C,£~color£constant`S`2.C);
-    £~color£type`point` £~color£constant`M`=£~color£function-name`relpoint`(C3,0.125), £~color£constant`M`2=£~color£constant`S`2*£~color£constant`M`, £~color£constant`M`1=£~color£constant`S`1*£~color£constant`M`;
-    £~color£type`circle` £~color£variable-name`C`=£~color£function-name`circle`(£~color£constant`M`,£~color£constant`M`2,£~color£constant`M`1);
-    £~color£type`line` £~color£variable-name`L`=£~color£function-name`radicalline`(C,C3);
-    £~color£type`point` £~color£variable-name`H`=£~color£function-name`intersectionpoint`(L,cl);
-    £~color£type`circle` £~color£variable-name`Cp`=£~color£function-name`circle`(H,C3.C);
-    £~color£type`point`[] T=£~color£function-name`intersectionpoints`(Cp,C3);
-    £~color£type`point`[][] Tp= £~color£builtin`new` £~color£type`point`[][] {{£~color£constant`S`2*T[0], £~color£constant`S`1*T[0]},{£~color£constant`S`2*T[1], £~color£constant`S`1*T[1]}};
-    £~color£function-name`draw`(tpic[0], £~color£function-name`circle`(T[0],£~color£type`Tp`[0][0],£~color£type`Tp`[0][1]), £~color£constant`bp`+0.8*£~color£constant`red`);
-    £~color£function-name`draw`(tpic[1], £~color£function-name`circle`(T[1],£~color£type`Tp`[1][0],£~color£type`Tp`[1][1]), £~color£constant`bp`+0.8*£~color£constant`red`);
-    £~color£function-name`add`(tv^(shx*(i+1))*th^(shx*(l))*tpic[0]);
-    l=(l+2)%4; ++k;
-    £~color£function-name`add`(tv^(shx*(i+1))*th^(shx*(l+1))*tpic[1]);
-  }
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PY{k}{import} \PY{n}{geometry}\PY{p}{;}
+    \PY{n+nf}{size}\PY{p}{(}\PY{l+m+mi}{18}\PY{n+nv}{cm}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} \PY{k+kt}{int} \PY{n}{shx}\PY{o}{=}\PY{l+m+mi}{18}\PY{p}{;}
+    \PY{k+kt}{circle} \PY{n}{C1}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{n}{C2}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,} \PY{n}{C3}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{p}{(}\PY{n+nf}{point}\PY{p}{)}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{o}{-}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{picture} \PY{n}{disc}\PY{p}{;}
+    \PY{n+nf}{fill}\PY{p}{(}\PY{n}{disc}\PY{p}{,}\PY{p}{(}\PY{n+nf}{path}\PY{p}{)}\PY{n}{C1}\PY{p}{)}\PY{p}{;} \PY{n+nf}{fill}\PY{p}{(}\PY{n}{disc}\PY{p}{,}\PY{p}{(}\PY{n+nf}{path}\PY{p}{)}\PY{n}{C2}\PY{p}{)}\PY{p}{;} \PY{n+nf}{fill}\PY{p}{(}\PY{n}{disc}\PY{p}{,}\PY{p}{(}\PY{n+nf}{path}\PY{p}{)}\PY{n}{C3}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{transform} \PY{n}{tv}\PY{o}{=}\PY{n+nf}{shift}\PY{p}{(}\PY{n+nv}{S}\PY{p}{)}\PY{p}{,} \PY{n}{th}\PY{o}{=}\PY{n+nf}{shift}\PY{p}{(}\PY{n+nv}{E}\PY{p}{)}\PY{p}{;}
+    \PY{k+kt}{int} \PY{n}{k}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{l}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{l+m+mi}{2} \PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{i}\PY{p}{)}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{<} \PY{l+m+mi}{2}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{j}\PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{k+kt}{picture}\PY{p}{[}\PY{p}{]}  \PY{n}{tpic}\PY{p}{;} \PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{=}\PY{k}{new} \PY{k+kt}{picture}\PY{p}{;} \PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{k}{new} \PY{k+kt}{picture}\PY{p}{;}
+      \PY{n+nf}{add}\PY{p}{(}\PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{disc}\PY{p}{)}\PY{p}{;} \PY{n+nf}{add}\PY{p}{(}\PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{disc}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{inversion} \PY{n}{S1}\PY{o}{=}\PY{n+nf}{inversion}\PY{p}{(}\PY{n}{C2}\PY{p}{,}\PY{n}{C3}\PY{p}{,} \PY{n+nf}{sgnd}\PY{p}{(}\PY{n}{i}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{S2}\PY{o}{=}\PY{n+nf}{inversion}\PY{p}{(}\PY{n}{C1}\PY{p}{,}\PY{n}{C3}\PY{p}{,} \PY{n+nf}{sgnd}\PY{p}{(}\PY{n}{j}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{line} \PY{n}{cl}\PY{o}{=}\PY{n+nf}{line}\PY{p}{(}\PY{n}{S1}\PY{p}{.}\PY{n}{C}\PY{p}{,}\PY{n}{S2}\PY{p}{.}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{point} \PY{n}{M}\PY{o}{=}\PY{n+nf}{relpoint}\PY{p}{(}\PY{n}{C3}\PY{p}{,}\PY{l+m+mf}{0.125}\PY{p}{)}\PY{p}{,} \PY{n}{M2}\PY{o}{=}\PY{n}{S2}\PY{o}{*}\PY{n}{M}\PY{p}{,} \PY{n}{M1}\PY{o}{=}\PY{n}{S1}\PY{o}{*}\PY{n}{M}\PY{p}{;}
+      \PY{k+kt}{circle} \PY{n}{C}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{M}\PY{p}{,}\PY{n}{M2}\PY{p}{,}\PY{n}{M1}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{line} \PY{n}{L}\PY{o}{=}\PY{n+nf}{radicalline}\PY{p}{(}\PY{n}{C}\PY{p}{,}\PY{n}{C3}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{point} \PY{n}{H}\PY{o}{=}\PY{n+nf}{intersectionpoint}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{cl}\PY{p}{)}\PY{p}{;}
+      \PY{k+kt}{circle} \PY{n}{Cp}\PY{o}{=}\PY{n+nf}{circle}\PY{p}{(}\PY{n}{H}\PY{p}{,}\PY{n}{C3}\PY{p}{.}\PY{n}{C}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{point}\PY{p}{[}\PY{p}{]} \PY{n}{T}\PY{o}{=}\PY{n+nf}{intersectionpoints}\PY{p}{(}\PY{n}{Cp}\PY{p}{,}\PY{n}{C3}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{point}\PY{p}{[}\PY{p}{]}\PY{p}{[}\PY{p}{]} \PY{n}{Tp}\PY{o}{=} \PY{k}{new} \PY{n+nf}{point}\PY{p}{[}\PY{p}{]}\PY{p}{[}\PY{p}{]} \PY{p}{\PYZob{}}\PY{p}{\PYZob{}}\PY{n}{S2}\PY{o}{*}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n}{S1}\PY{o}{*}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{p}{\PYZob{}}\PY{n}{S2}\PY{o}{*}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{S1}\PY{o}{*}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{\PYZcb{}}\PY{p}{\PYZcb{}}\PY{p}{;}
+      \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,} \PY{n+nf}{circle}\PY{p}{(}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{Tp}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{Tp}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{draw}\PY{p}{(}\PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n+nf}{circle}\PY{p}{(}\PY{n}{T}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{Tp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{Tp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nv}{bp}\PY{o}{+}\PY{l+m+mf}{0.8}\PY{o}{*}\PY{n+nv}{red}\PY{p}{)}\PY{p}{;}
+      \PY{n+nf}{add}\PY{p}{(}\PY{n}{tv}\PY{o}{\PYZca{}}\PY{p}{(}\PY{n}{shx}\PY{o}{*}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{th}\PY{o}{\PYZca{}}\PY{p}{(}\PY{n}{shx}\PY{o}{*}\PY{p}{(}\PY{n}{l}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+      \PY{n}{l}\PY{o}{=}\PY{p}{(}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZpc{}}\PY{l+m+mi}{4}\PY{p}{;} \PY{o}{+}\PY{o}{+}\PY{n}{k}\PY{p}{;}
+      \PY{n+nf}{add}\PY{p}{(}\PY{n}{tv}\PY{o}{\PYZca{}}\PY{p}{(}\PY{n}{shx}\PY{o}{*}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{th}\PY{o}{\PYZca{}}\PY{p}{(}\PY{n}{shx}\PY{o}{*}\PY{p}{(}\PY{n}{l}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{tpic}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+\end{Verbatim}
