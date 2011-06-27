@@ -1,118 +1,5 @@
 \documentclass[pdftex]{article}
-\usepackage[a4paper,centering,
-left=1cm,right=1cm,
-top=1.5cm,bottom=2cm,
-nohead,nomarginpar]{geometry}
-\usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{framed}
-\usepackage[hyperref]{xcolor}
-\usepackage{ifthen}
-\usepackage{fancyvrb}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb}
-\usepackage{mathrsfs}
-\usepackage[hyperindex]{hyperref}
-\usepackage{makeidx}
-\usepackage[stable]{footmisc}
-\usepackage{titlesec}
-\usepackage[nottoc]{tocbibind}
-\usepackage{units}
-\usepackage{tabularx}
-\usepackage[titles]{tocloft}
-\usepackage{lmodern}
-\usepackage{framed}
-\usepackage{xspace}
-\definecolor{bg-color}{rgb}{0.96,1,0.95}
-\definecolor{shadecolor}{rgb}{0.96,1,0.95}
-\definecolor{brick}{HTML}{7B0C00}
-
-\makeatletter
-\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
-  \let\PY@ul=\relax \let\PY@tc=\relax%
-  \let\PY@bc=\relax \let\PY@ff=\relax}
-\def\PY@tok#1{\csname PY@tok@#1\endcsname}
-\def\PY@toks#1+{\ifx\relax#1\empty\else%
-  \PY@tok{#1}\expandafter\PY@toks\fi}
-\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
-        \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
-\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
-
-\def\PY@tok@gd{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
-\def\PY@tok@gu{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
-\def\PY@tok@gt{\def\PY@tc##1{\textcolor[rgb]{0.00,0.25,0.82}{##1}}}
-\def\PY@tok@gs{\let\PY@bf=\textbf}
-\def\PY@tok@gr{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
-\def\PY@tok@cm{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\def\PY@tok@vg{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\def\PY@tok@m{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@mh{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@go{\def\PY@tc##1{\textcolor[rgb]{0.50,0.50,0.50}{##1}}}
-\def\PY@tok@ge{\let\PY@it=\textit}
-\def\PY@tok@vc{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\def\PY@tok@il{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@cs{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\def\PY@tok@cp{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
-\def\PY@tok@gi{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
-\def\PY@tok@gh{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\def\PY@tok@ni{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
-\def\PY@tok@nl{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
-\def\PY@tok@nn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\def\PY@tok@no{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
-\def\PY@tok@na{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
-\def\PY@tok@nb{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@nc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\def\PY@tok@nd{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\def\PY@tok@ne{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
-\def\PY@tok@nf{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
-\def\PY@tok@si{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\def\PY@tok@s2{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\def\PY@tok@vi{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\def\PY@tok@nt{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@nv{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\def\PY@tok@s1{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\def\PY@tok@sh{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\def\PY@tok@sc{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\def\PY@tok@sx{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@bp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@c1{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\def\PY@tok@kc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@c{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
-\def\PY@tok@mf{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@err{\def\PY@bc##1{\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{##1}}}
-\def\PY@tok@kd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@ss{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
-\def\PY@tok@sr{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
-\def\PY@tok@mo{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@kn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@mi{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@gp{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
-\def\PY@tok@o{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
-\def\PY@tok@kr{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@s{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\def\PY@tok@kp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@w{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
-\def\PY@tok@kt{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
-\def\PY@tok@ow{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
-\def\PY@tok@sb{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-\def\PY@tok@k{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
-\def\PY@tok@se{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
-\def\PY@tok@sd{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
-
-\def\PYZbs{\char`\\}
-\def\PYZus{\char`\_}
-\def\PYZob{\char`\{}
-\def\PYZcb{\char`\}}
-\def\PYZca{\char`\^}
-\def\PYZsh{\char`\#}
-\def\PYZpc{\char`\%}
-\def\PYZdl{\char`\$}
-\def\PYZti{\char`\~}
-% for compatibility with earlier versions
-\def\PYZat{@}
-\def\PYZlb{[}
-\def\PYZrb{]}
-\makeatother
+\usepackage[]{geometry-commomun}
 
 \hypersetup{%
   a4paper,
@@ -128,129 +15,14 @@ nohead,nomarginpar]{geometry}
   pdfcreator={moteur:pdfLaTeX, éditeur:Emacs}}
 \usepackage[frenchb]{babel}
 \frenchbsetup{ReduceListSpacing=false,CompactItemize=false}
-% \frenchbsetup{StandardItemLabels,ReduceListSpacing=false}
-
-% *=======================================================*
-% *.................Index sur une colonne.................*
-\makeatletter
-\renewenvironment{theindex}
-{\if@twocolumn
-  \@restonecolfalse
-  \else
-  \@restonecoltrue
-  \fi
-  \section*{\indexname}%
-  \@mkboth{\MakeUppercase\indexname}%
-  {\MakeUppercase\indexname}%
-  \thispagestyle{plain}\parindent\z@
-  \parskip\z@ \@plus .3\p@\relax
-  \columnseprule \z@
-  \columnsep 35\p@
-  \let\item\@idxitem}
-{\if@restonecol\onecolumn\else\clearpage\fi}
-\makeatother
-\newcommand*{\mainidx}[1]{\textbf{\hyperpage{#1}}}
-% *=======================================================*
-
-\newif\ifVcompile
-\Vcompiletrue
-\newcounter{example}
-\stepcounter{example}
-
-% *=======================================================*
-% *..........Définition de l'environnement vasy...........*
-% *=======================================================*
-\fvset{resetmargins=true}
-\makeatletter
-
-\newsavebox{\image}
-
-\newcommand{\vasy}[1]
-{%
-  \noindent\begin{shaded}
-    \noindent\begin{tabularx}{\textwidth}{|X}
-      \hspace*{0mm}\hfill\fcolorbox{white}{white}{%
-        \includegraphics{./include/#1.pdf}}%
-      \hfill\hspace*{0mm}\\\hline
-      \vspace*{0mm}\BVerbatimInput[commandchars=\\\{\},fontfamily=tt,fontsize=\small]{./include/#1.tex}
-    \end{tabularx}
-  \end{shaded}
-  \stepcounter{example}%
-}
-
-\newcommand{\bvasy}[1]
-{%
-  \sbox{\image}{\includegraphics{./include/#1.pdf}}%
-  \noindent\begin{shaded}
-    \noindent\begin{tabular}{c|c}\fcolorbox{white}{white}{\parbox[c]{\wd\image}{\usebox{\image}}}&
-      \begin{tabularx}{\textwidth}{X}
-        \vspace*{0mm}\BVerbatimInput[commandchars=\\\{\},fontfamily=tt,fontsize=\small]{./include/#1.tex}\\
-      \end{tabularx}
-    \end{tabular}
-  \end{shaded}\stepcounter{example}%
-}
-
-\def\aVerbatim{\FV@Environment{Verbatim}{aVerbatim}}
-\def\FVB@aVerbatim{\FVB@VerbatimOut{aVerbatim.aux}}%
-\def\FVE@aVerbatim{%
-  \FVE@VerbatimOut%
-  \noindent\begin{shaded}\noindent\VerbatimInput[frame=none]{aVerbatim.aux}\end{shaded}
-}
-\DefineVerbatimEnvironment{aVerbatim}{aVerbatim}{}
-
-\newcounter{tmpfile}
-\def\Vcolor{\FV@Environment{BVerbatim}{Vcolor}}
-\def\FVB@Vcolor{\FVB@VerbatimOut{./vcolors/vcolor\thetmpfile.asy}}%
-\def\FVE@Vcolor{%
-  \FVE@VerbatimOut%
-  \ifVcompile\immediate\write18{../bin/pygmentize-wraper.sh ./vcolors/vcolor\thetmpfile}\fi%
-  \colorbox{bg-color}{\BVerbatimInput[commandchars=\\\{\},fontfamily=tt,fontsize=\small,baseline=t]{./vcolors/vcolor\thetmpfile.tex}}%
-  \stepcounter{tmpfile}%
-  \par%
-}
-\DefineVerbatimEnvironment{Vcolor}{Vcolor}{}
-
-\makeatother
 
 \newcommand{\geo}{l'extension \emph{geometry.asy}\xspace}
 \newcommand{\Geo}{L'extension \emph{geometry.asy}\xspace}
-\newcommand{\code}[1]{\Verb+{#1}+}
-\newcommand{\param}[1]{\Verb+{#1}+}
-\newcommand{\mparam}[1]{\mbox{\param{#1}}}
-\newcommand{\asymptote}{\textsc{asymptote}\xspace}
-\newcommand{\Asymptote}{\textsc{asymptote}}
 \newcommand{\ssi}{si et seulement si\xspace}
-\renewcommand{\vec}[1]{\overrightarrow{#1}}
-
-\newenvironment{modif}{%
-  \color{red}\bf
-}{}
-
-\newenvironment{ajout}{%
-  \color{red}\bf
-}{}
-
-%%
-%% TOC configuration.
-%%
-
-\setlength{\cftbeforesecskip}{0.1ex}
-\setlength{\cftbeforesubsecskip}{0.1ex}
-\renewcommand{\cftsecfont}{\normalfont}
-\renewcommand{\cftsecpagefont}{\normalfont}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-
-%%
-%% Configure titles.
-%%
-
-\titleformat{name=\section}{\normalfont\rmfamily\Large\bfseries\color{brick}}{\thesection.}{1em}{}
-\titleformat{name=\section,numberless}{\normalfont\rmfamily\Large\bfseries\color{brick}}{}{0em}{}
-\titleformat{name=\subsection}{\normalfont\rmfamily\Large\bfseries\color{brick}}{\thesubsection.}{1em}{}
-\titleformat{name=\subsubsection}{\normalfont\rmfamily\large\bfseries\color{brick}}{\thesubsubsection.}{1em}{}
 
 \makeindex
 
+% \Vcompiletrue
 \begin{document}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -258,7 +30,7 @@ nohead,nomarginpar]{geometry}
 \title{\texttt{geometry.asy}\footnotemark[1]\\
   Géométrie euclidienne avec \asymptote}
 \author{Philippe \textsc{Ivaldi}}
-\date{Version 1.0\\\today}
+\date{Compilé avec \Asymptote{} version 2.14svn-r5318\\le \today}
 \maketitle
 \hspace*{0mm}\hfill
 \begin{center}
@@ -272,7 +44,7 @@ nohead,nomarginpar]{geometry}
     \begin{quotation}
       \noindent Permission is granted to copy, distribute and/or modify this document
       under the terms of the \emph{GNU} Lesser General Public License (see the
-      file LICENSE in the top-level source directory).
+      file LICENSE in \href{http://git.piprime.fr/?p=asymptote/geometry-documentation.git;a=summary}{the top-level source directory}).
     \end{quotation}
   \end{minipage}}
 

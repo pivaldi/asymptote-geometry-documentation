@@ -1,43 +1,6 @@
 \documentclass[pdftex]{article}
-\usepackage[a4paper,centering,
-left=1cm,right=1cm,
-top=2cm,bottom=2cm,
-nohead,nomarginpar]{geometry}
-\usepackage[latin1]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{framed}
-\usepackage[hyperref]{xcolor}
-\usepackage{ifthen}
-\usepackage{fancyvrb}
-\usepackage{graphicx}
-\usepackage{amsmath,amssymb}
-\usepackage{mathrsfs}
-\usepackage{makeidx}
-\usepackage[stable]{footmisc}
-\usepackage{titlesec}
-\usepackage[nottoc]{tocbibind}
-\usepackage{units}
-\usepackage{tabularx}
-\usepackage[titles]{tocloft}
-\usepackage{lmodern}
-\usepackage{framed}
-\usepackage{xspace}
-\newcommand\circonflexe{\^{}}
-\definecolor{bg-color}{rgb}{0.96,1,0.95}
-\definecolor{shadecolor}{rgb}{0.96,1,0.95}
-\definecolor{txt-color}{HTML}{000000}
-\definecolor{builtin}{HTML}{DA70D6}
-\definecolor{comment}{HTML}{B22222}
-\definecolor{comment-delimiter}{HTML}{B22222}
-\definecolor{constant}{HTML}{5F9EA0}
-\definecolor{function-name}{HTML}{0000FF}
-\definecolor{keyword}{HTML}{a020F0}
-\definecolor{string}{HTML}{BC8F8F}
-\definecolor{type}{HTML}{228B22}
-\definecolor{variable-name}{HTML}{B8860B}
-\definecolor{brick}{HTML}{7B0C00}
+\usepackage[]{geometry-commomun}
 
-\usepackage[pdftex]{hyperref}
 \hypersetup{%
   a4paper,
   colorlinks=true,
@@ -51,139 +14,14 @@ nohead,nomarginpar]{geometry}
     vector, latex, asymptote, figures, drawing, metapost},
   pdfcreator={engine:pdfLaTeX, editor:Emacs}}
 \usepackage[english]{babel}
-%\frenchbsetup{ReduceListSpacing=false,CompactItemize=false}
-% \frenchbsetup{StandardItemLabels,ReduceListSpacing=false}
-
-% *=======================================================*
-% *.................Index sur une colonne.................*
-\makeatletter
-\renewenvironment{theindex}
-{\if@twocolumn
-  \@restonecolfalse
-  \else
-  \@restonecoltrue
-  \fi
-  \section*{\indexname}%
-  \@mkboth{\MakeUppercase\indexname}%
-  {\MakeUppercase\indexname}%
-  \thispagestyle{plain}\parindent\z@
-  \parskip\z@ \@plus .3\p@\relax
-  \columnseprule \z@
-  \columnsep 35\p@
-  \let\item\@idxitem}
-{\if@restonecol\onecolumn\else\clearpage\fi}
-\makeatother
-\newcommand*{\mainidx}[1]{\textbf{\hyperpage{#1}}}
-% *=======================================================*
-
-\newif\ifcompile
-\newif\ifVcompile
-% \compiletrue
-% \Vcompiletrue
-\newcounter{example}
-\stepcounter{example}
-
-% *=======================================================*
-% *..........Définition de l'environnement vasy...........*
-% *=======================================================*
-\fvset{resetmargins=true,commandchars=§£`}
-\makeatletter
-
-\newsavebox{\image}
-\def\vasy{\FV@Environment{BVerbatim}{vasy}}
-\def\FVB@vasy#1{\def\tmp{#1}\FVB@VerbatimOut{./include/#1.asy}}%
-\def\FVE@vasy{%
-  \FVE@VerbatimOut%
-  \ifcompile\immediate\write18{asy-tex.sh \tmp}\fi%
-  \noindent\begin{shaded}
-    \noindent\begin{tabularx}{\textwidth}{|X}
-      \hspace*{0mm}\hfill\fcolorbox{white}{white}{\includegraphics{./include/\tmp.pdf}}\hfill\hspace*{0mm}\\\hline
-      \vspace*{0mm}\BVerbatimInput[commandchars=§£`]{./include/\tmp.tex}
-    \end{tabularx}
-  \end{shaded}
-  \compiletrue\stepcounter{example}%
-}
-\DefineVerbatimEnvironment{vasy}{vasy}{}
-
-\def\bvasy{\FV@Environment{BVerbatim}{bvasy}}
-\def\FVB@bvasy#1{\def\tmp{#1}\FVB@VerbatimOut{./include/#1.asy}}%
-\def\FVE@bvasy{%
-  \FVE@VerbatimOut%
-  \ifcompile\immediate\write18{asy-tex.sh \tmp}\fi%
-  \sbox{\image}{\includegraphics{./include/\tmp.pdf}}%
-  \noindent\begin{shaded}
-    \noindent\begin{tabular}{c|c}\fcolorbox{white}{white}{\parbox[c]{\wd\image}{\usebox{\image}}}&
-      \begin{tabularx}{\textwidth}{X}
-        \vspace*{0mm}\BVerbatimInput[commandchars=§£`]{./include/\tmp.tex}\\
-      \end{tabularx}
-    \end{tabular}
-  \end{shaded}\compiletrue\stepcounter{example}%
-}
-\DefineVerbatimEnvironment{bvasy}{bvasy}{}
-
-\def\aVerbatim{\FV@Environment{Verbatim}{aVerbatim}}
-\def\FVB@aVerbatim{\FVB@VerbatimOut{./include/tmp_}}%
-\def\FVE@aVerbatim{%
-  \FVE@VerbatimOut%
-  \noindent\begin{shaded}\noindent\VerbatimInput[frame=none]{./include/tmp_}\end{shaded}
-}
-\DefineVerbatimEnvironment{aVerbatim}{aVerbatim}{}
-
-\newcounter{tmpfile}
-\def\Vcolor{\FV@Environment{BVerbatim}{Vcolor}}
-\def\FVB@Vcolor{\FVB@VerbatimOut{./include/vcolor\thetmpfile.asy}}%
-\def\FVE@Vcolor{%
-  \FVE@VerbatimOut%
-  \ifVcompile\immediate\write18{asy-tex.sh -nog vcolor\thetmpfile}\fi%
-    \colorbox{bg-color}{\BVerbatimInput[commandchars=§£`,baseline=t]{./include/vcolor\thetmpfile.tex}}%
-  \stepcounter{tmpfile}%
-  \par%
-}
-\DefineVerbatimEnvironment{Vcolor}{Vcolor}{}
-
-\makeatother
 
 \newcommand{\geo}{the package \emph{geometry.asy}\xspace}
 \newcommand{\Geo}{The package \emph{geometry.asy}\xspace}
-% \newcommand{\code}[1]{\colorbox{bg-color}{\Verb+{#1}+}}
-\newcommand{\code}[1]{\Verb+{#1}+}
-\newcommand{\param}[1]{\Verb+{#1}+}
-\newcommand{\mparam}[1]{\mbox{\param{#1}}}
-\newcommand{\asymptote}{\textsc{asymptote}\xspace}
-\newcommand{\Asymptote}{\textsc{asymptote}}
 \newcommand{\ssi}{if and only if\xspace}
-\renewcommand{\vec}[1]{\overrightarrow{#1}}
-
-\newenvironment{modif}{%
-  \color{red}\bf
-}{%
-}
-
-\newenvironment{ajout}{%
-  \color{red}\bf
-}{}
-
-%%
-%% TOC configuration.
-%%
-
-\setlength{\cftbeforesecskip}{0.1ex}
-\setlength{\cftbeforesubsecskip}{0.1ex}
-\renewcommand{\cftsecfont}{\normalfont}
-\renewcommand{\cftsecpagefont}{\normalfont}
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
-
-%%
-%% Configure titles.
-%%
-
-\titleformat{name=\section}{\normalfont\rmfamily\Large\bfseries\color{brick}}{\thesection.}{1em}{}
-\titleformat{name=\section,numberless}{\normalfont\rmfamily\Large\bfseries\color{brick}}{}{0em}{}
-\titleformat{name=\subsection}{\normalfont\rmfamily\Large\bfseries\color{brick}}{\thesubsection.}{1em}{}
-\titleformat{name=\subsubsection}{\normalfont\rmfamily\large\bfseries\color{brick}}{\thesubsubsection.}{1em}{}
-
 \makeindex
 
+\renewcommand{\lang}{EN}
+% \Vcompiletrue
 \begin{document}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -192,7 +30,7 @@ nohead,nomarginpar]{geometry}
   Euclidean geometry with \asymptote}
 \author{%
   \begin{minipage}[t]{0.325\linewidth}\centering
-\href{http://piprim.tuxfamily.org/asymptote/geometry_fr.pdf}{Original French Version}
+    \href{http://www.piprime.fr/files/res/geometry_fr.pdf}{Original French Version}
     by\\ Philippe \textsc{Ivaldi}
   \end{minipage}\hspace*{5mm}%
   \begin{minipage}[t]{0.325\linewidth}\centering
@@ -202,7 +40,7 @@ nohead,nomarginpar]{geometry}
     Philippe \textsc{Ivaldi}
   \end{minipage}%
   }
-\date{Version 1.0\\\today}
+  \date{Compiled with \Asymptote{} version 2.14svn-r5318\\on \today}
 \maketitle
 \hspace*{0mm}\hfill
 \begin{center}
@@ -216,7 +54,7 @@ nohead,nomarginpar]{geometry}
     \begin{quotation}
       \noindent Permission is granted to copy, distribute and/or modify this document
       under the terms of the \emph{GNU} Lesser General Public License (see the
-      file LICENSE in the top-level source directory).
+      file LICENSE in \href{http://git.piprime.fr/?p=asymptote/geometry-documentation.git;a=summary}{the top-level source directory}).
     \end{quotation}
   \end{minipage}}
 
@@ -232,19 +70,6 @@ nohead,nomarginpar]{geometry}
   First we will give the list with a brief description of the new
   types. Secondly we will study each of them and give details on the
   associated routines and operators.
-  % This paper describes the use of \geo which simplifies the creation of
-  % plane Euclidean geometry figures by defining new types and new
-  % routines for the software  \href{http://asymptote.sourceforge.net/}{\textsc{Asymptote}}.
-  % After listing the new types with a brief description, will study
-  % separately the routines and the operators associated with them.
-  % This document deals with the use of \geo which makes easier\footnote{and very
-  %   natural (comment added by the translator)} the  production
-  % of plane Euclidean geometry figures. \Geo
-  % defines some new types and routines for
-  % \href{http://asymptote.sourceforge.net/}{\textsc{Asymptote}}.\\
-  % First we give the list and a brief description of the new
-  % types. Secondly we study each of them and we give details on the
-  % associated routines and operators.
   \begin{center}\bfseries
     Acknowledgements
   \end{center}
@@ -340,14 +165,7 @@ Indeed the following code which computes and draws the intersection
 between two tangential circles is five times faster than an equivalent
 routine which uses the type \code{path} in place of the type \code{circle}.
 % \compiletrue%
-\begin{bvasy}{circle_loop}
-  import geometry;
-  size(3cm,0);
-  circle cle1=circle((0,0), 1);
-  circle cle2=circle((sqrt(2),sqrt(2)), 1);
-  draw(cle1); draw(cle2);
-  dot(intersectionpoints(cle1, cle2));
-\end{bvasy}
+\bvasy{circle_loop}
 \subsection{Index and external examples}
 An index and an examples gallery of all the routines, types and
 operators defined in \geo allow a detailed view of this module:
@@ -394,12 +212,7 @@ coordinate system is of the type \code{coordsys}. As shown below:
   default value is \code{defaultcoordsys}.
 \end{itemize}
 % \compiletrue%
-\begin{bvasy}{defaultcoord}
-  import geometry;
-  size(4cm,0);
-  show(defaultcoordsys);
-  show("$O'$", shift((1,1))*currentcoordsys);
-\end{bvasy}
+\bvasy{defaultcoord}
 
 \subsection{How to define a coordinate system}
 \index{coordsys!cartesiansystem}\index{coordsys!currentcoordsys}
@@ -407,16 +220,7 @@ To define a coordinate system one can use the command
 \code{cartesiansystem} or one can apply a transformation to some
 coordinate system. For instance:
 % \compiletrue%
-\begin{bvasy}{cartesiancoord}
-  import geometry;
-  size(4cm,0);
-  coordsys R=cartesiansystem(O=(2,1), i=(1,1), j=(-1,1));
-
-  show("$O'$","$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-  show("$O''$","$\vec{u'}$", "$\vec{v'}$",
-  rotate(90)*R, xpen=invisible);
-  show(defaultcoordsys);
-\end{bvasy}
+\bvasy{cartesiancoord}
 
 \subsection{Changing an object  pair on coordinate system}
 \textbf{The examples of this section are given for information}, the
@@ -434,14 +238,7 @@ type \code{pair} into a coordinate system are the operators:
   system \param{R} into coordinates in the default coordinate system.
   Thus, in the following example, the point \param{M} has (0.5;0.5) for coordinates
   in \param{R} and (2;2) in \code{defaultcoordsys}:
-  \begin{bvasy}{deftorel}
-    import geometry;
-    size(4cm,0);
-    coordsys R=cartesiansystem((2,1), i=(1,1), j=(-1,1));
-    pair M=R*(0.5,0.5);
-    dot("", M);
-    show(R);
-  \end{bvasy}
+  \bvasy{deftorel}
 \item \index{coordsys!*}
   \begin{Vcolor}
     pair operator /( pair m, coordsys R)
@@ -451,19 +248,7 @@ type \code{pair} into a coordinate system are the operators:
   in the following example, the points \param{M} and \param{P} have respectively
   the same coordinates in \param{R} and \param{Rp}:
   % \compiletrue%
-  \begin{bvasy}{reltodef}
-    import geometry;
-    size(4cm,0);
-    coordsys R=cartesiansystem((2,1), i=(1,1), j=(-1,1));
-    coordsys Rp=cartesiansystem((-2,-1), i=(-1,1),
-    j=(-1,-1));
-    pair M=R*(1,1);
-    dot("$M$", M);
-    pair P=Rp*(M/R);
-    dot("$P$", P);
-    show(R, xpen=invisible);
-    show("$O'$", "$\vec{u}$", "$\vec{v}$", Rp, xpen=invisible);
-  \end{bvasy}
+  \bvasy{reltodef}
 \end{itemize}
 
 \subsection{Other routines}
@@ -500,76 +285,28 @@ of the type \code{point} refers to the coordinate system in which it is defined.
  in the following example the \code{pair M} and the \code{point P}
  show the same point:
 % \compiletrue%
-\begin{bvasy}{point1}
-  import geometry;
-  size(4cm,0);
-  show(currentcoordsys, xpen=invisible);
-  pair M=(1,1); dot("$M$", M, W, linewidth(2mm));
-  point P=(1,1); dot("$P$", P, red);
-\end{bvasy}
+\bvasy{point1}
 \index{currentcoordsys}The following example shows the consequence of
 a modification of the current coordinate system on the casting  \code{pair} in
 \code{point} for the point \param{A} and how to define a point into a
 specific coordinate system through to the routine \code{point point(coordsys R,  pair m)}
 \index{point(coordsys,pair,real)} for the point \param{B}.
 % \compiletrue%
-\begin{vasy}{point2}
-  import geometry;
-  size(6cm,0);
-  currentcoordsys=cartesiansystem((3,0), i=(1,1), j=(-1,1));
-  show("$O_1$", "$\vec{u_1}$", "$\vec{v_1}$", currentcoordsys, xpen=invisible);
-  point A=(1,1);
-  dot("$A$", A);
-  coordsys Rp=rotate(90)*currentcoordsys;
-  show("$O_2$", "$\vec{u_2}$", "$\vec{v_2}$", Rp, xpen=invisible);
-  point B=point(Rp, (1,1));
-  dot("$B$", B);
-\end{vasy}
+\vasy{point2}
 The routine \code{point locate(pair m);}\index{locate} also allows to
 convert directly a \code{pair} into \code{point} without point's declaration:
 % \compiletrue%
-\begin{bvasy}{point3}
-  import geometry;
-  size(4cm,0);
-  currentcoordsys=cartesiansystem((3,0), (1,0), (1,1));
-  show("", currentcoordsys);
-  point A=(1,1);
-  dot("$A$", A); draw(locate(0)--A);
-  draw(locate((0,1))--A, dashed); draw(locate((1,0))--A, dashed);
-\end{bvasy}
+\bvasy{point3}
 The example below shows how to convert a type \code{pair} into a type
 \code{point} so that the result represents the same point and then how
 to obtain his coordinates into  two distinct coordinate systems.
 % \compiletrue%
-\begin{bvasy}{point4}
-  import geometry;
-  size(4cm,0);
-  coordsys R=cartesiansystem((2,3), i=(1,0), j=(0.5,1));
-  show(currentcoordsys);
-  show(Label("$O_1$",blue), Label("$\vec{u}$",blue),
-  Label("$\vec{v}$",blue), R, xpen=invisible, ipen=blue);
-  pair A=(3,1);
-  dot("", A, red);
-  point B=point(R, A/R);
-  dot("", B, W, blue);
-\end{bvasy}
+\bvasy{point4}
 The routine
 \index{point!changecoordsys}\code{changecoordsys}
 allows to change easily the coordinate system of a \code{point}:
 % \compiletrue%
-\begin{vasy}{point5}
-  import geometry;
-  size(4cm,0);
-  currentcoordsys=cartesiansystem((0,0), i=(1,0), j=(0.5,1));
-  show(currentcoordsys);
-  coordsys R=cartesiansystem((4,3), i=(-1,0), j=(-0.5,1));
-  show(Label("$O_1$",blue), Label("$\vec{u}$",align=S,blue),
-  Label("$\vec{v}$",align=E,blue), R, xpen=invisible, ipen=blue);
-  point A=(3,1);
-  dot("", A, red);
-  point B=changecoordsys(R, A);
-  dot("", B, W, blue);
-\end{vasy}
+\vasy{point5}
 \index{point!+}\index{point!-}\index{point!*}\index{point!/}
 
 As for the type \code{pair} the operators \code{+}, \code{-},
@@ -584,20 +321,7 @@ Locating a point with polar coordinate is possible via the code
 \code{pair polar(real r, real angle)} of an object of the type
 \code{coordsys} as shown in the following example:
 % \compiletrue%
-\begin{bvasy}{point6}
-  import geometry;
-  size(4cm,0);
-  coordsys R=cartesiansystem(O=(1,2), i=(1,0.5), j=(-1,1));
-  show(R);
-
-  for (int i=0; i < 360; i += 10) {
-    pen p=(i/360)*red;
-    dot(point(R, R.polar(1,radians(i))), p);
-  }
-
-  point A=point(R, R.polar(1,radians(40)));
-  draw((string)abs(A), R.O--A);
-\end{bvasy}
+\bvasy{point6}
 
 \subsubsection{Another routines}
 Now that the basic routines concerning the type \code{point} are
@@ -770,19 +494,7 @@ and \param{P} \textbf{after their conversion into the default
   coordinate system}: thus  $\vec{\mbox{\param{OQ}}}=\vec{\mbox{\param{OM}}}+\vec{\mbox{\param{OP}}}$.
 
 % \compiletrue
-\begin{bvasy}{somme_point}
-  import geometry;
-  size(4cm,0);
-  show(currentcoordsys);
-  coordsys R=cartesiansystem(O=(2,2),i=(1,0.5),j=(-1,1));
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-
-  point M=(-1,1); dot("M", M);
-
-  point P=point(R, (1,1)); dot("P", P);
-
-  point Q=M+P; dot("Q=M+P", Q);
-\end{bvasy}
+\bvasy{somme_point}
 If we define the vector  $\vec{\mbox{\param{w}}}$ with \code{vector
   w=vector(R, P.coordinates);} (or in an easier way
 \code{vector w=P;}) then we have
@@ -792,18 +504,7 @@ $\vec{\mbox{\param{OQ}}}=\vec{\mbox{\param{OM}}}+\vec{\mbox{\param{O}}_{1}\mbox{
 which is the expected result. Here an example
 
 % \compiletrue
-\begin{bvasy}{somme_point_vecteur}
-  import geometry;
-  size(4cm,0);
-  show(currentcoordsys, xpen=invisible);
-  coordsys R=cartesiansystem(O=(2,2),i=(1,0.5),j=(-1,1));
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-
-  point M=(-1,1); dot("M", M);
-  point P=point(R, (1,1)); dot("P", P);
-  vector w=P; show("$\vec{w}$", w);
-  point Q=M+w; dot("Q=M+w", Q);
-\end{bvasy}
+\bvasy{somme_point_vecteur}
 An object \param{u} of the type \code{vector} has the same behavior
 than an object of the type \code{point} but his conversion into
 a \code{pair} or a \code{point} \param{M} relatively to the default
@@ -811,46 +512,13 @@ coordinate system is such that
 $\vec{\mparam{u}}=\vec{\mparam{OM}}$. It is shown in the example below
 which also uses the routine  \index{locate(vector)}\code{pair locate(vector v)}:
 % \compiletrue
-\begin{bvasy}{locate_vector}
-    import geometry; size(4cm,0);
-    currentcoordsys=cartesiansystem((1.25,0.75), i=(1,1), j=(-1,1));
-    coordsys Rp=currentcoordsys; coordsys R=defaultcoordsys;
-    show(R); show("$O'$","$\vec{u}$","$\vec{v}$", Rp, xpen=invisible);
-
-    point P=(0.75,0.5); dot("$P$",P); vector w=P;
-    pen bpp=linewidth(bp);
-    draw("$\vec{w}$", origin()--origin()+w, W, bpp, Arrow(3mm));
-    draw("$\vec{w}$", origin--locate(w), E, bpp,  Arrow(3mm));
-\end{bvasy}
+\bvasy{locate_vector}
 The routines that are described for the type \code{point} are also
 available for the type \code{point}. See below some simple examples:
 % \compiletrue%
-\begin{bvasy}{somme_vector}
-  import geometry;
-  size(4cm,0);
-  currentcoordsys=cartesiansystem((0,0),i=(1,1),j=(-1,1));
-  show(currentcoordsys, xpen=invisible);
-
-  vector u=(0.5,1), v=rotate(-135)*u/2;
-  show("$\vec{u}$", u); show("$\vec{v}$", v);
-  show(Label("$\vec{u}+\vec{v}$",EndPoint), u+v);
-\end{bvasy}
+\bvasy{somme_vector}
 % \compiletrue%
-\begin{vasy}{somme_vector2}
-  import geometry;
-  size(8cm,0);
-  currentcoordsys=cartesiansystem((0,0), i=(1,1), j=(-1,1));
-  show(currentcoordsys, xpen=invisible);
-
-  vector u=(0.5,1), v=rotate(-135)*u/2;
-  show("$\vec{u}$", u); show("$\vec{v}$", v);
-
-  point P=(1,-1); dot("P", P, SW);
-
-  draw(Label("$\vec{u}$",align=W), P--(P+u), Arrow);
-  draw("$\vec{v}$", P--(P+v), Arrow);
-  draw("$\vec{u}+\vec{v}$", P--(P+(u+v)), Arrow);
-\end{vasy}
+\vasy{somme_vector2}
 \subsection{Vector/point casting}
 
 With casting process an object \code{point} can be
@@ -870,41 +538,14 @@ vector is converted into a \code{pair} as explained above.\\
 Notice that it is possible to write  \code{point M=w;} in
 place of \code{point M=point(w);}\index{point(explicit vector)}.
 % \compiletrue%
-\begin{bvasy}{locate_vector2}
-  import geometry; size(4cm,0);
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-  show(currentcoordsys);
-
-  vector w=vector(R, (1,1));
-  show("$\vec{w}$", w, linewidth(bp), Arrow(3mm));
-  dot("w", w, N); dot("point(w)", point(w), N);
-\end{bvasy}
+\bvasy{locate_vector2}
 The attentive reader will understand the following example:
 % \compiletrue%
-\begin{bvasy}{vector_point}
-  import geometry; size(4cm,0); pen bpp=linewidth(bp);
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-  show(currentcoordsys); vector w=vector(R, (1,1));
-  show("$\vec{w}$", w, bpp, Arrow(3mm));
-  show("$\vec{w}$", locate(w), bpp, Arrow(3mm));
-  draw((1,2)--locate(w), green);
-  draw((1,2)--point(w), blue);
-\end{bvasy}
+\bvasy{vector_point}
 The counterpart of the routine  \code{point point(explicit vector)} is
 \code{vector vector(point)}\index{vector vector(point)}:
 % \compiletrue%
-\begin{bvasy}{point_vector}
-  import geometry; size(4cm,0);
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-  show(currentcoordsys);
-  point M=point(R, (1,1)); dot("M", M, N);
-  dot("vector(M)", vector(M), N);
-  show(Label(scale(0.75)*"$\vec{O_1M}$", Relative(0.75)),
-       M, linewidth(bp), Arrow(3mm));
-\end{bvasy}
+\bvasy{point_vector}
 
 Finally  the reader must pay attention to the routines
 \code{vector unit(point)}\index{unit(point)} and
@@ -913,17 +554,7 @@ which always return an object  \code{vector}. Thus, in the following
 example the behavior of \code{point P=unit(B-A);}  is not amazing
 while the one of  \code{dot(unit(B-A))} can be dubious.
 % \compiletrue%
-\begin{bvasy}{unit_vector}
-  import geometry; size(4cm,0);
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
-  show(currentcoordsys, xpen=invisible);
-
-  point A=point(R, (1,1)); dot("A", A); point B=point(R, (2,2));
-  dot("B", B); point M=unit(B-A); dot("M", M);
-  dot("unit(B-A)", unit(B-A), N);
-  dot("A+unit(B-A)", A+unit(B-A), W);
-\end{bvasy}
+\bvasy{unit_vector}
 \subsection{Another routines}
 \index{collinear(vector,vector)}As already mentioned all the routines
 devoted to the type type \code{point} can also be used with the type
@@ -1038,14 +669,7 @@ mass points:
   \%L will be replaced by the label of the mass. The following
   example sheds a light on this routine:
   % \compiletrue%
-  \begin{bvasy}{defaultmassformat}
-    import geometry;
-    size(4cm,0);
-    mass M=mass((0,0), 1); dot("M", M);
-
-    defaultmassformat="$%L(%.4g)$";
-    dot("M", M+(1,0));
-  \end{bvasy}
+  \bvasy{defaultmassformat}
   \vspace*{2mm}
 \item \index{massformat(string,string,mass)}
   % \compiletrue%
@@ -1089,77 +713,14 @@ mass points:
 To conclude this section here are three examples using some of the
 above described routines.
 % \compiletrue%
-\begin{bvasy}{mass_ex1}
-  import geometry;
-  size(4cm,0);
-  mass A=mass((1,0), 3);
-  mass B=mass((0,1), sqrt(3));
-  point C=(0.25,0); // C has the default weight : 1.
-
-  dot("B", B, N); dot("C", C, S); dot("A", A, S);
-  draw(A--B--C--cycle);
-  dot("G", masscenter(A,B,mass(C)), 2NE);
-\end{bvasy}
+\bvasy{mass_ex1}
 % \compiletrue%
-\begin{bvasy}{mass_ex2}
-  import geometry;
-  size(5cm,0);
-  int n=50;
-  mass[] M;
-  real m, step=360/n;
-  pair dir;
-  for (int i=0; i < 2*n; ++i) {
-    dir=dir(i*step);
-    m=i+1;
-    M.push(mass(m*dir, m));
-    dot(point(M[i]), dir);
-    if(i != 0) draw(M[i-1]--M[i]);
-  }
-
-  dot("G",masscenter(... M), N, red);
-\end{bvasy}
+\bvasy{mass_ex2}
 % \compiletrue%
 The following example shows how one can construct all the partial
 centers of \param{n} points, each center being connecting to the
 points from which it is emerging.
-\begin{vasy}{mass_ex3}
-  import geometry;
-  size(7cm,0);
-  int[][] parties(int n) {
-    int[][] oi;
-
-    void loop(int[] arr, int i) {
-      oi.push(arr);
-      for (int j=i; j < arr.length; ++j) {
-        int[] tt=copy(arr);
-        tt[j]=1;
-        loop(tt, j+1);}}
-    loop(sequence(new int(int n){return 0;}, n), 0);
-    return oi;}
-
-  int n=6;
-  real step=360/n;
-  point[] M;
-
-  for (int i=0; i < n; ++i) {
-    M[i]=mass(dir(i*step), 1);
-    dot(M[i],linewidth(2mm));}
-
-  int[][] part=parties(n); int l=part.length;
-  point[][] group=new point[l][];
-
-  for (int i=0; i < l; ++i)
-  for (int j=0; j < n; ++j)
-  if(part[i][j] == 1) group[i].push(M[j]);
-
-  point[][] partbar=new point[l][2];
-
-  for (int i=0; i < l; ++i) {
-    if(group[i].length > 0) partbar[i][0]=masscenter(...group[i]);
-    for (int j=0; j < group[i].length; ++j)
-    draw(group[i][j]--partbar[i][0]);
-    if(group[i].length > 0) dot(partbar[i][0], 0.8*red);}
-\end{vasy}
+\vasy{mass_ex3}
 
 \hyperdef{section}{transform1}{\section{\index{transformation|textbf}Transformations
     (Part 1)}}
@@ -1177,64 +738,15 @@ detail the coordinate system dependent transformations.
     transform scale(real k, point M)
   \end{Vcolor}
   Central similarity of center M and coefficient k.
-  \begin{bvasy}{scale}
-       import geometry;
-    size(7.5cm,0);
-    pen bpp=linewidth(bp); real k=sqrt(2);
-
-    point A=(0,0); dot("A", A, SW);
-    point B=(1,2); dot("B", B, N);
-    point M=(-1,1);
-    dot("M", M, -dir(M--A,M--B));
-
-    point Ap=scale(k, M)*A;
-    dot("A'", Ap, SW, red);
-    point Bp=scale(k, M)*B;
-    dot("B'", Bp, N, red);
-
-    draw(M--Ap, grey); draw(M--Bp, grey);
-    draw(A--B, bpp);
-    draw(rotate(unit(Bp-Ap))*"$k\times AB$",
-    Ap--Bp, bpp+red);
-  \end{bvasy}
-   \begin{bvasy}{scale2}
-    import geometry;
-    size(7.5cm,0);
-    pen bpp=linewidth(bp);
-    point A=(0,0); dot("A", A, SW);
-    point B=(1,2); dot("B", B, NW);
-    point C=(-1,1); dot("C", C,N);
-    path g=A--B--C--cycle; draw(g, bpp);
-    point M=(0,1);
-    path gp=scale(2, M)*g; draw(gp, bpp);
-    for (int i=0; i < 3; ++i) draw(M--point(gp,i));
-    dot("A'", point(gp,0), SW);
-    dot("B'", point(gp,1), NW);
-    dot("C'", point(gp,2), N);
-  \end{bvasy}
+  \bvasy{scale}
+   \bvasy{scale2}
 \item \index{projection(point,point)}
   % \compiletrue
   \begin{Vcolor}
     transform projection(point A, point B)
   \end{Vcolor}
   Orthogonal projection onto the line \param{(AB)}.
-  \begin{bvasy}{projectionAB}
-     import geometry;
-    size(6cm);
-    point A=(2,2); point B=(4,1); point M=(4,3);
-    path cle=shift(3,2.5)*scale(.25)*unitcircle;
-    draw(cle, linewidth(bp));
-
-    transform proj=projection(A,B);
-    point Mp=proj*M;
-
-    draw(proj*cle, 1mm+red);
-    dot("A", A, unit(A-B)); dot("B", B, unit(B-A));
-    dot("M", M, unit(M-Mp));
-    dot("M'", Mp, unit(Mp-M), red);
-    draw(M--Mp, grey); draw(A--B);
-    markrightangle(M,Mp,A, grey);
-  \end{bvasy}
+  \bvasy{projectionAB}
 \item \index{projection(point,point,point,point,bool)}
   % \compiletrue
   \begin{Vcolor}
@@ -1247,23 +759,7 @@ detail the coordinate system dependent transformations.
   If the value of \param{safe} is \code{false} and  if the line  \param{(AB)}
   is parallel to the line \param{(CD)} then the central similarity of
   center \param{O} and infinite coefficient is returned.
-  \begin{bvasy}{projectionABCD}
-    import geometry;
-    size(6cm);
-    point A=(2,2); point B=(4,1); point C=(3.75,3);
-    point D=(3.5,4); point M=(2.5,3.5);
-    path cle=shift(2.5,3)*scale(0.25)*unitcircle;
-    draw(cle, linewidth(bp)); draw(line(C,D), grey);
-
-    transform proj=projection(A,B,C,D);
-    point Mp=proj*M;
-
-    draw(proj*cle, 1mm+red);
-    dot("A", A, unit(A-B)); dot("B", B, unit(B-A));
-    dot("C", C); dot("D", D); dot("M", M, unit(M-Mp));
-    dot("M'", Mp, 2*unit(Mp-M), red);
-    draw(M--Mp, grey); draw(A--B);
-  \end{bvasy}
+  \bvasy{projectionABCD}
 \item \index{scale(real,point,point,point,point,bool)}
   % \compiletrue
   \begin{Vcolor}
@@ -1280,29 +776,7 @@ detail the coordinate system dependent transformations.
   If the value of \param{safe} is \code{false} and if the
   line \param{(AB)} is parallel to the line \param{(CD)}, the central
   similarity of center \param{O} and infinite coefficient is returned.
-  \begin{bvasy}{scaleABCD}
-    import geometry;
-    size(6cm,0);
-    pen bpp=linewidth(bp); real k=sqrt(2);
-    point A=(0,0), B=(2,0), C=(3.5,1);
-    point D=(4,2), M=(6,3);
-    path cle=shift(1,2)*unitcircle;
-    draw(cle, bpp);
-    draw(line(A,B));
-    draw(line(C,D), grey);
-
-    transform dilate=scale(k,A,B,C,D);
-    draw(dilate*cle, bpp+red);
-    point Mp=dilate*M;
-
-    point P=intersectionpoint(line(A,B), line(M,Mp));
-    draw(line(P,M), grey);
-    dot("A", A, S); dot("B", B, S); dot("C", C);
-    dot("D", D); dot("M", M, W); dot("P", P, NW);
-    dot("M'", Mp, W, red);
-    distance("$k\times PM$", P, Mp, 6mm, grey,
-    joinpen=grey+dashed);
-  \end{bvasy}
+  \bvasy{scaleABCD}
 \end{itemize}
 \subsection{Dependent coordinate system transformations}
 \begin{itemize}
@@ -1314,41 +788,11 @@ detail the coordinate system dependent transformations.
   \hypertarget{xscale(real,point)}{Affine transformation} of
   coefficient \param{k}, of axis ``the line passing through \param{M} and
   parallel to \param{(Oy)}'' and of direction \param{(Ox)}.
-  \begin{bvasy}{xscale1}
-     import geometry;
-    size(6cm,0);
-    real k=sqrt(2);
-    point A=(1,2); dot("A", A, S);
-    point M=(-1,1); dot("M", M, W);
-
-    point Ap=xscale(k, M)*A; dot("A'", Ap, red);
-    label("A'=xscale(k,M)*A", (0.75,1.125), red);
-
-    point P=extension(A, Ap, M, M+N);
-    dot("P", P, W); draw(M--P); draw(P--Ap);
-    perpendicularmark(P, dir(-45));
-    distance("$k\times PA$", P, Ap, -3mm, grey);
-  \end{bvasy}
+  \bvasy{xscale1}
   The same example in any coordinate system:
   \index{xscale(real,point)}
   % \compiletrue
-  \begin{vasy}{xscale2}
-     import geometry;
-    size(6cm,0);
-    currentcoordsys=cartesiansystem((2,1), i=(1,0.5), j=(-0.75,1));
-    show(currentcoordsys, ipen=blue, jpen=red, xpen=invisible);
-
-    real k=sqrt(2);
-    point A=(2,1.25);
-    point M=(-0.75,0.25); dot("M", M, W);
-
-    point Ap=xscale(k, M)*A;
-    dot("A'", Ap, red); dot("A", A, I*unit(A-Ap));
-
-    point P=intersectionpoint(line(A,Ap), line(M,M+N));
-    dot("P", P, W); draw(M--P, red); draw(P--Ap, blue);
-    distance("$k\times PA$", P, Ap, -3mm, grey);
-  \end{vasy}
+  \vasy{xscale2}
 \item \index{yscale(real,point)}
   % \compiletrue
   \begin{Vcolor}
@@ -1357,41 +801,11 @@ detail the coordinate system dependent transformations.
   \hypertarget{yscale(real,point)}{Affine transformation} of
   coefficient \param{k}, of axis ``the line passing through \param{M} and
   parallel to \param{(Ox)}'' and of direction \param{(Oy)}.
-  \begin{bvasy}{yscale1}
-      import geometry;
-    size(6cm,0);
-    real k=sqrt(2);
-    point A=(2,1);
-    point M=(-1,-1); dot("M", M, W);
-
-    point Ap=yscale(k, M)*A;
-    dot("A'", Ap, red); dot("A", A, I*unit(A-Ap));
-    label("A'=yscale(k,M)*A", (0,1), red);
-
-    point P=intersectionpoint(line(A,Ap), line(M,M+E));
-    dot("P", P); draw(M--P); draw(P--Ap);
-    perpendicularmark(P, dir(135));
-    distance("$k\times PA$",P,Ap,-12mm,grey,grey+dashed);
-  \end{bvasy}
+  \bvasy{yscale1}
   The same example in any coordinate system:
   \index{yscale(real,point)}
   % \compiletrue
-  \begin{vasy}{yscale2}
-      import geometry;
-    size(6cm,0);
-    currentcoordsys=cartesiansystem((2,1), i=(1,0.5), j=(-0.75,1));
-    show(currentcoordsys, ipen=blue, jpen=red, xpen=invisible);
-
-    real k=sqrt(2);
-    point A=(2,1);
-    point M=(-2,-1); dot("M", M, W);
-
-    point Ap=yscale(k, M)*A;
-    dot("A'", Ap, -I*unit(A-Ap), red); dot("A", A, -I*unit(A-Ap));
-    point P=intersectionpoint(line(A,Ap), line(M,M+E));
-    dot("P", P, locate(unit(A-Ap))); draw(M--P, blue); draw(P--Ap, red);
-    distance("$k\times PA$", P, Ap, 3mm, grey);
-  \end{vasy}
+  \vasy{yscale2}
 \item \index{scaleO(real)}
   % \compiletrue
   \begin{Vcolor}
@@ -1402,18 +816,7 @@ detail the coordinate system dependent transformations.
   equivalent to  \code{scale(x, origin())}.\\
   In the following example, one can see the difference between
   \code{scale(k)*P} and \code{scaleO(k)*P}.
-  \begin{bvasy}{scaleO}
-    import geometry; size(4.5cm,0);
-    currentcoordsys=cartesiansystem((2,1), i=(1,0.5), j=(-1,1));
-    show("$O_1$", "$\vec{u}$", "$\vec{v}$", currentcoordsys,
-    xpen=invisible); show(defaultcoordsys, xpen=invisible);
-
-    real k=sqrt(2); point P=(1,1); dot("P", P);
-
-    point P1=scale(k)*P, P2=scaleO(k)*P; dot("scale(k)*P", P1, N);
-    dot("scaleO(k)*P", P2, W); draw((0,0)--locate(P1));
-    draw(origin()--P2);
-  \end{bvasy}
+  \bvasy{scaleO}
 \item \index{xscaleO(real)}
   % \compiletrue
   \begin{Vcolor}
@@ -1490,23 +893,7 @@ is accessible
   The default value is 0 and  a negative value will change the size of
   the image.
     % \compiletrue%
-  \begin{bvasy}{line_base}
-    import geometry;
-    size(6cm,0);
-    linemargin=2mm;
-    point A=(0,0), B=(2, 0), C=(3,1), D=(1,1);
-    dot("A", A, NW); dot("B", B, SE); dot("C", C);
-    dot("D", D, W);
-
-    line AB=line(A, B);
-    line CB=line(C, false, B);
-    line CD=line(C, false, D, false);
-    line AD=line(A, false, D);
-
-    draw("(AB)", AB); draw("[CB)", CB);
-    draw(Label("[CD]",Relative(0.5),align=N), CD);
-    draw("[AD)", AD); draw(box((-1,-2),(4,3)));
-  \end{bvasy}
+  \bvasy{line_base}
 \item \index{show(picture,line,pen)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1532,31 +919,7 @@ is accessible
   then the three points at which the pairs of opposite sides meet, lie
   on a straight line'' (here the conic is a circle).
     % \compiletrue
-  \begin{bvasy}{th_pascal}
-    import geometry;
-    size(6.5cm,0);
-    draw(unitcircle, grey);
-    point[] P;
-    real[] a=new real[]{0, 20, 60, 90, 240, 280};
-    real cor=24.0036303043338;
-    for (int i=0; i < 6; ++i) {
-      P.push((Cos(a[i]-cor),Sin(a[i]-cor)));
-    }
-    pen[] p=new pen[] {0.8*blue, 0.8*yellow, 0.8*green};
-    line[] l;
-    for (int i=0; i < 6; ++i) {
-      l.push(line(P[i],P[(i+1)%6]));
-      draw(l[i], p[i%3]);
-      draw(P[i]--P[(i+1)%6], linewidth(bp));
-    }
-    point[] inter;
-    for (int i=0; i < 3; ++i) {
-      inter.push(intersectionpoint(l[i],l[(i+3)%6]));
-      dot(inter[i], 1.5*dotsize()+0.8*red);
-    }
-    draw(line(inter[0],inter[1]), bp+0.8*red);
-    draw(box((-1,-2.722), (2.229,2.905)), invisible);
-  \end{bvasy}
+  \bvasy{th_pascal}
 \item \index{intersectionpoints(line l, path g)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1613,24 +976,7 @@ is accessible
   if the value of \param{strictly} is true).
   \end{itemize}
 % \compiletrue%
-\begin{bvasy}{parallel}
-  import geometry;
-  size(5cm,0);
-  coordsys R=cartesiansystem((1,-2), i=(1,1), j=(-1,1));
-  show("$O$","$\vec{u}$","$\vec{v}$", R, ypen=invisible);
-
-  pen bpp=linewidth(bp);
-  point A=(0,0), B=(2, 0.5), C=(3,2);
-  vector w=vector(R, (1.5,2)); line AB=line(A,B);
-
-  dot("A", A, NW); dot("B", B, NE); dot("C", C, N);
-  show("$\vec{w}$", w, bpp+0.8*red, Arrow(3mm));
-  draw(AB, bpp+0.8*blue);
-  draw(parallel(C, AB), bpp+0.8*blue);
-  draw(parallel(B, w), bpp+0.8*red);
-  draw(parallel(A, R.i), bpp);
-  draw(box((-1,-3),(4,3)), invisible);
-\end{bvasy}
+\bvasy{parallel}
 \subsubsection{Lines and angles}
 \begin{itemize}
 \item \index{line(real,point)}\index{line(point,real)}%
@@ -1642,25 +988,7 @@ is accessible
   angle \param{a} with the $x$-axis of the coordinate system in
   which \param{A} is defined.\\
   The routine \code{line(point,real)} is also defined.
-  \begin{bvasy}{line_angle1}
-    import geometry;
-    size(5cm,0);
-    coordsys R=cartesiansystem((1,-2), i=(1,0.5), j=(-1,1));
-    show("$O_{1}$", "$\vec{u}$", Label("$\vec{v}$", align=E),
-    R, ipen=blue, ypen=invisible);
-    show(defaultcoordsys, ypen=invisible);
-    point A=point(R,(1,1)); dot("A", A, NW);
-
-    line l=line(A, 30);
-    draw(l, bp+blue);
-    markangle("$30^\circ$", Ox(R), l, grey);
-
-    A=changecoordsys(defaultcoordsys, A);
-    line ll=line(A, 40);
-    draw(ll, bp+red);
-    markangle("$40^\circ$", Ox, ll, grey);
-    draw(box((-0.6,-2.8), (2,-0.3)), invisible);
-  \end{bvasy}
+  \bvasy{line_angle1}
 \item \index{bisector(line,line,real,bool)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1675,28 +1003,7 @@ is accessible
   Remark that the returned line inherits of the coordinate system
   in which the line \param{l1} is \hypertarget{bisectorline}{defined}.
   % \compiletrue%
-  \begin{bvasy}{bisector_line}
-    import geometry;
-    size(5cm,0);
-    point A=(0,0), B=(2*Cos(40),2*Sin(40)); line l1=line(A,B);
-    draw(l1, linewidth(bp));
-    line l2=rotate(100,A)*l1;
-    draw(l2, linewidth(bp));
-    line bis=bisector(l1,l2); draw(bis, bp+blue);
-    line Bis=bisector(l1,l2,false); draw(Bis, bp+0.8*red);
-    markangleradiusfactor *= 4;
-    marker mark2=StickIntervalMarker(2, 1, red, true);
-    markangle(2, l1, l2, red, mark2);
-    markangle(2, reverse(l2), reverse(l1), radius=-markangleradius(),
-    red, mark2);
-    markangleradiusfactor *= 3/2;
-    marker mark1=StickIntervalMarker(2, 2, blue, true);
-    markangle(2, l1, reverse(l2), radius=-markangleradius(),
-    blue, mark1);
-    markangle(2, reverse(l1), l2, radius=-markangleradius(),
-    blue, mark1);
-    draw(box((-1,-1),(1,1)), invisible);
-  \end{bvasy}
+  \bvasy{bisector_line}
 \item \index{sector(int,int,line,line,real,bool)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1713,29 +1020,7 @@ is accessible
   in which the line \param{l1} is defined.
   See below an example to decompose an angle into three equal measure parts.
   % \compiletrue%
-  \begin{vasy}{sector_line}
-    import geometry;
-    size(10cm,0);
-    point A=(0,0), B=(3,0), C=(0.795,1.5);
-    dot(A); dot(B); dot(C);
-    pen pb=0.8*blue, pr=0.8*red, py=0.8*yellow, bpp=linewidth(bp);
-    line AB=line(A,B), AC=line(A,C), BC=line(B,C);
-    draw(AB, bpp); draw(AC, bpp); draw(BC, bpp);
-
-    line bA1=sector(3,AB,AC), bA2=sector(3,2,AB,AC);
-    line bB1=sector(3,AB,BC), bB2=sector(3,2,AB,BC);
-    line bC1=sector(3,AC,BC), bC2=sector(3,2,AC,BC);
-    draw(bA1, bpp+pb); draw(bA2, bpp+pb);
-    draw(bB1, bpp+pr); draw(bB2, bpp+pr);
-    draw(bC1, bpp+py); draw(bC2, bpp+py);
-
-    markangleradiusfactor *= 8;
-    markangle(BC, reverse(AB), pr, StickIntervalMarker(3,1,pr,true));
-    markangleradiusfactor /= 3;
-    markangle(reverse(AC), reverse(BC), py, StickIntervalMarker(3,2,py,true));
-    markangleradiusfactor *= 3/2;
-    markangle(AB, AC, pb, StickIntervalMarker(3,3,pb,true));
-  \end{vasy}
+  \vasy{sector_line}
 \item \index{perpendicular(point,line)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1758,24 +1043,7 @@ is accessible
   Return the line passing through \param{M} and of orthogonal
   direction \param{normal} given in the current coordinate system \code{currentcoordsys}.
   % \compiletrue%
-  \begin{bvasy}{perpendicular}
-    import geometry;
-    size(5cm,0);
-    pen bpp=linewidth(bp);
-    coordsys R=cartesiansystem((0.5,-2), i=(1,1), j=(-1,1));
-    show("$O$","$\vec{u}$","$\vec{v}$", R, xpen=bpp,
-    ypen=invisible);
-    point A=(0,1), B=(2,2);
-    vector w=vector(R, (2,2)); line AB=line(A,B);
-    dot("A", A, 2*dir(165)); dot("B", B, N);
-    show(Label("$\vec{w}$",Relative(0.75)), w, bp+0.8*red,
-    Arrow(3mm));
-    draw(AB, bp+0.8*blue);
-    draw(perpendicular(B, AB), bp+0.8*blue);
-    draw(perpendicular(B, w), bp+0.8*red);
-    draw(perpendicular(A, R.i), bpp);
-    draw(box((-1,-3),(4,3)), invisible);
-  \end{bvasy}
+  \bvasy{perpendicular}
 \item \index{angle(line,coordsys)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1995,20 +1263,7 @@ belonging to an object of type \code{line}.
   oriented segment $[\mparam{AB}]$. In other words the
   codes \param{relpoint(l,x)} and \code{l.A+x*vector(l.B-l.A)} are
   equivalent.
-  \begin{bvasy}{relpoint_line}
-    import geometry;
-    size(0,6cm);
-
-    point A=(0,0), B=(0,2);
-    line l=line(A,B); show(l);
-
-    dot("relpoint(l,0.75)", relpoint(l,0.75));
-    dot("relpoint(l,-0.75)", relpoint(l,-0.75));
-    dot("relpoint(l,1.5)", relpoint(l,1.5));
-    dot("relpoint(l,-1.5)", relpoint(l,-1.5));
-
-    addMargins(bmargin=5mm);
-  \end{bvasy}
+  \bvasy{relpoint_line}
 \item \index{curpoint(line,real)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -2018,20 +1273,7 @@ belonging to an object of type \code{line}.
   coordinate system  $(\mparam{l.A}\,;\,\vec{\mparam{l.u}})$.
   In other words the code \param{curpoint(l,x)} and
   \code{l.A+x*unit(l.B-l.A)} are equivalent.
-  \begin{bvasy}{curpoint_line}
-    import geometry;
-    size(0,6cm);
-
-    point A=(0,0), B=(0,2);
-    line l=line(A,B); show(l);
-
-    dot("curpoint(l,0.75)", curpoint(l,0.75));
-    dot("curpoint(l,-0.75)", curpoint(l,-0.75));
-    dot("curpoint(l,1.5)", curpoint(l,1.5));
-    dot("curpoint(l,-1.5)", curpoint(l,-1.5));
-
-    addMargins(bmargin=5mm);
-  \end{bvasy}
+  \bvasy{curpoint_line}
 \end{itemize}
 
 
@@ -2061,23 +1303,7 @@ belonging to an object of type \code{line}.
   and \param{l2} in the \param{quarter}-th quarter of the plane
   counted in the counterclockwise, the first being the one delimited
   by the vectors \param{l1.u} and \param{l2.u}.
-  \begin{bvasy}{perpendicularmark_line}
-    import geometry;
-    size(5cm,0);
-    transform t=rotate(135);
-    line l1=t*line((0,0),E); line l2=t*line((0,0),N);
-
-    perpfactor *=5.5;
-    perpendicularmark(l1,l2, Fill(0.8*green));
-    perpendicularmark(l1,l2, quarter=2, Fill(0.8*blue));
-    perpendicularmark(l1,l2, quarter=3, Fill(0.8*red));
-    perpendicularmark(l1,l2, quarter=4, Fill(0.8*yellow));
-
-    pen bpp=linewidth(bp); position pos=Relative(0.75);
-    show(Label("$u_1$",pos), l1.u, bpp, Arrow(3mm));
-    show(Label("$u_2$",pos,align=SE), l2.u, bpp, Arrow(3mm));
-    show("", -l1.u, invisible); show("", -l2.u, invisible);
-  \end{bvasy}
+  \bvasy{perpendicularmark_line}
 \end{itemize}
 
 \subsection{The type \texorpdfstring{``segment''}{segment}}
@@ -2110,20 +1336,7 @@ from one to another by writing for example
 \code{draw(line(an\_obj\_segment));}.
 The following example is an illustration
 % \compiletrue
-\begin{bvasy}{line_segment}
-  import geometry;
-  size(6cm,0);
-  point A=SW, B=NE;
-  label("$A$", A, NW); label("$B$", B, SE);
-
-  line l=line(A,B);
-  draw(l, bp+red);
-
-  segment s=l;
-  draw(s, linewidth(3bp));
-  draw(line(rotate(90,midpoint(s))*s));
-  draw(box(2*A,2*B), invisible);
-\end{bvasy}
+\bvasy{line_segment}
 Apart from the routines defined for the \code{line} objects, we also
 have some specific routines which deals with the \code{segment}
 objects:
@@ -2169,20 +1382,7 @@ be defined from lines.
     transform reflect(line l)
   \end{Vcolor}
   Return the reflection with respect to \param{l}.
-  \begin{bvasy}{reflect}
-    import geometry;
-    size(5cm,0);
-    point A=origin, B=NE, M=2*B+N;
-    dot("A", A, I*unit(A-B)); dot("B", B, I*unit(A-B));
-
-    line AB=line(A,B);
-    draw(AB, linewidth(bp));
-    transform reflect=reflect(AB);
-
-    point Mp=reflect*M;
-    dot("M",M, unit(M-Mp)); dot("M'", Mp, unit(Mp-M), red);
-    draw(segment(M,Mp), grey, StickIntervalMarker(2,2,grey));
-  \end{bvasy}
+  \bvasy{reflect}
 \item \index{reflect(line,line,bool)}
   % \compiletrue
   \begin{Vcolor}
@@ -2192,18 +1392,7 @@ be defined from lines.
   If the value \param{safe} is  \code{true} and if the lines \param{l1}
   and \param{l2} are parallel the routine returns the identity mapping.
   % \compiletrue
-  \begin{bvasy}{reflect_dir}
-    import geometry;
-    size(5cm,0);
-    line AB=line(origin, NE), CD=line(2*NE+N, 2*NE+SE);
-    draw(AB, linewidth(bp)); draw(CD, linewidth(bp));
-    transform reflect=reflect(AB,CD);
-
-    point M=1.75*NE+0.5N, Mp=reflect*M;
-    dot("M",M, unit(M-Mp)); dot("M'", Mp, unit(Mp-M), red);
-    draw(segment(M,Mp), grey, StickIntervalMarker(2,2,grey));
-    draw(box((1,1), (2.2,2.2)), invisible);
-  \end{bvasy}
+  \bvasy{reflect_dir}
 \item \index{scale(real,line,line,bool)}
   % \compiletrue
   \begin{Vcolor}
@@ -2217,22 +1406,7 @@ be defined from lines.
   lines \param{l1} and \param{l2} are parallel the routine returns the
   identity mapping.
   % \compiletrue
-  \begin{bvasy}{affinite_line}
-    import geometry;
-    size(6.5cm,0);
-    pen bpp=linewidth(bp);
-    line AB=line(origin, E), CD=line(2*NE+N, 2*NE+SE);
-    draw(AB, bpp); draw(CD, bpp);
-
-    transform dilatation=scale(1.5,AB,CD);
-
-    path cle=shift(NE)*unitcircle;
-    draw(cle,bpp);
-
-    draw(dilatation*cle, 0.8*red+bpp);
-    draw(inverse(dilatation)*cle, 0.8*blue+bpp);
-    draw(box((-0.5,-0.5), (2.75,3)), invisible);
-  \end{bvasy}
+  \bvasy{affinite_line}
 \item \index{projection(line)}
   % \compiletrue
   \begin{Vcolor}
@@ -2269,31 +1443,7 @@ be defined from lines.
   If the value of \param{safe} is \code{true} and if \param{l} is
   parallel to the $x$-axis the identity mapping is returned.
   % \compiletrue
-  \begin{bvasy}{projection_line}
-    import geometry;
-    size(7.5cm,0); dotfactor*=1.5;
-    currentcoordsys=rotate(20)*defaultcoordsys;
-    show(currentcoordsys, xpen=invisible, ypen=red);
-
-    point A=(-1,-3), B=(5,2);
-    line l1=line(A,B); draw(l1, linewidth(bp));
-    dot("$A$", A, SE); dot("$B$", B, NW);
-    point M=(3,-3); dot("$M$", M);
-
-    point P=projection(l1)*M;
-    dot("$P$", P, 2W); draw(M--P);
-    markrightangle(l1.A, P, M);
-
-    point Q=vprojection(l1)*M;
-    dot("$Q$", Q, 2W); draw(M--Q);
-
-    point R=hprojection(l1)*M;
-    dot("$R$", R, 2W); draw(M--R);
-
-    point S=projection(l1,line((0,0),(0,1)))*M;
-    dot("$S$", S, 2W); draw(M--S, red);
-    draw(box((-1,-4),(5,5)), invisible);
-  \end{bvasy}
+  \bvasy{projection_line}
 \end{itemize}
 
 % \compiletrue
@@ -2332,19 +1482,7 @@ The two main routines to define any conic are:
   Return the conic specified by the focus \param{F}, which is associated to the
   directrix \param{l}, and eccentricity \param{e}; here is an example of use:
   % \compiletrue%
-  \begin{bvasy}{conic_base}
-    import geometry;
-    size(8cm,0);
-    point F=(0,0); dot("F", F);
-    line l=line((1,0),(1,1));
-    draw(l);
-    pen[] p=new pen[] {black,red,blue,green};
-    for (int i=0; i < 4; ++i) {
-      conic co=conic(F,l,0.5*i);
-      draw(co, bp+0.8*p[i]);
-    }
-    draw(box((-1,-1.25), (3.5,1.25)), invisible);
-  \end{bvasy}
+  \bvasy{conic_base}
 \item \index{conic(point,point,point,point,point)}
   \begin{Vcolor}
     conic conic(point M1, point M2, point M3, point M4, point M5)
@@ -2352,18 +1490,7 @@ The two main routines to define any conic are:
   Return the non-degenerated conic passing through the
   points  \param{M1}, \param{M2}, \param{M3}, \param{M4}
   et \param{M5}.
-  \begin{vasy}{conic_5_points}
-    import geometry;
-    size(18cm,0);
-    point B=(1.75,3), C=(-1,2), D=(-1.5,-0.5), F=(1.5,-1);
-
-    for (int i=0; i < 360; i += 21) {
-      point A=shift(D)*dir(i);
-      dot(A,red);
-      conic co=conic(A,B,C,D,F);
-      draw(co, co.e < 1 ? black : 0.8*blue);
-    }
-  \end{vasy}
+  \vasy{conic_5_points}
 \end{enumerate}
 It should be noticed that it is also possible to define a conic
 by its equation in a specified coordinate system, look at the section
@@ -2409,18 +1536,7 @@ onto an object of  type \code{conic}.
   \code{canonicalcartesiansystem(parabola)} and\linebreak
   \code{canonicalcartesiansystem(hyperbola)} are also available.\\
   The following example is an illustration in the case of an ellipse.
-  \begin{bvasy}{canoniccoord}
-    import geometry;
-    size(4cm,0);
-
-    show(defaultcoordsys);
-    ellipse el=ellipse((2,4),3,2,45);
-    dot("$F_1$", el.F1, dir(-45));
-    dot("$F_2$", el.F2, dir(-45));
-    draw(el, linewidth(bp), Arrow(3mm));
-    show("$C$", "$\vec{u}$" ,"$\vec{v}$",
-    canonicalcartesiansystem(el));
-  \end{bvasy}
+  \bvasy{canoniccoord}
 
 \item \index{conicnodesnumber(conic,real,real)}
   % \compiletrue
@@ -2438,18 +1554,7 @@ onto an object of  type \code{conic}.
   Return, in a array form, the intersection points of the two conics
   \param{co1} and \param{co2}.
   % \compiletrue
-  \begin{vasy}{inter_conic}
-    import geometry; size(10cm); conic co[];
-    co[0]=conic((-4.58,1.25), line((-5.45545,1.25), (-5.45545,2.12287)), 0.9165);
-    draw(co[0]);
-    co[1]=conic((0,-1),line((0,-3.5),(-1,-3.5)),1); draw(co[1]);
-    co[2]=conic((-1.2,0), line((-5/6,0),(-5/6,-1)),1.2); draw(co[2]);
-    dotfactor *= 2;
-    for (int i=0; i < 3; ++i)
-    for (int j=i+1; j < 3; ++j)
-    dot(intersectionpoints(co[i],co[j]), red);
-    addMargins(lmargin=10mm,bmargin=10mm);
-  \end{vasy}
+  \vasy{inter_conic}
 \item \index{intersectionpoints(line,conic)}\index{intersectionpoints(conic,line)}
   % \compiletrue
   \begin{Vcolor}
@@ -2613,20 +1718,7 @@ corresponding directrix with an eccentricity less than 1. Since this
 conic is an ellipse, one can assign to a variable of type
 \code{ellipse} the variable \param{co} in order to extract its
 dimensions.
-\begin{vasy}{conic_ellipse}
-  import geometry;
-  size(10cm);
-  point F=(-1,0); line D=line(N,S);
-  conic co=conic(F, D, 0.85); dot("$F$", F); draw(co, linewidth(bp));
-
-  ellipse el=co; dot("$C$", el.C, S);
-  distance(format("$2c=%f$", el.c),el.F1, el.F2, 3cm, joinpen=dashed);
-  distance(format("$2a=%f$", el.a), relpoint(el,0), relpoint(el,0.5), 3cm,
-  joinpen=dashed);
-  distance(format("$2b=%f$", el.b), relpoint(el,0.25), relpoint(el,0.75), 5.25cm,
-  joinpen=dashed);
-  dot("$F'$", el.F2, W);
-\end{vasy}
+\vasy{conic_ellipse}
 
 From the point of view of the internal functioning of \geo some
 routines that apply to an object of type \code{conic} call in fact
@@ -2641,15 +1733,16 @@ The specific types of conics are described below.
 Besides the routines for objects of type \code{conic}, here are some
 other routines to define an object of type \code{circle}:
 \begin{itemize}
-\item \index{circle(explicit point,real)}\index{circle(pair,real)}%
+\item \index{circle(explicit point,real)}%
   % \compiletrue%
   \begin{Vcolor}
     circle circle(explicit point C, real r)
   \end{Vcolor}
   Return the circle of radius \param{r} centered on \param{r}.\\
-  Remark that the routine \code{circle circle(pair C, real r)} is
-  redefined in order to return an object of type \code{circle}
-  whose center \param{C} represent the coordinates of a point in the
+  Remark that the routine \code{circle circle(pair C, real r)} in no
+  longer redefined since the \asymptote version 2{.}10 ; one must use
+  the casting of pair to point with the syntax \code{circle cle = circle((point)(1,2), 2)}
+  whose center \param{(1,2)} represents the coordinates of a point in the
   current coordinate system \code{currentcoordsys}.
 
   The following example illustrates the difference between the code
@@ -2660,20 +1753,7 @@ other routines to define an object of type \code{circle}:
   evidently, if the variable \param{currentcoordsys} is not modified,
   the two codes are equivalent.
   % \compiletrue%
-  \begin{bvasy}{circlepointradius}
-    import geometry;
-    size(6cm,0);
-    currentcoordsys=cartesiansystem((1,1), i=(1,1),
-    j=(-0.5,.75));
-    show("$O'$","$\vec{u}$", "$\vec{v}$", currentcoordsys,
-    ipen=blue, xpen=invisible);
-    show(defaultcoordsys);
-    real R=2;
-    circle C=circle((0,0), R);
-    draw(C, bp+0.8*blue);
-    circle Cp=circle(point(defaultcoordsys,(0,0)), R);
-    draw(Cp, bp+0.8*red);
-  \end{bvasy}
+  \bvasy{circlepointradius}
 \item \index{circle(point A, point B)}%
   % \compiletrue%
   \begin{Vcolor}
@@ -2705,26 +1785,7 @@ other routines to define an object of type \code{circle}:
 In the example below we can see the use of the routine \code{clipdraw}
 which draw a path by restricting the size of the final picture.
 % \compiletrue%
-\begin{bvasy}{circles_point}
-  import geometry;
-  size(9cm);
-  green=0.8green; blue=0.8blue; red=0.8red;
-  pen bpp=linewidth(bp);
-  point A=(-1,0), B=(2,0), C=(0,2);
-  draw(line(A,B),bpp); draw(line(A,C),bpp);
-  draw(line(B,C),bpp);
-  circle cc=circle(A,B,C);
-  draw(cc, bp+blue); dot(cc.C, blue);
-  circle ic=incircle(A,B,C);
-  draw(ic, bp+red); dot(ic.C, red);
-  circle ec=excircle(A,B,C);
-  clipdraw(ec, bp+green); dot(ec.C, green);
-  ec=excircle(A,C,B);
-  clipdraw(ec, bp+green); dot(ec.C, green);
-  ec=excircle(C,B,A);
-  clipdraw(ec, bp+green); dot(ec.C, green);
-  dot("G", centroid(A,B,C), NE);
-\end{bvasy}
+\bvasy{circles_point}
 Specific routines to the geometry of the triangle will achieve the
 same result in a more elegant way, see the section
 \href{#section.triangle}{Triangles}.
@@ -2746,20 +1807,7 @@ is done according to the following rules:
   \index{circlenodesnumberfactor}\code{circlenodesnumberfactor}.
 \end{itemize}
 % \compiletrue%
-\begin{bvasy}{circle_dot}
-  import geometry;
-  size(7cm,0);
-  currentcoordsys=cartesiansystem((2,2), i=(-1,-1),
-  j=(0,1));
-  show("$O'$","$\vec{u}$", "$\vec{v}$",
-  currentcoordsys, ipen=blue, xpen=invisible);
-  show(defaultcoordsys);
-  circle C=circle((0.5,-1), 3);
-  draw(C, 2bp+0.8*blue, Arrow(3mm));
-  circle Cp=circle(point(defaultcoordsys,(1,1)), 4);
-  draw(Cp, dotsize()+0.8*red, Arrow(3mm));
-  dot((path)Cp);
-\end{bvasy}
+\bvasy{circle_dot}
 \subsubsection{The operators}
 Apart from operators applying to objects of type \code{conic}, here
 the list of others operator defined for the objects of type \code{circle}.
@@ -2839,22 +1887,7 @@ list of specific routines for objects of type \code{circle}.
   \end{Vcolor}
   Return the eventual tangents to \param{c} passing through \param{M}.
   % \compiletrue
-  \begin{bvasy}{tangentes_point_cercle}
-    import geometry;
-    size(7.5cm,0);
-
-    point A=(2.5,-1); dot("$A$", A, SW);
-    circle C=circle(A,1); draw(C, linewidth(bp));
-
-    path Cp=shift(A)*scale(2)*unitcircle;
-    draw(Cp, grey);
-    for (int i=0; i < 360; i+=45) {
-      point M=relpoint(Cp, i/360);
-      dot(format("$M_%f$", i/45), M, 2*unit(M-A));
-      draw(tangents(C, M), 0.8*red);
-    }
-    addMargins(10mm,10mm);
-  \end{bvasy}
+  \bvasy{tangentes_point_cercle}
 \item \index{tangent(circle,abscissa)}
   % \compiletrue
   \begin{Vcolor}
@@ -2876,24 +1909,7 @@ list of specific routines for objects of type \code{circle}.
   \end{Vcolor}
   Return the point of \param{c} corresponding to \param{x} time ``the
   perimeter of \param{c}''.
-  \begin{bvasy}{relpoint_circle}
-    import geometry;
-    size(6cm,0);
-    currentcoordsys=cartesiansystem((0,0), i=(1,0.5),
-    j=(-0.5,.75));
-    show(currentcoordsys, xpen=invisible);
-
-    point A=(2.5,2); dot("$A$", A, S, red);
-    real R=2;
-    circle C=circle(A,R);
-    draw(C, linewidth(bp));
-
-    dot("relpoint(C, 0)", relpoint(C,0), 2W);
-    dot("relpoint(C, 0.25)", relpoint(C,0.25), 2SE);
-    dot("relpoint(C, 0.5)", relpoint(C,0.5), 2E);
-    dot("relpoint(C, -0.25)", relpoint(C, -0.25), 2NW);
-    dot("relpoint(C, 1.125)", relpoint(C, 1.125), 2N);
-  \end{bvasy}
+  \bvasy{relpoint_circle}
 \item \index{angpoint(explicit circle,real)}
   % \compiletrue
   \begin{Vcolor}
@@ -2901,46 +1917,14 @@ list of specific routines for objects of type \code{circle}.
   \end{Vcolor}
   Return the point of \param{c} corresponding with the angle \param{x}
   degrees.
-  \begin{bvasy}{angpoint_circle}
-    import geometry;
-    size(6cm,0);
-    currentcoordsys=cartesiansystem((0,0), i=(1,0.5),
-    j=(-0.5,.75));
-    show(currentcoordsys, xpen=invisible);
-    point A=(2.5,2); dot("$A$", A, S, red);
-    real R=2;
-    circle C=circle(A,R);
-    draw(C, linewidth(bp));
-
-    dot("angpoint(C, 0)", angpoint(C,0), 2W);
-    dot("angpoint(C, 45)", angpoint(C,45), 2N);
-    dot("angpoint(C, 135)", angpoint(C,135), 2E);
-    dot("angpoint(C, 270)", angpoint(C, 270), 2NW);
-    dot("angpoint(C, -45)", angpoint(C, -45), 2W);
-  \end{bvasy}
+  \bvasy{angpoint_circle}
 \item \index{curpoint(explicit circle,real)}
   % \compiletrue
   \begin{Vcolor}
     point curpoint(explicit circle c, real x)
   \end{Vcolor}
   Return the point of \param{c} whose the curvilinear abscissa is \param{x}.
-  \begin{bvasy}{curpoint_circle}
-    import geometry;
-    size(6cm,0); real R=2;
-    currentcoordsys=cartesiansystem((0,0), i=(1,0.5),
-    j=(-0.5,.75));
-    show(currentcoordsys, xpen=invisible);
-    point A=(2.5,2); dot("$A$", A, S, red);
-    circle C=circle(A,R); draw(C, linewidth(bp));
-    draw(rotate(A-point(C,0))*("$R="+(string)R+"$"),
-    A--point(C,0), S, Arrows);
-
-    dot("curpoint(C, 0)", curpoint(C,0), 2W);
-    dot("curpoint(C, pi)", curpoint(C,pi), 2SE);
-    dot("curpoint(C, 3*pi/2)", curpoint(C,3*pi/2), 2E);
-    dot("curpoint(C, -pi)", curpoint(C, -pi), 2NW);
-    dot("curpoint(C, 2pi)", curpoint(C, 2*pi), 2E);
-  \end{bvasy}
+  \bvasy{curpoint_circle}
 \end{itemize}
 Others routines are defined for the objects of type \code{circle},
 they are accessible via some routines using the type \code{ellipse}.
@@ -2954,51 +1938,12 @@ Here are some examples of uses of routines previously described:
 \item Construction of two circles through the points $A$, $B$ and tangent
   to a given line $d$.
   % \compiletrue
-  \begin{vasy}{circle_2pt_tangent}
-    import geometry;
-    size(10cm,0);
-    pen bpp=linewidth(bp);
-    line l=line(origin,(1,-0.25)); draw("$(d)$", l, bpp);
-    point A=(1,1.5), B=(0.75,2.5);
-    line AB=line(A,B);
-    point B1=reflect(l)*B, I=intersectionpoint(l,AB), B2=rotate(180,I)*B;
-    dot("$I$", I, NE); dot("$B_1$", B1, SW); dot("$B_2$", B2, SE);
-
-    draw(B--B1, grey+dashed, StickIntervalMarker(2,2,grey));
-    markrightangle(B,midpoint(B--B1),I, grey);
-    draw(B--B2, grey+dashed, StickIntervalMarker(2,1,grey));
-    draw(complementary(segment(B,B2)));
-
-    circle C=circle(A,B1,B2); draw(C, 0.8*blue);
-    point[] T=intersectionpoints(l,C);
-    dot("$T_0$",T[0], NE); dot("$T_1$",T[1], N+NW);
-
-    circle C1=circle(A,B,T[0]), C2=circle(A,B,T[1]);
-    clipdraw(C1, bpp+0.8*red); clipdraw(C2, bpp+0.8*red);
-    dot("$O_1$", C1.C, W); dot("$O_2$", C2.C, SW); dot("$A$", A, NE); dot("$B$", B, NE);
-
-    draw(A--T[0]--B1, grey); markangle(A,T[0],B1, grey);
-    draw(A--T[1]--B1, grey); markangle(B1,T[1],A, grey);
-    draw(B2--B1, grey); markangle(A,B2,B1, grey);
-  \end{vasy}
+  \vasy{circle_2pt_tangent}
 \item \hypertarget{exemple_inversion}{Two points} of the plane and
   their inverses are cocyclic,
   on the orthogonal circle of the inversion circle.
   % \compiletrue
-  \begin{bvasy}{inversion_pre}
-    import geometry;
-    size(6.5cm,0); currentpen=linewidth(bp);
-    point O=origin, M=(2,1), P=(2,-1);
-    dot("O", O, W);
-    inversion t=inversion(2,O);
-    point Mp=t*M, Pt=t*P;
-    circle C=circle(M,P,Mp); draw(C);
-    dot("M", M, N, blue); dot("P", P, S, blue);
-    dot("M'", Mp, red); dot("P'", Pt, red);
-    circle Ct=circle(t); clipdraw(Ct, 0.8*red);
-    point[] T=intersectionpoints(C,Ct);
-    draw(line(O,false,T[0])); draw(line(O,false,T[1]));
-  \end{bvasy}
+  \bvasy{inversion_pre}
 \item Given three circles $\mathscr{C}_{1}$,
   $\mathscr{C}_{2}$ and $\mathscr{C}_{3}$ such as $r_{3}<r_{1}$ and
   $r_{3}<r_{2}$, how construct circles simultaneously tangent to these
@@ -3027,69 +1972,12 @@ Here are some examples of uses of routines previously described:
     $T''_{1}$ of $T_{1}$ about $S_{1}$ et $S_{2}$ respectively is an other solution;
   \end{itemize}
   % \compiletrue%
-\begin{vasy}{apollonius}
-import geometry;
-size(9.5cm,0); usepackage("mathrsfs"); currentpen=fontsize(8); pen bpp=linewidth(bp);
-circle C1=circle((0,0),2), C2=circle((5,5), 3), C3=circle((6,-2),1);
-draw(Label("$\mathscr{C}_1$",Relative(0.375)), C1, bp+0.8*red);
-draw("$\mathscr{C}_2$", C2, bp+0.8*red);
-dot(C1.C, 0.8*red); dot(C2.C, 0.8*red); dot(C3.C, 0.8*red);
-inversion S1=inversion(C2,C3), S2=inversion(C1,C3);
-dot("$S_1$", S1.C, 2S+W); dot("$S_2$", S2.C, 2S);
-line cl=line(S1.C,S2.C); draw(cl);
-point M=relpoint(C3,0.125), M2=S2*M, M1=S1*M;
-dot("$M$", M, 2*E); dot("$M_2$", M2, NW); dot("$M_1$", M1, 2*dir(-10));
-draw(segment(S2.C,M2), dashed+grey); draw(segment(S1.C,M1), dashed+grey);
-circle C=circle(M,M2,M1);
-draw(Label("$\mathscr{C}$", Relative(0.375)), C, lightblue);
-line L=radicalline(C,C3); draw("$(d)$", L, grey);
-point H=intersectionpoint(L,cl); dot("$H$", H, 2*dir(260));
-circle Cp=circle(H,C3.C);
-clipdraw(Label("$\mathscr{C'}$", Relative(0.9)), Cp, lightblue);
-point[] T=intersectionpoints(Cp,C3);
-point[][] Tp= new point[][] {{S2*T[0], S1*T[0]},{S2*T[1], S1*T[1]}};
-draw(S2.C--Tp[0][0], dashed+grey); draw(S1.C--Tp[0][1], dashed+grey);
-draw(S2.C--Tp[1][0], dashed+grey); draw(S1.C--Tp[1][1], dashed+grey);
-dot(Label("$T_0$",UnFill), T[0], 2*dir(-20));
-dot(Label("$T_1$",UnFill), T[1], W);
-dot("$T''_0$", Tp[0][0], SW); dot("$T'_0$", Tp[0][1], NE);
-dot("$T''_1$", Tp[1][0], W); dot("$T'_1$", Tp[1][1], N);
-draw(Label("$\mathscr{T}_0$", Relative(0.375)), circle(T[0],Tp[0][0],Tp[0][1]), bpp);
-draw(Label("$\mathscr{T}_1$", Relative(0.375)), circle(T[1],Tp[1][0],Tp[1][1]), bpp);
-draw(Label("$\mathscr{C}_3$",Relative(0.625),UnFill), C3, bp+0.8*red);
-\end{vasy}
+\vasy{apollonius}
 \item Taking the four possible combinations for the inversions
   $S_{1}$ et $S_{2}$, we get the eight circles tangents to three
   given circles likewise:
   % \compiletrue%
-\begin{vasy}{all_apollonius}
-import geometry;
-size(18cm,0); int shx=18;
-circle C1=circle((0,0),2), C2=circle((5,5), 3), C3=circle((6,-2),1);
-picture disc;
-fill(disc,(path)C1); fill(disc,(path)C2); fill(disc,(path)C3);
-transform tv=shift(S), th=shift(E);
-int k=0, l=0;
-for (int i=0; i < 2 ; ++i)
-for (int j=0; j < 2; ++j) {
-  picture[]  tpic; tpic[0]=new picture; tpic[1]=new picture;
-  add(tpic[0], disc); add(tpic[1], disc);
-  inversion S1=inversion(C2,C3, sgnd(i-1)), S2=inversion(C1,C3, sgnd(j-1));
-  line cl=line(S1.C,S2.C);
-  point M=relpoint(C3,0.125), M2=S2*M, M1=S1*M;
-  circle C=circle(M,M2,M1);
-  line L=radicalline(C,C3);
-  point H=intersectionpoint(L,cl);
-  circle Cp=circle(H,C3.C);
-  point[] T=intersectionpoints(Cp,C3);
-  point[][] Tp= new point[][] {{S2*T[0], S1*T[0]},{S2*T[1], S1*T[1]}};
-  draw(tpic[0], circle(T[0],Tp[0][0],Tp[0][1]), bp+0.8*red);
-  draw(tpic[1], circle(T[1],Tp[1][0],Tp[1][1]), bp+0.8*red);
-  add(tv^(shx*(i+1))*th^(shx*(l))*tpic[0]);
-  l=(l+2)%4; ++k;
-  add(tv^(shx*(i+1))*th^(shx*(l+1))*tpic[1]);
-}
-\end{vasy}
+\vasy{all_apollonius}
 \end{itemize}
 
 \hyperdef{subsection}{ellipse}{\subsection{\index{ellipse|mainidx}\index{ellipse|mainidx}Ellipses}}
@@ -3125,22 +2013,7 @@ Here is a list of other routines to define a type \code{ellipse}.
   axis \param{a} in the direction given by \param{dir(angle)} and
   semiminor axis \param{b}.
   % \compiletrue
-  \begin{bvasy}{ellipses_angle}
-    import geometry;
-    size(8cm);
-
-    currentcoordsys=rotate(20)*defaultcoordsys;
-    show(currentcoordsys);
-
-    ellipse e0=ellipse((0,0), 3, 1);
-    draw(e0, linewidth(bp), Arrow);
-
-    ellipse e1=ellipse((0,0), 3, 1, 45);
-    draw(e1, bp+0.8*red, Arrow);
-
-    ellipse e2=ellipse((0,0), 1, 3, 45);
-    draw(e2, bp+0.8*blue, Arrow);
-  \end{bvasy}
+  \bvasy{ellipses_angle}
 \end{itemize}
 \subsubsection{From the type ``ellipse'' to the type ``path''}
 The casting of an object of type \code{ellipse} to \code{path}
@@ -3160,14 +2033,7 @@ is done according to the following rules:
   distributed throughout the interval $\left[0\,;\,360\right[$.
 \end{itemize}
 % \compiletrue%
-\begin{bvasy}{ellipse_dot}
-  import geometry;
-  size(8cm,0);
-  ellipsenodesnumberfactor=50;
-  ellipse e=ellipse(origin, 4, 2, 180);
-  draw(e, Arrow);
-  dot((path)e);
-\end{bvasy}
+\bvasy{ellipse_dot}
 
 \subsubsection{Others routines}
 Apart routines applied to objects of type \code{conic}, here is the
@@ -3204,18 +2070,7 @@ list of routines specific to objects of type \code{ellipse}.
   \end{Vcolor}
   Return the eventual tangents to \param{el} through \param{M}.
   % \compiletrue
-  \begin{bvasy}{tangentes_point_ellipse}
-    import geometry; size(7.5cm,0);
-    point A=(2.5,-1); dot(A);
-    ellipse C=ellipse(A,3,1); draw(C,linewidth(bp));
-    path Cp=shift(A)*xscale(2)*scale(3)*unitcircle;
-    draw(Cp, grey);
-    for (int i=0; i < 360; i+=45) {
-      point M=relpoint(Cp, i/360); dot(M);
-      draw(tangents(C, M), 0.8*red);
-    }
-    addMargins(10mm,10mm);
-  \end{bvasy}
+  \bvasy{tangentes_point_ellipse}
 \item \index{tangent(ellipse,abscissa)}
   % \compiletrue
   \begin{Vcolor}
@@ -3228,39 +2083,7 @@ list of routines specific to objects of type \code{ellipse}.
   the image of a circle by a dilatation and a related property of
   its tangents.
   % \compiletrue
-  \begin{vasy}{affinite_cercle_ellipse_tgtes}
-    import geometry; size(12cm,0); draw(Ox()^^Oy()); real a=3, b=2;
-    circle C=circle(origin,a), Cp=circle(origin,b);
-    draw(C, 0.8*blue); draw(Cp, 0.8*green);
-
-    transform T=scale(b/a,Ox(),Oy()), Tp=scale(a/b,Oy(),Ox());
-    ellipse e=T*C; draw(e, bp+0.8*red);
-
-    point H=(a/2,0), Hp=(0,-b/2); dot("$H$", H, S); dot("$H'$", Hp);
-    line L=line(H,false,H+N), Lp=line(Hp,false,Hp+W);
-    point M=intersectionpoints(L,C)[0], NN=intersectionpoints(Lp,Cp)[0];
-    point Mp=T*M, NNp=Tp*NN; L=segment(H,M); Lp=segment(Hp,NNp);
-    dot("$M$", M, NE); dot("$M'$", Mp, NE); dot("$N$", NN, SW); dot("$N'$", NNp, NE);
-    draw(L, dashed); draw(Lp, dashed);
-
-    segment SS=segment(origin,M), SSp=segment(origin,NN);
-    draw(SS, 0.8*blue); draw(SSp, 0.8*green);
-
-    line tgM=tangents(C, M)[0]; point P=intersectionpoint(tgM,Ox());
-    draw(tgM, 0.8*blue); dot("$P$", P, dir(60));
-
-    line tgN=tangents(Cp, NN)[0]; point Pp=intersectionpoint(tgN,Oy());
-    draw(tgN, 0.8*green); dot("$P'$", Pp, dir(30));
-
-    perpendicularmark(tgM,SS, 0.8*blue); perpendicularmark(tgN,SSp, quarter=2, 0.8*green);
-
-    line tgMp=line(P, Mp), tgNp=line(Pp, NNp);
-    draw(tgMp, 0.8*red); draw(tgNp, 0.8*red);
-
-    draw(Mp+2tgMp.u--Mp-2tgMp.u, bp+0.8*red, Arrows(3mm));
-    draw(NNp+2tgNp.u--NNp-2tgNp.u, bp+0.8*red, Arrows(3mm));
-    addMargins(5mm,5mm);
-  \end{vasy}
+  \vasy{affinite_cercle_ellipse_tgtes}
 \item \index{point(explicit ellipse,real)}
   % \compiletrue
   \begin{Vcolor}
@@ -3275,20 +2098,7 @@ list of routines specific to objects of type \code{ellipse}.
   \end{Vcolor}
   Return the point of \param{el} which corresponds to the fraction \param{x}
   of the perimeter of \param{el}.
-  \begin{bvasy}{relpoint_ellipse}
-    import geometry;
-    size(6cm,0);
-    show(currentcoordsys, xpen=invisible);
-    point A=(2.5,2); dot("$A$", A, S, red);
-    ellipse el=ellipse(A,2,1,45);
-    draw(el, linewidth(bp));
-
-    dot("relpoint(el, 0)", relpoint(el,0), 2S);
-    dot("relpoint(el, 0.25)", relpoint(el,0.25), 2S);
-    dot("relpoint(el, 0.5)", relpoint(el,0.5), 2S+E);
-    dot("relpoint(el, -0.25)", relpoint(el, -0.25), 2SW);
-    dot("relpoint(el, 1.125)", relpoint(el, 1.125), 2W);
-  \end{bvasy}
+  \bvasy{relpoint_ellipse}
 \item \index{angpoint(explicit ellipse,real)}
   % \compiletrue
   \begin{Vcolor}
@@ -3299,41 +2109,14 @@ list of routines specific to objects of type \code{ellipse}.
   from the center of the ellipse\linebreak
   if \param{polarconicroutine=fromCenter}, from the first focus if
   \param{polarconicroutine=fromFocus}.
-  \begin{vasy}{angpoint_ellipse}
-    import geometry; size(10cm,0);
-    currentcoordsys=cartesiansystem((0,0),i=(1,0.5),j=(-0.5,.75));
-    show(currentcoordsys, xpen=invisible);
-    ellipse el=ellipse((4,2),3,2,20);
-    draw(el); dot("$C$",el.C,2W,red); dot("$F_1$",el.F1,S); dot("$F_2$",el.F2,S);
-    point P=angpoint(el, 0);  dot("angpoint(el, 0)", P,E);   draw(el.F1--P);
-    point M=angpoint(el, 90); dot("angpoint(el, 90)", M,NW); draw(el.F1--M);
-    dot("angpoint(el, 180)", angpoint(el,180), W);
-    dot("angpoint(el, 270)", angpoint(el,270), SE);
-    dot("angpoint(el, 370)", angpoint(el,370), NE);
-    dot("angpoint(el, -45)", angpoint(el,-45), SE);
-    point P=angpoint(el, 90, fromCenter);  dot("angpoint(el,90,fromCenter)", P,NW);
-    point Q=angpoint(el, -45, fromCenter); dot("angpoint(el,-45,fromCenter)", Q,S);
-    draw(el.C--P); draw(el.C--Q);
-  \end{vasy}
+  \vasy{angpoint_ellipse}
 \item \index{curpoint(explicit ellipse,real)}
   % \compiletrue
   \begin{Vcolor}
     point curpoint(explicit ellipse c, real x)
   \end{Vcolor}
   Return the point of \param{c} whose the curvilinear abscissa is \param{x}.
-  \begin{bvasy}{curpoint_ellipse}
-    import geometry; size(7cm,0);
-    show(currentcoordsys, xpen=invisible);
-    ellipse el=ellipse((2,2),2,1,25);
-    draw(el, linewidth(bp));
-    real L=arclength(el);
-    dot("0", curpoint(el,0), dir(25));
-    dot("L/4", curpoint(el,L/4), dir(115));
-    dot("3*L/4", curpoint(el,3*L/4), -dir(115));
-    dot("-L/2", curpoint(el, -L/2), -dir(25));
-    dot("11*L/8", curpoint(el, 11*L/8), dir(145));
-    label("L=arclength(el)",(2,0.25));
-  \end{bvasy}
+  \bvasy{curpoint_ellipse}
 \end{itemize}
 
 \hyperdef{subsection}{parabola}{\subsection{\index{parabole|mainidx}Paraboles}}
@@ -3374,22 +2157,7 @@ The routines available to define a parabola are:
   points \param{M1}, \param{M2}, \param{M3} and whose the directrix is
   parallel to the line \param{l}.
   % \compiletrue
-  \begin{bvasy}{parabole_3_points}
-    import geometry;
-    size(9cm,0);
-
-    draw(box((-2,-3),(6,3)), invisible);
-    point M1=(0,0), M2=(4,-2), M3=(2,1);
-    pen[] p=new pen[] {black,red,blue,green};
-    parabola P;
-    for (int i=0; i < 4; ++i) {
-      P=parabola(M1,M2,M3,rotate(45*i)*Ox());
-      draw(P, bp+0.8*p[i]);
-    }
-    dot(scale(0.75)*"$M_1$", M1, 2*dir(175));
-    dot(scale(0.75)*"$M_2$", M2, 2*dir(25));
-    dot(scale(0.75)*"$M_3$", M3, 2*dir(80));
-  \end{bvasy}
+  \bvasy{parabole_3_points}
 \end{itemize}
 
 \subsubsection{From type ``parabola'' to type ``path''}
@@ -3410,22 +2178,7 @@ is done according to the following rules:
   conversion which is plotted in red with a corresponding portion of
   parabola.
   % \compiletrue
-  \begin{bvasy}{parabola_to_path}
-    import geometry;
-    size(10cm);
-
-    point F=(2,-1.5);
-    dot("$F$",F,N,red);
-    parabola p=parabola(F,0.2,90);
-
-    draw(box((0.1,-1),(3,0.5)), dashed);
-    draw((path)p, 2*bp+dashed);
-
-    p.bmin=(0,-0.4);
-    p.bmax=(2.5,0.75);
-    draw(box(p.bmin,p.bmax), red);
-    draw((path)p, bp+red);
-  \end{bvasy}
+  \bvasy{parabola_to_path}
 \item the number of nodes in the path depends on angles, given from
   focus in degrees, of the ends of the path and is calculated through the routine
   \index{parabolanodesnumber(parabola,real,real)}\code{int parabolanodesnumber(parabola p, real angle1, real angle2)}\linebreak
@@ -3435,18 +2188,7 @@ is done according to the following rules:
   the interval whose ends are returned by the routine
   \code{real[] bangles(picture pic=currentpicture, parabola p)}\index{bangles(picture,parabola)}.
   % \compiletrue
-  \begin{bvasy}{dot_parabola}
-    import geometry;
-    size(6cm);
-
-    point F=(2,-1.5);
-    dot("$F$",F,N,red);
-    parabola p=parabola(F,0.2,90);
-
-    draw(box((0.6,-1.75),(3,0.5)), invisible);
-    parabolanodesnumberfactor=50;
-    dot((path)p);
-  \end{bvasy}
+  \bvasy{dot_parabola}
 \end{itemize}
 
 \subsubsection{Others routines}
@@ -3459,24 +2201,7 @@ of specific routines to objects of type \code{parabola}.
     line[] tangents(parabola p, point M)
   \end{Vcolor}
   Return the eventual tangents to \param{p} through \param{M}.
-  \begin{bvasy}{tangentes_parabola}
-    import geometry; size(8cm,0);
-    point F=(0,0); dot("$F$", F, NE);
-    parabola p=parabola(F, 0.1, 30);
-    draw(p, linewidth(bp));
-    point C=shift(2*(p.V-p.F))*p.V;
-    circle cle=circle(C, 0.2);
-    draw(cle);
-    for (int i=0; i < 360; i+=90) {
-      point M=C+0.2*dir(i+30);
-      dot(scale(0.75)*("$M_"+(string)(i/90)+"$"),
-      M, unit(M-C));
-      line[] tgt=tangents(p, M);
-      draw(tgt, 0.8*red);
-      for (int i=0; i < tgt.length; ++i) {
-        dot(intersectionpoints(p, tgt[i]), blue);
-      } }
-  \end{bvasy}
+  \bvasy{tangentes_parabola}
 \item \index{tangent(parabola,abscissa)}
   % \compiletrue
   \begin{Vcolor}
@@ -3511,18 +2236,7 @@ of specific routines to objects of type \code{parabola}.
   \end{Vcolor}
   Return the point of \param{p} whose the curvilinear abscissa
   is \param{x}, the origin being the vertex of the parabola.
-  \begin{bvasy}{curpoint_parabola}
-    import geometry; size(6cm);
-
-    point F=(1,-1.5); dot("$F$",F,N,red);
-    parabola p=parabola(F,0.2,110); draw(p);
-
-    dot("0",curpoint(p,0),SE);
-    dot("0.5",curpoint(p,0.5));
-    dot("-0.5",curpoint(p,-0.5),SW);
-    dot("-2",curpoint(p,-2),SW);
-    dot("2",curpoint(p,2),E);
-  \end{bvasy}
+  \bvasy{curpoint_parabola}
 \item It is possible to obtain an arc of parabola in the form of
   \code{path} through the routine \index{arcfromfocus(conic,real,real,int,bool)}
   % \compiletrue
@@ -3535,29 +2249,7 @@ of specific routines to objects of type \code{parabola}.
 
   Here an example illustrating the use of routine
   \code{arcfromfocus} with a parabola.
-  \begin{vasy}{arcfromfocus_parabola}
-    import geometry;
-    size(8cm);
-    show(currentcoordsys);
-
-    point F=(1,0.5); dot("$F$",F,E,red);
-    parabola p=parabola(F,0.2,110); draw(p);
-
-    coordsys Rp=canonicalcartesiansystem(p);
-    show(Label("$O'$",align=NW+W,blue), Label("$\vec{u}$",blue),
-    Label("$\vec{v}$",blue), Rp, ipen=blue);
-
-    dot("180", angpoint(p,180), dir(-30));
-    point P=angpoint(p,55); dot("55",P,NE);
-
-    segment s=segment(F,P); draw(s);
-    line l=line(F,F+Rp.i);
-    markangle("$"+(string)degrees(l,s)+"^\circ$",l,s,Arrow);
-
-    dot("-55", point(arcfromfocus(p,-55,-55,1),0), W);
-    dot("-90", point(arcfromfocus(p,-90,-90,1),0), W);
-    draw(arcfromfocus(p,55,-90), bp+0.8*red, Arrow(3mm));
-  \end{vasy}
+  \vasy{arcfromfocus_parabola}
 \end{itemize}
 
 \hyperdef{subsection}{hyperbola}{\subsection{\index{conique|mainidx}Hyperboles}}
@@ -3584,21 +2276,7 @@ The routines available to define an hyperbola are:
   For more legibility, the constants \code{byfoci}\index{byfoci}
   and \code{byvertices}\index{byvertices} are defined, Their values
   are \code{true} and \code{false} respectively.
-  \begin{bvasy}{hyperbole_def_1}
-    import geometry; size(6cm);
-    pen Red=0.8*red; point P1=(-3,0), P2=(3,0);
-    draw(box((-5,-5),(5,5)), invisible);
-    hyperbola Hf=hyperbola(P1,P2,2);
-    draw(Hf, linewidth(bp)); dot("$C$", Hf.C, N);
-    dot("$F_1$", Hf.F1); dot("$F_2$", Hf.F2, W);
-    dot("$V_1$", Hf.V1, E); dot("$V_2$", Hf.V2, W);
-    distance("$a$", Hf.C, Hf.V1, 2cm, joinpen=dotted);
-    distance("$c$", Hf.C, Hf.F1, -2cm, joinpen=dotted);
-    hyperbola Hv=hyperbola(P1,P2,1.5,byvertices);
-    draw(Hv, bp+Red);
-    dot("$V'_1$",Hv.V1, W, Red); dot("$V'_2$",Hv.V2, Red);
-    dot("$F'_1$",Hv.F1, W, Red); dot("$F'_2$",Hv.F2, Red);
-  \end{bvasy}
+  \bvasy{hyperbole_def_1}
 \item \index{hyperbola(point,real,real,real)}
   % \compiletrue
   \begin{Vcolor}
@@ -3612,20 +2290,7 @@ The routines available to define an hyperbola are:
   \end{Vcolor}
   Return the conjugate hyperbola of \param{h}.
   % \compiletrue
-  \begin{bvasy}{conj_hyperbole}
-    import geometry;
-    size(8cm);
-
-    point P1=(-3,0), P2=(3,0);
-    draw(box((-5,-5),(5,5)), invisible);
-
-    hyperbola H=hyperbola(P1,P2,2.2);
-
-    draw(H, linewidth(bp));
-    draw(H.A1^^H.A2, grey);
-
-    draw(conj(H), bp+0.8*red);
-  \end{bvasy}
+  \bvasy{conj_hyperbole}
 \end{itemize}
 
 \subsubsection{From type ``hyperbola'' to type ``path''}
@@ -3647,21 +2312,7 @@ is done according to the following rules:
   conversion which is plotted in red with a corresponding portion of
   hyperbola.
   % \compiletrue
-  \begin{bvasy}{hyperbola_to_path}
-    import geometry;
-    size(10cm,0);
-
-    point P1=(-3,0), P2=(3,0);
-    hyperbola H=hyperbola(P1,P2,2.95);
-
-    draw(box((-6,-1),(-3.5,1)), dashed);
-    draw((path)H, 2*bp+dashed);
-
-    H.bmin=(-5.5,0);
-    H.bmax=(-2.5,1.25);
-    draw(box(H.bmin,H.bmax), red);
-    draw((path)H, bp+red);
-  \end{bvasy}
+  \bvasy{hyperbola_to_path}
 \item the number of node in the path depends on angles, given from
   focus in degrees, of the ends of the path and is calculated through the routine
   \code{int hyperbolanodesnumber(hyperbola p, real angle1, real angle2)}\index{hyperbolanodesnumber(hyperbola,real,real)}\linebreak
@@ -3673,18 +2324,7 @@ is done according to the following rules:
   \linebreak\code{real[][] bangles(picture pic=currentpicture, hyperbola p)}%
   \index{bangles(picture,hyperbola)}.
   % \compiletrue
-  \begin{bvasy}{dot_hyperbola}
-    import geometry;
-    size(10cm,0);
-
-    point P1=(-3,0), P2=(3,0);
-    draw(box((-8,-4),(8,4)), invisible);
-
-    dot((path)hyperbola(P1,P2,2.7));
-
-    hyperbolanodesnumberfactor=30;
-    dot((path)hyperbola(P2,P1,2.7));
-  \end{bvasy}
+  \bvasy{dot_hyperbola}
 \end{itemize}
 
 \subsubsection{Others routines}
@@ -3697,17 +2337,7 @@ of specific routines to objects of type \code{hyperbola}.
   \end{Vcolor}
   Return the eventual tangents to \param{p} through \param{M}.
   % \compiletrue
-  \begin{bvasy}{tangents_hyperbola}
-    import geometry; size(10cm,0);
-    draw(box((-5,-3),(5,3)), invisible);
-    hyperbola h=hyperbola(origin,1.5,1);
-    draw(h, linewidth(bp));
-
-    for (int i=0; i < 360; i +=45 ) {
-      point M=(1.5*Cos(i), Sin(i));
-      dot(M); draw(tangents(h,M)); }
-    draw(ellipse(origin,1.5,1), grey);
-  \end{bvasy}
+  \bvasy{tangents_hyperbola}
 \item \index{tangent(hyperbola,abscissa)}
   % \compiletrue
   \begin{Vcolor}
@@ -3715,28 +2345,7 @@ of specific routines to objects of type \code{hyperbola}.
   \end{Vcolor}
     Return the tangent to \param{h} at the \param{x}
     \href{#section.abscissa}{abscissa} point of \param{el}.
-  \begin{bvasy}{tangent_hyperbola}
-    import geometry; size(0,10cm);
-    pen bl=0.8blue, re=0.8*red;
-    draw(box((-2.25,-1.5),(-0.75,1)), invisible);
-    hyperbola h=hyperbola(origin,1.2,1);
-    draw((path)h, linewidth(bp));
-    draw("directrix", h.D1); dot("$F_1$", h.F1, NW);
-
-    line axis=line(h.F1,h.F2); draw(axis);
-    point M=point(h,angabscissa(70)); dot(M, bl);
-    line tgt=tangent(h,angabscissa(70)); draw(tgt, bp+bl);
-    point P=intersectionpoint(tgt,h.D1); dot(P, bl);
-    draw(P--h.F1--M, grey); markrightangle(P,h.F1,M, grey);
-
-    line lr=perpendicular(h.F1, axis); draw(lr);
-    point[] plr=intersectionpoints(h,lr);
-    dot(plr, re);
-    distance(Label("latus rectum",Fill(white)),
-    plr[0], plr[1], -2cm, grey, dotted);
-    for (int i=0; i < 2; ++i) {
-      draw(tangents(h,plr[i])[0], bp+re); }
-  \end{bvasy}
+  \bvasy{tangent_hyperbola}
 \item \index{point(explicit hyperbola,real)}
   % \compiletrue
   \begin{Vcolor}
@@ -3775,22 +2384,7 @@ of specific routines to objects of type \code{hyperbola}.
 
     Here an example illustrating the use of routine
     \code{arcfromfocus} with an hyperbola.
-    \begin{vasy}{arcfromfocus_hyperbola}
-      import geometry; size(10cm,0);
-      point C=(4,2); dot("$C$", C, E+NE, red);
-      hyperbola H=hyperbola(C,1,1,-20); draw(H, linewidth(bp));
-      coordsys R=currentcoordsys; show(R);
-      coordsys Rp=canonicalcartesiansystem(H);
-      show(Label("$O'$",align=SW,blue), Label("$\vec{u}$",blue), Label("$\vec{v}$",blue),
-      Rp, ipen=blue);
-      dot("$180$", angpoint(H,180), N+2E);
-      dot("$-80$", angpoint(H,-80), NE);
-      point P=angpoint(H,70); dot("$70$", P, SE);
-      draw(arcfromfocus(H,70,-80), bp+red);
-      segment s=segment(H.F1,P); draw(s); line l=line(H.F1,H.F1-Rp.i);
-      dot("$F_1$", H.F1, N+NW); markangle("$70^\circ$",l,s,Arrow);
-      addMargins(rmargin=3cm);
-    \end{vasy}
+    \vasy{arcfromfocus_hyperbola}
   \item \index{arcfromcenter(hyperbola,real,real,int,bool)}
     \begin{Vcolor}
       path arcfromcenter(hyperbola h, real angle1, real angle2,
@@ -3799,21 +2393,7 @@ of specific routines to objects of type \code{hyperbola}.
     Here an example illustrating the use of routine
     \code{arcfromcenter} with an hyperbola.
     % \compiletrue
-    \begin{vasy}{arcfromcenter_hyperbola}
-      import geometry; size(12cm);
-      coordsys R=currentcoordsys; show(R);
-      point C=(3,1.25); dot("$C$", C, 2*dir(120), red);
-      hyperbola H=hyperbola(C, 2, 1.5, -10); draw(H, linewidth(bp));
-      coordsys Rp=canonicalcartesiansystem(H);
-      show(Label("$O'$", align=SW,blue), Label("$\vec{u}$",blue),
-      Label("$\vec{v}$",blue), Rp, ipen=blue);
-      dot("$0$", angpoint(H,0,fromCenter), 2*dir(120));
-      dot("$180$", angpoint(H,180,fromCenter), 2*dir(30));
-      draw(arcfromcenter(H,-20,30), bp+red); dot("$F_1$", H.F1, N+NW);
-      point P=angpoint(H,30,fromCenter); dot("$30$", P, NW);
-      segment s=segment(C, P); draw(s);
-      markangle("$30^\circ$", Ox(Rp), s, radius=2cm, Arrow);
-    \end{vasy}
+    \vasy{arcfromcenter_hyperbola}
   \end{enumerate}
 \end{itemize}
 
@@ -3862,65 +2442,15 @@ Here are a few examples illustrating the use of routine\linebreak
   \hyperdef{}{markarc}{\code{markarc}}\index{markarc} which will be
   described further.
   % \compiletrue
-  \begin{bvasy}{arc_1}
-    import geometry; size(6cm,0);
-    real a=2, b=1.5;
-    point A=(1,1); dot("$A$", A, red);
-    ellipse EL=ellipse(A,a,b,90); draw(EL, bp+grey);
-    dot("$F_1$", EL.F1, S); dot("$F_2$", EL.F2, N);
-    draw(EL.F1--EL.F2);
-    arc AE=arc(EL, 45, 270);
-    draw(AE, linewidth(bp), Arrow(3mm), BeginBar);
-    point Bp=point(AE, 0), Ep=relpoint(AE,1);
-    draw(EL.F1--Bp); draw(EL.F1--Ep);
-    markangle(format("$%0g^\circ$",AE.angle1),
-    EL.F2,EL.F1,Bp, radius=1.5cm, Arrow);
-    markangle(Label(format("$%0g^\circ$",AE.angle2),
-    Relative(0.35)),
-    EL.F2, EL.F1, Ep, radius=0.75cm, Arrow);
-  \end{bvasy}
+  \bvasy{arc_1}
 \item The following example shows the effects of the parameters
   \param{polarconicroutine} and \param{direction}. Note the use of the
   routine \code{degrees(arc)} which will be described further.
   % \compiletrue
-  \begin{bvasy}{arc_2}
-    import geometry; size(8cm,0);
-    real a=2, b=1;
-    point A=(1,1); dot("$A$",A,S,red);
-    ellipse EL=ellipse(A,a,b);
-    arc AE=arc(EL, 45, 210, fromCenter);
-    draw(AE, linewidth(bp), Arrow(3mm), BeginBar);
-    arc AEp=arc(EL, 45, 210, fromCenter, CW);
-    draw(AEp, bp+0.8*red, Arrow(3mm));
-    circle C=circle(A,a); arc AC=arc(C, 45, 210);
-    draw(AC, linewidth(bp), Arrow(3mm), BeginBar);
-    arc ACp=arc(C, 45, 210, CW);
-    draw(ACp, bp+0.8*red, Arrow(3mm));
-    markarc(format("$%0g^\circ$",degrees(AC)),
-    AC, radius=1.5cm, Arrow);
-    markarc(format("$%0g^\circ$",degrees(ACp)),
-    ACp, markpen=0.8*red, Arrow);
-  \end{bvasy}
+  \bvasy{arc_2}
 \item The example below shows the previous code permuting the angles
   $45^{\circ}$ and $210^{\circ}$.
-  \begin{bvasy}{arc_3}
-    import geometry; size(8cm,0);
-    real a=2, b=1;
-    point A=(1,1); dot("$A$",A,S,red);
-    ellipse EL=ellipse(A,a,b);
-    arc AE=arc(EL, 210, 45, fromCenter);
-    draw(AE, linewidth(bp), Arrow(3mm), BeginBar);
-    arc AEp=arc(EL, 210, 45, fromCenter, CW);
-    draw(AEp, bp+0.8*red, Arrow(3mm));
-    circle C=circle(A,a); arc AC=arc(C, 210, 45);
-    draw(AC, linewidth(bp), Arrow(3mm), BeginBar);
-    arc ACp=arc(C, 210, 45, CW);
-    draw(ACp, bp+0.8*red, Arrow(3mm));
-    markarc(format("$%0g^\circ$",degrees(AC)),
-    AC, radius=1.5cm, Arrow);
-    markarc(format("$%0g^\circ$",degrees(ACp)),
-    ACp, markpen=0.8*red, Arrow);
-  \end{bvasy}
+  \bvasy{arc_3}
 \end{itemize}
 
 \subsection{From type ``arc'' to type ``path''}
@@ -3937,16 +2467,7 @@ is done according to the following rules:
   an adequate interval.
 \end{itemize}
 % \compiletrue
-\begin{bvasy}{dot_arc}
-  import geometry;
-  size(4cm,0);
-  ellipsenodesnumberfactor=100;
-  point A=(1,1); dot("$A$",A,S,red);
-  ellipse EL=ellipse(A,2,1);
-  dot((path)arc(EL, 210, 45, fromCenter));
-  circle C=circle(A,2);
-  dot((path)arc(C, 210, 45));
-\end{bvasy}
+\bvasy{dot_arc}
 
 \subsection{The operators}
 \begin{itemize}
@@ -3958,34 +2479,10 @@ is done according to the following rules:
   surprise. In the following example the colored arcs are images of
   the black arc about affine transformations.
   % \compiletrue
-  \begin{vasy}{transform_arc}
-    import geometry; size(10cm,0);
-    currentcoordsys=rotate(20)*defaultcoordsys;
-    point C=(1,1); dot(C);
-    ellipse el=ellipse(C,2,1); draw(el, grey);
-    arc AE=arc(el, 45, 180, fromCenter); draw(AE, linewidth(bp), Arrow(3mm));
-    draw(scale(0.5,C)*AE, bp+0.8red, Arrow(3mm));
-    draw(scale(-0.5,C)*AE, bp+0.8blue,Arrow(3mm));
-    draw(scale(1.1,C)*AE, bp+0.8*yellow, Arrow(3mm));
-    transform t=scale(-0.5,line(el.F1,el.F2), line(S,N));
-    draw(t*AE, bp+0.8(red+blue), Arrow(3mm));
-  \end{vasy}
+  \vasy{transform_arc}
   The same example with an arc circle:
   % \compiletrue
-  \begin{bvasy}{transform_arc_circle}
-    import geometry; size(6cm,0);
-    point C=(0,0); dot(C);
-    ellipse el=circle(C,2); draw(el, grey);
-    arc AE=arc(el, 45, 180, fromCenter);
-
-    draw(AE, linewidth(bp), Arrow(3mm));
-    draw(scale(0.5,C)*AE, bp+0.8red, Arrow(3mm));
-    draw(scale(-0.5,C)*AE, bp+0.8blue,Arrow(3mm));
-    draw(scale(1.1,C)*AE, bp+0.8*yellow, Arrow(3mm));
-
-    transform t=scale(-0.5,Ox(), Oy());
-    draw(t*AE, bp+0.8(red+blue), Arrow(3mm));
-  \end{bvasy}
+  \bvasy{transform_arc_circle}
 \item \index{*(real,explicit arc)}\index{/(explicit arc,real)}
   \begin{Vcolor}
     arc operator *(real x, explicit arc a)
@@ -3999,58 +2496,14 @@ is done according to the following rules:
   In the following example the yellow arc is obtained multiplying
   the black arc by $0.5$ and the blue arc is obtained dividing it by $3$.
   % \compiletrue
-  \begin{bvasy}{arc_mult_div_1}
-    import geometry; size(8cm,0);
-
-    point A=(1,1); dot("$A$",A,S,red);
-    arc C=arc(circle(A,2), 45, 210);
-    draw(C,linewidth(3mm));
-    markarc(format("%0g",degrees(C)), C, Arrow);
-
-    draw(0.5*C,1.5mm+yellow);
-
-    arc Cp=C/3;
-    draw(Cp, 0.75mm+blue);
-    markarc(format("%0g",degrees(Cp)),
-    radius=25mm, Cp, blue, Arrow);
-  \end{bvasy}
+  \bvasy{arc_mult_div_1}
   The same thing with an ellipse arc defined from the center of the ellipse.
   % \compiletrue
-  \begin{bvasy}{arc_mult_div_2}
-    import geometry; size(8cm,0);
-    point C=(1,1); dot("$C$", C, 2*dir(80), red);
-    arc a=arc(ellipse(C,2,1,45),90,0,fromCenter);
-    draw(a, linewidth(3mm));
-    markarc(format("%0g", degrees(a)),
-    radius=-0.5*markangleradius(), a);
-
-    draw(0.5*a, 1.5mm+yellow);
-
-    arc ap=a/3;
-    draw(ap, 0.75mm+blue);
-    markarc(format("%0g", degrees(ap)),
-    radius=1.5*markangleradius(),ap,blue);
-  \end{bvasy}
+  \bvasy{arc_mult_div_2}
   Finally, in the following example, the arc is defined from the
   first focus of the ellipse:
   % \compiletrue
-  \begin{bvasy}{arc_mult_div_3}
-    import geometry; size(8cm,0);
-    point C=(1,1); dot("$C$", C, dir(30), red);
-
-    arc a=arc(ellipse(C,2,1,45), -45, 45);
-    draw(a, linewidth(3mm));
-    dot("$F_1$", a.el.F1, dir(210), red);
-    markarc(format("%0g", degrees(a)),
-    radius=2.5*markangleradius(), a);
-
-    draw(0.5*a, 1.5mm+yellow);
-
-    arc ap=a/3;
-    draw(ap, 0.75mm+blue);
-    markarc(format("%0g", degrees(ap)),
-    radius=1.5*markangleradius(),ap,blue);
-  \end{bvasy}
+  \bvasy{arc_mult_div_3}
 \item \index{+(explicit arc,point)}\index{-(explicit arc,point)}%
   \index{+(explicit arc,vector)}\index{-(explicit arc,vector)}
   \begin{Vcolor}
@@ -4088,14 +2541,7 @@ in the section \href{#section.abscissa}{Abscissas}.
   \end{Vcolor}
   Return the complementary of the arc \param{a}.
   % \compiletrue
-  \begin{bvasy}{complementary_arc}
-    import geometry;
-    size(6cm,0);
-    ellipse EL=ellipse(origin,2,1);
-    arc AE=arc(EL, 210, 45, fromCenter);
-    draw(AE, linewidth(bp), Arrow(3mm));
-    draw(complementary(AE), bp+0.8*red, Arrow(3mm));
-  \end{bvasy}
+  \bvasy{complementary_arc}
 \item \index{reverse(arc)}
   \begin{Vcolor}
     arc reverse(arc a)
@@ -4148,42 +2594,8 @@ in the section \href{#section.abscissa}{Abscissas}.
   to obtain it using the routine\linebreak
   \code{point arcsubtendedcenter(point A, point B, real angle)}
   \index{arcsubtendedcenter(point,point,real)}.
-  \begin{bvasy}{arcsubtended}
-    import geometry; size(7cm,0);
-    point A=(-1,0), B=(1,0);
-    dot("$A$", A, 2W, red); dot("$B$", B, 2E, red);
-
-    real[] angles=new real[] {60, 110, -60, -110};
-    pen[] p=new pen[] {red, blue+red, blue, cyan};
-    int i=0;
-
-    for(real a:angles) {
-      arc arcsubtended=arcsubtended(A,B,a);
-      draw(arcsubtended, bp+0.8*p[i]);
-      for (int j=0; j < 2; ++j) {
-        point M=relpoint(arcsubtended, 0.25+0.5*j);
-        draw(A--M--B, 0.8*p[i]);
-        real gle=degrees(B-M)-degrees(A-M);
-        markangle(Label(format("%0g",-gle),UnFill),
-        B, M, A, radius=sgn(-gle)*30, Arrow, 0.8*p[i]); }
-      ++i; }
-  \end{bvasy}
-  \begin{bvasy}{angle_inscrit}
-    import geometry; size(7cm,0);
-    point A=(-1,0), B=(1,0);
-    dot("$A$", A, S); dot("$B$", B, S);
-    pen bpp=linewidth(bp);
-
-    arc Ac=arcsubtended(A,B,30); draw(Ac, bpp);
-    dot("$O$", Ac.el.C);
-    markarc("$\alpha$", Ac, n=2, radius=1cm,
-    sectorpen=bpp, markpen=currentpen);
-
-    for (int i=0; i < 3; ++i) {
-      point M=relpoint(Ac, 0.25+0.25*i);
-      draw(M--A^^M--B, linewidth(bp));
-      markangle("$\frac{\alpha}{2}$", A, M, B); }
-  \end{bvasy}
+  \bvasy{arcsubtended}
+  \bvasy{angle_inscrit}
 \item \index{arccircle(point,point,real,bool)}
   % \compiletrue
   \begin{Vcolor}
@@ -4192,36 +2604,14 @@ in the section \href{#section.abscissa}{Abscissas}.
   Return the arc circle, centered in \param{A}, from \param{B} to the
   image of \param{B} under the rotation with center \param{A} and
   angle \param{angle} in the direction \param{direction}.
-  \begin{bvasy}{ove}
-    import geometry;
-    size(6cm);
-    point A=(-1,1), B=(1,-1);
-    point M=(A+B)/2;
-
-    point P=rotate(90,M)*B;
-    arc A1=arccircle(A,B,45), A2=arccircle(B,A,-45,CW),
-    A3=arccircle(P,relpoint(A2,1),-90,CW),
-    A4=arccircle(M,A,180);
-    draw(A1^^A2^^A3^^A4, linewidth(bp));
-    shipout(bbox());
-  \end{bvasy}
+  \bvasy{ove}
 \item \index{arccircle(point,point,point)}
   % \compiletrue
   \begin{Vcolor}
     arc arccircle(point A, point M, point B)
   \end{Vcolor}
   Return the arc circle $\stackrel{\frown}{\mparam{AB}}$ through \param{M}.
-  \begin{bvasy}{circumarc_def}
-    import geometry;
-    size(6cm);
-    point A=(-1,0), B=(3,-1), C=(0,1), D=(0,-2);
-
-    draw(arccircle(A,C,B), dotsize()+0.8*red);
-    draw(arccircle(A,D,B), dotsize()+0.8*red);
-
-    dot("$A$", A, NW); dot("$B$", B, E);
-    dot("$C$", C, NW); dot("$D$", D, SW);
-  \end{bvasy}
+  \bvasy{circumarc_def}
 \item \index{arc(ellipse,point,point,bool)}
   % \compiletrue
   \begin{Vcolor}
@@ -4229,18 +2619,7 @@ in the section \href{#section.abscissa}{Abscissas}.
   \end{Vcolor}
   Return the arc of \param{el}, with direction \param{direction},
   with ends \param{M} and \param{N} which must belong \param{el}.\\
-  \begin{vasy}{arc_inter_points}
-    import geometry; size(8cm);
-    point A=(-1,0), B=(1,1), C=(0,1), D=(1,-1);
-    dot("$A$",A,S); dot("$B$",B,S); dot("$C$",C,SW); dot("$D$",D,SW);
-    ellipse el=ellipse((0,0.5),2,1);
-    line l1=line(A,B), l2=line(C,D); draw(l1); draw(l2);
-    point[] J=intersectionpoints(l1,el), K=intersectionpoints(l2,el);
-    draw(arc(el, J[0],K[0]), 1mm+0.8yellow); draw(arc(el, K[0],J[1]), 1mm+0.8red);
-    draw(arc(el, J[1],K[1]), 1mm+0.8blue); draw(arc(el, K[1],J[0]), 1mm+0.8green);
-    dot("$J_0$", J[0], 2N); dot("$J_1$", J[1], 2S);
-    dot("$K_0$", K[0], 2NE) ; dot("$K_1$", K[1], 2dir(-35));
-  \end{vasy}
+  \vasy{arc_inter_points}
 \item \index{arc(ellipse,abscissa,abscissa,bool)}
   \begin{Vcolor}
     arc arc(ellipse el, explicit abscissa x1, explicit abscissa x2, bool direction=CCW)
@@ -4254,18 +2633,7 @@ in the section \href{#section.abscissa}{Abscissas}.
   \end{Vcolor}
   Return the arc part \param{a} between \param{M} and \param{N}.
   % \compiletrue
-  \begin{vasy}{subarc_point}
-    import geometry; size(8cm);
-    point A=(-1,0), B=(1,1), C=(0,0), D=(1,-1);
-    dot("$A$",A,S); dot("$B$",B,S); dot("$D$",D,SW);
-    arc c=arc(ellipse(C,2,1,20), 0, 270); draw(complementary(c),dashed+grey);
-    line l1=line(A,B), l2=line(C,D);
-    point[] J=intersectionpoints(l1,c), K=intersectionpoints(l2,c);
-    draw(arc(c,J[0],K[0]), 2bp+0.8yellow); draw(arc(c,K[0],J[1]), 2bp+0.8red);
-    draw(arc(c,J[1],relpoint(c,1)), 2bp+0.8green); draw(arc(c,point(c,0),J[0]), 2bp+0.8blue);
-    dot("$J_0$",J[0],2N); dot("$J_1$",J[1],N+2W); dot("$K_0$",K[0],2N);
-    draw(c, bp+white); draw(l1^^l2);
-  \end{vasy}
+  \vasy{subarc_point}
 \item \index{arc(arc,abscissa,abscissa)}
   \begin{Vcolor}
     arc arc(arc el, explicit abscissa x1, explicit abscissa x2)
@@ -4339,15 +2707,7 @@ object to this abscissa with the routine \code{point(object,abscissa)}.
   It should be noted that the code \code{point(object,relabscissa(x))} is
   equivalent to \code{relpoint(object,x)}.
   % \compiletrue
-  \begin{bvasy}{relabscissa}
-    import geometry; size(4.5cm);
-    currentcoordsys=rotate(45)*defaultcoordsys;
-    show(currentcoordsys);
-    abscissa rel=relabscissa(0.5);
-    ellipse el=ellipse(origin(),2,1,-45); draw(el,linewidth(bp));
-    circle c=circle(origin(),1);          draw(c,linewidth(bp));
-    dot(point(el,rel), red); dot(point(c,rel), red);
-  \end{bvasy}
+  \bvasy{relabscissa}
 \item \index{curabscissa(real)}
   \begin{Vcolor}
     abscissa curabscissa(real x)
@@ -4356,15 +2716,7 @@ object to this abscissa with the routine \code{point(object,abscissa)}.
   It should be noted that the code \code{point(object,curabscissa(x))} is
   equivalent to \code{curpoint(object,x)}.
   % \compiletrue
-  \begin{bvasy}{curabscissa}
-    import geometry; size(4.5cm);
-    currentcoordsys=rotate(45)*defaultcoordsys;
-    show(currentcoordsys);
-    abscissa cur=curabscissa(pi);
-    ellipse el=ellipse(origin(),2,1,-45); draw(el,linewidth(bp));
-    circle c=circle(origin(),1);          draw(c,linewidth(bp));
-    dot(point(el,cur), red); dot(point(c,cur), red);
-  \end{bvasy}
+  \bvasy{curabscissa}
 \item \index{angabscissa(real,polarconicroutine)}
   \begin{Vcolor}
     abscissa angabscissa(real x,
@@ -4374,20 +2726,7 @@ object to this abscissa with the routine \code{point(object,abscissa)}.
   It should be noted that the code \code{point(object,angabscissa(x))} is
   equivalent to \code{angpoint(object,x)}.
   % \compiletrue
-  \begin{bvasy}{angabscissa}
-    import geometry;
-    size(6cm);
-    abscissa x=angabscissa(30);
-
-    ellipse el=ellipse(origin(),2,1,45);
-    draw(el,linewidth(bp));
-
-    point M=point(el,x);
-    draw(M--el.F1--el.F2);
-    dot("$F_1$", el.F1, SE); dot("$F_2$", el.F2, NW);
-    markangle((string)x.x, el.F2, el.F1, M);
-    draw(tangent(el,x), linewidth(bp));
-  \end{bvasy}
+  \bvasy{angabscissa}
 \item \index{nodabscissa(real)}
   \begin{Vcolor}
     abscissa nodabscissa(real x)
@@ -4640,16 +2979,7 @@ to draw a triangle. Another routines will be given as of reading.
   $\mparam{AB}=\mparam{c}$ and
   $\left(\vec{\imath}\,;\,\vec{\mparam{AB}}\right)=\mparam{angle}$.
   % \compiletrue
-  \begin{bvasy}{triangleabc}
-    import geometry;
-    size(4cm);
-
-    currentcoordsys=cartesiansystem(i=(1,0.5), j=(-0.25,.75));
-    show(currentcoordsys);
-
-    triangle t=triangleabc(3,4,5, (1,1));
-    show(La="3", Lb="4", Lc="5", t);
-  \end{bvasy}
+  \bvasy{triangleabc}
 \item \index{triangleAbc(real,real,real,real,point)}
   \begin{Vcolor}
     triangle triangleAbc(real alpha, real b, real c, real angle=0, point A=(0,0))
@@ -4658,18 +2988,7 @@ to draw a triangle. Another routines will be given as of reading.
   $\left(\vec{\mparam{AB}}\,;\,\vec{\mparam{AC}}\right)=\mparam{alpha}$, $\mparam{AC}=\mparam{b}$,
   $\mparam{AB}=\mparam{c}$ et $ \left(\vec{\imath}\,;\,\vec{\mparam{AC}}\right)=\mparam{angle}$.
   % \compiletrue
-  \begin{bvasy}{triangleAbc}
-    import geometry;
-
-    size(5cm);
-
-    currentcoordsys=cartesiansystem(i=(1,0.5),j=(-0.25,.75));
-    show(currentcoordsys);
-
-    triangle t=triangleAbc(-60,2,3,angle=45,(1,1));
-    show(Lb="2", Lc="3",t);
-    markangle("$60^\circ$",t.C,t.A,t.B, Arrow);
-  \end{bvasy}
+  \bvasy{triangleAbc}
 \item \index{triangle(line,line,line)}
   \begin{Vcolor}
     triangle triangle(line l1, line l2, line l3)
@@ -4693,16 +3012,7 @@ As an example in the following code the routine
 \index{bisector(vertex,real)} returns the image by the rotation of
 center \param{V} and angle \param{angle} of the internal bisector
 passing through \param{V}.
-\begin{bvasy}{bisector_vertex}
-  size(7cm); import geometry;
-  triangle t=triangleabc(4,5,6);
-  drawline(t, linewidth(bp));
-  line ba=bisector(t.VA), bb=bisector(t.VB);
-  line bc=bisector(t.VC); draw(ba^^bb^^bc);
-  markangle(t.AB, t.AC, StickIntervalMarker(2,1));
-  markangle(t.BC, t.BA, StickIntervalMarker(2,2));
-  markangle(t.CA, t.CB, StickIntervalMarker(2,3));
-\end{bvasy}
+\bvasy{bisector_vertex}
 Here we have some routines and basic operators on the objects of type \param{vertex}
 \begin{itemize}
 \item \index{cast(vertex V)}
@@ -4743,21 +3053,7 @@ As an example in the following code the routine
 \hypertarget{excircleside}{\code{circle excircle(side
     s)}}\index{excircle(side)} returns the excircle of the
 triangle to which~\param{s} refers and tangent to \param{s}.
-\begin{bvasy}{excircle_intro}
-  import geometry;
-  size(6cm,0);
-
-  triangle t=triangle((-1,0), (2,0), (0,2));
-
-  drawline(t, linewidth(bp));
-  label(t,alignFactor=4);
-
-  clipdraw(excircle(t.AB), bp+0.8green);
-  clipdraw(excircle(t.BC), bp+0.8green);
-  clipdraw(excircle(t.AC), bp+0.8green);
-
-  draw(box((-2.5,-3), (3.5,3.5)), invisible);
-\end{bvasy}
+\bvasy{excircle_intro}
 Here we have some routines and basic operators on the objects of type \param{side}:
 \begin{itemize}
 \item \index{cast(side side)}
@@ -4830,24 +3126,7 @@ The single operator which can be applied to \code{triangle} is
   \end{Vcolor}
   Return the orthic triangle of \param{t}; its vertices are the feet
   of the altitudes of \param{t}.
-  \begin{bvasy}{orthic}
-    size(8cm);
-    import geometry;
-
-    triangle t=triangleabc(3,4,6);
-    drawline(t, linewidth(bp));
-    line hc=altitude(t.AB), hb=altitude(t.AC);
-    line ha=altitude(t.BC); draw(hc^^hb^^ha);
-    dot("H", orthocentercenter(t));
-
-    perpendicularmark(t.AB,hc,quarter=-1);
-    perpendicularmark(t.AC,hb,quarter=-1);
-    perpendicularmark(t.BC,ha);
-
-    triangle ort=orthic(t);
-    draw(ort,bp+0.8*green); dot(ort, 0.8*red);
-    addMargins(1cm,1cm);
-  \end{bvasy}
+  \bvasy{orthic}
 \item \index{midpoint(side)}
   \begin{Vcolor}
     point midpoint(side side)
@@ -4871,23 +3150,7 @@ The single operator which can be applied to \code{triangle} is
   Return the medial triangle of \param{t} (its vertices are the
   midpoints of \param{t}).
   % \compiletrue
-  \begin{bvasy}{medial}
-    size(8cm);
-    import geometry;
-
-    triangle t=triangleabc(6,5,4);
-    drawline(t, linewidth(bp));
-    line ma=median(t.VA), mb=median(t.VB);
-    line mc=median(t.VC); draw(ma^^mb^^mc);
-
-    draw(segment(t.AB), StickIntervalMarker(2,1));
-    draw(segment(t.BC), StickIntervalMarker(2,2));
-    draw(segment(t.CA), StickIntervalMarker(2,3));
-
-    triangle med=medial(t);
-    draw(med,bp+0.8*green); dot(med, 0.8*red);
-    addMargins(1cm,1cm);
-  \end{bvasy}
+  \bvasy{medial}
 \item \index{anticomplementary(triangle)}
   \begin{Vcolor}
     triangle anticomplementary(triangle t)
@@ -4930,22 +3193,7 @@ The single operator which can be applied to \code{triangle} is
   Return the tangential triangle of \param{t}, that is the triangle
   whose sides are tangent to the circumcircle of \param{t}.
   % \compiletrue
-  \begin{bvasy}{tangential}
-    size(7cm); import geometry;
-    triangle t=triangleabc(3,4,6);
-    draw(t, linewidth(bp));
-    clipdraw(circle(t), linewidth(bp));
-    triangle itr=tangential(t);
-    drawline(itr, bp+0.8*green); dot(itr, 0.8*red);
-    line syma=line(itr.A,t.A), symb=line(itr.B,t.B);
-    line symc=line(itr.C,t.C); draw(syma^^symb^^symc);
-    dot("$K$", intersectionpoint(syma,symb),
-    2*dir(-120));
-    label(t,alignFactor=2,UnFill);
-    label("$T_A$","$T_B$","$T_C$", itr, alignFactor=4,
-    UnFill);
-    addMargins(1cm,1cm);
-  \end{bvasy}
+  \bvasy{tangential}
 \item \index{incenter(triangle)}
   \begin{Vcolor}
     point incenter(triangle t)
@@ -4980,20 +3228,7 @@ The single operator which can be applied to \code{triangle} is
     point gergonne(triangle t)
   \end{Vcolor}
   Return the {\sc Gergonne} point of the triangle \param{t}.
-  \begin{bvasy}{intouch}
-    size(8.5cm,0);import geometry;
-    triangle t=triangleabc(5,6,7);
-    drawline(t, linewidth(bp));
-    draw(incircle(t));
-    triangle itr=intouch(t);
-    draw(itr,bp+0.8*green); dot(itr, 0.8*red);
-    point Ge=gergonne(t);
-    dot("$G_e$", Ge, 2*dir(-10));
-    draw(line(Ge,t.A), 0.8*green);
-    draw(line(Ge,t.B), 0.8*green);
-    draw(line(Ge,t.C), 0.8*green);
-    addMargins(1cm,1cm);
-  \end{bvasy}
+  \bvasy{intouch}
 \item \index{excenter(side)}
   \begin{Vcolor}
     point excenter(side side)
@@ -5026,21 +3261,7 @@ The single operator which can be applied to \code{triangle} is
   Return the contact point of the side \param{side} with the excircle
   given by  \code{excircle(side)}.
   % \compiletrue
-  \begin{bvasy}{extouch}
-    import geometry; size(6cm,0);
-
-    triangle t=triangle((-1,0), (2,0), (0,2));
-    drawline(t, linewidth(bp));
-    label(t,alignFactor=4);
-
-    circle c1=excircle(t.AB), c2=excircle(t.BC);
-    circle c3=excircle(t.AC);
-    clipdraw(c1, bp+0.8green);
-    clipdraw(c2, bp+0.8green);
-    clipdraw(c3, bp+0.8green);
-    dot(c1.C^^c2.C^^c3.C, green);
-    draw(extouch(t), bp+0.8green, dot);
-  \end{bvasy}
+  \bvasy{extouch}
 \item \index{symmedian(triangle)}
   \begin{Vcolor}
     point symmedian(triangle t)
@@ -5059,22 +3280,7 @@ The single operator which can be applied to \code{triangle} is
   Return the symmedian line of the triangle to which \param{V} refers
   and passing through \param{V}.
   % \compiletrue
-  \begin{vasy}{symmedian}
-    import geometry; size(10cm,0);
-    triangle t=triangle((-1,0), (2,0), (0,2)); drawline(t, linewidth(bp));
-    label(t,alignFactor=2, alignAngle=90);
-    triangle st=symmedial(t); draw(st, bp+0.8green);
-    label("$A'$", "$B'$", "$C'$", st, alignAngle=45, 0.8green);
-    line mA=median(t.VA); draw(mA, blue); dot("$M_A$",midpoint(t.BC), 1.5E, blue);
-    draw(segment(t.BC), bp+blue, StickIntervalMarker(2,2,blue));
-    line bA=bisector(t.VA); draw(bA, grey); dot("$B_A$", bisectorpoint(t.BC));
-    line sA=symmedian(t.VA); draw(sA, 0.8*green);
-    draw(symmedian(t.VB), 0.8*green); draw(symmedian(t.VC), 0.8*green);
-    point sP=symmedian(t); dot("$K$", sP, 2*dir(125));
-    markangle(sA, t.AC, radius=2cm, StickIntervalMarker(1,1));
-    markangle(t.AB, mA, radius=2cm, StickIntervalMarker(1,1));
-    markangle(mA, sA, radius=10cm, StickIntervalMarker(2,2));
-  \end{vasy}
+  \vasy{symmedian}
 \item \index{cevian(side,point)}
   \begin{Vcolor}
     point cevian(side side, point P)
@@ -5100,30 +3306,7 @@ The single operator which can be applied to \code{triangle} is
     $A'$, $B'$ et $C'$  about the respective midpoints is also
     a  \hypertarget{cevian_ex}{\textsc{Cevian}} triangle}''.
   % \compiletrue
-  \begin{vasy}{cevian}
-    import geometry; size(10cm,0);
-    triangle t=triangleabc(5,6,7); label(t); draw(t, linewidth(bp));
-    point P=0.6*t.B+0.25*t.C; dot("$P$", P, dir(60), 0.8*red);
-    triangle C1=cevian(t, P);
-    label("$A'$","$B'$","$C'$", C1, 0.8*red); draw(C1, bp+0.8*red, dot);
-    draw(t.A--C1.A, 0.8*red); draw(t.B--C1.B, 0.8*red); draw(t.C--C1.C, 0.8*red);
-
-    point Ma=midpoint(t.BC), Mb=midpoint(t.AC), Mc=midpoint(t.BA);
-    dot("$M_1$",Ma,-dir(t.VA)); dot("$M_2$",Mb,-dir(t.VB)); dot("$M_3$",Mc,-dir(t.VC));
-    draw(t.A--Ma^^t.B--Mb^^t.C--Mc, grey); dot("$G$", centroid(t), 2*dir(-65), grey);
-
-    point App=rotate(180,Ma)*C1.A, Bpp=rotate(180,Mb)*C1.B, Cpp=rotate(180,Mc)*C1.C;
-    draw(C1.A--App, 0.8*green, StickIntervalMarker(2,1,0.8*green));
-    draw(C1.B--Bpp, 0.8*green, StickIntervalMarker(2,2,0.8*green));
-    draw(C1.C--Cpp, 0.8*green, StickIntervalMarker(2,3,0.8*green));
-
-    triangle C2=triangle(App,Bpp,Cpp);
-    label("$A''$","$B''$","$C''$", C2, 0.8*blue); draw(C2, bp+0.8*blue, dot);
-    segment sA=segment(t.A,C2.A), sB=segment(t.B,C2.B);
-    point PP=intersectionpoint(sA,sB);
-    dot("$P'$", PP, dir(100), 0.8*blue);
-    draw(sA, 0.8*blue); draw(sB, 0.8*blue); draw(segment(t.C,C2.C), 0.8*blue);
-  \end{vasy}
+  \vasy{cevian}
 \item \index{isotomic(vertex,point)}
   \begin{Vcolor}
     line isotomic(vertex V, point M)
@@ -5159,25 +3342,7 @@ The single operator which can be applied to \code{triangle} is
   Below, the same figure obtained using routines \code{isotomic} gains
   in brevity.
   % \compiletrue
-  \begin{vasy}{isotomic}
-    import geometry; size(10cm,0);
-    triangle t=triangleabc(5,6,7); label(t); draw(t, linewidth(bp));
-    point P=0.6*t.B+0.25*t.C; dot("$P$", P, dir(60), 0.8*red);
-    draw(segment(isotomic(t.VA,P))^^segment(isotomic(t.VB,P))^^segment(isotomic(t.VC,P)),
-    0.8*blue);
-    draw(segment(cevian(t.VA,P))^^segment(cevian(t.VB,P))^^segment(cevian(t.VC,P)),
-    0.8*red);
-    triangle t1=cevian(t,P); label("$P_1$", "$P_2$", "$P_3$", t1); draw(t1, bp+0.8*red);
-    triangle t2=isotomic(t,P); label("$Q_1$", "$Q_2$", "$Q_3$", t2); draw(t2, bp+0.8*blue);
-    dot("$Q$", isotomicconjugate(t,P), dir(100), 0.8*blue);
-
-    point Ma=midpoint(t.BC), Mb=midpoint(t.AC), Mc=midpoint(t.BA);
-    dot("$M_1$",Ma,-dir(t.VA)); dot("$M_2$",Mb,-dir(t.VB)); dot("$M_3$",Mc,-dir(t.VC));
-    draw(t.A--Ma^^t.B--Mb^^t.C--Mc, grey); dot("$G$", centroid(t), 2*dir(-65), grey);
-    draw(t1.A--t2.A, 0.8*green, StickIntervalMarker(2,1,0.8*green));
-    draw(t1.B--t2.B, 0.8*green, StickIntervalMarker(2,2,0.8*green));
-    draw(t1.C--t2.C, 0.8*green, StickIntervalMarker(2,3,0.8*green));
-  \end{vasy}
+  \vasy{isotomic}
 \item \index{isogonalconjugate(triangle,point)}
   \begin{Vcolor}
     point isogonalconjugate(triangle t, point M)
@@ -5204,32 +3369,7 @@ The single operator which can be applied to \code{triangle} is
   of two isogonal points $P$ and $Q$ are inscribed in the same circle
   centered at the midpoint of the segment line $[PQ]$."}
 % \compiletrue
-  \begin{vasy}{isogonaux}
-    import geometry; size(10cm,0);
-    triangle t=triangleabc(5,6,7); draw(t, linewidth(bp));
-    point P=0.5*t.B+0.3*(t.C-t.B); dot("$P$", P, N, 0.8*red);
-
-    point Q=isogonalconjugate(t,P); dot("$Q$", Q, dir(-30));
-    point Q1=projection(t.AB)*Q; segment sq1=segment(Q,Q1);
-    point Q2=projection(t.BC)*Q; segment sq2=segment(Q,Q2);
-    point Q3=projection(t.AC)*Q; segment sq3=segment(Q,Q3);
-    draw(sq1); draw(sq2); draw(sq3);
-    dot("$Q_1$", Q1, SE); dot("$Q_2$", Q2); dot("$Q_3$", Q3, NW);
-
-    point P1=projection(t.AB)*P; segment sp1=segment(P,P1);
-    point P2=projection(t.BC)*P; segment sp2=segment(P,P2);
-    point P3=projection(t.AC)*P; segment sp3=segment(P,P3);
-    draw(sp1, 0.8*red); draw(sp2, 0.8*red); draw(sp3, 0.8*red);
-    dot("$P_1$",P1,SW,0.8*red); dot("$P_2$",P2,0.8*red); dot("$P_3$",P3,NW,0.8*red);
-
-    perpendicularmark(t.AB,sq1); perpendicularmark(t.BC,sq2);
-    perpendicularmark(reverse(t.AC),sq3); perpendicularmark(t.AB,sp1, red);
-    perpendicularmark(t.BC,sp2, red); perpendicularmark(reverse(t.AC),sp3, red);
-
-    circle C=circle(Q1,Q2,Q3); draw(C, 0.8*blue);
-    draw(segment(Q,P), 0.8*blue, StickIntervalMarker(2,2, 0.8*blue));
-    dot("$C$", C.C, S, 0.8*blue);
-  \end{vasy}
+  \vasy{isogonaux}
 \item \index{pedal(triangle,point)}
   \begin{Vcolor}
     triangle pedal(triangle t, point M)
@@ -5247,59 +3387,14 @@ The single operator which can be applied to \code{triangle} is
   allows to obtain by theirs numbers the sides and the vertices of the triangle
   \param{t}.
   % \compiletrue
-  \begin{bvasy}{simson}
-    import geometry; size(8cm,0);
-    triangle t=triangleabc(5,6,7);
-    label(t, alignFactor=4);
-    drawline(t, linewidth(bp));
-    circle C=circle(t); draw(C, bp+dashed);
-    pen[] p=new pen[] {0.8*red,0.8*blue,
-      0.8*green, 0.8*yellow};
-    for (int i=0; i < 4; ++i) {
-      real x=35+i*90; point P=angpoint(C,x);
-      dot("$P_"+(string)i+"$",P,dir(x),p[i]);
-      for (int j=0; j < 3; ++j) {
-        segment Sg=segment(pedal(t.side(j),P));
-        draw(Sg,p[i]);
-        markrightangle(P,Sg.B,t.vertex(j),p[i]);
-      }
-      drawline(pedal(t,P), bp+p[i]);
-    }
-    addMargins(1cm,1cm);
-  \end{bvasy}
+  \bvasy{simson}
   % \compiletrue
 \item \index{antipedal(triangle,point)}
   \begin{Vcolor}
     triangle antipedal(triangle t, point M)
   \end{Vcolor}
   Return the triangle whose the pedal triangle of \param{M} is \param{t}.
-  \begin{bvasy}{antipedal}
-    import geometry; size(10cm,0);
-    triangle t=triangleabc(5,6,7);
-    label(t); draw(t, linewidth(bp));
-    point P=0.5*t.B+0.3*t.C;
-    dot("$P$", P, 2*dir(60));
-
-    triangle Pt=pedal(t,P);
-    currentpen=0.8*blue; draw(Pt);
-    segment psA=segment(P,Pt.A);
-    segment psB=segment(P,Pt.B);
-    segment psC=segment(P,Pt.C);
-    draw(psA); draw(psB); draw(psC);
-    perpendicularmark(t.BC,psA);
-    perpendicularmark(t.CA,psB);
-    perpendicularmark(t.AB,psC);
-
-    triangle APt=antipedal(t, P);
-    currentpen=0.8*red; draw(APt);
-    segment apsA=segment(P,t.A);
-    segment apsB=segment(P,t.B);
-    segment apsC=segment(P,t.C);
-    draw(apsA); draw(apsB); draw(apsC);
-    perpendicularmark(APt.BC,apsA);
-    perpendicularmark(APt.CA,apsB);
-    perpendicularmark(APt.AB,apsC);
-  \end{bvasy}
+  \bvasy{antipedal}
 \end{itemize}
 \hyperdef{subsection}{trilinear}{\subsection{\index{trilinear!coordinates|mainidx}%
     \index{trilinear toordinates!triangle|mainidx}Trilinear coordinates}}
@@ -5448,120 +3543,26 @@ In this case the returned circle \param{C} has an infinite radius and
 the property \param{C.l}, whose type is \code{line}, is set to the correct value;
 the routines admitting this circle as a parameter use \param{C.l} in
 place as showed by the following example.
-\begin{bvasy}{inversion_circle_droite}
-  import geometry;
-  size(4cm);
-
-  circle C=circle((0,0),1);
-  draw(C, linewidth(bp));
-
-  point O=dir(45);
-  dot("$O$",O);
-
-  inversion inv=inversion(3,O);
-  circle Cp=inv*C;
-  draw(Cp);
-
-  dot(intersectionpoints(C,Cp), red);
-\end{bvasy}
+\bvasy{inversion_circle_droite}
 
 \subsection{Examples}
 \href{#exemple_inversion}{Examples} using inversions have already been given, here are some others.
 
 We begin by illustrating the use of a circle, here the circle inscribed in a
 triangle, as an inversion:
-\begin{bvasy}{circle_inversion}
-  import geometry;
-  size(6cm,0);
-
-  triangle t=triangleabc(4,5,6);
-  circle C=circumcircle(t), inC=incircle(t);
-
-  draw(inC, bp+0.8*red);
-  draw(C, bp+0.8*blue);
-  draw(t, linewidth(bp));
-
-  draw(inC*t, linewidth(bp));
-  draw(inC*C, bp+0.8*blue);
-\end{bvasy}
+\bvasy{circle_inversion}
 Below the construction of the {\sc Pappus} chain.
-\begin{bvasy}{pappus_construct}
-  import geometry; size(7cm,0);
-
-  inversion inv=inversion(10,(-4,0));
-  line l1=line((-1,0),(-1,1)), l2=line((1,0),(1,1));
-  draw(l1, bp+0.8*blue); draw(l2, bp+0.8*green);
-  clipdraw(inv*l1,bp+0.8*blue);
-  clipdraw(inv*l2,bp+0.8*green);
-
-  int n=10;
-  for (int i=0; i <= n; ++i) {
-    circle C=circle((0,2*i),1);
-    circle Cp=inv*C;
-    draw(Cp,bp+(1-abs(i/4))*red);
-    if(abs(i) < 4){
-      draw(C,bp+(1-abs(i/4))*red);
-      draw((1,2*i)--inv*(1,2*i),0.8*green);
-      draw((-1,2*i)--inv*(-1,2*i),0.8*blue);
-    }
-  }
-  addMargins(1mm,1mm);
-\end{bvasy}
+\bvasy{pappus_construct}
 One can easily get a good representation:
-\begin{bvasy}{chaine_pappus}
-  import geometry; size(8cm);
-
-  inversion inv=inversion(1,(-4.5,0));
-  path g1=inv*line((-1,0),(-1,1)),
-  g2=inv*line((1,0),(1,1));
-  fill(g1,lightgrey); draw(g1,linewidth(bp));
-  unfill(g2); draw(g2,linewidth(bp));
-
-  int n=40;
-  for (int i=-n; i <= n; ++i) {
-    path g=inv*circle((0,2*i),1);
-    fill(g,(1-abs(i)/n)*yellow);
-    draw(g,bp+red); draw(g,blue);
-  }
-  shipout(bbox(5mm,Fill(rgb(0.95,0.95,0.8))));
-\end{bvasy}
+\bvasy{chaine_pappus}
 The following picture, where the lines are not parallel, is a variant:
 % \compiletrue
-\begin{vasy}{pappus_variante}
-  import geometry; size(8cm,0);
-  point P=(0,-4.5); dot(P); inversion inv=inversion(1,P);
-  line l1=line((0,0),(1,0.35)), l2=line((0,0),(-1,0.35));
-  path g1=inv*l1, g2=inv*l2;
-  fill(g1^^g2,evenodd+lightgrey); draw(g1,linewidth(bp)); draw(g2,linewidth(bp));
-
-  for (int i:new int[]{-1,1}) {
-    point P=(i*0.1,0); triangle t=triangle(shift(P)*vline,l1,l2); int n=15;
-    for (int j=0; j <= n; ++j) {
-      circle C=excircle(t.AB);
-      t=triangle(shift(angpoint(C,(i-1)*90))*vline,l1,l2);
-      circle Cp=inv*C; path g=Cp; fill(g,0.95*yellow); draw(g,bp+red); draw(g,blue); }}
-  shipout(bbox(5mm,Fill(rgb(0.95,0.95,0.8))));
-\end{vasy}
+\vasy{pappus_variante}
 \hypertarget{inversion_damier}{The following figure} is the image of a
 checkerboard $12\times{}12$ by the inversion whose center is close to
 the center of the checkerboard and with radius $1$.
 % \compiletrue
-\begin{vasy}{inversion_damier}
-  import geometry;
-  size(10cm,0);
-  int n=12; segment[] S;
-  inversion inv=inversion(1,(n/2+0.45,n/2+0.45));
-  transform tv=shift(0,1), th=shift(1,0);
-  for (int i=0; i < n; ++i)
-  for (int j=0; j < n; ++j) {
-    for (int l=0; l < 4 ; ++l)
-    S[l]=segment(point(tv^i*th^j*unitsquare,l), point(tv^i*th^j*unitsquare,(l+1)%4));
-    path g;
-    for (int l=0; l < 4; ++l) g=g--(path)(inv*S[l]);
-    g=g--cycle;
-    if((i+j)%2 == 0)  draw(g); else fill(g);
-  }
-\end{vasy}
+\vasy{inversion_damier}
 
 \newpage
 \section{Index}
