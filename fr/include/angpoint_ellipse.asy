@@ -1,7 +1,7 @@
     import geometry; size(10cm,0);
     currentcoordsys=cartesiansystem((0,0),i=(1,0.5),j=(-0.5,.75));
     show(currentcoordsys, xpen=invisible);
-    ellipse el=ellipse((4,2),3,2,20);
+    ellipse el=ellipse((point)(4,2),3,2,20);
     draw(el); dot("$C$",el.C,2W,red); dot("$F_1$",el.F1,S); dot("$F_2$",el.F2,S);
     point P=angpoint(el, 0);  dot("angpoint(el, 0)", P,E);   draw(el.F1--P);
     point M=angpoint(el, 90); dot("angpoint(el, 90)", M,NW); draw(el.F1--M);

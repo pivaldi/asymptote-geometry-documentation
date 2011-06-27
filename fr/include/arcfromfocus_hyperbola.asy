@@ -10,5 +10,5 @@
       point P=angpoint(H,70); dot("$70$", P, SE);
       draw(arcfromfocus(H,70,-80), bp+red);
       segment s=segment(H.F1,P); draw(s); line l=line(H.F1,H.F1-Rp.i);
-      dot("$F_1$", H.F1, N+NW); markangle("$70^\circ$",l,s,Arrow);
+      dot("$F_1$", H.F1, N+NW); markangle("$70^\circ$",l,(line)s,Arrow);
       addMargins(rmargin=3cm);

@@ -1,6 +1,6 @@
     import geometry; size(7cm,0);
     show(currentcoordsys, xpen=invisible);
-    ellipse el=ellipse((2,2),2,1,25);
+    ellipse el=ellipse((point)(2,2),2,1,25);
     draw(el, linewidth(bp));
     real L=arclength(el);
     dot("0", curpoint(el,0), dir(25));

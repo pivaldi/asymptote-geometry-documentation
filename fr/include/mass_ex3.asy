@@ -17,7 +17,7 @@
   point[] M;
 
   for (int i=0; i < n; ++i) {
-    M[i]=point(dir(i*step), 1);
+    M[i]=mass(dir(i*step), 1);
     dot(M[i],linewidth(2mm));}
 
   int[][] part=parties(n); int l=part.length;

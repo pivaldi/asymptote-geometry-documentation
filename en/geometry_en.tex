@@ -163,9 +163,9 @@ nohead,nomarginpar]{geometry}
   \color{red}\bf
 }{}
 
-%% 
+%%
 %% TOC configuration.
-%% 
+%%
 
 \setlength{\cftbeforesecskip}{0.1ex}
 \setlength{\cftbeforesubsecskip}{0.1ex}
@@ -173,9 +173,9 @@ nohead,nomarginpar]{geometry}
 \renewcommand{\cftsecpagefont}{\normalfont}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 
-%% 
+%%
 %% Configure titles.
-%% 
+%%
 
 \titleformat{name=\section}{\normalfont\rmfamily\Large\bfseries\color{brick}}{\thesection.}{1em}{}
 \titleformat{name=\section,numberless}{\normalfont\rmfamily\Large\bfseries\color{brick}}{}{0em}{}
@@ -248,7 +248,7 @@ nohead,nomarginpar]{geometry}
   \begin{center}\bfseries
     Acknowledgements
   \end{center}
-  I would like to thank 
+  I would like to thank
   \begin{itemize}
   \item Olivier \textsc{Guibé} for numerous discussions on some
     computer algebra questions, his encouragements and his always
@@ -269,14 +269,14 @@ nohead,nomarginpar]{geometry}
 as Asymptote provides the types \code{real} and \code{path} to handle real number and
 path, \geo includes many structures and functions for geometry objects.
 In the sequel it is important to distinguish an object and his type.
-For instance  "Bivariate Quadratic Equation" is an object of type \code{bqe} 
+For instance  "Bivariate Quadratic Equation" is an object of type \code{bqe}
 and possesses a named object \param{a} of type \code{real[]}; one can
 accesses to it via the code  \code{an\_objet\_bqe.a}.\\
 Here all the types provided by \geo:
 \begin{description}
 \item[\index{coordsys}coordsys] a cartesian coordinate system;
   this type is described in Section
-  \href{#section.coordsys}{Coordinate system} and 
+  \href{#section.coordsys}{Coordinate system} and
   Section  \href{#section.point}{Points and vectors} explains his use;
 \item[\index{point}point \textmd{and} \index{vector}vector] point and
   vector with respect to a cartesian coordinate system.\\
@@ -292,9 +292,9 @@ Here all the types provided by \geo:
   The type \code{segment}, for the definition of a segment, derives
   from the type \code{line} and is present to make easier the reading
   of the code.\\
-  This types are described in Section 
+  This types are described in Section
   \href{#section.line}{Lines, half-lines and segments};
-\item[\index{conic}conic] 
+\item[\index{conic}conic]
   conic of any type (cf. \href{#section.conic}{Conics}).\\
   For optimization's question\footnote{the method to compute the tangent to
     a circle is different in the case of an hyperbola} and code's
@@ -446,7 +446,7 @@ type \code{pair} into a coordinate system are the operators:
   \begin{Vcolor}
     pair operator /( pair m, coordsys R)
   \end{Vcolor}
-  convert the coordinates of \param{m} given in the default coordinate system 
+  convert the coordinates of \param{m} given in the default coordinate system
   into coordinates into the coordinate system \param{R}. Thus,
   in the following example, the points \param{M} and \param{P} have respectively
   the same coordinates in \param{R} and \param{Rp}:
@@ -482,7 +482,7 @@ type \code{pair} into a coordinate system are the operators:
   \begin{Vcolor}
     coordsys operator *(transform t, coordsys R)
   \end{Vcolor}
-  allow the code \code{transform*coordsys}. Observe that 
+  allow the code \code{transform*coordsys}. Observe that
   \code{shiftless(t)} is applied to \param{R.i} and \param{R.j}.
 \end{itemize}
 
@@ -507,7 +507,7 @@ of the type \code{point} refers to the coordinate system in which it is defined.
   pair M=(1,1); dot("$M$", M, W, linewidth(2mm));
   point P=(1,1); dot("$P$", P, red);
 \end{bvasy}
-\index{currentcoordsys}The following example shows the consequence of 
+\index{currentcoordsys}The following example shows the consequence of
 a modification of the current coordinate system on the casting  \code{pair} in
 \code{point} for the point \param{A} and how to define a point into a
 specific coordinate system through to the routine \code{point point(coordsys R,  pair m)}
@@ -817,9 +817,9 @@ which also uses the routine  \index{locate(vector)}\code{pair locate(vector v)}:
     coordsys Rp=currentcoordsys; coordsys R=defaultcoordsys;
     show(R); show("$O'$","$\vec{u}$","$\vec{v}$", Rp, xpen=invisible);
 
-    point P=(0.75,0.5); dot("$P$",P); vector w=P; 
-    pen bpp=linewidth(bp); 
-    draw("$\vec{w}$", origin()--origin()+w, W, bpp, Arrow(3mm)); 
+    point P=(0.75,0.5); dot("$P$",P); vector w=P;
+    pen bpp=linewidth(bp);
+    draw("$\vec{w}$", origin()--origin()+w, W, bpp, Arrow(3mm));
     draw("$\vec{w}$", origin--locate(w), E, bpp,  Arrow(3mm));
 \end{bvasy}
 The routines that are described for the type \code{point} are also
@@ -865,30 +865,30 @@ default one.
 Observe in the following example the difference between  \code{dot(w)} and
 \code{dot(point(w))}; in the second case the vector is converted into
 a point, the one ``pointed out by the vector in the coordinate
-system \param{R}'' while in the first case the 
+system \param{R}'' while in the first case the
 vector is converted into a \code{pair} as explained above.\\
 Notice that it is possible to write  \code{point M=w;} in
 place of \code{point M=point(w);}\index{point(explicit vector)}.
 % \compiletrue%
 \begin{bvasy}{locate_vector2}
-  import geometry; size(4cm,0); 
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1)); 
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible); 
+  import geometry; size(4cm,0);
+  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
+  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
   show(currentcoordsys);
-  
-  vector w=vector(R, (1,1)); 
-  show("$\vec{w}$", w, linewidth(bp), Arrow(3mm)); 
+
+  vector w=vector(R, (1,1));
+  show("$\vec{w}$", w, linewidth(bp), Arrow(3mm));
   dot("w", w, N); dot("point(w)", point(w), N);
 \end{bvasy}
 The attentive reader will understand the following example:
 % \compiletrue%
 \begin{bvasy}{vector_point}
-  import geometry; size(4cm,0); pen bpp=linewidth(bp); 
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1)); 
+  import geometry; size(4cm,0); pen bpp=linewidth(bp);
+  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
   show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
   show(currentcoordsys); vector w=vector(R, (1,1));
-  show("$\vec{w}$", w, bpp, Arrow(3mm)); 
-  show("$\vec{w}$", locate(w), bpp, Arrow(3mm)); 
+  show("$\vec{w}$", w, bpp, Arrow(3mm));
+  show("$\vec{w}$", locate(w), bpp, Arrow(3mm));
   draw((1,2)--locate(w), green);
   draw((1,2)--point(w), blue);
 \end{bvasy}
@@ -896,13 +896,13 @@ The counterpart of the routine  \code{point point(explicit vector)} is
 \code{vector vector(point)}\index{vector vector(point)}:
 % \compiletrue%
 \begin{bvasy}{point_vector}
-  import geometry; size(4cm,0); 
-  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1)); 
-  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible); 
+  import geometry; size(4cm,0);
+  coordsys R=cartesiansystem((2,1), i=(1,1), j=(-0.75,1));
+  show("$O_1$", "$\vec{u}$", "$\vec{v}$", R, xpen=invisible);
   show(currentcoordsys);
-  point M=point(R, (1,1)); dot("M", M, N); 
-  dot("vector(M)", vector(M), N); 
-  show(Label(scale(0.75)*"$\vec{O_1M}$", Relative(0.75)), 
+  point M=point(R, (1,1)); dot("M", M, N);
+  dot("vector(M)", vector(M), N);
+  show(Label(scale(0.75)*"$\vec{O_1M}$", Relative(0.75)),
        M, linewidth(bp), Arrow(3mm));
 \end{bvasy}
 
@@ -1024,7 +1024,7 @@ mass points:
   \begin{Vcolor}
     mass masscenter(... mass[] M)
   \end{Vcolor}
-  Compute the center of the masses array \param{M}. 
+  Compute the center of the masses array \param{M}.
   Thanks to the casting of \code{point[]} into \code{mass[]}, notice
   that this routine also works with a parameter of the type \code{point[]}.
 \item \index{defaultmassformat}
@@ -1142,7 +1142,7 @@ points from which it is emerging.
   point[] M;
 
   for (int i=0; i < n; ++i) {
-    M[i]=point(dir(i*step), 1);
+    M[i]=mass(dir(i*step), 1);
     dot(M[i],linewidth(2mm));}
 
   int[][] part=parties(n); int l=part.length;
@@ -1168,7 +1168,7 @@ transformations. Some of them have a specific behavior with respect
 the current coordinate system which is used. Thus, this section is
 divided into two subsections. In the first one we study the mappings
 which are independent of the current coordinate system. Secondly we
-detail the coordinate system dependent transformations. 
+detail the coordinate system dependent transformations.
 \subsection{Independent coordinate system mappings}
 \begin{itemize}
 \item \index{scale(real,point)}
@@ -1401,7 +1401,7 @@ detail the coordinate system dependent transformations.
   origin of the current coordinate system''. This transformation is
   equivalent to  \code{scale(x, origin())}.\\
   In the following example, one can see the difference between
-  \code{scale(k)*P} and \code{scaleO(k)*P}. 
+  \code{scale(k)*P} and \code{scaleO(k)*P}.
   \begin{bvasy}{scaleO}
     import geometry; size(4.5cm,0);
     currentcoordsys=cartesiansystem((2,1), i=(1,0.5), j=(-1,1));
@@ -1443,7 +1443,7 @@ or  segment depending on the properties value \code{bool
 \code{line.extendB}.
 The full description about the methods and properties of the type \code{line}
 is accessible
-\href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html#struct\%20line}{here}. 
+\href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html#struct\%20line}{here}.
 
 \subsubsection{Lines defined by two points, basic routines}
 \begin{itemize}
@@ -1456,12 +1456,12 @@ is accessible
   points  \param{A} and \param{B} and directed from \param{A}
   to \param{B}. If the value of \param{extendA} is \code{true} then
   the ``line'' goes on the side of \param{A}.
-  
+
   An object of type \code{line} belongs to the coordinate system in
   which the two points \param{A} and \param{B} are defined. If it is
   not the case the two points are automatically redefined in the
   current coordinate system and a warning message is given.
-  
+
 \item \index{Ox()}\index{Oy()}\index{Ox}\index{Oy}%
   % \compiletrue
   \begin{Vcolor}
@@ -1563,7 +1563,7 @@ is accessible
     point[] intersectionpoints(line l, path g)
   \end{Vcolor}
   Return an array of all the intersection points of the
-  ``line'' \param{l} and the path \param{g}. 
+  ``line'' \param{l} and the path \param{g}.
   \end{itemize}
 
 \subsubsection{Lines defined by equations}
@@ -1669,7 +1669,7 @@ is accessible
   Return the image of the bisector of the angle between the two oriented
   lines \param{l1} and the \param{l2} by the rotation of center ``the
   intersection between the lines \param{l1} and \param{l2}'' and
-  angle \param{angle}.\\ 
+  angle \param{angle}.\\
   If the value of \param{sharp} is \code{true}, this routine returns
   the internal bisector.\\
   Remark that the returned line inherits of the coordinate system
@@ -1706,7 +1706,7 @@ is accessible
   between the oriented lines \param{l1} and \param{l2} into \param{n}
   equal parts by the rotation of center  ``the
   intersection between the lines \param{l1} and \param{l2}'' and
-  angle \param{angle}.\\ 
+  angle \param{angle}.\\
   If the value of \param{sharp} is \code{true}, this routine is
   performed on the acute angle.\\
   Remark that the returned line inherits of the coordinate system
@@ -1957,14 +1957,14 @@ belonging to an object of type \code{line}.
   \begin{Vcolor}
     line extend(line l)
   \end{Vcolor}
-  Return the line which contains \param{l} which can be an half line or a segment. 
+  Return the line which contains \param{l} which can be an half line or a segment.
 \item \index{complementary(explicit line)}%
   % \compiletrue%
   \begin{Vcolor}
     line complementary(explicit line l)
   \end{Vcolor}
   If \param{l} is an half line, it returns the complementary half line
-  of \param {l}. 
+  of \param {l}.
 \item \index{concurrent(...line[])}%
   % \compiletrue%
   \begin{Vcolor}
@@ -1994,19 +1994,19 @@ belonging to an object of type \code{line}.
   Return the point of relative abscissa \param{x} with respect to the
   oriented segment $[\mparam{AB}]$. In other words the
   codes \param{relpoint(l,x)} and \code{l.A+x*vector(l.B-l.A)} are
-  equivalent. 
+  equivalent.
   \begin{bvasy}{relpoint_line}
     import geometry;
     size(0,6cm);
-    
+
     point A=(0,0), B=(0,2);
     line l=line(A,B); show(l);
-    
+
     dot("relpoint(l,0.75)", relpoint(l,0.75));
     dot("relpoint(l,-0.75)", relpoint(l,-0.75));
     dot("relpoint(l,1.5)", relpoint(l,1.5));
     dot("relpoint(l,-1.5)", relpoint(l,-1.5));
-    
+
     addMargins(bmargin=5mm);
   \end{bvasy}
 \item \index{curpoint(line,real)}%
@@ -2021,15 +2021,15 @@ belonging to an object of type \code{line}.
   \begin{bvasy}{curpoint_line}
     import geometry;
     size(0,6cm);
-    
+
     point A=(0,0), B=(0,2);
     line l=line(A,B); show(l);
-    
+
     dot("curpoint(l,0.75)", curpoint(l,0.75));
     dot("curpoint(l,-0.75)", curpoint(l,-0.75));
     dot("curpoint(l,1.5)", curpoint(l,1.5));
     dot("curpoint(l,-1.5)", curpoint(l,-1.5));
-    
+
     addMargins(bmargin=5mm);
   \end{bvasy}
 \end{itemize}
@@ -2085,7 +2085,7 @@ As announced  in \href{#section.intro}{Introduction}, the type
 \code{segment}, which deals with segment of line, derives from the
 type \code{line}. With casting, almost all the routines
 concerning the objects of type \code{line} are performed on a object
-of type \code{segment} and conversely. 
+of type \code{segment} and conversely.
 
 However observe that when a segment is drawn the value of the variable
 \code{addpenline} is added to the used pen. The default value of this
@@ -2126,7 +2126,7 @@ The following example is an illustration
 \end{bvasy}
 Apart from the routines defined for the \code{line} objects, we also
 have some specific routines which deals with the \code{segment}
-objects: 
+objects:
 \begin{itemize}
 \item \index{segment(point,point)}%
   % \compiletrue
@@ -2648,10 +2648,10 @@ other routines to define an object of type \code{circle}:
   \end{Vcolor}
   Return the circle of radius \param{r} centered on \param{r}.\\
   Remark that the routine \code{circle circle(pair C, real r)} is
-  redefined in order to return an object of type \code{circle} 
+  redefined in order to return an object of type \code{circle}
   whose center \param{C} represent the coordinates of a point in the
   current coordinate system \code{currentcoordsys}.
-  
+
   The following example illustrates the difference between the code
   \code{circle((0,0),R);} which defines the blue circle in the
   current coordinate system and
@@ -4558,7 +4558,7 @@ complete structure is detailed \href{http://piprim.tuxfamily.org/asymptote/geome
   which mark each vertex; see Section
   \href{#subsection.vertex}{Triangles vertices}.
 \item[\param{struct side}] defines the \code{side} structure which
-  allows to create the instance of an object which represents 
+  allows to create the instance of an object which represents
   the side of a triangle. Since we need to manipulate this structure in
   a very few cases, it is useful to know his properties.
 
@@ -4572,7 +4572,7 @@ complete structure is detailed \href{http://piprim.tuxfamily.org/asymptote/geome
   from \param{C} to \param{A};\\
   if $\mparam{n}=4$, the side represents \param{AB};\\
   etc.
-  
+
   if \param{n} is negative the orientation is reversed.\\
   The value of the property \param{t} is ``the object of type
   \code{triangle} to which the side belongs''.\\
@@ -5385,7 +5385,7 @@ The following routines and operators allow to define an inversion.
   \end{Vcolor}
   \begin{itemize}
   \item if \param{sgn} is non-zero, this routine returns the inversion
-    whose the radius is the same sign as \param{sgn} and transforming 
+    whose the radius is the same sign as \param{sgn} and transforming
     \param{c1} to \param{c2};
   \item if \param{sgn} is zero, this routine returns the inversion
     centered at the foot of the radical axis and leaving globally
