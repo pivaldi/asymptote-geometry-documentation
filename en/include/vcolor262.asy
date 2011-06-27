@@ -1,1 +1,0 @@
-    point excenter(side side)

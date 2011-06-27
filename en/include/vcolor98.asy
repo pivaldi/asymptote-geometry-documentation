@@ -1,1 +1,0 @@
-    point midpoint(segment s)

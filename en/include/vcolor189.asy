@@ -1,1 +1,0 @@
-    real degrees(arc a)

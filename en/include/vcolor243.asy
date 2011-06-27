@@ -1,1 +1,0 @@
-    line altitude(vertex V)

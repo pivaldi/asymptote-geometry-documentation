@@ -1,1 +1,0 @@
-    arc complementary(arc a)

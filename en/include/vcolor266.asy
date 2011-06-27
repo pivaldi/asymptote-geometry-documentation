@@ -1,1 +1,0 @@
-    point extouch(side side)

@@ -1,1 +1,0 @@
-    vertex opposite(side side)

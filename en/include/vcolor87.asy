@@ -1,1 +1,0 @@
-    line reverse(line l)
