@@ -1,1 +1,0 @@
-    bqe canonical(bqe bqe)

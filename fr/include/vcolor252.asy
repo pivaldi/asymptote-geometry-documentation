@@ -1,1 +1,0 @@
-    triangle anticomplementary(triangle t)

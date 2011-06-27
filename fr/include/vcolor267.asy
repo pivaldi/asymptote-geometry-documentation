@@ -1,1 +1,0 @@
-    circle excircle(side side)

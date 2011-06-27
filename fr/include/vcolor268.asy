@@ -1,1 +1,0 @@
-    triangle extouch(triangle t)

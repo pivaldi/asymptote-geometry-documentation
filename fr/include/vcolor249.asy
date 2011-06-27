@@ -1,1 +1,0 @@
-    point centroid(triangle t)

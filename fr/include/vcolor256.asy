@@ -1,1 +1,0 @@
-    point circumcenter(triangle t)

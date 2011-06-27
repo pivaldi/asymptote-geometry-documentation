@@ -1,1 +1,0 @@
-    line median(vertex V)

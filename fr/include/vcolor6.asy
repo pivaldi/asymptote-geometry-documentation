@@ -1,1 +1,0 @@
-    pair coordinates(point M)

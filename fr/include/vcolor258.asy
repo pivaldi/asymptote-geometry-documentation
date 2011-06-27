@@ -1,1 +1,0 @@
-    triangle tangential(triangle t)

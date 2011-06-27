@@ -1,1 +1,0 @@
-    line bisector(side side)

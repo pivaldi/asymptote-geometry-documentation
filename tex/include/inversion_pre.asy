@@ -1,0 +1,12 @@
+import geometry;
+size(6.5cm,0); currentpen=linewidth(bp);
+point O=origin, M=(2,1), P=(2,-1);
+dot("O", O, W);
+inversion t=inversion(2,O);
+point Mp=t*M, Pt=t*P;
+circle C=circle(M,P,Mp); draw(C);
+dot("M", M, N, blue); dot("P", P, S, blue);
+dot("M'", Mp, red); dot("P'", Pt, red);
+circle Ct=circle(t); clipdraw(Ct, 0.8*red);
+point[] T=intersectionpoints(C,Ct);
+draw(line(O,false,T[0])); draw(line(O,false,T[1]));

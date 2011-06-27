@@ -1,5 +1,3 @@
-fr/geometry_fr.pdf
-en/geometry_en.pdf
 *.aux
 *.idx
 *.ilg
@@ -8,9 +6,8 @@ en/geometry_en.pdf
 *.log
 *.toc
 *.eps
-fr/include/*.pdf
-fr/include/*.html
-fr/include/tmp_.tex
-en/include/tmp_.tex
-en/include/*.pdf
-en/include/*.html
+*.pdf
+*.html
+tex/include/*.tex
+en/include/*.tex
+tex/vcolors/*
