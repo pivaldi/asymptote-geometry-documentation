@@ -11,4 +11,4 @@
 *.html
 tex/include/*.tex
 en/include/*.tex
-tex/vcolors/*
+tex/vcolors/*.*
