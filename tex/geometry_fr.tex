@@ -14,7 +14,7 @@
     vectoriel, latex, asymptote, figures, dessin, metapost},
   pdfcreator={moteur:pdfLaTeX, éditeur:Emacs}}
 \usepackage[frenchb]{babel}
-\frenchbsetup{ReduceListSpacing=false,CompactItemize=false}
+% \frenchbsetup{ReduceListSpacing=false,CompactItemize=false}
 
 \newcommand{\geo}{l'extension \emph{geometry.asy}\xspace}
 \newcommand{\Geo}{L'extension \emph{geometry.asy}\xspace}
@@ -22,7 +22,7 @@
 
 \makeindex
 
-% \Vcompiletrue
+\Vcompiletrue
 \begin{document}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -75,6 +75,8 @@
   \end{itemize}
 \end{abstract}
 \tableofcontents
+
+\newpage
 
 \hyperdef{section}{intro}{\section{Introduction}}%
 \subsection{Liste des types d'objets}
