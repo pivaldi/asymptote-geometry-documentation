@@ -85,8 +85,9 @@
     correct, improve and add some features.
   \end{itemize}
 \end{abstract}
-\tableofcontents
+\newpage
 
+\tableofcontents
 \newpage
 
 \hyperdef{section}{intro}{\section{Introduction}}%
@@ -581,6 +582,7 @@ No... not quite:
   by  \code{M=P/2} the coordinates of \param{M} are well half the ones
   of \param{P} but the mass is unchanged. Thus to define a point with
   a half mass of a point we \textbf{should} write:
+
   % \compiletrue
   \begin{Vcolor}
     point P=point((1,1), 3);// point of mass 3
@@ -605,6 +607,7 @@ The routines \code{mass mass(explicit point)}\index{mass mass(explicit point)} a
 allow to overbalance easily between the two types  \code{mass} and
 \code{point}; an elegant way to divide the mass of a \code{point}
 object is then the following:
+
 % \compiletrue%
 \begin{Vcolor}
   point P=point((1,1), 3);// Point of mass 3
@@ -614,6 +617,7 @@ object is then the following:
 \end{Vcolor}
 The division of the coordinates of an object  of the type \code{mass}
 is similarly:
+
 \begin{Vcolor}
   mass P=mass((1,1), 3);// Mass weight equal to 3
 
@@ -682,6 +686,7 @@ mass points:
   Return a string which is formated by the command \code{format}
   with \param{format} as parameter, in which \%L is replaced
   by \param{s} and the weight of \param{M}.
+
   % \compiletrue%
   \begin{Vcolor}
     import geometry;

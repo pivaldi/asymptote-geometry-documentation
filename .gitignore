@@ -7,8 +7,9 @@
 *.log
 *.toc
 *.eps
-*.pdf
+# *.pdf // add PDF result in archive
 *.html
 tex/include/*.tex
+tex/include/*.pdf
 en/include/*.tex
 tex/vcolors/*.*
