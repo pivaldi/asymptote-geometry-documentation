@@ -172,7 +172,7 @@ real rd(real x, real y, real z)
 real elle(real phi, real k)
 {/*<asyxml></code><documentation>Legendre elliptic integral of the 2nd kind,
    evaluated using Carlson's functions RD and RF.
-   The argument ranges are -infinity < phi < +infinity, 0 <= k * sin(phi) <= 1.</documentation></function></asyxml>*/
+   The argument ranges are -infinity &lt; phi &lt; +infinity, 0 &lt;= k * sin(phi) &lt;= 1.</documentation></function></asyxml>*/
   real result;
   if (phi >= 0 && phi <= pi/2) {
     real cc, q, s;
@@ -417,7 +417,7 @@ struct point
   restricted pair coordinates;/*<asyxml></code><documentation>The coordinates of this point relatively to the coordinate system 'coordsys'.</documentation></property><property type = "real" signature="x, y"><code></asyxml>*/
   restricted real x, y;/*<asyxml></code><documentation>The xpart and the ypart of 'coordinates'.</documentation></property></asyxml>*/
   /*<asyxml><method type = "" signature="init(coordsys,pair)"><code><property type = "real" signature="m"><code></asyxml>*/
-  real m = 1;/*<asyxml></code><documentation>Used to cast mass<->point.</documentation></property></asyxml>*/
+  real m = 1;/*<asyxml></code><documentation>Used to cast mass&lt;->point.</documentation></property></asyxml>*/
   void init(coordsys R, pair coordinates, real mass)
   {/*<asyxml></code><documentation>The constructor.</documentation></method></asyxml>*/
     this.coordsys = R;
@@ -651,7 +651,7 @@ point operator *(explicit pair p1, explicit point p2)
 
 /*<asyxml><operator type = "bool" signature="==(explicit point,explicit point)"><code></asyxml>*/
 bool operator ==(explicit point M, explicit point N)
-  {/*<asyxml></code><documentation>Provide the test 'M == N' wish returns true iff MN < EPS</documentation></operator></asyxml>*/
+  {/*<asyxml></code><documentation>Provide the test 'M == N' wish returns true iff MN &lt; EPS</documentation></operator></asyxml>*/
    return abs(locate(M) - locate(N)) < EPS;
   }
 
@@ -1029,7 +1029,7 @@ vector operator -(explicit vector v1, explicit vector v2)
 
 /*<asyxml><operator type = "bool" signature="==(explicit vector,explicit vector)"><code></asyxml>*/
 bool operator ==(explicit vector u, explicit vector v)
-  {/*<asyxml></code><documentation>Return true iff |u - v|<EPS.</documentation></operator></asyxml>*/
+  {/*<asyxml></code><documentation>Return true iff |u - v|&lt;EPS.</documentation></operator></asyxml>*/
    return abs(u - v) < EPS;
   }
 
@@ -1119,7 +1119,7 @@ string defaultmassformat = "$\left(%L;%.4g\right)$";/*<asyxml></code><documentat
 
 /*<asyxml><function type="int" signature="sgnd(real)"><code></asyxml>*/
 int sgnd(real x)
-{/*<asyxml></code><documentation>Return the -1 if x < 0, 1 if x >= 0.</documentation></function></asyxml>*/
+{/*<asyxml></code><documentation>Return the -1 if x &lt; 0, 1 if x >= 0.</documentation></function></asyxml>*/
   return (x == 0) ? 1 : sgn(x);
 }
 int sgnd(int x)
@@ -1368,7 +1368,7 @@ void markrightangle(picture pic = currentpicture, point A, point O,
 
 /*<asyxml><function type="bool" signature="simeq(point,point,real)"><code></asyxml>*/
 bool simeq(point A, point B, real fuzz = epsgeo)
-{/*<asyxml></code><documentation>Return true iff abs(A - B) < fuzz.
+{/*<asyxml></code><documentation>Return true iff abs(A - B) &lt; fuzz.
    This routine is used internally to know if two points are equal, in particular by the operator == in 'point == point'.</documentation></function></asyxml>*/
   return (abs(A - B) < fuzz);
 }
@@ -4399,7 +4399,7 @@ point point(line l, abscissa x)
 
 /*<asyxml><function type="point" signature="point(line,real)"><code></asyxml>*/
 point point(line l, explicit real x)
-{/*<asyxml></code><documentation>Return the point between node l.A and l.B (x <= 0 means l.A, x >=1 means l.B).</documentation></function></asyxml>*/
+{/*<asyxml></code><documentation>Return the point between node l.A and l.B (x &lt;= 0 means l.A, x >=1 means l.B).</documentation></function></asyxml>*/
   return point(l, nodabscissa(x));
 }
 point point(line l, explicit int x)
@@ -4909,7 +4909,7 @@ private path arctopath(arc a, int n)
 /*<asyxml><function type="point" signature="angpoint(arc,real)"><code></asyxml>*/
 point angpoint(arc a, real angle)
 {/*<asyxml></code><documentation>Return the point given by its angular position (in degrees) relative to the arc 'a'.
-   If 'angle > degrees(a)' or 'angle < 0' the returned point is on the extended arc.</documentation></function></asyxml>*/
+   If 'angle > degrees(a)' or 'angle &lt; 0' the returned point is on the extended arc.</documentation></function></asyxml>*/
   pair p;
   if(a.el.e == 0) {
     real gle = a.angle0 + a.angle1 + (a.direction ? angle : -angle);
@@ -5129,14 +5129,14 @@ pair point(explicit arc a, int x)
 /*<asyxml><function type="point" signature="relpoint(arc,real)"><code></asyxml>*/
 point relpoint(arc a, real x)
 {/*<asyxml></code><documentation>Return the relative point of 'a'.
-   If x > 1 or x < 0, the returned point is on the extended arc.</documentation></function></asyxml>*/
+   If x > 1 or x &lt; 0, the returned point is on the extended arc.</documentation></function></asyxml>*/
   return point(a, relabscissa(x));
 }
 
 /*<asyxml><function type="point" signature="curpoint(arc,real)"><code></asyxml>*/
 point curpoint(arc a, real x)
 {/*<asyxml></code><documentation>Return the point of 'a' which has the curvilinear abscissa 'x'.
-   If x < 0 or x > arclength(a), the returned point is on the extended arc.</documentation></function></asyxml>*/
+   If x &lt; 0 or x > arclength(a), the returned point is on the extended arc.</documentation></function></asyxml>*/
   return point(a, curabscissa(x));
 }
 
@@ -6362,7 +6362,7 @@ inversion inversion(point C, real k)
 inversion inversion(circle c1, circle c2, real sgn = 1)
 {/*<asyxml></code><documentation>Return the inversion which transforms 'c1' to
    . 'c2' and positive inversion radius if 'sgn > 0';
-   . 'c2' and negative inversion radius if 'sgn < 0';
+   . 'c2' and negative inversion radius if 'sgn &lt; 0';
    . 'c1' and 'c2' to 'c2' if 'sgn = 0'.</documentation></function></asyxml>*/
   if(sgn == 0) {
     point O = radicalcenter(c1, c2);
