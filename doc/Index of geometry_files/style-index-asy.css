@@ -1,0 +1,184 @@
+body {
+    color: #f5deb3;
+    background-color: #0A0A3A;
+    font-family: "Bitstream Vera Sans Mono", "courier new", monospace;
+    font-size: 10pt;
+}
+
+
+.item {
+    width: 98%;
+    border:0;
+    text-align: left;
+    padding-left: 0px;
+    margin: 0;
+    margin-bottom: 2em;
+    /* margin-top: 20px; */
+    background-color: #2f4f4f;
+    font-size: 10pt;
+    font-family: "Bitstream Vera Sans Mono", "courier new", sans-serif;
+}
+
+pre {
+    padding: 0px;
+    padding-left: 5px;
+    margin: 0;
+    font-size: 11pt;
+    font-family: "Bitstream Vera Sans Mono", "courier new", sans-serif;
+}
+
+.documentation {
+    /* display:table; */
+    padding: 0px;
+    margin: 0px;
+    padding-left: 2em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /* margin-left: 3em; */
+    /* background-color: #0A0A3A; */
+    /*     width: 100%; */
+    color: #eeeeff;
+    font-size: 10pt;
+}
+
+h5{
+    padding: 0px;
+    margin: 0px;
+}
+
+.deptha{
+    padding-left: 2em;
+    margin: 0px;
+}
+
+.right{
+    text-align: right;
+}
+
+div.foot{
+    margin: 0;
+    padding-right: 20px;
+    margin-top: 20px;
+    text-align: right;
+    color: #c8c8c8;
+    background-color: #000000;
+    clear:left;
+}
+
+.menuhf{
+    /* word-spacing: 30px; */
+    font-size: 10pt;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:0;
+    background-color: #000000;
+    clear:left;
+}
+
+.imgborder {
+    padding: 2px;
+    margin: 0px;
+    background-color: #FFFFFF;
+    border: 0;
+}
+
+.presentation {
+    display:table;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    padding: 15px;
+    color: #E0E0FF;
+    background-color: #000000;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.no-deco{
+    text-decoration:none;
+}
+
+p.last-modif{
+    margin-right:10%;
+}
+
+._bt {
+    /* font-lock-_bt-face */
+    color: #b0c4de;
+}
+._cm {
+    /* font-lock-comment-face */
+    color: #ff7f24;
+}
+._cd {
+    /* font-lock-_cd-face */
+    color: #ff7f24;
+}
+._cn {
+    /* font-lock-_cn-face */
+    color: #7fffd4;
+}
+._fn {
+    /* font-lock-_fn-face */
+    color: #87cefa;
+}
+._kw {
+    /* font-lock-_kw-face */
+    color: #00ffff;
+}
+._st {
+    /* font-lock-_st-face */
+    color: #ffa07a;
+}
+.type {
+    /* font-lock-type-face */
+    color: #98fb98;
+}
+._vn {
+    /* font-lock-_vn-face */
+    color: #eedd82;
+}
+
+a {
+    color: #c8c8c8;
+    background-color: inherit;
+    font: inherit;
+    text-decoration: underline;
+}
+a.title {
+    color: #c8c8c8;
+    /* background-color: #FF2222; */
+    color: #FF2222;
+    font: inherit;
+    font-size: 12pt;
+    text-decoration: underline;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/*
+     FILE ARCHIVED ON 00:57:45 Mar 24, 2016 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:48:29 Feb 12, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 263.276 (3)
+  exclusion.robots.policy: 0.135
+  captures_list: 283.273
+  esindex: 0.011
+  PetaboxLoader3.resolve: 122.217 (2)
+  RedisCDXSource: 0.66
+  PetaboxLoader3.datanode: 295.471 (5)
+  CDXLines.iter: 16.697 (3)
+  load_resource: 228.06 (2)
+  exclusion.robots: 0.146
+*/
