@@ -6,9 +6,10 @@
 *.out
 *.log
 *.toc
-*.eps
-*.pdf
-*.html
+# *.eps
+# *.pdf // add PDF result in archive
 tex/include/*.tex
+tex/include/*.pdf
+tex/*.html
 en/include/*.tex
 tex/vcolors/*.*

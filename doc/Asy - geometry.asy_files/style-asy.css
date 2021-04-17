@@ -1,0 +1,106 @@
+body {color:#f5deb3;background-color:#0A0A3A;font-family:"Bitstream Vera Sans Mono", "courier new", monospace;font-size:10pt;}
+
+.content{border-top:0px;display:block;width:100%;margin:0;padding:0;overflow:auto;}
+
+.code-contener {overflow:hidden;margin-top:0px;margin-bottom:0px;}
+
+.code-img {border:0;margin-bottom:0px;margin-left:20px;margin-top:5px;}
+
+.code {width:98%;border:0;border-left:2px solid #A0A0A0;border-right:2px solid #A0A0A0;text-align:left;padding-left:15px;padding-top:10px;padding-bottom:10px;margin:0;margin-bottom:10px;margin-top:0px;background:#2f4f4f url(/web/20170918183045im_/http://www.piprime.fr/files/res/asy.png) 70% 0 no-repeat;}
+
+pre {font-size:10pt;font-family:"Bitstream Vera Sans Mono", "courier new", sans-serif;padding:0;margin:0;}
+
+div.fixedr{position:fixed;top:0;right:5px;z-index:3;padding:0;}
+
+div.dynamic {text-align:center;height:11pt;line-height:10pt;margin:0;padding:0;margin-top:10px;width:310px;height:11pt;overflow:hidden;}
+
+div.dynamic:hover {overflow:visible;height:411px;background-color:#000000;}
+
+div.overflow{width:100%;text-align:center;background-color:#000000;height:400px;margin:0px;margin-top:10px;display:block;overflow:auto;}
+div.overflow img {background-color:#fff;}
+
+div.line{text-align:center;height:11pt;line-height:10pt;margin:0;padding:0;width:100%;height:10pt;position:relative;left:0;z-index:3;}
+
+img.menu{text-decoration:none;margin-left:0px;margin-right:0px;margin-top:10px;margin-bottom:2px;width:270px;height:180px;}
+
+.hsep{height:10px;width:100%;display:table;background-image:url(/web/20170918183045im_/http://www.piprime.fr/files/res/barreh.png);background-repeat:repeat-x;background-position:top left;}
+
+div.left{float:left;}
+
+table.full{width:100%;text-align:center;}
+
+td.deco:hover{background-color:#000000;}
+
+
+div.foot{margin:0;padding-right:20px;margin-top:20px;text-align:right;color:#c8c8c8;background-color:#000000;clear:left;}
+
+.menuhf{font-size:10pt;padding:0 20px 0 20px;margin:0;clear:left;}
+
+.menuhf span {margin-right:3em;}
+
+.imgborder {padding:2px;margin:0px;background-color:#FFFFFF;border:0;}
+
+.legend {color:#DDDDFF;font-size:10pt;margin:0px;margin-bottom:5px
+}
+
+span.space{padding:0px;padding-right:20px;}
+
+.hidden {visibility:hidden;height:0;font-size:0;line-height:0;}
+
+.presentation {display:table;margin-top:10px;margin-bottom:0;margin-left:0;margin-right:0;text-align:center;padding:15px;color:#E0E0FF;background-color:#000000;font-size:16pt;font-weight:bold;}
+
+.no-deco{text-decoration:none;}
+
+img.latex-inline {vertical-align:middle;}
+
+img.latex-display {margin-left:10%;}
+
+p.last-modif{margin-right:10%;}
+
+._bt {color:#b0c4de;}
+._cm {/* font-lock-comment-face */
+    color:#ff7f24;}
+._cd {color:#ff7f24;}
+._cn {color:#7fffd4;}
+._fn {color:#87cefa;}
+._kw {color:#00ffff;}
+._st {color:#ffa07a;}
+.type {color:#98fb98;}
+._vn {color:#eedd82;}
+.documentation {color:#eeeeff;font-size:11pt;}
+
+a {color:#c8c8c8;background-color:inherit;font:inherit;text-decoration:underline;}
+a:hover {text-decoration:underline;}
+
+.hsa,.hst {
+    background-color:#2f4f4f;
+    color:#eedc82;
+    border:none;
+    margin-bottom:0;
+}
+.hsa {margin-left:20px;}
+.hsa:hover,.hst:hover {
+    color:#cc0000;
+}
+
+/*
+     FILE ARCHIVED ON 18:30:45 Sep 18, 2017 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 13:50:28 Feb 12, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 414.952
+  exclusion.robots: 0.097
+  exclusion.robots.policy: 0.089
+  RedisCDXSource: 19.894
+  esindex: 0.009
+  LoadShardBlock: 367.658 (3)
+  PetaboxLoader3.datanode: 357.2 (5)
+  CDXLines.iter: 24.543 (3)
+  load_resource: 229.812 (2)
+  PetaboxLoader3.resolve: 152.916 (2)
+*/
