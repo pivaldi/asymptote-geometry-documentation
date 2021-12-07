@@ -14,3 +14,4 @@ tex/include/*.tex
 en/include/*.tex
 tex/vcolors/*.*
 
+pygmentizedformat/
