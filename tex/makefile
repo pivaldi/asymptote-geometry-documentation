@@ -23,12 +23,12 @@ view: pdf
 clean:
 	@(cd $(INCLUDE_DIR) && $(MAKE) $@)
 	rm -f *.asy; rm -f *.aux; rm -f *.dvi; rm -f *.toc; rm -f *.html;\
-	rm -f *.log; rm -f .*.log; rm -f *.out
+	rm -f *.log; rm -f .*.log; rm -f *.out; rm -f *.idx
 	rm -f $(PDF)
 
 clean-all:
 	make clean
 	rm -rf pygmentizedformat/
 
-.PHONY : clean view
+.PHONY : clean view clean-all
 
