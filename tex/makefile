@@ -9,6 +9,8 @@ pdf: $(PDF)
 %.pdf: %.tex
 	@(cd $(INCLUDE_DIR) && $(MAKE))
 	pdflatex --shell-escape -synctex=1 $<
+	makeindex $(<:.tex=.idx)
+	pdflatex --shell-escape -synctex=1 $<
 
 $(SRC): pygmentizedformat/default.tex geometry-commomun.sty
 
