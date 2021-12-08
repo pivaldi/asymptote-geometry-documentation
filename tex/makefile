@@ -2,15 +2,22 @@ INCLUDE_DIR=include
 SRC= $(wildcard *.tex)
 PDF= $(SRC:.tex=.pdf)
 
+LATEX=pdflatex
+LATEX_OPT=--shell-escape -synctex=1
+
 all: pdf
+
+quick: geometry_en.tex
+	$(LATEX) $(LATEX_OPT) $<
 
 pdf: $(PDF)
 
 %.pdf: %.tex
 	@(cd $(INCLUDE_DIR) && $(MAKE))
-	pdflatex --shell-escape -synctex=1 $<
+	$(LATEX) $(LATEX_OPT) $<
 	makeindex $(<:.tex=.idx)
-	pdflatex --shell-escape -synctex=1 $<
+	$(LATEX) $(LATEX_OPT) $<
+
 
 $(SRC): pygmentizedformat/default.tex geometry-commomun.sty
 
