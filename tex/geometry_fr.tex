@@ -8,11 +8,11 @@
   linkcolor=brick,urlcolor=red,
   pdfstartview=Fit,
   pdfauthor={Philippe Ivaldi},
-  pdfsubject={Géométrie plane avec Asymptote},
-  pdftitle={Module de géométrie plane pour Asymptote},
-  pdfkeywords={géométrie , plane, logiciel, module, package, extension, paquet,
+  pdfsubject={GÃ©omÃ©trie plane avec Asymptote},
+  pdftitle={Module de gÃ©omÃ©trie plane pour Asymptote},
+  pdfkeywords={gÃ©omÃ©trie , plane, logiciel, module, package, extension, paquet,
     vectoriel, latex, asymptote, figures, dessin, metapost},
-  pdfcreator={moteur:pdfLaTeX, éditeur:Emacs}}
+  pdfcreator={moteur:pdfLaTeX, Ã©diteur:Emacs}}
 \usepackage[frenchb]{babel}
 \frenchbsetup{ReduceListSpacing=false,CompactItemize=false}
 
@@ -22,15 +22,15 @@
 
 \makeindex
 
-% \Vcompiletrue
+\Vcompiletrue
 \begin{document}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \title{\texttt{geometry.asy}\footnotemark[1]\\
-  Géométrie euclidienne avec \asymptote}
+  GÃ©omÃ©trie euclidienne avec \asymptote}
 \author{Philippe \textsc{Ivaldi}}
-\date{Compilé avec \Asymptote{} version 2.14svn-r5318\\le \today}
+\date{CompilÃ© avec \Asymptote{} version 2.65 TexLive 2020\\le \today}
 \maketitle
 \hspace*{0mm}\hfill
 \begin{center}
@@ -52,78 +52,78 @@
 \newpage
 \begin{abstract}
   \noindent%
-  Ce document décrit l'utilisation de \geo qui facilite la création de
-  figures de géométrie plane euclidienne en définissant de nouveaux
+  Ce document dÃ©crit l'utilisation de \geo qui facilite la crÃ©ation de
+  figures de gÃ©omÃ©trie plane euclidienne en dÃ©finissant de nouveaux
   types et de nouvelles routines pour le logiciel
   \href{http://asymptote.sourceforge.net/}{\Asymptote}.\\
-  Après avoir dressé la liste des nouveaux types accompagnés d'une
-  brève description, nous les étudierons séparément et détaillerons les
-  routines et opérateurs qui leurs sont associés.
+  AprÃ¨s avoir dressÃ© la liste des nouveaux types accompagnÃ©s d'une
+  brÃ¨ve description, nous les Ã©tudierons sÃ©parÃ©ment et dÃ©taillerons les
+  routines et opÃ©rateurs qui leurs sont associÃ©s.
   \begin{center}\bfseries
     Remerciements
   \end{center}
-  Je remercie particulièrement les personnes suivantes:
+  Je remercie particuliÃ¨rement les personnes suivantes:
   \begin{itemize}
-  \item Olivier \textsc{Guibé} pour son aide précieuse dans les
-    algorithmes de mathématiques algébriques, ses encouragements et
-    son écoute toujours attentive;
+  \item Olivier \textsc{GuibÃ©} pour son aide prÃ©cieuse dans les
+    algorithmes de mathÃ©matiques algÃ©briques, ses encouragements et
+    son Ã©coute toujours attentive;
   \item John \textsc{Bowman} et Andy \textsc{Hammerlindl} sans qui
     \asymptote n'existerait pas;
   \item \href{http://forum.mathematex.net/membre3.html}{MB} qui a
-    testé l'extension pendant son développement ce qui a permis de
-    corriger, d'améliorer et d'ajouter des fonctionnalités.
+    testÃ© l'extension pendant son dÃ©veloppement ce qui a permis de
+    corriger, d'amÃ©liorer et d'ajouter des fonctionnalitÃ©s.
   \end{itemize}
 \end{abstract}
 \tableofcontents
 
 \hyperdef{section}{intro}{\section{Introduction}}%
 \subsection{Liste des types d'objets}
-\Geo définit de nombreux types d'objets couramment utilisés en géométrie plane
-Euclidienne;          ces         objets          peuvent         être
-\href{http://www.tout-savoir.net/lexique/definition/3814/instancier/}{instanciés}
-comme peut  l'être un réel, instancié  par le type  \code{real}, ou un
-chemin, instancié par le type \code{path}.\\
+\Geo dÃ©finit de nombreux types d'objets couramment utilisÃ©s en gÃ©omÃ©trie plane
+Euclidienne;          ces         objets          peuvent         Ãªtre
+\href{http://www.tout-savoir.net/lexique/definition/3814/instancier/}{instanciÃ©s}
+comme peut  l'Ãªtre un rÃ©el, instanciÃ©  par le type  \code{real}, ou un
+chemin, instanciÃ© par le type \code{path}.\\
 Dans la suite de ce document il est important de distinguer l'objet de
 son type.
-Par exemple l'objet \og{}équation quadratique à deux variables\fg{} est du type
-\code{bqe} (pour "Bivariate Quadratic Equation") et possède lui-même
-un objet nommé \param{a} de type \code{real[]}; on y accède par \code{un\_objet\_bqe.a}.\\
-Voici la liste exhaustive des types définis par \geo:
+Par exemple l'objet \og{}Ã©quation quadratique Ã  deux variables\fg{} est du type
+\code{bqe} (pour "Bivariate Quadratic Equation") et possÃ¨de lui-mÃªme
+un objet nommÃ© \param{a} de type \code{real[]}; on y accÃ¨de par \code{un\_objet\_bqe.a}.\\
+Voici la liste exhaustive des types dÃ©finis par \geo:
 \begin{description}
-\item[\index{coordsys}coordsys] instancie un repère Cartésien;
-  ce type est décrit dans la section
-  \href{#section.coordsys}{Système de coordonnées} et son
-  utilisation est détaillée dans la section
+\item[\index{coordsys}coordsys] instancie un repÃ¨re CartÃ©sien;
+  ce type est dÃ©crit dans la section
+  \href{#section.coordsys}{SystÃ¨me de coordonnÃ©es} et son
+  utilisation est dÃ©taillÃ©e dans la section
   \href{#section.point}{Points et vecteurs};
-\item[\index{point}point \textmd{et} \index{vector}vector] point et vecteur relatifs à un repère Cartésien.\\
-  Ces types sont décrits dans la section
+\item[\index{point}point \textmd{et} \index{vector}vector] point et vecteur relatifs Ã  un repÃ¨re CartÃ©sien.\\
+  Ces types sont dÃ©crits dans la section
   \href{#section.point}{Points et vecteurs} dont la lecture peut
-  être différée si l'on ne souhaite pas utiliser un autre repère que
-  celui par défaut; dans ce cas, on peut considérer que les types
+  Ãªtre diffÃ©rÃ©e si l'on ne souhaite pas utiliser un autre repÃ¨re que
+  celui par dÃ©faut; dans ce cas, on peut considÃ©rer que les types
   \code{point} et \code{vector} sont identiques au type \code{pair};
-\item[\index{mass}mass] point massique relatif à un repère Cartésien
+\item[\index{mass}mass] point massique relatif Ã  un repÃ¨re CartÃ©sien
   (cf. \href{#section.mass}{Points massiques});
 \item[\index{line}line \textmd{et} \index{segment}segment] le type
   \code{line} instancie une droite ou une demi-droite ou un segment
   de droite. Le type \code{segment}, qui instancie un
-  segment de droite, est un dérivé (un fils) du type \code{line}; son
-  existence ne se justifie que pour la clarté du code.\\
-  Ces types seront décrits dans la section
+  segment de droite, est un dÃ©rivÃ© (un fils) du type \code{line}; son
+  existence ne se justifie que pour la clartÃ© du code.\\
+  Ces types seront dÃ©crits dans la section
   \href{#section.line}{Droites, demi-droites et segments};
 \item[\index{conic}conic] instancie n'importe quelle
   conique (cf. \href{#section.conic}{Coniques}).\\
-  Pour plus de lisibilité et d'optimisation du code\footnote{la détermination
-    d'une tangente à un cercle diffère de celle d'une hyperbole} les types dérivés
+  Pour plus de lisibilitÃ© et d'optimisation du code\footnote{la dÃ©termination
+    d'une tangente Ã  un cercle diffÃ¨re de celle d'une hyperbole} les types dÃ©rivÃ©s
   \href{#subsection.circle}{circle},
   \href{#subsection.ellipse}{ellipse},
   \href{#subsection.parabola}{parabola},
   \href{#subsection.hyperbola}{hyperbola},
   \href{#subsubsection.bqe}{bqe} (pour "Bivariate Quadratic
-  Equation") sont aussi définis.
+  Equation") sont aussi dÃ©finis.
 
-  Il est ainsi conseillé de toujours utiliser le type de conique le
-  plus restreint suivant l'usage qui doit en être fait; il est tout à
-  fait possible par la suite de convertir une conique particulière
+  Il est ainsi conseillÃ© de toujours utiliser le type de conique le
+  plus restreint suivant l'usage qui doit en Ãªtre fait; il est tout Ã 
+  fait possible par la suite de convertir une conique particuliÃ¨re
   en une conique quelconque comme le montre l'exemple suivant:
   \begin{aVerbatim}
     ellipse un_cercle=circle((point)(0,0), 3);
@@ -135,105 +135,105 @@ Voici la liste exhaustive des types définis par \geo:
 \item[\index{abscissa}abscissa] instancie une abscisse sur
   une droite (au sens large) ou une conique (cf. \href{#section.abscisse}{Abscisses});
 \item[\index{triangle}triangle] instancie un triangle (cf. \href{#section.triangle}{Triangles}).\\
-  Les objets relatifs à un triangle, accessibles par
+  Les objets relatifs Ã  un triangle, accessibles par
   \code{un\_triangle.objet}, sont de type
   \begin{description}
-  \item[\index{side}side] instancie un côté du triangle (cf. \href{#subsection.side}{Côtés});
+  \item[\index{side}side] instancie un cÃ´tÃ© du triangle (cf. \href{#subsection.side}{CÃ´tÃ©s});
   \item[\index{vertex }vertex] instancie un sommet du sommet du
     triangle (cf. \href{#subsection.vertex}{Sommets}).
   \end{description}
-\item[\index{trilinear}trilinear] instancie des coordonnées
-  trilinéaires relatives à un triangle (cf. \href{#subsection.trilinear}{Coordonnées trilinéaires}).
+\item[\index{trilinear}trilinear] instancie des coordonnÃ©es
+  trilinÃ©aires relatives Ã  un triangle (cf. \href{#subsection.trilinear}{CoordonnÃ©es trilinÃ©aires}).
 \end{description}
 
 \subsection{Fonctionnement interne}
-Les calculs portant sur un objet instancié par un des types
-définis par \geo  s'effectuent d'après la nature même de l'objet, non d'après sa
-représentation graphique qui n'est finalement qu'un \code{path} ou un
+Les calculs portant sur un objet instanciÃ© par un des types
+dÃ©finis par \geo  s'effectuent d'aprÃ¨s la nature mÃªme de l'objet, non d'aprÃ¨s sa
+reprÃ©sentation graphique qui n'est finalement qu'un \code{path} ou un
 \code{pair}.
 
 Ainsi le code suivant, qui marque l'intersection de deux cercles
 tangents, se compile en cinq fois moins de temps que le code
-équivalant utilisant le type \code{path} à la place du type \code{circle}.
+Ã©quivalant utilisant le type \code{path} Ã  la place du type \code{circle}.
 \bvasy{circle_loop}
 
-\subsection{Index et exemples externes à ce document}
+\subsection{Index et exemples externes Ã  ce document}
 Un index et une galerie d'exemples de toutes les routines, types, et
-opérateurs créés par \geo permettent une exploration détaillée de ce module:
+opÃ©rateurs crÃ©Ã©s par \geo permettent une exploration dÃ©taillÃ©e de ce module:
 \begin{itemize}
-\item \href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html}{index ordonné par nom de fonction};
-\item \href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.type.html}{index ordonné par type de fonction};
+\item \href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html}{index ordonnÃ© par nom de fonction};
+\item \href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.type.html}{index ordonnÃ© par type de fonction};
 \item \href{http://piprim.tuxfamily.org/asymptote/geometry/index.html}{galerie d'exemples}.
 \end{itemize}
 
 \subsection{Conversion automatique des types (\og{}casting\fg{})}
-Les objets de types précédemment énumérés peuvent être traités par des routines
-qui leurs sont propres, celles définies par \geo, ou par des routines
-natives d'\asymptote grâce à la conversion de type. Par exemple un cercle, de type
-\code{circle}, peut être tracé directement avec la routine standard
-\code{draw} grâce à la conversion automatisée \code{circle} vers \code{path} alors
+Les objets de types prÃ©cÃ©demment Ã©numÃ©rÃ©s peuvent Ãªtre traitÃ©s par des routines
+qui leurs sont propres, celles dÃ©finies par \geo, ou par des routines
+natives d'\asymptote grÃ¢ce Ã  la conversion de type. Par exemple un cercle, de type
+\code{circle}, peut Ãªtre tracÃ© directement avec la routine standard
+\code{draw} grÃ¢ce Ã  la conversion automatisÃ©e \code{circle} vers \code{path} alors
 que le code \code{dot(un\_cercle);} renverra un message d'erreur car
 la routine \code{dot} attend un type \code{path} \textbf{exactement}; il faut
-alors forcer la conversion de type en écrivant \code{dot((path)un\_cercle);}.
+alors forcer la conversion de type en Ã©crivant \code{dot((path)un\_cercle);}.
 
-\hyperdef{section}{coordsys}{\section{\index{Système de coordonnées|mainidx}%
-    \index{coordsys|mainidx}Systèmes de coordonnées}}
-La lecture de cette section peut être différée si l'on ne souhaite pas
-utiliser un autre repère du plan que celui par défaut. Dans ce cas
-il suffit de savoir que \geo utilise le type \code{point} à la place
-du type \code{pair} et que le type \code{vector} est équivalent au
+\hyperdef{section}{coordsys}{\section{\index{SystÃ¨me de coordonnÃ©es|mainidx}%
+    \index{coordsys|mainidx}SystÃ¨mes de coordonnÃ©es}}
+La lecture de cette section peut Ãªtre diffÃ©rÃ©e si l'on ne souhaite pas
+utiliser un autre repÃ¨re du plan que celui par dÃ©faut. Dans ce cas
+il suffit de savoir que \geo utilise le type \code{point} Ã  la place
+du type \code{pair} et que le type \code{vector} est Ã©quivalent au
 type \code{pair}.
 
 Les paragraphes suivants traitent des routines de base sur les
-repères Cartésiens, l'utilisation effective des repères étant détaillée
+repÃ¨res CartÃ©siens, l'utilisation effective des repÃ¨res Ã©tant dÃ©taillÃ©e
 dans la section \href{#section.point}{Points et vecteurs}.
 \subsection{Le type coordsys}
-\Geo permet de définir des objets dans un repère Cartésien du plan
-quelconque; un tel repère est de type \code{coordsys}.
+\Geo permet de dÃ©finir des objets dans un repÃ¨re CartÃ©sien du plan
+quelconque; un tel repÃ¨re est de type \code{coordsys}.
 Comme le montre l'exemple suivant:
 \begin{itemize}
-\item  le repère par défaut est
+\item  le repÃ¨re par dÃ©faut est
   \index{coordsys!defaultcoordsys}\code{defaultcoordsys},
-  c'est celui utilisé nativement par \asymptote;
-\item le repère courant est \code{currentcoordsys} dont la
-  valeur par défaut est\linebreak\code{defaultcoordsys}.
+  c'est celui utilisÃ© nativement par \asymptote;
+\item le repÃ¨re courant est \code{currentcoordsys} dont la
+  valeur par dÃ©faut est\linebreak\code{defaultcoordsys}.
 \end{itemize}
 \bvasy{defaultcoord}
 
-\subsection{Définir un système de coordonnées}
+\subsection{DÃ©finir un systÃ¨me de coordonnÃ©es}
 \index{coordsys!cartesiansystem}\index{coordsys!currentcoordsys}
-Pour définir un repère on peut utiliser la commande
-\code{cartesiansystem} ou appliquer une transformation à un repère existant
-comme illustré dans l'exemple suivant:
+Pour dÃ©finir un repÃ¨re on peut utiliser la commande
+\code{cartesiansystem} ou appliquer une transformation Ã  un repÃ¨re existant
+comme illustrÃ© dans l'exemple suivant:
 \bvasy{cartesiancoord}
 
-\subsection{Changer un objet pair de repère}
-\textbf{Les exemples de cette section sont donnés à titre indicatif}, le
-moyen le plus efficace pour définir, modifier et convertir des coordonnées dans un repère étant
+\subsection{Changer un objet pair de repÃ¨re}
+\textbf{Les exemples de cette section sont donnÃ©s Ã  titre indicatif}, le
+moyen le plus efficace pour dÃ©finir, modifier et convertir des coordonnÃ©es dans un repÃ¨re Ã©tant
 d'utiliser le type \code{point} (voir \href{#section.point}{Points
   et vecteurs}).
 
-Les deux principales routines pour définir ou convertir des coordonnées, de
-type \code{pair}, dans un repère sont en fait des opérateurs:
+Les deux principales routines pour dÃ©finir ou convertir des coordonnÃ©es, de
+type \code{pair}, dans un repÃ¨re sont en fait des opÃ©rateurs:
 \begin{itemize}
 \item \index{coordsys!*}
   \begin{Vcolor}
     pair operator *(coordsys R, pair m);
   \end{Vcolor}
 
-  Permet de convertir les coordonnées de \param{m} données dans le
-  repère \param{R} en coordonnées relatives au repère par
-  défaut. Ainsi, dans l'exemple suivant, le point \param{M} a pour
-  coordonnées $(0,5\,;\,0,5)$ dans \param{R} et $(2\,;\,2)$ dans \code{defaultcoordsys}:
+  Permet de convertir les coordonnÃ©es de \param{m} donnÃ©es dans le
+  repÃ¨re \param{R} en coordonnÃ©es relatives au repÃ¨re par
+  dÃ©faut. Ainsi, dans l'exemple suivant, le point \param{M} a pour
+  coordonnÃ©es $(0,5\,;\,0,5)$ dans \param{R} et $(2\,;\,2)$ dans \code{defaultcoordsys}:
     \bvasy{deftorel}
 
 \item \index{coordsys!*}
   \begin{Vcolor}
     pair operator /( pair m, coordsys R);
   \end{Vcolor}
-  Permet de convertir les coordonnées de \param{m} données dans le
-  repère par défaut en coordonnées relatives au repère \param{R}. Ainsi, dans l'exemple
-  suivant, les points \param{M}  et \param{P} ont les mêmes coordonnées
+  Permet de convertir les coordonnÃ©es de \param{m} donnÃ©es dans le
+  repÃ¨re par dÃ©faut en coordonnÃ©es relatives au repÃ¨re \param{R}. Ainsi, dans l'exemple
+  suivant, les points \param{M}  et \param{P} ont les mÃªmes coordonnÃ©es
   dans \param{R} et \param{Rp} respectivement:
     \bvasy{reltodef}
 
@@ -247,33 +247,33 @@ type \code{pair}, dans un repère sont en fait des opérateurs:
   \end{Vcolor}
   Autorise le code du type \code{coordsys*path} qui
   renvoie la reconstruction du chemin \param{g} comme si chaque n\oe{}ud du
-  chemin était donné dans le repère \param{R}.
+  chemin Ã©tait donnÃ© dans le repÃ¨re \param{R}.
 \item \index{coordsys!*}
     \begin{Vcolor}
     coordsys operator *(transform t, coordsys R);
   \end{Vcolor}
   Autorise le code \code{transform*coordsys}. Noter que
-  \code{shiftless(t)} est appliqué à \param{R.i} et \param{R.j}.
+  \code{shiftless(t)} est appliquÃ© Ã  \param{R.i} et \param{R.j}.
 \end{itemize}
 
 \hyperdef{section}{point}{\section{\index{point|mainidx}Points et vecteurs}}
 \subsection{Les points}
 \subsubsection{Principes de base}
-À la différence du type \code{pair} qui permet de
-repérer un point dans le repère par défaut, le type \code{point}
-permet de repérer un point dans n'importe quel repère Cartésien (voir
+Ã€ la diffÃ©rence du type \code{pair} qui permet de
+repÃ©rer un point dans le repÃ¨re par dÃ©faut, le type \code{point}
+permet de repÃ©rer un point dans n'importe quel repÃ¨re CartÃ©sien (voir
 \href{#section.coordsys}{coordsys}); un objet de type
-\code{point} fait toujours référence au repère dans lequel il est défini.
+\code{point} fait toujours rÃ©fÃ©rence au repÃ¨re dans lequel il est dÃ©fini.
 
-\index{point!casting}Grâce au \og{}casting\fg{}, un \code{point} peut être globalement assimilé à
-un \code{pair} si l'on utilise seulement le repère par
-défaut. Ainsi, dans l'exemple suivant, le \code{pair M} et le
-\code{point P} marquent le même point:
+\index{point!casting}GrÃ¢ce au \og{}casting\fg{}, un \code{point} peut Ãªtre globalement assimilÃ© Ã 
+un \code{pair} si l'on utilise seulement le repÃ¨re par
+dÃ©faut. Ainsi, dans l'exemple suivant, le \code{pair M} et le
+\code{point P} marquent le mÃªme point:
 \bvasy{point1}
 
-\index{currentcoordsys}L'exemple suivant montre comment la modification du repère
+\index{currentcoordsys}L'exemple suivant montre comment la modification du repÃ¨re
 courant influe sur le \og{}casting\fg{} \code{pair} vers \code{point}
-dans le cas du point \param{A} et comment définir un point dans un repère spécifique grâce à la
+dans le cas du point \param{A} et comment dÃ©finir un point dans un repÃ¨re spÃ©cifique grÃ¢ce Ã  la
 routine \code{point point(coordsys R, pair m)}
 \index{point(coordsys,pair,real)} dans le cas du point \param{B}.
 \begin{vasy}{point2}
@@ -294,44 +294,44 @@ convertir directement, sans nommer de point, un \code{pair} en
 \bvasy{point3}
 
 L'exemple suivant montre comment convertir un type \code{pair} en type
-\code{point} de telle sorte qu'ils représentent le même point et ainsi
-obtenir ses coordonnées dans deux repères distincts.
+\code{point} de telle sorte qu'ils reprÃ©sentent le mÃªme point et ainsi
+obtenir ses coordonnÃ©es dans deux repÃ¨res distincts.
 \bvasy{point4}
 La routine
 \index{point!changecoordsys}\code{changecoordsys}
-permet de changer facilement le repère d'un \code{point}:
+permet de changer facilement le repÃ¨re d'un \code{point}:
 \vasy{point5}
 \index{point!+}\index{point!-}\index{point!*}\index{point!/}
-Comme pour le type \code{pair} les opérateurs \code{+}, \code{-},
-\code{*}, \code{/} sont disponibles pour le type \code{point}. Il est à
-noter toutefois qu'une opération effectuée avec deux
-points définis relativement à des repères différents renvoie un
-\code{point} défini dans le repère par défaut
-\code{defaultcoordsys}; l'utilisateur est alors prévenu de cette
+Comme pour le type \code{pair} les opÃ©rateurs \code{+}, \code{-},
+\code{*}, \code{/} sont disponibles pour le type \code{point}. Il est Ã 
+noter toutefois qu'une opÃ©ration effectuÃ©e avec deux
+points dÃ©finis relativement Ã  des repÃ¨res diffÃ©rents renvoie un
+\code{point} dÃ©fini dans le repÃ¨re par dÃ©faut
+\code{defaultcoordsys}; l'utilisateur est alors prÃ©venu de cette
 conversion automatique par un avertissement.
 
 \index{coordsys!polar}\index{polar|see{coordsys polar}}
-Pour repérer un point à l'aide de coordonnées polaires on peut
-utiliser la méthode\linebreak\code{pair polar(real r, real angle)} d'un
+Pour repÃ©rer un point Ã  l'aide de coordonnÃ©es polaires on peut
+utiliser la mÃ©thode\linebreak\code{pair polar(real r, real angle)} d'un
 objet de type \code{coordsys} comme le montre l'exemple suivant:
 \bvasy{point6}
 
 \subsubsection{Autres routines}
 Maintenant que les routines de base concernant le type \code{point} sont
-définies, passons en revue les autres routines le concernant:
+dÃ©finies, passons en revue les autres routines le concernant:
 \begin{itemize}
 \item \index{origin(coordsys)}
   \begin{Vcolor}
     point origin(coordsys R=currentcoordsys);
   \end{Vcolor}
-  Retourne l'origine du repère \param{R} en tant que point.\\
+  Retourne l'origine du repÃ¨re \param{R} en tant que point.\\
   La constante \code{point origin}\index{origin} est l'origine du
-  repère par défaut.
+  repÃ¨re par dÃ©faut.
 \item \index{point(coordsys,explicit point,real)}
   \begin{Vcolor}
     point point(coordsys R, explicit point M, real m=M.m);
   \end{Vcolor}
-  Retourne le point de masse \param{m} dont les coordonnées relatives à \param{R} ont les mêmes
+  Retourne le point de masse \param{m} dont les coordonnÃ©es relatives Ã  \param{R} ont les mÃªmes
   valeurs que celles de \param{M}.\\Ne pas confondre cette routine avec
   \code{changecoordsys}.
 
@@ -339,23 +339,23 @@ définies, passons en revue les autres routines le concernant:
   \begin{Vcolor}
     pair coordinates(point M);
   \end{Vcolor}
-  Renvoie les coordonnées de \param{M} relatives à son repère.
+  Renvoie les coordonnÃ©es de \param{M} relatives Ã  son repÃ¨re.
 
 \item \index{samecoordsys(bool...point[])}
   \begin{Vcolor}
     bool samecoordsys(bool warn=true ... point[] M);
   \end{Vcolor}
-  Renvoie \code{true} \ssi tous les points sont relatifs au même repère.\\
-  Si \param{warm} vaut true et si les repères sont différents un
-  avertissement est généré.
+  Renvoie \code{true} \ssi tous les points sont relatifs au mÃªme repÃ¨re.\\
+  Si \param{warm} vaut true et si les repÃ¨res sont diffÃ©rents un
+  avertissement est gÃ©nÃ©rÃ©.
 \item \index{standardizecoordsys(coordsys,bool...M)}
   \begin{Vcolor}
     point[] standardizecoordsys(coordsys R=currentcoordsys,
     bool warn=true ... point[] M);
   \end{Vcolor}
-  Renvoie les points, sous forme de tableau, relatifs au même repère \param{R}.\\
-  Si \param{warm} vaut \code{true} et si les repères sont différents un
-  avertissement est généré.
+  Renvoie les points, sous forme de tableau, relatifs au mÃªme repÃ¨re \param{R}.\\
+  Si \param{warm} vaut \code{true} et si les repÃ¨res sont diffÃ©rents un
+  avertissement est gÃ©nÃ©rÃ©.
 \item
   \begin{Vcolor}
     pair[] operator cast(point[] P);
@@ -365,132 +365,132 @@ définies, passons en revue les autres routines le concernant:
   \begin{Vcolor}
     pair locate(point P);
   \end{Vcolor}
-  Renvoie les coordonnées de \param{P} dans le repère par défaut.
+  Renvoie les coordonnÃ©es de \param{P} dans le repÃ¨re par dÃ©faut.
 \item \index{*(transform,explicit point)}
   \begin{Vcolor}
     point operator *(transform t, explicit point P);
   \end{Vcolor}
-  Définit \code{transform*point}.\\
+  DÃ©finit \code{transform*point}.\\
   Noter que les transformations \code{scale}, \code{xscale},
-  \code{yscale} et \code{rotate} sont définies relativement au repère
-  par défaut ce qui n'est en général pas souhaité quand le repère
-  courant est modifié.\\
-  Pour pallier cet inconvénient on peut utiliser les routines
+  \code{yscale} et \code{rotate} sont dÃ©finies relativement au repÃ¨re
+  par dÃ©faut ce qui n'est en gÃ©nÃ©ral pas souhaitÃ© quand le repÃ¨re
+  courant est modifiÃ©.\\
+  Pour pallier cet inconvÃ©nient on peut utiliser les routines
   \code{scale(real,point)}, \code{xscale(real,point)}, \code{yscale(real,point)},
   \code{rotate(real,point)}, \code{scaleO(real)},
   \code{xscaleO(real)}, \code{yscaleO(real)} et \code{rotateO(real)}
-  qui sont décrites dans la section \href{section.transform1}{Transformations (partie 1)}.
+  qui sont dÃ©crites dans la section \href{section.transform1}{Transformations (partie 1)}.
 \item \index{*(explicit point,explicit pair)}
   \begin{Vcolor}
     point operator *(explicit point P1, explicit pair p2);
   \end{Vcolor}
-  Définit \code{point*pair}.\\
-  \param{p2} est supposé représenter les coordonnées d'un point relativement au
-  repère dans lequel \param{P1} est défini.
+  DÃ©finit \code{point*pair}.\\
+  \param{p2} est supposÃ© reprÃ©senter les coordonnÃ©es d'un point relativement au
+  repÃ¨re dans lequel \param{P1} est dÃ©fini.
 \item \index{==(explicit point,explicit point)}
   \begin{Vcolor}
     bool operator ==(explicit point M, explicit point P);
   \end{Vcolor}
-  Définit le test \code{M == N} qui renvoie \code{true} \ssi \code{MN < EPS}.
+  DÃ©finit le test \code{M == N} qui renvoie \code{true} \ssi \code{MN < EPS}.
 \item \index{!=(explicit point,explicit point)}
   \begin{Vcolor}
     bool operator !=(explicit point M, explicit point N);
   \end{Vcolor}
-  Définit le test \code{M != N} qui renvoie \code{true} \ssi \code{MN >= EPS}.
+  DÃ©finit le test \code{M != N} qui renvoie \code{true} \ssi \code{MN >= EPS}.
 \item \index{abs(coordsys,pair)}
   \begin{Vcolor}
     real abs(coordsys R, pair m);
   \end{Vcolor}
-  Renvoie le module $\vert$\param{m}$\vert$ relativement au repère \param{R}.
+  Renvoie le module $\vert$\param{m}$\vert$ relativement au repÃ¨re \param{R}.
 \item \index{abs(explicit point)}
   \begin{Vcolor}
     real abs(explicit point M)
   \end{Vcolor}
-  Renvoie le module $\vert\mparam{M}\vert$ relativement au repère dans
-  lequel \param{M} est défini.
+  Renvoie le module $\vert\mparam{M}\vert$ relativement au repÃ¨re dans
+  lequel \param{M} est dÃ©fini.
 \item \index{length(explicit point)}
   \begin{Vcolor}
     real length(explicit point M)
   \end{Vcolor}
-  Renvoie le module $\vert\mparam{M}\vert$ relativement au repère dans
-  lequel \param{M} est défini.
+  Renvoie le module $\vert\mparam{M}\vert$ relativement au repÃ¨re dans
+  lequel \param{M} est dÃ©fini.
 \item \index{conj(explicit point)}
   \begin{Vcolor}
     point conj(explicit point M)
   \end{Vcolor}
-  Renvoie le conjugué de \param{M} relativement au repère dans lequel il est défini.
+  Renvoie le conjuguÃ© de \param{M} relativement au repÃ¨re dans lequel il est dÃ©fini.
 \item \index{degrees(explicit point,coordsys,bool)}
   \begin{Vcolor}
     real degrees(explicit point M, coordsys,
     R=M.coordsys, bool warn=true)
   \end{Vcolor}
-  Renvoie l'angle de \param{M} en degrés relativement au repère \param{R}.
+  Renvoie l'angle de \param{M} en degrÃ©s relativement au repÃ¨re \param{R}.
 \item \index{angle(explicit point,coordsys,bool)}
   \begin{Vcolor}
     real angle(explicit point M, coordsys,
     R=M.coordsys, bool warn=true)
   \end{Vcolor}
-  Renvoie l'angle de \param{M} en radians relativement au repère \param{R}.
+  Renvoie l'angle de \param{M} en radians relativement au repÃ¨re \param{R}.
 \item \index{finite(explicit point)}
   \begin{Vcolor}
     bool finite(explicit point p)
   \end{Vcolor}
-  Même fonctionnement que \code{finite(pair m)} mais évite des calculs
-  avec des coordonnées infinies.
+  MÃªme fonctionnement que \code{finite(pair m)} mais Ã©vite des calculs
+  avec des coordonnÃ©es infinies.
 \item \index{dot(point,point)}
   \begin{Vcolor}
     real dot(point A, point B)
   \end{Vcolor}
   Renvoie le produit scalaire \param{A}{.}\param{B} relativement au
-  repère dans lequel est défini \param{A}.
+  repÃ¨re dans lequel est dÃ©fini \param{A}.
 \item \index{real dot(point,explicit pair)}
   \begin{Vcolor}
     real dot(point A, explicit pair B)
   \end{Vcolor}
-  Renvoie le produit scalaire \param{A}{.}\param{B} après conversion des
-  coordonnées de \param{A} dans le repère par défaut.
-  \code{dot(explicit pair,point)} est aussi défini.
+  Renvoie le produit scalaire \param{A}{.}\param{B} aprÃ¨s conversion des
+  coordonnÃ©es de \param{A} dans le repÃ¨re par dÃ©faut.
+  \code{dot(explicit pair,point)} est aussi dÃ©fini.
 
 \end{itemize}
 
 \hyperdef{section}{vector}{\subsection{\index{vector|mainidx}Les vecteurs}}
 \subsubsection{Principes de base}
-Dans l'exemple suivant les points \param{M} et \param{P} sont définis relativement à
-des repères distincts. Le point \param{Q}, somme de \param{M} et \param{P}, s'obtient en
-additionnant les coordonnées de \param{M} et de \param{P} \textbf{après leur conversion dans
-  le repère par défaut}; ainsi $\vec{\mbox{\param{OQ}}}=\vec{\mbox{\param{OM}}}+\vec{\mbox{\param{OP}}}$.
+Dans l'exemple suivant les points \param{M} et \param{P} sont dÃ©finis relativement Ã 
+des repÃ¨res distincts. Le point \param{Q}, somme de \param{M} et \param{P}, s'obtient en
+additionnant les coordonnÃ©es de \param{M} et de \param{P} \textbf{aprÃ¨s leur conversion dans
+  le repÃ¨re par dÃ©faut}; ainsi $\vec{\mbox{\param{OQ}}}=\vec{\mbox{\param{OM}}}+\vec{\mbox{\param{OP}}}$.
 \bvasy{somme_point}
-En définissant le vecteur $\vec{\mbox{\param{w}}}$ par \code{vector w=vector(R, P.coordinates);}
+En dÃ©finissant le vecteur $\vec{\mbox{\param{w}}}$ par \code{vector w=vector(R, P.coordinates);}
 ou, plus simplement, par \code{vector w=P;} on a $\vec{\mbox{\param{w}}}=\vec{\mbox{\param{O}}_{1}\mbox{\param{P}}}$ et le code
-\code{point Q=M+w;} définit \param{Q} tel
-que $\vec{\mbox{\param{OQ}}}=\vec{\mbox{\param{OM}}}+\vec{\mbox{\param{O}}_{1}\mbox{\param{P}}}$; ce qui est le résultat
-souhaité. L'exemple suivant en est une illustration:
+\code{point Q=M+w;} dÃ©finit \param{Q} tel
+que $\vec{\mbox{\param{OQ}}}=\vec{\mbox{\param{OM}}}+\vec{\mbox{\param{O}}_{1}\mbox{\param{P}}}$; ce qui est le rÃ©sultat
+souhaitÃ©. L'exemple suivant en est une illustration:
 \bvasy{somme_point_vecteur}
 Un objet \param{u} de type \code{vector} fonctionne comme un objet de type
 \code{point} mais sa conversion en \code{pair} ou en \code{point} \param{M}
-relatif au repère par défaut s'effectue de telle façon que
+relatif au repÃ¨re par dÃ©faut s'effectue de telle faÃ§on que
 $\vec{\mparam{u}}=\vec{\mparam{OM}}$ comme le montre cette exemple qui utilise la
 routine \index{locate(vector)}\code{pair locate(vector v)}:
 \bvasy{locate_vector}
-Les routines décrites pour le type \code{point} sont aussi disponibles
+Les routines dÃ©crites pour le type \code{point} sont aussi disponibles
 pour le type \code{vector}. Voici quelques exemple simples qui en
 illustrent le comportement:
 \bvasy{somme_vector}
 \vasy{somme_vector2}
 \subsubsection{\og{}Casting\fg{} vector/point}
-Par le jeu du \og{}casting\fg{} un objet \code{point} peut être
-converti en objet \code{vector} et réciproquement un objet
-\code{vector} peut être converti en \code{point}. Au risque de se
-répéter, il faut insister sur le fait que la distinction entre
-\code{point} et \code{vector} existe seulement lorsque le repérage
-s'effectue dans un autre repère que le repère par défaut.
+Par le jeu du \og{}casting\fg{} un objet \code{point} peut Ãªtre
+converti en objet \code{vector} et rÃ©ciproquement un objet
+\code{vector} peut Ãªtre converti en \code{point}. Au risque de se
+rÃ©pÃ©ter, il faut insister sur le fait que la distinction entre
+\code{point} et \code{vector} existe seulement lorsque le repÃ©rage
+s'effectue dans un autre repÃ¨re que le repÃ¨re par dÃ©faut.
 
-Remarquer dans l'exemple suivant la différence entre \code{dot(w)} et
-\code{dot(point(w))}; dans le deuxième cas le vecteur est converti en
-point, celui \og{}pointé par le vecteur\fg{} alors que dans le premier
-cas le vecteur est converti en \code{pair} comme expliqué
-précédemment.\\
-Noter enfin qu'il est possible d'écrire \code{point M=w;} au lieu de
+Remarquer dans l'exemple suivant la diffÃ©rence entre \code{dot(w)} et
+\code{dot(point(w))}; dans le deuxiÃ¨me cas le vecteur est converti en
+point, celui \og{}pointÃ© par le vecteur\fg{} alors que dans le premier
+cas le vecteur est converti en \code{pair} comme expliquÃ©
+prÃ©cÃ©demment.\\
+Noter enfin qu'il est possible d'Ã©crire \code{point M=w;} au lieu de
 \code{point M=point(w);}\index{point(explicit vector)}.
 \bvasy{locate_vector2}
 L'exemple suivant se passe donc de commentaires:
@@ -498,7 +498,7 @@ L'exemple suivant se passe donc de commentaires:
 Le pendant de la routine \code{point point(explicit vector)} est
 \code{vector vector(point)}\index{vector vector(point)}
 \bvasy{point_vector}
-Enfin une attention particulière doit être portée sur les routines
+Enfin une attention particuliÃ¨re doit Ãªtre portÃ©e sur les routines
 \code{vector unit(point)}\index{unit(point)} et\linebreak
 \code{vector unit(vector)}\index{unit(vector)} qui renvoient toujours
 un objet \code{vector}. Ainsi, dans l'exemple suivant le comportement de
@@ -507,77 +507,77 @@ de \code{dot(unit(B-A))} peut laisser dubitatif...
 \bvasy{unit_vector}
 
 \subsubsection{Autres routines}
-\index{collinear(vector,vector)}Comme déjà dit, toutes les
+\index{collinear(vector,vector)}Comme dÃ©jÃ  dit, toutes les
 routines s'appliquant au type \code{point} s'appliquent aussi au type
-\code{vector}. Mentionnons de plus la routine suivante dont le nom parle de lui-même:
+\code{vector}. Mentionnons de plus la routine suivante dont le nom parle de lui-mÃªme:
 \begin{Vcolor}
   bool collinear(vector u, vector v)
 \end{Vcolor}
 
 \hyperdef{section}{mass}{\section{\index{mass|mainidx}Points massiques}}
 \hyperdef{subsection}{mass}{\subsection{Principes de base}}
-Un objet de type \code{point} possède une masse à laquelle on peut
-accéder par \code{un\_point.m} et une routine permet de calculer le
+Un objet de type \code{point} possÃ¨de une masse Ã  laquelle on peut
+accÃ©der par \code{un\_point.m} et une routine permet de calculer le
 barycentre d'un ensemble de points.\\
 \og{}Parfait!\fg{}\\
-Non... pas tout à fait:
+Non... pas tout Ã  fait:
 \begin{itemize}
-\item si l'on définit un point \param{M} par
+\item si l'on dÃ©finit un point \param{M} par
   \code{M=P1+P2;}, le point
-  \param{M} hérite de la somme des masses de \param{P1} et \param{P2}, ce qui est une
-  bonne chose, mais si le point \param{M} est défini par \code{M=P/2} les
-  coordonnées de \param{M} sont égales à la moitié de celles de \param{P}, ce qui est
-  attendu et entendu, mais la masse reste inchangée. Ainsi, pour
-  définir un point dont la masse est la moitié de celle d'un autre point
-  il \textbf{faudrait} écrire:
+  \param{M} hÃ©rite de la somme des masses de \param{P1} et \param{P2}, ce qui est une
+  bonne chose, mais si le point \param{M} est dÃ©fini par \code{M=P/2} les
+  coordonnÃ©es de \param{M} sont Ã©gales Ã  la moitiÃ© de celles de \param{P}, ce qui est
+  attendu et entendu, mais la masse reste inchangÃ©e. Ainsi, pour
+  dÃ©finir un point dont la masse est la moitiÃ© de celle d'un autre point
+  il \textbf{faudrait} Ã©crire:
   \begin{Vcolor}
     point P=point((1,1), 3);// point de masse 3
 
     point Q=P;
     Q.m=P.m/2;
   \end{Vcolor}
-  ce qui peut rapidement devenir pénible;
-\item faire apparaître la masse de façon homogène dans toutes les
+  ce qui peut rapidement devenir pÃ©nible;
+\item faire apparaÃ®tre la masse de faÃ§on homogÃ¨ne dans toutes les
   figures lors de l'utilisation des routines \code{dot} et
-  \code{label} risque fort de devenir aussi rapidement pénible.
+  \code{label} risque fort de devenir aussi rapidement pÃ©nible.
 \end{itemize}
-Essentiellement pour ces deux raisons, \geo définit un nouveau type,
+Essentiellement pour ces deux raisons, \geo dÃ©finit un nouveau type,
 le type \code{mass}\index{mass}, dont le comportement se rapproche au mieux de ce
 que l'on peut attendre d'un \og{}point massique\fg{}. Par exemple
-\code{mass M=objet\_mass/2} définit le point massique \param{M} avec les mêmes
-coordonnées que \param{objet\_mass} mais d'un poids moitié, le code
-\code{point M=objet\_mass/2} a le même comportement mais le résultat
+\code{mass M=objet\_mass/2} dÃ©finit le point massique \param{M} avec les mÃªmes
+coordonnÃ©es que \param{objet\_mass} mais d'un poids moitiÃ©, le code
+\code{point M=objet\_mass/2} a le mÃªme comportement mais le rÃ©sultat
 est automatiquement converti en \code{point}.
 
 Les routines \code{mass mass(explicit point)}\index{mass mass(explicit point)} et
 \code{point point(explicit mass)}\index{point point(explicit mass)}
 permettent de basculer facilement entre les deux types \code{mass} et
 \code{point}; la division de la masse d'un objet de type \code{point}
-peut alors se traiter de façon assez élégante:
+peut alors se traiter de faÃ§on assez Ã©lÃ©gante:
 \begin{Vcolor}
   point P=point((1,1), 3);// Point de masse 3
 
-  point Q=mass(P)/2;// Division de la masse, les coordonnées sont inchangées
+  point Q=mass(P)/2;// Division de la masse, les coordonnÃ©es sont inchangÃ©es
 
 \end{Vcolor}
-La division des coordonnées d'un objet de type \code{mass} se traite de même:
+La division des coordonnÃ©es d'un objet de type \code{mass} se traite de mÃªme:
 \begin{Vcolor}
   mass P=mass((1,1), 3);// Masse de poids 3
 
-  mass Q=point(P)/2;// Division des coordonnées, le poids est inchangé
+  mass Q=point(P)/2;// Division des coordonnÃ©es, le poids est inchangÃ©
 
 \end{Vcolor}
 \subsection{Autres routines}
-Grâce au \og{}casting\fg{} toutes les fonctionnalités du type \code{point} sont
-disponibles pour le type \code{mass} avec les nuances qui ont été
-mentionnées dans le paragraphe précédent. Voici la liste d'autres
+GrÃ¢ce au \og{}casting\fg{} toutes les fonctionnalitÃ©s du type \code{point} sont
+disponibles pour le type \code{mass} avec les nuances qui ont Ã©tÃ©
+mentionnÃ©es dans le paragraphe prÃ©cÃ©dent. Voici la liste d'autres
 routines en rapport avec les points massiques:
 \begin{itemize}
 \item \index{mass(coordsys,explicit pair,real)}
     \begin{Vcolor}
     mass mass(coordsys R, explicit pair p, real m)
   \end{Vcolor}
-  Renvoie un objet de type \code{mass} de poids \param{m} dont les coordonnées dans
+  Renvoie un objet de type \code{mass} de poids \param{m} dont les coordonnÃ©es dans
   \param{R} sont \param{p}.
 \item \index{mass(point,real)}
     \begin{Vcolor}
@@ -598,18 +598,18 @@ routines en rapport avec les points massiques:
     \begin{Vcolor}
     mass masscenter(... mass[] M)
   \end{Vcolor}
-  Barycentre des masses \param{M}. Noter que, grâce au \og{}casting\fg{}
+  Barycentre des masses \param{M}. Noter que, grÃ¢ce au \og{}casting\fg{}
   de \code{point[]} vers \code{mass[]}, cette routine fonctionne aussi
-  avec comme paramètre un type \code{point[]}.
+  avec comme paramÃ¨tre un type \code{point[]}.
 \item \index{defaultmassformat}
     \begin{Vcolor}
     string defaultmassformat;
   \end{Vcolor}
-  Format par défaut utilisé pour construire les labels des masses.\\
-  Sa valeur par défaut est
+  Format par dÃ©faut utilisÃ© pour construire les labels des masses.\\
+  Sa valeur par dÃ©faut est
   \code{"\$$\backslash$left(\%L;\%.4g$\backslash$right)\$"} dans
-  laquelle \%L sera remplacé par le label de la masse. Un exemple est
-  sûrement plus parlant:
+  laquelle \%L sera remplacÃ© par le label de la masse. Un exemple est
+  sÃ»rement plus parlant:
     \bvasy{defaultmassformat}
 
   \vspace*{2mm}
@@ -618,8 +618,8 @@ routines en rapport avec les points massiques:
     string massformat(string format=defaultmassformat,
     string s, mass M)
   \end{Vcolor}
-  Renvoie une chaîne formatée par la commande \code{format} avec comme
-  paramètre \param{format}, dans laquelle \%L est remplacé par \param{s}, et le poids de \param{M}.
+  Renvoie une chaÃ®ne formatÃ©e par la commande \code{format} avec comme
+  paramÃ¨tre \param{format}, dans laquelle \%L est remplacÃ© par \param{s}, et le poids de \param{M}.
     \begin{Vcolor}
     import geometry;
 
@@ -638,38 +638,38 @@ routines en rapport avec les points massiques:
     align align=NoAlign, string format=defaultmassformat,
     pen p=nullpen, filltype filltype=NoFill)
   \end{Vcolor}
-  Place en \param{M} le label renvoyé par \code{massformat(format,L,M)}.
+  Place en \param{M} le label renvoyÃ© par \code{massformat(format,L,M)}.
 \item \index{void label(picture,Label,mass,align,string,pen,filltype)}
     \begin{Vcolor}
     void dot(picture pic=currentpicture, Label L, mass M, align align=NoAlign,
     string format=defaultmassformat, pen p=currentpen)
   \end{Vcolor}
-  Place en \param{M} une marque de point et le label renvoyé par \code{massformat(format,L,M)}.
+  Place en \param{M} une marque de point et le label renvoyÃ© par \code{massformat(format,L,M)}.
 \end{itemize}
 Pour terminer cette section voici trois exemples faisant intervenir
-quelques routines précédemment décrites.
+quelques routines prÃ©cÃ©demment dÃ©crites.
 \bvasy{mass_ex1}
 
 \bvasy{mass_ex2}
 
 L'exemple suivant montre comment l'on peut construire tous les barycentres partiels de \param{n} points,
-chaque barycentre étant relié aux points du système dont il est issu:
+chaque barycentre Ã©tant reliÃ© aux points du systÃ¨me dont il est issu:
 \vasy{mass_ex3}
 
 \hyperdef{section}{transform1}{\section{\index{transformation|mainidx}Transformations affines
     (partie 1)}}
-En plus des transformations affines natives \geo définit d'autres
-transformations. Certaines de ces transformations ont un comportement spécifique suivant le
-repère courant utilisé. Ainsi, afin de ne pas imposer au lecteur
-ne travaillant que dans le repère par défaut la description des
-routines spécifiques aux repères, cette section est divisée en deux sous-sections.
-\subsection{Transformations indépendantes du repère courant}
+En plus des transformations affines natives \geo dÃ©finit d'autres
+transformations. Certaines de ces transformations ont un comportement spÃ©cifique suivant le
+repÃ¨re courant utilisÃ©. Ainsi, afin de ne pas imposer au lecteur
+ne travaillant que dans le repÃ¨re par dÃ©faut la description des
+routines spÃ©cifiques aux repÃ¨res, cette section est divisÃ©e en deux sous-sections.
+\subsection{Transformations indÃ©pendantes du repÃ¨re courant}
 \begin{itemize}
 \item \index{scale(real,point)}
   \begin{Vcolor}
     transform scale(real k, point M)
   \end{Vcolor}
-  Homothétie de centre M et de rapport k.
+  HomothÃ©tie de centre M et de rapport k.
   \bvasy{scale}
 
   \bvasy{scale2}
@@ -685,107 +685,107 @@ routines spécifiques aux repères, cette section est divisée en deux sous-section
   \begin{Vcolor}
     transform projection(point A, point B, point C, point D, bool safe=false)
   \end{Vcolor}
-  Projection sur la droite \param{(AB)} parallèlement à \param{(CD)}.\\
-  Si \param{safe} vaut \code{true} et \param{(AB)} est parallèle
-  à \param{(CD)}, l'identité est renvoyée.\\
-  Si \param{safe} vaut \code{false} et \param{(AB)} est parallèle à \param{(CD)}, l'homothétie de
-  centre \param{O} et de rapport infini est renvoyée.\\
+  Projection sur la droite \param{(AB)} parallÃ¨lement Ã  \param{(CD)}.\\
+  Si \param{safe} vaut \code{true} et \param{(AB)} est parallÃ¨le
+  Ã  \param{(CD)}, l'identitÃ© est renvoyÃ©e.\\
+  Si \param{safe} vaut \code{false} et \param{(AB)} est parallÃ¨le Ã  \param{(CD)}, l'homothÃ©tie de
+  centre \param{O} et de rapport infini est renvoyÃ©e.\\
   \bvasy{projectionABCD}
 
 \item \index{scale(real,point,point,point,point,bool)}
   \begin{Vcolor}
     transform scale(real k, point A, point B, point C, point D, bool safe=false)
   \end{Vcolor}
-  Affinité de rapport \param{k}, d'axe \param{(AB)} et de direction \param{(CD)}.
-  Si \param{safe} vaut \code{true} et \param{(AB)} est parallèle à \param{(CD)}, l'identité est renvoyée.\\
-  Si \param{safe} vaut \code{false} et \param{(AB)} est parallèle à \param{(CD)}, l'homothétie de
-  centre \param{O} et de rapport infini est renvoyée.\\
+  AffinitÃ© de rapport \param{k}, d'axe \param{(AB)} et de direction \param{(CD)}.
+  Si \param{safe} vaut \code{true} et \param{(AB)} est parallÃ¨le Ã  \param{(CD)}, l'identitÃ© est renvoyÃ©e.\\
+  Si \param{safe} vaut \code{false} et \param{(AB)} est parallÃ¨le Ã  \param{(CD)}, l'homothÃ©tie de
+  centre \param{O} et de rapport infini est renvoyÃ©e.\\
   \bvasy{scaleABCD}
 
 \end{itemize}
-\subsection{Transformations dépendantes du repère courant}
+\subsection{Transformations dÃ©pendantes du repÃ¨re courant}
 \begin{itemize}
 \item \index{xscale(real,point)}
   \begin{Vcolor}
     transform xscale(real k, point M)
   \end{Vcolor}
-  \hypertarget{xscale(real,point)}{Affinité} de rapport \param{k}, d'axe \og{}l'axe passant par \param{M} et parallèle à
+  \hypertarget{xscale(real,point)}{AffinitÃ©} de rapport \param{k}, d'axe \og{}l'axe passant par \param{M} et parallÃ¨le Ã 
   \param{(Oy)}\fg{} et de direction \param{(Ox)}.
   \bvasy{xscale1}
-  Le même exemple dans un repère quelconque:
+  Le mÃªme exemple dans un repÃ¨re quelconque:
   \index{xscale(real,point)}
   \vasy{xscale2}
 \item \index{yscale(real,point)}
   \begin{Vcolor}
     transform yscale(real k, point M)
   \end{Vcolor}
-  \hypertarget{yscale(real,point)}{Affinité} de rapport k, d'axe \og{}l'axe passant par M et parallèle à
+  \hypertarget{yscale(real,point)}{AffinitÃ©} de rapport k, d'axe \og{}l'axe passant par M et parallÃ¨le Ã 
   (Ox)\fg{} et de direction (Oy).
   \bvasy{yscale1}
-  Le même exemple dans un repère quelconque:
+  Le mÃªme exemple dans un repÃ¨re quelconque:
   \index{yscale(real,point)}
   \vasy{yscale2}
 \item \index{scaleO(real)}
   \begin{Vcolor}
     transform scaleO(real x)
   \end{Vcolor}
-  Homothétie de rapport x et de centre \og{}l'origine du repère
-  courant\fg{}. Cette transformation est identique à
+  HomothÃ©tie de rapport x et de centre \og{}l'origine du repÃ¨re
+  courant\fg{}. Cette transformation est identique Ã 
   \code{scale(x, origin())}.\\
-  Dans l'exemple suivant, on notera la différence entre
+  Dans l'exemple suivant, on notera la diffÃ©rence entre
   \code{scale(k)*P} et \code{scaleO(k)*P}.
   \bvasy{scaleO}
 \item \index{xscaleO(real)}
   \begin{Vcolor}
     transform xscaleO(real x)
   \end{Vcolor}
-  Identique à \code{xscale(x, origin())} (voir \href{#xscale(real,point)}{xscale(real,point)}).
+  Identique Ã  \code{xscale(x, origin())} (voir \href{#xscale(real,point)}{xscale(real,point)}).
 \item \index{yscaleO(real)}
   \begin{Vcolor}
     transform yscaleO(real x)
   \end{Vcolor}
-  Identique à \code{yscale(x, origin())} (voir \href{#yscale(real,point)}{yscale(real,point)}).
+  Identique Ã  \code{yscale(x, origin())} (voir \href{#yscale(real,point)}{yscale(real,point)}).
 \item \index{rotateO(real)}
   \begin{Vcolor}
     transform rotateO(real angle)
   \end{Vcolor}
-  Identique à \code{rotate(angle, origin())}.
+  Identique Ã  \code{rotate(angle, origin())}.
 \end{itemize}
 
 \hyperdef{section}{line}{\section{\index{droite|mainidx}Droites, demi-droites et segments}}
 \subsection{Le type \texorpdfstring{\og{}line\fg{}}{line}}
-Un objet de type \code{line} représente une droite, une demi-droite ou
-un segment de droite suivant la valeur de ses propriétés
+Un objet de type \code{line} reprÃ©sente une droite, une demi-droite ou
+un segment de droite suivant la valeur de ses propriÃ©tÃ©s
 \code{bool extendA,extendB;} accessible via \code{line.extendA} et
 \code{line.extendB}.
-La description complète des méthodes et
-propriétés du type \code{line} est accessible
+La description complÃ¨te des mÃ©thodes et
+propriÃ©tÃ©s du type \code{line} est accessible
 \href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html#struct\%20line}{ici}.
 
-\subsubsection{Droites définies par deux points, routines de base}
+\subsubsection{Droites dÃ©finies par deux points, routines de base}
 \begin{itemize}
 \item \index{line(point,bool,point,bool)}%
   \begin{Vcolor}
     line line(point A, bool extendA=true, point B, bool extendB=true)
   \end{Vcolor}
-  Définit un objet de type \code{line} passant par les deux points
-  \param{A} et \param{B}, orientée de \param{A} vers
+  DÃ©finit un objet de type \code{line} passant par les deux points
+  \param{A} et \param{B}, orientÃ©e de \param{A} vers
   \param{B}. Si \param{extendA} vaut \code{true} la \og{}droite\fg{}
-  s'étend du côté de \param{A}.\\
-  Un objet de type \code{line} appartient au repère dans lequel sont
-  définis les deux points \param{A} et \param{B} mais si ces
-  deux points sont définis dans des repères
-  distincts, ils sont automatiquement redéfinis relativement au repère
-  par défaut et un message d'avertissement est généré.
+  s'Ã©tend du cÃ´tÃ© de \param{A}.\\
+  Un objet de type \code{line} appartient au repÃ¨re dans lequel sont
+  dÃ©finis les deux points \param{A} et \param{B} mais si ces
+  deux points sont dÃ©finis dans des repÃ¨res
+  distincts, ils sont automatiquement redÃ©finis relativement au repÃ¨re
+  par dÃ©faut et un message d'avertissement est gÃ©nÃ©rÃ©.
 \item \index{Ox()}\index{Oy()}\index{Ox}\index{Oy}%
   \begin{Vcolor}
     line Ox(coordsys R=currentcoordsys)
   \end{Vcolor}
-  Renvoie l'axe des abscisses du repère \param{R}.\\
+  Renvoie l'axe des abscisses du repÃ¨re \param{R}.\\
   La routine
   \code{line Oy(coordsys R=currentcoordsys)} est aussi
-  définie.\\
-  Les constantes \code{Ox} et \code{Oy} sont les axes du repère par défaut.
+  dÃ©finie.\\
+  Les constantes \code{Ox} et \code{Oy} sont les axes du repÃ¨re par dÃ©faut.
 \item \index{draw(picture,Label,line,bool,bool,align,pen,arrowbar,Label,marker)}%
   \begin{Vcolor}
     void draw(picture pic=currentpicture, Label L="",
@@ -793,22 +793,22 @@ propriétés du type \code{line} est accessible
     align align=NoAlign, pen p=currentpen,
     arrowbar arrow=None, Label legend="", marker marker=nomarker)
   \end{Vcolor}
-  Trace dans \param{pic} la \og{}droite\fg{} \param{l} sans altérer
-  la taille de l'image si le label est correctement positionné et la
+  Trace dans \param{pic} la \og{}droite\fg{} \param{l} sans altÃ©rer
+  la taille de l'image si le label est correctement positionnÃ© et la
   variable \code{linemargin} positive.\\
-  Les paramètres booléens \param{dirA} et \param{dirB} contrôlent la
-  section infinie à afficher.\\
-  Noter qu'il est possible de contrôler la marge
+  Les paramÃ¨tres boolÃ©ens \param{dirA} et \param{dirB} contrÃ´lent la
+  section infinie Ã  afficher.\\
+  Noter qu'il est possible de contrÃ´ler la marge
   entre le bord de l'image et la trace des droites en modifiant la
-  variable réelle \code{linemargin} dont la valeur par défaut est 0;
-  dans le cas où cette marge est négative, la taille de l'image sera
-  modifiée.
+  variable rÃ©elle \code{linemargin} dont la valeur par dÃ©faut est 0;
+  dans le cas oÃ¹ cette marge est nÃ©gative, la taille de l'image sera
+  modifiÃ©e.
     \bvasy{line_base}
 \item \index{show(picture,line,pen)}%
     \begin{Vcolor}
     void show(picture pic=currentpicture, line l, pen p=red)
   \end{Vcolor}
-  Affiche dans \param{pic} les points qui ont servi à définir la
+  Affiche dans \param{pic} les points qui ont servi Ã  dÃ©finir la
   droite \param{l} ainsi que le vecteur directeur et le vecteur
   normal.
 \item \index{intersectionpoint(line,line)}%
@@ -817,16 +817,16 @@ propriétés du type \code{line} est accessible
   \end{Vcolor}
   Renvoie le point d'intersection des objets \param{l1}
   et \param{l2}.\\
-  S'il n'y a aucun point d'intersection ou s'il y en a une infinité,
-  c'est le point de coordonnée\linebreak\code{(infinity,infinity)} qui est
-  renvoyé.\\
-  Noter que si les deux droites sont définies relativement à des
-  repères différents, le point d'intersection est défini relativement
-  au repère pas défaut \code{defaultcoordsys} et un
-  avertissement est généré.\\
-  L'exemple suivant est une illustration du célèbre théorème de
-  {\sc Pascal} qui affirme que \og{}Les points de concours des côtés
-  opposés de tout hexagone inscrit dans un cercle sont alignés.\fg{}
+  S'il n'y a aucun point d'intersection ou s'il y en a une infinitÃ©,
+  c'est le point de coordonnÃ©e\linebreak\code{(infinity,infinity)} qui est
+  renvoyÃ©.\\
+  Noter que si les deux droites sont dÃ©finies relativement Ã  des
+  repÃ¨res diffÃ©rents, le point d'intersection est dÃ©fini relativement
+  au repÃ¨re pas dÃ©faut \code{defaultcoordsys} et un
+  avertissement est gÃ©nÃ©rÃ©.\\
+  L'exemple suivant est une illustration du cÃ©lÃ¨bre thÃ©orÃ¨me de
+  {\sc Pascal} qui affirme que \og{}Les points de concours des cÃ´tÃ©s
+  opposÃ©s de tout hexagone inscrit dans un cercle sont alignÃ©s.\fg{}
   \bvasy{th_pascal}
 \item \index{intersectionpoints(line l, path g)}%
     \begin{Vcolor}
@@ -836,28 +836,28 @@ propriétés du type \code{line} est accessible
   \og{}droite\fg{} \param{l} avec le chemin \param{g}.
 \end{itemize}
 
-\subsubsection{Droites définies par équations}
+\subsubsection{Droites dÃ©finies par Ã©quations}
 \begin{itemize}
 \item \index{line(coordsys,real,real,real)}%
     \begin{Vcolor}
     line line(coordsys R=currentcoordsys, real a, real b, real c)
   \end{Vcolor}
-  Renvoie la droite d'équation $\mparam{a}x+\mparam{b}y+\mparam{c}=0$
-  dans le repère \param{R}.
+  Renvoie la droite d'Ã©quation $\mparam{a}x+\mparam{b}y+\mparam{c}=0$
+  dans le repÃ¨re \param{R}.
 \item \index{line(coordsys,real,real)}%
     \begin{Vcolor}
     line line(coordsys R=currentcoordsys, real slope, real origin)
   \end{Vcolor}
-  Renvoie la droite de pente \param{slope} et d'ordonnée à
-  l'origine \param{origin} donnés relativement au repère \param{R}.
+  Renvoie la droite de pente \param{slope} et d'ordonnÃ©e Ã 
+  l'origine \param{origin} donnÃ©s relativement au repÃ¨re \param{R}.
 \end{itemize}
-\subsubsection{Droites et parallélisme}
+\subsubsection{Droites et parallÃ©lisme}
 \begin{itemize}
 \item \index{parallel(point,line)}%
     \begin{Vcolor}
     line parallel(point M, line l)
   \end{Vcolor}
-  Renvoie la droite parallèle à \param{l} passant par \param{M}.
+  Renvoie la droite parallÃ¨le Ã  \param{l} passant par \param{M}.
 \item \index{parallel(point,explicit vector)}%
     \begin{Vcolor}
     line parallel(point M, explicit vector dir)
@@ -867,13 +867,13 @@ propriétés du type \code{line} est accessible
     \begin{Vcolor}
     line parallel(point M, explicit pair dir)
   \end{Vcolor}
-  Renvoie la droite de vecteur directeur \param{dir} donné dans le
-  repère courant \code{currentcoordsys} et passant par \param{M}.
+  Renvoie la droite de vecteur directeur \param{dir} donnÃ© dans le
+  repÃ¨re courant \code{currentcoordsys} et passant par \param{M}.
 \item \index{parallel(line,line,bool)}%
     \begin{Vcolor}
     bool parallel(line l1, line l2, bool strictly=false)
   \end{Vcolor}
-  Renvoie \code{true} si \param{l1} et \param{l2} sont parallèles
+  Renvoie \code{true} si \param{l1} et \param{l2} sont parallÃ¨les
   (strictement si \param{stricly} vaut \code{true}).
 \end{itemize}
 \bvasy{parallel}
@@ -885,42 +885,42 @@ propriétés du type \code{line} est accessible
     line line(real a, point A=point(currentcoordsys,(0,0)))
   \end{Vcolor}
   Renvoie la droite passant par \param{A} et faisant un
-  angle de \param{a} degrés avec l'axe des abscisses du repère dans
-  lequel est défini \param{A}.\\
-  La routine \code{line(point,real)} est aussi définie.
+  angle de \param{a} degrÃ©s avec l'axe des abscisses du repÃ¨re dans
+  lequel est dÃ©fini \param{A}.\\
+  La routine \code{line(point,real)} est aussi dÃ©finie.
   \bvasy{line_angle1}
 \item \index{bisector(line,line,real,bool)}%
     \begin{Vcolor}
     line bisector(line l1, line l2, real angle=0, bool sharp=true)
   \end{Vcolor}
-  Renvoie l'image de la bissectrice de l'angle formé par les droites
-  orientées \param{l1} et \param{l2} par la rotation de centre
+  Renvoie l'image de la bissectrice de l'angle formÃ© par les droites
+  orientÃ©es \param{l1} et \param{l2} par la rotation de centre
   \og{}l'intersection de \param{l1} et \param{l2}\fg{} et
   d'angle \param{angle}.\\
-  Si le paramètre \param{sharp} vaut \code{true}, cette routine
+  Si le paramÃ¨tre \param{sharp} vaut \code{true}, cette routine
   renvoie la bissectrice de l'angle aigu.\\
-  Noter que la droite renvoyée hérite du repère dans lequel est
-  \hypertarget{bisectorline}{défini} \param{l1}.
+  Noter que la droite renvoyÃ©e hÃ©rite du repÃ¨re dans lequel est
+  \hypertarget{bisectorline}{dÃ©fini} \param{l1}.
   %    \bvasy{bisector_line}
 \item \index{sector(int,int,line,line,real,bool)}%
     \begin{Vcolor}
     line sector(int n=2, int p=1, line l1, line l2, real angle=0, bool sharp=true)
   \end{Vcolor}
-  Renvoie l'image de la p-iéme droite qui partage l'angle formé par les droites
-  orientées \param{l1} et \param{l2} en \param{n} parties égales par la
+  Renvoie l'image de la p-iÃ©me droite qui partage l'angle formÃ© par les droites
+  orientÃ©es \param{l1} et \param{l2} en \param{n} parties Ã©gales par la
   rotation de centre \og{}l'intersection de \param{l1}
   et \param{l2}\fg{} et d'angle \param{angle}.\\
-  Si le paramètre \param{sharp} vaut \code{true}, cette routine
-  considère l'angle aigu.\\
-  Noter que la droite renvoyée hérite du repère dans lequel est
-  défini \param{l1}. Ci-après, un exemple d'utilisation pour partager
-  des angles en trois parties d'égales mesures.
+  Si le paramÃ¨tre \param{sharp} vaut \code{true}, cette routine
+  considÃ¨re l'angle aigu.\\
+  Noter que la droite renvoyÃ©e hÃ©rite du repÃ¨re dans lequel est
+  dÃ©fini \param{l1}. Ci-aprÃ¨s, un exemple d'utilisation pour partager
+  des angles en trois parties d'Ã©gales mesures.
     \vasy{sector_line}
 \item \index{perpendicular(point,line)}%
     \begin{Vcolor}
     line perpendicular(point M, line l)
   \end{Vcolor}
-  Renvoie la droite perpendiculaire à \param{l} passant par \param{M}.
+  Renvoie la droite perpendiculaire Ã  \param{l} passant par \param{M}.
 \item \index{line perpendicular(point,explicit vector)}%
     \begin{Vcolor}
     line perpendicular(point M, explicit vector normal)
@@ -931,46 +931,46 @@ propriétés du type \code{line} est accessible
     line perpendicular(point M, explicit pair normal)
   \end{Vcolor}
   Renvoie la droite passant par \param{M} et de vecteur
-  normal \param{normal} donné dans le repère courant\linebreak\code{currentcoordsys}.
+  normal \param{normal} donnÃ© dans le repÃ¨re courant\linebreak\code{currentcoordsys}.
     \bvasy{perpendicular}
 \item \index{angle(line,coordsys)}%
     \begin{Vcolor}
     real angle(line l, coordsys R=coordsys(l))
   \end{Vcolor}
   Renvoie la mesure de l'angle, en radians dans $]-\pi\,;\,\pi]$, par rapport au
-  repère \param{R} de la droite orientée que représente \param{l}.
+  repÃ¨re \param{R} de la droite orientÃ©e que reprÃ©sente \param{l}.
 \item \index{degrees(line,coordsys)}%
     \begin{Vcolor}
     real degrees(line l, coordsys R=coordsys(l))
   \end{Vcolor}
-  Renvoie la mesure de l'angle, en degrés dans $[0\,;\,360[$, par rapport au
-  repère \param{R} de la droite orientée que représente \param{l}.
+  Renvoie la mesure de l'angle, en degrÃ©s dans $[0\,;\,360[$, par rapport au
+  repÃ¨re \param{R} de la droite orientÃ©e que reprÃ©sente \param{l}.
 \item \index{sharpangle(line,line)}%
     \begin{Vcolor}
     real sharpangle(line l1, line l2)
   \end{Vcolor}
-  Renvoie la mesure de l'angle aigu orienté, en radians dans
-  $]-\frac{\pi}{2}\,;\,\frac{\pi}{2}]$, formé par \param{l1} et \param{l2}.
+  Renvoie la mesure de l'angle aigu orientÃ©, en radians dans
+  $]-\frac{\pi}{2}\,;\,\frac{\pi}{2}]$, formÃ© par \param{l1} et \param{l2}.
 \item \index{sharpdegrees(line,line)}%
     \begin{Vcolor}
     real sharpdegrees(line l1, line l2)
   \end{Vcolor}
-  Renvoie la mesure de l'angle aigu orienté, en degrés dans
-  $]-90\,;\,90]$, formé par \param{l1} et \param{l2}.
+  Renvoie la mesure de l'angle aigu orientÃ©, en degrÃ©s dans
+  $]-90\,;\,90]$, formÃ© par \param{l1} et \param{l2}.
 \item \index{angle(line,line)}%
     \begin{Vcolor}
     real angle(line l1, line l2)
   \end{Vcolor}
-  Renvoie la mesure de l'angle orienté, en radians dans
-  $]-\pi\,;\,\pi]$, formé par les droites orientées représentées par \param{l1} et \param{l2}.
+  Renvoie la mesure de l'angle orientÃ©, en radians dans
+  $]-\pi\,;\,\pi]$, formÃ© par les droites orientÃ©es reprÃ©sentÃ©es par \param{l1} et \param{l2}.
 \item \index{degrees(line,line)}%
     \begin{Vcolor}
     real degrees(line l1, line l2)
   \end{Vcolor}
-  Renvoie la mesure de l'angle orienté, en degrés dans
-  $]-180\,;\,180]$, formé par les droites orientées représentées par \param{l1} et \param{l2}.
+  Renvoie la mesure de l'angle orientÃ©, en degrÃ©s dans
+  $]-180\,;\,180]$, formÃ© par les droites orientÃ©es reprÃ©sentÃ©es par \param{l1} et \param{l2}.
 \end{itemize}
-\subsubsection{Droites et opérateurs}
+\subsubsection{Droites et opÃ©rateurs}
 \begin{itemize}
 \item \index{*(transform,line)}%
     \begin{Vcolor}
@@ -984,7 +984,7 @@ propriétés du type \code{line} est accessible
   Autorise le code \code{line/real}.\\
   Renvoie la \og{}droite\fg{} passant par \param{l.A/x}
   et \param{l.B/x}.\\
-  \code{line operator *(real x, line l)} est aussi défini.
+  \code{line operator *(real x, line l)} est aussi dÃ©fini.
 \item \index{*(point,line)}%
     \begin{Vcolor}
     line operator *(point M, line l)
@@ -998,7 +998,7 @@ propriétés du type \code{line} est accessible
   Autorise le code \code{line+vector}.\\
   Renvoie l'image de \param{l} par la translation de
   vecteur \param{u}.\\
-  \code{line operator -(line l, vector u)} est aussi défini.
+  \code{line operator -(line l, vector u)} est aussi dÃ©fini.
 \item \index{^^(line,line)}%
     \begin{Vcolor}
     line[] operator ^^(line l1, line l2)
@@ -1010,25 +1010,25 @@ propriétés du type \code{line} est accessible
     bool operator ==(line l1, line l2)
   \end{Vcolor}
   Autorise le test \code{line == line}.\\
-  Renvoie \code{true} \ssi \param{l1} et \param{l2} représente la même droite.
+  Renvoie \code{true} \ssi \param{l1} et \param{l2} reprÃ©sente la mÃªme droite.
 \item \index{!=(line,line)}%
     \begin{Vcolor}
     bool operator !=(line l1, line l2)
   \end{Vcolor}
   Autorise le test \code{line != line}.\\
-  Renvoie \code{false} \ssi \param{l1} et \param{l2} représente la même droite.
+  Renvoie \code{false} \ssi \param{l1} et \param{l2} reprÃ©sente la mÃªme droite.
 \item \index{@(point,line)}%
     \begin{Vcolor}
     bool operator @(point m, line l)
   \end{Vcolor}
   Autorise le code \code{point @ line}.\\
-  Renvoie \code{true} \ssi le point \param{M} appartient à l'objet \param{l}.
+  Renvoie \code{true} \ssi le point \param{M} appartient Ã  l'objet \param{l}.
 \end{itemize}
 
 \subsubsection{Autres routines}
-Aux routines décrites dans cette section s'ajoutent des routines
-pour récupérer l'\href{#section.abscissa}{abscisse} d'un point
-appartenant à un objet de type \code{line}.
+Aux routines dÃ©crites dans cette section s'ajoutent des routines
+pour rÃ©cupÃ©rer l'\href{#section.abscissa}{abscisse} d'un point
+appartenant Ã  un objet de type \code{line}.
 \begin{itemize}
 \item \index{draw(picture,Label[],line[],align,pen[],arrowbar,Label,marker)}%
     \begin{Vcolor}
@@ -1037,9 +1037,9 @@ appartenant à un objet de type \code{line}.
     arrowbar arrow=None,
     Label[] legend=new Label[], marker marker=nomarker)
   \end{Vcolor}
-  Dessine chacune des droites représentées par \param{line[] l} avec
+  Dessine chacune des droites reprÃ©sentÃ©es par \param{line[] l} avec
   le stylo correspondant \param{pen[] p}.\\
-  Si \param{p} n'est pas spécifié le stylo courant est utilisé.
+  Si \param{p} n'est pas spÃ©cifiÃ© le stylo courant est utilisÃ©.
 \item \index{draw(picture,Label[],line[],align,pen,arrowbar,Label,marker)}%
     \begin{Vcolor}
     void draw(picture pic=currentpicture,Label[] L=new Label[], line[] l,
@@ -1047,74 +1047,74 @@ appartenant à un objet de type \code{line}.
     arrowbar arrow=None,
     Label[] legend=new Label[], marker marker=nomarker)
   \end{Vcolor}
-  Dessine chacune des droites représentées par \param{line[] l} avec
-  le même stylo \param{p}.\\
+  Dessine chacune des droites reprÃ©sentÃ©es par \param{line[] l} avec
+  le mÃªme stylo \param{p}.\\
 \item \index{distance(point,line)}\index{distance(line,point)}%
     \begin{Vcolor}
     real distance(point M, line l)
   \end{Vcolor}
-  Renvoie la distance de \param{M} à \param{l}.\\
-  \code{real distance(line l,point M)} est aussi défini.
+  Renvoie la distance de \param{M} Ã  \param{l}.\\
+  \code{real distance(line l,point M)} est aussi dÃ©fini.
 \item \index{sameside(point,point,line)}%
     \begin{Vcolor}
     bool sameside(point M, point P, line l)
   \end{Vcolor}
-  Renvoie \code{true} \ssi \param{M} et \param{P} sont du même côté
+  Renvoie \code{true} \ssi \param{M} et \param{P} sont du mÃªme cÃ´tÃ©
   de \param{l}.
 \item \index{sameside(point,line,line)}%
     \begin{Vcolor}
     point[] sameside(point M, line l1, line l2)
   \end{Vcolor}
-  Renvoie un tableau composé de deux points: le premier est le projeté
-  de \param{M} sur \param{l1} parallèlement à \param{l2} et le second est
-  le projeté de \param{M} sur \param{l2} parallèlement à \param{l1}.
+  Renvoie un tableau composÃ© de deux points: le premier est le projetÃ©
+  de \param{M} sur \param{l1} parallÃ¨lement Ã  \param{l2} et le second est
+  le projetÃ© de \param{M} sur \param{l2} parallÃ¨lement Ã  \param{l1}.
 \item \index{coordsys(line)}%
     \begin{Vcolor}
     coordsys coordsys(line l)
   \end{Vcolor}
-  Renvoie le repère dans lequel est défini \param{l}.
+  Renvoie le repÃ¨re dans lequel est dÃ©fini \param{l}.
 \item \index{changecoordsys(coordsys,line)}%
     \begin{Vcolor}
     line changecoordsys(coordsys R, line l)
   \end{Vcolor}
-  Renvoie la \og{}droite\fg{} représentée par \param{l} relativement au
-  repère \param{R}.
+  Renvoie la \og{}droite\fg{} reprÃ©sentÃ©e par \param{l} relativement au
+  repÃ¨re \param{R}.
 \item \index{reverse(line)}%
     \begin{Vcolor}
     line reverse(line l)
   \end{Vcolor}
-  Renvoie la droite représentée par \param{l} avec une orientation
-  contraire à celle de \param{l}.
+  Renvoie la droite reprÃ©sentÃ©e par \param{l} avec une orientation
+  contraire Ã  celle de \param{l}.
 \item \index{extend(line l)}%
     \begin{Vcolor}
     line extend(line l)
   \end{Vcolor}
-  Renvoie la droite portée par \param{l} qui, rappelons le, peut
-  être une demi-droite ou un segment de droite.
+  Renvoie la droite portÃ©e par \param{l} qui, rappelons le, peut
+  Ãªtre une demi-droite ou un segment de droite.
 \item \index{complementary(explicit line)}%
     \begin{Vcolor}
     line complementary(explicit line l)
   \end{Vcolor}
-  Renvoie la demi-droite complémentaire de \param{l}; cette routine ne
-  fonctionne que si \param{l} représente effectivement une demi-droite.
+  Renvoie la demi-droite complÃ©mentaire de \param{l}; cette routine ne
+  fonctionne que si \param{l} reprÃ©sente effectivement une demi-droite.
 \item \index{concurrent(...line[])}%
     \begin{Vcolor}
     bool concurrent(... line[] l)
   \end{Vcolor}
-  Renvoie \code{true} \ssi les droites représentées par
+  Renvoie \code{true} \ssi les droites reprÃ©sentÃ©es par
   \code{line[] l} sont concourantes.
 \item \index{perpendicular(line,line)}%
     \begin{Vcolor}
     bool perpendicular(line l1, line l2)
   \end{Vcolor}
-  Renvoie \code{true} \ssi les droites représentées par
+  Renvoie \code{true} \ssi les droites reprÃ©sentÃ©es par
   \param{l1} et \param{l2} sont perpendiculaires.
 \item \index{perpendicular(line,line)}%
     \begin{Vcolor}
     bool perpendicular(line l1, line l2)
   \end{Vcolor}
 \end{itemize}
-\begin{itemize}%% !!!!!! REMPLACER cet itemize par le précédent !!!!!!!!%%
+\begin{itemize}%% !!!!!! REMPLACER cet itemize par le prÃ©cÃ©dent !!!!!!!!%%
 \item \index{point(line l,real)}%
     \begin{Vcolor}
     point point(line l, real x)
@@ -1125,7 +1125,7 @@ appartenant à un objet de type \code{line}.
     \begin{Vcolor}
     point relpoint(line l, real x)
   \end{Vcolor}
-  Retourne le point d'abscisse relative \param{x} donnée par rapport au
+  Retourne le point d'abscisse relative \param{x} donnÃ©e par rapport au
   segment $[\mparam{AB}]$. Autrement dit \param{relpoint(l,x)} renvoie \code{l.A+x*vector(l.B-l.A)}.
   \bvasy{relpoint_line}
 
@@ -1133,8 +1133,8 @@ appartenant à un objet de type \code{line}.
     \begin{Vcolor}
     point curpoint(line l, real x)
   \end{Vcolor}
-  Retourne le point d'abscisse \param{x} donnée par rapport au
-  repère $(\mparam{l.A}\,;\,\vec{\mparam{l.u}})$. Autrement dit \param{curpoint(l,x)} renvoie \code{l.A+x*unit(l.B-l.A)}.
+  Retourne le point d'abscisse \param{x} donnÃ©e par rapport au
+  repÃ¨re $(\mparam{l.A}\,;\,\vec{\mparam{l.u}})$. Autrement dit \param{curpoint(l,x)} renvoie \code{l.A+x*unit(l.B-l.A)}.
   \bvasy{curpoint_line}
 
 \end{itemize}
@@ -1149,11 +1149,11 @@ appartenant à un objet de type \code{line}.
     arrowbar arrow=None, pen p=currentpen,
     margin margin=NoMargin, marker marker=nomarker)
   \end{Vcolor}
-  Marque par \param{n} arcs de cercle l'angle orienté formé par les
-  \og{}droites\fg{} \param{l1} et \param{l2}. Les arcs sont dessinés
-  dans le sens trigonométrique si \param{radius} est positif ou nul,
+  Marque par \param{n} arcs de cercle l'angle orientÃ© formÃ© par les
+  \og{}droites\fg{} \param{l1} et \param{l2}. Les arcs sont dessinÃ©s
+  dans le sens trigonomÃ©trique si \param{radius} est positif ou nul,
   dans le sens horaire sinon.\\
-  Se reporter à \og{}\href{#bisectorline}{cette figure}\fg{} pour un exemple.
+  Se reporter Ã  \og{}\href{#bisectorline}{cette figure}\fg{} pour un exemple.
 \item \index{perpendicularmark(picture,line,line,real,pen,int,margin,filltype)}%
     \begin{Vcolor}
     void perpendicularmark(picture pic=currentpicture, line l1, line l2,
@@ -1161,50 +1161,50 @@ appartenant à un objet de type \code{line}.
     margin margin=NoMargin, filltype filltype=NoFill)
   \end{Vcolor}
   Marque un angle droit au point d'intersection de \param{l1}
-  et \param{l2} dans le \param{quarter}ième quart de plan compté dans
-  le sens trigonométrique, le premier étant celui formé par les
+  et \param{l2} dans le \param{quarter}iÃ¨me quart de plan comptÃ© dans
+  le sens trigonomÃ©trique, le premier Ã©tant celui formÃ© par les
   vecteurs \param{l1.u} et \param{l2.u}.
   \bvasy{perpendicularmark_line}
 
 \end{itemize}
 
 \subsection{Le type \texorpdfstring{\og{}segment\fg{}}{segment}}
-Comme déjà mentionné dans l'\href{#section.intro}{introduction}, le type \code{segment}, qui
-instancie un segment de droite, est un dérivé (un fils) du type
+Comme dÃ©jÃ  mentionnÃ© dans l'\href{#section.intro}{introduction}, le type \code{segment}, qui
+instancie un segment de droite, est un dÃ©rivÃ© (un fils) du type
 \code{line}. Par le jeu du \og{}casting\fg{}, pratiquement toutes
-les routines applicables à un objet de type \code{line} s'appliquent
-aussi à un objet de type \code{segment} et réciproquement.
+les routines applicables Ã  un objet de type \code{line} s'appliquent
+aussi Ã  un objet de type \code{segment} et rÃ©ciproquement.
 
-Il est cependant important de noter que, lors du tracé d'un segment, la
-valeur de la variable \code{addpenline} est ajoutée au stylo
-utilisé. Par défaut cette variable a pour valeur \param{squarecap},
-afin d'avoir les extrémités droites, ce qui rend l'affichage d'un
-segment en pointillé inefficient.\\
-Pour contourner ce problème il y a trois solutions:
+Il est cependant important de noter que, lors du tracÃ© d'un segment, la
+valeur de la variable \code{addpenline} est ajoutÃ©e au stylo
+utilisÃ©. Par dÃ©faut cette variable a pour valeur \param{squarecap},
+afin d'avoir les extrÃ©mitÃ©s droites, ce qui rend l'affichage d'un
+segment en pointillÃ© inefficient.\\
+Pour contourner ce problÃ¨me il y a trois solutions:
 \begin{enumerate}
-\item écrire \code{draw(un\_segment, roundcap+dotted);} au lieux de
+\item Ã©crire \code{draw(un\_segment, roundcap+dotted);} au lieux de
   \code{draw(un\_segment, dotted);};
-\item affecter la valeur \code{nullpen} à \code{addpenline}.
-\item contacter l'auteur de \geo pour lui faire connaître
-  son désaccord quant à la valeur par défaut de \code{addpenline};
+\item affecter la valeur \code{nullpen} Ã  \code{addpenline}.
+\item contacter l'auteur de \geo pour lui faire connaÃ®tre
+  son dÃ©saccord quant Ã  la valeur par dÃ©faut de \code{addpenline};
 \end{enumerate}
 
 Enfin, tout comme les types \code{point} et \code{mass} sont
 interchangeables, les objets de types \code{line} et \code{segment}
-peuvent être converti de l'un vers l'autre en écrivant par exemple
+peuvent Ãªtre converti de l'un vers l'autre en Ã©crivant par exemple
 \code{segment s=un\_obj\_line;}\linebreak ou \code{draw(segment(un\_obj\_line));} ou
 encore \code{draw(line(un\_obj\_segment));}
 comme le montre l'exemple suivant:
 \bvasy{line_segment}
 
-En dehors des routines définies pour les objets de type \code{line}
-voici d'autres routines spécifiques aux objets de type \code{segment}:
+En dehors des routines dÃ©finies pour les objets de type \code{line}
+voici d'autres routines spÃ©cifiques aux objets de type \code{segment}:
 \begin{itemize}
 \item \index{segment(point,point)}%
   \begin{Vcolor}
     segment segment(point A, point B)
   \end{Vcolor}
-  Renvoie le segment de droite d'extrémités \param{A} et \param{B}.
+  Renvoie le segment de droite d'extrÃ©mitÃ©s \param{A} et \param{B}.
 \item \index{midpoint(segment)}%
   \begin{Vcolor}
     point midpoint(segment s)
@@ -1214,43 +1214,43 @@ voici d'autres routines spécifiques aux objets de type \code{segment}:
   \begin{Vcolor}
     line bisector(segment s, real angle=0)
   \end{Vcolor}
-  Renvoie l'image de la médiatrice de \param{s} par la rotation de
+  Renvoie l'image de la mÃ©diatrice de \param{s} par la rotation de
   centre \og{}le milieu de \param{s}\fg{} et d'angle \param{angle}.
 \item \index{complementary(explicit segment)}%
   \begin{Vcolor}
     line[] complementary(explicit segment s)
   \end{Vcolor}
   Renvoie sous forme de tableau les deux demi-droites de
-  support \param{s} et d'extrémités respectives \param{s.A} et \param{s.B}.
+  support \param{s} et d'extrÃ©mitÃ©s respectives \param{s.A} et \param{s.B}.
 \end{itemize}
 
 \hyperdef{section}{transform2}{\section{\index{transformation|mainidx}Transformations
     affines (partie 2)}}
-Certaines transformations décrites dans le section \href{#section.transform1}{Transformations
-  affines (partie 1)}, définies à partir de points, peuvent aussi
-être définies à partir de droites.
+Certaines transformations dÃ©crites dans le section \href{#section.transform1}{Transformations
+  affines (partie 1)}, dÃ©finies Ã  partir de points, peuvent aussi
+Ãªtre dÃ©finies Ã  partir de droites.
 \begin{itemize}
 \item \index{reflect(line)}
   \begin{Vcolor}
     transform reflect(line l)
   \end{Vcolor}
-  Renvoie la réflexion par rapport à \param{l}.
+  Renvoie la rÃ©flexion par rapport Ã  \param{l}.
   \bvasy{reflect}
 \item \index{reflect(line,line,bool)}
   \begin{Vcolor}
     transform reflect(line l1, line l2, bool safe=false)
   \end{Vcolor}
-  Renvoie la réflexion par rapport à \param{l1} parallèlement à \param{l2}.\\
-  Si \param{safe} vaut \code{true} et \param{l1} parallèle
-  à \param{l2}, la routine renvoie l'identité.
+  Renvoie la rÃ©flexion par rapport Ã  \param{l1} parallÃ¨lement Ã  \param{l2}.\\
+  Si \param{safe} vaut \code{true} et \param{l1} parallÃ¨le
+  Ã  \param{l2}, la routine renvoie l'identitÃ©.
   \bvasy{reflect_dir}
 \item \index{scale(real,line,line,bool)}
   \begin{Vcolor}
     transform scale(real k, line l1, line l2, bool safe=false)
   \end{Vcolor}
-  Renvoie l'affinité de rapport k, d'axe \param{l1} et de direction \param{l2}.\\
-  Si \param{safe} vaut \code{true} et \param{l1} parallèle
-  à \param{l2}, la routine renvoie l'identité.
+  Renvoie l'affinitÃ© de rapport k, d'axe \param{l1} et de direction \param{l2}.\\
+  Si \param{safe} vaut \code{true} et \param{l1} parallÃ¨le
+  Ã  \param{l2}, la routine renvoie l'identitÃ©.
   \bvasy{affinite_line}
 \item \index{projection(line)}
   \begin{Vcolor}
@@ -1261,85 +1261,85 @@ Certaines transformations décrites dans le section \href{#section.transform1}{Tr
   \begin{Vcolor}
     transform projection(line l1, line l2, bool safe=false)
   \end{Vcolor}
-  Renvoie la projection sur \param{l1} parallèlement à \param{l2}.\\
-  Si \param{safe} vaut \code{true} et \param{l1} parallèle
-  à \param{l2}, la routine renvoie l'identité.
+  Renvoie la projection sur \param{l1} parallÃ¨lement Ã  \param{l2}.\\
+  Si \param{safe} vaut \code{true} et \param{l1} parallÃ¨le
+  Ã  \param{l2}, la routine renvoie l'identitÃ©.
 \item \index{vprojection(line,bool)}
   \begin{Vcolor}
     transform vprojection(line l, bool safe=false)
   \end{Vcolor}
-  Renvoie la projection sur \param{l} parallèlement à la verticale.
-  Cette routine est équivalente à \code{projection(l,line(origin,point(defaultcoordsys,S)),safe)}.\\
+  Renvoie la projection sur \param{l} parallÃ¨lement Ã  la verticale.
+  Cette routine est Ã©quivalente Ã  \code{projection(l,line(origin,point(defaultcoordsys,S)),safe)}.\\
   Si \param{safe} vaut \code{true} et \param{l} est une droite
-  verticale, la routine renvoie l'identité.
+  verticale, la routine renvoie l'identitÃ©.
 \item \index{hprojection(line,bool)}
   \begin{Vcolor}
     transform hprojection(line l, bool safe=false)
   \end{Vcolor}
-  Renvoie la projection sur \param{l} parallèlement à l'horizontale.
-  Cette routine est équivalente à \code{projection(l,line(origin,point(defaultcoordsys,E)),safe)}.\\
+  Renvoie la projection sur \param{l} parallÃ¨lement Ã  l'horizontale.
+  Cette routine est Ã©quivalente Ã  \code{projection(l,line(origin,point(defaultcoordsys,E)),safe)}.\\
   Si \param{safe} vaut \code{true} et \param{l} est une droite
-  horizontale, la routine renvoie l'identité.
+  horizontale, la routine renvoie l'identitÃ©.
   \bvasy{projection_line}
 \end{itemize}
 
 \hyperdef{section}{conic}{\section{\index{conique|mainidx}Coniques}}
-\subsection{Le type \texorpdfstring{\og{}conic\fg{}}{«conic»}}
+\subsection{Le type \texorpdfstring{\og{}conic\fg{}}{Â«conicÂ»}}
 \subsubsection{Description}
-\Geo définit le type \code{conic} pour instancier une conique
-quelconque non dégénérée. S'il est tout à fait possible
+\Geo dÃ©finit le type \code{conic} pour instancier une conique
+quelconque non dÃ©gÃ©nÃ©rÃ©e. S'il est tout Ã  fait possible
 d'utiliser une instance de ce type, son existence est
-plutôt destinée au fonctionnement interne de l'extension; on préférera
-utiliser directement les types dérivés \code{circle}, \code{ellipse},
-\code{parabola} et \code{hyperbola} décrits ultérieurement.
+plutÃ´t destinÃ©e au fonctionnement interne de l'extension; on prÃ©fÃ©rera
+utiliser directement les types dÃ©rivÃ©s \code{circle}, \code{ellipse},
+\code{parabola} et \code{hyperbola} dÃ©crits ultÃ©rieurement.
 
-Attardons nous cependant un peu sur sa structure afin d'en définir
-précisément les composantes:
+Attardons nous cependant un peu sur sa structure afin d'en dÃ©finir
+prÃ©cisÃ©ment les composantes:
 \begin{center}
   \begin{Vcolor}
     struct conic { real e, p, h; point F; line D; }
   \end{Vcolor}
 \end{center}
 \begin{itemize}
-\item \param{e} est l'excentricité;
-\item \param{F} est un foyer et \param{D} la directrice associée;
-\item \param{h} est la distance de \param{F} à \param{D};
-\item \param{p} est le paramètre, il vérifie l'égalité \param{p=he}.
+\item \param{e} est l'excentricitÃ©;
+\item \param{F} est un foyer et \param{D} la directrice associÃ©e;
+\item \param{h} est la distance de \param{F} Ã  \param{D};
+\item \param{p} est le paramÃ¨tre, il vÃ©rifie l'Ã©galitÃ© \param{p=he}.
 \end{itemize}
 
-Les deux principales routines pour définir une conique quelconque sont:
+Les deux principales routines pour dÃ©finir une conique quelconque sont:
 
 \begin{enumerate}
 \item \index{conic conic(point,l,real)}
     \begin{Vcolor}
     conic conic(point F, line l, real e)
   \end{Vcolor}
-  Retourne la conique de foyer \param{F} associé à la
-  directrice \param{l} et d'excentricité \param{e}; en voici un exemple d'utilisation:
+  Retourne la conique de foyer \param{F} associÃ© Ã  la
+  directrice \param{l} et d'excentricitÃ© \param{e}; en voici un exemple d'utilisation:
     \bvasy{conic_base}
 \item \index{conic(point,point,point,point,point)}
   \begin{Vcolor}
     conic conic(point M1, point M2, point M3, point M4, point M5)
   \end{Vcolor}
-  Retourne la conique non dégénérée passant par les
+  Retourne la conique non dÃ©gÃ©nÃ©rÃ©e passant par les
   points \param{M1}, \param{M2}, \param{M3}, \param{M4} et \param{M5}.
   \vasy{conic_5_points}
 \end{enumerate}
-On notera qu'il est aussi possible de définir une conique d'après son équation dans
-un repère spécifique, voir la section \href{#subsection.bqe}{Équations
-  de coniques}, et que d'autres façons de définir une conique sont
-implémentées par des routines renvoyant un type spécifique de conique
+On notera qu'il est aussi possible de dÃ©finir une conique d'aprÃ¨s son Ã©quation dans
+un repÃ¨re spÃ©cifique, voir la section \href{#subsection.bqe}{Ã‰quations
+  de coniques}, et que d'autres faÃ§ons de dÃ©finir une conique sont
+implÃ©mentÃ©es par des routines renvoyant un type spÃ©cifique de conique
 qu'il est ensuite possible de convertir en type \code{conic}; voir
 \href{#subsubsection.castingconic}{Coniques et \og{}casting\fg{}}.
 
 \subsubsection{Routines de base}
-Les routines suivantes peuvent être utilisées en remplaçant un objet
+Les routines suivantes peuvent Ãªtre utilisÃ©es en remplaÃ§ant un objet
 de type \code{conic} par l'un des types \code{circle}, \code{ellipse},
 \code{parabola} ou \code{hyperbola} sauf lorsque le mot clef
-\code{explicit} précède le type \code{conic} dans la définition de la
+\code{explicit} prÃ©cÃ¨de le type \code{conic} dans la dÃ©finition de la
 routine.
 
-On notera qu'en plus des routines décrites dans cette section
+On notera qu'en plus des routines dÃ©crites dans cette section
 s'ajoutent des routines retournant une \href{#section.abscissa}{abscisse}
 d'un point sur un objet de type \code{conic}.
 \begin{itemize}
@@ -1347,12 +1347,12 @@ d'un point sur un objet de type \code{conic}.
   \begin{Vcolor}
     conic changecoordsys(coordsys R, conic co)
   \end{Vcolor}
-  Retourne la même conique que \param{co} relativement au repère \param{R}.
+  Retourne la mÃªme conique que \param{co} relativement au repÃ¨re \param{R}.
 \item \index{coordsys(conic)}
   \begin{Vcolor}
     coordsys coordsys(conic co)
   \end{Vcolor}
-  Retourne le repère dans lequel est définie la conique \param{co}.
+  Retourne le repÃ¨re dans lequel est dÃ©finie la conique \param{co}.
 \item \index{canonicalcartesiansystem(explicit conic)}
   \begin{Vcolor}
     coordsys canonicalcartesiansystem(explicit conic co)
@@ -1360,7 +1360,7 @@ d'un point sur un objet de type \code{conic}.
   \index{canonicalcartesiansystem(parabola)}
   \index{canonicalcartesiansystem(ellipse)}
   \index{canonicalcartesiansystem(hyperbola)}
-  Retourne le repère canonique de la conique \param{co}.\\
+  Retourne le repÃ¨re canonique de la conique \param{co}.\\
   Les routines \code{canonicalcartesiansystem(ellipse)},
   \code{canonicalcartesiansystem(parabola)} et\linebreak
   \code{canonicalcartesiansystem(hyperbola)} sont aussi disponibles.\\
@@ -1370,9 +1370,9 @@ d'un point sur un objet de type \code{conic}.
   \begin{Vcolor}
     int conicnodesnumber(conic co, real angle1, real angle2, bool dir=CCW)
   \end{Vcolor}
-  Retourne le nombre de n\oe{}uds utilisés pour convertir la
+  Retourne le nombre de n\oe{}uds utilisÃ©s pour convertir la
   conique \param{co} en \code{path} entre les angles \param{angle1}
-  et \param{angle2} donnés dans le sens de parcours \param{dir}.
+  et \param{angle2} donnÃ©s dans le sens de parcours \param{dir}.
 \item \index{intersectionpoints(conic,conic)}
   \begin{Vcolor}
     point[] intersectionpoints(conic co1, conic co2)
@@ -1386,20 +1386,20 @@ d'un point sur un objet de type \code{conic}.
   \end{Vcolor}
   Retourne, sous forme d'un tableau, les points d'intersections de la
   droite \param{l} avec la conique \param{co}.\\
-  La routine \code{intersectionpoints(conic,line)} est aussi définie.
+  La routine \code{intersectionpoints(conic,line)} est aussi dÃ©finie.
 \item \index{intersectionpoints(conic,triangle,bool)}\index{intersectionpoints(triangle,conic,bool)}
   \begin{Vcolor}
     point[] intersectionpoints(triangle t, conic co, bool extended=false)
   \end{Vcolor}
   Retourne, sous forme d'un tableau, les points d'intersections du
   triangle \param{t} avec la conique \param{co}. Si \param{extended}
-  vaut \code{true} les côtés du triangle sont considérés comme des
+  vaut \code{true} les cÃ´tÃ©s du triangle sont considÃ©rÃ©s comme des
   droites; voir la section \href{#section.triangles}{Triangles}.\\
-  La routine \code{intersectionpoints(conic,triangle,bool)} est aussi définie.
+  La routine \code{intersectionpoints(conic,triangle,bool)} est aussi dÃ©finie.
 \end{itemize}
 
-\subsubsection{Opérateurs}
-Comme pour les routines précédentes, les opérateurs décrits ici peuvent être utilisées en remplaçant un objet
+\subsubsection{OpÃ©rateurs}
+Comme pour les routines prÃ©cÃ©dentes, les opÃ©rateurs dÃ©crits ici peuvent Ãªtre utilisÃ©es en remplaÃ§ant un objet
 de type \code{conic} par l'un des types \code{circle}, \code{ellipse},
 \code{parabola} ou \code{hyperbola}.
 \begin{itemize}
@@ -1408,7 +1408,7 @@ de type \code{conic} par l'un des types \code{circle}, \code{ellipse},
     bool operator @(point M, conic co)
   \end{Vcolor}
   Autorise le code \code{point @ conic}.\\
-  Retourne \code{true} \ssi le point \param{M} appartient à la conique \param{co}.
+  Retourne \code{true} \ssi le point \param{M} appartient Ã  la conique \param{co}.
 \item \index{*(transform,conic)}
   \begin{Vcolor}
     conic operator *(transform t, conic co)
@@ -1419,33 +1419,33 @@ de type \code{conic} par l'un des types \code{circle}, \code{ellipse},
     conic operator +(conic co, explicit point M)
   \end{Vcolor}
   Autorise le code \code{conic+point}.\\
-  Retourne le translaté de la conique \param{co} par le vecteur
+  Retourne le translatÃ© de la conique \param{co} par le vecteur
   $\vec{O\mparam{M}}$.\\
-  La routine \code{-(conic,explicit point)} est aussi définie.
+  La routine \code{-(conic,explicit point)} est aussi dÃ©finie.
 \item \index{+(conic,explicit pair)}\index{-(conic,explicit pair)}
   \begin{Vcolor}
     conic operator +(conic co, explicit pair m)
   \end{Vcolor}
   Autorise le code \code{conic+pair}.\\
-  Retourne le translaté de la conique \param{co} par le vecteur
-  $\vec{\mparam{Om}}$; $m$ représente alors les coordonnées d'un point
-  défini relativement au repère dans lequel est défini la conique.\\
-  La routine \code{-(conic,explicit pair)} est aussi définie.
+  Retourne le translatÃ© de la conique \param{co} par le vecteur
+  $\vec{\mparam{Om}}$; $m$ reprÃ©sente alors les coordonnÃ©es d'un point
+  dÃ©fini relativement au repÃ¨re dans lequel est dÃ©fini la conique.\\
+  La routine \code{-(conic,explicit pair)} est aussi dÃ©finie.
 \item \index{+(conic,explicit vector)}\index{-(conic,explicit vector)}
   \begin{Vcolor}
     conic operator +(conic co, explicit vector u)
   \end{Vcolor}
   Autorise le code \code{conic+vector}.\\
-  Retourne le translaté de la conique \param{co} par le vecteur
+  Retourne le translatÃ© de la conique \param{co} par le vecteur
   $\vec{\mparam{u}}$.\\
-  La routine \code{-(conic,explicit vector)} est aussi définie.
+  La routine \code{-(conic,explicit vector)} est aussi dÃ©finie.
 \end{itemize}
 
-\hyperdef{subsubsection}{bqe}{\subsubsection{\index{équation!conique|mainidx}Équations
+\hyperdef{subsubsection}{bqe}{\subsubsection{\index{Ã©quation!conique|mainidx}Ã‰quations
     de coniques}}
 Le type \code{bqe}, pour \emph{Bivariate Quadratic Equation}, permet
-d'instancier un objet représentant une équation de conique dans un
-repère donné. Sa structure est la suivante:
+d'instancier un objet reprÃ©sentant une Ã©quation de conique dans un
+repÃ¨re donnÃ©. Sa structure est la suivante:
 \begin{center}
   \begin{Vcolor}
     struct bqe
@@ -1455,11 +1455,11 @@ repère donné. Sa structure est la suivante:
     }
   \end{Vcolor}
 \end{center}
-\noindent où:
+\noindent oÃ¹:
 \begin{itemize}
-\item \param{a} est un tableau des six coefficients d'une équation de
-  la conique donnée sous la forme \[\mparam{a[0]}x^2 + \mparam{a[1]}xy + \mparam{a[2]}y^2 + \mparam{a[3]}x + \mparam{a[4]}y + \mparam{a[5]}=0\]
-\item \param{coordsys} est le repère dans lequel cette équation est donnée.
+\item \param{a} est un tableau des six coefficients d'une Ã©quation de
+  la conique donnÃ©e sous la forme \[\mparam{a[0]}x^2 + \mparam{a[1]}xy + \mparam{a[2]}y^2 + \mparam{a[3]}x + \mparam{a[4]}y + \mparam{a[5]}=0\]
+\item \param{coordsys} est le repÃ¨re dans lequel cette Ã©quation est donnÃ©e.
 \end{itemize}
 Voici la liste des routines concernant les objets de type \code{bqe}:
 \begin{itemize}
@@ -1467,39 +1467,39 @@ Voici la liste des routines concernant les objets de type \code{bqe}:
   \begin{Vcolor}
     bqe bqe(coordsys R=currentcoordsys, real a, real b, real c, real d, real e, real f)
   \end{Vcolor}
-  Retourne un objet de type \code{bqe} représentant l'équation
+  Retourne un objet de type \code{bqe} reprÃ©sentant l'Ã©quation
   $\mparam{a}x^2 + \mparam{b}xy + \mparam{c}y^2 + \mparam{d}x + \mparam{e}y + \mparam{f}=0$
-  relativement au repère \param{R}.
+  relativement au repÃ¨re \param{R}.
 \item \index{changecoordsys(coordsys,bqe)}
   \begin{Vcolor}
     bqe changecoordsys(coordsys R, bqe bqe)
   \end{Vcolor}
-  Retourne un objet de type \code{bqe} relatif au repère \param{R} et
-  représentant la même conique que celle représentée par le
-  paramètre \param{bqe}. Cette routine permet donc d'effectuer un
-  changement de repère dans une équation quadratique à deux variables.
+  Retourne un objet de type \code{bqe} relatif au repÃ¨re \param{R} et
+  reprÃ©sentant la mÃªme conique que celle reprÃ©sentÃ©e par le
+  paramÃ¨tre \param{bqe}. Cette routine permet donc d'effectuer un
+  changement de repÃ¨re dans une Ã©quation quadratique Ã  deux variables.
 \item \index{bqe(point,point,point,point,point)}
   \begin{Vcolor}
     bqe bqe(point M1, point M2, point M3, point M4, point M5)
   \end{Vcolor}
-  Retourne l'équation de la conique passant par les cinq
+  Retourne l'Ã©quation de la conique passant par les cinq
   points \param{M1}, \param{M2}, \param{M3}, \param{M4}
   et \param{M5}.\\
-  Si les points sont définis relativement au même repère, l'équation
-  est relative à ce repère; dans le cas contraire l'équation est
-  relative au repère par défaut \code{defaultcoordsys}.
+  Si les points sont dÃ©finis relativement au mÃªme repÃ¨re, l'Ã©quation
+  est relative Ã  ce repÃ¨re; dans le cas contraire l'Ã©quation est
+  relative au repÃ¨re par dÃ©faut \code{defaultcoordsys}.
 \item \index{conictype(bqe)}
   \begin{Vcolor}
     string conictype(bqe bqe)
   \end{Vcolor}
-  Retourne le type de conique représentée par \param{bqe}. Les valeurs
-  retournées possibles sont \code{"degenerated"}, \code{"ellipse"},
+  Retourne le type de conique reprÃ©sentÃ©e par \param{bqe}. Les valeurs
+  retournÃ©es possibles sont \code{"degenerated"}, \code{"ellipse"},
   \code{"parabola"} et \code{"hyperbola"}.
 \item \index{equation(explicit conic)}\index{equation(ellispe)}\index{equation(parabola)}\index{hyperbola}
   \begin{Vcolor}
     bqe equation(explicit conic co)
   \end{Vcolor}
-  Retourne, sous forme d'objet de type \code{bqe}, l'équation de la
+  Retourne, sous forme d'objet de type \code{bqe}, l'Ã©quation de la
   conique \param{co}.\\
   Les routines \code{equation(ellispe)}, \code{equation(parabola)} et
   \code{equation(hyperbola)} sont aussi disponibles.
@@ -1507,45 +1507,45 @@ Voici la liste des routines concernant les objets de type \code{bqe}:
   \begin{Vcolor}
     bqe canonical(bqe bqe)
   \end{Vcolor}
-  Retourne l'équation de la conique représentée par \param{bqe} dans
-  le repère canonique de la dite conique.
+  Retourne l'Ã©quation de la conique reprÃ©sentÃ©e par \param{bqe} dans
+  le repÃ¨re canonique de la dite conique.
 \item \index{conic(bqe)}
   \begin{Vcolor}
     conic conic(bqe bqe)
   \end{Vcolor}
-  Retourne la conique dont une équation est représentée par \param{bqe}.
+  Retourne la conique dont une Ã©quation est reprÃ©sentÃ©e par \param{bqe}.
 \end{itemize}
 
 \hyperdef{subsubsection}{castingconic}{\subsubsection{\index{casting!conique|mainidx}Coniques
     et \texorpdfstring{\og{}casting\fg{}}{casting}}}
-Comme il a déjà été mentionné dans les sections précédentes, le type
-\code{conic} permet d'instancier un objet représentant une conique
-quelconque. Il est toutefois possible, et souvent recommandé, de
-convertir un objet représentant une conique quelconque en une conique
-d'un type spécifique afin d'utiliser les propriétés et routines
+Comme il a dÃ©jÃ  Ã©tÃ© mentionnÃ© dans les sections prÃ©cÃ©dentes, le type
+\code{conic} permet d'instancier un objet reprÃ©sentant une conique
+quelconque. Il est toutefois possible, et souvent recommandÃ©, de
+convertir un objet reprÃ©sentant une conique quelconque en une conique
+d'un type spÃ©cifique afin d'utiliser les propriÃ©tÃ©s et routines
 qui lui sont propres.
 
-Les types spécifiques de coniques sont \code{circle}, lui même un cas
+Les types spÃ©cifiques de coniques sont \code{circle}, lui mÃªme un cas
 particulier du type \code{ellipse}, \code{parabola} et
-\code{hyperbola}; ces type seront décrits dans les sections suivantes.
+\code{hyperbola}; ces type seront dÃ©crits dans les sections suivantes.
 
-Ainsi dans l'exemple suivant la conique \param{co} est définie par un
-foyer et la directrice correspondante avec une excentricité inférieure à
+Ainsi dans l'exemple suivant la conique \param{co} est dÃ©finie par un
+foyer et la directrice correspondante avec une excentricitÃ© infÃ©rieure Ã 
 1. Comme cette conique est une ellipse, on peut affecter la
-variable \param{co} à une variable de type \code{ellipse} pour en
-récupérer les dimensions.
+variable \param{co} Ã  une variable de type \code{ellipse} pour en
+rÃ©cupÃ©rer les dimensions.
 \vasy{conic_ellipse}
 Du point de vue du fonctionnement interne de \geo, certaines routines
-s'appliquant à un objet de type \code{conic} font appel en fait à des
-routines équivalentes s'appliquant à une conique spécifique; cela permet
-d'optimiser certains calculs. Inversement, des routines relatives à un
-type spécifique de conique utilisent de façon sous-jacente des
-routines relatives à une conique quelconque.\\
-Les types spécifiques de coniques sont décrits ci-après.
+s'appliquant Ã  un objet de type \code{conic} font appel en fait Ã  des
+routines Ã©quivalentes s'appliquant Ã  une conique spÃ©cifique; cela permet
+d'optimiser certains calculs. Inversement, des routines relatives Ã  un
+type spÃ©cifique de conique utilisent de faÃ§on sous-jacente des
+routines relatives Ã  une conique quelconque.\\
+Les types spÃ©cifiques de coniques sont dÃ©crits ci-aprÃ¨s.
 
 \hyperdef{subsection}{circle}{\subsection{\index{cercle|mainidx}\index{ellipse|mainidx}Cercles}}
 \subsubsection{Routines de bases}
-En dehors des routines concernant les objets de type \code{conic}, voici d'autres routines permettant de définir un
+En dehors des routines concernant les objets de type \code{conic}, voici d'autres routines permettant de dÃ©finir un
 objet de type \code{circle}:
 \begin{itemize}
 \item \index{circle(explicit point,real)}\index{circle(pair,real)}%
@@ -1555,25 +1555,25 @@ objet de type \code{circle}:
   Renvoie le cercle de centre \param{C} et de rayon \param{r}.\\
   Depuis la version 2{.}10 d'\asymptote la routine
   \code{circle circle(pair C, real r)} n'est
-  plus redéfinie afin de renvoyer un objet de type \code{circle} comme
-  c'était le cas dans les versions précédentes; ceci oblige à
-  utiliser le \og{}casting\fg{} de \code{pair} à \code{point} dans le code
+  plus redÃ©finie afin de renvoyer un objet de type \code{circle} comme
+  c'Ã©tait le cas dans les versions prÃ©cÃ©dentes; ceci oblige Ã 
+  utiliser le \og{}casting\fg{} de \code{pair} Ã  \code{point} dans le code
   \code{circle cle = circle((point)(1,2), 2)} et permet ainsi d'obtenir le
-  cercle de centre \code((1,2)) dans le repère
+  cercle de centre \code((1,2)) dans le repÃ¨re
   courant \param{currentcoordsys} et rayon 2.
 
-  L'exemple suivant illustre la différence entre le code
-  \code{circle((point)(0,0),R);} qui définit le cercle bleu dans le repère courant et
-  \code{circle(point(defaultcoordsys,(0,0)), R);} qui définit le cercle rouge dans
-  le repère par défaut; évidemment si la
-  variable \param{currentcoordsys} n'est pas modifiée les deux codes
-  sont équivalents.
+  L'exemple suivant illustre la diffÃ©rence entre le code
+  \code{circle((point)(0,0),R);} qui dÃ©finit le cercle bleu dans le repÃ¨re courant et
+  \code{circle(point(defaultcoordsys,(0,0)), R);} qui dÃ©finit le cercle rouge dans
+  le repÃ¨re par dÃ©faut; Ã©videmment si la
+  variable \param{currentcoordsys} n'est pas modifiÃ©e les deux codes
+  sont Ã©quivalents.
     \bvasy{circlepointradius}
 \item \index{circle(point A, point B)}%
     \begin{Vcolor}
     circle circle(point A, point B)
   \end{Vcolor}
-  Renvoie le cercle de diamètre \param{AB}.
+  Renvoie le cercle de diamÃ¨tre \param{AB}.
 \item \index{circle(point A, point B)}\index{circumcircle(point,point,point)}%
     \begin{Vcolor}
     circle circle(point A, point B, point C)
@@ -1590,53 +1590,53 @@ objet de type \code{circle}:
     \begin{Vcolor}
     circle excircle(point A, point B, point C)
   \end{Vcolor}
-  Renvoie le cercle exinscrit du triangle ABC tangent à (AB).
+  Renvoie le cercle exinscrit du triangle ABC tangent Ã  (AB).
 \end{itemize}
 \index{clipdraw(picture,Label,path,align,pen,arrowbar,arrowbar,real,real,Label,marker)}%
 Dans l'exemple suivant on remarquera l'utilisation de la routine
 \code{clipdraw} qui trace un chemin en se restreignant aux dimensions de l'image
 finale.
 \bvasy{circles_point}
-Des routines spécifiques à la géométrie du triangle permettent
-d'obtenir le même résultat de façon plus élégante, voir la section \href{#section.triangle}{Triangles}.
+Des routines spÃ©cifiques Ã  la gÃ©omÃ©trie du triangle permettent
+d'obtenir le mÃªme rÃ©sultat de faÃ§on plus Ã©lÃ©gante, voir la section \href{#section.triangle}{Triangles}.
 
 \subsubsection{\texorpdfstring{Du type \og{}circle\fg{} au type
-    \og{}path\fg{}}{Du type «circle» au type «path»}}
+    \og{}path\fg{}}{Du type Â«circleÂ» au type Â«pathÂ»}}
 La conversion d'un objet de type \code{circle} en \code{path}
-s'effectue suivant les règles suivantes:
+s'effectue suivant les rÃ¨gles suivantes:
 \begin{itemize}
-\item le chemin est cyclique, orienté dans le sens trigonométrique;
-\item le premier point du chemin, celui renvoyé par la
+\item le chemin est cyclique, orientÃ© dans le sens trigonomÃ©trique;
+\item le premier point du chemin, celui renvoyÃ© par la
   routine \code{pair point(path g, real t)} pour \param{t=0}, est le
   point d'intersection du cercle avec la demi-droite issue du centre
-  et de direction \og{}le premier vecteur du repère dans lequel le
-  cercle est défini\fg{};
+  et de direction \og{}le premier vecteur du repÃ¨re dans lequel le
+  cercle est dÃ©fini\fg{};
 \item le nombre de points du chemin est fonction du rayon du cercle; il
-  est calculé par la routine\linebreak
+  est calculÃ© par la routine\linebreak
   \index{circlenodesnumber(real)}\code{int circlenodesnumber(real r)}
-  qui dépend elle-même de la variable
+  qui dÃ©pend elle-mÃªme de la variable
   \index{circlenodesnumberfactor}\code{circlenodesnumberfactor}.
 \end{itemize}
 \bvasy{circle_dot}
-\subsubsection{Les opérateurs}
-En dehors des opérateurs s'appliquant aux objets de type \code{conic},
-voici la liste d'autres opérateurs définis pour les objets de type \code{circle}.
+\subsubsection{Les opÃ©rateurs}
+En dehors des opÃ©rateurs s'appliquant aux objets de type \code{conic},
+voici la liste d'autres opÃ©rateurs dÃ©finis pour les objets de type \code{circle}.
 \begin{itemize}
 \item \index{*(real,explicit circle)}\index{/(explicit circle,real)}%
     \begin{Vcolor}
     circle operator *(real x, explicit circle c)
   \end{Vcolor}
   Autorise le code \code{real*circle}.\\
-  Renvoie le cercle de même centre que \param{c} et de rayon \param{x}
+  Renvoie le cercle de mÃªme centre que \param{c} et de rayon \param{x}
   fois celui de \param{c}.\\
-  L'opérateur \code{circle operator /(explicit circle c, real x)} est
-  aussi défini.
+  L'opÃ©rateur \code{circle operator /(explicit circle c, real x)} est
+  aussi dÃ©fini.
 \item \index{\circonflexe(point M, explicit circle c)}%
     \begin{Vcolor}
     real operator ^(point M, explicit circle c)
   \end{Vcolor}
   Autorise le code \code{point\circonflexe{}circle}.\\
-  Renvoie la puissance de \param{M} par rapport à \param{c}.
+  Renvoie la puissance de \param{M} par rapport Ã  \param{c}.
 \item \index{@(point,explicit circle)}%
     \begin{Vcolor}
     bool operator @(point M, explicit circle c)
@@ -1649,20 +1649,20 @@ voici la liste d'autres opérateurs définis pour les objets de type \code{circle}
   \end{Vcolor}
   Permet le \og{}casting\fg{} \code{circle} vers \code{ellipse}.\\
   Le \og{}casting\fg{} de \code{ellipse} vers \code{circle} est aussi
-  défini.\\
-  On notera que l'opérateur \code{*(transform t, circle c)} n'existe pas;
-  par le jeu du \og{}casting\fg{}, c'est l'opérateur
-  \code{ellipse operator *(transform t, ellipse el)} qui est utilisé
-  lors de l'exécution du code \code{transform*circle}.\\
+  dÃ©fini.\\
+  On notera que l'opÃ©rateur \code{*(transform t, circle c)} n'existe pas;
+  par le jeu du \og{}casting\fg{}, c'est l'opÃ©rateur
+  \code{ellipse operator *(transform t, ellipse el)} qui est utilisÃ©
+  lors de l'exÃ©cution du code \code{transform*circle}.\\
   Ainsi le code \code{scale(2)*circle} renvoie un objet de type
-  \code{ellipse} mais il est possible d'écrire
+  \code{ellipse} mais il est possible d'Ã©crire
   \code{circle=scale(2)*circle} alors que le code
-  \code{circle=xscale(2)*circle} génère une erreur.
+  \code{circle=xscale(2)*circle} gÃ©nÃ¨re une erreur.
 \end{itemize}
 
 \subsubsection{Autres routines}
 En dehors des routines s'appliquant aux objets de type \code{conic},
-voici la liste des routines spécifiques aux objets de type \code{circle}.
+voici la liste des routines spÃ©cifiques aux objets de type \code{circle}.
 \begin{itemize}
 \item \index{radicalcenter(circle,circle)}%
     \begin{Vcolor}
@@ -1670,7 +1670,7 @@ voici la liste des routines spécifiques aux objets de type \code{circle}.
   \end{Vcolor}
   Renvoie le pied de l'axe radical des deux cercles \param{c1}
   et \param{c2}.\\
-  Le repère dans lequel est défini le point renvoyé est celui de \param{c1}.
+  Le repÃ¨re dans lequel est dÃ©fini le point renvoyÃ© est celui de \param{c1}.
 \item \index{radicalcenter(circle,circle,circle)}%
     \begin{Vcolor}
     point radicalcenter(circle c1, circle c2, circle c3)
@@ -1687,51 +1687,51 @@ voici la liste des routines spécifiques aux objets de type \code{circle}.
     \begin{Vcolor}
     line[] tangents(circle c, point M)
   \end{Vcolor}
-  Renvoie les tangentes éventuelles à \param{c} passant
+  Renvoie les tangentes Ã©ventuelles Ã  \param{c} passant
   par \param{M}.
   \bvasy{tangentes_point_cercle}
 \item \index{tangent(circle,point)}%
   \begin{Vcolor}
     line tangent(circle c, point M)
   \end{Vcolor}
-  Renvoie la tangente à \param{c} au point d'intersection de \param{c}
+  Renvoie la tangente Ã  \param{c} au point d'intersection de \param{c}
   avec la demi-droite d'origine \param{c.C} passant par \param{M}. Le
-  point de tangence peut être obtenu avec la routine
+  point de tangence peut Ãªtre obtenu avec la routine
   \code{point(circle c, point M)}\index{point(circle,point)}.
 \item \index{tangent(circle,explicit vector)}%
   \begin{Vcolor}
     line tangent(circle c, explicit vector v)
   \end{Vcolor}
-  Renvoie la tangente à \param{c} au point d'intersection de \param{c}
-  avec la demi-droite d'origine \param{c.C} orientée par le
-  vecteur \param{v}. Le point de tangence peut être obtenu avec la routine
+  Renvoie la tangente Ã  \param{c} au point d'intersection de \param{c}
+  avec la demi-droite d'origine \param{c.C} orientÃ©e par le
+  vecteur \param{v}. Le point de tangence peut Ãªtre obtenu avec la routine
   \code{point(circle c, vector v)}\index{point(circle,vector)}.
   \bvasy{tgt_circle_vector}
 \item \index{tangent(circle,abscissa)}
   \begin{Vcolor}
     line tangent(circle c, abscissa x)
   \end{Vcolor}
-  Retourne la tangente à \param{c} au point de \param{c}
+  Retourne la tangente Ã  \param{c} au point de \param{c}
   d'\href{#section.abscissa}{abscisse} \param{x}.
 \item \index{point(explicit circle,real)}
   \begin{Vcolor}
     point point(explicit circle c, real x)
   \end{Vcolor}
-  Retourne le \code{point} de \param{c} marquant le même
-  point que le \code{pair} retourné par le code
+  Retourne le \code{point} de \param{c} marquant le mÃªme
+  point que le \code{pair} retournÃ© par le code
   \code{point((path)c,x)}.
 \item \index{relpoint(explicit circle,real)}
   \begin{Vcolor}
     point relpoint(explicit circle c, real x)
   \end{Vcolor}
-  Retourne le point de \param{c} correspondant à la fraction \param{x}
-  du périmètre de \param{c}.
+  Retourne le point de \param{c} correspondant Ã  la fraction \param{x}
+  du pÃ©rimÃ¨tre de \param{c}.
   \bvasy{relpoint_circle}
 \item \index{angpoint(explicit circle,real)}
   \begin{Vcolor}
     point angpoint(explicit circle c, real x)
   \end{Vcolor}
-  Retourne le point de \param{c} d'angle \param{x} degrés.
+  Retourne le point de \param{c} d'angle \param{x} degrÃ©s.
   \bvasy{angpoint_circle}
 \item \index{curpoint(explicit circle,real)}
   \begin{Vcolor}
@@ -1740,39 +1740,39 @@ voici la liste des routines spécifiques aux objets de type \code{circle}.
   Retourne le point de \param{c} dont l'abscisse curviligne est \param{x}.
   \bvasy{curpoint_circle}
 \end{itemize}
-D'autres routines sont définies pour les objets de type \code{circle},
+D'autres routines sont dÃ©finies pour les objets de type \code{circle},
 elles sont accessibles via des routines utilisant le type \code{ellipse}.
 
 Pour terminer cette section notons qu'il est possible d'utiliser un objet
 de type \code{circle} comme une inversion\index{inversion}. On pourra se
-reporter à la section \href{#section.inversion}{Inversions} pour plus
-de détails.
+reporter Ã  la section \href{#section.inversion}{Inversions} pour plus
+de dÃ©tails.
 
-Voici quelques exemples d'utilisations des routines précédemment décrites:
+Voici quelques exemples d'utilisations des routines prÃ©cÃ©demment dÃ©crites:
 \begin{itemize}
 \item Construction des deux cercles passant par les points $A$ et $B$
-  donnés et tangents à la droite $(d)$ donnée.
+  donnÃ©s et tangents Ã  la droite $(d)$ donnÃ©e.
   \vasy{circle_2pt_tangent}
 \item \hypertarget{exemple_inversion}{Deux points} du plan et leurs inverses sont cocycliques,
   sur le cercle othogonal au cercle d'inversion.
   \bvasy{inversion_pre}
-\item Étant donnés trois cercles $\mathscr{C}_{1}$,
+\item Ã‰tant donnÃ©s trois cercles $\mathscr{C}_{1}$,
   $\mathscr{C}_{2}$ et $\mathscr{C}_{3}$ tels que $r_{3}<r_{1}$ et
-  $r_{3}<r_{2}$, comment construire des cercles simultanément tangents à ces
+  $r_{3}<r_{2}$, comment construire des cercles simultanÃ©ment tangents Ã  ces
   cercles ?
 
-  Le principe de la construction illustrée ci-après est le suivant:
+  Le principe de la construction illustrÃ©e ci-aprÃ¨s est le suivant:
   \begin{itemize}
   \item On note $S_{1}$ et $S_{2}$ les inversions de rapport positif
     transformant $\mathscr{C}_{2}$ en $\mathscr{C}_{3}$ et $\mathscr{C}_{1}$ en
     $\mathscr{C}_{3}$ respectivement;
-  \item on considère un point $M$ sur le cercle $\mathscr{C}_{3}$ et
+  \item on considÃ¨re un point $M$ sur le cercle $\mathscr{C}_{3}$ et
     l'on note $M_{1}$ et $M_{2}$ son image par $S_{1}$ et $S_{2}$ respectivement;
   \item on note $\mathscr{C}$ le cercle passant par $M$, $M_{1}$ et $M_{2}$;
   \item l'axe radical $(d)$ des cercles $\mathscr{C}_{3}$ et
     $\mathscr{C}$ coupe la droite des centres d'inversions
     $(S_{1}S_{2})$ en $H$; on note $\mathscr{C'}$ le cercle de
-    diamètre $\left[HO_{3}\right]$ où $O_{3}$ est le centre de $\mathscr{C}_{3}$;
+    diamÃ¨tre $\left[HO_{3}\right]$ oÃ¹ $O_{3}$ est le centre de $\mathscr{C}_{3}$;
   \item le cercle $\mathscr{C'}$ coupe $\mathscr{C}_{3}$ en deux
     points $T_{0}$ et $T_{1}$;
   \item le cercle passant par $T_{0}$ et par les images $T'_{0}$ et
@@ -1784,25 +1784,25 @@ Voici quelques exemples d'utilisations des routines précédemment décrites:
   \end{itemize}
     \vasy{apollonius}
 \item En prenant les quatre combinaisons possibles pour les inversions
-  $S_{1}$ et $S_{2}$, on obtient de même les huit cercles tangents à trois
-  cercles donnés:
+  $S_{1}$ et $S_{2}$, on obtient de mÃªme les huit cercles tangents Ã  trois
+  cercles donnÃ©s:
     \vasy{all_apollonius}
 \end{itemize}
 
 \hyperdef{subsection}{ellipse}{\subsection{\index{ellipse|mainidx}\index{ellipse|mainidx}Ellipses}}
-Le type \code{ellipse} ne réserve pas de surprise, il permet
-d'instancier un objet représentant une ellipse. Comme le type \code{circle}
+Le type \code{ellipse} ne rÃ©serve pas de surprise, il permet
+d'instancier un objet reprÃ©sentant une ellipse. Comme le type \code{circle}
 est un cas particulier du type \code{ellipse} il est possible
-d'instancier un cercle en tant qu'une ellipse d'excentricité nulle et,
-inversement, d'instancier une ellipse d'excentricité nulle en tant
+d'instancier un cercle en tant qu'une ellipse d'excentricitÃ© nulle et,
+inversement, d'instancier une ellipse d'excentricitÃ© nulle en tant
 qu'un cercle. Enfin, comme il existe une correspondance biunivoque
 entre les objets de type \code{ellipse} et ceux de type \code{conic}
-ayant une excentricité strictement inférieure à $1$, les objets de
-type \code{ellipse} héritent des routines et opérateurs définis pour
+ayant une excentricitÃ© strictement infÃ©rieure Ã  $1$, les objets de
+type \code{ellipse} hÃ©ritent des routines et opÃ©rateurs dÃ©finis pour
 ceux de type \code{conic}.
 
 \subsubsection{Routines de bases}
-Voici la liste des autres routines permettant de définir un objet de type
+Voici la liste des autres routines permettant de dÃ©finir un objet de type
 \code{ellipse}.
 \begin{itemize}
 \item \index{ellipse(point,point,real)}
@@ -1821,94 +1821,94 @@ Voici la liste des autres routines permettant de définir un objet de type
     ellipse ellipse(point C, real a, real b, real angle=0)
   \end{Vcolor}
   Retourne l'ellipse de centre \param{C} dont le demi grand axe
-  a pour longueur \param{a} dans la direction donnée par \param{dir(angle)} et dont
+  a pour longueur \param{a} dans la direction donnÃ©e par \param{dir(angle)} et dont
   le demi petit axe a pour longueur \param{b}.
   \bvasy{ellipses_angle}
 \end{itemize}
 \subsubsection{\texorpdfstring{Du type \og{}ellipse\fg{} au type
-    \og{}path\fg{}}{Du type «ellipse» au type «path»}}
+    \og{}path\fg{}}{Du type Â«ellipseÂ» au type Â«pathÂ»}}
 La conversion d'un objet de type \code{ellipse} en \code{path}
-s'effectue suivant les règles suivantes:
+s'effectue suivant les rÃ¨gles suivantes:
 \begin{itemize}
-\item le chemin est cyclique, orienté dans le sens trigonométrique;
-\item le premier point, celui renvoyé par la
+\item le chemin est cyclique, orientÃ© dans le sens trigonomÃ©trique;
+\item le premier point, celui renvoyÃ© par la
   routine \code{pair point(path g, real t)} pour \param{t=0}, est le
   point d'intersection de la demi-droite focale $[F_{1}F_{2})$ avec l'ellipse;
 \item le nombre de n\oe{}uds du chemin est fonction des longueurs des
-  axes de l'ellipse; il est calculé par la routine
+  axes de l'ellipse; il est calculÃ© par la routine
   \index{ellipsenodesnumber(real,real)}\code{int ellipsenodesnumber(real a, real b)}
-  qui dépend elle-même de la variable
+  qui dÃ©pend elle-mÃªme de la variable
   \index{ellipsenodesnumberfactor}\code{ellipsenodesnumberfactor};
-\item les n\oe{}uds du chemin sont définis en coordonnées polaires
-  avec des angles donnés relativement au centre de l'ellipse et
-  uniformément répartis dans l'intervalle $\left[0\,;\,360\right[$.
+\item les n\oe{}uds du chemin sont dÃ©finis en coordonnÃ©es polaires
+  avec des angles donnÃ©s relativement au centre de l'ellipse et
+  uniformÃ©ment rÃ©partis dans l'intervalle $\left[0\,;\,360\right[$.
 \end{itemize}
 \bvasy{ellipse_dot}
 \subsubsection{Autres routines}
 En dehors des routines s'appliquant aux objets de type \code{conic},
-voici la liste des routines spécifiques aux objets de type
+voici la liste des routines spÃ©cifiques aux objets de type
 \code{ellipse}.
 \begin{itemize}
 \item \index{focusToCenter(ellipse,real)}\index{centerToFocus(ellipse,real)}
   \begin{Vcolor}
     real centerToFocus(ellipse el, real a)
   \end{Vcolor}
-  Permet de convertir un angle donné relativement au centre de
+  Permet de convertir un angle donnÃ© relativement au centre de
   l'ellipse en l'angle relatif au premier foyer.\\
-  La routine \code{real focusToCenter(ellipse,real)} est aussi définie.
+  La routine \code{real focusToCenter(ellipse,real)} est aussi dÃ©finie.
 \item \index{arclength(ellipse,real,real,bool,polarconicroutine)}
   \begin{Vcolor}
     real arclength(ellipse el, real angle1, real angle2,
     bool direction=CCW,
     polarconicroutine polarconicroutine=currentpolarconicroutine)
   \end{Vcolor}
-  Renvoie la longueur de l'arc d'ellipse représenté par \param{el}
+  Renvoie la longueur de l'arc d'ellipse reprÃ©sentÃ© par \param{el}
   entre les angles \param{angle1} et \param{angle2} parcouru dans le
   sens \param{direction}.\\
   \param{polarconicroutine}\index{polarconicroutine} peut prendre les
-  valeurs \code{arcfromfocus}\index{arcfromfocus}, qui est la valeur par défaut de\linebreak
+  valeurs \code{arcfromfocus}\index{arcfromfocus}, qui est la valeur par dÃ©faut de\linebreak
   \code{currentpolarconicroutine}, ou
   \code{arcfromcenter}\index{arcfromcenter}; dans le premier cas les
-  angles sont donnés relativement au premier foyer, dans le
-  second, ils sont donnés relativement au centre de l'ellipse.
+  angles sont donnÃ©s relativement au premier foyer, dans le
+  second, ils sont donnÃ©s relativement au centre de l'ellipse.
 \item \index{tangents(ellipse,point)}
   \begin{Vcolor}
     line[] tangents(ellipse el, point M)
   \end{Vcolor}
-  Renvoie les tangentes éventuelles à \param{el} passant
+  Renvoie les tangentes Ã©ventuelles Ã  \param{el} passant
   par \param{M}.
   \bvasy{tangentes_point_ellipse}
 \item \index{tangent(ellipse,abscissa)}
   \begin{Vcolor}
     line tangent(ellipse el, abscissa x)
   \end{Vcolor}
-  Retourne la tangente à \param{el} au point de \param{el}
+  Retourne la tangente Ã  \param{el} au point de \param{el}
   d'\href{#section.abscissa}{abscisse} \param{x}.
 
-  L' exemple suivant illustre la définition d'une ellipse comme image
-  d'un cercle par une affinité et une propriété qui en résulte sur ses
+  L' exemple suivant illustre la dÃ©finition d'une ellipse comme image
+  d'un cercle par une affinitÃ© et une propriÃ©tÃ© qui en rÃ©sulte sur ses
   tangentes.
   \vasy{affinite_cercle_ellipse_tgtes}
 \item \index{point(explicit ellipse,real)}
   \begin{Vcolor}
     point point(explicit ellipse el, real x)
   \end{Vcolor}
-  Retourne le \code{point} de \param{el} marquant le même
-  point que le \code{pair} retourné par le code
+  Retourne le \code{point} de \param{el} marquant le mÃªme
+  point que le \code{pair} retournÃ© par le code
   \code{point((path)el,x)}.
 \item \index{relpoint(explicit ellipse,real)}
   \begin{Vcolor}
     point relpoint(explicit ellipse el, real x)
   \end{Vcolor}
-  Retourne le point de \param{el} correspondant à la fraction \param{x}
-  du périmètre de \param{el}.
+  Retourne le point de \param{el} correspondant Ã  la fraction \param{x}
+  du pÃ©rimÃ¨tre de \param{el}.
   \bvasy{relpoint_ellipse}
 \item \index{angpoint(explicit ellipse,real)}
   \begin{Vcolor}
     point angpoint(explicit ellipse el, real x,
     polarconicroutine polarconicroutine=currentpolarconicroutine)
   \end{Vcolor}
-  Retourne le point de \param{el} d'angle \param{x} degrés
+  Retourne le point de \param{el} d'angle \param{x} degrÃ©s
   depuis le centre de l'ellipse\linebreak
   si \param{polarconicroutine=fromCenter}, depuis le premier foyer
   si \param{polarconicroutine=fromFocus}.
@@ -1924,12 +1924,12 @@ voici la liste des routines spécifiques aux objets de type
 \hyperdef{subsection}{parabola}{\subsection{\index{parabole|mainidx}Paraboles}}
 C'est le type \code{parabola} qui permet d'instancier une parabole.
 Comme il existe une correspondance biunivoque entre les objets de type
-\code{parabola} et ceux de type \code{conic} ayant une excentricité
-égale à $1$, les objets de type \code{parabola} héritent des
-routines et opérateurs définis pour ceux de type \code{conic}.
+\code{parabola} et ceux de type \code{conic} ayant une excentricitÃ©
+Ã©gale Ã  $1$, les objets de type \code{parabola} hÃ©ritent des
+routines et opÃ©rateurs dÃ©finis pour ceux de type \code{conic}.
 
 \subsubsection{Routines de bases}
-Les routines disponibles pour définir une parabole sont:
+Les routines disponibles pour dÃ©finir une parabole sont:
 \begin{itemize}
 \item \index{parabola(point,line)}
   \begin{Vcolor}
@@ -1946,105 +1946,105 @@ Les routines disponibles pour définir une parabole sont:
     parabola parabola(point F, real a, real angle)
   \end{Vcolor}
   Renvoie la parabole de foyer \param{F}, de latus rectum \param{a}
-  (longueur de la corde focale perpendiculaire à l'axe de la parabole)
+  (longueur de la corde focale perpendiculaire Ã  l'axe de la parabole)
   et dont l'axe fait un angle de \param{angle} avec l'axe des
-  abscisses du repère dans lequel est défini le point \param{F}.
+  abscisses du repÃ¨re dans lequel est dÃ©fini le point \param{F}.
 \item \index{parabola(point,point,point,line)}
   \begin{Vcolor}
     parabola parabola(point M1, point M2, point M3, line l)
   \end{Vcolor}
   Renvoie la parabole passant par les
   points \param{M1}, \param{M2}, \param{M3} et dont la directrice est
-  parallèle à la droite \param{l}.
+  parallÃ¨le Ã  la droite \param{l}.
   \bvasy{parabole_3_points}
 \end{itemize}
 
 \subsubsection{\texorpdfstring{Du type \og{}parabola\fg{} au type
-    \og{}path\fg{}}{Du type «parabola» au type «path»}}
+    \og{}path\fg{}}{Du type Â«parabolaÂ» au type Â«pathÂ»}}
 La conversion d'un objet \param{P} de type \code{parabola} en \code{path}
-s'effectue suivant les règles suivantes:
+s'effectue suivant les rÃ¨gles suivantes:
 \begin{itemize}
-\item le chemin est orienté dans le sens trigonométrique;
+\item le chemin est orientÃ© dans le sens trigonomÃ©trique;
 \item
   le chemin est contenu, si c'est possible:
   \begin{enumerate}
   \item dans l'image courante si les variables \param{P.bmin}
-    et \param{P.bmax}, de type \code{pair}, n'ont pas été modifiées;
+    et \param{P.bmax}, de type \code{pair}, n'ont pas Ã©tÃ© modifiÃ©es;
   \item dans le rectangle \code{box((P.bmin),box(P.bmax))} dans le cas
     contraire.
   \end{enumerate}
-  Ainsi dans l'exemple suivant, au moment de la première conversion en
-  chemin, la taille de l'image est symbolisée en pointillé et le
-  chemin ne peut pas contenir dans ce rectangle. Lors de la deuxième
+  Ainsi dans l'exemple suivant, au moment de la premiÃ¨re conversion en
+  chemin, la taille de l'image est symbolisÃ©e en pointillÃ© et le
+  chemin ne peut pas contenir dans ce rectangle. Lors de la deuxiÃ¨me
   conversion, la modification des variables \param{p.bmin}
-  et \param{p.bmax} redéfinit la zone de conversion; elle est tracée
+  et \param{p.bmax} redÃ©finit la zone de conversion; elle est tracÃ©e
   en rouge avec la portion de parabole correspondante.
   \bvasy{parabola_to_path}
-\item le nombre de n\oe{}uds du chemin est fonction des angles, donnés
-  relativement au foyer en degrés, des extrémités du chemin; il est calculé par la routine
+\item le nombre de n\oe{}uds du chemin est fonction des angles, donnÃ©s
+  relativement au foyer en degrÃ©s, des extrÃ©mitÃ©s du chemin; il est calculÃ© par la routine
   \linebreak\index{parabolanodesnumber(parabola,real,real)}\code{int parabolanodesnumber(parabola p, real angle1, real angle2)}
-  qui dépend elle-même de la variable
+  qui dÃ©pend elle-mÃªme de la variable
   \index{parabolanodesnumberfactor}\code{parabolanodesnumberfactor};
-\item les n\oe{}uds du chemin sont définis en coordonnées polaires
-  avec des angles donnés relativement au foyer de la parabole et
-  uniformément répartis dans l'intervalle dont les extrémités sont
-  retournés par la routine
+\item les n\oe{}uds du chemin sont dÃ©finis en coordonnÃ©es polaires
+  avec des angles donnÃ©s relativement au foyer de la parabole et
+  uniformÃ©ment rÃ©partis dans l'intervalle dont les extrÃ©mitÃ©s sont
+  retournÃ©s par la routine
   \code{real[] bangles(picture pic=currentpicture, parabola p)}\index{bangles(picture,parabola)}.
   \bvasy{dot_parabola}
 \end{itemize}
 
 \subsubsection{Autres routines}
 En dehors des routines s'appliquant aux objets de type \code{conic},
-voici la liste des routines spécifiques aux objets de type
+voici la liste des routines spÃ©cifiques aux objets de type
 \code{parabola}.
 \begin{itemize}
 \item \index{tangents(parabola,point)}
   \begin{Vcolor}
     line[] tangents(parabola p, point M)
   \end{Vcolor}
-  Retourne les tangentes éventuelles à \param{p} passant
+  Retourne les tangentes Ã©ventuelles Ã  \param{p} passant
   par \param{M}.
   \bvasy{tangentes_parabola}
 \item \index{tangent(parabola,abscissa)}
   \begin{Vcolor}
     line tangent(parabola p, abscissa x)
   \end{Vcolor}
-  Retourne la tangente à \param{p} au point de \param{p}
+  Retourne la tangente Ã  \param{p} au point de \param{p}
   d'\href{#section.abscissa}{abscisse} \param{x}.
 \item \index{point(explicit parabola,real)}
   \begin{Vcolor}
     point point(explicit parabola p, real x)
   \end{Vcolor}
-  Retourne le \code{point} de \param{p} marquant le même
-  point que le \code{pair} retourné par le code
+  Retourne le \code{point} de \param{p} marquant le mÃªme
+  point que le \code{pair} retournÃ© par le code
   \code{point((path)p,x)}.
 \item \index{relpoint(explicit parabola,real)}
   \begin{Vcolor}
     point relpoint(explicit parabola p, real x)
   \end{Vcolor}
-  Retourne le \code{point} marquant le même \code{pair} retourné par
+  Retourne le \code{point} marquant le mÃªme \code{pair} retournÃ© par
   le code \code{relpoint((path)p,x)}.
 \item \index{angpoint(explicit parabola,real)}
   \begin{Vcolor}
     point angpoint(explicit parabola p, real x)
   \end{Vcolor}
-  Retourne le point de \param{p} d'angle \param{x} degrés.
+  Retourne le point de \param{p} d'angle \param{x} degrÃ©s.
 \item \index{curpoint(explicit parabola,real)}
   \begin{Vcolor}
     point curpoint(explicit parabola p, real x)
   \end{Vcolor}
   Retourne le point de \param{p} dont l'abscisse curviligne
-  est \param{x}, l'origine étant le sommet de la parabole.
+  est \param{x}, l'origine Ã©tant le sommet de la parabole.
   \bvasy{curpoint_parabola}
-\item Il est possible de récupérer un arc de parabole sous forme de
-  \code{path} grâce à la routine
+\item Il est possible de rÃ©cupÃ©rer un arc de parabole sous forme de
+  \code{path} grÃ¢ce Ã  la routine
   suivante:\index{arcfromfocus(conic,real,real,int,bool)}
   \begin{Vcolor}
     path arcfromfocus(conic co, real angle1, real angle2, int n=400, bool direction=CCW)
   \end{Vcolor}
   Bien que cette routine soit disponible pour tout type de conique son
-  utilisation n'a réellement d'intérêt que pour les paraboles et les
-  hyperboles; les arcs d'ellipse possèdent un type spécifique décrit dans
+  utilisation n'a rÃ©ellement d'intÃ©rÃªt que pour les paraboles et les
+  hyperboles; les arcs d'ellipse possÃ¨dent un type spÃ©cifique dÃ©crit dans
   la section \href{#section.arc}{Arcs}.
 
   Voici un exemple illustrant l'utilisation de la routine
@@ -2055,12 +2055,12 @@ voici la liste des routines spécifiques aux objets de type
 \hyperdef{subsection}{hyperbola}{\subsection{\index{conique|mainidx}Hyperboles}}
 C'est le type \code{hyperbola} qui permet d'instancier une hyperbole.
 Comme il existe une correspondance biunivoque entre les objets de type
-\code{hyperbola} et ceux de type \code{conic} ayant une excentricité
-strictement supérieure à $1$, les objets de type \code{hyperbola} héritent des
-routines et opérateurs définis pour ceux de type \code{conic}.
+\code{hyperbola} et ceux de type \code{conic} ayant une excentricitÃ©
+strictement supÃ©rieure Ã  $1$, les objets de type \code{hyperbola} hÃ©ritent des
+routines et opÃ©rateurs dÃ©finis pour ceux de type \code{conic}.
 
 \subsubsection{Routines de bases}
-Les routines disponibles pour définir une hyperbole sont:
+Les routines disponibles pour dÃ©finir une hyperbole sont:
 \begin{itemize}
 \item \index{hyperbola(point,point,real,bool)}
   \begin{Vcolor}
@@ -2069,11 +2069,11 @@ Les routines disponibles pour définir une hyperbole sont:
   \begin{description}
   \item[Si \param{byfoci=true}:] renvoie l'hyperbole de demi grand axe
     \param{ae} et de foyers \param{P1} et \param{P2};
-  \item[Si \param{byfoci=false}:] renvoie l'hyperbole d'excentricité
+  \item[Si \param{byfoci=false}:] renvoie l'hyperbole d'excentricitÃ©
     \param{ae} et de sommets \param{P1} et \param{P2};
   \end{description}
-  Pour plus de lisibilité, les constantes \code{byfoci}\index{byfoci}
-  et \code{byvertices}\index{byvertices} sont définies, elles ont pour valeurs \code{true}
+  Pour plus de lisibilitÃ©, les constantes \code{byfoci}\index{byfoci}
+  et \code{byvertices}\index{byvertices} sont dÃ©finies, elles ont pour valeurs \code{true}
   et \code{false} respectivement.
   \bvasy{hyperbole_def_1}
 \item \index{hyperbola(point,real,real,real)}
@@ -2087,98 +2087,98 @@ Les routines disponibles pour définir une hyperbole sont:
   \begin{Vcolor}
     hyperbola conj(hyperbola h)
   \end{Vcolor}
-  Retourne l'hyperbole conjuguée de \param{h}.
+  Retourne l'hyperbole conjuguÃ©e de \param{h}.
   \bvasy{conj_hyperbole}
 \end{itemize}
 
 \subsubsection{\texorpdfstring{Du type \og{}hyperbola\fg{} au type
-    \og{}path\fg{}}{Du type «hyperbola» au type «path»}}
+    \og{}path\fg{}}{Du type Â«hyperbolaÂ» au type Â«pathÂ»}}
 La conversion d'un objet \param{H} de type \code{hyperbola} en \code{path}
-s'effectue suivant les règles suivantes:
+s'effectue suivant les rÃ¨gles suivantes:
 \begin{itemize}
-\item le chemin est constitué de la branche d'hyperbole de
-  foyer \param{H.F1}, il est orienté dans le sens trigonométrique;
+\item le chemin est constituÃ© de la branche d'hyperbole de
+  foyer \param{H.F1}, il est orientÃ© dans le sens trigonomÃ©trique;
 \item
   le chemin est contenu, si c'est possible:
   \begin{enumerate}
   \item dans l'image courante si les variables \param{H.bmin}
-    et \param{H.bmax}, de type \code{pair}, n'ont pas été modifiées;
+    et \param{H.bmax}, de type \code{pair}, n'ont pas Ã©tÃ© modifiÃ©es;
   \item dans le rectangle \code{box((H.bmin),box(H.bmax))} dans le cas
     contraire.
   \end{enumerate}
-  Ainsi dans l'exemple suivant, au moment de la première conversion en
-  chemin, la taille de l'image est symbolisée en pointillé et le
-  chemin ne peut pas contenir dans ce rectangle. Lors de la deuxième
+  Ainsi dans l'exemple suivant, au moment de la premiÃ¨re conversion en
+  chemin, la taille de l'image est symbolisÃ©e en pointillÃ© et le
+  chemin ne peut pas contenir dans ce rectangle. Lors de la deuxiÃ¨me
   conversion, la modification des variables \param{H.bmin}
-  et \param{H.bmax} redéfinit la zone de conversion; elle est tracée
+  et \param{H.bmax} redÃ©finit la zone de conversion; elle est tracÃ©e
   en rouge avec la portion d'hyperbole correspondante.
   \bvasy{hyperbola_to_path}
-\item le nombre de n\oe{}uds du chemin est fonction des angles, donnés
-  relativement au foyer en degrés, des extrémités du chemin; il est calculé par la routine
+\item le nombre de n\oe{}uds du chemin est fonction des angles, donnÃ©s
+  relativement au foyer en degrÃ©s, des extrÃ©mitÃ©s du chemin; il est calculÃ© par la routine
   \linebreak\index{hyperbolanodesnumber(hyperbola,real,real)}%
   \code{int hyperbolanodesnumber(hyperbola p, real angle1, real angle2)}
-  qui dépend elle-même de la variable
+  qui dÃ©pend elle-mÃªme de la variable
   \index{hyperbolanodesnumberfactor}\code{hyperbolanodesnumberfactor};
-\item les n\oe{}uds du chemin sont définis en coordonnées polaires
-  avec des angles donnés relativement au foyer principale \param{H.F1}
-  de l'hyperbole et uniformément répartis dans l'intervalle dont les
-  extrémités sont retournés par la routine
+\item les n\oe{}uds du chemin sont dÃ©finis en coordonnÃ©es polaires
+  avec des angles donnÃ©s relativement au foyer principale \param{H.F1}
+  de l'hyperbole et uniformÃ©ment rÃ©partis dans l'intervalle dont les
+  extrÃ©mitÃ©s sont retournÃ©s par la routine
   \code{real[][] bangles(picture pic=currentpicture, hyperbola p)}\index{bangles(picture,hyperbola)}.
   \bvasy{dot_hyperbola}
 \end{itemize}
 
 \subsubsection{Autres routines}
 En dehors des routines s'appliquant aux objets de type \code{conic},
-voici la liste des routines spécifiques aux objets de type
+voici la liste des routines spÃ©cifiques aux objets de type
 \code{hyperbola}.
 \begin{itemize}
 \item \index{tangents(hyperbola,point)}
   \begin{Vcolor}
     line[] tangents(hyperbola h, point M)
   \end{Vcolor}
-  Retourne les tangentes éventuelles à \param{h} passant
+  Retourne les tangentes Ã©ventuelles Ã  \param{h} passant
   par \param{M}.
   \bvasy{tangents_hyperbola}
 \item \index{tangent(hyperbola,abscissa)}
   \begin{Vcolor}
     line tangent(hyperbola h, abscissa x)
   \end{Vcolor}
-  Retourne la tangente à \param{h} au point
+  Retourne la tangente Ã  \param{h} au point
   d'\href{#section.abscissa}{abscisse} \param{x}.
   \bvasy{tangent_hyperbola}
 \item \index{point(explicit hyperbola,real)}
   \begin{Vcolor}
     point point(explicit hyperbola h, real x)
   \end{Vcolor}
-  Retourne le \code{point} de \param{h} marquant le même
-  point que le \code{pair} retourné par le code
+  Retourne le \code{point} de \param{h} marquant le mÃªme
+  point que le \code{pair} retournÃ© par le code
   \code{point((path)h,x)}.
 \item \index{relpoint(explicit hyperbola,real)}
   \begin{Vcolor}
     point relpoint(explicit hyperbola h, real x)
   \end{Vcolor}
-  Retourne le \code{point} marquant le même \code{pair} retourné par
+  Retourne le \code{point} marquant le mÃªme \code{pair} retournÃ© par
   le code \code{relpoint((path)h,x)}.
 \item \index{angpoint(explicit hyperbola,real,polarconicroutine)}
   \begin{Vcolor}
     point angpoint(explicit hyperbola h, real x,
     polarconicroutine polarconicroutine=currentpolarconicroutine)
   \end{Vcolor}
-  Retourne le point de \param{h} d'angle \param{x} degrés
+  Retourne le point de \param{h} d'angle \param{x} degrÃ©s
   depuis le centre de l'hyperbole\linebreak
   si \param{polarconicroutine=fromCenter}, depuis le premier foyer
-  si \param{polarconicroutine=fromFocus}. Deux exemples sont donnés
-  ci-après.
-\item Il est possible de récupérer un arc de d'hyperbole
-  grâce aux deux routines suivantes:\index{arcfromfocus(conic,real,real,int,bool)}
+  si \param{polarconicroutine=fromFocus}. Deux exemples sont donnÃ©s
+  ci-aprÃ¨s.
+\item Il est possible de rÃ©cupÃ©rer un arc de d'hyperbole
+  grÃ¢ce aux deux routines suivantes:\index{arcfromfocus(conic,real,real,int,bool)}
   \begin{enumerate}
   \item
     \begin{Vcolor}
       path arcfromfocus(conic co, real angle1, real angle2, int n=400, bool direction=CCW)
     \end{Vcolor}
     Bien que cette routine soit disponible pour tout type de conique son
-    utilisation n'a réellement d'intérêt que pour les paraboles et les
-    hyperboles, les arcs d'ellipse possèdent un type spécifique décrit dans
+    utilisation n'a rÃ©ellement d'intÃ©rÃªt que pour les paraboles et les
+    hyperboles, les arcs d'ellipse possÃ¨dent un type spÃ©cifique dÃ©crit dans
     la section \href{#section.arc}{Arcs}.
 
     Voici un exemple illustrant
@@ -2196,8 +2196,8 @@ voici la liste des routines spécifiques aux objets de type
 \end{itemize}
 
 \hyperdef{section}{arc}{\section{\index{arc|mainidx}Arcs}}
-Le type \code{arc} permet d'instancier un arc orienté d'ellipse. La
-principale routine pour définir un tel arc est décrite
+Le type \code{arc} permet d'instancier un arc orientÃ© d'ellipse. La
+principale routine pour dÃ©finir un tel arc est dÃ©crite
 ci-dessous\index{arc(ellipse,real,real,polarconicroutine,bool)}.
 \begin{Vcolor}
   arc arc(ellipse el, real angle1, real angle2,
@@ -2205,71 +2205,71 @@ ci-dessous\index{arc(ellipse,real,real,polarconicroutine,bool)}.
   bool direction=CCW)
 \end{Vcolor}
 Retourne un arc de l'ellipse \param{el} compris entre les
-angles (en degrés) \param{angle1} et \param{angle2} parcouru dans le
-sens \param{direction} et donnés relativement au premier foyer
+angles (en degrÃ©s) \param{angle1} et \param{angle2} parcouru dans le
+sens \param{direction} et donnÃ©s relativement au premier foyer
 si \param{polarconicroutine=fromFocus}, relativement au centre de
 l'ellipse si \param{polarconicroutine=fromCenter}.
 
 La routine \code{polarconicroutine polarconicroutine(conic co)}
-\index{polarconicroutine(conic)} utilisée ici pour déterminer la
-valeur par défaut du paramètre \param{polarconicroutine} renvoie dans
-le cas présent \code{fromCenter} si \param{co} représente un cercle,
-\code{currentpolarconicroutine}, qui vaut \code{fromFocus} par défaut,
-si \param{co} représente une ellipse.
+\index{polarconicroutine(conic)} utilisÃ©e ici pour dÃ©terminer la
+valeur par dÃ©faut du paramÃ¨tre \param{polarconicroutine} renvoie dans
+le cas prÃ©sent \code{fromCenter} si \param{co} reprÃ©sente un cercle,
+\code{currentpolarconicroutine}, qui vaut \code{fromFocus} par dÃ©faut,
+si \param{co} reprÃ©sente une ellipse.
 
-Il est important de noter que, lors du tracé d'un arc, la
-valeur de la variable \code{addpenarc}\index{addpenarc} est ajoutée au stylo
-utilisé. Par défaut cette variable a pour valeur \param{squarecap},
-afin d'avoir les extrémités droites, ce qui rend l'affichage d'un
-arc en pointillé inefficient.\\
-Pour contourner ce problème il y a trois solutions:
+Il est important de noter que, lors du tracÃ© d'un arc, la
+valeur de la variable \code{addpenarc}\index{addpenarc} est ajoutÃ©e au stylo
+utilisÃ©. Par dÃ©faut cette variable a pour valeur \param{squarecap},
+afin d'avoir les extrÃ©mitÃ©s droites, ce qui rend l'affichage d'un
+arc en pointillÃ© inefficient.\\
+Pour contourner ce problÃ¨me il y a trois solutions:
 \begin{enumerate}
-\item écrire \code{draw(un\_arc, roundcap+dotted);} au lieux de
+\item Ã©crire \code{draw(un\_arc, roundcap+dotted);} au lieux de
   \code{draw(un\_arc, dotted);};
-\item affecter la valeur \code{nullpen} à \code{addpenarc}.
-\item contacter l'auteur de \geo pour lui faire connaître
-  son désaccord quant à la valeur par défaut de \code{addpenline};
+\item affecter la valeur \code{nullpen} Ã  \code{addpenarc}.
+\item contacter l'auteur de \geo pour lui faire connaÃ®tre
+  son dÃ©saccord quant Ã  la valeur par dÃ©faut de \code{addpenline};
 \end{enumerate}
 
 Voici quelques exemples qui illustre l'utilisation de la
 routine\linebreak \code{arc(ellipse,real,real,polarconicroutine,bool)}
 \begin{itemize}
 \item L'exemple suivant montre comment obtenir un arc d'ellipse dont
-  les angles sont donnés relativement à son premier foyer, ce qui est
-  le comportement par défaut. On notera l'utilisation de la routine
-  \hyperdef{}{markarc}{\code{markarc}}\index{markarc} qui sera décrite
-  ultérieurement.
+  les angles sont donnÃ©s relativement Ã  son premier foyer, ce qui est
+  le comportement par dÃ©faut. On notera l'utilisation de la routine
+  \hyperdef{}{markarc}{\code{markarc}}\index{markarc} qui sera dÃ©crite
+  ultÃ©rieurement.
   \bvasy{arc_1}
 \item L'exemple suivant montre l'effet des
-  paramètres \param{polarconicroutine} et \param{direction}. On notera
-  l'utilisation de la routine \code{degrees(arc)} qui sera décrite
-  ultérieurement.
+  paramÃ¨tres \param{polarconicroutine} et \param{direction}. On notera
+  l'utilisation de la routine \code{degrees(arc)} qui sera dÃ©crite
+  ultÃ©rieurement.
   \bvasy{arc_2}
-\item L'exemple suivant reprend le code précédant en permutant les angles
+\item L'exemple suivant reprend le code prÃ©cÃ©dant en permutant les angles
   $45^{\circ}$ et $210^{\circ}$.
   \bvasy{arc_3}
 \end{itemize}
 
 \subsection{\texorpdfstring{Du type \og{}arc\fg{} au type
-    \og{}path\fg{}}{Du type «arc» au type «path»}}
+    \og{}path\fg{}}{Du type Â«arcÂ» au type Â«pathÂ»}}
 La conversion d'un objet \param{A} de type \code{arc} en \code{path}
-s'effectue suivant les règles suivantes:
+s'effectue suivant les rÃ¨gles suivantes:
 \begin{itemize}
-\item le chemin est orienté dans le sens \param{A.direction} qui est
-  la direction passée en paramètre pour définir l'arc \param{A};
-\item le nombre de n\oe{}uds du chemin est calculé par la routine
+\item le chemin est orientÃ© dans le sens \param{A.direction} qui est
+  la direction passÃ©e en paramÃ¨tre pour dÃ©finir l'arc \param{A};
+\item le nombre de n\oe{}uds du chemin est calculÃ© par la routine
   \linebreak\index{arcnodesnumber(explicit arc)}%
   \code{int arcnodesnumber(explicit arc a)}
-  qui dépend elle-même de la variable\linebreak
+  qui dÃ©pend elle-mÃªme de la variable\linebreak
   \index{ellispenodesnumberfactor}\code{ellispenodesnumberfactor};
-\item les n\oe{}uds du chemin sont définis en coordonnées polaires
-  avec des angles donnés relativement au premier foyer ou au centre de
+\item les n\oe{}uds du chemin sont dÃ©finis en coordonnÃ©es polaires
+  avec des angles donnÃ©s relativement au premier foyer ou au centre de
   l'ellipse suivant la valeur de \param{A.polarconicroutine} et
-  uniformément répartit dans un intervalle adéquat.
+  uniformÃ©ment rÃ©partit dans un intervalle adÃ©quat.
 \end{itemize}
 \bvasy{dot_arc}
 
-\subsection{Les opérateurs}
+\subsection{Les opÃ©rateurs}
 \begin{itemize}
 \item \index{*(transform,explicit arc)}
   \begin{Vcolor}
@@ -2279,7 +2279,7 @@ s'effectue suivant les règles suivantes:
   surprise. Dans l'exemple suivant les arcs en couleur sont des images
   de l'arc noir par des transformations affines.
   \vasy{transform_arc}
-  Le même exemple en partant d'un arc de cercle:
+  Le mÃªme exemple en partant d'un arc de cercle:
   \bvasy{transform_arc_circle}
 
 \item \index{*(real,explicit arc)}\index{/(explicit arc,real)}
@@ -2290,17 +2290,17 @@ s'effectue suivant les règles suivantes:
 
   Renvoie l'arc \param{a} avec les
   angles \param{a.angle1-(x-1)*degrees(a)/2}
-  et \param{a.angle2+(x-1)*degrees(a)/2}. L'opérateur
-  \code{/(explicit arc,real)} est aussi défini.
+  et \param{a.angle2+(x-1)*degrees(a)/2}. L'opÃ©rateur
+  \code{/(explicit arc,real)} est aussi dÃ©fini.
 
   Dans l'exemple suivant l'arc jaune est obtenu en multipliant l'arc
   noir par $0,5$ et l'arc bleu en le divisant par 3.
   \bvasy{arc_mult_div_1}
-  La même chose en partant d'un arc d'ellipse défini depuis le centre
+  La mÃªme chose en partant d'un arc d'ellipse dÃ©fini depuis le centre
   de l'ellipse:
   \bvasy{arc_mult_div_2}
 
-  Enfin, dans l'exemple suivant, l'arc est défini depuis le premier
+  Enfin, dans l'exemple suivant, l'arc est dÃ©fini depuis le premier
   foyer de l'ellipse:
   \bvasy{arc_mult_div_3}
 \item \index{+(explicit arc,point)}\index{-(explicit arc,point)}%
@@ -2310,15 +2310,15 @@ s'effectue suivant les règles suivantes:
   \end{Vcolor}
   Autorise le code \code{arc+point} qui est un alias de
   \code{shift(point)*arc}.\\
-  Les opérateurs
+  Les opÃ©rateurs
   \code{-(explicit arc,point)}, \code{+(explicit arc,vector)} et
-  \code{-(explicit arc,vector)} sont aussi définis.
+  \code{-(explicit arc,vector)} sont aussi dÃ©finis.
 \item \index{operator @(point,arc)}
   \begin{Vcolor}
     bool operator @(point M, arc a)
   \end{Vcolor}
   Autorise le code \code{point @ arc}. Retourne \code{true} \ssi le
-  point \param{M} appartient à l'arc \param{a}.
+  point \param{M} appartient Ã  l'arc \param{a}.
 \item \index{*(inversion,segment)}
   \begin{Vcolor}
     arc operator *(inversion i, segment s)
@@ -2331,16 +2331,16 @@ s'effectue suivant les règles suivantes:
 \end{itemize}
 
 \subsection{Autres routines}
-En plus des routines décrites dans cette section
+En plus des routines dÃ©crites dans cette section
 s'ajoutent les routines pour localiser un point sur un objet de type
-\code{arc}; elles sont décrites dans la section
+\code{arc}; elles sont dÃ©crites dans la section
 \href{#section.abscissa}{Abscisses}.
 \begin{itemize}
 \item \index{complementary(arc)}
   \begin{Vcolor}
     arc complementary(arc a)
   \end{Vcolor}
-  Retourne le complémentaire de l'arc \param{a}.
+  Retourne le complÃ©mentaire de l'arc \param{a}.
   \bvasy{complementary_arc}
 \item \index{reverse(arc)}
   \begin{Vcolor}
@@ -2352,15 +2352,15 @@ s'ajoutent les routines pour localiser un point sur un objet de type
   \begin{Vcolor}
     real degrees(arc a)
   \end{Vcolor}
-  Retourne la mesure en degrés dans $\left[-360\,;\,360\right]$ de
-  l'arc orienté représenté par \param{a}.\\
-  La routine \code{angle(arc)} est aussi définie pour une mesure en
+  Retourne la mesure en degrÃ©s dans $\left[-360\,;\,360\right]$ de
+  l'arc orientÃ© reprÃ©sentÃ© par \param{a}.\\
+  La routine \code{angle(arc)} est aussi dÃ©finie pour une mesure en
   radians.
 \item \index{arclength(arc a)}
   \begin{Vcolor}
     real arclength(arc a)
   \end{Vcolor}
-  Retourne la longueur de l'arc représenté par \param{a}.
+  Retourne la longueur de l'arc reprÃ©sentÃ© par \param{a}.
 \item \index{arclength(arc a)}
   \begin{Vcolor}
     void markarc(picture pic=currentpicture,
@@ -2368,22 +2368,22 @@ s'ajoutent les routines pour localiser un point sur un objet de type
     arc a, pen sectorpen=currentpen, pen markpen=sectorpen,
     margin margin=NoMargin, arrowbar arrow=None, marker marker=nomarker)
   \end{Vcolor}
-  Permet de marquer l'angle représenté par \param{a} avec un arc de
+  Permet de marquer l'angle reprÃ©sentÃ© par \param{a} avec un arc de
   cercle.\\
-  Le paramètre \param{sectorpen} est le stylo utilisé pour
+  Le paramÃ¨tre \param{sectorpen} est le stylo utilisÃ© pour
   marquer les segments qui relient le centre ou le foyer de l'arc avec
-  ses extrémités.\\
-  Le paramètre \param{markpen} est le stylo utilisé pour tracer l'arc
-  de cercle qui peut à son tour être marqué à l'aide du
-  paramètre \param{marker}.\\
-  Des \href{#markarc}{exemples} d'utilisation ont déjà été donnés.
+  ses extrÃ©mitÃ©s.\\
+  Le paramÃ¨tre \param{markpen} est le stylo utilisÃ© pour tracer l'arc
+  de cercle qui peut Ã  son tour Ãªtre marquÃ© Ã  l'aide du
+  paramÃ¨tre \param{marker}.\\
+  Des \href{#markarc}{exemples} d'utilisation ont dÃ©jÃ  Ã©tÃ© donnÃ©s.
 \item \index{intersectionpoints(arc,arc)}
   \begin{Vcolor}
     point[] intersectionpoints(arc a1, arc a2)
   \end{Vcolor}
   Retourne, sous forme de tableau, les points d'intersection de deux
   arcs. Les routines d'intersections d'un objet de type \code{arc}
-  avec d'autres objets définis par \geo sont aussi définies; par
+  avec d'autres objets dÃ©finis par \geo sont aussi dÃ©finies; par
   exemple \code{intersectionpoints(conic co, arc a)}\index{intersectionpoints(conic,arc)},
   \code{intersectionpoints(arc a, conic co)}\index{intersectionpoints(arc,conic)},
   \code{intersectionpoints(line l, arc a)}\index{intersectionpoints(line,arc)} etc...
@@ -2393,7 +2393,7 @@ s'ajoutent les routines pour localiser un point sur un objet de type
   \end{Vcolor}
   Retourne l'arc capable du segment $[\mparam{AB}]$ vu sous un
   angle \param{angle}. Bien que le code \code{un\_arcsubtended.C} permette
-  de récupérer le centre de l'arc capable, il est possible de
+  de rÃ©cupÃ©rer le centre de l'arc capable, il est possible de
   l'obtenir directement en utilisant la routine
   \code{point arcsubtendedcenter(point A, point B, real angle)}
   \index{arcsubtendedcenter(point,point,real)}.
@@ -2403,8 +2403,8 @@ s'ajoutent les routines pour localiser un point sur un objet de type
   \begin{Vcolor}
     arc arccircle(point A, point B, real angle, bool direction=CCW)
   \end{Vcolor}
-  Retourne l'arc de cercle, centré en \param{A}, depuis \param{B}
-  jusqu'à l'image de \param{B} par la rotation de centre \param{A} et
+  Retourne l'arc de cercle, centrÃ© en \param{A}, depuis \param{B}
+  jusqu'Ã  l'image de \param{B} par la rotation de centre \param{A} et
   d'angle \param{angle} parcouru dans le sens \param{direction}.
   \bvasy{ove}
 \item \index{arccircle(point,point,point)}
@@ -2419,16 +2419,16 @@ s'ajoutent les routines pour localiser un point sur un objet de type
     arc arc(ellipse el, point M, point N, bool direction=CCW)
   \end{Vcolor}
   Retourne l'arc de \param{el}, parcouru dans le
-  sens \param{direction}, d'extrémités \param{M} et \param{N}
-  qui doivent être des points appartenant à \param{el}.\\
+  sens \param{direction}, d'extrÃ©mitÃ©s \param{M} et \param{N}
+  qui doivent Ãªtre des points appartenant Ã  \param{el}.\\
   \vasy{arc_inter_points}
 \item \index{arc(ellipse,abscissa,abscissa,bool)}
   \begin{Vcolor}
     arc arc(ellipse el, explicit abscissa x1, explicit abscissa x2, bool direction=CCW)
   \end{Vcolor}
-  Cette routine a le même comportement que la routine précédente mais
-  les points sont spécifiés à l'aide
-  d'\href{#section.abscissa}{abscisses} par rapport à l'ellipse.
+  Cette routine a le mÃªme comportement que la routine prÃ©cÃ©dente mais
+  les points sont spÃ©cifiÃ©s Ã  l'aide
+  d'\href{#section.abscissa}{abscisses} par rapport Ã  l'ellipse.
 \item \index{arc(explicit arc,point,point)}
   \begin{Vcolor}
     arc arc(explicit arc a, point M, point N)
@@ -2440,14 +2440,14 @@ s'ajoutent les routines pour localiser un point sur un objet de type
   \begin{Vcolor}
     arc arc(arc el, explicit abscissa x1, explicit abscissa x2)
   \end{Vcolor}
-  Cette routine a le même comportement que la routine précédente mais
-  les points sont spécifiés à l'aide
-  d'\href{#section.abscissa}{abscisses} par rapport à l'ellipse.
+  Cette routine a le mÃªme comportement que la routine prÃ©cÃ©dente mais
+  les points sont spÃ©cifiÃ©s Ã  l'aide
+  d'\href{#section.abscissa}{abscisses} par rapport Ã  l'ellipse.
 \item \index{inverse(real,point,segment)}
   \begin{Vcolor}
     arc inverse(real k, point A, segment s)
   \end{Vcolor}
-  Retourne l'image de \param{s} par l'inversion de pôle \param{A} et
+  Retourne l'image de \param{s} par l'inversion de pÃ´le \param{A} et
   de puissance \param{k}; \href{#inversion_damier}{voir l'illustration}
   de\linebreak \code{inversion*segment} dans la section
   \href{#section.inversion}{Inversions}.
@@ -2455,14 +2455,14 @@ s'ajoutent les routines pour localiser un point sur un objet de type
   \begin{Vcolor}
     line tangent(explicit arc a, point M)
   \end{Vcolor}
-  Retourne la tangente à \param{a} au point \param{M} de \param{a}.
+  Retourne la tangente Ã  \param{a} au point \param{M} de \param{a}.
 \item \index{tangent(explicit arc,abscissa)}
   \begin{Vcolor}
     line tangent(explicit arc a, abscissa x)
   \end{Vcolor}
-  Retourne la tangente à \param{a} au point
-  d'\href{#section.abscissa}{abscisse} \param{x} donné par rapport
-  à \param{a}.
+  Retourne la tangente Ã  \param{a} au point
+  d'\href{#section.abscissa}{abscisse} \param{x} donnÃ© par rapport
+  Ã  \param{a}.
 \end{itemize}
 
 \hyperdef{section}{abscissa}{\section{\index{abscisse|mainidx}Abscisses}}
@@ -2480,27 +2480,27 @@ structure d'un objet de type \code{abscissa} est la suivante:
 \end{center}
 \begin{description}
 \item[\param{x}] est la valeur de l'abscisse.
-\item[\param{system}] représente le type d'abscisse:
+\item[\param{system}] reprÃ©sente le type d'abscisse:
   \begin{description}
   \item[0] pour une abscisse comme fraction de la longueur d'un chemin;
   \item[1] pour une abscisse curviligne;
   \item[2] pour une abscisse angulaire;
   \item[3] pour une abscisse relative aux n\oe{}ds du chemin.
   \end{description}
-  Pour une meilleure lisibilité du code, les constantes suivantes sont
-  prédéfinies\index{relativesystem}\index{curvilinearsystem}\index{angularsystem}\index{nodesystem}:
+  Pour une meilleure lisibilitÃ© du code, les constantes suivantes sont
+  prÃ©dÃ©finies\index{relativesystem}\index{curvilinearsystem}\index{angularsystem}\index{nodesystem}:
   \begin{Vcolor}
     int relativesystem=0, curvilinearsystem=1, angularsystem=2, nodesystem=3;
   \end{Vcolor}
-\item[\param{polarconicroutine}] permet de spécifier le centre de
-  référence dans le cas d'une abscisse angulaire; les valeurs
+\item[\param{polarconicroutine}] permet de spÃ©cifier le centre de
+  rÃ©fÃ©rence dans le cas d'une abscisse angulaire; les valeurs
   possibles sont \code{fromCenter} et \code{fromFocus};
 \item[\param{abscissa copy()}] retourne la copie de l'abscisse.
 \end{description}
-\subsection{Définir une abscisse}
-Il y a autant de routines pour définir une abscisse que de
-types d'abscisses. Une fois une abscisse définie, on peut récupérer le
-point d'un objet à cette abscisse par la routine
+\subsection{DÃ©finir une abscisse}
+Il y a autant de routines pour dÃ©finir une abscisse que de
+types d'abscisses. Une fois une abscisse dÃ©finie, on peut rÃ©cupÃ©rer le
+point d'un objet Ã  cette abscisse par la routine
 \code{point(objet,abscisse)}.
 \begin{itemize}
 \item \index{relabscissa(real)}
@@ -2510,7 +2510,7 @@ point d'un objet à cette abscisse par la routine
   Retourne l'abscisse \param{x} comme fraction de la longueur d'un
   chemin.
   On notera que le code \code{point(objet,relabscissa(x))} est
-  équivalent à \code{relpoint(objet,x)}.
+  Ã©quivalent Ã  \code{relpoint(objet,x)}.
   \bvasy{relabscissa}
 \item \index{curabscissa(real)}
   \begin{Vcolor}
@@ -2518,7 +2518,7 @@ point d'un objet à cette abscisse par la routine
   \end{Vcolor}
   Retourne l'abscisse curviligne \param{x}.
   On notera que le code \code{point(objet,curabscissa(x))} est
-  équivalent à \code{curpoint(objet,x)}.
+  Ã©quivalent Ã  \code{curpoint(objet,x)}.
   \bvasy{curabscissa}
 \item \index{angabscissa(real,polarconicroutine)}
   \begin{Vcolor}
@@ -2527,7 +2527,7 @@ point d'un objet à cette abscisse par la routine
   \end{Vcolor}
   Retourne l'abscisse angulaire \param{x}.
   On notera que le code \code{point(objet,angabscissa(x))} est
-  équivalent à \code{angpoint(objet,x)}.
+  Ã©quivalent Ã  \code{angpoint(objet,x)}.
   \bvasy{angabscissa}
 \item \index{nodabscissa(real)}
   \begin{Vcolor}
@@ -2535,16 +2535,16 @@ point d'un objet à cette abscisse par la routine
   \end{Vcolor}
   Retourne l'abscisse \param{x} relative aux n\oe{}ds d'un chemin.
   On notera que le code \code{point(objet,nodabscissa(x))} est
-  équivalent à \code{point(objet,x)}.
+  Ã©quivalent Ã  \code{point(objet,x)}.
 \end{itemize}
 
-\subsection{Récupérer une abscisse d'un point}
-Les routines permettant de récupérer une abscisse d'un point
-appartenant à un objet donné portent le même nom que celles décrites
-dans le section précédente. Les routines suivantes renvoient
+\subsection{RÃ©cupÃ©rer une abscisse d'un point}
+Les routines permettant de rÃ©cupÃ©rer une abscisse d'un point
+appartenant Ã  un objet donnÃ© portent le mÃªme nom que celles dÃ©crites
+dans le section prÃ©cÃ©dente. Les routines suivantes renvoient
 respectivement l'abscisse relative, l'abscisse curviligne, l'abscisse
 angulaire et \og{}l'abscisse par n\oe{}ud\fg{} du
-point \param{M} appartenant à l'objet spécifié.
+point \param{M} appartenant Ã  l'objet spÃ©cifiÃ©.
 \begin{description}
 \item[Abscisse relative]\hspace*{0mm}
   \begin{itemize}
@@ -2614,14 +2614,14 @@ point \param{M} appartenant à l'objet spécifié.
   \end{itemize}
 \end{description}
 
-\subsection{Opérateurs}
+\subsection{OpÃ©rateurs}
 \index{+(real x, explicit abscissa a)}
 \begin{Vcolor}
   abscissa operator +(real x, explicit abscissa a)
 \end{Vcolor}
 Retourne la copie de \param{a} d'abscisse \param{x+a.x}.
 
-Les opérateurs suivants sont aussi définis:\\
+Les opÃ©rateurs suivants sont aussi dÃ©finis:\\
 \code{operator +(explicit abscissa,real)}\index{+(explicit abscissa,real)}\\
 \code{operator -(real,explicit abscissa)}\index{-(real,explicit abscissa)}\\
 \code{operator -(explicit abscissa,real)}\index{-(explicit abscissa,real)}\\
@@ -2634,25 +2634,25 @@ Les opérateurs suivants sont aussi définis:\\
 \hyperdef{section}{triangle}{\section{\index{triangle|mainidx}Triangles}}
 \hyperdef{subsection}{struct}{\subsection{La structure}}
 La structure du type \code{triangle} est un peu plus complexe que
-celles déjà rencontrées dans ce document car elle définit
+celles dÃ©jÃ  rencontrÃ©es dans ce document car elle dÃ©finit
 de nouveaux types instanciant des objets indissociables
-d'un triangle et qui possèdent eux-mêmes la référence du triangle
-auquel ils sont associés. Autrement dit, pour fixer les idées, un
-objet \param{TR} de type triangle possède l'objet \param{VA} de
-type \code{vertex}, accessible par \param{TR.VA}, qui contient à son
+d'un triangle et qui possÃ¨dent eux-mÃªmes la rÃ©fÃ©rence du triangle
+auquel ils sont associÃ©s. Autrement dit, pour fixer les idÃ©es, un
+objet \param{TR} de type triangle possÃ¨de l'objet \param{VA} de
+type \code{vertex}, accessible par \param{TR.VA}, qui contient Ã  son
 tour l'objet \param{t} de type \code{triangle} dont la valeur est
 justement \param{TR}; ainsi \param{TR.VA.t} vaut \param{TR}.
 
 Sachant qu'un objet de type \code{vertex}
-représente un sommet d'un triangle, il est alors aisé de définir une
-routine renvoyant, par exemple, la première bissectrice d'un triangle
-passant par un sommet donné avec comme seul paramètre un objet de type
-\code{vertex}, puisque celui-ci contient la référence du triangle dont
+reprÃ©sente un sommet d'un triangle, il est alors aisÃ© de dÃ©finir une
+routine renvoyant, par exemple, la premiÃ¨re bissectrice d'un triangle
+passant par un sommet donnÃ© avec comme seul paramÃ¨tre un objet de type
+\code{vertex}, puisque celui-ci contient la rÃ©fÃ©rence du triangle dont
 il est le sommet.
 
-Voici une version simplifiée de la structure du type \code{triangle};
-la structure complète est détaillée
-\href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html#struct\%20triangle}{séparément}.
+Voici une version simplifiÃ©e de la structure du type \code{triangle};
+la structure complÃ¨te est dÃ©taillÃ©e
+\href{http://piprim.tuxfamily.org/asymptote/geometry/modules/geometry.asy.index.sign.html#struct\%20triangle}{sÃ©parÃ©ment}.
 \begin{center}
   \begin{Vcolor}
     struct triangle {
@@ -2672,61 +2672,61 @@ la structure complète est détaillée
   \end{Vcolor}
 \end{center}
 \begin{description}
-\item[\param{A}, \param{B} et \param{C}] représentent les points
+\item[\param{A}, \param{B} et \param{C}] reprÃ©sentent les points
   marquant les sommets du triangle;
-\item[\param{struct vertex}] définit la structure \code{vertex} qui
-  permet d'instancier un objet représentant le sommet d'un triangle.
-  Bien que cette structure ne soit pas destinée à une utilisation
-  classique de \geo il peut être utile d'en connaître les propriétés.
+\item[\param{struct vertex}] dÃ©finit la structure \code{vertex} qui
+  permet d'instancier un objet reprÃ©sentant le sommet d'un triangle.
+  Bien que cette structure ne soit pas destinÃ©e Ã  une utilisation
+  classique de \geo il peut Ãªtre utile d'en connaÃ®tre les propriÃ©tÃ©s.
 
-  La propriété \param{n} permet d'associer un sommet au point, de type
+  La propriÃ©tÃ© \param{n} permet d'associer un sommet au point, de type
   \code{point}, marquant ce sommet:\\
-  si $\mparam{n}=1$, le sommet est associé au point \param{A};\\
-  si $\mparam{n}=2$, le sommet est associé au point \param{B};\\
-  si $\mparam{n}=3$, le sommet est associé au point \param{C};\\
-  si $\mparam{n}=4$, le sommet est associé au point \param{A};\\
+  si $\mparam{n}=1$, le sommet est associÃ© au point \param{A};\\
+  si $\mparam{n}=2$, le sommet est associÃ© au point \param{B};\\
+  si $\mparam{n}=3$, le sommet est associÃ© au point \param{C};\\
+  si $\mparam{n}=4$, le sommet est associÃ© au point \param{A};\\
   etc...\\
-  La propriété \param{t} a pour valeur \og{}l'objet, de type triangle,
+  La propriÃ©tÃ© \param{t} a pour valeur \og{}l'objet, de type triangle,
   auquel appartient le sommet\fg{}.\\
-  L'utilisation de cette structure est détaillée dans la section
+  L'utilisation de cette structure est dÃ©taillÃ©e dans la section
   \href{#subsection.vertex}{Sommets de triangles}.
-\item[\param{VA}, \param{VB} et \param{VC}] représentent abstraitement
+\item[\param{VA}, \param{VB} et \param{VC}] reprÃ©sentent abstraitement
   les sommets du triangle, par opposition aux objets
-  \code{point} \param{A}, \param{B} et \param{C} qui sont concrètement
+  \code{point} \param{A}, \param{B} et \param{C} qui sont concrÃ¨tement
   les points marquant le sommet; voir la section
   \href{#subsection.vertex}{Sommets de triangles}.
-\item[\param{struct side}] définit la structure \code{side} qui
-  permet d'instancier un objet représentant le côté d'un triangle.
-  Bien que cette structure ne soit pas destinée à une utilisation
-  classique de \geo il peut être utile d'en connaître les propriétés.
+\item[\param{struct side}] dÃ©finit la structure \code{side} qui
+  permet d'instancier un objet reprÃ©sentant le cÃ´tÃ© d'un triangle.
+  Bien que cette structure ne soit pas destinÃ©e Ã  une utilisation
+  classique de \geo il peut Ãªtre utile d'en connaÃ®tre les propriÃ©tÃ©s.
 
-  La propriété \param{n} permet d'associer l'objet de type
-  \code{side} au côté \textbf{orienté} du triangle:\\
-  si $\mparam{n}=1$, le côté représente \param{AB} orienté
+  La propriÃ©tÃ© \param{n} permet d'associer l'objet de type
+  \code{side} au cÃ´tÃ© \textbf{orientÃ©} du triangle:\\
+  si $\mparam{n}=1$, le cÃ´tÃ© reprÃ©sente \param{AB} orientÃ©
   de \param{A} vers \param{B};\\
-  si $\mparam{n}=2$, le côté représente \param{BC} orienté
+  si $\mparam{n}=2$, le cÃ´tÃ© reprÃ©sente \param{BC} orientÃ©
   de \param{B} vers \param{C};\\
-  si $\mparam{n}=3$, le côté représente \param{CA} orienté
+  si $\mparam{n}=3$, le cÃ´tÃ© reprÃ©sente \param{CA} orientÃ©
   de \param{C} vers \param{A};\\
-  si $\mparam{n}=4$, le côté représente \param{AB};\\
+  si $\mparam{n}=4$, le cÃ´tÃ© reprÃ©sente \param{AB};\\
   etc...\\
-  Si \param{n} est négatif l'orientation est inversée.\\
-  La propriété \param{t} a pour valeur \og{}l'objet, de type triangle,
+  Si \param{n} est nÃ©gatif l'orientation est inversÃ©e.\\
+  La propriÃ©tÃ© \param{t} a pour valeur \og{}l'objet, de type triangle,
   auquel appartient le sommet\fg{}.\\
-  L'utilisation de cette structure est détaillée dans la section
-  \href{#subsection.vertex}{Côtés de triangles}.
+  L'utilisation de cette structure est dÃ©taillÃ©e dans la section
+  \href{#subsection.vertex}{CÃ´tÃ©s de triangles}.
 \item[\param{AB}, \param{BC}, \param{CA}, \param{BA}, \param{AC} et \param{CB}]
-  représente abstraitement les côtés du triangle, par opposition aux objets
+  reprÃ©sente abstraitement les cÃ´tÃ©s du triangle, par opposition aux objets
   \code{line} \param{line(TR.AB)}, \param{line(TR.BC)}, \param{line(TR.CA)},
-  etc.. qui sont concrètement les droites marquant les côtés du
+  etc.. qui sont concrÃ¨tement les droites marquant les cÃ´tÃ©s du
   triangle \param{TR}; voir la section
-  \href{#subsection.vertex}{Côtés de triangles}.
+  \href{#subsection.vertex}{CÃ´tÃ©s de triangles}.
 \end{description}
 
-\subsection{Définir et tracer un triangle}
-Dans cette section ne seront décrites que les routines de base pour
-définir et tracer un triangle. D'autres routines retournant un triangle seront
-introduites au fur et à mesure.
+\subsection{DÃ©finir et tracer un triangle}
+Dans cette section ne seront dÃ©crites que les routines de base pour
+dÃ©finir et tracer un triangle. D'autres routines retournant un triangle seront
+introduites au fur et Ã  mesure.
 
 \begin{itemize}
 \item \index{label(picture,Label,Label,Label,triangle,real,real,pen,filltype)}
@@ -2739,8 +2739,8 @@ introduites au fur et à mesure.
     pen p=nullpen, filltype filltype=NoFill)
   \end{Vcolor}
   Place les labels \param{LA}, \param{LB} et \param{LC} aux
-  sommets du triangle \param{t}, alignés suivant la première bissectrice
-  du sommet correspondant. Les paramètres \param{alignAngle}
+  sommets du triangle \param{t}, alignÃ©s suivant la premiÃ¨re bissectrice
+  du sommet correspondant. Les paramÃ¨tres \param{alignAngle}
   et \param{alignFactor} permettent de modifier la direction et la
   longueur de l'alignement.
 \item \index{show(picture,Label,Label,Label,Label,Label,Label,triangle,pen,filltype)}
@@ -2751,7 +2751,7 @@ introduites au fur et à mesure.
     triangle t, pen p=currentpen, filltype filltype=NoFill)
   \end{Vcolor}
   Trace le triangle \param{t} et affiche les labels aux sommets du triangle ainsi que les
-  longueurs de ses côtés. Cette routine est surtout utile pour
+  longueurs de ses cÃ´tÃ©s. Cette routine est surtout utile pour
   localiser les sommets \param{t.A}, \param{t.B} et \param{t.C} en
   cours de codage.
 \item \index{drawline(picture,triangle,pen)}
@@ -2759,12 +2759,12 @@ introduites au fur et à mesure.
     void draw(picture pic=currentpicture, triangle t,
     pen p=currentpen, marker marker=nomarker)
   \end{Vcolor}
-  Trace le triangle \param{t}; les côtés sont tracés comme des segments.
+  Trace le triangle \param{t}; les cÃ´tÃ©s sont tracÃ©s comme des segments.
 \item \index{drawline(picture,triangle,pen)}
   \begin{Vcolor}
     void drawline(picture pic=currentpicture, triangle t, pen p=currentpen)
   \end{Vcolor}
-  Trace le triangle \param{t}; les côtés sont tracés comme des droites.
+  Trace le triangle \param{t}; les cÃ´tÃ©s sont tracÃ©s comme des droites.
 \item \index{triangle(point,point,point)}
   \begin{Vcolor}
     triangle triangle(point A, point B, point C)
@@ -2791,25 +2791,25 @@ introduites au fur et à mesure.
   \begin{Vcolor}
     triangle triangle(line l1, line l2, line l3)
   \end{Vcolor}
-  Renvoie le triangle dont les côtés sont \param{l1}, \param{l2}
+  Renvoie le triangle dont les cÃ´tÃ©s sont \param{l1}, \param{l2}
   et \param{l3}.
 \end{itemize}
 
 \hyperdef{subsection}{vertex}{\subsection{\index{sommet!triangle|mainidx}Sommets de triangles}}
-Étant donné un objet \param{t} de type \code{triangle}, ses propriétés
+Ã‰tant donnÃ© un objet \param{t} de type \code{triangle}, ses propriÃ©tÃ©s
 \param{t.VA}, \param{t.VB} et \param{t.VC}, de type \code{vertex},
-représentent les sommets du triangle \param{t}. \Geo implémente ainsi
-des routines admettant comme paramètre un sommet de triangle sans avoir
-à spécifier explicitement le triangle auquel il se réfère.
+reprÃ©sentent les sommets du triangle \param{t}. \Geo implÃ©mente ainsi
+des routines admettant comme paramÃ¨tre un sommet de triangle sans avoir
+Ã  spÃ©cifier explicitement le triangle auquel il se rÃ©fÃ¨re.
 
 Par exemple, dans le code suivant, la routine
 \hypertarget{bisectorvertex}{%
   \code{line bisector(vertex V, real angle=0)}}%
 \index{bisector(vertex,real)} retourne l'image par la rotation
-d'angle \param{angle} et de centre \param{V} de la première
+d'angle \param{angle} et de centre \param{V} de la premiÃ¨re
 bissectrice passant par \param{V}.
 \bvasy{bisector_vertex}
-Voici quelques routines et opérateurs élémentaires relatifs aux
+Voici quelques routines et opÃ©rateurs Ã©lÃ©mentaires relatifs aux
 objets de type \param{vertex}:
 \begin{itemize}
 \item \index{cast(vertex V)}
@@ -2822,37 +2822,37 @@ objets de type \param{vertex}:
   \begin{Vcolor}
     point point(explicit vertex V)
   \end{Vcolor}
-  Renvoie l'objet de type \code{point} représenté par
+  Renvoie l'objet de type \code{point} reprÃ©sentÃ© par
   l'objet \param{V} de type \code{vertex}. Le code \code{point(V)} est
-  équivalent au code \code{(point)V} qui force le \og{}casting\fg{} de
+  Ã©quivalent au code \code{(point)V} qui force le \og{}casting\fg{} de
   \code{vertex} vers \code{point}.
 \item \index{dir(vertex)}
   \begin{Vcolor}
     vector dir(vertex V)
   \end{Vcolor}
-  Renvoie le vecteur unitaire porté par la première bissectrice de
-  l'angle en \param{V} et orienté vers l'extérieur du triangle auquel
-  se réfère \param{V}. Cette routine est particulièrement utile pour
+  Renvoie le vecteur unitaire portÃ© par la premiÃ¨re bissectrice de
+  l'angle en \param{V} et orientÃ© vers l'extÃ©rieur du triangle auquel
+  se rÃ©fÃ¨re \param{V}. Cette routine est particuliÃ¨rement utile pour
   placer des labels aux sommets d'un triangle.
 \end{itemize}
-D'autres routines admettant comme paramètre un objet de type
-\code{vertex} sont décrites dans la section suivante et conjointement
+D'autres routines admettant comme paramÃ¨tre un objet de type
+\code{vertex} sont dÃ©crites dans la section suivante et conjointement
 aux \href{#subsection.routines}{routines concernant les triangles}.
 
-\hyperdef{subsection}{side}{\subsection{\index{côté!triangle|mainidx}Côtés de triangles}}
-Étant donné un objet \param{t} de type \code{triangle}, ses propriétés
+\hyperdef{subsection}{side}{\subsection{\index{cÃ´tÃ©!triangle|mainidx}CÃ´tÃ©s de triangles}}
+Ã‰tant donnÃ© un objet \param{t} de type \code{triangle}, ses propriÃ©tÃ©s
 \param{t.AB}, \param{t.BC}, \param{t.CA}, \param{t.BA}, \param{t.AC}
 et \param{t.CB}, de type \code{side},
-représentent les côtés du triangle \param{t}. \Geo implémente ainsi
-des routines admettant comme paramètre un côté de triangle sans avoir
-à spécifier explicitement le triangle auquel le côté se réfère.
+reprÃ©sentent les cÃ´tÃ©s du triangle \param{t}. \Geo implÃ©mente ainsi
+des routines admettant comme paramÃ¨tre un cÃ´tÃ© de triangle sans avoir
+Ã  spÃ©cifier explicitement le triangle auquel le cÃ´tÃ© se rÃ©fÃ¨re.
 
 Par exemple, dans le code suivant, la routine
 \hypertarget{excircleside}{\code{circle excircle(side s)}}\index{excircle(side)} retourne le
-cercle exinscrit du triangle auquel se réfère \param{s} et tangent
-à \param{s}.
+cercle exinscrit du triangle auquel se rÃ©fÃ¨re \param{s} et tangent
+Ã  \param{s}.
 \bvasy{excircle_intro}
-Voici quelques routines et opérateurs élémentaires relatifs aux
+Voici quelques routines et opÃ©rateurs Ã©lÃ©mentaires relatifs aux
 objets de type \param{side}:
 \begin{itemize}
 \item \index{cast(side side)}
@@ -2865,35 +2865,35 @@ objets de type \param{side}:
   \begin{Vcolor}
     line line(explicit side side)
   \end{Vcolor}
-  Renvoie l'objet de type \code{line} représenté par
+  Renvoie l'objet de type \code{line} reprÃ©sentÃ© par
   l'objet \param{side} de type \code{side}. Le code \code{line(S)} est
-  équivalent au code \code{(line)S} qui force le \og{}casting\fg{} de
+  Ã©quivalent au code \code{(line)S} qui force le \og{}casting\fg{} de
   \code{side} vers \code{line}.
 \item \index{segment(explicit side side)}
   \begin{Vcolor}
     segment segment(explicit side side)
   \end{Vcolor}
-  Renvoie l'objet de type \code{segment} représenté par
+  Renvoie l'objet de type \code{segment} reprÃ©sentÃ© par
   l'objet \param{side} de type \code{side}. Le code \code{segment(S)} est
-  équivalent au code \code{(segment)S} qui force le \og{}casting\fg{} de
+  Ã©quivalent au code \code{(segment)S} qui force le \og{}casting\fg{} de
   \code{side} vers \code{segment}.
 \item \index{opposite(vertex)}
   \begin{Vcolor}
     side opposite(vertex V)
   \end{Vcolor}
-  Renvoie le côté opposé à \param{V} dans le triangle auquel se réfère \param{V}.
+  Renvoie le cÃ´tÃ© opposÃ© Ã  \param{V} dans le triangle auquel se rÃ©fÃ¨re \param{V}.
 \item \index{opposite(side)}
   \begin{Vcolor}
     vertex opposite(side side)
   \end{Vcolor}
-  Renvoie le sommet opposé à \param{side} dans le triangle auquel se réfère \param{side}.
+  Renvoie le sommet opposÃ© Ã  \param{side} dans le triangle auquel se rÃ©fÃ¨re \param{side}.
 \end{itemize}
-Les autres routines admettant comme paramètre un objet de type
-\code{side} sont décrites conjointement aux
+Les autres routines admettant comme paramÃ¨tre un objet de type
+\code{side} sont dÃ©crites conjointement aux
 \href{#subsection.routines}{routines concernant les triangles}.
 
-\subsection{Opérateurs}
-Le seul opérateur s'appliquant aux objets de type \code{triangle} est
+\subsection{OpÃ©rateurs}
+Le seul opÃ©rateur s'appliquant aux objets de type \code{triangle} est
 \index{*(transform,triangle)}
 \begin{Vcolor}
   triangle operator *(transform T, triangle t)
@@ -2935,12 +2935,12 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   \begin{Vcolor}
     point centroid(triangle t)
   \end{Vcolor}
-  Retourne le centre de gravité du triangle \param{t}.
+  Retourne le centre de gravitÃ© du triangle \param{t}.
 \item \index{median(vertex)}\index{median(side)}
   \begin{Vcolor}
     line median(vertex V)
   \end{Vcolor}
-  Retourne la médiane issue de \param{V}. La routine
+  Retourne la mÃ©diane issue de \param{V}. La routine
   \code{line median(side side)} est aussi disponible.
 \item \index{medial(triangle)}
   \begin{Vcolor}
@@ -2952,25 +2952,25 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   \begin{Vcolor}
     triangle anticomplementary(triangle t)
   \end{Vcolor}
-  Retourne le triangle dont les milieux des côtés sont les sommets de \param{t}.
+  Retourne le triangle dont les milieux des cÃ´tÃ©s sont les sommets de \param{t}.
 \item \index{bisector(vertex,real)}
   \begin{Vcolor}
     line bisector(vertex V, real angle=0)
   \end{Vcolor}
   Retourne l'image par la rotation d'angle \param{angle} et de
-  centre \param{V} de la première bissectrice passant
-  par \param{V}. Un exemple est donné \href{#bisectorvertex}{ci-avant}.
+  centre \param{V} de la premiÃ¨re bissectrice passant
+  par \param{V}. Un exemple est donnÃ© \href{#bisectorvertex}{ci-avant}.
 \item \index{bisectorpoint(side side)}
   \begin{Vcolor}
     point bisectorpoint(side side)
   \end{Vcolor}
-  Retourne le point d'intersection de la première bissectrice de
-  l'angle opposé à \param{side} avec \param{side}.
+  Retourne le point d'intersection de la premiÃ¨re bissectrice de
+  l'angle opposÃ© Ã  \param{side} avec \param{side}.
 \item \index{bisector(side side)}
   \begin{Vcolor}
     line bisector(side side)
   \end{Vcolor}
-  Retourne la médiatrice du segment représenté par \param{side}.
+  Retourne la mÃ©diatrice du segment reprÃ©sentÃ© par \param{side}.
 \item \index{circumcenter(triangle)}
   \begin{Vcolor}
     point circumcenter(triangle t)
@@ -2986,8 +2986,8 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   \begin{Vcolor}
     triangle tangential(triangle t)
   \end{Vcolor}
-  Retourne le triangle dont les côtés sont tangents au cercle
-  circonscrit à \param{t} et passent par ses sommets.
+  Retourne le triangle dont les cÃ´tÃ©s sont tangents au cercle
+  circonscrit Ã  \param{t} et passent par ses sommets.
   \bvasy{tangential}
 \item \index{incenter(triangle)}
   \begin{Vcolor}
@@ -3009,13 +3009,13 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
     triangle intouch(triangle t)
   \end{Vcolor}
   Retourne le triangle dont les sommets sont les points de contact du
-  cercle inscrit à \param{t} avec \param{t}.
+  cercle inscrit Ã  \param{t} avec \param{t}.
 \item \index{intouch(side)}
   \begin{Vcolor}
     point intouch(side side)
   \end{Vcolor}
-  Retourne le point de contact du côté \param{side} avec le cercle
-  inscrit au triangle auquel se réfère \param{side}.
+  Retourne le point de contact du cÃ´tÃ© \param{side} avec le cercle
+  inscrit au triangle auquel se rÃ©fÃ¨re \param{side}.
 \item \index{gergonne(triangle t)}
   \begin{Vcolor}
     point gergonne(triangle t)
@@ -3026,75 +3026,75 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   \begin{Vcolor}
     point excenter(side side)
   \end{Vcolor}
-  Retourne le centre du cercle exinscrit du triangle auquel se réfère \param{side}
-  et tangent à \param{side}.
+  Retourne le centre du cercle exinscrit du triangle auquel se rÃ©fÃ¨re \param{side}
+  et tangent Ã  \param{side}.
 \item \index{exradius(side)}
   \begin{Vcolor}
     real exradius(side side)
   \end{Vcolor}
-  Retourne le rayon du cercle exinscrit du triangle auquel se réfère \param{side}
-  et tangent à \param{side}.
+  Retourne le rayon du cercle exinscrit du triangle auquel se rÃ©fÃ¨re \param{side}
+  et tangent Ã  \param{side}.
 \item \index{excircle(side)}
   \begin{Vcolor}
     circle excircle(side side)
   \end{Vcolor}
-  Retourne le cercle exinscrit du triangle auquel se réfère \param{side}
-  et tangent à \param{side}.
+  Retourne le cercle exinscrit du triangle auquel se rÃ©fÃ¨re \param{side}
+  et tangent Ã  \param{side}.
 \item \index{extouch(triangle)}
   \begin{Vcolor}
     triangle extouch(triangle t)
   \end{Vcolor}
   Retourne le triangle dont les sommets sont les points de contact des
-  cercles exinscrit à \param{t} avec ses côtés.
+  cercles exinscrit Ã  \param{t} avec ses cÃ´tÃ©s.
 \item \index{extouch(side)}
   \begin{Vcolor}
     point extouch(side side)
   \end{Vcolor}
-  Retourne le point de contact du côté \param{side} avec le cercle
-  exinscrit renvoyé par \code{excircle(side)}.
+  Retourne le point de contact du cÃ´tÃ© \param{side} avec le cercle
+  exinscrit renvoyÃ© par \code{excircle(side)}.
   \bvasy{extouch}
 \item \index{symmedian(triangle)}
   \begin{Vcolor}
     point symmedian(triangle t)
   \end{Vcolor}
-  Retourne le point symédian (ou point de Lemoine) du triangle \param{t}.
+  Retourne le point symÃ©dian (ou point de Lemoine) du triangle \param{t}.
 \item \index{symmedian(side side)}
   \begin{Vcolor}
     point symmedian(side side)
   \end{Vcolor}
-  Retourne le point symédian du côté \param{side}.
+  Retourne le point symÃ©dian du cÃ´tÃ© \param{side}.
   % Return the \href{http://mathworld.wolfram.com/SymmedianPoint.html}{symmedian point} of \param{side}.
 \item \index{symmedian(vertex V)}
   \begin{Vcolor}
     line symmedian(vertex V)
   \end{Vcolor}
   Retourne la droite
-  \href{http://fr.wikipedia.org/wiki/Sym\%C3\%A9diane}{symédiane}
-  passant par \param{V} du triangle auquel se réfère \param{V}.
+  \href{http://fr.wikipedia.org/wiki/Sym\%C3\%A9diane}{symÃ©diane}
+  passant par \param{V} du triangle auquel se rÃ©fÃ¨re \param{V}.
   \vasy{symmedian}
 \item \index{cevian(side,point)}
   \begin{Vcolor}
     point cevian(side side, point P)
   \end{Vcolor}
-  Renvoie le point de \textsc{Cevian} de \param{P} appartenant au côté \param{side}.
+  Renvoie le point de \textsc{Cevian} de \param{P} appartenant au cÃ´tÃ© \param{side}.
 \item \index{cevian(triangle,point)}
   \begin{Vcolor}
     triangle cevian(triangle t, point P)
   \end{Vcolor}
   Renvoie le
   \href{http://mathworld.wolfram.com/CevianTriangle.html}{triangle de
-    \textsc{Cevian}} relatif à \param{P}.
+    \textsc{Cevian}} relatif Ã  \param{P}.
 \item \index{cevian(vertex,point)}
   \begin{Vcolor}
     line cevian(vertex V, point P)
   \end{Vcolor}
-  Renvoie la droite de \textsc{Cevian} relative à \param{P}, passant
-  par \param{V} dans le triangle auquel se réfère \param{V}.
+  Renvoie la droite de \textsc{Cevian} relative Ã  \param{P}, passant
+  par \param{V} dans le triangle auquel se rÃ©fÃ¨re \param{V}.
 
-  L'exemple suivant illustre la propriété \og{}\emph{si un
+  L'exemple suivant illustre la propriÃ©tÃ© \og{}\emph{si un
     triangle $A'B'C'$ est un triangle de \textsc{Cevian} d'un triangle
-    $ABC$ alors le triangle $A''B''C''$, dont les sommets sont les symétriques de
-    $A'$, $B'$ et $C'$ par rapport aux milieux des côtés respectifs,
+    $ABC$ alors le triangle $A''B''C''$, dont les sommets sont les symÃ©triques de
+    $A'$, $B'$ et $C'$ par rapport aux milieux des cÃ´tÃ©s respectifs,
     est aussi un triangle de \hypertarget{cevian_ex}{\textsc{Cevian}}}\fg{}
   \vasy{cevian}
 \item \index{isotomic(vertex,point)}
@@ -3103,15 +3103,15 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   \end{Vcolor}
   Renvoie la
   \href{http://mathworld.wolfram.com/IsotomicLines.html}{droite
-    isotomique} passant par \param{V} et relative à \param{M} dans le
-  triangle auquel se réfère \param{V}.
+    isotomique} passant par \param{V} et relative Ã  \param{M} dans le
+  triangle auquel se rÃ©fÃ¨re \param{V}.
 \item \index{isotomicconjugate(triangle,point)}
   \begin{Vcolor}
     point isotomicconjugate(triangle t, point M)
   \end{Vcolor}
   Renvoie le
-  \href{http://mathworld.wolfram.com/IsotomicLines.html}{conjugué
-    isotomique} de \param{M} relativement à \param{t}.
+  \href{http://mathworld.wolfram.com/IsotomicLines.html}{conjuguÃ©
+    isotomique} de \param{M} relativement Ã  \param{t}.
 \item \index{isotomic(side,point)}
   \begin{Vcolor}
     point isotomic(side side, point M)
@@ -3119,18 +3119,18 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   Renvoie le point d'intersection de la
   \href{http://mathworld.wolfram.com/IsotomicLines.html}{droite
     isotomique} de \param{M}, relativement au triangle auquel se
-  réfère \param{side}, avec le côté \param{side}.
+  rÃ©fÃ¨re \param{side}, avec le cÃ´tÃ© \param{side}.
 \item \index{isotomic(triangle,point)}
   \begin{Vcolor}
     triangle isotomic(triangle t, point M)
   \end{Vcolor}
   Renvoie le triangle dont les sommets sont les points d'intersection
-  des droites isotomiques relatives à \param{M} dans \param{t} avec les
-  côtés de \param{t}. Ainsi, dans \href{#cevian_ex}{la figure
-    précédente}, le triangle $A''B''C''$ est le triangle isotomique
-  relatif à \param{P}.
+  des droites isotomiques relatives Ã  \param{M} dans \param{t} avec les
+  cÃ´tÃ©s de \param{t}. Ainsi, dans \href{#cevian_ex}{la figure
+    prÃ©cÃ©dente}, le triangle $A''B''C''$ est le triangle isotomique
+  relatif Ã  \param{P}.
 
-  Ci-dessous, la même figure obtenue à l'aide des routines
+  Ci-dessous, la mÃªme figure obtenue Ã  l'aide des routines
   \code{isotomic} gagne en concision.
   \vasy{isotomic}
 \item \index{isogonalconjugate(triangle,point)}
@@ -3138,8 +3138,8 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
     point isogonalconjugate(triangle t, point M)
   \end{Vcolor}
   Renvoie le
-  \href{http://fr.wikipedia.org/wiki/Conjugu\%C3\%A9_isogonal#Point_conjugu.C3.A9_isogonal}{conjugué
-    isogonal} de \param{M} relativement à \param{t}.
+  \href{http://fr.wikipedia.org/wiki/Conjugu\%C3\%A9_isogonal#Point_conjugu.C3.A9_isogonal}{conjuguÃ©
+    isogonal} de \param{M} relativement Ã  \param{t}.
   % Return the
   % \href{http://mathworld.wolfram.com/IsogonalConjugate.html}{isogonal
   % conjugate} of \param{M} with respect to \param{t}.
@@ -3150,16 +3150,16 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   Renvoie le point d'intersection de la
   \href{http://mathworld.wolfram.com/IsogonalLine.html}{droite
     isogonale} de \param{M}, relativement au triangle auquel se
-  réfère \param{side}, avec le côté \param{side}.
+  rÃ©fÃ¨re \param{side}, avec le cÃ´tÃ© \param{side}.
 \item \index{isogonal(triangle,point)}
   \begin{Vcolor}
     triangle isogonal(triangle t, point M)
   \end{Vcolor}
   Renvoie le triangle dont les sommets sont les points d'intersection
-  avec les côtés de \param{t} des droites isogonales relatives
-  à \param{M} dans \param{t}.\\
-  L'exemple suivant illustre la propriété \og{}les triangles podaires de
-  deux points isogonaux $P$ et $Q$ sont inscrits dans un même cercle de
+  avec les cÃ´tÃ©s de \param{t} des droites isogonales relatives
+  Ã  \param{M} dans \param{t}.\\
+  L'exemple suivant illustre la propriÃ©tÃ© \og{}les triangles podaires de
+  deux points isogonaux $P$ et $Q$ sont inscrits dans un mÃªme cercle de
   centre le milieu de $[PQ]$\fg{}.
   \vasy{isogonaux}
 \item \index{fermat(triangle)}
@@ -3175,33 +3175,33 @@ Le seul opérateur s'appliquant aux objets de type \code{triangle} est
   \end{Vcolor}
   Renvoie le
   \href{http://fr.wikipedia.org/wiki/Conjugu\%C3\%A9_isogonal#Triangle_podaire}{triangle
-    podaire} par rapport à \param{M} dans \param{t}.
+    podaire} par rapport Ã  \param{M} dans \param{t}.
 \item \index{pedal(side side, point M)}
   \begin{Vcolor}
     line pedal(side side, point M)
   \end{Vcolor}
-  Renvoie la droite passant pas \param{M} et par le projeté
-  orthogonal de \param{M} sur le côté \param{side}.\\
+  Renvoie la droite passant pas \param{M} et par le projetÃ©
+  orthogonal de \param{M} sur le cÃ´tÃ© \param{side}.\\
   L'exemple suivant montre quelques droites de {\sc Simson}; on
-  remarquera l'utilisation des méthodes \code{t.side(int)} et
-  \code{t.vertex(int)} qui permettent de récupérer par leurs numéros les
-  côtés et les sommets du triangle \param{t}.
+  remarquera l'utilisation des mÃ©thodes \code{t.side(int)} et
+  \code{t.vertex(int)} qui permettent de rÃ©cupÃ©rer par leurs numÃ©ros les
+  cÃ´tÃ©s et les sommets du triangle \param{t}.
   \bvasy{simson}
 \item \index{antipedal(triangle,point)}
   \begin{Vcolor}
     triangle antipedal(triangle t, point M)
   \end{Vcolor}
-  Renvoie le triangle dont le triangle podaire par rapport à \param{M}
+  Renvoie le triangle dont le triangle podaire par rapport Ã  \param{M}
   est \param{t}.
   \bvasy{antipedal}
 \end{itemize}
 
-\hyperdef{subsection}{trilinear}{\subsection{\index{trilinéaires!coordonnées|mainidx}%
-    \index{coordonnées trilinéaires!triangle|mainidx}Coordonnées trilinéaires}}
-Le type \code{trilinear}, dont la structure est donnée ci-après,
-permet d'instancier un objet représentant les
-\href{http://mathworld.wolfram.com/TrilinearCoordinates.html}{coordonnées
-  trilinéaires} \shorthandoff{:}\param{a:b:c}\shorthandon{:} par
+\hyperdef{subsection}{trilinear}{\subsection{\index{trilinÃ©aires!coordonnÃ©es|mainidx}%
+    \index{coordonnÃ©es trilinÃ©aires!triangle|mainidx}CoordonnÃ©es trilinÃ©aires}}
+Le type \code{trilinear}, dont la structure est donnÃ©e ci-aprÃ¨s,
+permet d'instancier un objet reprÃ©sentant les
+\href{http://mathworld.wolfram.com/TrilinearCoordinates.html}{coordonnÃ©es
+  trilinÃ©aires} \shorthandoff{:}\param{a:b:c}\shorthandon{:} par
 rapport au triangle~\param{t}.
 \begin{center}
   \begin{Vcolor}
@@ -3213,41 +3213,41 @@ rapport au triangle~\param{t}.
   \end{Vcolor}
 \end{center}
 
-Pour définir les coordonnées trilinéaires
-\shorthandoff{:}\param{a:b:c}\shorthandon{:} par rapport à un
+Pour dÃ©finir les coordonnÃ©es trilinÃ©aires
+\shorthandoff{:}\param{a:b:c}\shorthandon{:} par rapport Ã  un
 triangle \param{t} on peut utiliser la routine
 \index{trilinear(triangle,real,real,real)}
 \begin{Vcolor}
   trilinear trilinear(triangle t, real a, real b, real c)
 \end{Vcolor}
-Il est aussi possible de récupérer les coordonnées trilinéaires d'un
-point grâce à la routine
+Il est aussi possible de rÃ©cupÃ©rer les coordonnÃ©es trilinÃ©aires d'un
+point grÃ¢ce Ã  la routine
 \index{trilinear(triangle,point)}
 \begin{Vcolor}
   trilinear trilinear(triangle t, point M)
 \end{Vcolor}
-Il est enfin possible de définir des coordonnées trilinéaires grâce à
+Il est enfin possible de dÃ©finir des coordonnÃ©es trilinÃ©aires grÃ¢ce Ã 
 une
 \href{http://mathworld.wolfram.com/TriangleCenterFunction.html}{fonction
   de centre de triangle} $f$ et trois
-paramètres \param{a}, \param{b} et \param{c} en utilisant à la routine
+paramÃ¨tres \param{a}, \param{b} et \param{c} en utilisant Ã  la routine
 suivante\index{trilinear(triangle,centerfunction,real,real,real)}:
 \begin{Vcolor}
   trilinear trilinear(triangle t, centerfunction f,
   real a=t.a(), real b=t.b(), real c=t.c())
 \end{Vcolor}
-\noindent où le type \code{centerfunction} représente une fonction
-réelle à trois variables réelles.
+\noindent oÃ¹ le type \code{centerfunction} reprÃ©sente une fonction
+rÃ©elle Ã  trois variables rÃ©elles.
 
 La conversion d'un objet de type \code{trilinear} en type \code{point}
-peut s'effectuer, comme d'habitude, de deux façon: avec la routine
+peut s'effectuer, comme d'habitude, de deux faÃ§on: avec la routine
 \code{point(trilinear)} ou par la syntaxe de \og{}casting\fg{}
 \code{(point) trilinear}.
 
 Par exemple, en utilisant les
-\href{http://mathworld.wolfram.com/IsotomicConjugate.html}{coordonnées
-  trilinéaires du conjugués isotomique} d'un point, voici comment est
-définie la routine \code{isotomicconjugate}:
+\href{http://mathworld.wolfram.com/IsotomicConjugate.html}{coordonnÃ©es
+  trilinÃ©aires du conjuguÃ©s isotomique} d'un point, voici comment est
+dÃ©finie la routine \code{isotomicconjugate}:
 \begin{Vcolor}
   point isotomicconjugate(triangle t, point M)
   {
@@ -3257,10 +3257,10 @@ définie la routine \code{isotomicconjugate}:
 \end{Vcolor}
 
 \hyperdef{section}{inversion}{\section{\index{triangle|mainidx}Inversions}}
-Le type \code{inversion}, dont la structure est donnée ci-après,
+Le type \code{inversion}, dont la structure est donnÃ©e ci-aprÃ¨s,
 permet d'instancier
 l'\href{http://mathworld.wolfram.com/Inversion.htm}{inversion}
-de pôle \param{C} et de puissance \param{k}
+de pÃ´le \param{C} et de puissance \param{k}
 \begin{center}
   \begin{Vcolor}
     struct inversion
@@ -3270,15 +3270,15 @@ de pôle \param{C} et de puissance \param{k}
     }
   \end{Vcolor}
 \end{center}
-\subsection{Définir une inversion}
-Les routines et opérateurs suivants permettent de définir une
+\subsection{DÃ©finir une inversion}
+Les routines et opÃ©rateurs suivants permettent de dÃ©finir une
 inversion.
 \begin{itemize}
 \item \index{inversion(real,point)}\index{inversion(point,real)}
   \begin{Vcolor}
     inversion inversion(real k, point C)
   \end{Vcolor}
-  Renvoie l'inversion de pôle \param{C} et de puissance \param{k}. La
+  Renvoie l'inversion de pÃ´le \param{C} et de puissance \param{k}. La
   routine \code{inversion(point C, real k)} est aussi disponible.
 \item \index{inversion(circle,circle,real)}
   \begin{Vcolor}
@@ -3289,11 +3289,11 @@ inversion.
     l'inversion dont la puissance est du signe de \param{sgn} et
     transformant \param{c1} en \param{c2};
   \item si \param{sgn} est nul, cette routine renvoie l'inversion
-    centrée au pied de l'axe radical et laissant globalement
+    centrÃ©e au pied de l'axe radical et laissant globalement
     invariants chacun des deux cercles \param{c1} et \param{c2}.
   \end{itemize}
-  \href{#exemple_inversion}{Un exemple} utilisant cette routine a déjà
-  été donné.
+  \href{#exemple_inversion}{Un exemple} utilisant cette routine a dÃ©jÃ 
+  Ã©tÃ© donnÃ©.
 \item \index{inversion(circle,circle,circle)}
   \begin{Vcolor}
     inversion inversion(circle c1, circle c2, circle c3)
@@ -3305,22 +3305,22 @@ inversion.
     circle operator cast(inversion i)
   \end{Vcolor}
   Permet le \og{}casting\fg{} d'un objet de type \code{inversion} en
-  \code{circle}. Le cercle renvoyé est le cercle directeur (ou principal)
+  \code{circle}. Le cercle renvoyÃ© est le cercle directeur (ou principal)
   de \param{i}.\\
-  On peut aussi forcer le \og{}casting\fg{} grâce à la routine
+  On peut aussi forcer le \og{}casting\fg{} grÃ¢ce Ã  la routine
   \code{circle circle(inversion i)}.
 \item \index{cast(circle)}\index{inversion(circle)}
   \begin{Vcolor}
     inversion operator cast(circle c)
   \end{Vcolor}
   Permet le \og{}casting\fg{} d'un objet de type \code{circle} en
-  \code{inversion}. L'inversion renvoyée laisse globalement
-  invariant \param{c}, a pour pôle le centre de \param{c} et le signe
+  \code{inversion}. L'inversion renvoyÃ©e laisse globalement
+  invariant \param{c}, a pour pÃ´le le centre de \param{c} et le signe
   de la puissance est celui du rayon de \param{c}.\\
-  On peut aussi forcer le \og{}casting\fg{} grâce à la routine
+  On peut aussi forcer le \og{}casting\fg{} grÃ¢ce Ã  la routine
   \code{inversion inversion(circle c)}.
   \subsection{Appliquer une inversion}
-  Les opérateurs suivants autorisent les codes du type
+  Les opÃ©rateurs suivants autorisent les codes du type
   \code{inversion*objet} qui renvoient l'image par \param{inversion} de
   l'objet \param{objet}.
 \item \index{*(inversion,point)}
@@ -3345,28 +3345,28 @@ inversion.
   \end{Vcolor}
 \end{itemize}
 
-On notera que l'inverse d'un cercle ou d'une droite peut être une
-droite. Dans ce cas le cercle \param{C} renvoyé a un rayon infini et
-la propriété \param{C.l} de type \code{line} est initialisée à la
-valeur adéquate; les routines admettant ce cercle comme paramètre
-utiliseront \param{C.l} à la place comme le montre l'exemple
+On notera que l'inverse d'un cercle ou d'une droite peut Ãªtre une
+droite. Dans ce cas le cercle \param{C} renvoyÃ© a un rayon infini et
+la propriÃ©tÃ© \param{C.l} de type \code{line} est initialisÃ©e Ã  la
+valeur adÃ©quate; les routines admettant ce cercle comme paramÃ¨tre
+utiliseront \param{C.l} Ã  la place comme le montre l'exemple
 suivant.
 \bvasy{inversion_circle_droite}
-\emph{Cette fonctionnalité, rajoutée récemment, a été testée
+\emph{Cette fonctionnalitÃ©, rajoutÃ©e rÃ©cemment, a Ã©tÃ© testÃ©e
   sommairement. Merci d'envoyer un rapport de bogue en cas de
-  problème.}
+  problÃ¨me.}
 \subsection{Exemples}
 \href{#exemple_inversion}{Des exemples} qui
-utilisent les inversions ont déjà été donnés, en voici d'autres.
+utilisent les inversions ont dÃ©jÃ  Ã©tÃ© donnÃ©s, en voici d'autres.
 
-Commençons par illustrer l'utilisation d'un cercle, ici le cercle
-inscrit à un triangle, en tant qu'inversion:
+CommenÃ§ons par illustrer l'utilisation d'un cercle, ici le cercle
+inscrit Ã  un triangle, en tant qu'inversion:
 \bvasy{circle_inversion}
 Ci-dessous la construction du collier de {\sc Pappus}.
 \bvasy{pappus_construct}
-On peut ainsi facilement en obtenir une belle représentation:
+On peut ainsi facilement en obtenir une belle reprÃ©sentation:
 \bvasy{chaine_pappus}
-La figure suivante, où les droites ne sont pas parallèles, en est
+La figure suivante, oÃ¹ les droites ne sont pas parallÃ¨les, en est
 une variante:
 \vasy{pappus_variante}
 

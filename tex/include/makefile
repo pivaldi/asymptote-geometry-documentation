@@ -1,4 +1,4 @@
-ASYCMD=asy -f pdf
+ASYCMD=asy -f pdf -tex pdflatex
 ALL=asy
 SRC= $(wildcard *.asy)
 OBJ= $(SRC:.asy=.pdf)

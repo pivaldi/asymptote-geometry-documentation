@@ -7,7 +7,7 @@
   filecolor=blue,
   linkcolor=brick,urlcolor=red,
   pdfstartview=Fit,
-  pdfauthor={Olivier Guibé, Philippe Ivaldi},
+  pdfauthor={Olivier GuibÃ©, Philippe Ivaldi},
   pdfsubject={Plane geometry with Asymptote},
   pdftitle={Plane geometry module for Asymptote},
   pdfkeywords={geometry , plane, software, module, package, extension, package,
@@ -21,7 +21,7 @@
 \makeindex
 
 \renewcommand{\lang}{EN}
-% \Vcompiletrue
+\Vcompiletrue
 \begin{document}
 
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
@@ -35,12 +35,12 @@
   \end{minipage}\hspace*{5mm}%
   \begin{minipage}[t]{0.325\linewidth}\centering
     English Translation
-    by\\ Olivier \textsc{Guibé}\\
+    by\\ Olivier \textsc{GuibÃ©}\\
     \&\\
     Philippe \textsc{Ivaldi}
   \end{minipage}%
   }
-  \date{Compiled with \Asymptote{} version 2.14svn-r5318\\on \today}
+  \date{Compiled with \Asymptote{} version 2.65 TexLive 2020\\on \today}
 \maketitle
 \hspace*{0mm}\hfill
 \begin{center}
@@ -75,7 +75,7 @@
   \end{center}
   I would like to thank
   \begin{itemize}
-  \item Olivier \textsc{Guibé} for numerous discussions on some
+  \item Olivier \textsc{GuibÃ©} for numerous discussions on some
     computer algebra questions, his encouragements and his always
     attentive listening;
   \item John \textsc{Bowman} and Andy \textsc{Hammerlindl} without
@@ -110,7 +110,7 @@ Here all the types provided by \geo:
    want to use another coordinate system than the default one: in this case one
    can consider that the types \code{point} and \code{vector} are the
    same than the type \code{pair};
-\item[\index{mass}mass] mass point with respect to a cartesian
+\item[\index{mass}mass] mass point with respect to a Cartesian
   coordinate system   (cf. \href{#section.mass}{Mass points});
 \item[\index{line}line \textmd{and} \index{segment}segment] the type
   \code{line} is devoted to  line, half-line or  segment.
@@ -202,7 +202,7 @@ The following paragraphs deal with the basic routines on cartesian
 coordinate systems, the real use of coordinate systems is detailed in Section \href{#section.point}{Points and vectors}.
 
 \subsection{The type coordsys}
-\Geo allows to define objects in any plane cartesian coordinate system ; such a
+\Geo allows to define objects in any plane Cartesian coordinate system; such a
 coordinate system is of the type \code{coordsys}. As shown below:
 \begin{itemize}
 \item  the default coordinate system is
@@ -277,7 +277,7 @@ type \code{pair} into a coordinate system are the operators:
 
 While the type \code{pair} only allows to locate a point in the
 default coordinate system, the type \code{point} allows to locate a point in any
-cartesian coordinate system (see \href{#section.coordsys}{coordsys}); an object
+Cartesian coordinate system (see \href{#section.coordsys}{coordsys}); an object
 of the type \code{point} refers to the coordinate system in which it is defined.
 
 \index{point!casting}Thanks to the casting, a \code{point} is on the whole
@@ -289,8 +289,9 @@ of the type \code{point} refers to the coordinate system in which it is defined.
 \index{currentcoordsys}The following example shows the consequence of
 a modification of the current coordinate system on the casting  \code{pair} in
 \code{point} for the point \param{A} and how to define a point into a
-specific coordinate system through to the routine \code{point point(coordsys R,  pair m)}
-\index{point(coordsys,pair,real)} for the point \param{B}.
+specific coordinate system through to the routine\\
+\code{point point(coordsys R,  pair m)}\index{point(coordsys,pair,real)} 
+for the point \param{B}.
 % \compiletrue%
 \vasy{point2}
 The routine \code{point locate(pair m);}\index{locate} also allows to
@@ -392,11 +393,16 @@ defined, here we give another routines:
   \code{yscale} and \code{rotate} are defined with respect to the
   default coordinate system which is not wished in general when the current
   coordinate system has been modified.\\
-  To make up for this inconvenient one can use the routines
-  \code{scale(real,point)}, \code{xscale(real,point)},
-  \code{yscale(real,point)},   \code{rotate(real,point)},
-  \code{scaleO(real)},   \code{xscaleO(real)}, \code{yscaleO(real)} and
-  \code{rotateO(real)} which are described in Section \href{section.transform1}{Transformations (Part 1)}.
+  To make up for this inconvenient one can use the routines\hfill\\
+  \code{scale(real,point)},\\
+  \code{xscale(real,point)},\\
+  \code{yscale(real,point)},\\
+  \code{rotate(real,point)},\\
+  \code{scaleO(real)},\\
+  \code{xscaleO(real)},\\
+  \code{yscaleO(real)} and
+  \code{rotateO(real)}\\
+  which are described in Section \href{section.transform1}{Transformations (Part 1)}.
 \item \index{*(explicit point,explicit pair)}
   % \compiletrue
   \begin{Vcolor}
@@ -404,7 +410,8 @@ defined, here we give another routines:
   \end{Vcolor}
   Define \code{point*pair}.\\
   We assume that the sense of \param{p2}  is a point of \param{p2}
-  coordinates in the coordinate system where \param{P1} is defined (\code{point(coordinates(P1),p2)}).
+  coordinates in the coordinate system where \param{P1} is defined\hfill\\
+  (\code{point(coordinates(P1),p2)}).
 \item \index{==(explicit point,explicit point)}
   % \compiletrue
   \begin{Vcolor}
@@ -479,7 +486,7 @@ defined, here we give another routines:
     real dot(point A, explicit pair B)
   \end{Vcolor}
   Return the dot product  \param{A}{.}\param{B} where the coordinates
-  of \param{A} are first converted into the default coordinate system.
+  of \param{A} are first converted into the default coordinate system.\hfill\\
   \code{dot(explicit pair,point)} is also defined.
 
 \end{itemize}
@@ -559,6 +566,7 @@ while the one of  \code{dot(unit(B-A))} can be dubious.
 \index{collinear(vector,vector)}As already mentioned all the routines
 devoted to the type type \code{point} can also be used with the type
 \code{vector}. Let us mention  the easily  understanding routine:
+
 % \compiletrue%
 \begin{Vcolor}
   bool collinear(vector u, vector v)
@@ -579,6 +587,7 @@ No... not quite:
   by  \code{M=P/2} the coordinates of \param{M} are well half the ones
   of \param{P} but the mass is unchanged. Thus to define a point with
   a half mass of a point we \textbf{should} write:
+  
   % \compiletrue
   \begin{Vcolor}
     point P=point((1,1), 3);// point of mass 3
@@ -586,6 +595,7 @@ No... not quite:
     point Q=P;
     Q.m=P.m/2;
   \end{Vcolor}
+  
   which can become quickly painful;
 \item to show the mass with an homogeneous way in all the figures at
   the time of using the routines \code{dot} and \code{label} can also
@@ -603,6 +613,7 @@ The routines \code{mass mass(explicit point)}\index{mass mass(explicit point)} a
 allow to overbalance easily between the two types  \code{mass} and
 \code{point}; an elegant way to divide the mass of a \code{point}
 object is then the following:
+
 % \compiletrue%
 \begin{Vcolor}
   point P=point((1,1), 3);// Point of mass 3
@@ -610,14 +621,17 @@ object is then the following:
   point Q=mass(P)/2;// Division of the mass, the coordinates remain unchanged
 
 \end{Vcolor}
+
 The division of the coordinates of an object  of the type \code{mass}
 is similarly:
+
 \begin{Vcolor}
   mass P=mass((1,1), 3);// Mass weight equal to 3
 
   mass Q=point(P)/2;// Division of the coordinates, the weight remains unchanged
 
 \end{Vcolor}
+
 \subsection{Another  routines}
 Thanks to the casting all the features of the type \code{point}
 are available for the type \code{mass} with the already mentioned
@@ -677,7 +691,7 @@ mass points:
     string massformat(string format=defaultmassformat,
     string s, mass M)
   \end{Vcolor}
-  Return a string which is formated by the command \code{format}
+  Return a string which is formatted by the command \code{format}
   with \param{format} as parameter, in which \%L is replaced
   by \param{s} and the weight of \param{M}.
   % \compiletrue%
@@ -841,8 +855,9 @@ detail the coordinate system dependent transformations.
     half-lines and segments}}
 \subsection{The type \texorpdfstring{``line''}{line}}
 An object of type \code{line} is devoted  to describe  line,  half-line
-or  segment depending on the properties value \code{bool
-  extendA,extendB;} which is attained with the codes   \code{line.extendA} and
+or  segment depending on the properties value\hfill\\
+\code{bool extendA,extendB;} which is attained with the codes 
+\code{line.extendA} and\hfill\\ 
 \code{line.extendB}.
 The full description about the methods and properties of the type \code{line}
 is accessible
@@ -1041,7 +1056,8 @@ is accessible
     line perpendicular(point M, explicit pair normal)
   \end{Vcolor}
   Return the line passing through \param{M} and of orthogonal
-  direction \param{normal} given in the current coordinate system \code{currentcoordsys}.
+  direction \param{normal} given in the current coordinate system\hfill\\
+  \code{currentcoordsys}.
   % \compiletrue%
   \bvasy{perpendicular}
 \item \index{angle(line,coordsys)}%
@@ -1625,7 +1641,7 @@ replacing an object of type \code{conic} by one of the types
   The routine \code{-(conic,explicit vector)} is also defined.
 \end{itemize}
 
-\hyperdef{subsubsection}{bqe}{\subsubsection{\index{équation!conique|mainidx}Conics equations}}
+\hyperdef{subsubsection}{bqe}{\subsubsection{\index{Ã©quation!conique|mainidx}Conics equations}}
 The type \code{bqe}, for \emph{Bivariate Quadratic Equation}, allows
 to instantiate an object representing an conic equation in a given
 coordinate system.  His structure follows:
@@ -1740,7 +1756,7 @@ other routines to define an object of type \code{circle}:
   \end{Vcolor}
   Return the circle of radius \param{r} centered on \param{r}.\\
   Remark that the routine \code{circle circle(pair C, real r)} in no
-  longer redefined since the \asymptote version 2{.}10 ; one must use
+  longer redefined since the \asymptote version 2{.}10Â ; one must use
   the casting of pair to point with the syntax \code{circle cle = circle((point)(1,2), 2)}
   whose center \param{(1,2)} represents the coordinates of a point in the
   current coordinate system \code{currentcoordsys}.
@@ -2180,12 +2196,12 @@ is done according to the following rules:
   % \compiletrue
   \bvasy{parabola_to_path}
 \item the number of nodes in the path depends on angles, given from
-  focus in degrees, of the ends of the path and is calculated through the routine
-  \index{parabolanodesnumber(parabola,real,real)}\code{int parabolanodesnumber(parabola p, real angle1, real angle2)}\linebreak
+  focus in degrees, of the ends of the path and is calculated through the routine\hfill\\
+  \code{int parabolanodesnumber(parabola p, real angle1, real angle2)}\index{parabolanodesnumber(parabola,real,real)}\linebreak
   which itself depends on the variable \index{parabolanodesnumberfactor}\code{parabolanodesnumberfactor};
 \item the node in the path are defined in polar coordinates with
   angles given from parabola focus and evenly distributed throughout
-  the interval whose ends are returned by the routine
+  the interval whose ends are returned by the routine\hfill\\
   \code{real[] bangles(picture pic=currentpicture, parabola p)}\index{bangles(picture,parabola)}.
   % \compiletrue
   \bvasy{dot_parabola}
@@ -2686,14 +2702,17 @@ structure of an object of type \code{abscissa} follows:
   \end{description}
   For better readability of the code, the following constants are
   predefined\index{relativesystem}\index{curvilinearsystem}\index{angularsystem}\index{nodesystem}:
+  
   \begin{Vcolor}
     int relativesystem=0, curvilinearsystem=1, angularsystem=2, nodesystem=3;
   \end{Vcolor}
+  
 \item[\param{polarconicroutine}] allow to specify the reference
   center in case of angular abscissa; the possible values are
   \code{fromCenter} and \code{fromFocus};
 \item[\param{abscissa copy()}] return a deep copy of the abscissa.
 \end{description}
+
 \subsection{Define an abscissa}
 There are as many routines to define an abscissa than type of
 abscissa. Once an abscissa defined, one can recover the point of an
@@ -3413,25 +3432,31 @@ allows to instantiate an object representing the
 \end{center}
 To define the trilinear coordinates \param{a:b:c} with respect to a
 triangle \param{t} one can use the routine
+
 \index{trilinear(triangle,real,real,real)}
 \begin{Vcolor}
   trilinear trilinear(triangle t, real a, real b, real c)
 \end{Vcolor}
+
 It is also possible to obtain the trilinear coordinates of a point
 through the routine
+
 \index{trilinear(triangle,point)}
 \begin{Vcolor}
   trilinear trilinear(triangle t, point M)
 \end{Vcolor}
+
 It is also possible to define trilinear coordinated through a
 \href{http://mathworld.wolfram.com/TriangleCenterFunction.html}{triangle
   center function} $f$ and three parameters \param{a}, \param{b}
 and \param{c} using the following
 routine\index{trilinear(triangle,centerfunction,real,real,real)}:
+
 \begin{Vcolor}
   trilinear trilinear(triangle t, centerfunction f,
   real a=t.a(), real b=t.b(), real c=t.c())
 \end{Vcolor}
+
 \noindent where the type \code{centerfunction} represents a real
 function with three real variables.
 
@@ -3443,6 +3468,7 @@ For example, using the
 \href{http://mathworld.wolfram.com/IsotomicConjugate.html}{trilinear
   coordinates of the isotomic conjugate} of a point, here's how it is
 defined the routine \code{isotomicconjugate}:
+
 \begin{Vcolor}
   point isotomicconjugate(triangle t, point M)
   {
@@ -3456,6 +3482,7 @@ The type \code{inversion}, whose the structure is given below,
 allows to instantiate an
 \href{http://mathworld.wolfram.com/Inversion.htm}{inversion}
 with center \param{C} and radius \param{k}
+
 \begin{center}
   \begin{Vcolor}
     struct inversion
@@ -3465,6 +3492,7 @@ with center \param{C} and radius \param{k}
     }
   \end{Vcolor}
 \end{center}
+
 \subsection{Define an inversion}
 The following routines and operators allow to define an inversion.
 \begin{itemize}

@@ -9,6 +9,9 @@
 *.eps
 *.pdf
 *.html
+*.synctex.gz
 tex/include/*.tex
 en/include/*.tex
 tex/vcolors/*.*
+
+pygmentizedformat/
